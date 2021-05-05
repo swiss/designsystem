@@ -31,7 +31,7 @@ export default {
 <style scoped>
 .counter {
   display: inline-block;
-  margin-left: 30%;
+  margin-left: 30% ;
 }
 
 button {
