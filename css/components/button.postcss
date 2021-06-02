@@ -1,0 +1,13 @@
+/*----------------------------------------*\
+  BUTTON
+\*----------------------------------------*/
+
+.btn {
+  @apply inline-block px-4 py-2 border-red-800;
+  @apply text-gray-900 font-semibold no-underline;
+  @apply border rounded;
+
+  &:disabled {
+    @apply border-gray-900 bg-gray-50 cursor-not-allowed;
+  }
+}
