@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@main
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm run build
       - uses: BetaHuhn/do-spaces-action@v2
         with:
           access_key: ${{ secrets.ACCESS_KEY }}
