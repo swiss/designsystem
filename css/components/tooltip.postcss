@@ -1,0 +1,106 @@
+/*----------------------------------------*\
+  Tooltip
+\*----------------------------------------*/
+
+.tooltip {
+  @apply z-30;
+  display: block !important;
+}
+
+.tooltip-inner {
+  @apply py-1 px-3;
+  @apply rounded;
+
+  @apply bg-gray-300 text-primary-white;
+}
+
+.tooltip-arrow {
+  @apply w-0 h-0;
+  @apply absolute z-10;
+  @apply m-1;
+  border-style: solid;
+  @apply border-gray-300;
+}
+
+.popover-inner {
+  @apply px-5 py-2;
+  @apply shadow;
+}
+
+.popover-arrow {
+  --arrow-size: 0.5rem;
+}
+
+/**
+* Visibility
+*/
+.tooltip[aria-hidden='true'] {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.tooltip[aria-hidden='false'] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+
+/**
+* Arrow placement and look
+*/
+.tooltip[x-placement^='top'] {
+  margin-bottom: 0.25rem;
+}
+
+.tooltip[x-placement^='top'] .tooltip-arrow {
+  @apply my-0;
+  bottom: calc(0.25rem * -1);
+  left: calc(50% - 0.25rem);
+  border-width: 0.25rem 0.25rem 0 0.25rem;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+
+.tooltip[x-placement^='bottom'] {
+  margin-top: 0.25rem;
+}
+
+.tooltip[x-placement^='bottom'] .tooltip-arrow {
+  @apply my-0;
+  top: calc(0.25rem * -1);
+  left: calc(50% - 0.25rem);
+  border-width: 0 0.25rem 0.25rem 0.25rem;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: transparent !important;
+}
+
+.tooltip[x-placement^='right'] {
+  margin-left: 0.25rem;
+}
+
+.tooltip[x-placement^='right'] .tooltip-arrow {
+  @apply mx-0;
+  left: calc(0.25rem * -1);
+  top: calc(50% - 0.25rem);
+  border-width: 0.25rem 0.25rem 0.25rem 0;
+  border-left-color: transparent !important;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+
+.tooltip[x-placement^='left'] {
+  margin-right: 0.25rem;
+}
+
+.tooltip[x-placement^='left'] .tooltip-arrow {
+  @apply mx-0;
+  right: calc(0.25rem * -1);
+  top: calc(50% - 0.25rem);
+  border-width: 0.25rem 0 0.25rem 0.25rem;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+}

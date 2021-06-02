@@ -1,0 +1,62 @@
+<template>
+  <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+    <li
+      v-for="item in $options.svgIconList"
+      :key="item.id"
+    >
+      <svg-icon-list-item
+        :icon="item.icon"
+        :id="item.id"
+      />
+    </li>
+  </ul>
+  <h2>CC Icons</h2>
+  <ul class="flex flex-wrap gap-5">
+    <li
+      v-for="item in $options.svgCCIconList"
+      :key="item.id"
+    >
+      <svg-icon-list-item
+        :icon="item.icon"
+        :id="item.id"
+      />
+    </li>
+  </ul>
+</template>
+
+<script>
+
+import SvgIconListItem from './SvgIconListItem.vue'
+
+const svgContext = require.context(
+	'!svg-inline-loader?' +
+	'removeTags=true' + // remove title tags, etc.
+	'&removeSVGTagAttrs=true' + // enable removing attributes
+	'&removingTagAttrs=fill' + // remove fill attributes
+	'!../../../bund-ds/assets/icons', // search this directory
+	true, // search subdirectories
+	/\w+\.svg$/i // only include SVG files
+)
+
+let icons = []
+let CCIcons = []
+let array = svgContext.keys()
+for (let i = 0; i < array.length; ++i) {
+  icons[i] = {}
+  icons[i].icon = svgContext(array[i])
+  icons[i].id = array[i].replace(/^\.\/(.*)\.\w+$/, '$1')
+}
+
+// Extract CC Icons from the rest
+CCIcons = icons.filter(icon => icon.id.startsWith('CC-'))
+icons = icons.filter(icon => !icon.id.startsWith('CC-'))
+
+export default {
+	name: 'SvgIconList',
+	svgIconList: icons,
+  svgCCIconList: CCIcons,
+  components: {
+		SvgIconListItem
+	},
+}
+</script>

@@ -1,0 +1,40 @@
+/*----------------------------------------*\
+  GRID
+\*----------------------------------------*/
+
+.grid {
+  @apply flex flex-wrap;
+  @apply -mx-4 overflow-hidden;
+
+  &.grid-tight {
+    @apply mx-0;
+
+    & > .grid-col {
+      @apply px-0;
+    }
+  }
+
+  &.grid-wide {
+    @apply -mx-8;
+
+    & > .grid-col {
+      @apply px-8;
+    }
+  }
+
+  &.grid-wider {
+    @apply -mx-12;
+
+    & > .grid-col {
+      @apply px-12;
+    }
+  }
+}
+
+
+/**
+* Grid column
+*/
+.grid-col {
+  @apply px-4 overflow-hidden;
+}
