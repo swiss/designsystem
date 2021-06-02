@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '14'
       - run: npm install
-      - run: npm run build
+      - run: npm run build-css
       - uses: BetaHuhn/do-spaces-action@v2
         with:
           access_key: ${{ secrets.ACCESS_KEY }}
