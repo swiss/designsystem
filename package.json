@@ -9,7 +9,8 @@
   "scripts": {
     "watch": "postcss css/main.postcss --ext css --dir dist --watch",
     "dev": "concurrently \"npm run watch \" \"npm run storybook --prefix app\"",
-    "build": "concurrently \"postcss css/main.postcss --ext css --dir dist \" \"npm run build-storybook --prefix app\""
+    "build": "concurrently \"postcss css/main.postcss --ext css --dir dist \" \"npm run build-storybook --prefix app\"",
+    "build-css": "postcss css/main.postcss --ext css --dir dist"
   },
   "repository": {
     "type": "git",
