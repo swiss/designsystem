@@ -2,7 +2,7 @@ import Logo from './Logo.vue'
 
 
 export default {
-  title: 'Example/Logo',
+  title: 'Components/Logo',
   component: Logo,
   argTypes: {
     title: { control: 'text' },

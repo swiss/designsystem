@@ -15,4 +15,9 @@ export const parameters = {
       // htmlWhitespaceSensitivity: 'strict',
     },
   },
+  options: {
+    storySort: {
+      order: ['Introduction', 'Foundations', 'Components', 'Examples', ['Home', 'Login', 'Admin']],
+    },
+  },
 }
