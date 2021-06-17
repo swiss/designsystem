@@ -1,27 +1,30 @@
 <template>
-  <ul class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
-    <li
-      v-for="item in $options.svgIconList"
-      :key="item.id"
-    >
-      <svg-icon-list-item
-        :icon="item.icon"
-        :id="item.id"
-      />
-    </li>
-  </ul>
-  <h2>CC Icons</h2>
-  <ul class="flex flex-wrap gap-5">
-    <li
-      v-for="item in $options.svgCCIconList"
-      :key="item.id"
-    >
-      <svg-icon-list-item
-        :icon="item.icon"
-        :id="item.id"
-      />
-    </li>
-  </ul>
+  <div>
+    <ul class="storybook-icon-list">
+      <li
+        v-for="item in $options.svgIconList"
+        :key="item.id"
+        class="storybook-icon-list__item"
+      >
+        <svg-icon-list-item
+          :icon="item.icon"
+          :id="item.id"
+        />
+      </li>
+    </ul>
+    <h2>CC Icons</h2>
+    <ul class="storybook-icon-cc-list">
+      <li
+        v-for="item in $options.svgCCIconList"
+        :key="item.id"
+      >
+        <svg-icon-list-item
+          :icon="item.icon"
+          :id="item.id"
+        />
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -33,7 +36,7 @@ const svgContext = require.context(
 	'removeTags=true' + // remove title tags, etc.
 	'&removeSVGTagAttrs=true' + // enable removing attributes
 	'&removingTagAttrs=fill' + // remove fill attributes
-	'!../../../bund-ds/assets/icons', // search this directory
+	'!../../assets/icons', // search this directory
 	true, // search subdirectories
 	/\w+\.svg$/i // only include SVG files
 )

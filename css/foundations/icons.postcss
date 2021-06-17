@@ -1,0 +1,34 @@
+/*----------------------------------------*\
+  ICONS
+\*----------------------------------------*/
+
+.icon {
+}
+
+
+/*
+  classes for storybook only
+  TODO remove them from output
+*/
+.storybook-icon-list {
+  @apply grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5;
+}
+
+.storybook-icon-cc-list {
+  @apply flex flex-wrap gap-5;
+}
+
+.storybook-icon {
+  @apply flex flex-col items-center;
+  @apply border border-gray-100;
+  @apply shadow hover:shadow-lg transition-shadow ;
+}
+
+.storybook-icon__text {
+  @apply text-xs bg-gray-50 p-2 w-full text-center;
+}
+
+.storybook-icon svg {
+  @apply h-12;
+}
+

@@ -1,6 +1,6 @@
 <template>
   <svg class="icon icon--base" :class="{ 'icon-spin': spin }">
-    <use :xlink:href="`#${icon}`" />
+    <use :xlink:href="`#${id}`" />
   </svg>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
 	name: 'SvgIcon',
 	props: {
-		icon: {
+		id: {
 			type: String,
 			required: true,
 		},
