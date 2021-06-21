@@ -3,7 +3,43 @@
 \*----------------------------------------*/
 
 .icon {
+  @apply w-auto fill-current flex-shrink-0;
+  stroke-width: 0.3px;
 }
+
+.icon--sm {
+  @apply h-3;
+}
+
+.icon--base {
+  @apply h-4;
+}
+
+.icon--lg {
+  @apply h-6;
+}
+
+.icon--xl {
+  @apply h-8;
+}
+
+.icon--2xl {
+  @apply h-12 md:h-16 lg:h-20;
+}
+
+.icon--3xl {
+  @apply h-20 md:h-24 lg:h-28;
+}
+
+.icon--4xl {
+  @apply h-28 md:h-32 lg:h-36;
+}
+
+.icon--spin {
+	@apply animate-spin;
+}
+
+
 
 
 /*
@@ -28,7 +64,4 @@
   @apply text-xs bg-gray-50 p-2 w-full text-center;
 }
 
-.storybook-icon svg {
-  @apply h-12;
-}
 

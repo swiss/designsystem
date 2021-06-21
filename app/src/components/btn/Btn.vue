@@ -1,7 +1,13 @@
 <template>
 <div>
-test <svg-icon icon="ArrowLeft" /> test
-  <button type="button" :class="classes" @click="onClick">{{ label }}</button>
+  <button
+    type="button"
+    :class="classes"
+    @click="onClick"
+  >
+    {{ label }}
+    <svg-icon id="ArrowRight" />
+  </button>
 </div>
 </template>
 

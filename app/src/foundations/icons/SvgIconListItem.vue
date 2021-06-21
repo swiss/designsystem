@@ -1,8 +1,8 @@
 <template>
   <div class="storybook-icon">
     <svg-icon
-      v-if="id"
       :id="id"
+      size="2xl"
     />
     <div class="storybook-icon__text">
       {{ id }}
@@ -16,10 +16,6 @@ export default {
   components: { SvgIcon },
 	name: 'SvgIconListItem',
 	props: {
-		icon: {
-			type: String,
-			required: true,
-		},
 		id: {
 			type: String,
 			required: true,

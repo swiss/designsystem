@@ -1,7 +1,7 @@
 import SvgIconList from './SvgIconList.vue';
 
 export default {
-  title: 'Foundations/Icons',
+  title: 'Foundations/Icons/List',
   component: {
     SvgIconList
   }

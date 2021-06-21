@@ -21,6 +21,7 @@
         <svg-icon-list-item
           :icon="item.icon"
           :id="item.id"
+          autoWidth
         />
       </li>
     </ul>
