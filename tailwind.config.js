@@ -7,7 +7,6 @@ module.exports = {
     {
       white: '#ffffff',
       black: '#000000',
-      Transparent: '#ffffff',
       primary:
       {
         '50': '#ffedee',
@@ -202,8 +201,7 @@ module.exports = {
       'shadow/md': '0px 2px 4px -1px rgba(0,0,0,0.06), 0px 4px 10px -1px rgba(0,0,0,0.08)',
       'shadow/lg': '0px 4px 6px -2px rgba(0,0,0,0.04), 0px 10px 20px -6px rgba(0,0,0,0.07)',
       'shadow/xl': '0px 10px 10px -5px rgba(0,0,0,0.03), 0px 16px 25px -10px rgba(0,0,0,0.07)',
-      'shadow/2xl': '1px 12px 60px -15px rgba(0,0,0,0.11), 0px 10px 20px 0px rgba(0,0,0,0.03)',
-      'focus/purple-300': '0px 0px 0px 3px rgba(196,181,253,1)'
+      'shadow/2xl': '1px 12px 60px -15px rgba(0,0,0,0.11), 0px 10px 20px 0px rgba(0,0,0,0.03)'
     },
     borderRadius:
     {
