@@ -1,16 +1,25 @@
 <template>
 <div>
-  test
-  <button type="button" :class="classes" @click="onClick">{{ label }}</button>
+  <button
+    type="button"
+    :class="classes"
+    @click="onClick"
+  >
+    {{ label }}
+    <svg-icon id="ArrowRight" />
+  </button>
 </div>
 </template>
 
 <script>
 import { reactive, computed } from 'vue';
+import SvgIcon from '../../foundations/icons/SvgIcon.vue';
 
 export default {
   name: 'btn',
-
+  components: {
+    SvgIcon
+  },
   props: {
     label: {
       type: String,

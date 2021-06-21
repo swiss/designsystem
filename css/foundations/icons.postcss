@@ -1,0 +1,67 @@
+/*----------------------------------------*\
+  ICONS
+\*----------------------------------------*/
+
+.icon {
+  @apply w-auto fill-current flex-shrink-0;
+  stroke-width: 0.3px;
+}
+
+.icon--sm {
+  @apply h-3;
+}
+
+.icon--base {
+  @apply h-4;
+}
+
+.icon--lg {
+  @apply h-6;
+}
+
+.icon--xl {
+  @apply h-8;
+}
+
+.icon--2xl {
+  @apply h-12 md:h-16 lg:h-20;
+}
+
+.icon--3xl {
+  @apply h-20 md:h-24 lg:h-28;
+}
+
+.icon--4xl {
+  @apply h-28 md:h-32 lg:h-36;
+}
+
+.icon--spin {
+	@apply animate-spin;
+}
+
+
+
+
+/*
+  classes for storybook only
+  TODO remove them from output
+*/
+.storybook-icon-list {
+  @apply grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5;
+}
+
+.storybook-icon-cc-list {
+  @apply flex flex-wrap gap-5;
+}
+
+.storybook-icon {
+  @apply flex flex-col items-center;
+  @apply border border-gray-100;
+  @apply shadow hover:shadow-lg transition-shadow ;
+}
+
+.storybook-icon__text {
+  @apply text-xs bg-gray-50 p-2 w-full text-center;
+}
+
+

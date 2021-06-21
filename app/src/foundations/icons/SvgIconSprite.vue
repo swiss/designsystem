@@ -8,7 +8,7 @@ const svgContext = require.context(
 	'removeTags=true' + // remove title tags, etc.
 	'&removeSVGTagAttrs=true' + // enable removing attributes
 	'&removingTagAttrs=fill' + // remove fill attributes
-	'!../../../bund-ds/assets/icons', // search this directory
+	'!../../assets/icons', // search this directory
 	true, // search subdirectories
 	/\w+\.svg$/i // only include SVG files
 )
