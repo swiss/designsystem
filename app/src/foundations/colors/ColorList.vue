@@ -55,7 +55,6 @@ export default {
   },
   mounted() {
     this.colors = tailwindConfig.theme.colors
-    console.log('col', this.colors)
   }
 }
 </script>
