@@ -46,6 +46,10 @@
   classes for storybook only
   TODO remove them from output
 */
+
+/*----------------------------------------*\
+  STORYBOOK ICONS PRESENTATION
+\*----------------------------------------*/
 .storybook-icon-list {
   @apply grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5;
 }
@@ -62,6 +66,34 @@
 
 .storybook-icon__text {
   @apply text-xs bg-gray-50 p-2 w-full text-center;
+}
+
+/*----------------------------------------*\
+  STORYBOOK COLORS PRESENTATION
+\*----------------------------------------*/
+
+.storybook-color-list {
+  @apply m-0 p-0 min-w-0 flex-1 ;
+  @apply grid grid-cols-2 gap-3;
+  @apply sm:grid-cols-4;
+  @apply md:grid-cols-5;
+  @apply lg:grid-cols-10 lg:gap-1;
+}
+
+.storybook-color-list__title {
+  @apply col-span-full mt-12 mb-3 text-2xl font-bold capitalize ;
+}
+
+.storybook-color {
+  @apply shadow-lg rounded overflow-hidden;
+}
+
+.storybook-color__palette {
+  @apply h-16 w-full ring-1 ring-inset ring-black ring-opacity-0;
+}
+
+.storybook-color__text {
+  @apply p-3 text-sm text-text-500;
 }
 
 
