@@ -23,6 +23,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '../../dist/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -30,7 +31,15 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    '~/components/daisy',
+    '~/components/daisy/ui',
+    '~/components/daisy/demo',
+    '~/components/daisy/landing',
+    '~/components/ch/foundations',
+    '~/components/ch/components',
+    '~/components/ch/demo',
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

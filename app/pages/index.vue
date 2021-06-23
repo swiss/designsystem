@@ -1,83 +1,38 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxtest
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <HomepageHero/>
+
+    <div class="relative z-10">
+      <div class="pt-10 pb-20 hero bg-gradient-to-br from-base-100 to-base-300 text-base-content">
+        <CardsDemo/>
+        <div class="overflow-hidden">
+          <div class="rounded-full -mt-96 xl:mt-0 bg-primary w-96 h-96 bg-opacity-20"></div>
+        </div>
+      </div>
+      <div class="flex justify-center w-full mb-20 -mt-48">
+        <NuxtLink to="/components/button" class="btn btn-primary btn-wide">
+          See All Components
+        </NuxtLink>
       </div>
     </div>
+
+    <FeatureHtmlCompare/>
+    <FeatureCustomize/>
+    <FeatureTheming/>
+    <TryOnline/>
+    <FeatureInstall/>
+    <Footer/>
+
   </div>
 </template>
 
 <script>
-import Logo from '../components/logo/logo.vue'
+// import { themeChange } from "theme-change";
+
 export default {
-  components: {
-    Logo
+  layout: "landing",
+  mounted() {
+    // themeChange(false);
   }
-}
+};
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
