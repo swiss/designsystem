@@ -1,70 +1,32 @@
 {
-  "name": "bund_ds_app",
+  "name": "nuxtest",
   "version": "1.0.0",
-  "description": "Nuxt app – Design System for the Swiss Confederation",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rotwurstesser/bund_ds.git"
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
-  "author": "Liip AG",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rotwurstesser/bund_ds/issues"
-  },
-  "homepage": "https://github.com/rotwurstesser/bund_ds#readme",
-  "main": "index.js",
-  "typings": "index.js",
-  "files": [
-    "dist/*.js",
-    "dist/{themes,styled,unstyled,full}.css",
-    "!dist/*.rtl.css",
-    "index.js",
-    "colors"
-  ],
-  "publishConfig": {
-    "access": "public",
-    "branches": [
-      "master"
-    ]
+  "dependencies": {
+    "@nuxt/content": "^1.14.0",
+    "core-js": "^3.9.1",
+    "nuxt": "^2.15.3"
   },
   "devDependencies": {
-    "autoprefixer": "10.0.4",
-    "cssnano": "4.1.10",
-    "postcss": "^8.2.1",
-    "postcss-cli": "8.3.0",
-    "postcss-import": "13.0.0",
-    "postcss-nested": "5.0.1",
-    "prejss-cli": "0.3.3",
-    "rtlcss": "3.0.0",
-    "tailwindcss": "2.0.1"
-  },
-  "scripts": {
-    "index": "cp -R ./src/index.js ./index.js",
-    "colors": "cp -R ./src/colors ./colors",
-    "prebase": "postcss --config src/base src/base/*.css --base src --dir dist",
-    "base": "cat dist/base/*.css > dist/base.css",
-    "postbase": "prejss-cli dist/base.css --format commonjs",
-    "preutilities:global": "postcss --config src/utilities/global src/utilities/global/*.css --base src --dir dist",
-    "utilities:global": "cat dist/utilities/global/*.css > dist/utilities.css",
-    "postutilities:global": "prejss-cli dist/utilities.css --format commonjs",
-    "preutilities:unstyled": "postcss --config src/utilities/unstyled src/utilities/unstyled/*.css --base src --dir dist",
-    "utilities:unstyled": "cat dist/utilities/unstyled/*.css > dist/utilities-unstyled.css",
-    "postutilities:unstyled": "prejss-cli dist/utilities-unstyled.css --format commonjs",
-    "preutilities:styled": "postcss --config src/utilities/styled src/utilities/styled/*.css --base src --dir dist",
-    "utilities:styled": "cat dist/utilities/styled/*.css > dist/utilities-styled.css",
-    "postutilities:styled": "prejss-cli dist/utilities-styled.css --format commonjs",
-    "components": "postcss --config src/components src/components/**/*.css --base src --dir dist",
-    "merge:unstyled": "cat dist/components/unstyled/*.css > dist/unstyled.css",
-    "merge:styled": "cat dist/components/unstyled/*.css dist/components/styled/*.css > dist/styled.css",
-    "rtl": "rtlcss dist/unstyled.css -s && rtlcss dist/styled.css -s",
-    "prejss": "prejss-cli dist/{unstyled,styled}{,.rtl}.css --format commonjs",
-    "themes": "postcss src/themes/index.css -o dist/themes.css --config src/themes",
-    "full": "postcss src/full/index.css -o dist/full.css --config src/full",
-    "build": "npm run index && npm run colors && npm run base && npm run utilities:global && npm run utilities:unstyled && npm run utilities:styled && npm run components && npm run merge:unstyled && npm run merge:styled && npm run rtl && npm run prejss && npm run themes && npm run full",
-    "clean": "rm -R colors && rm -R dist && rm index.js",
-    "install:docs": "cd src/docs && npm install",
-    "dev": "cd src/docs && npm run dev",
-    "add": "touch src/components/unstyled/$npm_config_name.css && touch src/components/styled/$npm_config_name.css",
-    "postadd": "open src/components/unstyled/$npm_config_name.css && open src/components/styled/$npm_config_name.css"
+    "@babel/core": "^7.14.6",
+    "@nuxtjs/tailwindcss": "^4.0.1",
+    "@storybook/addon-actions": "^6.3.0",
+    "@storybook/addon-essentials": "^6.3.0",
+    "@storybook/addon-links": "^6.3.0",
+    "@storybook/vue": "^6.3.0",
+    "babel-loader": "^8.2.2",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "postcss": "^8.2.8",
+    "prettier": "^2.2.1",
+    "vue-loader": "^15.9.7"
   }
 }
