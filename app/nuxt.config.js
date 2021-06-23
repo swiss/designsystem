@@ -1,3 +1,4 @@
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -7,7 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxtest',
+    title: 'Design System for the Swiss Confederation',
     htmlAttrs: {
       lang: 'en'
     },
@@ -57,5 +58,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  // Storybook for nuxt project: https://storybook.nuxtjs.org/setup#installation
+  storybook: {
+    // Options
   }
 }

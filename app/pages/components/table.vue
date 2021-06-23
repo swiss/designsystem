@@ -90,7 +90,7 @@
                 <div class="flex items-center space-x-3">
                   <div class="avatar">
                     <div class="w-12 h-12 mask mask-squircle">
-                      <img :src="'/tailwind-css-component-profile-'+ item.id +'@56w.png'" alt="Avatar Tailwind CSS Component">
+                      <img src="https://loremflickr.com/112/112" alt="Avatar Tailwind CSS Component">
                     </div>
                   </div>
                   <div>

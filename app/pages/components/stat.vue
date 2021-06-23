@@ -43,7 +43,7 @@
           <div class="stat-figure text-info">
             <div class="avatar online">
               <div class="w-16 h-16 p-1 mask mask-squircle bg-base-100">
-                <img src="/tailwind-css-component-profile-5@56w.png" class="mask mask-squircle" alt="Avatar Tailwind CSS Component">
+                <img src="https://loremflickr.com/112/112" class="mask mask-squircle" alt="Avatar Tailwind CSS Component">
               </div>
             </div>
           </div>
