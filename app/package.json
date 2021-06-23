@@ -1,31 +1,17 @@
 {
-  "name": "daisyui",
-  "version": "1.4.0",
-  "description": "DaisyUI - Tailwind CSS Components",
-  "author": "Pouya Saadeghi",
-  "license": "MIT",
-  "homepage": "https://github.com/saadeghi/daisyui",
+  "name": "bund_ds_app",
+  "version": "1.0.0",
+  "description": "Nuxt app – Design System for the Swiss Confederation",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saadeghi/daisyui.git"
+    "url": "git+https://github.com/rotwurstesser/bund_ds.git"
   },
+  "author": "Liip AG",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saadeghi/daisyui/issues"
+    "url": "https://github.com/rotwurstesser/bund_ds/issues"
   },
-  "keywords": [
-    "design-system",
-    "tailwindcss",
-    "components",
-    "ui-library",
-    "component",
-    "framework",
-    "tailwind",
-    "theming",
-    "postcss",
-    "design",
-    "css",
-    "ui"
-  ],
+  "homepage": "https://github.com/rotwurstesser/bund_ds#readme",
   "main": "index.js",
   "typings": "index.js",
   "files": [
