@@ -4,7 +4,11 @@
     <div class="flex-col justify-between w-full max-w-6xl mt-10 mb-48 hero-content">
       <h1 class="py-4 mb-2 font-extrabold text-center font-title lg:py-10 lg:py-0">
         <div class="mb-2 text-5xl lg:text-7xl">
-          <Logo />
+          <Logo
+            title='Design System for <br/>the Swiss Confederation'
+            accronym='DSS'
+          />
+
         </div>
         <div class="text-4xl lg:text-5xl">
           Tailwind CSS Components
