@@ -2,27 +2,20 @@ import Logo from '../../ch/components/Logo.vue'
 
 
 export default {
-  title: 'Components/Logo',
   component: Logo,
-  argTypes: {
-    title: { control: 'text' },
-    accronym: { control: 'text' },
-  },
+  title: 'Components/Logo',
 };
 
-const Template = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
+const Template = (args, { argTypes }) => ({
   components: { Logo },
-  // The story's `args` need to be mapped into the template through the `setup()` method
-  setup() {
-    return { args };
-  },
-  // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<logo v-bind="args" />',
+  props: Object.keys(argTypes),
+  template: '<Logo :title="title" :accronym="accronym" />',
 });
 
 export const Default = Template.bind({});
 Default.args = {
   title: 'Design System for <br/>the Swiss Confederation',
   accronym: 'DSS',
-};
+}
+Default.storyName = 'Logotype';
+
