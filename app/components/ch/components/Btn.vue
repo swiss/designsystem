@@ -3,7 +3,6 @@
   <button
     type="button"
     class="btn btn--test"
-    @click="onClick"
   >
     {{ label }}
     <svg-icon id="ArrowRight" />

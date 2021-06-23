@@ -1,4 +1,4 @@
-import Logo from '../../ch/components/Logo.vue'
+import Logo from './Logo.vue'
 
 
 export default {

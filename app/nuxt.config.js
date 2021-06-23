@@ -38,7 +38,6 @@ export default {
     '~/components/daisy/landing',
     '~/components/ch/foundations',
     '~/components/ch/components',
-    '~/components/ch/demo',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
