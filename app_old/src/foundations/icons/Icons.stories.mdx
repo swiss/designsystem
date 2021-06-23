@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Icons/Implementation" />
+
+# Icons
+
+Icons are defined with `<symbol>` elements in the top of the page, right after the `<body>` element, and then called with the help of `<use>` element.
+
+## Setup symbols
+```html
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="ArrowRight" viewBox="0 0 24 24">
+      <!-- <path>s and whatever other shapes in here -->
+    </symbol>
+
+    <symbol id="ArrowLeft" viewBox="0 0 24 24">
+      <!-- <path>s and whatever other shapes in here -->
+    </symbol>
+</svg>
+```
+
+## Insert Icon
+```html
+<svg class="icon icon--base">
+  <use xlink:href="#ArrowRight" />
+</svg>
+```
+
+[More infos about svg symbols on css-tricks.com](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol)
+

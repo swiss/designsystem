@@ -1,0 +1,3 @@
+.navbar{
+  padding: var(--navbar-padding, .5rem)
+}
