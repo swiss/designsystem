@@ -12,8 +12,13 @@
 
 <script>
 
+import SvgIcon from '../components/SvgIcon.vue'
+
 export default {
 	name: 'SvgIconListItem',
+  components: {
+    SvgIcon
+  },
 	props: {
 		id: {
 			type: String,

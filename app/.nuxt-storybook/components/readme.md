@@ -49,6 +49,7 @@ You can directly use them in pages and other components without the need to impo
 - `<TryOnline>` | `<try-online>` (components/daisy/landing/TryOnline.vue)
 - `<Btn>` | `<btn>` (components/ch/components/Btn.vue)
 - `<Logo>` | `<logo>` (components/ch/components/Logo.vue)
+- `<SvgIcon>` | `<svg-icon>` (components/ch/components/SvgIcon.vue)
 - `<ClassTable>` | `<class-table>` (components/daisy/ClassTable.vue)
 - `<CollapseTransition>` | `<collapse-transition>` (components/daisy/CollapseTransition.vue)
 - `<Footer>` | `<footer>` (components/daisy/Footer.vue)

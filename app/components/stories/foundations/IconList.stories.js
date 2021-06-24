@@ -1,4 +1,4 @@
-import SvgIconList from './SvgIconList.vue';
+import SvgIconList from '../../ch/demo/SvgIconList.vue';
 
 export default {
   title: 'Foundations/Icons/List',

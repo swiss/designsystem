@@ -45,6 +45,7 @@ const components = {
   TryOnline: () => import('../../components/daisy/landing/TryOnline.vue' /* webpackChunkName: "components/try-online" */).then(c => wrapFunctional(c.default || c)),
   Btn: () => import('../../components/ch/components/Btn.vue' /* webpackChunkName: "components/btn" */).then(c => wrapFunctional(c.default || c)),
   Logo: () => import('../../components/ch/components/Logo.vue' /* webpackChunkName: "components/logo" */).then(c => wrapFunctional(c.default || c)),
+  SvgIcon: () => import('../../components/ch/components/SvgIcon.vue' /* webpackChunkName: "components/svg-icon" */).then(c => wrapFunctional(c.default || c)),
   ClassTable: () => import('../../components/daisy/ClassTable.vue' /* webpackChunkName: "components/class-table" */).then(c => wrapFunctional(c.default || c)),
   CollapseTransition: () => import('../../components/daisy/CollapseTransition.vue' /* webpackChunkName: "components/collapse-transition" */).then(c => wrapFunctional(c.default || c)),
   Footer: () => import('../../components/daisy/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c)),

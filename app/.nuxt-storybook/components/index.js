@@ -43,6 +43,7 @@ export { default as HomepageHero } from '../../components/daisy/landing/Homepage
 export { default as TryOnline } from '../../components/daisy/landing/TryOnline.vue'
 export { default as Btn } from '../../components/ch/components/Btn.vue'
 export { default as Logo } from '../../components/ch/components/Logo.vue'
+export { default as SvgIcon } from '../../components/ch/components/SvgIcon.vue'
 export { default as ClassTable } from '../../components/daisy/ClassTable.vue'
 export { default as CollapseTransition } from '../../components/daisy/CollapseTransition.vue'
 export { default as Footer } from '../../components/daisy/Footer.vue'
@@ -94,6 +95,7 @@ export const LazyHomepageHero = import('../../components/daisy/landing/HomepageH
 export const LazyTryOnline = import('../../components/daisy/landing/TryOnline.vue' /* webpackChunkName: "components/try-online" */).then(c => wrapFunctional(c.default || c))
 export const LazyBtn = import('../../components/ch/components/Btn.vue' /* webpackChunkName: "components/btn" */).then(c => wrapFunctional(c.default || c))
 export const LazyLogo = import('../../components/ch/components/Logo.vue' /* webpackChunkName: "components/logo" */).then(c => wrapFunctional(c.default || c))
+export const LazySvgIcon = import('../../components/ch/components/SvgIcon.vue' /* webpackChunkName: "components/svg-icon" */).then(c => wrapFunctional(c.default || c))
 export const LazyClassTable = import('../../components/daisy/ClassTable.vue' /* webpackChunkName: "components/class-table" */).then(c => wrapFunctional(c.default || c))
 export const LazyCollapseTransition = import('../../components/daisy/CollapseTransition.vue' /* webpackChunkName: "components/collapse-transition" */).then(c => wrapFunctional(c.default || c))
 export const LazyFooter = import('../../components/daisy/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c))

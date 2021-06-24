@@ -1,4 +1,4 @@
-import ColorList from './ColorList.vue';
+import ColorList from '../../ch/demo/ColorList.vue';
 
 export default {
   title: 'Foundations/Colors/List',

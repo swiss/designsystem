@@ -38,12 +38,15 @@
 </template>
 
 <script>
-
+import ColorListItem from './ColorListItem.vue'
 import tailwindConfig from '../../../../tailwind.config.js'
 
 
 export default {
 	name: 'ColorList',
+  components: {
+    ColorListItem
+  },
   data: function () {
     return {
       colors: {}

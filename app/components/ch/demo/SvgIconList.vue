@@ -29,6 +29,8 @@
 
 <script>
 
+import SvgIconListItem from './SvgIconListItem.vue'
+
 const svgContext = require.context(
 	'!svg-inline-loader?' +
 	'removeTags=true' + // remove title tags, etc.
@@ -53,6 +55,9 @@ icons = icons.filter(icon => !icon.id.startsWith('CC-'))
 
 export default {
 	name: 'SvgIconList',
+  components: {
+    SvgIconListItem
+  },
 	svgIconList: icons,
   svgCCIconList: CCIcons,
 }
