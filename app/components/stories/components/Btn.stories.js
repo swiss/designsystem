@@ -3,20 +3,24 @@ import Btn from '../../ch/components/Btn.vue';
 export default {
   component: Btn,
   title: 'Components/Button',
+  argTypes: {
+    type: { control: { type: 'select', options: ['outline', 'bare', 'filled', 'outline-negative', 'bare-negative'] } },
+    size: { control: { type: 'select', options: ['sm', 'md', 'lg'] } },
+    icon: { control: { type: 'select', options: ['left', 'right', 'none', 'only'] } },
+  },
 };
 
 const Template = (args, { argTypes }) => ({
   components: { Btn },
   props: Object.keys(argTypes),
-  template: '<Btn :background="background" :label="label" />',
+  template: '<Btn :type="type" :size="size" :icon="icon" :label="label" />',
 });
 
-export const Primary = Template.bind({});
-Primary.args = { background: '#ff0', label: 'Button' };
-Primary.storyName = 'Primary button';
-
-export const Secondary = Template.bind({});
-Secondary.args = { ...Primary.args, label: '😄👍😍💯' };
-
-export const Tertiary = Template.bind({});
-Tertiary.args = { ...Primary.args, label: '📚📕📈🤓' };
+export const Outline = Template.bind({});
+Outline.args = { 
+  type: 'outline',
+  size: 'md',
+  icon: 'left',
+  label: 'Button text',
+ };
+Outline.storyName = 'Outline button';

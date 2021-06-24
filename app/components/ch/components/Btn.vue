@@ -1,37 +1,58 @@
 <template>
-<div>
   <button
     type="button"
-    class="btn btn--test"
+    :class="classes"
   >
     {{ label }}
-    <svg-icon id="ArrowRight" />
   </button>
-</div>
 </template>
 
 <script>
 
 export default {
-  name: 'btn',
+  name: 'Btn',
+
   props: {
-    label: {
+    type: {
       type: String,
-      required: true,
-    },
-    primary: {
-      type: Boolean,
-      default: false,
+      validator: (prop) => [
+        'outline',
+        'bare',
+        'filled',
+        'outline-negative',
+        'bare-negative'
+      ].includes(prop)
     },
     size: {
       type: String,
-      validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
-      },
+      validator: (prop) => [
+        'sm',
+        'md',
+        'lg'
+      ].includes(prop)
     },
-    backgroundColor: {
+    icon: {
       type: String,
+      validator: (prop) => [
+        'left',
+        'right',
+        'none',
+        'only',
+      ].includes(prop)
     },
+    label: {
+      type: String,
+      required: true,
+    }
   },
-};
+
+  computed: {
+    classes () {
+      let base = '🇨🇭-btn '
+      if (this.type) base += `🇨🇭-btn--${this.type} `
+      if (this.size) base += `🇨🇭-btn--${this.size} `
+      return base
+    }
+  }
+}
 </script>
