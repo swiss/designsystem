@@ -20,7 +20,43 @@ export const Outline = Template.bind({});
 Outline.args = { 
   type: 'outline',
   size: 'md',
-  icon: 'left',
+  icon: 'none',
   label: 'Button text',
  };
-Outline.storyName = 'Outline button';
+Outline.storyName = 'Outline';
+
+export const Bare = Template.bind({});
+Bare.args = { 
+  type: 'bare',
+  size: 'md',
+  icon: 'none',
+  label: 'Button text',
+ };
+Bare.storyName = 'Bare';
+
+export const Filled = Template.bind({});
+Filled.args = { 
+  type: 'filled',
+  size: 'md',
+  icon: 'none',
+  label: 'Button text',
+ };
+Filled.storyName = 'Filled';
+
+export const OutlineNegative = Template.bind({});
+OutlineNegative.args = { 
+  type: 'outline-negative',
+  size: 'md',
+  icon: 'none',
+  label: 'Button text',
+ };
+OutlineNegative.storyName = 'Outline negative';
+
+export const BareNegative = Template.bind({});
+BareNegative.args = { 
+  type: 'bare-negative',
+  size: 'md',
+  icon: 'none',
+  label: 'Button text',
+ };
+BareNegative.storyName = 'Bare negative';
