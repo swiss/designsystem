@@ -22,11 +22,30 @@ export default {
         'bold-italic',
       ].includes(prop)
     },
+    size: {
+      type: String,
+      validator: (prop) => [
+        'xs',
+        'sm',
+        'base',
+        'lg',
+        'xl',
+        '2xl',
+        '3xl',
+        '4xl',
+        '5xl',
+        '6xl',
+        '7xl',
+        '8xl',
+        '9xl'
+      ].includes(prop)
+    },
   },
   computed: {
     classes () {
-      let base = 'text'
-      if (this.textStyle) base += `--${this.textStyle} `
+      let base = ''
+      if (this.textStyle) base += `text--${this.textStyle} `
+      if (this.size) base += `text--${this.size} `
       return base
     }
   }
