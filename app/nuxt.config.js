@@ -32,14 +32,7 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: [
-    '~/components/daisy',
-    '~/components/daisy/ui',
-    '~/components/daisy/demo',
-    '~/components/daisy/landing',
-    '~/components/ch/foundations',
-    '~/components/ch/components',
-  ],
+  components: false,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
