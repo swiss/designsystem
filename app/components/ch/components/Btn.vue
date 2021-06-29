@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 import SvgIcon from '../components/SvgIcon.vue';
 
 export default {
