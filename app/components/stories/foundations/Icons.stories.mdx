@@ -2,11 +2,11 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 <Meta title="Foundations/Icons/Implementation" />
 
-# Icons
+# Svg Icons
 
 We recommend to use inline svg's or svg symbols to avoid http requests and to give the ability to style svg strokes and fills through css
 
-## Inline Icon example
+## Inline Svg example
 
 ```html
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon icon--2xl ">
@@ -15,7 +15,7 @@ We recommend to use inline svg's or svg symbols to avoid http requests and to gi
 ```
 
 
-## Icons via svg symbols
+## Svg symbols example
 
 Another way to load svg icons is to define `<symbol>` elements in a hidden `<svg>` in the top of the page, right after the `<body>` element. Then you can call icons with the help of `<use>` element.
 [More infos about svg symbols](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol)
