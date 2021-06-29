@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import Fonts from '../../../ch/foundations/Fonts.vue';
 
 <Meta title="Foundations/Fonts/Implementation" />
@@ -9,8 +9,10 @@ Donec nec aliquam est. Aliquam at interdum urna, ac commodo neque. Donec et veli
 
 ## Example
 <Canvas>
-  <Story id="foundations-fonts--regular"></Story>
+  <Story id="foundations-fonts--example"></Story>
 </Canvas>
+
+<ArgsTable of={Fonts}></ArgsTable>
 
 ## Styles
 For example styles variation, the following css classes are built:
