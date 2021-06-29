@@ -25,8 +25,8 @@ export default {
   },
   computed: {
     classes () {
-      let base = 'text-'
-      if (this.textStyle) base += `${this.textStyle} `
+      let base = 'text'
+      if (this.textStyle) base += `--${this.textStyle} `
       return base
     }
   }
