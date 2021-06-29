@@ -13,6 +13,15 @@ export default {
       type: String,
       required: true,
     },
+    style: {
+      type: String,
+      validator: (prop) => [
+        'regular',
+        'italic',
+        'bold',
+        'bold-italic',
+      ].includes(prop)
+    },
   },
 };
 </script>
