@@ -1,5 +1,5 @@
 <template>
-<div>
+<div :class="classes">
   {{ label }}
 </div>
 </template>
@@ -13,7 +13,7 @@ export default {
       type: String,
       required: true,
     },
-    style: {
+    textStyle: {
       type: String,
       validator: (prop) => [
         'regular',
@@ -23,5 +23,12 @@ export default {
       ].includes(prop)
     },
   },
+  computed: {
+    classes () {
+      let base = 'text-'
+      if (this.textStyle) base += `${this.textStyle} `
+      return base
+    }
+  }
 };
 </script>

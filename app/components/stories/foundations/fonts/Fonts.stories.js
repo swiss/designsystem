@@ -4,40 +4,40 @@ export default {
   component: Fonts,
   title: 'Foundations/Fonts',
   argTypes: {
-  style: { control: { type: 'select', options: ['regular', 'italic', 'bold', 'bold-italic'] } },
+  textStyle: { name:'style', control: { type: 'select', options: ['regular', 'italic', 'bold', 'bold-italic'] } },
 },
 };
 
 const Template = (args, { argTypes }) => ({
   components: { Fonts },
   props: Object.keys(argTypes),
-  template: '<Fonts :label="label" :style="style" />',
+  template: '<Fonts :label="label" :textStyle="textStyle" />',
 });
 
 export const Regular = Template.bind({});
 Regular.args = { 
   label: 'Text',
-  style: 'regular'
+  textStyle: 'regular'
 };
 Regular.storyName = 'Regular';
 
 export const Italic = Template.bind({});
 Italic.args = { 
   label: 'Text',
-  style: 'italic'
+  textStyle: 'italic'
 };
 Italic.storyName = 'Italic';
 
 export const Bold = Template.bind({});
 Bold.args = { 
   label: 'Text',
-  style: 'bold'
+  textStyle: 'bold'
 };
 Bold.storyName = 'Bold';
 
 export const BoldItalic = Template.bind({});
 BoldItalic.args = { 
   label: 'Text',
-  style: 'bold-italic'
+  textStyle: 'bold-italic'
 };
 BoldItalic.storyName = 'Bold Italic';
