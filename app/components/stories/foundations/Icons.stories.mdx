@@ -4,27 +4,39 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # Icons
 
-Icons are defined with `<symbol>` elements in the top of the page, right after the `<body>` element, and then called with the help of `<use>` element.
+We recommend to use inline svg's or svg symbols to avoid http requests and to give the ability to style svg strokes and fills through css
 
-## Setup symbols
+## Inline Icon example
+
 ```html
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="ArrowRight" viewBox="0 0 24 24">
-      <!-- <path>s and whatever other shapes in here -->
-    </symbol>
-
-    <symbol id="ArrowLeft" viewBox="0 0 24 24">
-      <!-- <path>s and whatever other shapes in here -->
-    </symbol>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon icon--2xl ">
+  <path xmlns="http://www.w3.org/2000/svg" d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z" />
 </svg>
 ```
 
-## Insert Icon
+
+## Icons via svg symbols
+
+Another way to load svg icons is to define `<symbol>` elements in a hidden `<svg>` in the top of the page, right after the `<body>` element. Then you can call icons with the help of `<use>` element.
+[More infos about svg symbols](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol)
+### Setup symbols
+```html
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="ArrowRight" viewBox="0 0 24 24">
+    <!-- <path>s and whatever other shapes in here -->
+  </symbol>
+
+  <symbol id="ArrowLeft" viewBox="0 0 24 24">
+    <!-- <path>s and whatever other shapes in here -->
+  </symbol>
+</svg>
+```
+
+### Insert Icon
 ```html
 <svg class="icon icon--base">
   <use xlink:href="#ArrowRight" />
 </svg>
 ```
 
-[More infos about svg symbols on css-tricks.com](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol)
 

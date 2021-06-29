@@ -50,11 +50,11 @@
 
   <Wrapper classes="grid grid-cols-1 md:grid-cols-6 gap-6" nocode>
 
-    <div class="block mb-4" v-for="(colorGroup, index) in colors">
+    <div class="block mb-4" v-for="(colorGroup, index) in colors" :key="`color-group-${index}`">
       <div class="mb-4 text-xs uppercase opacity-50">{{ index }}</div>
       <div class="grid rounded">
         <div class="flex flex-col col-start-1 row-start-1">
-          <div v-for="(color, index) in colorGroup" class="relative col-start-1 row-start-1">
+          <div v-for="(color, index) in colorGroup" class="relative col-start-1 row-start-1" :key="`color-${index}`">
             <label :class="'flex justify-start items-end w-full h-20 transform transition-all cursor-pointer shadow hover:shadow-lg hover:-translate-y-1 '+ color.class + ((index === 0) ? ' rounded-t ' : '') + ((index === colorGroup.length - 1) ? ' rounded-b ' : '')" :for="color.name">
               <div class="px-1 m-1 text-xs text-white bg-black rounded bg-opacity-20">
                 .bg-{{ color.title }}

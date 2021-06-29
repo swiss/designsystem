@@ -5,15 +5,19 @@
     class="btn btn--test"
   >
     {{ label }}
-    <svg-icon id="ArrowRight" />
+    <SvgIcon icon="ArrowRight" />
   </button>
 </div>
 </template>
 
 <script>
+import SvgIcon from '../components/SvgIcon.vue';
 
 export default {
   name: 'btn',
+  components: {
+    SvgIcon
+  },
   props: {
     label: {
       type: String,

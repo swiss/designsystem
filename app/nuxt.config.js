@@ -32,14 +32,7 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: [
-    '~/components/daisy',
-    '~/components/daisy/ui',
-    '~/components/daisy/demo',
-    '~/components/daisy/landing',
-    '~/components/ch/foundations',
-    '~/components/ch/components',
-  ],
+  components: false,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -58,10 +51,37 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    babel: {
+      presets(_, [preset, options]) {
+        options.corejs = { version: 3 }
+      },
+      plugins: [
+        ['@babel/plugin-proposal-private-methods', { loose: true }],
+        ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+      ],
+    },
   },
 
   // Storybook for nuxt project: https://storybook.nuxtjs.org/setup#installation
   storybook: {
-    // Options
-  }
+    addons: [
+      '@storybook/addon-essentials',
+      '@storybook/addon-a11y',
+      '@whitespace/storybook-addon-html'
+    ],
+    stories: [
+      '~/components/stories/**/*.stories.mdx',
+      '~/components/stories/**/*.stories.@(js|jsx|ts|tsx)'
+    ],
+    parameters: {
+      options: {
+        storySort: {
+          order: ['Introduction', 'Foundations', ['Overview', 'Colors', 'Icons'], 'Components', 'Examples'],
+        },
+      },
+    }
+  },
+  typescript: {
+    check: false,
+  },
 }
