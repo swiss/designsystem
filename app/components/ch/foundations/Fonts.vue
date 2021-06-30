@@ -25,19 +25,15 @@ export default {
     size: {
       type: String,
       validator: (prop) => [
-        'xs',
-        'sm',
-        'base',
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
         'lg',
-        'xl',
-        '2xl',
-        '3xl',
-        '4xl',
-        '5xl',
-        '6xl',
-        '7xl',
-        '8xl',
-        '9xl'
+        'base',
+        'sm',
+        'xs'
       ].includes(prop)
     },
   },
@@ -45,7 +41,13 @@ export default {
     classes () {
       let base = ''
       if (this.textStyle) base += `text--${this.textStyle} `
-      if (this.size) base += `text--${this.size} `
+      if (this.size) {
+        if(this.size.startsWith('h')) {
+          base += `${this.size} `
+        } else {
+          base += `text--${this.size} `
+        }
+      }
       return base
     }
   }

@@ -5,7 +5,7 @@ export default {
   title: 'Foundations/Fonts',
   argTypes: {
     textStyle: { control: { type: 'select', options: ['regular', 'italic', 'bold', 'bold-italic'] } },
-    size: { control: { type: 'select', options: ['xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl'] } },
+    size: { control: { type: 'select', options: ['h1', 'h2', 'h3', 'h4', 'h5', 'lg', 'base', 'sm', 'xs'] } },
   },
 };
 
