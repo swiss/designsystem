@@ -1,0 +1,74 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Btn from '../../ch/components/Btn.vue';
+
+<Meta 
+  title="Components/Button" 
+  component={Btn}
+  argTypes={{
+    type: { control: { type: 'select', options: ['outline', 'bare', 'filled', 'outline-negative', 'bare-negative'] } },
+    size: { control: { type: 'select', options: ['sm', 'md', 'lg'] } },
+    icon: { control: { type: 'select', options: ['left', 'right', 'none', 'only'] } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Btn },
+  template: '<Btn :type="type" :size="size" :icon="icon" :label="label" />',
+});
+
+# Button
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      type: 'outline',
+      size: 'md',
+      icon: 'none',
+      label: 'Button text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+[Example](?path=/story/components-button--example)
+
+## Types
+For example type variation, the following css classes are built:
+- `🇨🇭-btn--outline` for outline
+- `🇨🇭-btn--bare` for bare
+- `🇨🇭-btn--filled` for filled
+- `🇨🇭-btn--outline-negative` for outline-negative
+- `🇨🇭-btn--bare-negative` for bare-negative
+
+<Canvas>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline">Outline</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--bare">Bare</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--filled">Filled</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline-negative">Outline-negative</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--bare-negative">Bare-negative</button>
+</Canvas>
+
+## Sizes
+For example size variation, the following css classes are built:
+- `🇨🇭-btn--sm` for sm
+- `🇨🇭-btn--md` for md
+- `🇨🇭-btn--lg` for lg
+
+<Canvas>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline 🇨🇭-btn--sm">sm</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline 🇨🇭-btn--md">md</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline 🇨🇭-btn--lg">lg</button>
+</Canvas>
+
+## Icons
+For example icon variation, the following css classes are built:
+- `🇨🇭-btn__icon-left` for icon left
+- `🇨🇭-btn__icon-right` for icon right
+- `🇨🇭-btn__icon-only` for icon only
