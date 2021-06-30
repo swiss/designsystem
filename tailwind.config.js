@@ -193,7 +193,12 @@ module.exports = {
       '8xl': '6rem',
       '9xl': '8rem'
     },
-    fontFamily: { 'frutiger-neue-lt-pro': 'Frutiger Neue LT Pro' },
+    fontFamily: { 
+      'sans': 'FrutigerNeueLTPro-Regular',
+      'italic': 'FrutigerNeueLTPro-Italic',
+      'bold': 'FrutigerNeueLTPro-Bold',
+      'boldIt': 'FrutigerNeueLTPro-BoldIt'
+    },
     boxShadow:
     {
       'sm': '0px 1px 2px 0px rgba(0,0,0,0.05)',

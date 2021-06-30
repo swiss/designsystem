@@ -1,0 +1,91 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Fonts from '../../../ch/foundations/Fonts.vue';
+
+<Meta 
+  title="Foundations/Fonts" 
+  component={Fonts}
+  argTypes={{
+    textStyle: { name:'style', control: { type: 'select', options: ['regular', 'italic', 'bold', 'bold-italic'] } },
+    size: { control: { type: 'select', options: ['h1', 'h2', 'h3', 'h4', 'h5', 'lg', 'base', 'sm', 'xs'] } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Fonts },
+  template: '<Fonts :label="label" :textStyle="textStyle" :size="size" />',
+});
+
+# Fonts
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      label: 'Text',
+      textStyle: 'regular',
+      size: 'base'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+[Example](?path=/story/foundations-fonts-implementation--example)
+
+
+## Styles
+For example styles variation, the following css classes are built:
+- `font--regular` for regular
+- `font--italic` for italic
+- `font--bold` for bold
+- `font--bold-italic`  for red bold italic
+
+<Canvas>
+  <div>
+    <div class="font--regular">Regular</div>
+    <div class="font--italic">Italic</div>
+    <div class="font--bold">Bold</div>
+    <div class="font--bold-italic">Bold italic</div>
+  </div>
+</Canvas>
+
+## Sizes
+
+### Headings
+For example heading variation, the following css classes are built:
+- `h1` for heading 1
+- `h2` for heading 2
+- `h3` for heading 3
+- `h4` for heading 4
+- `h5` for heading 5
+
+<Canvas>
+  <div>
+    <div class="h1 font--bold">Heading 1</div>
+    <div class="h2 font--bold">Heading 2</div>
+    <div class="h3 font--bold">Heading 3</div>
+    <div class="h4 font--bold">Heading 4</div>
+    <div class="h5 font--bold">Heading 5</div>
+  </div>
+</Canvas>
+
+### Additional text sizes
+For example sizes variation, the following css classes are built:
+- `text--lg` for lg
+- `text--base` for base
+- `text--sm` for sm
+- `text--xs` for xs
+
+<Canvas>
+  <div>
+    <div class="text--lg">lg</div>
+    <div class="text--base">base</div>
+    <div class="text--sm">sm</div>
+    <div class="text--xs">xs</div>
+  </div>
+</Canvas>
