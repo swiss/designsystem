@@ -15,6 +15,7 @@ export default {
     },
     textStyle: {
       type: String,
+      default: 'regular',
       validator: (prop) => [
         'regular',
         'italic',
@@ -24,6 +25,7 @@ export default {
     },
     size: {
       type: String,
+      default: 'base',
       validator: (prop) => [
         'h1',
         'h2',
