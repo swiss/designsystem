@@ -4,14 +4,18 @@
     :class="classes"
   >
     {{ label }}
+    <SvgIcon icon="ArrowRight" />
   </button>
 </template>
 
 <script>
+import SvgIcon from '../components/SvgIcon.vue';
 
 export default {
-  name: 'Btn',
-
+  name: 'btn',
+  components: {
+    SvgIcon
+  },
   props: {
     type: {
       type: String,

@@ -1,7 +1,7 @@
 <template>
   <div class="storybook-icon">
     <svg-icon
-      :id="id"
+      :icon="id"
       size="2xl"
     />
     <div class="storybook-icon__text">

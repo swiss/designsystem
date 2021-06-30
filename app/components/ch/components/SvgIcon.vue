@@ -1,15 +1,19 @@
 <template>
-  <svg
-    :class="iconClass">
-    <use :xlink:href="`#${id}`" />
-  </svg>
+  <inline-svg
+    :src="require(`../../../assets/icons/${icon}.svg`)"
+    :class="iconClass"
+  />
 </template>
 
 <script>
+import InlineSvg from 'vue-inline-svg';
 export default {
 	name: 'SvgIcon',
+  components: {
+    InlineSvg
+  },
 	props: {
-		id: {
+		icon: {
 			type: String,
 			required: true,
 		},

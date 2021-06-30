@@ -13,22 +13,24 @@
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.3",
+    "vue-inline-svg": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@nuxtjs/storybook": "^4.0.4",
     "@nuxtjs/tailwindcss": "^4.0.1",
-    "@storybook/addon-a11y": "^6.3.0",
-    "@storybook/addon-actions": "^6.3.0",
-    "@storybook/addon-essentials": "^6.3.0",
-    "@storybook/addon-links": "^6.3.0",
+    "@storybook/addon-a11y": "6.2.9",
+    "@storybook/addon-actions": "6.2.9",
+    "@storybook/addon-essentials": "6.2.9",
+    "@storybook/addon-links": "6.2.9",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.2",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "postcss": "^8.3.5",
     "prettier": "^2.2.1",
+    "storybook-addon-designs": "^6.0.0",
     "svg-inline-loader": "^0.8.2",
     "vue-loader": "^15.9.7"
   }
