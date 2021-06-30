@@ -40,7 +40,7 @@ export default {
   computed: {
     classes () {
       let base = ''
-      if (this.textStyle) base += `text--${this.textStyle} `
+      if (this.textStyle) base += `font--${this.textStyle} `
       if (this.size) {
         if(this.size.startsWith('h')) {
           base += `${this.size} `

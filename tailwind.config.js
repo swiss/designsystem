@@ -194,7 +194,10 @@ module.exports = {
       '9xl': '8rem'
     },
     fontFamily: { 
-      'sans': 'FrutigerNeueLTPro-Regular' 
+      'sans': 'FrutigerNeueLTPro-Regular',
+      'italic': 'FrutigerNeueLTPro-Italic',
+      'bold': 'FrutigerNeueLTPro-Bold',
+      'boldIt': 'FrutigerNeueLTPro-BoldIt'
     },
     boxShadow:
     {
