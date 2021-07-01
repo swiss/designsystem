@@ -1,10 +1,8 @@
 <template>
-  <button
-    type="button"
-    :class="classes"
-  >
-    {{ label }}
-    <SvgIcon icon="ArrowRight" />
+  <button type="button" :class="classes">
+    <SvgIcon v-if="isIconLeftVisible" icon="ArrowLeft" />
+    <div v-if="isLabelVisible">{{ label }}</div>
+    <SvgIcon v-if="isIconRightVisible" icon="ArrowRight" />
   </button>
 </template>
 
@@ -57,6 +55,18 @@ export default {
       if (this.type) base += `🇨🇭-btn--${this.type} `
       if (this.size) base += `🇨🇭-btn--${this.size} `
       return base
+    },
+    isIconRightVisible () {
+      if (this.icon === 'right' || this.icon === 'only') return true
+      return false
+    },
+    isIconLeftVisible () {
+      if (this.icon === 'left') return true
+      return false
+    },
+    isLabelVisible () {
+      if (this.icon === 'only') return false
+      return true
     }
   }
 }
