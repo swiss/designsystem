@@ -7,7 +7,8 @@ Delivering HTML structures, CSS assets and design elements to build frontends fo
 ## Content
 
 - A storybook application presenting assets, components and layouts in isolation mode.
-- A Figma Library containing assets and components
+- A Nuxt application on which Storybook is based on
+- A Figma Library containing design assets, components and layout examples
 
 ## Project installation
 
