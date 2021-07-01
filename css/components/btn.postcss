@@ -5,10 +5,8 @@
 
 /* TYPES */
 .🇨🇭-btn {
-  @apply inline-flex items-center py-[10px] px-[20px];
+  @apply inline-flex items-center;
   @apply rounded-sm;
-
-  /* Move in general file */
   @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
 }
 
@@ -48,14 +46,22 @@
 
 
 /* SIZES */
-.🇨🇭-btn--sm {
-  @apply text-sm;
+.🇨🇭-btn--default {
+  @apply text-sm md:text-base lg:text-lg;
+  @apply py-[11px] px-[16px] md:py-[10px] md:px-[16px] lg:py-[10px] lg:px-[20px] ;
 }
 
-.🇨🇭-btn--md {
+.🇨🇭-btn--sm {
+  @apply text-sm;
+  @apply py-[11px] px-[16px];
+}
+
+.🇨🇭-btn--base {
   @apply text-base;
+  @apply py-[10px] px-[16px];
 }
 
 .🇨🇭-btn--lg {
   @apply text-lg;
+  @apply py-[10px] px-[20px];
 }

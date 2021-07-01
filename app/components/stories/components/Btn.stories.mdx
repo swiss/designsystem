@@ -6,7 +6,7 @@ import Btn from '../../ch/components/Btn.vue';
   component={Btn}
   argTypes={{
     type: { control: { type: 'select', options: ['outline', 'bare', 'filled', 'outline-negative', 'bare-negative'] } },
-    size: { control: { type: 'select', options: ['sm', 'md', 'lg'] } },
+    size: { control: { type: 'select', options: ['default', 'sm', 'base', 'lg'] } },
     icon: { control: { type: 'select', options: ['left', 'right', 'none', 'only'] } },
   }}
 />
@@ -26,7 +26,7 @@ export const Template = (args, { argTypes }) => ({
     name="Example"
     args={{
       type: 'outline',
-      size: 'md',
+      size: 'default',
       icon: 'none',
       label: 'Button text',
     }}
@@ -48,22 +48,22 @@ For type variations, the following css classes are built:
 - `🇨🇭-btn--bare-negative` for bare-negative
 
 <Canvas>
-    <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline">Outline</button>
-    <button type="button" class="🇨🇭-btn 🇨🇭-btn--bare">Bare</button>
-    <button type="button" class="🇨🇭-btn 🇨🇭-btn--filled">Filled</button>
-    <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline-negative">Outline-negative</button>
-    <button type="button" class="🇨🇭-btn 🇨🇭-btn--bare-negative">Bare-negative</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--default 🇨🇭-btn--outline">Outline</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--default 🇨🇭-btn--bare">Bare</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--default 🇨🇭-btn--filled">Filled</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--default 🇨🇭-btn--outline-negative">Outline-negative</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--default 🇨🇭-btn--bare-negative">Bare-negative</button>
 </Canvas>
 
 ## Sizes
 For size variations, the following css classes are built:
 - `🇨🇭-btn--sm` for sm
-- `🇨🇭-btn--md` for md
+- `🇨🇭-btn--base` for base
 - `🇨🇭-btn--lg` for lg
 
 <Canvas>
     <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline 🇨🇭-btn--sm">sm</button>
-    <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline 🇨🇭-btn--md">md</button>
+    <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline 🇨🇭-btn--base">base</button>
     <button type="button" class="🇨🇭-btn 🇨🇭-btn--outline 🇨🇭-btn--lg">lg</button>
 </Canvas>
 
