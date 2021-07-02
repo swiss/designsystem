@@ -46,22 +46,35 @@
 
 
 /* SIZES */
-.🇨🇭-btn--default {
+
+// TODO adapt responsive paddings
+// TODO check related mdx
+
+.🇨🇭-btn--base {
   @apply text-sm md:text-base lg:text-lg;
-  @apply py-[11px] px-[16px] md:py-[10px] md:px-[16px] lg:py-[10px] lg:px-[20px] ;
+  @apply py-[11px] px-[16px] md:py-[10px] md:px-[16px] lg:py-[10px] lg:px-[20px];
 }
 
 .🇨🇭-btn--sm {
-  @apply text-sm;
+  @apply text-xs md:text-sm lg:text-base;
   @apply py-[11px] px-[16px];
 }
 
-.🇨🇭-btn--base {
-  @apply text-base;
-  @apply py-[10px] px-[16px];
+.🇨🇭-btn--lg {
+  @apply text-base md:text-lg lg:text-xl;
+  @apply py-[10px] px-[20px];
 }
 
-.🇨🇭-btn--lg {
-  @apply text-lg;
-  @apply py-[10px] px-[20px];
+
+/* Icons */
+
+// TODO icon: same height with or without label
+// TODO icon: larger stroke
+// TODO icon: margins between text and icon
+// TODO icon: check related mdx
+
+.🇨🇭-btn--icon-left {}
+
+.🇨🇭-btn--icon-right {
+  flex-direction: row-reverse;
 }

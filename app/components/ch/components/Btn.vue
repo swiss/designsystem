@@ -1,8 +1,15 @@
 <template>
   <button type="button" :class="classes">
-    <SvgIcon v-if="isIconLeftVisible" icon="ArrowLeft" />
-    <div v-if="isLabelVisible">{{ label }}</div>
-    <SvgIcon v-if="isIconRightVisible" icon="ArrowRight" />
+    <SvgIcon
+      v-if="this.icon"
+      :icon="this.icon"
+      class="🇨🇭-btn__icon" />
+    <span
+      v-if="this.label"
+      class="🇨🇭-btn__text"
+    >
+      {{ label }}
+    </span>
   </button>
 </template>
 
@@ -36,6 +43,10 @@ export default {
     },
     icon: {
       type: String,
+      default: ''
+    },
+    iconPos: {
+      type: String,
       validator: (prop) => [
         'left',
         'right',
@@ -54,20 +65,9 @@ export default {
       let base = '🇨🇭-btn '
       if (this.type) base += `🇨🇭-btn--${this.type} `
       if (this.size) base += `🇨🇭-btn--${this.size} `
+      if (this.iconPos) base += `🇨🇭-btn--icon-${this.iconPos} `
       return base
     },
-    isIconRightVisible () {
-      if (this.icon === 'right' || this.icon === 'only') return true
-      return false
-    },
-    isIconLeftVisible () {
-      if (this.icon === 'left') return true
-      return false
-    },
-    isLabelVisible () {
-      if (this.icon === 'only') return false
-      return true
-    }
   }
 }
 </script>
