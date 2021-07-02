@@ -1,5 +1,5 @@
 {
-  "name": "nuxtest",
+  "name": "bund_ds_app",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,8 +7,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "npx nuxt-storybook",
+    "build-storybook": "npx nuxt-storybook build"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
