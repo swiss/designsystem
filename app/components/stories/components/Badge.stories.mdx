@@ -6,7 +6,7 @@ import Badge from '../../ch/components/Badge.vue';
   component={Badge}
   argTypes={{
     color: { control: { type: 'select', options: ['gray', 'red', 'yellow', 'orange', 'green', 'blue', 'indigo', 'purple', 'pink'] } },
-    size: { control: { type: 'select', options: ['xs', 'sm'] } },
+    size: { control: { type: 'select', options: ['sm', 'xs'] } },
     remove: { name: 'remove icon', control: { type: 'boolean' } },
   }}
 />
@@ -37,7 +37,7 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Example" />
 
-[Example](?path=/story/components-button--example)
+[Example](?path=/story/components-badge--example)
 
 ## Colors
 For color variations, the following css classes are built:
@@ -45,9 +45,25 @@ For color variations, the following css classes are built:
 - `🇨🇭-badge--red` for red
 - `🇨🇭-badge--yellow` for yellow
 
+<Canvas>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--gray">gray</button>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--red">red</button>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--yellow">yellow</button>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--orange">orange</button>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--green">green</button>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--blue">blue</button>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--indigo">indigo</button>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--purple">purple</button>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--pink">pink</button>
+</Canvas>
 
 
 ## Sizes
 For size variations, the following css classes are built:
 - `🇨🇭-badge--sm` for sm
-- `🇨🇭-badge--base` for base
+- `🇨🇭-badge--xs` for xs
+
+<Canvas>
+    <button class="🇨🇭-badge 🇨🇭-badge--sm 🇨🇭-badge--gray">sm</button>
+    <button class="🇨🇭-badge 🇨🇭-badge--xs 🇨🇭-badge--gray">xs</button>
+</Canvas>

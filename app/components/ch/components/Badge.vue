@@ -15,7 +15,6 @@ export default {
     },
     color: {
       type: String,
-      default: 'base',
       validator: (prop) => [
         'gray',
         'red',
@@ -30,9 +29,10 @@ export default {
     },
     size: {
       type: String,
+      default: 'sm',
       validator: (prop) => [
-        'xs',
         'sm',
+        'xs',
       ].includes(prop)
     },
     remove: {
@@ -48,6 +48,7 @@ export default {
     classes () {
       let base = '🇨🇭-badge '
       if (this.color) base += `🇨🇭-badge--${this.color} `
+      if (this.size) base += `🇨🇭-badge--${this.size} `
       return base
     },
   }
