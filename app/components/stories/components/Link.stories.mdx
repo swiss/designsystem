@@ -1,0 +1,36 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta
+  title="Components/Links"
+/>
+
+# Links
+
+## Default links
+
+Per default, `<a>` links are not styled and shouldn't be used unstyled.
+
+<Canvas>
+<div>
+  <a>Link</a> without style
+</div>
+</Canvas>
+
+## Links in paragraphs
+
+Links included in paragraphs in the main section (`main p a`) are styled though:
+<Canvas>
+<main>
+  <p>Sed luctus pharetra nunc, et egestas <a>metus tempor</a> at. Donec volutpat ex et enim gravida vehicula.</p>
+</main>
+</Canvas>
+
+## Force Link appearance
+
+You can add a `.link` class to force the link appearance
+
+<Canvas>
+<div>
+  <a class="link">Link</a> with style
+</div>
+</Canvas>
