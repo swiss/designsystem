@@ -8,12 +8,13 @@
   },
   "scripts": {
     "watch": "NODE_ENV=css postcss css/main.postcss --ext css --dir dist --watch",
-    "dev:storybook": "cd app && npx nuxt-storybook",
+    "dev:storybook": "concurrently \"npm run watch\" \"cd app && npx nuxt-storybook\"",
     "dev:nuxt": "cd app && npm run dev",
     "dev:all": "concurrently \"npm run dev:storybook \" \"npm run dev:nuxt\" ",
     "dev": "npm run dev:storybook",
     "build-css": "NODE_ENV=css postcss css/main.postcss --ext css --dir dist",
-    "postinstall": "cd app && npm install"
+    "build-storybook": "cd app && npm run build-storybook",
+    "postinstall": "concurrently \"npm run build-css\" \"cd app && npm install\""
   },
   "repository": {
     "type": "git",
