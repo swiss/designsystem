@@ -13,7 +13,7 @@
     "dev:nuxt": "concurrently \"npm run watch \" \"npm run dev --prefix app\"",
     "dev:all": "concurrently \"npm run watch \" \"npm run dev --prefix app\" \"npm run storybook --prefix app\"",
     "build": "concurrently \"postcss css/main.postcss --ext css --dir dist \" \"npm run build-storybook --prefix app\"",
-    "build-css": "NODE_ENV=production postcss css/main.postcss --ext css --dir dist",
+    "build-css": "NODE_ENV=css postcss css/main.postcss --ext css --dir dist",
     "postinstall": "cd app && npm install"
   },
   "repository": {
