@@ -13,7 +13,7 @@
     "dev:all": "concurrently \"npm run dev:storybook \" \"npm run dev:nuxt\" ",
     "dev": "npm run dev:storybook",
     "build-css": "NODE_ENV=css postcss css/main.postcss --ext css --dir dist",
-    "build-storybook": "cd app && npm run build-storybook",
+    "build": "concurrently \"NODE_ENV=css postcss css/main.postcss --ext css --dir dist \" \"npm run build-storybook --prefix app\"",
     "postinstall": "concurrently \"npm run build-css\" \"cd app && npm install\""
   },
   "repository": {
