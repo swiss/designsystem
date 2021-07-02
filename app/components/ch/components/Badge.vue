@@ -1,5 +1,5 @@
 <template>
-<div>
+<div :class="classes">
   {{ label }}
 </div>
 </template>
@@ -43,5 +43,13 @@ export default {
       },
     },
   },
+
+    computed: {
+    classes () {
+      let base = '🇨🇭-badge '
+      if (this.color) base += `🇨🇭-badge--${this.color} `
+      return base
+    },
+  }
 };
 </script>
