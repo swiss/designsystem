@@ -7,12 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "watch": "postcss css/main.postcss --ext css --dir dist --watch",
-    "dev": "concurrently \"npm run watch \" \"npm run storybook --prefix app\"",
-    "dev:storybook": "concurrently \"npm run watch \" \"npm run storybook --prefix app\"",
-    "dev:nuxt": "concurrently \"npm run watch \" \"npm run dev --prefix app\"",
-    "dev:all": "concurrently \"npm run watch \" \"npm run dev --prefix app\" \"npm run storybook --prefix app\"",
-    "build": "concurrently \"postcss css/main.postcss --ext css --dir dist \" \"npm run build-storybook --prefix app\"",
+    "watch": "NODE_ENV=css postcss css/main.postcss --ext css --dir dist --watch",
+    "dev:storybook": "cd app && npx nuxt-storybook",
+    "dev:nuxt": "cd app && npm run dev",
+    "dev:all": "concurrently \"npm run dev:storybook \" \"npm run dev:nuxt\" ",
+    "dev": "npm run dev:storybook",
     "build-css": "NODE_ENV=css postcss css/main.postcss --ext css --dir dist",
     "postinstall": "cd app && npm install"
   },
