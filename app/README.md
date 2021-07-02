@@ -1,12 +1,24 @@
-# nuxtest
-
-## Build Setup
+# Installation
 
 ```bash
 # install dependencies
 $ npm install
+```
 
-# serve with hot reload at localhost:3000
+# Storybook
+
+```bash
+# serve Storybook with hot reload
+$ npm run storybook
+
+# build Storybook
+$ npm run build-storybook
+```
+
+# Nuxt application
+
+```bash
+# serve with hot reload
 $ npm run dev
 
 # build for production and launch server
@@ -17,4 +29,4 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+For detailed explanation on how Nuxt work, check out [Nuxt.js docs](https://nuxtjs.org).
