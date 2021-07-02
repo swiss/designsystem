@@ -1,7 +1,10 @@
 module.exports = {
   plugins: {
     'postcss-import': {},
-    tailwindcss: {},
+    'postcss-nested': {},
+    ...(process.env.NODE_ENV === 'css'
+      ? { tailwindcss: { config: './app/tailwind.config.js' } }
+      : {}),
     autoprefixer: {},
   },
 };
