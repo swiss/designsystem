@@ -39,7 +39,7 @@
 
 <script>
 import ColorListItem from './ColorListItem.vue'
-import tailwindConfig from '../../../../tailwind.config.js'
+import tailwindConfig from '../../../tailwind.config.js'
 
 
 export default {
