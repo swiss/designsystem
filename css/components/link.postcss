@@ -1,6 +1,14 @@
-.link{
+/*----------------------------------------*\
+  LINKS
+\*----------------------------------------*/
+
+.link,
+main p a {
+  @apply text-red-600 hover:text-red-800 focus:text-red-800;
   @apply underline cursor-pointer;
-  &-hover{
-    @apply no-underline hover:underline;
-  }
+}
+
+.link--negative {
+  @apply text-white hover:text-red-200 focus:text-red-200;
+  @apply underline cursor-pointer;
 }
