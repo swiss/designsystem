@@ -1,0 +1,53 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Badge from '../../ch/components/Badge.vue';
+
+<Meta 
+  title="Components/Badge" 
+  component={Badge}
+  argTypes={{
+    color: { control: { type: 'select', options: ['gray', 'red', 'yellow', 'orange', 'green', 'blue', 'indigo', 'purple', 'pink'] } },
+    size: { control: { type: 'select', options: ['xs', 'sm'] } },
+    remove: { name: 'remove icon', control: { type: 'boolean' } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Badge },
+  template: '<Badge :color="color" :size="size" :remove="remove" :label="label" />',
+});
+
+# Badge
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      color: 'gray',
+      size: 'sm',
+      remove: false,
+      label: 'Badge',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+[Example](?path=/story/components-button--example)
+
+## Colors
+For color variations, the following css classes are built:
+- `🇨🇭-badge--gray` for gray
+- `🇨🇭-badge--red` for red
+- `🇨🇭-badge--yellow` for yellow
+
+
+
+## Sizes
+For size variations, the following css classes are built:
+- `🇨🇭-badge--sm` for sm
+- `🇨🇭-badge--base` for base
