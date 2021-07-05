@@ -62,21 +62,35 @@
 }
 
 
-/* Icons */
+/* ICONS */
 
 /* TODO icon: same height with or without label */
 /* TODO icon: larger stroke */
 /* TODO icon: margins between text and icon */
 /* TODO icon: check related mdx */
 
-.btn__icon {
-
+.btn--icon-none {
+  .btn__icon {
+    @apply hidden;
+  }
 }
 
-.btn__text {}
+.btn--icon-only {
+  .btn__text {
+    @apply hidden;
+  }
+}
 
-.btn--icon-left {}
+.btn--icon-left {
+  .btn__icon {
+    @apply mr-[8px];
+  }
+}
 
 .btn--icon-right {
   flex-direction: row-reverse;
+
+  .btn__icon {
+    @apply ml-[8px];
+  }
 }

@@ -47,10 +47,10 @@ export default {
     iconPos: {
       type: String,
       validator: (prop) => [
-        'left',
-        'right',
         'none',
         'only',
+        'left',
+        'right',
       ].includes(prop)
     },
     label: {

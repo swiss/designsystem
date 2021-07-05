@@ -8,7 +8,7 @@ import Btn from '../../ch/components/Btn.vue';
     type:    { control: { type: 'select', options: ['outline', 'bare', 'filled', 'outline-negative', 'bare-negative'] } },
     size:    { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
     icon:    { control: { type: 'select', options: ['ArrowRight', 'ArrowLeft', 'Book'] } },
-    iconPos: { control: { type: 'select', options: ['left', 'right'] } },
+    iconPos: { control: { type: 'select', options: ['none', 'only','left', 'right'] } },
   }}
 />
 
@@ -29,7 +29,7 @@ export const Template = (args, { argTypes }) => ({
       type: 'outline',
       size: 'base',
       icon: 'ArrowRight',
-      iconPos: 'right',
+      iconPos: 'none',
       label: 'Button text',
     }}
   >
@@ -71,6 +71,62 @@ For size variations, the following css classes are built:
 
 ## Icons
 For icon variations, the following css classes are built:
+- `btn--icon-none` for icon none
+- `btn--icon-only` for icon only
 - `btn__icon-left` for icon left
 - `btn__icon-right` for icon right
-- `btn__icon-only` for icon only
+
+<Canvas>
+  <button type="button" class="btn btn--outline btn--base btn--icon-none">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+      ></path>
+    </svg>
+    <span class="btn__text">none</span>
+  </button>
+  <button type="button" class="btn btn--outline btn--base btn--icon-only">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+      ></path>
+    </svg>
+    <span class="btn__text">Button text</span>
+  </button>
+  <button type="button" class="btn btn--outline btn--base btn--icon-left">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m8.306 5.116-4.066 7.044 4.066 7.044.65-.375-3.633-6.294h15.187v-.75h-15.187l3.633-6.294z"
+      ></path>
+    </svg>
+    <span class="btn__text">icon-left</span>
+  </button>
+  <button type="button" class="btn btn--outline btn--base btn--icon-right">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+      ></path>
+    </svg>
+    <span class="btn__text">icon-right</span>
+  </button>
+</Canvas>
