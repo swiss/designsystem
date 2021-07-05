@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <h1>Demo Application</h1>
     <Btn label="button" />
     <div>test</div>
@@ -8,11 +9,12 @@
 
 <script>
 import Btn from '../components/ch/components/Btn.vue';
-
+import Header from '../components/ch/sections/Header.vue'
 export default {
   name: 'index',
   components: {
-    Btn
+    Btn,
+    Header
   },
   mounted() {
     // themeChange(false);
