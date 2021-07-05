@@ -25,7 +25,10 @@ export const parameters = {
           'Fonts',
           'Backgrounds',
           'Colors',
-          'Icons',
+          'Icons', [
+            'List',
+            'Implementation'
+          ],
         ],
         'Components', [
           'Logo',
