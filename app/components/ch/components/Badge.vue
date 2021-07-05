@@ -54,9 +54,9 @@ export default {
 
     computed: {
     classes () {
-      let base = '🇨🇭-badge '
-      if (this.color) base += `🇨🇭-badge--${this.color} `
-      if (this.size) base += `🇨🇭-badge--${this.size} `
+      let base = 'badge '
+      if (this.color) base += `badge--${this.color} `
+      if (this.size) base += `badge--${this.size} `
       if (this.remove) base += `badge--icon `
       return base
     },
