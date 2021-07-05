@@ -6,7 +6,7 @@ import Btn from '../../ch/components/Btn.vue';
   component={Btn}
   argTypes={{
     type:    { control: { type: 'select', options: ['outline', 'bare', 'filled', 'outline-negative', 'bare-negative'] } },
-    size:    { control: { type: 'select', options: ['default', 'sm', 'base', 'lg'] } },
+    size:    { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
     icon:    { control: { type: 'select', options: ['ArrowRight', 'ArrowLeft', 'Book'] } },
     iconPos: { control: { type: 'select', options: ['left', 'right'] } },
   }}
@@ -27,7 +27,7 @@ export const Template = (args, { argTypes }) => ({
     name="Example"
     args={{
       type: 'outline',
-      size: 'default',
+      size: 'base',
       icon: 'ArrowRight',
       iconPos: 'right',
       label: 'Button text',
@@ -50,11 +50,11 @@ For type variations, the following css classes are built:
 - `btn--bare-negative` for bare-negative
 
 <Canvas>
-    <button type="button" class="btn btn--default btn--outline">Outline</button>
-    <button type="button" class="btn btn--default btn--bare">Bare</button>
-    <button type="button" class="btn btn--default btn--filled">Filled</button>
-    <button type="button" class="btn btn--default btn--outline-negative">Outline-negative</button>
-    <button type="button" class="btn btn--default btn--bare-negative">Bare-negative</button>
+    <button type="button" class="btn btn--base btn--outline">Outline</button>
+    <button type="button" class="btn btn--base btn--bare">Bare</button>
+    <button type="button" class="btn btn--base btn--filled">Filled</button>
+    <button type="button" class="btn btn--base btn--outline-negative">Outline-negative</button>
+    <button type="button" class="btn btn--base btn--bare-negative">Bare-negative</button>
 </Canvas>
 
 ## Sizes

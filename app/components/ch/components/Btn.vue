@@ -3,10 +3,10 @@
     <SvgIcon
       v-if="this.icon"
       :icon="this.icon"
-      class="🇨🇭-btn__icon" />
+      class="btn__icon" />
     <span
       v-if="this.label"
-      class="🇨🇭-btn__text"
+      class="btn__text"
     >
       {{ label }}
     </span>
@@ -35,7 +35,6 @@ export default {
     size: {
       type: String,
       validator: (prop) => [
-        'default',
         'sm',
         'base',
         'lg'
