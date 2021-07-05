@@ -15,15 +15,17 @@ export const parameters = {
       // htmlWhitespaceSensitivity: 'strict',
     },
   },
+  viewMode: 'docs',
   options: {
     storySort: {
       order: [
         'Introduction',
         'Foundations', [
           'Overview',
+          'Fonts',
+          'Backgrounds',
           'Colors',
           'Icons',
-          'Fonts',
         ],
         'Components', [
           'Logo',
