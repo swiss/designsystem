@@ -62,10 +62,10 @@ export default {
 
   computed: {
     classes () {
-      let base = '🇨🇭-btn '
-      if (this.type) base += `🇨🇭-btn--${this.type} `
-      if (this.size) base += `🇨🇭-btn--${this.size} `
-      if (this.iconPos) base += `🇨🇭-btn--icon-${this.iconPos} `
+      let base = 'btn '
+      if (this.type) base += `btn--${this.type} `
+      if (this.size) base += `btn--${this.size} `
+      if (this.iconPos) base += `btn--icon-${this.iconPos} `
       return base
     },
   }
