@@ -1,23 +1,30 @@
 <template>
   <div>
-    <Header />
-    <h1>Demo Application</h1>
-    <Btn label="button" />
-    <div>test</div>
+    <header>
+      <TopBar />
+      <TopHeader />
+      <Breadcrumb />
+    </header>
+    <main>
+      <div class="container">
+        <h1>Demo Application</h1>
+      </div>
+    </main>
+    <footer></footer>
+
   </div>
 </template>
 
 <script>
-import Btn from '../components/ch/components/Btn.vue';
-import Header from '../components/ch/sections/Header.vue'
+import TopBar from '../components/ch/sections/TopBar.vue';
+import TopHeader from '../components/ch/sections/TopHeader.vue';
+import Breadcrumb from '../components/ch/sections/Breadcrumb.vue';
 export default {
   name: 'index',
   components: {
-    Btn,
-    Header
-  },
-  mounted() {
-    // themeChange(false);
+    TopBar,
+    TopHeader,
+    Breadcrumb
   }
 };
 </script>
