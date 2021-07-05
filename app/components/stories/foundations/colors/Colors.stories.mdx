@@ -1,6 +1,16 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import ColorList from '../../../ch/demo/ColorList.vue';
 
-<Meta title="Foundations/Colors/Implementation" />
+<Meta
+  title="Foundations/Colors"
+  component={ColorList}
+  argTypes={{ }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ColorList },
+  template: '<ColorList :label="label" :textStyle="textStyle" :size="size" />',
+});
 
 # Text colors
 <Canvas>
@@ -84,15 +94,12 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 ## Flexible Colors for future projects
 For future projects, if you generate the CSS by your own, it's possible to use not only the mentioned colors above, but the whole palette of colors declared in the Tailwind config and all its variations.
 
-For example from `primary-600` color variation, the following css classes can be built:
-- `bg-primary-600` for red backgrounds
-- `text-primary-600` for red texts
-- `border-primary-600`  for red borders
-
-In practice, few of these colors are used in the templates, but having the whole range of variations give extra flexibility for future designs.
-
-[color palette](?path=/story/foundations-colors-list--list)
-
 <Canvas>
-  <Story id="foundations-colors-list--list" />
+  <Story
+    name="Example"
+    args={{
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
