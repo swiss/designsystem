@@ -18,45 +18,7 @@ export const Template = (args, { argTypes }) => ({
 
 # Fonts
 
-## Example
-
-<Canvas>
-  <Story
-    name="Example"
-    args={{
-      label: 'Text',
-      textStyle: 'regular',
-      size: 'base'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-<ArgsTable story="Example" />
-
-[Example](?path=/story/foundations-fonts-implementation--example)
-
-
-## Styles
-For style variations, the following css classes are built:
-- `font--regular` for regular
-- `font--italic` for italic
-- `font--bold` for bold
-- `font--bold-italic`  for bold italic
-
-<Canvas>
-  <div>
-    <div class="font--regular">Regular</div>
-    <div class="font--italic">Italic</div>
-    <div class="font--bold">Bold</div>
-    <div class="font--bold-italic">Bold italic</div>
-  </div>
-</Canvas>
-
-## Sizes
-
-### Headings
+## Headings
 For heading variations, the following css classes are built:
 - `.h1` for heading 1
 - `.h2` for heading 2
@@ -74,7 +36,7 @@ For heading variations, the following css classes are built:
   </div>
 </Canvas>
 
-### Additional text sizes
+## Text sizes
 For size variations, the following css classes are built:
 - `text--lg` for lg
 - `text--base` for base
@@ -89,3 +51,41 @@ For size variations, the following css classes are built:
     <div class="text--xs">xs</div>
   </div>
 </Canvas>
+
+## Styles and Weights
+For style variations, the following css classes are built:
+- `font--regular` for regular
+- `font--italic` for italic
+- `font--bold` for bold
+- `font--bold-italic`  for bold italic
+
+<Canvas>
+  <div>
+    <div class="font--regular">Regular</div>
+    <div class="font--italic">Italic</div>
+    <div class="font--bold">Bold</div>
+    <div class="font--bold-italic">Bold italic</div>
+  </div>
+</Canvas>
+
+
+## Example
+
+As example you can modify the props values in the table below to combine the different classes and see the result:
+
+<ArgsTable story="Example" />
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      label: 'Confoederatio helvetica',
+      textStyle: 'bold',
+      size: 'h1'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
