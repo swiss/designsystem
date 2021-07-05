@@ -50,6 +50,7 @@
   @apply bg-pink-100;
 }
 
+
 /* COLORS */
 .🇨🇭-badge--sm {
   @apply py-[2px] px-[12px];
@@ -59,4 +60,18 @@
 .🇨🇭-badge--xs {
   @apply py-[2px] px-[10px];
   @apply text-xs;
+}
+
+
+/* ICON */
+.badge__icon {
+  @apply hidden;
+  @apply h-[18px] w-[18px];
+}
+
+.badge--icon {
+  .badge__icon {
+    @apply block;
+    @apply ml-[7px];
+  }
 }

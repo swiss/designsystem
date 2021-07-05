@@ -1,13 +1,21 @@
 <template>
 <div :class="classes">
-  {{ label }}
+  <span class="badge__text">{{ label }}</span>
+  <SvgIcon
+    icon="Cancel"
+    class="badge__icon"
+  />
 </div>
 </template>
 
 <script>
+import SvgIcon from '../components/SvgIcon.vue';
 
 export default {
   name: 'badge',
+  components: {
+    SvgIcon
+  },
   props: {
     label: {
       type: String,
@@ -49,6 +57,7 @@ export default {
       let base = '🇨🇭-badge '
       if (this.color) base += `🇨🇭-badge--${this.color} `
       if (this.size) base += `🇨🇭-badge--${this.size} `
+      if (this.remove) base += `badge--icon `
       return base
     },
   }
