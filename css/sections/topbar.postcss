@@ -4,24 +4,19 @@
 
 .top-bar {
   @apply bg-secondary-600;
+  @apply text-sm 2xl:text-base text-white;
 }
 
 .top-bar__bar {
   @apply h-11 xl:h-12 2xl:h-[60px];
   @apply bg-secondary-600;
-  @apply text-base text-white;
 
   .top-bar--is-open & {
     @apply bg-secondary-700;
   }
-
-  & .container {
-    @apply flex justify-between;
-    @apply h-full;
-  }
 }
 
-.top-bar__content {
+.top-bar__drawer {
   @apply py-10;
   @apply bg-secondary-600 text-white;
 }
@@ -31,15 +26,7 @@
   @apply bg-secondary-600;
 }
 
-.top-bar__meta {
+.top-bar__navigation {
   @apply h-full;
 }
 
-
-/*----------------------------------------*\
-  METANAVIGATION
-\*----------------------------------------*/
-
-.metanavigation {
-  @apply flex h-full;
-}

@@ -1,0 +1,24 @@
+/*----------------------------------------*\
+  METANAVIGATION
+\*----------------------------------------*/
+
+.metanavigation {
+  @apply flex;
+
+  a {
+    @apply flex items-center;
+    @apply px-4;
+  }
+}
+
+.metanavigation--mobile {
+  @apply flex flex-col;
+}
+
+.metanavigation--desktop {
+  @apply hidden lg:flex;
+
+  ul {
+    @apply flex;
+  }
+}

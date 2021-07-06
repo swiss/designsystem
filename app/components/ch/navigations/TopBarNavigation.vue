@@ -1,27 +1,22 @@
 <template>
   <nav
-    :class="metanavigationClass"
-    aria-label="Meta navigation"
+    :class="topBarNavigationClass"
+    aria-label="Top bar navigation"
   >
     <ul>
       <li>
         <a href="#">
-          Über uns
+          Anmelden
         </a>
       </li>
       <li>
         <a href="#">
-        Jobs
-      </a>
-      </li>
-      <li>
-        <a href="#">
-          Kontakt
+          Leichte Sprache
         </a>
       </li>
       <li>
         <a href="#">
-          Medien
+          Gebärden Sprache
         </a>
       </li>
     </ul>
@@ -30,7 +25,7 @@
 
 <script>
 export default {
-  name: 'MetaNavigation',
+  name: 'TopbarNavigation',
   props: {
     context: {
       type: String,
@@ -42,9 +37,9 @@ export default {
     }
   },
   computed: {
-    metanavigationClass () {
-      let base = `metanavigation `
-      if (this.context) base += `metanavigation--${this.context} `
+    topBarNavigationClass () {
+      let base = `topbar-navigation `
+      if (this.context) base += `topbar-navigation--${this.context} `
       return base
     }
   }
