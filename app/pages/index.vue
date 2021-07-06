@@ -3,9 +3,9 @@
     <header>
       <TopBar />
       <TopHeader />
-      <MainNavigation context="desktop" />
+      <MainMenu />
       <Breadcrumb />
-      <MobileMenu context="desktop" />
+      <MobileMenu />
     </header>
     <main>
       <div class="container">
@@ -21,8 +21,8 @@
 import TopBar from '../components/ch/sections/TopBar.vue';
 import TopHeader from '../components/ch/sections/TopHeader.vue';
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue';
-import MainNavigation from '../components/ch/navigations/MainNavigation.vue';
-import MobileMenu from '../components/ch/navigations/MobileMenu.vue';
+import MainMenu from '../components/ch/sections/MainMenu.vue';
+import MobileMenu from '../components/ch/sections/MobileMenu.vue';
 
 export default {
   name: 'index',
@@ -30,7 +30,7 @@ export default {
     TopBar,
     TopHeader,
     Breadcrumb,
-    MainNavigation,
+    MainMenu,
     MobileMenu
   }
 };

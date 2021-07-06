@@ -1,50 +1,46 @@
 <template>
-  <div
+  <nav
     :class="mainnavigationClass"
     aria-label="Main navigation"
   >
-    <div class="container container--flex">
-      <nav>
-        <ul>
-          <li>
-            <a href="#">
-              News
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Geodaten
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Karten
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Thematische Geoportale
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Dienstleistungen
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Forschung und Lehre
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Über geo.admin.ch
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+    <ul>
+      <li>
+        <a href="#">
+          News
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Geodaten
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Karten
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Thematische Geoportale
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Dienstleistungen
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Forschung und Lehre
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Über geo.admin.ch
+        </a>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>

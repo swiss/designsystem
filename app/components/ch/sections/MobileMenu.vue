@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="mobilemenu">
+    <h2>[Mobile menu]</h2>
     <MainNavigation context="mobile" />
     <MetaNavigation context="mobile" />
     <TopBarNavigation context="mobile" />
