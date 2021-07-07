@@ -1,0 +1,20 @@
+/* ----------------------------------------*\
+  GLOBAL
+\* ---------------------------------------- */
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  @apply transition-transform duration-700;
+}
+
+.body--mobilemenu-is-open {
+  height: calc(100vh + 3rem);
+  @apply overflow-hidden;
+  @apply -translate-y-12;
+}
+

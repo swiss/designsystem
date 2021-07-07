@@ -1,13 +1,22 @@
 /*----------------------------------------*\
-  MAIN NAVIGATION
-\*----------------------------------------*/
-
-/*----------------------------------------*\
-  MAIN NAVIGATION
+  MOBILEMENU
 \*----------------------------------------*/
 
 .mobilemenu {
-  @apply lg:hidden;
+  @apply invisible;
+  @apply w-full;
+  height: calc(100vh - 6rem);
+  border: 1px solid red;
+  @apply overflow-y-auto;
+  @apply absolute z-10;
+  @apply opacity-0 transition-opacity duration-700;
   /* temp */
-  @apply p-5 shadow shadow-2xl;
+  @apply p-5 shadow shadow-2xl bg-white;
+}
+
+.mobilemenu--is-open,
+.body--mobilemenu-is-open .mobilemenu {
+  @apply block lg:hidden;
+  @apply visible opacity-100;
+
 }

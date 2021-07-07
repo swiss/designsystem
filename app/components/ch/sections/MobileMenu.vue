@@ -1,8 +1,17 @@
 <template>
-  <div class="mobilemenu">
+  <div
+    class="mobilemenu"
+    :class="isOpen ? 'mobilemenu--is-open' : '' ">
     <h2>[Mobile menu]</h2>
     <MainNavigation context="mobile" />
     <MetaNavigation context="mobile" />
+    <TopBarNavigation context="mobile" />
+    <TopBarNavigation context="mobile" />
+    <TopBarNavigation context="mobile" />
+    <TopBarNavigation context="mobile" />
+    <TopBarNavigation context="mobile" />
+    <TopBarNavigation context="mobile" />
+    <TopBarNavigation context="mobile" />
     <TopBarNavigation context="mobile" />
   </div>
 </template>
@@ -22,7 +31,6 @@ export default {
   props: {
     isOpen: {
       type: Boolean,
-      required: false,
       default: false,
     }
   },

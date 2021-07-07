@@ -3,7 +3,7 @@
 \*----------------------------------------*/
 
 .burger {
-  @apply h-full flex items-center;
+  @apply h-full flex items-center lg:hidden;
 }
 
 .burger__icon {
@@ -20,15 +20,14 @@
   @apply block w-full h-full;
   @apply absolute;
   @apply transition-transform;
-  @apply duration-200;
   color: inherit;
 
   &::after {
     content: '';
     @apply block w-full h-[2px] absolute;
     @apply transition-transform;
-    @apply duration-200;
-    @apply delay-200;
+    @apply duration-150;
+    @apply delay-150;
     border-color: currentColor;
   }
 }
@@ -52,8 +51,6 @@
 .burger__bar:nth-of-type(2) {
   @apply top-1/2 -translate-y-1/2;
   @apply h-[2px];
-  @apply origin-center;
-  @apply delay-150;
   background-color: currentColor;
 
   .burger--is-open & {

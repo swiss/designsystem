@@ -6,6 +6,11 @@
 .🇨🇭-logo {
   @apply flex items-center flex-nowrap;
   @apply md:items-start;
+  @apply transition-opacity duration-700;
+
+  .body--mobilemenu-is-open & {
+    @apply opacity-0;
+  }
 }
 
 .🇨🇭-logo__flag {

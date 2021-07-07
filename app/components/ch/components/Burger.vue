@@ -1,7 +1,6 @@
 <template>
   <button
     class="burger"
-    @click="isOpen = !isOpen"
   >
     <span
       class="burger__icon"
@@ -18,7 +17,6 @@
 
 export default {
 	name: 'Burger',
-
 	props: {
 		isOpen: {
 			type: Boolean,

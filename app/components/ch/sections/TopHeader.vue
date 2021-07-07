@@ -7,7 +7,10 @@
       />
       <div class="top-header__right">
         <MetaNavigation context="desktop" />
-        <Burger />
+        <Burger
+          @click.native="toggleMobileMenu()"
+          :isOpen="getMobileMenuIsOpen()"
+        />
       </div>
     </div>
   </div>
@@ -24,6 +27,14 @@ export default {
     Logo,
     Burger,
     MetaNavigation
+  },
+  methods: {
+    toggleMobileMenu () {
+      this.$store.dispatch('layout/toggleMobileMenu')
+    },
+    getMobileMenuIsOpen () {
+      return this.$store.getters['layout/getMobileMenuIsOpen']
+    }
   }
 };
 </script>
