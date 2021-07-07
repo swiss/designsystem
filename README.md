@@ -30,20 +30,20 @@ $ npm run dev:storybook
 ## Run Nuxt application
 
 ```bash
-# serve Storybook with hot reload
+# serve Nuxt application with hot reload
 $ npm run dev:nuxt
 ```
 
 ## Run both Storybook and Nuxt
 
 ```bash
-# serve Storybook with hot reload
+# serve both Storybook and Nuxt application
 $ npm run dev:all
 ```
 
 ## Build Storybook
 
 ```bash
-# serve Storybook with hot reload
+# build Storybook
 $ npm run build
 ```
