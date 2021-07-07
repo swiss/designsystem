@@ -1,0 +1,80 @@
+/*----------------------------------------*\
+  BURGER
+\*----------------------------------------*/
+
+.burger {
+  @apply h-full flex items-center;
+}
+
+.burger__icon {
+  @apply block w-7 h-5 relative;
+  @apply text-text-500 transition-colors;
+
+  &:hover {
+    @apply text-red-600;
+  }
+}
+
+
+.burger__bar {
+  @apply block w-full h-full;
+  @apply absolute;
+  @apply transition-transform;
+  @apply duration-200;
+  color: inherit;
+
+  &::after {
+    content: '';
+    @apply block w-full h-[2px] absolute;
+    @apply transition-transform;
+    @apply duration-200;
+    @apply delay-200;
+    border-color: currentColor;
+  }
+}
+
+.burger__bar:nth-of-type(1) {
+
+
+  &::after {
+    @apply border-t-2 origin-top top-[-1px];
+  }
+
+  .burger--is-open & {
+    @apply translate-y-1/2;
+
+    &::after {
+      @apply rotate-45;
+    }
+  }
+}
+
+.burger__bar:nth-of-type(2) {
+  @apply top-1/2 -translate-y-1/2;
+  @apply h-[2px];
+  @apply origin-center;
+  @apply delay-150;
+  background-color: currentColor;
+
+  .burger--is-open & {
+    @apply scale-x-0;
+  }
+}
+
+
+.burger__bar:nth-of-type(3) {
+  &::after {
+    @apply bottom-[-1px];
+    @apply border-b-2 origin-bottom;
+  }
+
+  .burger--is-open & {
+    @apply -translate-y-1/2;
+
+    &::after {
+      @apply -rotate-45;
+    }
+  }
+}
+
+
