@@ -3,20 +3,20 @@
 \*----------------------------------------*/
 
 .mobilemenu {
-  @apply invisible;
-  @apply w-full;
-  height: calc(100vh - 6rem);
-  border: 1px solid red;
-  @apply overflow-y-auto;
+  @apply invisible opacity-0;
+  @apply w-full h-0;
   @apply absolute z-10;
-  @apply opacity-0 transition-opacity duration-700;
-  /* temp */
-  @apply p-5 shadow shadow-2xl bg-white;
+  @apply transition-opacity duration-700;
+  @apply bg-white shadow shadow-2xl;
 }
 
 .mobilemenu--is-open,
 .body--mobilemenu-is-open .mobilemenu {
   @apply block lg:hidden;
   @apply visible opacity-100;
+  @apply overflow-y-auto;
+  height: calc(100vh - 6rem);
+  border: 1px solid red;
 
+  @apply p-5;
 }
