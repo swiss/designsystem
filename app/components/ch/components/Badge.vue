@@ -2,9 +2,10 @@
 <div :class="classes">
   <span class="badge__text">{{ label }}</span>
   <SvgIcon
-    icon="Cancel"
-    class="badge__icon"
-  />
+      v-if="this.icon"
+      :icon="this.icon"
+      class="badge__icon"
+    />
 </div>
 </template>
 
@@ -23,6 +24,7 @@ export default {
     },
     color: {
       type: String,
+      default: 'gray',
       validator: (prop) => [
         'gray',
         'red',
@@ -37,18 +39,15 @@ export default {
     },
     size: {
       type: String,
-      default: 'sm',
+      default: 'base',
       validator: (prop) => [
-        'sm',
-        'xs',
+        'base',
+        'sm'
       ].includes(prop)
     },
-    remove: {
-      type: Boolean,
-      default: false,
-      validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
-      },
+    icon: {
+      type: String,
+      default: undefined
     },
   },
 
@@ -57,7 +56,7 @@ export default {
       let base = 'badge '
       if (this.color) base += `badge--${this.color} `
       if (this.size) base += `badge--${this.size} `
-      if (this.remove) base += `badge--icon `
+      if (this.icon) base += `badge--icon `
       return base
     },
   }

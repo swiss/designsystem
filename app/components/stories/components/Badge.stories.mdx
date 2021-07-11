@@ -6,15 +6,15 @@ import Badge from '../../ch/components/Badge.vue';
   component={Badge}
   argTypes={{
     color: { control: { type: 'select', options: ['gray', 'red', 'yellow', 'orange', 'green', 'blue', 'indigo', 'purple', 'pink'] } },
-    size: { control: { type: 'select', options: ['sm', 'xs'] } },
-    remove: { name: 'remove icon', control: { type: 'boolean' } },
+    size: { control: { type: 'select', options: ['base', 'sm'] } },
+    icon: { control: { type: 'select', options: ['Cancel', 'Checkmark', undefined] } },
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Badge },
-  template: '<Badge :color="color" :size="size" :remove="remove" :label="label" />',
+  template: '<Badge :color="color" :size="size" :icon="icon" :label="label" />',
 });
 
 # Badge
@@ -26,8 +26,8 @@ export const Template = (args, { argTypes }) => ({
     name="Example"
     args={{
       color: 'gray',
-      size: 'sm',
-      remove: false,
+      size: 'base',
+      icon: undefined,
       label: 'Badge',
     }}
   >
@@ -41,31 +41,37 @@ export const Template = (args, { argTypes }) => ({
 
 ## Colors
 For color variations, the following css classes are built:
-- `badge--gray` for gray
-- `badge--red` for red
-- `badge--yellow` for yellow
+- `badge--gray`
+- `badge--red`
+- `badge--yellow`
+- `badge--orange`
+- `badge--green`
+- `badge--blue`
+- `badge--indigo`
+- `badge--purple`
+- `badge--pink`
 
 <Canvas>
-    <button class="badge badge--sm badge--gray">gray</button>
-    <button class="badge badge--sm badge--red">red</button>
-    <button class="badge badge--sm badge--yellow">yellow</button>
-    <button class="badge badge--sm badge--orange">orange</button>
-    <button class="badge badge--sm badge--green">green</button>
-    <button class="badge badge--sm badge--blue">blue</button>
-    <button class="badge badge--sm badge--indigo">indigo</button>
-    <button class="badge badge--sm badge--purple">purple</button>
-    <button class="badge badge--sm badge--pink">pink</button>
+    <button class="badge badge--gray">gray</button>
+    <button class="badge badge--red">red</button>
+    <button class="badge badge--yellow">yellow</button>
+    <button class="badge badge--orange">orange</button>
+    <button class="badge badge--green">green</button>
+    <button class="badge badge--blue">blue</button>
+    <button class="badge badge--indigo">indigo</button>
+    <button class="badge badge--purple">purple</button>
+    <button class="badge badge--pink">pink</button>
 </Canvas>
 
 
 ## Sizes
 For size variations, the following css classes are built:
-- `badge--sm` for sm
-- `badge--xs` for xs
+- `badge--base` default value
+- `badge--xs` for small badges
 
 <Canvas>
-    <button class="badge badge--sm badge--gray">sm</button>
-    <button class="badge badge--xs badge--gray">xs</button>
+    <button class="badge badge--base badge--gray">badge--base</button>
+    <button class="badge badge--sm badge--gray">badge--sm</button>
 </Canvas>
 
 ## Icons
@@ -73,8 +79,8 @@ For icon variations, the following css classes are built:
 - `badge--icon` for icon
 
 <Canvas>
-  <div class="badge badge--gray badge--sm badge--icon">
-    <span class="badge__text">icon</span>
+  <div class="badge badge--gray badge--icon">
+    <span class="badge__text">badge--icon</span>
     <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
