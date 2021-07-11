@@ -25,6 +25,7 @@
     "@storybook/addon-actions": "6.2.9",
     "@storybook/addon-essentials": "6.2.9",
     "@storybook/addon-links": "6.2.9",
+    "@storybook/theming": "^6.2.9",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.2",
     "eslint-config-prettier": "^8.1.0",
