@@ -3,7 +3,8 @@
     <SvgIcon
       v-if="this.icon"
       :icon="this.icon"
-      class="btn__icon" />
+      class="btn__icon"
+    />
     <span
       v-if="this.label"
       class="btn__text"

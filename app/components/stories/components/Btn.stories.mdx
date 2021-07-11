@@ -7,7 +7,7 @@ import Btn from '../../ch/components/Btn.vue';
   argTypes={{
     type:    { control: { type: 'select', options: ['outline', 'bare', 'filled', 'outline-negative', 'bare-negative'] } },
     size:    { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
-    icon:    { control: { type: 'select', options: ['ArrowRight', 'ArrowLeft', 'Book'] } },
+    icon:    { control: { type: 'select', options: ['ArrowRight', 'ArrowLeft', 'Checkmark'] } },
     iconPos: { control: { type: 'select', options: ['none', 'only','left', 'right'] } },
   }}
 />
@@ -39,65 +39,53 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Example" />
 
-[Example](?path=/story/components-button--example)
-
-## Types
+## Button types
 For type variations, the following css classes are built:
-- `btn--outline` for outline
-- `btn--bare` for bare
-- `btn--filled` for filled
-- `btn--outline-negative` for outline-negative
-- `btn--bare-negative` for bare-negative
+- `btn--outline` for standard buttons
+- `btn--bare` for buttons without strokes
+- `btn--filled` for buttons used in a form
 
 <Canvas>
-    <button type="button" class="btn btn--base btn--outline">Outline</button>
-    <button type="button" class="btn btn--base btn--bare">Bare</button>
-    <button type="button" class="btn btn--base btn--filled">Filled</button>
-    <button type="button" class="btn btn--base btn--outline-negative">Outline-negative</button>
-    <button type="button" class="btn btn--base btn--bare-negative">Bare-negative</button>
+    <button type="button" class="btn btn--base btn--outline">btn--outline</button>
+    <button type="button" class="btn btn--base btn--bare">btn--bare</button>
+    <button type="button" class="btn btn--base btn--filled">btn--filled</button>
+</Canvas>
+
+## Button negative types
+- `btn--outline-negative` for standard buttons on dark background
+- `btn--bare-negative` for buttons without strokes on dark background
+
+<Canvas style={{backgroundColor: '#2f4356'}}>
+    <button type="button" class="btn btn--base btn--outline-negative">btn--outline-negative</button>
+    <button type="button" class="btn btn--base btn--bare-negative">btn--bare-negative</button>
 </Canvas>
 
 ## Sizes
 For size variations, the following css classes are built:
-- `btn--sm` for sm
-- `btn--base` for base
-- `btn--lg` for lg
+- `btn--sm` for small buttons
+- `btn--base` for standard size
+- `btn--lg` for large buttons
 
 <Canvas>
-    <button type="button" class="btn btn--outline btn--sm">sm</button>
-    <button type="button" class="btn btn--outline btn--base">base</button>
-    <button type="button" class="btn btn--outline btn--lg">lg</button>
+    <button type="button" class="btn btn--outline btn--sm">btn--sm</button>
+    <button type="button" class="btn btn--outline btn--base">btn--base</button>
+    <button type="button" class="btn btn--outline btn--lg">btn--lg</button>
 </Canvas>
 
 ## Icons
 For icon variations, the following css classes are built:
-- `btn--icon-none` for icon none
-- `btn--icon-only` for icon only
-- `btn__icon-left` for icon left
-- `btn__icon-right` for icon right
+- `btn--icon-only` for a button without text
+- `btn--icon-left` for icon left
+- `btn--icon-right` for icon right
+If needed, you can hide an existing icon by placing `btn--icon-none` on the button.
 
 <Canvas>
-  <button type="button" class="btn btn--outline btn--base btn--icon-none">
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      class="btn__icon icon icon--base"
-    >
-      <path
-        xmlns="http://www.w3.org/2000/svg"
-        d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-      ></path>
-    </svg>
-    <span class="btn__text">none</span>
-  </button>
   <button type="button" class="btn btn--outline btn--base btn--icon-only">
     <svg
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
       class="btn__icon icon icon--base"
     >
       <path
-        xmlns="http://www.w3.org/2000/svg"
         d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
       ></path>
     </svg>
@@ -106,11 +94,9 @@ For icon variations, the following css classes are built:
   <button type="button" class="btn btn--outline btn--base btn--icon-left">
     <svg
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
       class="btn__icon icon icon--base"
     >
       <path
-        xmlns="http://www.w3.org/2000/svg"
         d="m8.306 5.116-4.066 7.044 4.066 7.044.65-.375-3.633-6.294h15.187v-.75h-15.187l3.633-6.294z"
       ></path>
     </svg>
@@ -119,11 +105,9 @@ For icon variations, the following css classes are built:
   <button type="button" class="btn btn--outline btn--base btn--icon-right">
     <svg
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
       class="btn__icon icon icon--base"
     >
       <path
-        xmlns="http://www.w3.org/2000/svg"
         d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
       ></path>
     </svg>
