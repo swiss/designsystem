@@ -54,6 +54,7 @@
 
 }
 
+.btn,
 .btn--base {
   @apply min-h-[40px] md:min-h-[44px] lg:min-h-[48px];
   @apply text-sm md:text-base lg:text-lg;
@@ -65,15 +66,18 @@
 }
 
 
-/* ICONS */
+/* TEXT */
 
 .btn__text {
   @apply py-2 text-left;
 }
 
+/* ICONS */
+
 .btn__icon {
     @apply w-[1.4em] h-full;
-    @apply stroke-[0.3px] md:stroke-[0.35px] lg:stroke-[0.4px] stroke-current
+    @apply stroke-[0.3px] md:stroke-[0.35px] lg:stroke-[0.4px];
+    @apply stroke-current;
   }
 
 .btn--icon-none {
