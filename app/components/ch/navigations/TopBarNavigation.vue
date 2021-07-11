@@ -38,8 +38,8 @@ export default {
   },
   computed: {
     topBarNavigationClass () {
-      let base = `topbar-navigation `
-      if (this.context) base += `topbar-navigation--${this.context} `
+      let base = `top-bar-navigation `
+      if (this.context) base += `top-bar-navigation--${this.context} `
       return base
     }
   }

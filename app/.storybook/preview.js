@@ -30,6 +30,7 @@ export const parameters = {
             'Implementation'
           ],
         ],
+        'Implementation',
         'Components', [
           'Logo',
           'Button'

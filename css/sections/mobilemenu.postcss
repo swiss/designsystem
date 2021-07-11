@@ -7,7 +7,7 @@
   @apply w-full h-0;
   @apply absolute z-10;
   @apply transition-opacity duration-700;
-  @apply bg-white shadow shadow-2xl;
+  @apply bg-white shadow-2xl;
 }
 
 .mobilemenu--is-open,
@@ -17,6 +17,87 @@
   @apply overflow-y-auto;
   height: calc(100vh - 6rem);
   border: 1px solid red;
+}
 
-  @apply p-5;
+
+   /**********/
+  /*  NAVY  */
+ /**********/
+
+ .navy {
+  position: relative;
+  perspective: 1200;
+  height: 100%;
+  overflow: hidden;
+
+  &.show-level-0 {
+    .navy__level-0 {
+      transform: translateX(0%) rotateY(0deg);
+      opacity: 1;
+    }
+    .navy__level-1 {
+      transform: translateX(100%) rotateY(-30deg);
+      opacity: 0;
+    }
+    .navy__level-2 {
+      transform: translateX(200%) rotateY(-30deg);
+      opacity: 0;
+    }
+  }
+
+  &.show-level-1 {
+    .navy__level-0 {
+      transform: translateX(-100%) rotateY(-90deg);
+      opacity: 0;
+    }
+    .navy__level-1 {
+      transform: translateX(0%) rotateY(0deg);
+      opacity: 1;
+    }
+    .navy__level-2 {
+      transform: translateX(100%) rotateY(-30deg);
+      opacity: 0;
+    }
+  }
+
+  &.show-level-2 {
+    .navy__level-0 {
+      transform: translateX(-200%);
+      opacity: 0;
+    }
+    .navy__level-1 {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    .navy__level-2 {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+}
+
+.navy__has-children {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+/* remark: adapt displaySubmenu function in commom.js if the 600ms duration is modified: */
+
+.navy__level-0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: transform 600ms ease-in-out, opacity 600ms ease-in-out;
+}
+
+.navy__level-1 {
+  position: absolute;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 600ms ease-in-out, opacity 600ms ease-in-out;
 }
