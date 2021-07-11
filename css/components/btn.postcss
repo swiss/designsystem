@@ -2,13 +2,95 @@
   BTN
 \*----------------------------------------*/
 
-.🇨🇭-btn {
-  @apply inline-flex items-center py-2 px-4;
-  @apply text-primary-600 font-bold;
-  @apply bg-primary-100;
-  @apply border border-primary-400 rounded-sm;
+
+/* TYPES */
+.btn {
+  @apply inline-flex items-center;
+  @apply rounded-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
 }
 
-.🇨🇭-btn--icon-left {
-  @apply flex-row-reverse;
+.btn--outline {
+  @apply text-primary-600 font-normal;
+  @apply border border-primary-600;
+  @apply hover:text-primary-700 hover:border-primary-700;
+  @apply focus:text-primary-600 focus:border-primary-600;
+}
+
+.btn--bare {
+  @apply text-secondary-800 font-normal;
+  @apply hover:text-primary-600;
+}
+
+.btn--filled {
+  @apply text-white font-bold;
+  @apply bg-secondary-400;
+  @apply border border-secondary-400;
+  @apply hover:text-secondary-100;
+  @apply focus:text-white;
+}
+
+.btn--outline-negative {
+  @apply text-white font-bold;
+  @apply bg-secondary-500;
+  @apply border border-white;
+  @apply hover:text-secondary-100 hover:border-secondary-100;
+  @apply focus:text-white focus:border-white;
+}
+
+.btn--bare-negative {
+  @apply text-white font-bold;
+  @apply hover:text-secondary-100;
+  @apply focus:text-white;
+}
+
+
+/* SIZES */
+.btn--base {
+  @apply text-sm md:text-base lg:text-lg;
+  @apply py-[11px] px-[16px] md:py-[10px] md:px-[16px] lg:py-[10px] lg:px-[20px];
+}
+
+.btn--sm {
+  @apply text-xs md:text-sm lg:text-base;
+  @apply py-[11px] px-[16px] md:py-[10px] md:px-[16px] lg:py-[10px] lg:px-[20px];
+}
+
+.btn--lg {
+  @apply text-base md:text-lg lg:text-xl;
+  @apply py-[11px] px-[16px] md:py-[10px] md:px-[16px] lg:py-[10px] lg:px-[20px];
+}
+
+
+/* ICONS */
+
+/* TODO icon: same height with or without label */
+/* TODO icon: larger stroke */
+/* TODO icon: margins between text and icon */
+/* TODO icon: check related mdx */
+
+.btn--icon-none {
+  .btn__icon {
+    @apply hidden;
+  }
+}
+
+.btn--icon-only {
+  .btn__text {
+    @apply hidden;
+  }
+}
+
+.btn--icon-left {
+  .btn__icon {
+    @apply mr-[8px];
+  }
+}
+
+.btn--icon-right {
+  flex-direction: row-reverse;
+
+  .btn__icon {
+    @apply ml-[8px];
+  }
 }

@@ -1,0 +1,132 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Btn from '../../ch/components/Btn.vue';
+
+<Meta
+  title="Components/Button"
+  component={Btn}
+  argTypes={{
+    type:    { control: { type: 'select', options: ['outline', 'bare', 'filled', 'outline-negative', 'bare-negative'] } },
+    size:    { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    icon:    { control: { type: 'select', options: ['ArrowRight', 'ArrowLeft', 'Book'] } },
+    iconPos: { control: { type: 'select', options: ['none', 'only','left', 'right'] } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Btn },
+  template: '<Btn :type="type" :size="size" :icon="icon" :iconPos="iconPos" :label="label" />',
+});
+
+# Button
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      type: 'outline',
+      size: 'base',
+      icon: 'ArrowRight',
+      iconPos: 'none',
+      label: 'Button text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+[Example](?path=/story/components-button--example)
+
+## Types
+For type variations, the following css classes are built:
+- `btn--outline` for outline
+- `btn--bare` for bare
+- `btn--filled` for filled
+- `btn--outline-negative` for outline-negative
+- `btn--bare-negative` for bare-negative
+
+<Canvas>
+    <button type="button" class="btn btn--base btn--outline">Outline</button>
+    <button type="button" class="btn btn--base btn--bare">Bare</button>
+    <button type="button" class="btn btn--base btn--filled">Filled</button>
+    <button type="button" class="btn btn--base btn--outline-negative">Outline-negative</button>
+    <button type="button" class="btn btn--base btn--bare-negative">Bare-negative</button>
+</Canvas>
+
+## Sizes
+For size variations, the following css classes are built:
+- `btn--sm` for sm
+- `btn--base` for base
+- `btn--lg` for lg
+
+<Canvas>
+    <button type="button" class="btn btn--outline btn--sm">sm</button>
+    <button type="button" class="btn btn--outline btn--base">base</button>
+    <button type="button" class="btn btn--outline btn--lg">lg</button>
+</Canvas>
+
+## Icons
+For icon variations, the following css classes are built:
+- `btn--icon-none` for icon none
+- `btn--icon-only` for icon only
+- `btn__icon-left` for icon left
+- `btn__icon-right` for icon right
+
+<Canvas>
+  <button type="button" class="btn btn--outline btn--base btn--icon-none">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+      ></path>
+    </svg>
+    <span class="btn__text">none</span>
+  </button>
+  <button type="button" class="btn btn--outline btn--base btn--icon-only">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+      ></path>
+    </svg>
+    <span class="btn__text">Button text</span>
+  </button>
+  <button type="button" class="btn btn--outline btn--base btn--icon-left">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m8.306 5.116-4.066 7.044 4.066 7.044.65-.375-3.633-6.294h15.187v-.75h-15.187l3.633-6.294z"
+      ></path>
+    </svg>
+    <span class="btn__text">icon-left</span>
+  </button>
+  <button type="button" class="btn btn--outline btn--base btn--icon-right">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+      ></path>
+    </svg>
+    <span class="btn__text">icon-right</span>
+  </button>
+</Canvas>

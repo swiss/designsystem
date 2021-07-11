@@ -1,13 +1,16 @@
 <template>
-<div>
-  <button
-    type="button"
-    class="btn btn--test"
-  >
-    {{ label }}
-    <SvgIcon icon="ArrowRight" />
+  <button type="button" :class="classes">
+    <SvgIcon
+      v-if="this.icon"
+      :icon="this.icon"
+      class="btn__icon" />
+    <span
+      v-if="this.label"
+      class="btn__text"
+    >
+      {{ label }}
+    </span>
   </button>
-</div>
 </template>
 
 <script>
@@ -19,23 +22,51 @@ export default {
     SvgIcon
   },
   props: {
-    label: {
+    type: {
       type: String,
-      required: true,
-    },
-    primary: {
-      type: Boolean,
-      default: false,
+      validator: (prop) => [
+        'outline',
+        'bare',
+        'filled',
+        'outline-negative',
+        'bare-negative'
+      ].includes(prop)
     },
     size: {
       type: String,
-      validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
-      },
+      validator: (prop) => [
+        'sm',
+        'base',
+        'lg'
+      ].includes(prop)
     },
-    backgroundColor: {
+    icon: {
       type: String,
+      default: ''
     },
+    iconPos: {
+      type: String,
+      validator: (prop) => [
+        'none',
+        'only',
+        'left',
+        'right',
+      ].includes(prop)
+    },
+    label: {
+      type: String,
+      required: true,
+    }
   },
-};
+
+  computed: {
+    classes () {
+      let base = 'btn '
+      if (this.type) base += `btn--${this.type} `
+      if (this.size) base += `btn--${this.size} `
+      if (this.iconPos) base += `btn--icon-${this.iconPos} `
+      return base
+    },
+  }
+}
 </script>
