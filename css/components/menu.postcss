@@ -1,26 +1,29 @@
-.menu {
-  @apply flex flex-col overflow-hidden;
-  &.horizontal{
-    @apply flex-row inline-flex;
-    li{
-      @apply flex-row;
-    }
-  }
-  li{
-    @apply flex flex-col items-stretch;
-    >a, >span{
-      @apply flex items-center transition ease-in-out duration-200;
-    }
-    >a{
+/*----------------------------------------*\
+  MENU
+\*----------------------------------------*/
+
+@layer utilities {
+  @variants responsive {
+    .menu {}
+
+    .menu__item {
+      @apply flex items-center justify-between;
+      @apply px-5 py-4;
+      @apply border-b border-opacity-0;
       @apply cursor-pointer;
+
       &:focus {
         @apply outline-none;
       }
-    }
-    &.disabled{
-      &>a, &>span{
-        @apply cursor-auto;
+
+      svg {
+        height: 1.5em;
       }
+    }
+
+    .menu__item--border {
+      @apply border-opacity-100 border-secondary-100;
     }
   }
 }
+

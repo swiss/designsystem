@@ -2,16 +2,11 @@
   <div
     id="mobilemenu"
     class="mobilemenu"
-    :class="isOpen ? 'mobilemenu--is-open' : '' ">
-    <div class="navy show-level-0">
-      <div class="navy__level-0">
-        <MainNavigation context="mobile" />
-        <MetaNavigation context="mobile" />
-        <TopBarNavigation context="mobile" />
-      </div>
-      <div class="navy__level-1"></div>
-      <div class="navy__level-2"></div>
-    </div>
+    :class="isOpen ? 'mobilemenu--is-open' : '' "
+  >
+    <MainNavigation context="mobile" />
+    <MetaNavigation context="mobile" />
+    <TopBarNavigation context="mobile" />
   </div>
 </template>
 
@@ -37,7 +32,7 @@ export default {
     }
   },
   mounted () {
-    Navy.init('#mobilemenu > .navy')
+    Navy.init('#mobilemenu nav', '#mobilemenu' )
   }
 }
 </script>
