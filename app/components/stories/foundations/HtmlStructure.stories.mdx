@@ -56,3 +56,48 @@ Below a schema to explain how these navigations are displayed in the header depe
 import imageFile from '../../../static/images/html-structure.png';
 
 <img src={imageFile} />
+
+# Main navigation tree
+
+As we can see above, the main The `<MainNavigation />` is injected in two separate places, but it's html structure remains the same:
+
+```html
+<nav aria-label="Main navigation" class="main-navigation">
+  <ul>
+    <!-- list of <li> -->
+  </ul>
+</nav>
+```
+
+Inside this navigation, `<li>` elements can have two aspects, regarding if they have children or not:
+
+```html
+<li>
+  <a href="#">
+    Menu item without children
+  </a>
+</li>
+```
+or
+
+```html
+<li>
+  <a role="button" class="navy__has-children">
+    <span>Menu item with children</span>
+    <SvgIcon icon="ArrowRight" size="lg" />
+  </a>
+  <ul>
+    <li>
+      <a role="button" class="navy__back">
+        <SvgIcon icon="ArrowLeft" size="lg" />
+        <span>Back</span>
+      </a>
+      <span class="navy__title">Menu item with children</span>
+      <a href="#">Overview</a>
+    </li>
+    <!-- list of <li> children here -->
+    <!-- reuse the same pattern recursively if child element has children too -->
+  </ul>
+</li>
+```
+

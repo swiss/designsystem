@@ -1,20 +1,11 @@
 const Navy = {
 
-  showNextLevel (currentLevel) {
-    Navy.container.classList.remove('show-level-0','show-level-1','show-level-2','show-level-3','show-level-4','show-level-5','show-level-6')
-    Navy.container.classList.add(`show-level-${currentLevel+1}`)
+  showLevel(level) {
+    Navy.container.classList.remove('show-level-0', 'show-level-1', 'show-level-2', 'show-level-3', 'show-level-4', 'show-level-5', 'show-level-6', 'show-level-7')
+    Navy.container.classList.add(`show-level-${level}`)
   },
 
-  showPrevLevel (currentLevel) {
-    Navy.container.classList.remove('show-level-0','show-level-1','show-level-2','show-level-3','show-level-4','show-level-5','show-level-6')
-     Navy.container.classList.add(`show-level-${currentLevel-1}`)
-
-    // set focus on the `parent` link after the transition
-    // 600ms is the duration of the sliding animation (find it in _navy.scss)
-    setTimeout(function () {Navy.currentMenuLink.focus() }, 610)
-  },
-
-  displaySubmenu (target, submenus) {
+  displayRelatedSubmenu (target, submenus) {
     [].forEach.call(submenus, function (submenu) {
       submenu.classList.add('hidden')
     })
@@ -26,8 +17,6 @@ const Navy = {
   },
 
   initEvents (nextButtons, backButtons, navy, container, submenus, level) {
-    // TODO make it recursive
-    // TODO separate buttin events from the rest
 
     [].forEach.call(nextButtons, function (btn) {
       btn.relatedMenu = btn.nextElementSibling
@@ -36,7 +25,7 @@ const Navy = {
 
       btn.addEventListener('click', function () {
         Navy.showNextLevel(0)
-        Navy.displaySubmenu(btn.relatedMenu, submenus)
+        Navy.displayRelatedSubmenu(btn.relatedMenu, submenus)
         Navy.currentMenuLink = btn
       })
     });
@@ -48,58 +37,86 @@ const Navy = {
     })
   },
 
-  init (navigations, target) {
+  parseTree(ul, level) {
+    let nextButtons = ul.querySelectorAll(':scope > li > .navy__has-children')
+    if ( nextButtons.length === 0 ) return
+
+    let backButtons = ul.querySelectorAll(':scope > li > ul > li > .navy__back')
+    let submenus = ul.querySelectorAll(":scope > li > ul");
+
+    [].forEach.call(nextButtons, function (btn) {
+      btn.style.backgroundColor = 'yellow'
+      btn.relatedMenu = btn.nextElementSibling
+
+      //container.appendChild(btn.relatedMenu)
+      Navy.level[level+1].appendChild(btn.relatedMenu)
+
+      btn.addEventListener('click', function () {
+        Navy.showLevel(level+1)
+        console.log('btn.relatedMenu, submenus', btn.relatedMenu, submenus)
+        Navy.displayRelatedSubmenu(btn.relatedMenu, submenus)
+        Navy.currentMenuLink = btn
+      })
+      Navy.parseTree(btn.relatedMenu, level+1)
+    });
+
+    [].forEach.call(backButtons, function (btn) {
+      btn.addEventListener('click', function () {
+        Navy.showLevel(level)
+      })
+    })
+  },
+
+  init (ulMenus, target) {
 
     // build navy structure and inject it in the target:
     const targetElement = document.querySelector(target)
+
+    Navy.currentMenuLink = undefined
     Navy.container = document.createElement('div')
-    Navy.level0 = document.createElement('div')
-    Navy.level1 = document.createElement('div')
-    Navy.level2 = document.createElement('div')
-    Navy.level3 = document.createElement('div')
-    Navy.level4 = document.createElement('div')
-    Navy.level5 = document.createElement('div')
-    Navy.level6 = document.createElement('div')
+    Navy.level = []
+    Navy.level[0] = document.createElement('div')
+    Navy.level[1] = document.createElement('div')
+    Navy.level[2] = document.createElement('div')
+    Navy.level[3] = document.createElement('div')
+    Navy.level[4] = document.createElement('div')
+    Navy.level[5] = document.createElement('div')
+    Navy.level[6] = document.createElement('div')
+    Navy.level[7] = document.createElement('div')
 
     Navy.container.classList.add('navy', 'show-level-0')
-    Navy.level0.classList.add('navy__level-0')
-    Navy.level1.classList.add('navy__level-1')
-    Navy.level2.classList.add('navy__level-2')
-    Navy.level3.classList.add('navy__level-3')
-    Navy.level4.classList.add('navy__level-4')
-    Navy.level5.classList.add('navy__level-5')
-    Navy.level6.classList.add('navy__level-6')
+    Navy.level[0].classList.add('navy__level-0')
+    Navy.level[1].classList.add('navy__level-1')
+    Navy.level[2].classList.add('navy__level-2')
+    Navy.level[3].classList.add('navy__level-3')
+    Navy.level[4].classList.add('navy__level-4')
+    Navy.level[5].classList.add('navy__level-5')
+    Navy.level[6].classList.add('navy__level-6')
+    Navy.level[7].classList.add('navy__level-7')
 
     targetElement.appendChild(Navy.container)
-    Navy.container.appendChild(Navy.level0)
-    Navy.container.appendChild(Navy.level1)
-    Navy.container.appendChild(Navy.level2)
-    Navy.container.appendChild(Navy.level3)
-    Navy.container.appendChild(Navy.level4)
-    Navy.container.appendChild(Navy.level5)
-    Navy.container.appendChild(Navy.level6)
+    Navy.container.appendChild(Navy.level[0])
+    Navy.container.appendChild(Navy.level[1])
+    Navy.container.appendChild(Navy.level[2])
+    Navy.container.appendChild(Navy.level[3])
+    Navy.container.appendChild(Navy.level[4])
+    Navy.container.appendChild(Navy.level[5])
+    Navy.container.appendChild(Navy.level[6])
+    Navy.container.appendChild(Navy.level[7])
 
 
-    // parse all navigations and init events:
-    let navs = document.querySelectorAll(navigations)
-    Navy.currentMenuLink = undefined
+    // parse all uls and init events:
+    let uls = document.querySelectorAll(ulMenus)
 
-    navs.forEach(function (navy) {
+    uls.forEach(function (ul) {
 
       // inject navigation in navy__level0
-      Navy.level0.appendChild(navy)
+      Navy.level[0].appendChild(ul)
 
-      let nextButtons1 = navy.querySelectorAll('.navy__has-children')
-      let backButtons1 = navy.querySelectorAll('.navy__back')
-
-      let submenus1 = navy.querySelectorAll("ul > li > ul")
-
-
-      //Navy.initEvents(nextButtons1, backButtons1, navy, Navy.level1, submenus1, 1)
+      // parse tree and inject uls in their respective slides
+      Navy.parseTree(ul, 0)
     })
   }
-
-
 }
 
 export default Navy
