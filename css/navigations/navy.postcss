@@ -7,11 +7,14 @@
   position: relative;
   perspective: 1200;
   height: 100%;
+  overflow-x: hidden;
   overflow-y: scroll;
 
   & li > a:not(.navy__back),
-  & li > span:not(.navy__title) {
-    @apply menu__item menu__item--border;
+  & li > span:not(.navy__title),
+  & li > button {
+    @apply menu__item lg:menu__item--condensed;
+    @apply menu__item--border w-full;
   }
 }
 
@@ -23,7 +26,7 @@
 }
 
 .navy__back {
-  @apply menu__item;
+  @apply menu__item lg:menu__item--condensed;
   @apply justify-start;
   @apply text-text-500;
 }
@@ -212,5 +215,17 @@
   .navy__level-7 {
     transform: translateX(0%);
     opacity: 1;
+  }
+}
+
+/* ul background colors on mobile */
+
+.mobile-menu {
+  .navy__level-0 ul:nth-of-type(2) a {
+    @apply menu__item--grey;
+  }
+
+  .navy__level-0 ul:nth-of-type(3) a {
+    @apply menu__item--negative;
   }
 }

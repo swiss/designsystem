@@ -12,6 +12,10 @@
       @apply border-b border-opacity-0;
       @apply cursor-pointer;
 
+      &:hover {
+        @apply bg-secondary-50;
+      }
+
       &:focus {
         @apply text-red-600;
       }
@@ -21,8 +25,30 @@
       }
     }
 
+    .menu__item--condensed {
+      @apply px-5 py-3;
+    }
+
     .menu__item--border {
       @apply border-opacity-100 border-secondary-100;
+    }
+
+    .menu__item--grey {
+      @apply bg-secondary-50;
+    }
+
+    .menu__item--negative {
+      @apply bg-secondary-600;
+      @apply text-white;
+      @apply border-secondary-400;
+
+      &:hover {
+        @apply bg-secondary-700;
+      }
+
+      &:focus {
+        @apply text-red-300;
+      }
     }
   }
 }

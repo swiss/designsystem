@@ -1,8 +1,8 @@
 const Navy = {
 
   showLevel(level) {
-    Navy.container.classList.remove('show-level-0', 'show-level-1', 'show-level-2', 'show-level-3', 'show-level-4', 'show-level-5', 'show-level-6', 'show-level-7')
-    Navy.container.classList.add(`show-level-${level}`)
+    document.body.classList.remove('show-level-0', 'show-level-1', 'show-level-2', 'show-level-3', 'show-level-4', 'show-level-5', 'show-level-6', 'show-level-7')
+    document.body.classList.add(`show-level-${level}`)
   },
 
   displayRelatedSubmenu (target, submenus) {
@@ -32,7 +32,6 @@ const Navy = {
 
       btn.addEventListener('click', function () {
         Navy.showLevel(level+1)
-        // console.log('btn, btn.relatedMenu, submenus, LEVEL', btn, btn.relatedMenu, submenus, level)
         Navy.displayRelatedSubmenu(btn.relatedMenu, submenus)
         Navy.currentMenuLink = btn
       })
@@ -50,14 +49,14 @@ const Navy = {
 
   init (ulMenus, target, options) {
 
-
-    console.log('context', options.context)
-
     // build navy structure and inject it in the target:
+    document.body.classList.add('show-level-0')
     const targetElement = document.querySelector(target)
 
     Navy.currentMenuLink = undefined
     Navy.container = document.createElement('div')
+    Navy.container.classList.add('navy')
+
     Navy.level = []
     Navy.level[0] = document.createElement('div')
     Navy.level[1] = document.createElement('div')
@@ -67,8 +66,8 @@ const Navy = {
     Navy.level[5] = document.createElement('div')
     Navy.level[6] = document.createElement('div')
     Navy.level[7] = document.createElement('div')
+    Navy.level[8] = document.createElement('div')
 
-    Navy.container.classList.add('navy', 'show-level-0')
     Navy.level[0].classList.add('navy__level-0')
     Navy.level[1].classList.add('navy__level-1')
     Navy.level[2].classList.add('navy__level-2')
@@ -77,6 +76,7 @@ const Navy = {
     Navy.level[5].classList.add('navy__level-5')
     Navy.level[6].classList.add('navy__level-6')
     Navy.level[7].classList.add('navy__level-7')
+    Navy.level[8].classList.add('navy__level-8')
 
     targetElement.appendChild(Navy.container)
     Navy.container.appendChild(Navy.level[0])
@@ -87,7 +87,7 @@ const Navy = {
     Navy.container.appendChild(Navy.level[5])
     Navy.container.appendChild(Navy.level[6])
     Navy.container.appendChild(Navy.level[7])
-
+    Navy.container.appendChild(Navy.level[8])
 
     // parse all uls and init events:
     let uls = document.querySelectorAll(ulMenus)
@@ -100,7 +100,7 @@ const Navy = {
       // parse tree and inject uls in their respective slides
       Navy.parseTree(ul, 0)
     })
-  }
+  },
 }
 
 export default Navy

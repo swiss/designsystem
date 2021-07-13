@@ -32,7 +32,7 @@ export default {
     }
   },
   mounted () {
-    Navy.init('#mobile-menu > nav > ul', '#mobile-menu', {context: 'mobile'} )
+    Navy.init('#mobile-menu > nav > ul', '#mobile-menu' )
   }
 }
 </script>

@@ -20,7 +20,8 @@ import Navy from '../../../scripts/Navy.js'
 export default {
   name: 'DesktopMenu',
   components: {
-    MainNavigation
+    MainNavigation,
+    Navy
   },
   props: {
     isOpen: {
@@ -30,11 +31,7 @@ export default {
     }
   },
   mounted () {
-    Navy.init(
-      '#desktop-menu > .container > nav > ul > li > ul',
-      '#desktop-menu__drawer',
-      {context: 'desktop'}
-    )
+    Navy.init('#desktop-menu > .container > nav > ul > li > ul', '#desktop-menu__drawer')
   }
 }
 </script>

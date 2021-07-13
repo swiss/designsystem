@@ -10,16 +10,13 @@
         </a>
       </li>
       <li>
-        <a
-          role="button"
-          class="navy__has-children"
-        >
+        <a href="#" role="button" class="navy__has-children">
           <span>Geodaten</span>
           <SvgIcon icon="ArrowRight" size="lg" />
         </a>
         <ul>
           <li>
-            <a role="button" class="navy__back">
+            <a href="#" role="button" class="navy__back">
               <SvgIcon icon="ArrowLeft" size="lg" />
               <span>Back</span>
             </a>
@@ -27,16 +24,13 @@
             <a href="#">Überblick</a>
           </li>
           <li>
-            <a
-              role="button"
-              class="navy__has-children"
-            >
+            <a href="#" role="button" class="navy__has-children">
               <span>test level1</span>
               <SvgIcon icon="ArrowRight" size="lg" />
             </a>
             <ul>
               <li>
-                <a role="button" class="navy__back">
+                <a href="#" role="button" class="navy__back">
                   <SvgIcon icon="ArrowLeft" size="lg" />
                   <span>Back</span>
                 </a>
@@ -44,16 +38,13 @@
                 <a href="#">Überblick</a>
               </li>
               <li>
-                <a
-                  role="button"
-                  class="navy__has-children"
-                >
+                <a href="#" role="button" class="navy__has-children">
                   <span>test level2</span>
                   <SvgIcon icon="ArrowRight" size="lg" />
                 </a>
                 <ul>
                   <li>
-                    <a role="button" class="navy__back">
+                    <a href="#" role="button" class="navy__back">
                       <SvgIcon icon="ArrowLeft" size="lg" />
                       <span>Back</span>
                     </a>
@@ -61,16 +52,13 @@
                     <a href="#">Überblick</a>
                   </li>
                   <li>
-                    <a
-                      role="button"
-                      class="navy__has-children"
-                    >
+                    <a href="#" role="button" class="navy__has-children">
                       <span>test level3</span>
                       <SvgIcon icon="ArrowRight" size="lg" />
                     </a>
                     <ul>
                       <li>
-                        <a role="button" class="navy__back">
+                        <a href="#" role="button" class="navy__back">
                           <SvgIcon icon="ArrowLeft" size="lg" />
                           <span>Back</span>
                         </a>
@@ -78,16 +66,13 @@
                         <a href="#">Überblick</a>
                       </li>
                       <li>
-                        <a
-                          role="button"
-                          class="navy__has-children"
-                        >
+                        <a href="#" role="button" class="navy__has-children">
                           <span>test level4</span>
                           <SvgIcon icon="ArrowRight" size="lg" />
                         </a>
                         <ul>
                           <li>
-                            <a role="button" class="navy__back">
+                            <a href="#" role="button" class="navy__back">
                               <SvgIcon icon="ArrowLeft" size="lg" />
                               <span>Back</span>
                             </a>
@@ -95,16 +80,13 @@
                             <a href="#">Überblick</a>
                           </li>
                           <li>
-                            <a
-                              role="button"
-                              class="navy__has-children"
-                            >
+                            <a href="#" role="button" class="navy__has-children">
                               <span>test level5</span>
                               <SvgIcon icon="ArrowRight" size="lg" />
                             </a>
                             <ul>
                               <li>
-                                <a role="button" class="navy__back">
+                                <a href="#" role="button" class="navy__back">
                                   <SvgIcon icon="ArrowLeft" size="lg" />
                                   <span>Back</span>
                                 </a>
@@ -112,16 +94,13 @@
                                 <a href="#">Überblick</a>
                               </li>
                               <li>
-                                <a
-                                  role="button"
-                                  class="navy__has-children"
-                                >
+                                <a href="#" role="button" class="navy__has-children">
                                   <span>test level6</span>
                                   <SvgIcon icon="ArrowRight" size="lg" />
                                 </a>
                                 <ul>
                                   <li>
-                                    <a role="button" class="navy__back">
+                                    <a href="#" role="button" class="navy__back">
                                       <SvgIcon icon="ArrowLeft" size="lg" />
                                       <span>Back</span>
                                     </a>
@@ -138,20 +117,6 @@
                   </li>
                 </ul>
               </li>
-            </ul>
-          </li>
-          <li><span>Verzeichnis</span>
-            <ul>
-              <li><span>Basisdaten</span>
-                <ul>
-                  <li><a href="#">Koordinatenreferenzsysteme</a></li>
-                  <li><a href="#">Geografische Bezeichnungen</a></li>
-                  <li><a href="#">Verwaltungseinheiten</a></li>
-                  <li><a href="#">Adressen</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Oberflächendarstellung und -modelle</a></li>
-              <li><a href="#">Raum und Bevölkerung</a></li>
             </ul>
           </li>
         </ul>
@@ -176,7 +141,7 @@
         </a>
         <ul>
           <li>
-            <a role="button" class="navy__back">
+            <a href="#" role="button" class="navy__back">
               <SvgIcon icon="ArrowLeft" size="lg" />
               <span>Back</span>
             </a>

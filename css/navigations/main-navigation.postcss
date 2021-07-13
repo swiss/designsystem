@@ -15,19 +15,27 @@
   @apply hidden lg:flex;
   @apply h-14 xl:h-16 2xl:h-20;
   @apply -ml-4;
-  @apply text-sm xl:text-base 2xl:text-lg;
-
-
-  & > ul > li > a {
-    @apply lg:flex lg:items-center;
-    @apply lg:h-full lg:px-4;
-  }
 
   ul {
     @apply flex h-full;
   }
 
   ul ul {
-    display: none;
+    @apply hidden;
+  }
+
+  & > ul > li > a {
+    @apply lg:flex lg:items-center;
+    @apply lg:h-full lg:px-4;
+    @apply hover:text-primary-600;
+
+    &.clicked {
+      @apply text-primary-600 shadow-2xl;
+    }
+  }
+
+  & > ul > li > a > svg {
+    @apply hidden;
   }
 }
+

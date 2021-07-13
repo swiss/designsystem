@@ -10,10 +10,15 @@ export default {
 	},
   methods: {
     alterMenuClasses () {
-      if (this.isMobileMenuOpen) {
+      let mobilemenu = document.getElementById('mobile-menu')
+      let context = window.getComputedStyle(mobilemenu).display === "none" ? 'desktop' : 'mobile'
+
+      if (context === 'mobile' && this.isMobileMenuOpen) {
         document.body.classList.add('body--mobile-menu-is-open')
+        this.$store.dispatch('layout/openMobileMenu')
       } else {
         document.body.classList.remove('body--mobile-menu-is-open')
+        this.$store.dispatch('layout/closeMobileMenu')
       }
     },
   },
@@ -24,7 +29,11 @@ export default {
   },
   mounted () {
     this.alterMenuClasses()
-  }
+    window.addEventListener("resize", this.alterMenuClasses)
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.alterMenuClasses)
+  },
 
 };
 </script>
