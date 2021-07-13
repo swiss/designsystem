@@ -12,9 +12,19 @@ body {
   @apply transition-transform duration-700;
 }
 
-.body--mobilemenu-is-open {
+.body--mobile-menu-is-open {
   height: calc(100vh + 3rem);
   @apply overflow-hidden;
   @apply -translate-y-12;
+}
+
+#main-header {
+  @apply relative z-20;
+}
+#main-content {
+  @apply relative z-10;
+}
+#main-footer {
+  @apply relative z-0;
 }
 

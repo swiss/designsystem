@@ -1,13 +1,13 @@
 <template>
   <div
-    id="mainmenu"
-    class="mainmenu"
+    id="desktop-menu"
+    class="desktop-menu"
   >
     <div class="container container--flex">
       <MainNavigation context="desktop" />
       <div
-        class="mainmenu__drawer"
-        id="mainmenu__drawer"
+        class="desktop-menu__drawer"
+        id="desktop-menu__drawer"
       />
     </div>
   </div>
@@ -18,7 +18,7 @@ import MainNavigation from '../navigations/MainNavigation.vue'
 import Navy from '../../../scripts/Navy.js'
 
 export default {
-  name: 'MainMenu',
+  name: 'DesktopMenu',
   components: {
     MainNavigation
   },
@@ -31,8 +31,8 @@ export default {
   },
   mounted () {
     Navy.init(
-      '#mainmenu > .container > nav > ul > li > ul',
-      '#mainmenu__drawer',
+      '#desktop-menu > .container > nav > ul > li > ul',
+      '#desktop-menu__drawer',
       {context: 'desktop'}
     )
   }

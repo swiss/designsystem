@@ -1,8 +1,8 @@
 <template>
   <div
-    id="mobilemenu"
-    class="mobilemenu"
-    :class="isOpen ? 'mobilemenu--is-open' : '' "
+    id="mobile-menu"
+    class="mobile-menu"
+    :class="isOpen ? 'mobile-menu--is-open' : '' "
   >
     <MainNavigation context="mobile" />
     <MetaNavigation context="mobile" />
@@ -32,7 +32,7 @@ export default {
     }
   },
   mounted () {
-    Navy.init('#mobilemenu > nav > ul', '#mobilemenu', {context: 'mobile'} )
+    Navy.init('#mobile-menu > nav > ul', '#mobile-menu', {context: 'mobile'} )
   }
 }
 </script>

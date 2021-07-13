@@ -11,14 +11,17 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
   <header id="main-header">
     <div class="top-bar" />
     <div class="top-header" />
-    <div class="mainmenu" />
-    <div class="mobilemenu" />
+    <div class="desktop-menu" />
+    <div class="mobile-menu" />
+    <div class="breadcrumb" />
   </header>
   <main id="main-content">
-    <div class="breadcrumb" />
-    <div class="container">
-      <!-- main content here -->
-    </div>
+    <section class="container">
+      <!-- content with max width here -->
+    </section>
+    <section>
+      <!-- full width content here -->
+    </section>
   </main>
   <footer id="main-footer">
     <div class="container">
@@ -36,15 +39,16 @@ Let's have a closer look at the main header:
 <header id="main-header">
   <div class="top-bar" />
   <div class="top-header" />
-  <div class="mainmenu" />
-  <div class="mobilemenu" />
+  <div class="desktop-menu" />
+  <div class="mobile-menu" />
+  <div class="breadcrumb" />
 </header>
 ```
 The three first blocks contain a navigation in a desktop context:
 
 - `.top-bar` contains the `.top-bar-navigation`
 - `.top-header` contains the `.meta-navigation`
-- `.mainmenu` contains the `.main-navigation`
+- `.desktop-menu` contains the `.main-navigation`
 
 In a mobile context though, these three navigations are all regrouped in the `.mobilemenu` container.
 
@@ -84,12 +88,16 @@ or
 <li>
   <a role="button" class="navy__has-children">
     <span>Menu item with children</span>
-    <SvgIcon icon="ArrowRight" size="lg" />
+    <svg class="icon icon--lg" aria-hidden="true" focusable="false" role="img">
+      <use xlink:href="#ArrowRight" />
+    </svg>
   </a>
   <ul>
     <li>
       <a role="button" class="navy__back">
-        <SvgIcon icon="ArrowLeft" size="lg" />
+        <svg class="icon icon--lg" aria-hidden="true" focusable="false" role="img">
+          <use xlink:href="#ArrowLeft" />
+        </svg>
         <span>Back</span>
       </a>
       <span class="navy__title">Menu item with children</span>

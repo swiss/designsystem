@@ -11,9 +11,9 @@ export default {
   methods: {
     alterMenuClasses () {
       if (this.isMobileMenuOpen) {
-        document.body.classList.add('body--mobilemenu-is-open')
+        document.body.classList.add('body--mobile-menu-is-open')
       } else {
-        document.body.classList.remove('body--mobilemenu-is-open')
+        document.body.classList.remove('body--mobile-menu-is-open')
       }
     },
   },
