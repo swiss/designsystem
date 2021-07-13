@@ -1,7 +1,7 @@
 <template>
   <div>
     <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
-    <header>
+    <header id="mainheader">
       <TopBar />
       <TopHeader />
       <MainMenu />

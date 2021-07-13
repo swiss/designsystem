@@ -16,27 +16,6 @@ const Navy = {
     setTimeout(function () { target.querySelector('.navy__back').focus() }, 610)
   },
 
-  initEvents (nextButtons, backButtons, navy, container, submenus, level) {
-
-    [].forEach.call(nextButtons, function (btn) {
-      btn.relatedMenu = btn.nextElementSibling
-
-      container.appendChild(btn.relatedMenu)
-
-      btn.addEventListener('click', function () {
-        Navy.showNextLevel(0)
-        Navy.displayRelatedSubmenu(btn.relatedMenu, submenus)
-        Navy.currentMenuLink = btn
-      })
-    });
-
-    [].forEach.call(backButtons, function (btn) {
-      btn.addEventListener('click', function () {
-        Navy.showPrevLevel(1)
-      })
-    })
-  },
-
   parseTree(ul, level) {
     let nextButtons = ul.querySelectorAll(':scope > li > .navy__has-children')
     if ( nextButtons.length === 0 ) return
@@ -45,18 +24,20 @@ const Navy = {
     let submenus = ul.querySelectorAll(":scope > li > ul");
 
     [].forEach.call(nextButtons, function (btn) {
-      btn.style.backgroundColor = 'yellow'
       btn.relatedMenu = btn.nextElementSibling
+      btn.style.backgroundColor = "yellow"
 
-      //container.appendChild(btn.relatedMenu)
+      // inject menu in it's respective slide:
       Navy.level[level+1].appendChild(btn.relatedMenu)
 
       btn.addEventListener('click', function () {
         Navy.showLevel(level+1)
-        console.log('btn.relatedMenu, submenus', btn.relatedMenu, submenus)
+        // console.log('btn, btn.relatedMenu, submenus, LEVEL', btn, btn.relatedMenu, submenus, level)
         Navy.displayRelatedSubmenu(btn.relatedMenu, submenus)
         Navy.currentMenuLink = btn
       })
+
+      // recursion for next navigation levels
       Navy.parseTree(btn.relatedMenu, level+1)
     });
 
@@ -67,7 +48,10 @@ const Navy = {
     })
   },
 
-  init (ulMenus, target) {
+  init (ulMenus, target, options) {
+
+
+    console.log('context', options.context)
 
     // build navy structure and inject it in the target:
     const targetElement = document.querySelector(target)
