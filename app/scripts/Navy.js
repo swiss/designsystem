@@ -80,31 +80,88 @@ const Navy = {
     });
   },
 
+  setDrawerXPosition (btn) {
+    let rect = btn.getBoundingClientRect();
+    Navy.drawer.style.transform = `translateX(${rect.left}px)`;
+  },
 
-  initDesktop(navigationItem, target) {
+  closeSubmenu(mainmenuBtn, relatedMenu, submenus) {
+    Navy.drawer.classList.add('hidden');
+    Navy.overlay.classList.add('hidden');
+    mainmenuBtn.classList.remove('clicked');
+    Navy.currentMenuBtn = undefined;
+  },
+
+  toggleSubmenu(mainmenuBtn, relatedMenu, submenus) {
+    if (Navy.currentMenuBtn === undefined) {
+      Navy.drawer.classList.remove('hidden');
+      Navy.overlay.classList.remove('hidden');
+      mainmenuBtn.classList.add('clicked');
+      Navy.currentMenuBtn = mainmenuBtn;
+    }
+    else if (mainmenuBtn === Navy.currentMenuBtn) {
+      Navy.drawer.classList.add('hidden');
+      Navy.overlay.classList.add('hidden');
+      mainmenuBtn.classList.remove('clicked');
+      Navy.currentMenuBtn = undefined;
+    }
+    else {
+      Navy.drawer.classList.remove('hidden');
+      Navy.overlay.classList.remove('hidden');
+      mainmenuBtn.classList.add('clicked');
+      Navy.currentMenuBtn = undefined;
+    }
+
+    Navy.displayRelatedSubmenu(relatedMenu, submenus);
+    Navy.showLevel(0);
+    Navy.setDrawerXPosition(mainmenuBtn);
+  },
+
+  initDesktop(navigationItem, target, overlay) {
     // build navy structure and inject it in the target:
     Navy.buildSlides(target);
     Navy.drawer = document.querySelector(target);
+    if (overlay) Navy.overlay = document.querySelector(overlay);
+    Navy.currentMenuBtn = undefined;
 
     const nav = document.querySelector(navigationItem);
     const mainmenuBtns = nav.querySelectorAll(':scope > ul > li > a');
     const submenus = nav.querySelectorAll(':scope > ul > li > ul');
     const slide0 = Navy.drawer.querySelector(':scope > .navy > .navy__level-0');
-
     [].forEach.call(mainmenuBtns, function (mainmenuBtn) {
 
-      if (!mainmenuBtn.nextElementSibling) return
-      // inject menu in slide 0:
+      // check if item has submenu
       mainmenuBtn.relatedMenu = mainmenuBtn.nextElementSibling
+      if (!mainmenuBtn.relatedMenu) return
+
+      // inject menu in slide 0:
       slide0.appendChild(mainmenuBtn.relatedMenu);
-      console.log('relatedMenu', mainmenuBtn.relatedMenu);
+
+      // hide first .navy__back button:
+      const firstBackBtn = mainmenuBtn.relatedMenu.querySelector(':scope > li > .navy__back')
+      console.log('test', firstBackBtn)
+      firstBackBtn.classList.add('hidden');
+
+      // make first recursion:
       Navy.parseTree(mainmenuBtn.relatedMenu, 0);
-      // add click event
-      mainmenuBtn.addEventListener('click', function () {
-        Navy.drawer.classList.toggle('hidden');
-        Navy.displayRelatedSubmenu(mainmenuBtn.relatedMenu, submenus);
-        Navy.showLevel(0);
+
+      // add click events
+      mainmenuBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        Navy.toggleSubmenu(mainmenuBtn, mainmenuBtn.relatedMenu, submenus)
+        // TODO: show correct level if a submenu is .active
+        // TODO: set correct height for the drawer
+        // TODO: set correct x position for teh drawer
+        // TODO: accessibility tab navigation
+        // TODO: set active path
       });
+
+      Navy.overlay.addEventListener('click', function (event) {
+        event.preventDefault();
+        Navy.closeSubmenu(mainmenuBtn, mainmenuBtn.relatedMenu, submenus)
+      });
+
+
     });
   },
 }

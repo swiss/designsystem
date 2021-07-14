@@ -3,6 +3,10 @@
     id="desktop-menu"
     class="desktop-menu"
   >
+    <div
+      class="desktop-menu__overlay"
+      id="desktop-menu__overlay"
+    />
     <div class="container container--flex">
       <MainNavigation context="desktop" />
       <div
@@ -31,7 +35,11 @@ export default {
     }
   },
   mounted () {
-    Navy.initDesktop('#desktop-menu > .container > nav', '#desktop-menu__drawer')
+    Navy.initDesktop(
+      '#desktop-menu > .container > nav',
+      '#desktop-menu__drawer',
+      '#desktop-menu__overlay'
+    )
   }
 }
 </script>
