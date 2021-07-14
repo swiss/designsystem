@@ -6,7 +6,7 @@
     <div class="container container--flex">
       <MainNavigation context="desktop" />
       <div
-        class="desktop-menu__drawer"
+        class="desktop-menu__drawer hidden"
         id="desktop-menu__drawer"
       />
     </div>
