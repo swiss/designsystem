@@ -4,6 +4,7 @@
 
 .burger {
   @apply h-full flex items-center lg:hidden;
+  @apply px-4 -mr-4
 }
 
 .burger__icon {
@@ -33,28 +34,29 @@
 }
 
 .burger__bar:nth-of-type(1) {
-
-
   &::after {
     @apply border-t-2 origin-top top-[-1px];
   }
 
+  .body--mobile-menu-is-open &,
   .burger--is-open & {
-    @apply translate-y-1/2;
+    transform: translateY(50%);
 
     &::after {
-      @apply rotate-45;
+      transform: rotate(45deg)
     }
   }
 }
 
 .burger__bar:nth-of-type(2) {
-  @apply top-1/2 -translate-y-1/2;
+  @apply top-1/2;
   @apply h-[2px];
   background-color: currentColor;
+  transform: translateY(-50%);
 
+  .body--mobile-menu-is-open &,
   .burger--is-open & {
-    @apply scale-x-0;
+    transform: scaleX(0)
   }
 }
 
@@ -65,11 +67,12 @@
     @apply border-b-2 origin-bottom;
   }
 
+  .body--mobile-menu-is-open &,
   .burger--is-open & {
-    @apply -translate-y-1/2;
+    transform: translateY(-50%);
 
     &::after {
-      @apply -rotate-45;
+      transform: rotate(-45deg)
     }
   }
 }

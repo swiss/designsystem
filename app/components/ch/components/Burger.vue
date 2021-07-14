@@ -1,6 +1,7 @@
 <template>
   <button
     class="burger"
+    title="Toggle mobile menu"
   >
     <span
       class="burger__icon"

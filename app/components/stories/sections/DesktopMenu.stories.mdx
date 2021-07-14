@@ -1,9 +1,9 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import TopBar from '../../ch/sections/TopBar.vue';
+import DesktopMenu from '../../ch/sections/DesktopMenu.vue';
 
 <Meta
-  title="Sections/Header/TopBar"
-  component={TopBar}
+  title="Sections/Header/DesktopMenu"
+  component={DesktopMenu}
   argTypes={{
     isOpen: { name:'Is open', control: { type: 'boolean' } },
   }}
@@ -11,11 +11,11 @@ import TopBar from '../../ch/sections/TopBar.vue';
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { TopBar },
-  template: '<TopBar :isOpen="isOpen" />',
+  components: { DesktopMenu },
+  template: '<DesktopMenu :isOpen="isOpen" />',
 });
 
-# Top Bar
+# Desktop Menu
 
 <Canvas>
   <Story
@@ -30,11 +30,11 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Example" />
 
-<a href="?path=/story/sections-header-topbar--example">Go to the Canvas Tab</a>
+<a href="?path=/story/sections-header-desktopmenu--example">Go to the Canvas Tab</a>
 
 ---
 
-<a href="?id=sections-header-topbar--example" target="_blank">Open page in full width in a new tab</a>
+<a href="?id=sections-header-desktopmenu--example" target="_blank">Open page in full width in a new tab</a>
 
 
 

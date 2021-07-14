@@ -31,3 +31,4 @@ export const getters = {
     return state.mobileMenuIsOpen
   }
 }
+

@@ -31,6 +31,7 @@ const Navy = {
 
       btn.addEventListener('click', function () {
         Navy.showLevel(level+1)
+        console.log('CLICK', btn, btn.relatedMenu, submenus)
         Navy.displayRelatedSubmenu(btn.relatedMenu, submenus)
         Navy.currentMenuLink = btn
       })
@@ -46,36 +47,76 @@ const Navy = {
     })
   },
 
-  init (ulMenus, target, options) {
-
-    // build navy structure and inject it in the target:
+  buildSlides (target){
     document.body.classList.add('show-level-0')
     const targetElement = document.querySelector(target)
 
     Navy.currentMenuLink = undefined
     Navy.container = document.createElement('div')
     Navy.container.classList.add('navy')
-    targetElement.appendChild(Navy.container)
 
     // create slides and inject them into .navy:
     Navy.level = []
     for (let i = 0; i < 8; i++) {
       Navy.level[i] = document.createElement('div')
-      Navy.level[i].classList.add(`navy__level-${i}`)
+      Navy.level[i].classList.add(`navy__level-${i}`)
       Navy.container.appendChild(Navy.level[i])
     }
+    targetElement.appendChild(Navy.container)
+  },
 
-    // parse all uls and init events:
-    let uls = document.querySelectorAll(ulMenus)
+  initMobile (navigationItems, target) {
+    // build navy structure and inject it in the target:
+    Navy.buildSlides(target)
 
-    uls.forEach(function (ul) {
+    // inject navigations in the first slide:
+    let navs = document.querySelectorAll(navigationItems)
+    navs.forEach(function (nav) {
+      Navy.level[0].appendChild(nav)
 
-      // inject navigation in navy__level0
-      Navy.level[0].appendChild(ul)
-
-      // parse tree and inject uls in their respective slides
+      // parse uls and start recursion:
+      const ul = nav.querySelector('ul')
       Navy.parseTree(ul, 0)
     })
+  },
+
+  toggleDesktopDrawer (menu, target) {
+    console.log('toggleDesktopDrawer', menu, Navy.level[0] )
+    Navy.level[0].appendChild(menu)
+  },
+
+  initDesktop(navigationItem, target) {
+    // build navy structure and inject it in the target:
+    Navy.buildSlides(target)
+    Navy.drawer = document.querySelector(target)
+
+    const nav = document.querySelector(navigationItem)
+    const mainmenuBtns = nav.querySelectorAll(':scope > ul > li > a');
+    const submenus = nav.querySelectorAll(':scope > li > ul');
+
+    [].forEach.call(mainmenuBtns, function (mainmenuBtn) {
+
+      if (!mainmenuBtn.nextElementSibling) return
+      // inject menu in slide 0:
+      mainmenuBtn.relatedMenu = mainmenuBtn.nextElementSibling
+
+      // add click event
+      mainmenuBtn.addEventListener('click', function () {
+        Navy.level[0].appendChild(mainmenuBtn.relatedMenu)
+        Navy.toggleDesktopDrawer(mainmenuBtn.relatedMenu)
+
+        // Navy.displayRelatedSubmenu(mainmenuBtn.nextElementSibling, submenus)
+        // Navy.currentMenuLink = btn
+      })
+    })
+
+    // const uls = nav.querySelectorAll(':scope > ul > li > ul')
+    // uls.forEach(function (ul) {
+    //   Navy.level[0].appendChild(ul)
+
+    //   // parse uls and start recursion:
+    //   Navy.parseTree(ul, 0)
+    // })
   },
 }
 

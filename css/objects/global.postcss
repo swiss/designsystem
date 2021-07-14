@@ -13,9 +13,9 @@ body {
 }
 
 .body--mobile-menu-is-open {
-  height: calc(100vh + 3rem);
   @apply overflow-hidden;
-  @apply -translate-y-12;
+  height: calc(100vh + 3rem);
+  transform: translateY(-3em);
 }
 
 #main-header {
@@ -26,5 +26,9 @@ body {
 }
 #main-footer {
   @apply relative z-0;
+}
+
+.hidden {
+  display: none;
 }
 

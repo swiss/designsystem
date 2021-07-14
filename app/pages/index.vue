@@ -28,7 +28,7 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue';
 import MobileMenu from '../components/ch/sections/MobileMenu.vue';
 
 export default {
-  name: 'index',
+  name: 'Index',
   components: {
     AlterBodyClasses,
     TopBar,

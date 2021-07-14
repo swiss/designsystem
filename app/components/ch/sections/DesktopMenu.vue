@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted () {
-    Navy.init('#desktop-menu > .container > nav > ul > li > ul', '#desktop-menu__drawer')
+    Navy.initDesktop('#desktop-menu > .container > nav', '#desktop-menu__drawer')
   }
 }
 </script>
