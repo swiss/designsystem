@@ -6,7 +6,7 @@
     <ul>
       <li>
         <a href="javascript:alert('link')">
-          News
+          <span>News</span>
         </a>
       </li>
       <li>
@@ -123,19 +123,16 @@
       </li>
       <li>
         <a href="javascript:alert('link')">
-          Karten
+          <span>Karten</span>
         </a>
       </li>
       <li>
         <a href="javascript:alert('link')">
-          Thematische Geoportale
+          <span>Geoportale</span>
         </a>
       </li>
       <li>
-        <a
-          role="button"
-          class="navy__has-children"
-        >
+        <a href="javascript:void(0)" role="button" class="navy__has-children">
           <span>Dienstleistungen</span>
           <SvgIcon icon="ArrowRight" size="lg" />
         </a>
@@ -148,28 +145,12 @@
             <span class="navy__title">Dienstleistungen</span>
             <a href="javascript:alert('link')">Überblick</a>
           </li>
-          <li><span>Geobasisdaten</span>
-            <ul>
-              <li><a href="javascript:alert('link')">Zeitplan</a></li>
-              <li><a href="javascript:alert('link')">Geodatenmodelle</a></li>
-              <li><a href="javascript:alert('link')">FAQ</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>Verzeichnis</span>
-            <ul>
-              <li><span>Basisdaten</span>
-                <ul>
-                  <li><a href="javascript:alert('link')">Koordinatenreferenzsysteme</a></li>
-                  <li><a href="javascript:alert('link')">Geografische Bezeichnungen</a></li>
-                  <li><a href="javascript:alert('link')">Verwaltungseinheiten</a></li>
-                  <li><a href="javascript:alert('link')">Adressen</a></li>
-                </ul>
-              </li>
-              <li><a href="javascript:alert('link')">Oberflächendarstellung und -modelle</a></li>
-              <li><a href="javascript:alert('link')">Raum und Bevölkerung</a></li>
-            </ul>
-          </li>
+          <li><a href="javascript:alert('link')">Zeitplan</a></li>
+          <li><a href="javascript:alert('link')">Geodatenmodelle</a></li>
+          <li><a href="javascript:alert('link')">FAQ</a></li>
+          <li><a href="javascript:alert('link')">Koordinatenreferenzsysteme</a></li>
+          <li><a href="javascript:alert('link')">Geografische Bezeichnungen</a></li>
+          <li><a href="javascript:alert('link')">Verwaltungseinheiten</a></li>
         </ul>
       </li>
       <li>
