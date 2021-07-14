@@ -1,0 +1,80 @@
+/*----------------------------------------*\
+  BURGER
+\*----------------------------------------*/
+
+.burger {
+  @apply h-full flex items-center lg:hidden;
+  @apply px-4 -mr-4
+}
+
+.burger__icon {
+  @apply block w-7 h-5 relative;
+  @apply text-text-500 transition-colors;
+
+  &:hover {
+    @apply text-red-600;
+  }
+}
+
+
+.burger__bar {
+  @apply block w-full h-full;
+  @apply absolute;
+  @apply transition-transform;
+  color: inherit;
+
+  &::after {
+    content: '';
+    @apply block w-full h-[2px] absolute;
+    @apply transition-transform;
+    @apply duration-150;
+    @apply delay-150;
+    border-color: currentColor;
+  }
+}
+
+.burger__bar:nth-of-type(1) {
+  &::after {
+    @apply border-t-2 origin-top top-[-1px];
+  }
+
+  .body--mobile-menu-is-open &,
+  .burger--is-open & {
+    transform: translateY(50%);
+
+    &::after {
+      transform: rotate(45deg)
+    }
+  }
+}
+
+.burger__bar:nth-of-type(2) {
+  @apply top-1/2;
+  @apply h-[2px];
+  background-color: currentColor;
+  transform: translateY(-50%);
+
+  .body--mobile-menu-is-open &,
+  .burger--is-open & {
+    transform: scaleX(0)
+  }
+}
+
+
+.burger__bar:nth-of-type(3) {
+  &::after {
+    @apply bottom-[-1px];
+    @apply border-b-2 origin-bottom;
+  }
+
+  .body--mobile-menu-is-open &,
+  .burger--is-open & {
+    transform: translateY(-50%);
+
+    &::after {
+      transform: rotate(-45deg)
+    }
+  }
+}
+
+

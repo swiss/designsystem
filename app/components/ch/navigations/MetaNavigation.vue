@@ -43,8 +43,8 @@ export default {
   },
   computed: {
     metanavigationClass () {
-      let base = `metanavigation `
-      if (this.context) base += `metanavigation--${this.context} `
+      let base = `meta-navigation `
+      if (this.context) base += `meta-navigation--${this.context} `
       return base
     }
   }

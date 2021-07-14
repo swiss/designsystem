@@ -2,8 +2,8 @@
   TOPBAR NAVIGATION
 \*----------------------------------------*/
 
-.topbar-navigation {
-  @apply flex h-full;
+.top-bar-navigation {
+  @apply flex;
 
   a {
     @apply flex items-center;
@@ -11,12 +11,12 @@
   }
 }
 
-.topbar-navigation--mobile {
+.top-bar-navigation--mobile {
   @apply flex flex-col;
 }
 
-.topbar-navigation--desktop {
-  @apply hidden lg:flex;
+.top-bar-navigation--desktop {
+  @apply hidden lg:flex h-full;
 
   ul {
     @apply flex;

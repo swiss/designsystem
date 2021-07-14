@@ -1,0 +1,34 @@
+/* ----------------------------------------*\
+  GLOBAL
+\* ---------------------------------------- */
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  @apply transition-transform duration-700;
+}
+
+.body--mobile-menu-is-open {
+  @apply overflow-hidden;
+  height: calc(100vh + 3rem);
+  transform: translateY(-3em);
+}
+
+#main-header {
+  @apply relative z-20;
+}
+#main-content {
+  @apply relative z-10;
+}
+#main-footer {
+  @apply relative z-0;
+}
+
+.hidden {
+  display: none !important;
+}
+

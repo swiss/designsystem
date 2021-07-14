@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import MobileMenu from '../../ch/sections/MobileMenu.vue';
+
+<Meta
+  title="Sections/Header/MobileMenu"
+  component={MobileMenu}
+  argTypes={{
+    isOpen: { name:'Is open', control: { type: 'boolean' } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { MobileMenu },
+  template: '<MobileMenu :isOpen="isOpen" />',
+});
+
+# Mobile Menu
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      isOpen: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+<a href="?path=/story/sections-header-mobilemenu--example">Go to the Canvas Tab</a>
+
+---
+
+<a href="?id=sections-header-mobilemenu--example" target="_blank">Open page in full width in a new tab</a>
+
+
+

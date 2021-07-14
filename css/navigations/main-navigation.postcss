@@ -2,25 +2,36 @@
   MAIN NAVIGATION
 \*----------------------------------------*/
 
-.main-navigation {
-  a {
-    @apply flex items-center;
-    @apply h-full px-4;
-  }
-}
+.main-navigation {}
 
+.mobile-menu .main-navigation,
 .main-navigation--mobile {
   @apply flex flex-col;
 }
 
+.desktop-menu .main-navigation,
 .main-navigation--desktop {
   @apply flex h-full;
   @apply hidden lg:flex;
   @apply h-14 xl:h-16 2xl:h-20;
   @apply -ml-4;
-  @apply text-sm xl:text-base 2xl:text-lg;
 
   ul {
     @apply flex h-full;
   }
+
+  ul ul {
+    @apply hidden;
+  }
+
+  & > ul > li > a {
+    @apply lg:flex lg:items-center;
+    @apply lg:h-full lg:px-4;
+    @apply hover:text-primary-600 leading-tight;
+  }
+
+  & > ul > li > a > svg {
+    @apply hidden;
+  }
 }
+

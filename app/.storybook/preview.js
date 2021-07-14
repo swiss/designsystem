@@ -1,6 +1,7 @@
 import '../../dist/main.css'
 
 export const parameters = {
+  layout: 'fullscreen',
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -30,10 +31,21 @@ export const parameters = {
             'Implementation'
           ],
         ],
+        'Implementation',
         'Components', [
           'Logo',
           'Button'
-        ]
+        ],
+        'Sections', [
+          'Header', [
+            'TopBar',
+            'TopHeader',
+            'DesktopMenu'
+          ],
+        ],
+        'Pages', [
+          'Homepage'
+        ],
       ],
     },
   },
