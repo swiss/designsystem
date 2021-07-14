@@ -4,7 +4,7 @@
     class="desktop-menu"
   >
     <div
-      class="desktop-menu__overlay"
+      class="desktop-menu__overlay hidden"
       id="desktop-menu__overlay"
     />
     <div class="container container--flex">
