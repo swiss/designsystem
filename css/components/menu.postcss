@@ -8,9 +8,10 @@
 
     .menu__item {
       @apply flex items-center justify-between;
-      @apply px-5 py-4;
+      @apply px-5 py-4 relative;
       @apply border-b border-opacity-0;
       @apply cursor-pointer;
+      @apply transition-colors;
 
       &:hover {
         @apply bg-secondary-50;
@@ -22,6 +23,13 @@
 
       svg {
         height: 1.5em;
+      }
+
+      .menu__item--active:after {
+        content:'';
+        @apply block bg-primary-500;
+        @apply w-[3px];
+        @apply absolute top-0 bottom-0 left-0;
       }
     }
 

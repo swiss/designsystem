@@ -85,7 +85,7 @@ const Navy = {
     Navy.drawer.style.transform = `translateX(${rect.left}px)`;
   },
 
-  closeSubmenu(mainmenuBtn, relatedMenu, submenus) {
+  closeSubmenu(mainmenuBtn) {
     Navy.drawer.classList.add('hidden');
     Navy.overlay.classList.add('hidden');
     mainmenuBtn.classList.remove('clicked');
@@ -98,6 +98,9 @@ const Navy = {
       Navy.overlay.classList.remove('hidden');
       mainmenuBtn.classList.add('clicked');
       Navy.currentMenuBtn = mainmenuBtn;
+      // set focus on the next button after the hidden .back button:
+      mainmenuBtn.relatedMenu.querySelector(':scope > li > a ~ a').focus();
+
     }
     else if (mainmenuBtn === Navy.currentMenuBtn) {
       Navy.drawer.classList.add('hidden');
@@ -139,7 +142,6 @@ const Navy = {
 
       // hide first .navy__back button:
       const firstBackBtn = mainmenuBtn.relatedMenu.querySelector(':scope > li > .navy__back')
-      console.log('test', firstBackBtn)
       firstBackBtn.classList.add('hidden');
 
       // make first recursion:
@@ -149,6 +151,7 @@ const Navy = {
       mainmenuBtn.addEventListener('click', function (event) {
         event.preventDefault();
         Navy.toggleSubmenu(mainmenuBtn, mainmenuBtn.relatedMenu, submenus)
+
         // TODO: show correct level if a submenu is .active
         // TODO: set correct height for the drawer
         // TODO: set correct x position for teh drawer

@@ -28,7 +28,22 @@ body {
   @apply relative z-0;
 }
 
+.skip-to-content {
+  @apply inline-block px-4 py-2;
+  @apply absolute z-50 top-0 left-1/2;
+  @apply bg-secondary-900 text-white border-white border-2;
+  @apply shadow-md transition-transform;
+  transform: translateX(-50%) translateY(-200%);
+
+  &:focus {
+    transform: translateX(-50%) translateY(0);
+
+  }
+}
+
 .hidden {
   display: none !important;
 }
+
+
 

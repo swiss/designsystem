@@ -2,6 +2,7 @@
   <div>
     <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
     <header id="main-header">
+      <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar />
       <TopHeader />
       <DesktopMenu />
@@ -11,6 +12,7 @@
     <main id="main-content">
       <div class="container">
         <h1>Demo Application</h1>
+        <a href="#" class="link">Test skip link</a>
       </div>
     </main>
     <footer id="main-footer">
