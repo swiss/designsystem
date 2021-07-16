@@ -132,7 +132,7 @@
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)" role="button" class="navy__has-children">
+        <a href="javascript:void(0)" role="button" class="navy__has-children active">
           <span>Dienstleistungen</span>
           <SvgIcon icon="ArrowRight" size="lg" />
         </a>
@@ -143,7 +143,7 @@
               <span>Back</span>
             </a>
             <span class="navy__title">Dienstleistungen</span>
-            <a href="javascript:alert('link')">Überblick</a>
+            <a href="javascript:alert('link')" class="active">Überblick</a>
           </li>
           <li><a href="javascript:alert('link')">Zeitplan</a></li>
           <li><a href="javascript:alert('link')">Geodatenmodelle</a></li>

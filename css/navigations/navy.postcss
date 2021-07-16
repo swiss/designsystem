@@ -15,6 +15,17 @@
   & li > button {
     @apply menu__item lg:menu__item--condensed;
     @apply menu__item--border w-full;
+
+    &:hover {
+      @apply text-primary-600;
+    }
+
+    &.active::after {
+      content:'';
+      @apply block bg-primary-500;
+      @apply w-[3px];
+      @apply absolute top-0 bottom-0 left-0;
+    }
   }
 }
 
