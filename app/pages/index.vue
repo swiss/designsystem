@@ -12,8 +12,8 @@
     <main id="main-content">
       <div class="container">
         <h1>Demo Application</h1>
+        <a href="#" class="link">Test skip link</a>
       </div>
-      <a href="#">test</a>
     </main>
     <footer id="main-footer">
 
