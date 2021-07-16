@@ -9,6 +9,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 ```html
 <body>
   <header id="main-header">
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="top-bar" />
     <div class="top-header" />
     <div class="desktop-menu" />
@@ -37,6 +38,7 @@ Let's have a closer look at the main header:
 
 ```html
 <header id="main-header">
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
   <div class="top-bar" />
   <div class="top-header" />
   <div class="desktop-menu" />
@@ -44,7 +46,10 @@ Let's have a closer look at the main header:
   <div class="breadcrumb" />
 </header>
 ```
-The three first blocks contain a navigation in a desktop context:
+
+The `.skip-to-content` is a hidden link appearing only when `TAB` key is hit. It helps to reach faster the content during keyboard navigation.
+
+The three next blocks contain each a navigation in the desktop context:
 
 - `.top-bar` contains the `.top-bar-navigation`
 - `.top-header` contains the `.meta-navigation`
