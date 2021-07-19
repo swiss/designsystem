@@ -1,8 +1,6 @@
 module.exports = {
   mode: 'jit',
-  purge: {
-    content: ['tailwind.safelist.txt']
-  },
+  purge: ['./tailwind.safelist.txt'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -215,4 +213,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}
