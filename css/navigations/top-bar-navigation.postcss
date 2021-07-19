@@ -1,0 +1,24 @@
+/*----------------------------------------*\
+  TOPBAR NAVIGATION
+\*----------------------------------------*/
+
+.top-bar-navigation {
+  @apply flex;
+
+  a {
+    @apply flex items-center;
+    @apply h-full px-4;
+  }
+}
+
+.top-bar-navigation--mobile {
+  @apply flex flex-col;
+}
+
+.top-bar-navigation--desktop {
+  @apply hidden lg:flex h-full;
+
+  ul {
+    @apply flex;
+  }
+}

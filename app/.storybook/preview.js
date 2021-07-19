@@ -1,6 +1,7 @@
 import '../../dist/main.css'
 
 export const parameters = {
+  layout: 'fullscreen',
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -15,20 +16,36 @@ export const parameters = {
       // htmlWhitespaceSensitivity: 'strict',
     },
   },
+  viewMode: 'docs',
   options: {
     storySort: {
       order: [
         'Introduction',
         'Foundations', [
           'Overview',
-          'Colors',
-          'Icons',
           'Fonts',
+          'Backgrounds',
+          'Colors',
+          'Icons', [
+            'List',
+            'Implementation'
+          ],
         ],
+        'Implementation',
         'Components', [
           'Logo',
           'Button'
-        ]
+        ],
+        'Sections', [
+          'Header', [
+            'TopBar',
+            'TopHeader',
+            'DesktopMenu'
+          ],
+        ],
+        'Pages', [
+          'Homepage'
+        ],
       ],
     },
   },

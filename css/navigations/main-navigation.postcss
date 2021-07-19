@@ -1,0 +1,44 @@
+/*----------------------------------------*\
+  MAIN NAVIGATION
+\*----------------------------------------*/
+
+.main-navigation {}
+
+.mobile-menu .main-navigation,
+.main-navigation--mobile {
+  @apply flex flex-col;
+}
+
+.desktop-menu .main-navigation,
+.main-navigation--desktop {
+  @apply flex h-full;
+  @apply hidden lg:flex;
+  @apply h-14 xl:h-16 2xl:h-20;
+  @apply -ml-4;
+
+  ul {
+    @apply flex h-full;
+  }
+
+  ul ul {
+    @apply hidden;
+  }
+
+  & > ul > li > a {
+    @apply lg:flex lg:items-center relative;
+    @apply lg:h-full lg:px-4;
+    @apply hover:text-primary-600 leading-tight transition-colors;
+
+    &.active::after {
+      content:'';
+      @apply block bg-primary-500;
+      @apply h-[3px];
+      @apply absolute right-4 bottom-0 left-4;
+    }
+  }
+
+  & > ul > li > a > svg {
+    @apply hidden;
+  }
+}
+

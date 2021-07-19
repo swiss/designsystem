@@ -1,0 +1,105 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import ColorList from '../../../ch/demo/ColorList.vue';
+
+<Meta
+  title="Foundations/Fonts/Colors"
+  component={ColorList}
+  argTypes={{ }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ColorList },
+  template: '<ColorList :label="label" :textStyle="textStyle" :size="size" />',
+});
+
+# Text colors
+<Canvas>
+  <div class="storybook-backgrounds">
+    <div class="color--text-900">
+        color--text-900
+    </div>
+    <div class="color--text-800">
+        color--text-800
+    </div>
+    <div class="color--text-700">
+        color--text-700
+    </div>
+    <div class="color--text-600">
+        color--text-600
+    </div>
+    <div class="color--text-500">
+        color--text-500
+    </div>
+    <div class="color--text-400">
+        color--text-400
+    </div>
+    <div class="color--text-300">
+      color--text-300
+    </div>
+    <div class="color--text-200">
+      color--text-200
+    </div>
+    <div class="color--text-100">
+      color--text-100
+    </div>
+    <div class="color--text-50">
+      color--text-50
+    </div>
+    <div class="color--white">
+      color--white
+    </div>
+  </div>
+</Canvas>
+
+<Canvas>
+  <div class="storybook-backgrounds">
+    <div class="color--red-900">
+        color--red-900
+    </div>
+    <div class="color--red-800">
+        color--red-800
+    </div>
+    <div class="color--red-700">
+        color--red-700
+    </div>
+    <div class="color--red-600">
+        color--red-600
+    </div>
+    <div class="color--red-500">
+        color--red-500
+    </div>
+    <div class="color--red-400">
+        color--red-400
+    </div>
+    <div class="color--red-300">
+      color--red-300
+    </div>
+    <div class="color--red-200">
+      color--red-200
+    </div>
+    <div class="color--red-100">
+      color--red-100
+    </div>
+    <div class="color--red-50">
+      color--red-50
+    </div>
+    <div class="color--white">
+      color--white
+    </div>
+  </div>
+</Canvas>
+
+
+
+# Flexible Colors for future projects
+For future projects, if you generate the CSS by your own, it's possible to use not only the mentioned colors above, but the whole palette of colors declared in the Tailwind config and all its variations.
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
