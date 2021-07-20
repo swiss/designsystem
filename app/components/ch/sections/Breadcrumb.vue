@@ -1,15 +1,29 @@
 <template>
-  <div class="container container--flex">
-    <nav
-      class="breadcrumb"
-      aria-label="Breadcrumb navigation"
-    >
-      <ol>
-        <li><a href="#">Startseite</a></li>
-        <li><a href="#">Diensleistungen</a></li>
-        <li><a href="#">Geodienste</a></li>
-        <li><a href="#">Datenmodellablage</a></li>
-      </ol>
-    </nav>
+  <div
+    class="breadcrumb"
+    :class="isOpen ? 'breadcrumb--is-open' : '' "
+  >
+    <div class="breadcrumb__bar">
+      <div class="container container--flex">
+          <BreadcrumbNavigation context="desktop" />
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+import BreadcrumbNavigation from "../navigations/BreadcrumbNavigation.vue"
+
+export default {
+  name: 'Breadcrumb',
+  components: {
+   BreadcrumbNavigation
+  },
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false,
+    }
+  }
+}
+</script>
