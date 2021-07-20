@@ -22,4 +22,16 @@
     ol {
         @apply flex;
     }
+
+    & > ol > li > a {
+        @apply hover:text-primary-600 leading-tight transition-colors;
+    }
+}
+
+.breadcrumb__icon {
+    @apply w-[24px] h-[24px];
+    @apply ml-2;
+    @apply text-primary-600;
+    @apply border border-primary-600 rounded-sm;
+    @apply stroke-current;
 }

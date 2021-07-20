@@ -5,23 +5,35 @@
   >
     <ol>
       <li>
-        <a href="#">
+        <a href="javascript:alert('homepage')">
           Startseite
         </a>
       </li>
       <li>
         <a href="#">
           Diensleistungen
+          <SvgIcon
+            icon="ChevronDown"
+            class="breadcrumb__icon"
+          />
         </a>
       </li>
       <li>
         <a href="#">
           Geodienste
+          <SvgIcon
+            icon="ChevronDown"
+            class="breadcrumb__icon"
+          />
         </a>
       </li>
       <li>
         <a href="#">
           Datenmodellablage
+          <SvgIcon
+            icon="ChevronDown"
+            class="breadcrumb__icon"
+          />
         </a>
       </li>
     </ol>
@@ -29,8 +41,13 @@
 </template>
 
 <script>
+import SvgIcon from '../components/SvgIcon.vue';
+
 export default {
   name: 'BreadcrumbNavigation',
+  components: {
+    SvgIcon
+  },
   props: {
     context: {
       type: String,

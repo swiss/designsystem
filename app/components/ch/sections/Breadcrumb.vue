@@ -3,10 +3,8 @@
     class="breadcrumb"
     :class="isOpen ? 'breadcrumb--is-open' : '' "
   >
-    <div class="breadcrumb__bar">
-      <div class="container container--flex">
-          <BreadcrumbNavigation context="desktop" />
-      </div>
+    <div class="container container--flex">
+      <BreadcrumbNavigation context="desktop" />
     </div>
   </div>
 </template>
