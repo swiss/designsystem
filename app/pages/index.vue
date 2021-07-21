@@ -17,6 +17,7 @@
     </main>
     <footer class="footer" id="main-footer">
       <footer-information />
+      <footer-navigation />
     </footer>
   </div>
 </template>
@@ -29,6 +30,7 @@ import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
+import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 
 export default {
   name: 'Index',
@@ -40,6 +42,7 @@ export default {
     DesktopMenu,
     MobileMenu,
     FooterInformation,
+    FooterNavigation,
   },
   methods: {
     getMobileMenuIsOpen() {
