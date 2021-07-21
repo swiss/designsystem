@@ -15,19 +15,20 @@
         <a href="#" class="link">Test skip link</a>
       </div>
     </main>
-    <footer id="main-footer">
-
+    <footer class="footer" id="main-footer">
+      <footer-information />
     </footer>
   </div>
 </template>
 
 <script>
-import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue';
-import TopBar from '../components/ch/sections/TopBar.vue';
-import TopHeader from '../components/ch/sections/TopHeader.vue';
-import Breadcrumb from '../components/ch/sections/Breadcrumb.vue';
-import DesktopMenu from '../components/ch/sections/DesktopMenu.vue';
-import MobileMenu from '../components/ch/sections/MobileMenu.vue';
+import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
+import TopBar from '../components/ch/sections/TopBar.vue'
+import TopHeader from '../components/ch/sections/TopHeader.vue'
+import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
+import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
+import MobileMenu from '../components/ch/sections/MobileMenu.vue'
+import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 
 export default {
   name: 'Index',
@@ -37,13 +38,13 @@ export default {
     TopHeader,
     Breadcrumb,
     DesktopMenu,
-    MobileMenu
+    MobileMenu,
+    FooterInformation,
   },
   methods: {
-    getMobileMenuIsOpen () {
+    getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
-    }
-  }
-
-};
+    },
+  },
+}
 </script>
