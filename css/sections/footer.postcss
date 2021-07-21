@@ -1,0 +1,82 @@
+/*----------------------------------------*\
+  FOOTER
+\*----------------------------------------*/
+
+.footer-information {
+  @apply lg:grid lg:grid-cols-4 lg:gap-16 flex flex-col;
+  @apply 2xl:px-48 lg:py-32 lg:px-24 md:px-16 sm:px-12 px-4 py-12;
+  @apply bg-secondary-600;
+}
+
+.footer-navigation {
+  @apply flex;
+  @apply 2xl:px-48 lg:px-24 md:px-16 sm:px-12 px-4 py-3;
+  @apply bg-secondary-700;
+
+  .footer__link {
+    @apply text-base;
+    @apply mr-5;
+  }
+}
+
+.footer__link {
+  @apply inline-flex items-center;
+  @apply cursor-pointer;
+  @apply text-white hover:text-text-300 focus:text-text-300;
+
+  .footer-information__icon {
+    @apply inline-block;
+    @apply mr-1;
+    @apply w-[1.4em] h-full;
+    @apply stroke-current;
+  }
+}
+
+.footer-information__link--icon-right {
+  @apply flex-row-reverse;
+
+  .footer-information__icon {
+    @apply relative ml-[0.2em] left-[0.1em];
+  }
+}
+
+.footer-information__entry {
+  @apply mb-8 lg:mb-0;
+  @apply text-white text-lg;
+  h3 {
+    @apply text-2xl;
+    @apply mb-8;
+  }
+
+  &.footer-information__entry--big {
+    @apply hidden lg:block;
+    @apply col-span-2;
+  }
+}
+
+.footer-information__social {
+  @apply mb-8;
+  .footer__link {
+    @apply mr-5;
+  }
+}
+
+.footer-information__links {
+  @apply flex;
+  @apply gap-16;
+
+  .footer-information__links-column {
+    @apply flex-1;
+
+    .footer__link {
+      @apply w-full;
+      @apply flex justify-between;
+      @apply py-4 px-2;
+      @apply border-b border-white;
+
+      .footer-information__icon {
+        @apply h-6;
+      }
+    }
+  }
+}
