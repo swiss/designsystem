@@ -3,14 +3,55 @@
 \*----------------------------------------*/
 
 .notification {
-  @apply flex items-start;
+  @apply flex items-center;
+  @apply max-w-lg;
   @apply p-4 rounded;
+  @apply text-sm;
 
   &.is-error {
-    /* @apply bg-tertiary-red; */
+    @apply bg-red-50;
+    @apply text-red-800;
   }
 
   &.is-success {
+    @apply bg-green-50;
+    @apply text-green-800;
+  }
 
+  &.is-information {
+    @apply bg-blue-50;
+    @apply text-blue-700;
+  }
+
+  &.is-warning {
+    @apply bg-orange-50;
+    @apply text-orange-800;
+  }
+}
+
+.notification {
+  .notification__icon {
+    /* 0.35rem because 0.5 is too much and 0.25 is too low */
+    @apply mr-3 px-2 py-[0.35rem];
+    @apply h-7 w-7;
+    @apply rounded-full;
+    @apply text-white;
+    @apply fill-current;
+  }
+
+  &.is-error .notification__icon {
+    @apply bg-red-500;
+  }
+
+  &.is-success .notification__icon {
+    @apply bg-green-500;
+  }
+
+  &.is-information .notification__icon {
+    @apply bg-blue-500;
+  }
+
+  &.is-warning .notification__icon {
+    @apply bg-orange-500;
   }
 }
