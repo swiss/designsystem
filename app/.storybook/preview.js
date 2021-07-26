@@ -1,8 +1,9 @@
 import '../../dist/main.css'
+import './docs-fullscreen.css'
 
 export const parameters = {
   layout: 'fullscreen',
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -21,31 +22,22 @@ export const parameters = {
     storySort: {
       order: [
         'Introduction',
-        'Foundations', [
+        'Foundations',
+        [
           'Overview',
           'Fonts',
           'Backgrounds',
           'Colors',
-          'Icons', [
-            'List',
-            'Implementation'
-          ],
+          'Icons',
+          ['List', 'Implementation'],
         ],
         'Implementation',
-        'Components', [
-          'Logo',
-          'Button'
-        ],
-        'Sections', [
-          'Header', [
-            'TopBar',
-            'TopHeader',
-            'DesktopMenu'
-          ],
-        ],
-        'Pages', [
-          'Homepage'
-        ],
+        'Components',
+        ['Logo', 'Button'],
+        'Sections',
+        ['Header', ['TopBar', 'TopHeader', 'DesktopMenu']],
+        'Pages',
+        ['Homepage'],
       ],
     },
   },
