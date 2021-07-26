@@ -3,12 +3,13 @@
 \*----------------------------------------*/
 
 .breadcrumb-navigation {
-    @apply flex h-16 -ml-4;
-    @apply text-sm text-text-500;
+
+    @apply -ml-4;
+
 
     a {
         @apply flex items-center;
-        @apply h-full px-4;
+        @apply px-4;
     }
 }
 
@@ -21,6 +22,10 @@
 
     ol {
         @apply flex;
+    }
+
+    & > ol > li {
+        @apply flex items-center;
     }
 
     & > ol > li > a {
