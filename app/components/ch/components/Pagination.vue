@@ -1,11 +1,6 @@
 <template>
   <button type="button" :class="classes">
-    <span
-      v-if="this.label"
-      class="btn__text"
-    >
-      {{ label }}
-    </span>
+    {{ label }}
   </button>
 </template>
 
