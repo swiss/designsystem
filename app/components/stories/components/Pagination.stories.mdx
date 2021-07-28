@@ -1,0 +1,61 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Pagination from '../../ch/components/Pagination.vue';
+
+<Meta
+  title="Components/Pagination"
+  component={Pagination}
+  argTypes={{
+    type:    { control: { type: 'select', options: ['outline', 'outline-negative'] } },
+    size:    { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Pagination },
+  template: '<Pagination :type="type" :size="size" :label="label" />',
+});
+
+# Pagination
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      type: 'outline',
+      size: 'base',
+      label: '1',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+## Pagination types
+For type variations, the following css classes are built:
+- `pagination--outline` for standard pagination
+- `pagination--outline-negative` for standard pagination on dark background
+
+<Canvas>
+  <button type="button" class="btn btn--base btn--outline">1</button>
+</Canvas>
+
+<Canvas style={{backgroundColor: '#2f4356'}}>
+  <button type="button" class="btn btn--base btn--outline-negative">1</button>
+</Canvas>
+
+## Sizes
+For size variations, the following css classes are built:
+- `pagination--sm` for small buttons
+- `pagination--base` for standard size
+- `pagination--lg` for large buttons
+
+<Canvas>
+  <button type="button" class="btn btn--outline btn--sm">1</button>
+  <button type="button" class="btn btn--outline btn--base">2</button>
+  <button type="button" class="btn btn--outline btn--lg">3</button>
+</Canvas>
