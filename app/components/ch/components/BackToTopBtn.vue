@@ -1,7 +1,7 @@
 <template>
   <button type="button" :class="classes">
     <SvgIcon
-      icon="ChevronSmallUp"
+      icon="ChevronUp"
       class="back-to-top-btn__icon"
     />
   </button>
@@ -20,8 +20,8 @@ export default {
       type: String,
       validator: (prop) => [
         'default',
-        'outline',
-        'negative'
+        'negative',
+        'outline'
       ].includes(prop)
     },
   },

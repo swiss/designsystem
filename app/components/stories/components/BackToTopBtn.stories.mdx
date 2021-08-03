@@ -5,7 +5,7 @@ import BackToTopBtn from '../../ch/components/BackToTopBtn.vue';
   title="Components/BackToTopBtn"
   component={BackToTopBtn}
   argTypes={{
-    type:    { control: { type: 'select', options: ['default', 'outline', 'negative'] } },
+    type:    { control: { type: 'select', options: ['default', 'negative', 'outline'] } },
   }}
 />
 
@@ -35,14 +35,44 @@ export const Template = (args, { argTypes }) => ({
 ## Back to top button types
 For type variations, the following css classes are built:
 - `back-to-top-btn--default` for standard back to top button
+- `back-to-top-btn--negative` for standard back to top button with dark color
 - `back-to-top-btn--outline` for back to top button with strokes
-- `back-to-top-btn--negative` for standard back to top button on dark background
 
 <Canvas>
-  <button type="button" class="back-to-top-btn back-to-top-btn--default"></button>
-  <button type="button" class="back-to-top-btn back-to-top-btn--outline"></button>
-</Canvas>
-
-<Canvas style={{backgroundColor: '#2f4356'}}>
-  <button type="button" class="back-to-top-btn back-to-top-btn--negative"></button>
+  <button type="button" class="back-to-top-btn back-to-top-btn--default">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="back-to-top-btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m19.044 14.731-6.669-3.85-6.669 3.85-.375-.649 7.044-4.067 7.044 4.067z"
+      ></path>
+    </svg>
+  </button>
+  <button type="button" class="back-to-top-btn back-to-top-btn--negative">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="back-to-top-btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m19.044 14.731-6.669-3.85-6.669 3.85-.375-.649 7.044-4.067 7.044 4.067z"
+      ></path>
+    </svg>
+  </button>
+  <button type="button" class="back-to-top-btn back-to-top-btn--outline">
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="back-to-top-btn__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m19.044 14.731-6.669-3.85-6.669 3.85-.375-.649 7.044-4.067 7.044 4.067z"
+      ></path>
+    </svg>
+  </button>
 </Canvas>
