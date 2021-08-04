@@ -1,0 +1,48 @@
+/*----------------------------------------*\
+  BACK TO TOP BTN
+\*----------------------------------------*/
+
+.back-to-top-btn {
+    @apply w-[64px] h-[64px];
+    @apply inline-flex items-center justify-center;
+    @apply rounded-sm;
+    @apply shadow-lg;
+    @apply hover:shadow-xl;
+}
+
+.back-to-top-btn__icon {
+    @apply w-[30px] h-full;
+    @apply stroke-[0.3px];
+    @apply stroke-current;
+}
+
+/* TYPES */
+
+.back-to-top-btn--default {
+    @apply bg-white;
+
+    .back-to-top-btn__icon {
+        @apply text-secondary-500;
+        @apply hover:text-primary-600;
+    }
+}
+
+.back-to-top-btn--negative {
+    @apply bg-secondary-500;
+    @apply hover:bg-secondary-600;
+
+    .back-to-top-btn__icon {
+        @apply text-white;
+    }
+}
+
+.back-to-top-btn--outline {
+    @apply bg-white;
+    @apply border border-primary-600;
+    @apply hover:border-primary-700;
+
+    .back-to-top-btn__icon {
+        @apply text-primary-600;
+        @apply hover:text-primary-700;
+    }
+}
