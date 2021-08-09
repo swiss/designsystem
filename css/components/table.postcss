@@ -1,8 +1,28 @@
-.table{
-  @apply relative;
-  th:first-child{
-    @apply sticky left-0 z-10;
-    /* because safari */
-    position: -webkit-sticky;
-  }
+.table {
+  @apply w-full;
+  @apply border border-text-200;
+  @apply shadow-md;
+}
+.table__header {
+  @apply bg-secondary-50;
+}
+
+.table__header--entry {
+  @apply px-6 py-4;
+  @apply text-left;
+  @apply text-text-500 uppercase text-sm;
+}
+
+.table__row {
+  @apply border-t border-text-300;
+}
+
+.table__row--entry {
+  @apply px-6 py-4;
+  @apply text-base;
+  @apply text-gray-500;
+}
+
+.table__row--entry-highlight {
+  @apply text-gray-900 font-bold;
 }
