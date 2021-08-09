@@ -1,0 +1,44 @@
+/*----------------------------------------*\
+  PAGINATION
+\*----------------------------------------*/
+
+/* TYPES */
+.pagination {
+    @apply inline-flex items-center;
+    @apply px-4;
+    @apply leading-tight;
+    @apply rounded-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
+}
+
+.pagination--outline {
+    @apply text-primary-600;
+    @apply border border-primary-600;
+    @apply hover:text-primary-700 hover:border-primary-700;
+    @apply active:text-secondary-800 active:border-secondary-800 active:ring-0;
+}
+
+.pagination--outline-negative {
+    @apply text-secondary-100;
+    @apply bg-secondary-400;
+    @apply border border-secondary-300;
+    @apply hover:border-secondary-200 hover:bg-secondary-500;
+    @apply active:bg-secondary-400 active:text-white active:border-2 active:border-white active:ring-0;
+}
+
+/* SIZES */
+.pagination,
+.pagination--base {
+    @apply min-h-[40px] md:min-h-[44px] lg:min-h-[48px];
+    @apply text-sm md:text-base lg:text-lg;
+}
+
+.pagination--sm {
+    @apply min-h-[34px] md:min-h-[40px] lg:min-h-[44px];
+    @apply text-xs md:text-sm lg:text-base;
+}
+
+.pagination--lg {
+    @apply min-h-[44px] md:min-h-[48px] lg:min-h-[54px];
+    @apply text-base md:text-lg lg:text-xl;
+}
