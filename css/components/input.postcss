@@ -1,9 +1,39 @@
+.input {
+  @apply px-4 py-[0.625rem];
+  @apply text-text-800 leading-6;
+  @apply border border-text-500 rounded;
+  @apply shadow;
 
-.input{
-  @apply transition duration-200 ease-in-out flex-shrink;
-  @apply px-4 h-12 text-sm leading-loose;
+  &.input--sm {
+    @apply text-sm leading-5;
+  }
+
+  &.input--lg {
+    @apply text-lg leading-7;
+  }
+
   &:focus {
     @apply outline-none;
+    @apply shadow-form;
+  }
+
+  &:disabled,
+  &.input--disabled {
+    @apply bg-text-50;
+    @apply text-text-400;
+    @apply border-text-300;
+    @apply pointer-events-none cursor-not-allowed;
   }
 }
 
+.input--negative {
+  @apply text-white;
+  @apply bg-secondary-300;
+  @apply border-0;
+
+  &:disabled,
+  &.input--disabled {
+    @apply bg-secondary-300;
+    @apply text-secondary-200;
+  }
+}

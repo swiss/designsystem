@@ -13,6 +13,7 @@
       <div class="container">
         <h1>Demo Application</h1>
         <a href="#" class="link">Test skip link</a>
+        <Input />
       </div>
     </main>
     <footer class="footer" id="main-footer">
@@ -31,6 +32,7 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
+import Input from '../components/ch/components/Input.vue'
 
 export default {
   name: 'Index',
@@ -43,6 +45,7 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
+    Input,
   },
   methods: {
     getMobileMenuIsOpen() {
