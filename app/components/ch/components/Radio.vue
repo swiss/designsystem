@@ -1,10 +1,10 @@
 <template>
-  <input :class="classes" type="checkbox" />
+  <input :class="classes" type="radio" />
 </template>
 
 <script>
 export default {
-  name: 'Checkbox',
+  name: 'Radio',
   props: {
     type: {
       type: String,

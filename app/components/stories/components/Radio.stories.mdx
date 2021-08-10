@@ -1,0 +1,73 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import Radio from '../../ch/components/Radio.vue'
+
+<Meta
+  title="Components/Radio"
+  component={Radio}
+  argTypes={{
+    type: {
+      control: {
+        type: 'select',
+        options: ['outline', 'negative'],
+      },
+    },
+    size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Radio },
+  template: '<Radio :type="type" :size="size" />',
+})
+
+# Radiobox
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      type: 'outline',
+      size: 'base',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+## Radiobox negative type
+
+- `input--negative` for standard radioboxes on dark background
+
+<Canvas style={{ backgroundColor: '#2f4356' }}>
+  <input type="radio" class="input--negative input--base" />
+</Canvas>
+
+## Radio disabled state
+
+- `input--disabled` or `disabled state on the input` to add the disabled style
+
+<Canvas>
+  <input type="radio" class="input--outline input--base" disabled />
+  <input type="radio" class="input--outline input--base" disabled checked />
+  <input type="radio" class="input--negative input--base" disabled />
+  <input type="radio" class="input--negative input--base" disabled checked />
+</Canvas>
+
+## Sizes
+
+For size variations, the following css classes are built:
+
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
+
+<Canvas>
+  <input type="radio" class="input--outline input--sm" value="input--sm" />
+  <input type="radio" class="input--outline input--base" value="input--base" />
+  <input type="radio" class="input--outline input--lg" value="input--lg" />
+</Canvas>

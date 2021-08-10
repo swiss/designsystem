@@ -42,3 +42,53 @@ input {
     @apply text-secondary-200;
   }
 }
+
+input[type='checkbox'],
+input[type='radio'] {
+  @apply h-4 w-4;
+  @apply px-0 py-0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+
+  &.input--lg {
+    @apply px-0;
+  }
+
+  &:disabled,
+  &.input--disabled {
+    @apply opacity-25;
+  }
+}
+
+input[type='checkbox'].input--outline,
+input[type='radio'].input--outline {
+  &:disabled,
+  &.input--disabled {
+    @apply bg-text-100 border-text-300;
+  }
+}
+
+input[type='checkbox'].input--negative,
+input[type='radio'].input--negative {
+  @apply bg-secondary-400;
+  @apply border border-white;
+
+  &:disabled,
+  &.input--disabled {
+    @apply bg-text-300 border-text-400;
+  }
+}
+
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+  @apply bg-text-700;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:disabled,
+  &.input--disabled {
+    @apply bg-text-700 border-text-500;
+  }
+}
