@@ -1,28 +1,29 @@
-.table {
+table {
   @apply w-full;
   @apply border border-text-200;
   @apply shadow-md;
 }
-.table__header {
+thead {
   @apply bg-secondary-50;
+
+  & th {
+    @apply px-6 py-4;
+    @apply text-left;
+    @apply text-text-500 uppercase text-sm;
+  }
 }
 
-.table__header--entry {
-  @apply px-6 py-4;
-  @apply text-left;
-  @apply text-text-500 uppercase text-sm;
-}
-
-.table__row {
+tbody tr {
   @apply border-t border-text-300;
-}
 
-.table__row--entry {
-  @apply px-6 py-4;
-  @apply text-base;
-  @apply text-gray-500;
-}
+  & td,
+  th {
+    @apply px-6 py-4;
+    @apply text-base;
+    @apply text-gray-500;
+  }
 
-.table__row--entry-highlight {
-  @apply text-gray-900 font-bold;
+  & th {
+    @apply text-gray-900 font-bold text-left;
+  }
 }
