@@ -44,7 +44,7 @@ export const Template = (args, { argTypes }) => ({
 - `input--negative` for standard buttons on dark background
 
 <Canvas style={{ backgroundColor: '#2f4356' }}>
-  <input class="input input--negative input--base" value="Input text" />
+  <input class="input--negative input--base" value="Input text" />
 </Canvas>
 
 ## Input disabled state
@@ -52,12 +52,8 @@ export const Template = (args, { argTypes }) => ({
 - `input--disabled` or `disabled state on the input` to add the disabled style
 
 <Canvas>
-  <input class="input input--outline input--base" disabled value="Input text" />
-  <input
-    class="input input--negative input--base"
-    disabled
-    value="Input text"
-  />
+  <input class="input--outline input--base" disabled value="Input text" />
+  <input class="input--negative input--base" disabled value="Input text" />
 </Canvas>
 
 ## Sizes
@@ -69,7 +65,7 @@ For size variations, the following css classes are built:
 - `input--lg` for large inputs
 
 <Canvas>
-  <input class="input input--outline input--sm" value="input--sm" />
-  <input class="input input--outline input--base" value="input--base" />
-  <input class="input input--outline input--lg" value="input--lg" />
+  <input class="input--outline input--sm" value="input--sm" />
+  <input class="input--outline input--base" value="input--base" />
+  <input class="input--outline input--lg" value="input--lg" />
 </Canvas>

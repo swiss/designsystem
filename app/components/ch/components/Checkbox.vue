@@ -1,10 +1,10 @@
 <template>
-  <input :class="classes" value="Input text" />
+  <input :class="classes" type="checkbox" value="Input text" />
 </template>
 
 <script>
 export default {
-  name: 'Input',
+  name: 'Checkbox',
   props: {
     type: {
       type: String,
@@ -18,7 +18,7 @@ export default {
 
   computed: {
     classes() {
-      let base = ''
+      let base = 'input '
       if (this.type) base += `input--${this.type} `
       if (this.size) base += `input--${this.size} `
       return base
