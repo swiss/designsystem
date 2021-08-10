@@ -1,6 +1,28 @@
 <template>
-  <div>
-    <input class="input input--sm" value="Input text" />
-    <input class="input input--negative input--sm" value="Input text" />
-  </div>
+  <input :class="classes" value="Input text" />
 </template>
+
+<script>
+export default {
+  name: 'Input',
+  props: {
+    type: {
+      type: String,
+      validator: (prop) => ['outline', 'negative'].includes(prop),
+    },
+    size: {
+      type: String,
+      validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
+    },
+  },
+
+  computed: {
+    classes() {
+      let base = 'input '
+      if (this.type) base += `input--${this.type} `
+      if (this.size) base += `input--${this.size} `
+      return base
+    },
+  },
+}
+</script>

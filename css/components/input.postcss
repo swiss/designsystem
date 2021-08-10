@@ -1,20 +1,20 @@
 .input {
   @apply px-4 py-[0.625rem];
-  @apply text-text-800 leading-6;
-  @apply border border-text-500 rounded;
   @apply shadow;
+  @apply rounded;
+  @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
 
   &.input--sm {
     @apply text-sm leading-5;
   }
 
   &.input--lg {
+    @apply px-5;
     @apply text-lg leading-7;
   }
 
-  &:focus {
-    @apply outline-none;
-    @apply shadow-form;
+  &.input--base {
+    @apply leading-6 text-base;
   }
 
   &:disabled,
@@ -24,6 +24,11 @@
     @apply border-text-300;
     @apply pointer-events-none cursor-not-allowed;
   }
+}
+
+.input--outline {
+  @apply text-text-800;
+  @apply border border-text-500;
 }
 
 .input--negative {

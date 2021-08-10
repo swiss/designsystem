@@ -1,0 +1,75 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import Input from '../../ch/components/Input.vue'
+
+<Meta
+  title="Components/Input"
+  component={Input}
+  argTypes={{
+    type: {
+      control: {
+        type: 'select',
+        options: ['outline', 'negative'],
+      },
+    },
+    size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Input },
+  template: '<Input :type="type" :size="size" />',
+})
+
+# Input
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      type: 'outline',
+      size: 'base',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+## Input negative type
+
+- `input--negative` for standard buttons on dark background
+
+<Canvas style={{ backgroundColor: '#2f4356' }}>
+  <input class="input input--negative input--base" value="Input text" />
+</Canvas>
+
+## Input disabled state
+
+- `input--disabled` or `disabled state on the input` to add the disabled style
+
+<Canvas>
+  <input class="input input--outline input--base" disabled value="Input text" />
+  <input
+    class="input input--negative input--base"
+    disabled
+    value="Input text"
+  />
+</Canvas>
+
+## Sizes
+
+For size variations, the following css classes are built:
+
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
+
+<Canvas>
+  <input class="input input--outline input--sm" value="input--sm" />
+  <input class="input input--outline input--base" value="input--base" />
+  <input class="input input--outline input--lg" value="input--lg" />
+</Canvas>
