@@ -1,14 +1,23 @@
 .select {
-  @apply inline-flex cursor-pointer flex-shrink-0 appearance-none select-none;
-  @apply px-4 leading-loose h-12 text-sm;
-  &:focus {
-    @apply outline-none;
+  @apply inline-flex;
+  @apply border border-text-500 rounded-xs shadow;
+
+  & select {
+    @apply border-l-0 border-t-0 border-b-0 border-text-400;
+    @apply shadow-none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 
-  /* disabled */
-  &-disabled,
-  &[disabled] {
-    @apply pointer-events-none;
-  }
+  & .select__icon {
+    @apply w-12 h-12;
+    @apply flex items-center justify-center;
 
+    & svg {
+      @apply w-8 h-8;
+    }
+  }
 }
