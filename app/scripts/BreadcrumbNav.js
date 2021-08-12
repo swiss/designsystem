@@ -91,7 +91,7 @@ const BreadcrumbNav = {
     }
     else {
       BreadcrumbNav.drawer.classList.remove('hidden');
-      BreadcrumbNav.overlay.classList.remove('hidden');
+      // BreadcrumbNav.overlay.classList.remove('hidden');
       mainmenuBtn.classList.add('clicked');
       BreadcrumbNav.currentMenuBtn = undefined;
     }

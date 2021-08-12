@@ -3,6 +3,55 @@
 \*----------------------------------------*/
 
 .breadcrumb-menu {
+    @apply flex;
     @apply text-sm text-text-500;
     @apply py-10;
+    @apply relative;
+}
+
+.breadcrumb-navigation {
+
+    @apply -ml-4;
+
+
+    a {
+        @apply flex items-center;
+        @apply px-4;
+    }
+}
+
+.breadcrumb-navigation--mobile {
+    @apply flex flex-col;
+}
+
+.breadcrumb-navigation--desktop {
+    @apply hidden lg:flex h-full;
+
+    ul {
+        @apply flex;
+    }
+
+    & > ul > li {
+        @apply flex items-center;
+    }
+
+    & > ul > li > a {
+        @apply hover:text-primary-600 leading-tight transition-colors;
+    }
+}
+
+.breadcrumb__icon {
+    @apply w-[24px] h-[24px];
+    @apply ml-2;
+    @apply text-primary-600;
+    @apply border border-primary-600 rounded-sm;
+    @apply stroke-current;
+}
+
+.breadcrumb-menu__drawer {
+    @apply h-[500px] w-[400px] p-5 mt-px;
+    @apply hidden lg:block;
+    @apply absolute z-20 top-24 -left-2;
+    @apply bg-white shadow-2xl;
+    @apply transition-transform duration-500;
 }
