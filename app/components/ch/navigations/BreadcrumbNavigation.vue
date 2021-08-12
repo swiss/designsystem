@@ -3,40 +3,50 @@
     :class="breadcrumbNavigationClass"
     aria-label="Breadcrumb navigation"
   >
-    <ol>
+    <ul>
       <li>
         <a href="javascript:alert('homepage')">
-          Startseite
+          <span>Startseite</span>
         </a>
       </li>
       <li>
-        <a href="#">
-          Diensleistungen
-          <SvgIcon
-            icon="ChevronDown"
-            class="breadcrumb__icon"
-          />
+        <a href="javascript:void(0)" role="button" class="breadcrumb__has-children active">
+          <span>Diensleistungen</span>
+          <SvgIcon icon="ChevronDown" class="breadcrumb__icon" />
         </a>
+        <ul>
+          <li><a href="javascript:alert('link')">News</a></li>
+          <li><a href="javascript:alert('link')">Geodaten</a></li>
+          <li><a href="javascript:alert('link')">Karten</a></li>
+          <li><a href="javascript:alert('link')">Geoportale</a></li>
+          <li><a href="javascript:alert('link')">Dienstleistungen</a></li>
+          <li><a href="javascript:alert('link')">Forschung und Lehre</a></li>
+          <li><a href="javascript:alert('link')">Über geo.admin.ch</a></li>
+        </ul>
       </li>
       <li>
         <a href="#">
-          Geodienste
-          <SvgIcon
-            icon="ChevronDown"
-            class="breadcrumb__icon"
-          />
+          <span>Geodienste</span>
+          <SvgIcon icon="ChevronDown" class="breadcrumb__icon" />
         </a>
+        <ul>
+          <li><a href="javascript:alert('link')">Link 1</a></li>
+          <li><a href="javascript:alert('link')">Link 2</a></li>
+          <li><a href="javascript:alert('link')">Link 3</a></li>
+        </ul>
       </li>
       <li>
         <a href="#">
-          Datenmodellablage
-          <SvgIcon
-            icon="ChevronDown"
-            class="breadcrumb__icon"
-          />
+          <span>Datenmodellablage</span>
+          <SvgIcon icon="ChevronDown" class="breadcrumb__icon" />
         </a>
+        <ul>
+          <li><a href="javascript:alert('link')">Link 1</a></li>
+          <li><a href="javascript:alert('link')">Link 2</a></li>
+          <li><a href="javascript:alert('link')">Link 3</a></li>
+        </ul>
       </li>
-    </ol>
+    </ul>
   </nav>
 </template>
 
