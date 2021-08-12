@@ -15,13 +15,48 @@
           <SvgIcon icon="ChevronDown" class="breadcrumb__icon" />
         </a>
         <ul>
-          <li><a href="javascript:alert('link')">News</a></li>
-          <li><a href="javascript:alert('link')">Geodaten</a></li>
-          <li><a href="javascript:alert('link')">Karten</a></li>
-          <li><a href="javascript:alert('link')">Geoportale</a></li>
-          <li><a href="javascript:alert('link')">Dienstleistungen</a></li>
-          <li><a href="javascript:alert('link')">Forschung und Lehre</a></li>
-          <li><a href="javascript:alert('link')">Über geo.admin.ch</a></li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>News</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Geodaten</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Karten</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Geoportale</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')" class="active">
+              <span>Dienstleistungen</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Forschung und Lehre</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Über geo.admin.ch</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
         </ul>
       </li>
       <li>
@@ -30,9 +65,24 @@
           <SvgIcon icon="ChevronDown" class="breadcrumb__icon" />
         </a>
         <ul>
-          <li><a href="javascript:alert('link')">Link 1</a></li>
-          <li><a href="javascript:alert('link')">Link 2</a></li>
-          <li><a href="javascript:alert('link')">Link 3</a></li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Link 1</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Link 2</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Link 3</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
         </ul>
       </li>
       <li>
@@ -41,9 +91,24 @@
           <SvgIcon icon="ChevronDown" class="breadcrumb__icon" />
         </a>
         <ul>
-          <li><a href="javascript:alert('link')">Link 1</a></li>
-          <li><a href="javascript:alert('link')">Link 2</a></li>
-          <li><a href="javascript:alert('link')">Link 3</a></li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Link 1</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Link 2</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
+          <li>
+            <a href="javascript:alert('link')">
+              <span>Link 3</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+          </li>
         </ul>
       </li>
     </ul>

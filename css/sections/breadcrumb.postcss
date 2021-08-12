@@ -13,8 +13,7 @@
 
     @apply -ml-4;
 
-
-    a {
+    & > ul > li > a {
         @apply flex items-center;
         @apply px-4;
     }
@@ -37,6 +36,10 @@
 
     & > ul > li > a {
         @apply hover:text-primary-600 leading-tight transition-colors;
+
+        &.active {
+            @apply text-red-600;
+        }
     }
 }
 
@@ -49,9 +52,9 @@
 }
 
 .breadcrumb-menu__drawer {
-    @apply h-[500px] w-[400px] p-5 mt-px;
+    @apply w-[300px] p-2 mt-px;
     @apply hidden lg:block;
-    @apply absolute z-20 top-24 -left-2;
+    @apply absolute z-20 top-20 -left-2;
     @apply bg-white shadow-2xl;
     @apply transition-transform duration-500;
 }
