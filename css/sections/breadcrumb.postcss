@@ -2,7 +2,7 @@
   BREADCRUMB
 \*----------------------------------------*/
 
-.breadcrumb-menu {
+.breadcrumb__bar {
     @apply flex;
     @apply text-sm text-text-500;
     @apply py-10;
@@ -40,21 +40,49 @@
         &.active {
             @apply text-red-600;
         }
+
+        .breadcrumb__icon {
+            @apply w-[24px] h-[24px];
+            @apply ml-2;
+            @apply text-primary-600;
+            @apply border border-primary-600 rounded-sm;
+            @apply stroke-current;
+        }
     }
 }
 
-.breadcrumb__icon {
-    @apply w-[24px] h-[24px];
-    @apply ml-2;
-    @apply text-primary-600;
-    @apply border border-primary-600 rounded-sm;
-    @apply stroke-current;
-}
+/*----------------------------------------*\
+  BREADCRUMB DRAWER
+\*----------------------------------------*/
 
-.breadcrumb-menu__drawer {
+.breadcrumb__drawer {
     @apply w-[300px] p-2 mt-px;
     @apply hidden lg:block;
-    @apply absolute z-20 top-20 -left-2;
+    @apply absolute z-20 top-20 left-[2px];
     @apply bg-white shadow-2xl;
     @apply transition-transform duration-500;
+}
+
+.breadcrumb__drawer-navigation {
+    position: relative;
+    height: 100%;
+
+    & li > a:not(.navy__back),
+    & li > span:not(.navy__title),
+    & li > button {
+        @apply menu__item lg:menu__item--condensed;
+        @apply menu__item--border w-full;
+        @apply py-4 px-2;
+
+        &:hover {
+            @apply text-primary-600;
+        }
+
+        &.active::after {
+            content:'';
+            @apply block bg-primary-600;
+            @apply w-[2px];
+            @apply absolute top-0 bottom-0 left-0;
+        }
+    }
 }

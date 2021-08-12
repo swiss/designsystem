@@ -1,19 +1,19 @@
 <template>
   <div
-    id="breadcrumb-menu"
-    class="breadcrumb-menu"
-    :class="isOpen ? 'breadcrumb--is-open' : '' "
+    id="breadcrumb"
+    class="breadcrumb"
   >
     <div
-      class="breadcrumb__overlay hidden"
-      id="breadcrumb__overlay"
-    />
-    <div class="container container--flex">
-      <BreadcrumbNavigation context="desktop" />
-      <div
-        id="breadcrumb-menu__drawer"
-        class="breadcrumb-menu__drawer hidden"
-      />
+      id="breadcrumb__bar"
+      class="breadcrumb__bar"
+    >
+      <div class="container container--flex">
+        <BreadcrumbNavigation context="desktop" />
+        <div
+          id="breadcrumb__drawer"
+          class="breadcrumb__drawer hidden"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -27,18 +27,10 @@ export default {
   components: {
    BreadcrumbNavigation
   },
-  props: {
-    isOpen: {
-      type: Boolean,
-      required: false,
-      default: false,
-    }
-  },
   mounted() {
     BreadcrumbNav.init(
-      '#breadcrumb-menu > .container > nav',
-      '#breadcrumb-menu__drawer',
-      '#breadcrumb-menu__overlay'
+      '#breadcrumb > #breadcrumb__bar > .container > nav',
+      '#breadcrumb__drawer',
     )
   }
 }

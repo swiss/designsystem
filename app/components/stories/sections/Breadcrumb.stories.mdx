@@ -4,25 +4,21 @@ import Breadcrumb from '../../ch/sections/Breadcrumb.vue';
 <Meta
   title="Sections/Header/Breadcrumb"
   component={Breadcrumb}
-  argTypes={{
-    isOpen: { name:'Is open', control: { type: 'boolean' } },
-  }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Breadcrumb },
-  template: '<Breadcrumb :isOpen="isOpen" />',
+  template: '<Breadcrumb />',
 });
 
 # Breadcrumb
 
+## Example
+
 <Canvas>
   <Story
     name="Example"
-    args={{
-      isOpen: false,
-    }}
   >
     {Template.bind({})}
   </Story>
@@ -35,6 +31,3 @@ export const Template = (args, { argTypes }) => ({
 ---
 
 <a href="?id=sections-header-breadcrumb--example" target="_blank">Open page in full width in a new tab</a>
-
-
-
