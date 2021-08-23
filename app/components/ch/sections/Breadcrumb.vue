@@ -1,20 +1,13 @@
 <template>
   <div
     id="breadcrumb"
-    class="breadcrumb"
+    class="breadcrumb container container--flex"
   >
+    <BreadcrumbNavigation />
     <div
-      id="breadcrumb__bar"
-      class="breadcrumb__bar"
-    >
-      <div class="container container--flex">
-        <BreadcrumbNavigation context="desktop" />
-        <div
-          id="breadcrumb__drawer"
-          class="breadcrumb__drawer hidden"
-        />
-      </div>
-    </div>
+      id="breadcrumb__drawer"
+      class="breadcrumb__drawer hidden"
+    />
   </div>
 </template>
 
@@ -29,7 +22,7 @@ export default {
   },
   mounted() {
     BreadcrumbNav.init(
-      '#breadcrumb > #breadcrumb__bar > .container > nav',
+      '#breadcrumb > nav',
       '#breadcrumb__drawer',
     )
   }

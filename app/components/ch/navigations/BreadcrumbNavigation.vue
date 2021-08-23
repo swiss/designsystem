@@ -11,8 +11,9 @@
       </li>
       <li>
         <a href="javascript:void(0)" role="button" class="breadcrumb__has-children active">
+          <SvgIcon icon="ChevronRight" class="breadcrumb__include-icon" />
           <span>Diensleistungen</span>
-          <SvgIcon icon="ChevronDown" class="breadcrumb__icon" />
+          <SvgIcon icon="ChevronDown" class="breadcrumb__dropdown-icon" />
         </a>
         <ul>
           <li>
@@ -62,7 +63,7 @@
       <li>
         <a href="#">
           <span>Geodienste</span>
-          <SvgIcon icon="ChevronDown" class="breadcrumb__icon" />
+          <SvgIcon icon="ChevronDown" class="breadcrumb__dropdown-icon" />
         </a>
         <ul>
           <li>
@@ -88,7 +89,7 @@
       <li>
         <a href="#">
           <span>Datenmodellablage</span>
-          <SvgIcon icon="ChevronDown" class="breadcrumb__icon" />
+          <SvgIcon icon="ChevronDown" class="breadcrumb__dropdown-icon" />
         </a>
         <ul>
           <li>
