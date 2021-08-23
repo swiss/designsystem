@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="classes">
+  <button type="button" :class="classes" aria-label="back-to-top-btn">
     <SvgIcon
       icon="ChevronUp"
       class="back-to-top-btn__icon"
