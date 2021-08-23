@@ -49,7 +49,6 @@
   }
 
   &.footer-information__entry--big {
-    @apply hidden lg:block;
     @apply col-span-2;
   }
 }
@@ -62,8 +61,8 @@
 }
 
 .footer-information__links {
-  @apply flex;
-  @apply gap-16;
+  @apply flex flex-col sm:flex-row;
+  @apply sm:gap-16;
 
   .footer-information__links-column {
     @apply flex-1;
