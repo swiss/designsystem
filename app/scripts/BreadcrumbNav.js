@@ -21,32 +21,32 @@ const BreadcrumbNav = {
     BreadcrumbNav.drawer.style.transform = `translateX(${rect.left}px)`;
   },
 
-  closeSubmenu(mainmenuBtn) {
+  closeSubmenu(breadcrumbBtn) {
     BreadcrumbNav.drawer.classList.add('hidden');
-    mainmenuBtn.classList.remove('clicked');
+    breadcrumbBtn.classList.remove('clicked');
     BreadcrumbNav.currentMenuBtn = undefined;
   },
 
-  toggleSubmenu(mainmenuBtn, relatedMenu, submenus) {
+  toggleSubmenu(breadcrumbBtn, relatedMenu, submenus) {
     if (BreadcrumbNav.currentMenuBtn === undefined) {
       BreadcrumbNav.drawer.classList.remove('hidden');
-      mainmenuBtn.classList.add('clicked');
-      BreadcrumbNav.currentMenuBtn = mainmenuBtn;
+      breadcrumbBtn.classList.add('clicked');
+      BreadcrumbNav.currentMenuBtn = breadcrumbBtn;
       console.log('open');
     }
-    else if (mainmenuBtn === BreadcrumbNav.currentMenuBtn) {
+    else if (breadcrumbBtn === BreadcrumbNav.currentMenuBtn) {
       BreadcrumbNav.drawer.classList.add('hidden');
-      mainmenuBtn.classList.remove('clicked');
+      breadcrumbBtn.classList.remove('clicked');
       BreadcrumbNav.currentMenuBtn = undefined;
     }
     else {
       BreadcrumbNav.drawer.classList.remove('hidden');
-      mainmenuBtn.classList.add('clicked');
+      breadcrumbBtn.classList.add('clicked');
       BreadcrumbNav.currentMenuBtn = undefined;
     }
 
     BreadcrumbNav.displayRelatedSubmenu(relatedMenu, submenus);
-    BreadcrumbNav.setDrawerXPosition(mainmenuBtn);
+    BreadcrumbNav.setDrawerXPosition(breadcrumbBtn);
   },
 
   init(navigationItem, target) {
@@ -56,22 +56,22 @@ const BreadcrumbNav = {
     BreadcrumbNav.currentMenuBtn = undefined;
 
     const nav = document.querySelector(navigationItem);
-    const mainmenuBtns = nav.querySelectorAll(':scope > ul > li > a');
+    const breadcrumbBtns = nav.querySelectorAll(':scope > ul > li > a');
     const submenus = nav.querySelectorAll(':scope > ul > li > ul');
     const drawer = BreadcrumbNav.drawer.querySelector(':scope > .breadcrumb__drawer-navigation');
-    [].forEach.call(mainmenuBtns, function (mainmenuBtn) {
+    [].forEach.call(breadcrumbBtns, function (breadcrumbBtn) {
 
       // check if item has submenu
-      mainmenuBtn.relatedMenu = mainmenuBtn.nextElementSibling
-      if (!mainmenuBtn.relatedMenu) return
+      breadcrumbBtn.relatedMenu = breadcrumbBtn.nextElementSibling
+      if (!breadcrumbBtn.relatedMenu) return
 
       // inject menu in slide 0:
-      drawer.appendChild(mainmenuBtn.relatedMenu);
+      drawer.appendChild(breadcrumbBtn.relatedMenu);
 
       // add click events
-      mainmenuBtn.addEventListener('click', function (event) {
+      breadcrumbBtn.addEventListener('click', function (event) {
         event.preventDefault();
-        BreadcrumbNav.toggleSubmenu(mainmenuBtn, mainmenuBtn.relatedMenu, submenus)
+        BreadcrumbNav.toggleSubmenu(breadcrumbBtn, breadcrumbBtn.relatedMenu, submenus)
       });
     });
   },
