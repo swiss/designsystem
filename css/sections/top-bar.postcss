@@ -23,6 +23,36 @@
 .top-bar__drawer {
   @apply py-10;
   @apply bg-secondary-600 text-white;
+
+  .top-bar__drawer__localization {
+    @apply border-b border-secondary-400;
+
+    .top-bar__drawer__localization__nav {
+      @apply mt-8 mb-12;
+
+      & ul {
+        @apply flex;
+        @apply space-x-6;
+      }
+
+      & ul > li {
+        @apply flex items-center;
+
+        .top-bar__drawer__localization__nav__icon {
+          @apply ml-8
+        }
+      }
+
+      & ul > li > a {
+        @apply text-secondary-100;
+
+        &.active {
+          @apply text-white font-bold;
+          @apply border-l-2 border-red-600 pl-2;
+        }
+      }
+    }
+  }
 }
 
 .top-bar__btn {
