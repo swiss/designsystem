@@ -53,6 +53,45 @@
       }
     }
   }
+
+  .top-bar__drawer__agencies {
+    @apply mt-12;
+
+    .top-bar__drawer__agencies__information {
+      @apply mt-10;
+      @apply lg:grid lg:grid-cols-3 lg:gap-16 flex flex-col;
+
+      .entry__websites {
+        @apply space-y-12 lg:space-y-20;
+
+        .entry__website {
+          @apply space-y-4;
+        }
+      }
+
+      .entry__departments {
+
+        h4 {
+          @apply mb-4;
+        }
+
+        .entry__department {
+          @apply flex items-center justify-between;
+          @apply border-b border-secondary-400 py-2;
+
+          .entry__department__acronym {
+            @apply text-secondary-100;
+            @apply text-xs;
+          }
+
+          .entry__department__icon {
+            @apply h-6;
+            @apply ml-5;
+          }
+        }
+      }
+    }
+  }
 }
 
 .top-bar__btn {
