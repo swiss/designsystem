@@ -4,9 +4,10 @@
 
 .breadcrumb {
   @apply flex h-full;
-  @apply py-3 sm:py-4 lg:py-5 xl:py-7;
+  @apply py-2 xl:py-3;
   @apply relative z-10;
   @apply text-sm text-text-500;
+  @apply hidden lg:block;
 
   & nav {
     @apply -ml-4;
@@ -17,16 +18,28 @@
   }
 
   & > nav > ul > li {
-    @apply flex;
+    @apply flex relative;
   }
 
   & > nav > ul > li > a {
     @apply flex items-center;
-    @apply px-4 py-1;
+    @apply px-4 py-2;
+    @apply md:py-4;
     @apply hover:text-primary-600 leading-tight transition-colors;
 
-    &.active {
-      @apply text-red-600;
+    &.clicked {
+      @apply bg-white shadow-2xl;
+      @apply relative z-50;
+      clip-path: inset(-50px -50px 0 -50px); /* crop shadow at the bottom */
+    }
+
+    & + ul {
+      @apply hidden opacity-0;
+      @apply transition-opacity duration-300;
+    }
+
+    &.clicked + ul {
+      @apply block opacity-100;
     }
   }
 }
@@ -49,25 +62,44 @@
   }
 }
 
+.breadcrumb__include-icon {
+  @apply -ml-5 mr-3;
+  @apply transition-opacity duration-200;
+
+  .clicked & {
+    @apply opacity-0;
+  }
+}
+
+.breadcrumb__dropdown-icon {
+  @apply w-[1.25em] h-[1.25em];
+  @apply ml-2;
+  @apply text-primary-600;
+  @apply border border-primary-600 rounded-sm;
+  @apply stroke-current;
+
+  & path {
+    @apply origin-center rotate-0;
+    @apply transition-transform duration-300;
+
+    .clicked & {
+      @apply rotate-180;
+    }
+  }
+}
+
 /*----------------------------------------*\
   BREADCRUMB DRAWER
 \*----------------------------------------*/
 
-.breadcrumb__drawer {
+.breadcrumb ul ul {
   @apply w-[300px] p-2 mt-px;
-  @apply hidden lg:block;
-  @apply absolute z-10 top-20 left-[2px];
+  @apply absolute z-10 top-[3rem] left-0;
   @apply bg-white shadow-2xl;
-}
-
-.breadcrumb__drawer-navigation {
-  position: relative;
-  height: 100%;
 
   li a {
     @apply menu__item menu__item--mini;
     @apply menu__item--border w-full;
-    @apply py-4 px-2;
 
     &:hover {
       @apply text-primary-600;
@@ -81,3 +113,4 @@
     }
   }
 }
+

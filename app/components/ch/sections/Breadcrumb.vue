@@ -22,8 +22,7 @@ export default {
   },
   mounted() {
     BreadcrumbNav.init(
-      '#breadcrumb > nav',
-      '#breadcrumb__drawer',
+      '#breadcrumb > nav'
     )
   }
 }
