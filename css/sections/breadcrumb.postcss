@@ -2,14 +2,115 @@
   BREADCRUMB
 \*----------------------------------------*/
 
-.breadcrumb ol {
-  @apply flex h-16 -ml-4;
+.breadcrumb {
+  @apply flex h-full;
+  @apply py-2 xl:py-3;
+  @apply relative z-10;
   @apply text-sm text-text-500;
+  @apply hidden lg:block;
 
-  a {
+  & nav {
+    @apply -ml-4;
+  }
+
+  & > nav > ul {
+    @apply flex flex-wrap;
+  }
+
+  & > nav > ul > li {
+    @apply flex relative;
+  }
+
+  & > nav > ul > li > a {
     @apply flex items-center;
-    @apply h-full px-4;
+    @apply px-4 py-2;
+    @apply md:py-4;
+    @apply hover:text-primary-600 leading-tight transition-colors;
+
+    &.clicked {
+      @apply bg-white shadow-2xl;
+      @apply relative z-50;
+      clip-path: inset(-50px -50px 0 -50px); /* crop shadow at the bottom */
+    }
+
+    & + ul {
+      @apply hidden opacity-0;
+      @apply transition-opacity duration-300;
+    }
+
+    &.clicked + ul {
+      @apply block opacity-100;
+    }
   }
 }
 
+
+.breadcrumb__dropdown-icon {
+  @apply w-[1.25em] h-[1.25em];
+  @apply ml-2;
+  @apply text-primary-600;
+  @apply border border-primary-600 rounded-sm;
+  @apply stroke-current;
+
+  & path {
+    @apply origin-center rotate-0;
+    @apply transition-transform duration-300;
+
+    .clicked & {
+      @apply rotate-180;
+    }
+  }
+}
+
+.breadcrumb__include-icon {
+  @apply -ml-5 mr-3;
+  @apply transition-opacity duration-200;
+
+  .clicked & {
+    @apply opacity-0;
+  }
+}
+
+.breadcrumb__dropdown-icon {
+  @apply w-[1.25em] h-[1.25em];
+  @apply ml-2;
+  @apply text-primary-600;
+  @apply border border-primary-600 rounded-sm;
+  @apply stroke-current;
+
+  & path {
+    @apply origin-center rotate-0;
+    @apply transition-transform duration-300;
+
+    .clicked & {
+      @apply rotate-180;
+    }
+  }
+}
+
+/*----------------------------------------*\
+  BREADCRUMB DRAWER
+\*----------------------------------------*/
+
+.breadcrumb ul ul {
+  @apply w-[300px] p-2 mt-px;
+  @apply absolute z-10 top-[3rem] left-0;
+  @apply bg-white shadow-2xl;
+
+  li a {
+    @apply menu__item menu__item--mini;
+    @apply menu__item--border w-full;
+
+    &:hover {
+      @apply text-primary-600;
+    }
+
+    &.active::after {
+      content:'';
+      @apply block bg-primary-600;
+      @apply w-[2px];
+      @apply absolute top-0 bottom-0 left-0;
+    }
+  }
+}
 
