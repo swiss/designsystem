@@ -134,21 +134,26 @@
           @apply flex items-center justify-between;
           @apply border border-secondary-400 p-3;
           @apply hover:bg-secondary-700;
-        }
 
-        .entry__amt__accronym {
-          @apply flex;
-          @apply text-secondary-100;
-          @apply text-xs;
-
-          .entry__amt__accronym__icon {
-            @apply mx-2;
+          .entry__amt__list__icon {
+            @apply hidden;
+            @apply h-6;
+            @apply ml-5;
           }
-        }
 
-        .entry__amt__list__icon {
-          @apply h-6;
-          @apply ml-5;
+          &:hover .entry__amt__list__icon {
+            @apply inline;
+          }
+
+          .entry__amt__accronym {
+            @apply flex;
+            @apply text-secondary-100;
+            @apply text-xs;
+
+            .entry__amt__accronym__icon {
+              @apply mx-2;
+            }
+          }
         }
       }
     }
