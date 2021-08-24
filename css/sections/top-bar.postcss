@@ -24,6 +24,14 @@
   @apply py-10;
   @apply bg-secondary-600 text-white;
 
+  .top-bar__drawer__close {
+    @apply flex justify-end;
+
+    .top-bar__drawer__close__btn {
+      @apply flex items-center;
+    }
+  }
+
   .top-bar__drawer__localization {
     @apply border-b border-secondary-400;
 
@@ -148,8 +156,13 @@
 }
 
 .top-bar__btn {
+  @apply flex items-center;
   @apply h-full px-4 -ml-4;
   @apply bg-secondary-600;
+
+  .top-bar__btn__icon {
+    @apply ml-2;
+  }
 }
 
 .top-bar__navigation {

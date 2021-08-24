@@ -9,7 +9,17 @@
           class="top-bar__btn"
           @click="isOpen = !isOpen"
         >
-          Alle Schweizer Bundesbehörden
+          <span>Alle Schweizer Bundesbehörden</span>
+          <SvgIcon
+            v-if="!isOpen"
+            icon="ChevronDown"
+            class="top-bar__btn__icon"
+          />
+          <SvgIcon
+            v-if="isOpen"
+            icon="ChevronUp"
+            class="top-bar__btn__icon"
+          />
         </button>
         <div class="top-bar__right">
           <TopBarNavigation context="desktop" />
@@ -18,7 +28,17 @@
     </div>
     <div v-if="isOpen" class="top-bar__drawer">
       <div class="container">
-
+        <div class="top-bar__drawer__close">
+          <button
+            class="top-bar__drawer__close__btn"
+            @click="isOpen = !isOpen"
+          >
+            <span>Schliessen</span>
+            <SvgIcon
+              icon="Cancel"
+            />
+          </button>
+        </div>
         <div class="top-bar__drawer__localization">
           <h3>Wo befinde ich mich?</h3>
           <div class="top-bar__drawer__localization__nav">
