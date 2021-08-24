@@ -1,5 +1,5 @@
 <template>
-  <div class="back-to-top-wrapper">
+  <div :class="wrapper ? 'back-to-top-wrapper' : ''">
     <a :href="`#${target}`" type="button" :class="classes" aria-label="Scroll to top">
       <SvgIcon
         icon="ChevronUp"
@@ -33,6 +33,10 @@ export default {
     fixed: {
       type: Boolean,
       default: false
+    },
+    wrapper: {
+      type: Boolean,
+      default: true
     }
   },
 
