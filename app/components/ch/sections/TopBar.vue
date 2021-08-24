@@ -28,7 +28,7 @@
     </div>
     <div v-if="isOpen" class="top-bar__drawer">
       <div class="container">
-        <div class="top-bar__drawer__close">
+        <div class="flex justify-end">
           <button
             class="top-bar__drawer__close__btn"
             @click="isOpen = !isOpen"
@@ -86,22 +86,24 @@
                 <Btn label="Bundeskanzlei Webseite besuchen" icon="External" icon-pos="right" type="outline-negative" size="sm" />
               </div>
             </li>
-            <li class="top-bar__drawer__agencies__information__entry">
-              <div class="entry__departments">
-                <h4>Alle Departemente</h4>
-                <div class="entry__department">
-                  <div class="entry__department__info">
-                    <span class="entry__department__acronym">EDA</span>
-                    <p>Eidgenössisches Departement für auswärtige Angelegenheiten</p>
-                  </div>
+            <div class="top-bar__drawer__agencies__information__entry">
+              <h4>Alle Departemente</h4>
+              <ul class="menu">
+                <li class="menu__item menu__item--negative">
                   <a href="javascript:void(0)">
+                    <div>
+                      <h5>EDA</h5>
+                      <div>
+                        Eidgenössisches Departement für auswärtige Angelegenheiten
+                      </div>
+                    </div>
                     <SvgIcon
                       icon="External"
                       class="entry__department__icon"
                     />
                   </a>
-                </div>
-                <div class="entry__department">
+                </li>
+                <!--div class="entry__department">
                   <div class="entry__department__info">
                     <span class="entry__department__acronym">EDI</span>
                     <p>Eidgenössisches Departement des Innern</p>
@@ -172,9 +174,9 @@
                       class="entry__department__icon"
                     />
                   </a>
-                </div>
-              </div>
-            </li>
+                </div-->
+              </ul>
+            </div>
             <li class="top-bar__drawer__agencies__information__entry">
               <div class="entry__amt">
                 <h4>Alle Ämter</h4>
