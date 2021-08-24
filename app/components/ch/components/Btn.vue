@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="classes" aria-label="btn">
+  <button type="button" :class="classes" :aria-label="iconPos === 'only' ? label : ''">
     <SvgIcon
       v-if="this.icon"
       :icon="this.icon"
