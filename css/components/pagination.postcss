@@ -42,3 +42,18 @@
     @apply min-h-[44px] md:min-h-[48px] lg:min-h-[54px];
     @apply text-base md:text-lg lg:text-xl;
 }
+
+/* ICONS */
+.pagination__icon {
+    @apply w-[1.4em] h-full;
+    @apply stroke-[0.3px] md:stroke-[0.35px] lg:stroke-[0.4px];
+    @apply stroke-current;
+}
+
+.pagination--icon-only {
+    @apply px-[0.625em];
+
+    .pagination__text {
+        @apply hidden;
+    }
+}

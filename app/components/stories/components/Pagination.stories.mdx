@@ -7,13 +7,14 @@ import Pagination from '../../ch/components/Pagination.vue';
   argTypes={{
     type:    { control: { type: 'select', options: ['outline', 'outline-negative'] } },
     size:    { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    icon:    { control: { type: 'select', options: ['none', 'ChevronLineLeft', 'ChevronLeft', 'ChevronLineRight', 'ChevronRight'] } },
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Pagination },
-  template: '<Pagination :type="type" :size="size" :label="label" />',
+  template: '<Pagination :type="type" :size="size" :icon="icon" :label="label" />',
 });
 
 # Pagination
@@ -26,6 +27,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       type: 'outline',
       size: 'base',
+      icon: 'none',
       label: '1',
     }}
   >
@@ -58,4 +60,100 @@ For size variations, the following css classes are built:
   <button type="button" class="pagination pagination--outline pagination--sm">1</button>
   <button type="button" class="pagination pagination--outline pagination--base">2</button>
   <button type="button" class="pagination pagination--outline pagination--lg">3</button>
+</Canvas>
+
+## Example
+<Canvas style={{backgroundColor: '#2f4356'}}>
+  <button
+    type="button"
+    aria-label="First page"
+    class="
+    pagination
+    pagination--outline-negative
+    pagination--icon-only
+  "
+  >
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="pagination__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m16.667 5.394.65.375-3.85 6.668 3.85 6.669-.65.375-4.066-7.044z"
+      ></path>
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m8.09165 5.58105h.75v13.71289h-.75z"
+      ></path>
+    </svg>
+  </button>
+  <button
+    type="button"
+    aria-label="Previous page"
+    class="
+    pagination
+    pagination--outline-negative
+    pagination--icon-only
+  "
+  >
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="pagination__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m14.733 5.704-3.85 6.669 3.85 6.669-.649.375-4.067-7.044 4.067-7.044z"
+      ></path>
+    </svg>
+  </button>
+  <button type="button" class="pagination pagination--outline-negative">1</button>
+  <button type="button" class="pagination pagination--outline-negative">2</button>
+  <button type="button" class="pagination pagination--outline-negative">...</button>
+  <button type="button" class="pagination pagination--outline-negative">27</button>
+  <button
+    type="button"
+    aria-label="Next page"
+    class="
+    pagination
+    pagination--outline-negative
+    pagination--icon-only
+  "
+  >
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="pagination__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m10.017 19.042 3.85-6.669-3.85-6.669.649-.375 4.067 7.044-4.067 7.044z"
+      ></path>
+    </svg>
+  </button>
+  <button
+    type="button"
+    aria-label="Last page"
+    class="
+    pagination
+    pagination--outline-negative
+    pagination--icon-only
+  "
+  >
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="pagination__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m8.742 19.481-.65-.375 3.85-6.669-3.85-6.668.65-.375 4.065 7.043z"
+      ></path>
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m16.56723 5.58105h.75v13.71289h-.75z"
+      ></path>
+    </svg>
+  </button>
 </Canvas>
