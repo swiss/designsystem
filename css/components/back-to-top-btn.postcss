@@ -2,47 +2,89 @@
   BACK TO TOP BTN
 \*----------------------------------------*/
 
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.back-to-top-wrapper {
+  @apply absolute;
+  @apply top-[80vh] right-3 bottom-[-3.5rem];
+  z-index: 500;
+  pointer-events: none;
+
+  @media (min-width: 1024px) {
+    bottom: -4rem;
+  }
+
+  @media (min-width: 1280px) {
+    right: 1rem;
+    bottom: -5rem;
+  }
+}
+
 .back-to-top-btn {
-    @apply w-[64px] h-[64px];
-    @apply inline-flex items-center justify-center;
-    @apply rounded-sm;
-    @apply shadow-lg;
-    @apply hover:shadow-xl;
+  @apply w-11 h-11;
+  @apply lg:w-12 lg:h-12;
+  @apply xl:w-16 xl:h-16;
+  @apply inline-flex items-center justify-center;
+  @apply rounded-sm;
+  @apply shadow-lg;
+  @apply hover:shadow-xl;
+
+  .back-to-top-wrapper & {
+    position: fixed; /* fallback */
+    position: sticky;
+    pointer-events: all;
+    top: calc(100vh - 3.5rem);
+
+    @media (min-width: 1024px) {
+      top: calc(100vh - 4.5rem);
+    }
+
+    @media (min-width: 1280px) {
+      top: calc(100vh - 5rem);
+    }
+  }
 }
 
 .back-to-top-btn__icon {
-    @apply w-[30px] h-full;
-    @apply stroke-[0.3px];
-    @apply stroke-current;
+  @apply w-1/2 h-full;
+  @apply stroke-[0.3px];
+  @apply stroke-current;
 }
 
 /* TYPES */
 
 .back-to-top-btn--default {
-    @apply bg-white;
+  @apply bg-white;
 
-    .back-to-top-btn__icon {
-        @apply text-secondary-500;
-        @apply hover:text-primary-600;
-    }
+  .back-to-top-btn__icon {
+  @apply text-secondary-500;
+  @apply hover:text-primary-600;
+  }
 }
 
 .back-to-top-btn--negative {
-    @apply bg-secondary-500;
-    @apply hover:bg-secondary-600;
+  @apply bg-secondary-500;
+  @apply hover:bg-secondary-600;
 
-    .back-to-top-btn__icon {
-        @apply text-white;
-    }
+  .back-to-top-btn__icon {
+  @apply text-white;
+  }
 }
 
 .back-to-top-btn--outline {
-    @apply bg-white;
-    @apply border border-primary-600;
-    @apply hover:border-primary-700;
+  @apply bg-white;
+  @apply border border-primary-600;
+  @apply hover:border-primary-700;
 
-    .back-to-top-btn__icon {
-        @apply text-primary-600;
-        @apply hover:text-primary-700;
-    }
+  .back-to-top-btn__icon {
+  @apply text-primary-600;
+  @apply hover:text-primary-700;
+  }
 }
+
+
+
