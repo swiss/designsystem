@@ -90,6 +90,57 @@
           }
         }
       }
+
+      .entry__amt {
+
+        h4 {
+          @apply mb-4;
+        }
+
+        .entry__amt__search {
+          @apply flex items-center justify-between;
+          @apply bg-secondary-300;
+          @apply border border-secondary-400;
+
+          .search__field {
+            @apply font-bold text-2xl text-white;
+            @apply bg-secondary-300;
+            @apply p-3;
+            @apply w-full;
+            @apply outline-none;
+
+            &::placeholder {
+              @apply text-secondary-200;
+            }
+          }
+
+          .search__icon {
+            @apply h-8 mx-3;
+            @apply text-white;
+          }
+        }
+
+        .entry__amt__list__item {
+          @apply flex items-center justify-between;
+          @apply border border-secondary-400 p-3;
+          @apply hover:bg-secondary-700;
+        }
+
+        .entry__amt__accronym {
+          @apply flex;
+          @apply text-secondary-100;
+          @apply text-xs;
+
+          .entry__amt__accronym__icon {
+            @apply mx-2;
+          }
+        }
+
+        .entry__amt__list__icon {
+          @apply h-6;
+          @apply ml-5;
+        }
+      }
     }
   }
 }

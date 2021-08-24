@@ -156,7 +156,135 @@
               </div>
             </li>
             <li class="top-bar__drawer__agencies__information__entry">
-              <h4>Alle Ämter</h4>
+              <div class="entry__amt">
+                <h4>Alle Ämter</h4>
+                <div class="entry__amt__content">
+                  <div class="entry__amt__search">
+                      <input class="search__field" type="text" placeholder="Amt suchen">
+                      <SvgIcon
+                        icon="Search"
+                        class="search__icon"
+                      />
+                  </div>
+                  <div class="entry__amt__list">
+                    <div class="entry__amt__list__item">
+                      <div class="entry__amt__info">
+                        <div class="entry__amt__accronym">
+                          EDA
+                          <SvgIcon
+                            icon="ArrowRight"
+                            class="entry__amt__accronym__icon"
+                          />
+                          BK
+                        </div>
+                        <p>Bundesamt für Kultur</p>
+                      </div>
+                      <a href="javascript:void(0)">
+                        <SvgIcon
+                          icon="External"
+                          class="entry__amt__list__icon"
+                        />
+                      </a>
+                    </div>
+                    <div class="entry__amt__list__item">
+                      <div class="entry__amt__info">
+                        <div class="entry__amt__accronym">
+                          EDA
+                          <SvgIcon
+                            icon="ArrowRight"
+                            class="entry__amt__accronym__icon"
+                          />
+                          BLV
+                        </div>
+                        <p>Bundesamt für Lebensmittelsicherheit und Veterinärwesen</p>
+                      </div>
+                      <a href="javascript:void(0)">
+                        <SvgIcon
+                          icon="External"
+                          class="entry__amt__list__icon"
+                        />
+                      </a>
+                    </div>
+                    <div class="entry__amt__list__item">
+                      <div class="entry__amt__info">
+                        <div class="entry__amt__accronym">
+                          UVEK
+                          <SvgIcon
+                            icon="ArrowRight"
+                            class="entry__amt__accronym__icon"
+                          />
+                          BS
+                        </div>
+                        <p>Bundesamt für Sozialversicherungen </p>
+                      </div>
+                      <a href="javascript:void(0)">
+                        <SvgIcon
+                          icon="External"
+                          class="entry__amt__list__icon"
+                        />
+                      </a>
+                    </div>
+                    <div class="entry__amt__list__item">
+                      <div class="entry__amt__info">
+                        <div class="entry__amt__accronym">
+                          EDA
+                          <SvgIcon
+                            icon="ArrowRight"
+                            class="entry__amt__accronym__icon"
+                          />
+                          BAR
+                        </div>
+                        <p>Schweizerisches Bundesarchiv</p>
+                      </div>
+                      <a href="javascript:void(0)">
+                        <SvgIcon
+                          icon="External"
+                          class="entry__amt__list__icon"
+                        />
+                      </a>
+                    </div>
+                    <div class="entry__amt__list__item">
+                      <div class="entry__amt__info">
+                        <div class="entry__amt__accronym">
+                          EDA
+                          <SvgIcon
+                            icon="ArrowRight"
+                            class="entry__amt__accronym__icon"
+                          />
+                          BK
+                        </div>
+                        <p>Bundesamt für Kultur</p>
+                      </div>
+                      <a href="javascript:void(0)">
+                        <SvgIcon
+                          icon="External"
+                          class="entry__amt__list__icon"
+                        />
+                      </a>
+                    </div>
+                    <div class="entry__amt__list__item">
+                      <div class="entry__amt__info">
+                        <div class="entry__amt__accronym">
+                          EDA
+                          <SvgIcon
+                            icon="ArrowRight"
+                            class="entry__amt__accronym__icon"
+                          />
+                          BK
+                        </div>
+                        <p>Bundesamt für Kultur</p>
+                      </div>
+                      <a href="javascript:void(0)">
+                        <SvgIcon
+                          icon="External"
+                          class="entry__amt__list__icon"
+                        />
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
