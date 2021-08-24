@@ -71,6 +71,6 @@ export default {
   },
   tailwindcss: {
     cssPath: '../css/main.postcss',
-    jit: true,
+    mode: 'jit'
   },
 }
