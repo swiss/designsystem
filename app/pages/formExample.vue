@@ -11,7 +11,7 @@
     </header>
     <main id="main-content">
       <div class="container">
-        <h1 class="py-6">Demo Application</h1>
+        <h1 class="py-6">Form example</h1>
       </div>
       <FormDemo />
 

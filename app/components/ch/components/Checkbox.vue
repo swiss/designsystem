@@ -1,25 +1,52 @@
 <template>
-  <input :class="classes" type="checkbox" />
+  <div class="form__group__checkbox">
+    <input
+      type="checkbox"
+      :class="classes"
+      :id="id"
+      :name="name"
+      :value="value"
+    />
+    <label
+      v-if="label"
+      :for="id"
+    >
+      {{ label }}
+    </label>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Checkbox',
   props: {
-    type: {
+    variant: {
       type: String,
       validator: (prop) => ['outline', 'negative'].includes(prop),
+      default: 'outline'
     },
     size: {
       type: String,
       validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
+    },
+    label: {
+      type: String,
+    },
+    value: {
+      type: String,
+    },
+    id: {
+      type: String,
+    },
+    name: {
+      type: String,
     },
   },
 
   computed: {
     classes() {
       let base = 'input '
-      if (this.type) base += `input--${this.type} `
+      if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
       return base
     },

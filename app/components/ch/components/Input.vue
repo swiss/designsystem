@@ -1,5 +1,5 @@
 <template>
-  <div class="form__group">
+  <div class="form__group__input">
     <label
       v-if="label"
       :for="id"
@@ -68,7 +68,7 @@ export default {
   computed: {
     classes() {
       let base = ''
-      if (this.type) base += `input--${this.type} `
+      if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
       return base
     },
