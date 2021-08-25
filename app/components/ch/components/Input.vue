@@ -3,6 +3,7 @@
     <label
       v-if="label"
       :for="id"
+      :class="labelClasses"
     >
       {{ label }}
     </label>
@@ -18,6 +19,11 @@
       :step="step"
       :pattern="pattern"
     />
+    <div v-if="message">
+      <div class="badge badge--sm" :class="`badge--${messageType}`">
+        {{ message }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -34,6 +40,14 @@ export default {
       type: String,
       validator: (prop) => ['outline', 'negative'].includes(prop),
       default: 'outline'
+    },
+    message: {
+      type: String,
+    },
+    messageType: {
+      type: String,
+      validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+      default: 'error'
     },
     size: {
       type: String,
@@ -70,6 +84,13 @@ export default {
       let base = ''
       if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
+      if (this.message) base += `input--${this.messageType} `
+      return base
+    },
+    labelClasses() {
+      let base = ''
+      if (this.variant === 'negative') base += `text--negative `
+      if (this.size) base += `text--${this.size} `
       return base
     },
   },

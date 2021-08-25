@@ -3,6 +3,7 @@
     <label
       v-if="label"
       :for="id"
+      :class="labelClasses"
     >
       {{ label }}
     </label>
@@ -10,6 +11,7 @@
       <select
         :class="classes"
         :id="id"
+        :name="name"
       >
         <slot></slot>
       </select>
@@ -25,6 +27,11 @@
         </svg>
       </div>
     </div>
+    <div v-if="message">
+      <div class="badge badge--sm" :class="`badge--${messageType}`">
+        {{ message }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -32,9 +39,10 @@
 export default {
   name: 'Input',
   props: {
-    type: {
+    variant: {
       type: String,
       validator: (prop) => ['outline', 'negative'].includes(prop),
+      default: 'outline'
     },
     size: {
       type: String,
@@ -46,13 +54,31 @@ export default {
     id: {
       type: String,
     },
+    name: {
+      type: String,
+    },
+    message: {
+      type: String,
+    },
+    messageType: {
+      type: String,
+      validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+      default: 'error'
+    },
   },
 
   computed: {
     classes() {
       let base = ''
-      if (this.type) base += `input--${this.type} `
+      if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
+      if (this.message) base += `input--${this.messageType} `
+      return base
+    },
+    labelClasses() {
+      let base = ''
+      if (this.variant === 'negative') base += `text--negative `
+      if (this.size) base += `text--${this.size} `
       return base
     },
   },

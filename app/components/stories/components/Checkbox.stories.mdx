@@ -2,26 +2,33 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import Checkbox from '../../ch/components/Checkbox.vue'
 
 <Meta
-  title="Components/Form/Checkbox"
+  title="Components/Form/Input Checkbox"
   component={Checkbox}
   argTypes={{
-    type: {
+    variant: {
       control: {
         type: 'select',
         options: ['outline', 'negative'],
       },
     },
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    message: {},
+    messageType: {
+      control: {
+        type: 'select',
+        options: ['error', 'warning', 'success', 'info'],
+      },
+    }
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Checkbox },
-  template: '<Checkbox :type="type" :size="size" />',
+  template: '<Checkbox :variant="variant" :size="size" :label="label" :id="id" :name="name" :value="value" :message="message" :messageType="messageType" />',
 })
 
-# Checkbox
+# Input Checkbox
 
 ## Example
 
@@ -31,6 +38,9 @@ export const Template = (args, { argTypes }) => ({
     args={{
       type: 'outline',
       size: 'base',
+      label: 'Label',
+      name: 'checkbox-name',
+      id:'checkbox-id'
     }}
   >
     {Template.bind({})}

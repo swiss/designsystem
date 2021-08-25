@@ -2,26 +2,33 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import Radio from '../../ch/components/Radio.vue'
 
 <Meta
-  title="Components/Form/Radio"
+  title="Components/Form/Input Radio"
   component={Radio}
   argTypes={{
-    type: {
+    variant: {
       control: {
         type: 'select',
         options: ['outline', 'negative'],
       },
     },
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    message: {},
+    messageType: {
+      control: {
+        type: 'select',
+        options: ['error', 'warning', 'success', 'info'],
+      },
+    }
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Radio },
-  template: '<Radio :type="type" :size="size" />',
+  template: '<Radio :variant="variant" :size="size" :label="label" :id="id" :name="name" :value="value" :message="message" :messageType="messageType" />',
 })
 
-# Radiobox
+# Input Radio
 
 ## Example
 
@@ -31,6 +38,9 @@ export const Template = (args, { argTypes }) => ({
     args={{
       type: 'outline',
       size: 'base',
+      label: 'Label',
+      name: 'radio-name',
+      id:'radio-id'
     }}
   >
     {Template.bind({})}

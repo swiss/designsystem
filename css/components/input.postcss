@@ -8,37 +8,42 @@ select {
   @apply bg-white border border-text-500;
   @apply rounded-xs;
   @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
+}
 
-  &.input--sm {
-    @apply text-sm leading-5;
-  }
+.input--sm {
+  @apply text-sm leading-5;
+}
 
-  &.input--lg {
-    @apply text-lg leading-7;
-  }
+.input--lg {
+  @apply text-lg leading-7;
+}
 
-  &.input--base {
-    @apply leading-6 text-base;
-  }
+.input--base {
+  @apply leading-6 text-base;
+}
 
-  &:disabled,
-  &.input--disabled {
-    @apply bg-text-50;
-    @apply text-text-400;
-    @apply border-text-300;
-    @apply pointer-events-none cursor-not-allowed;
-  }
+[disabled],
+.input--disabled {
+  @apply bg-text-50;
+  @apply text-text-400;
+  @apply border-text-300;
+  @apply pointer-events-none cursor-not-allowed;
 }
 
 .input--outline {
   @apply text-text-800;
-  @apply border border-text-500;
+  @apply border-text-500;
+}
+
+.input--error {
+  @apply text-red-800;
+  @apply border-red-500;
 }
 
 .input--negative {
   @apply text-white;
   @apply bg-secondary-300;
-  @apply border-0;
+  @apply border-secondary-300;
 
   &:disabled,
   &.input--disabled {
@@ -47,23 +52,38 @@ select {
   }
 }
 
+.input--error.input--negative  {
+    @apply text-red-200 border-red-300;
+}
+
+/* RADIO AND CHECKBOXES */
+
 input[type='checkbox'],
 input[type='radio'] {
-  @apply h-4 w-4;
-  @apply px-0 py-0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   -webkit-print-color-adjust: exact;
 
-  &.input--lg {
-    @apply px-0;
-  }
-
   &:disabled,
   &.input--disabled {
-    @apply opacity-25;
+    @apply opacity-40;
   }
+}
+
+input[type='checkbox'].input--sm,
+input[type='radio'].input--sm {
+   @apply h-3 w-3;
+}
+
+input[type='checkbox'].input--base,
+input[type='radio'].input--base {
+   @apply h-[0.9rem] w-[0.9rem];
+}
+
+input[type='checkbox'].input--lg,
+input[type='radio'].input--lg {
+   @apply h-[1rem] w-[1rem];
 }
 
 input[type='checkbox'].input--outline,
@@ -96,6 +116,16 @@ input[type='radio']:checked {
     @apply bg-text-700 border-text-500;
   }
 }
+
+input[type='radio'] {
+  @apply rounded-full;
+}
+
+input[type='radio']:checked {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 6 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='3' r='3' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+// OTHER INPUT TYPES
 
 input[type='color'] {
   @apply h-12;

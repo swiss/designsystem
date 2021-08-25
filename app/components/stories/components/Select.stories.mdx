@@ -5,20 +5,42 @@ import Select from '../../ch/components/Select.vue'
   title="Components/Form/Select"
   component={Select}
   argTypes={{
-    type: {
+    variant: {
       control: {
         type: 'select',
         options: ['outline', 'negative'],
       },
     },
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    message: {},
+    messageType: {
+      control: {
+        type: 'select',
+        options: ['error', 'warning', 'success', 'info'],
+      },
+    }
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Select },
-  template: '<Select :type="type" :size="size" />',
+  template: `
+    <Select
+      :variant="variant"
+      :size="size"
+      :label="label"
+      :id="id"
+      :name="name"
+      :message="message"
+      :messageType="messageType"
+    >
+      <option disabled selected>Choose your country</option>
+      <option>Switzerland</option>
+      <option>Swaziland</option>
+      <option>Sweden</option>
+    </Select>
+  `,
 })
 
 # Select
@@ -29,8 +51,11 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Example"
     args={{
-      type: 'outline',
+      variant: 'outline',
       size: 'base',
+      label: 'Label',
+      name: 'radio-name',
+      id:'radio-id'
     }}
   >
     {Template.bind({})}
@@ -46,7 +71,25 @@ TODO: update examples below:
 - `input--negative` for standard textareas on dark background
 
 <Canvas style={{ backgroundColor: '#2f4356' }}>
-  <textarea class="input--negative input--base" value="Input text" />
+  <div class="select">
+    <select
+      id="radio-id"
+      name="radio-name"
+      class="input--outline input--base input--negative"
+    >
+      <option>Choose your country</option>
+      <option>Switzerland</option>
+      <option>Swaziland</option>
+      <option>Sweden</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
 </Canvas>
 
 ## Textarea disabled state
@@ -54,15 +97,26 @@ TODO: update examples below:
 - `input--disabled` or `disabled state on the input` to add the disabled style
 
 <Canvas>
-  <select class="input input--outline" >
-    <option>Some Text1</option>
-    <option>Some Text2</option>
-    <option>Some Text3</option>
-    <option>Some Text4</option>
-    <option>Some Text5</option>
-  </select>
-  <textarea class="input--outline input--base" disabled value="Input text" />
-  <textarea class="input--negative input--base" disabled value="Input text" />
+  <div class="select">
+    <select
+      id="radio-id"
+      name="radio-name"
+      class="input--outline input--base"
+      disabled
+    >
+      <option>Choose your country</option>
+      <option>Switzerland</option>
+      <option>Swaziland</option>
+      <option>Sweden</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
 </Canvas>
 
 ## Sizes
@@ -74,25 +128,58 @@ For size variations, the following css classes are built:
 - `input--lg` for large inputs
 
 <Canvas>
-  <select class="input input--outline input--sm">
-    <option>Some Text1</option>
-    <option>Some Text2</option>
-    <option>Some Text3</option>
-    <option>Some Text4</option>
-    <option>Some Text5</option>
-  </select>
-  <select class="input input--outline input--base">
-    <option>Some Text1</option>
-    <option>Some Text2</option>
-    <option>Some Text3</option>
-    <option>Some Text4</option>
-    <option>Some Text5</option>
-  </select>
-  <select class="input input--outline input--lg">
-    <option>Some Text1</option>
-    <option>Some Text2</option>
-    <option>Some Text3</option>
-    <option>Some Text4</option>
-    <option>Some Text5</option>
-  </select>
+  <div class="select">
+    <select
+      id="select-0"
+      name="radio-name"
+      class="input--outline input--sm"
+    >
+      <option>Small</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</Canvas>
+
+<Canvas>
+  <div class="select">
+    <select
+      id="select-0"
+      name="radio-name"
+      class="input--outline input--base"
+    >
+      <option>Default</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</Canvas>
+
+<Canvas>
+  <div class="select">
+    <select
+      id="select-0"
+      name="radio-name"
+      class="input--outline input--lg"
+    >
+      <option>Large</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
 </Canvas>
