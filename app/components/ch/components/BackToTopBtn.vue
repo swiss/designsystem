@@ -1,10 +1,12 @@
 <template>
-  <button type="button" :class="classes">
-    <SvgIcon
-      icon="ChevronUp"
-      class="back-to-top-btn__icon"
-    />
-  </button>
+  <div :class="wrapper ? 'back-to-top-wrapper' : ''">
+    <a :href="`#${target}`" type="button" :class="classes" aria-label="Scroll to top">
+      <SvgIcon
+        icon="ChevronUp"
+        class="back-to-top-btn__icon"
+      />
+    </a>
+  </div>
 </template>
 
 <script>
@@ -24,12 +26,25 @@ export default {
         'outline'
       ].includes(prop)
     },
+    target: {
+      type: String,
+      default: '#'
+    },
+    fixed: {
+      type: Boolean,
+      default: false
+    },
+    wrapper: {
+      type: Boolean,
+      default: true
+    }
   },
 
   computed: {
     classes () {
       let base = 'back-to-top-btn '
       if (this.type) base += `back-to-top-btn--${this.type} `
+      if (this.fixed) base += `back-to-top-btn--fixed `
       return base
     },
   }
