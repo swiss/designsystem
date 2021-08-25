@@ -21,7 +21,7 @@ export const Template = (args, { argTypes }) => ({
   template: '<Select :type="type" :size="size" />',
 })
 
-# Textarea
+# Select
 
 ## Example
 
@@ -39,6 +39,8 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Example" />
 
+TODO: update examples below:
+
 ## Textarea negative type
 
 - `input--negative` for standard textareas on dark background
@@ -52,6 +54,13 @@ export const Template = (args, { argTypes }) => ({
 - `input--disabled` or `disabled state on the input` to add the disabled style
 
 <Canvas>
+  <select class="input input--outline" >
+    <option>Some Text1</option>
+    <option>Some Text2</option>
+    <option>Some Text3</option>
+    <option>Some Text4</option>
+    <option>Some Text5</option>
+  </select>
   <textarea class="input--outline input--base" disabled value="Input text" />
   <textarea class="input--negative input--base" disabled value="Input text" />
 </Canvas>

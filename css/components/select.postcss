@@ -1,23 +1,25 @@
 .select {
-  @apply inline-flex;
+  @apply inline-flex relative;
   @apply border border-text-500 rounded-xs shadow;
 
   & select {
-    @apply border-l-0 border-t-0 border-b-0 border-text-400;
-    @apply shadow-none;
+    @apply pr-20;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
   }
+}
 
-  & .select__icon {
-    @apply w-12 h-12;
-    @apply flex items-center justify-center;
+.select__icon {
+  @apply w-12 h-12;
+  @apply flex items-center justify-center;
+  @apply absolute right-0;
+  @apply border-l border-text-400;
+  @apply pointer-events-none;
 
-    & svg {
-      @apply w-8 h-8;
-    }
+  & svg {
+    @apply w-8 h-8;
   }
 }

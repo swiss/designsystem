@@ -13,7 +13,17 @@
       <div class="container">
         <h1>Demo Application</h1>
         <a href="#" class="link">Test skip link</a>
-        <Input />
+        <div class="mb-3">
+          <Input />
+        </div>
+        <div>
+          <Select classes="select">
+            <option disabled selected>Choose your country</option>
+            <option>Switzerland</option>
+            <option>Swaziland</option>
+            <option>Sweden</option>
+          </Select>
+        </div>
       </div>
     </main>
     <footer class="footer" id="main-footer">
@@ -33,6 +43,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import Input from '../components/ch/components/Input.vue'
+import Select from '../components/ch/components/Select.vue'
 
 export default {
   name: 'Index',
@@ -46,6 +57,7 @@ export default {
     FooterInformation,
     FooterNavigation,
     Input,
+    Select
   },
   methods: {
     getMobileMenuIsOpen() {
