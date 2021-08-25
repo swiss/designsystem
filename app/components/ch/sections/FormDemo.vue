@@ -1,6 +1,6 @@
 <template>
   <div class="container container--sm">
-    <h2>Demo Form</h2>
+    <h2 class="py-6">Demo Form</h2>
     <div class="form">
       <Input type="text" id="text-id-0" label="Input type text" placeholder="Placeholder" />
       <Select label="Select">
@@ -10,7 +10,7 @@
         <option>Sweden</option>
       </Select>
     </div>
-    <h3>Other input types</h3>
+    <h3 class="py-6">Other input types</h3>
     <div class="form">
       <Input type="color" id="color-id" label="Input type color" placeholder="Placeholder" />
       <Input type="date" id="date-id" label="Input type date" placeholder="Placeholder" />
@@ -20,11 +20,11 @@
       <Input type="month" id="month-id" label="Input type month" placeholder="Placeholder" />
       <Input type="number" id="number-id" label="Input type number" placeholder="Placeholder" />
       <Input type="number" id="number-id2" label="Input type number with restrictions" value="10"
-        min="0" max="100" step="10"
+        :min="0" :max="100" :step="10"
        />
       <Input type="password" id="password-id" label="Input type password" placeholder="Placeholder" />
       <Input type="range" id="range-id"
-        min="0" max="50" label="Input type range" placeholder="Placeholder"
+        :min="0" :max="50" label="Input type range" placeholder="Placeholder"
       />
       <Input type="search" id="search-id" label="Input type search" placeholder="Placeholder" />
       <Input type="tel" id="tel-id" label="Input type tel" placeholder="Placeholder"

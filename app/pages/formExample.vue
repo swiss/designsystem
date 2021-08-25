@@ -13,6 +13,8 @@
       <div class="container">
         <h1 class="py-6">Demo Application</h1>
       </div>
+      <FormDemo />
+
       <BackToTopBtn
         fixed
         type="outline"
@@ -35,6 +37,7 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
+import FormDemo from '../components/ch/sections/FormDemo.vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
 
 export default {
@@ -48,6 +51,7 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
+    FormDemo,
     BackToTopBtn
   },
   methods: {
