@@ -11,19 +11,7 @@
     </header>
     <main id="main-content">
       <div class="container">
-        <h1>Demo Application</h1>
-        <a href="#" class="link">Test skip link</a>
-        <div class="mb-3">
-          <Input />
-        </div>
-        <div>
-          <Select classes="select">
-            <option disabled selected>Choose your country</option>
-            <option>Switzerland</option>
-            <option>Swaziland</option>
-            <option>Sweden</option>
-          </Select>
-        </div>
+        <FormDemo />
       </div>
     </main>
     <footer class="footer" id="main-footer">
@@ -42,8 +30,7 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import Input from '../components/ch/components/Input.vue'
-import Select from '../components/ch/components/Select.vue'
+import FormDemo from '../components/ch/sections/FormDemo.vue'
 
 export default {
   name: 'Index',
@@ -56,8 +43,7 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    Input,
-    Select
+    FormDemo
   },
   methods: {
     getMobileMenuIsOpen() {

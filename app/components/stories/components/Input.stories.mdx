@@ -5,7 +5,7 @@ import Input from '../../ch/components/Input.vue'
   title="Components/Input"
   component={Input}
   argTypes={{
-    type: {
+    variant: {
       control: {
         type: 'select',
         options: ['outline', 'negative'],
@@ -18,7 +18,7 @@ import Input from '../../ch/components/Input.vue'
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Input },
-  template: '<Input :type="type" :size="size" />',
+  template: '<Input :variant="variant" :size="size" />',
 })
 
 # Input

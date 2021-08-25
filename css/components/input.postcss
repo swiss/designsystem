@@ -2,8 +2,10 @@
 input,
 textarea,
 select {
+  @apply w-full;
   @apply px-4 py-[0.625rem];
   @apply shadow;
+  @apply bg-white border border-text-500;
   @apply rounded-xs;
   @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
 
@@ -93,4 +95,12 @@ input[type='radio']:checked {
   &.input--disabled {
     @apply bg-text-700 border-text-500;
   }
+}
+
+input[type='color'] {
+  @apply h-12;
+}
+
+input[type='range'] {
+  @apply border-0 shadow-none;
 }
