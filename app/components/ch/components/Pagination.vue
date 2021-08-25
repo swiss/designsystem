@@ -1,5 +1,5 @@
 <template>
-  <ul :class="computedClasses">
+  <ul class="pagination">
     <li v-for="(item, index) in paginationItems" :key="`item-${index}`">
       <PaginationItem
         :icon="item.icon"
@@ -50,7 +50,7 @@ export default {
           label: "...",
         },
         {
-          icon: "ChevronLeft",
+          icon: "ChevronRight",
           label: "Next Page",
           link: "#next"
         },
@@ -78,24 +78,6 @@ export default {
         'lg'
       ].includes(prop)
     },
-  },
-  computed: {
-    computedClasses () {
-      let base = 'pagination '
-      if (this.type) base += `pagination--${this.type} `
-      if (this.size) base += `pagination--${this.size} `
-      if (this.icon !== 'none') base += `pagination--icon-only `
-      return base
-    },
-    ariaLabel () {
-      let ariaLabel = ''
-      if (this.icon === 'ChevronLineLeft') ariaLabel = 'First page'
-      if (this.icon === 'ChevronLeft') ariaLabel = 'Previous page'
-      if (this.icon === 'ChevronLineRight') ariaLabel = 'Last page'
-      if (this.icon === 'ChevronRight') ariaLabel = 'Next page'
-      if (this.icon === 'none') ariaLabel = `Page ${this.label}`
-      return ariaLabel
-    }
   }
 }
 </script>

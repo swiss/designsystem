@@ -1,12 +1,13 @@
 <template>
-  <button type="button" :class="computedClasses" :aria-label="icon ? label : ''">
+  <button type="button" :class="computedClasses" :aria-label="label">
     <SvgIcon
-      v-if="this.icon !== 'none'"
+      v-if="this.icon"
       :icon="this.icon"
+      class="btn__icon"
     />
     <span
       v-if="this.label"
-      class="pagination__text"
+      class="btn__text"
     >
       {{ label }}
     </span>
@@ -40,11 +41,9 @@ export default {
     },
     icon: {
       type: String,
-      default: 'none'
     },
     label: {
       type: String,
-      required: true,
     }
   },
 
@@ -53,17 +52,8 @@ export default {
       let base = 'btn '
       if (this.type) base += `btn--${this.type} `
       if (this.size) base += `btn--${this.size} `
-      if (this.icon !== 'none') base += `btn--icon-only `
+      if (this.icon) base += `btn--icon-only `
       return base
-    },
-    ariaLabel () {
-      let ariaLabel = ''
-      if (this.icon === 'ChevronLineLeft') ariaLabel = 'First page'
-      if (this.icon === 'ChevronLeft') ariaLabel = 'Previous page'
-      if (this.icon === 'ChevronLineRight') ariaLabel = 'Last page'
-      if (this.icon === 'ChevronRight') ariaLabel = 'Next page'
-      if (this.icon === 'none') ariaLabel = `Page ${this.label}`
-      return ariaLabel
     }
   }
 }
