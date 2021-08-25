@@ -12,7 +12,7 @@ import BackToTopBtn from '../../ch/components/BackToTopBtn.vue';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { BackToTopBtn },
-  template: '<BackToTopBtn :type="type" />',
+  template: '<BackToTopBtn :type="type" :wrapper="false" />',
 });
 
 # Back to top button
@@ -23,7 +23,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Example"
     args={{
-      type: 'default',
+      type: 'outline',
     }}
   >
     {Template.bind({})}
@@ -31,6 +31,27 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 <ArgsTable story="Example" />
+
+## Implementation
+
+Place the `back-to-top-btn`into a `back-to-top-wrapper` in order to display it correctly.
+You can <a href="?id=pages-homepage--example" target="_blank">Open a demo page</a> and scroll down to see the button appear and diappear accordingly. Remark, this is a pure CSS implementation, no Javascript needed.
+
+
+```html
+  <main id="main-content">
+    <div class="container">
+      <!-- main content here -->
+    </div>
+    <div class="back-to-top-wrapper">
+      <a href="#main-header" type="button" aria-label="Scroll to top" class="back-to-top-btn back-to-top-btn--outline back-to-top-btn--fixed ">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="back-to-top-btn__icon icon icon--base ">
+          <path xmlns="http://www.w3.org/2000/svg" d="m19.044 14.731-6.669-3.85-6.669 3.85-.375-.649 7.044-4.067 7.044 4.067z"></path>
+        </svg>
+      </a>
+    </div>
+  </main>
+```
 
 ## Back to top button types
 For type variations, the following css classes are built:

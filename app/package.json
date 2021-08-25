@@ -7,8 +7,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "storybook": "npx nuxt-storybook",
-    "build-storybook": "npx nuxt-storybook build"
+    "storybook": "node_modules/.bin/nuxt-storybook",
+    "build-storybook": "node_modules/.bin/nuxt-storybook build"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",

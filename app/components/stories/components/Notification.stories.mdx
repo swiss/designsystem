@@ -1,0 +1,129 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import Notification from '../../ch/components/Notification.vue'
+
+<Meta
+  title="Components/Notification"
+  component={Notification}
+  argTypes={{
+    type: { control: { type: 'select', options: ['info', 'warning', 'error', 'success'] } },
+    icon: { control: { type: 'select', options: ['Info', 'Warning', 'Checkmark', undefined] } },
+  }} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Notification },
+  template: '<Notification :type="type" :icon="icon" :text="text" />',
+})
+
+
+# Notification
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      type: 'info',
+      icon: 'Info',
+      text: 'This is a notification',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+## Notification types
+
+For type variations, the following css classes are built:
+
+- `notification--info` for information
+- `notification--warning` for warnings
+- `notification--error` for errors
+- `notification--success` for success messages
+
+<Canvas>
+  <div>
+    <div class="notification notification--info">
+      Info: A new software update is available.
+    </div>
+    <div class="notification notification--warning">
+      Warning: A new software update is available.
+    </div>
+    <div class="notification notification--error">
+      Error: A new software update is available.
+    </div>
+    <div class="notification notification--success">
+      Success: A new software update is available.
+    </div>
+  </div>
+</Canvas>
+
+## Icons
+
+With the class `information__icon` an icon can be placed in the notification
+
+<Canvas>
+  <div>
+    <div class="notification notification--info">
+      <svg viewBox="0 0 24 24" class="notification__icon">
+        <path d="m11.32492 6.1479a1.08049 1.08049 0 0 1 .26856-.74219 1.00811 1.00811 0 0 1 .79589-.30273 1.02194 1.02194 0 0 1 .80079.30273 1.06615 1.06615 0 0 1 .27343.74219 1.03053 1.03053 0 0 1 -.27343.73242 1.04162 1.04162 0 0 1 -.80079.293 1.02733 1.02733 0 0 1 -.79589-.293 1.04412 1.04412 0 0 1 -.26856-.73242zm1.95313 13.3691h-1.80664v-10.56637h1.80664z" />
+      </svg>
+      <div class="notification__text">
+        A new software update is available.
+      </div>
+    </div>
+    <div class="notification notification--warning">
+      <svg viewBox="0 0 24 24" class="notification__icon">
+        <path d="m11.32492 6.1479a1.08049 1.08049 0 0 1 .26856-.74219 1.00811 1.00811 0 0 1 .79589-.30273 1.02194 1.02194 0 0 1 .80079.30273 1.06615 1.06615 0 0 1 .27343.74219 1.03053 1.03053 0 0 1 -.27343.73242 1.04162 1.04162 0 0 1 -.80079.293 1.02733 1.02733 0 0 1 -.79589-.293 1.04412 1.04412 0 0 1 -.26856-.73242zm1.95313 13.3691h-1.80664v-10.56637h1.80664z" />
+      </svg>
+      <div class="notification__text">
+        A new software update is available.
+      </div>
+    </div>
+    <div class="notification notification--error">
+      <svg viewBox="0 0 24 24" class="notification__icon">
+        <path d="m11.32492 6.1479a1.08049 1.08049 0 0 1 .26856-.74219 1.00811 1.00811 0 0 1 .79589-.30273 1.02194 1.02194 0 0 1 .80079.30273 1.06615 1.06615 0 0 1 .27343.74219 1.03053 1.03053 0 0 1 -.27343.73242 1.04162 1.04162 0 0 1 -.80079.293 1.02733 1.02733 0 0 1 -.79589-.293 1.04412 1.04412 0 0 1 -.26856-.73242zm1.95313 13.3691h-1.80664v-10.56637h1.80664z" />
+      </svg>
+      <div class="notification__text">
+        A new software update is available.
+      </div>
+    </div>
+    <div class="notification notification--success">
+      <svg viewBox="0 0 24 24" class="notification__icon">
+        <path xmlns="http://www.w3.org/2000/svg" d="m9.772 17.729-4.913-4.912.531-.531 4.382 4.383 9.382-9.383.531.531z" />
+      </svg>
+      <div class="notification__text">
+        A new software update is available.
+      </div>
+    </div>
+  </div>
+</Canvas>
+
+## Complex content
+
+Place more complex content within the `information__content` element
+
+<Canvas>
+  <div>
+    <div class="notification notification--info">
+      <svg viewBox="0 0 24 24" class="notification__icon">
+        <path d="m11.32492 6.1479a1.08049 1.08049 0 0 1 .26856-.74219 1.00811 1.00811 0 0 1 .79589-.30273 1.02194 1.02194 0 0 1 .80079.30273 1.06615 1.06615 0 0 1 .27343.74219 1.03053 1.03053 0 0 1 -.27343.73242 1.04162 1.04162 0 0 1 -.80079.293 1.02733 1.02733 0 0 1 -.79589-.293 1.04412 1.04412 0 0 1 -.26856-.73242zm1.95313 13.3691h-1.80664v-10.56637h1.80664z" />
+      </svg>
+      <div class="notification__text">
+        <h6 class="font--bold">Brand new!</h6>
+        <div>
+          A new software update is available.
+        </div>
+        <a
+          class="link"
+          href="javascript:void(0)"
+        >
+          Discover the new version
+        </a>
+      </div>
+    </div>
+  </div>
+</Canvas>

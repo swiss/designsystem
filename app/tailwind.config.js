@@ -1,6 +1,10 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./tailwind.safelist.txt'],
+  purge: [
+    './safelist.txt',
+    './app/pages/**/*.vue',
+    './app/components/ch/**/*.vue'
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {

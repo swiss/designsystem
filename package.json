@@ -8,12 +8,12 @@
   },
   "scripts": {
     "watch": "NODE_ENV=css postcss css/main.postcss --ext css --dir dist --watch",
-    "dev:storybook": "concurrently \"npm run watch\" \"cd app && npx nuxt-storybook\"",
+    "dev:storybook": "concurrently \"npm run watch\" \"cd app && npm run storybook\"",
     "dev:nuxt": "cd app && npm run dev",
     "dev:all": "concurrently \"npm run dev:storybook \" \"npm run dev:nuxt\" ",
     "dev": "npm run dev:storybook",
     "build-css": "NODE_ENV=css postcss css/main.postcss --ext css --dir dist",
-    "build": "concurrently \"NODE_ENV=css postcss css/main.postcss --ext css --dir dist \" \"cd app && npx nuxt-storybook build\"",
+    "build": "concurrently \"NODE_ENV=css postcss css/main.postcss --ext css --dir dist \" \"cd app && npm run build-storybook\"",
     "postinstall": "concurrently \"npm run build-css\" \"cd app && npm install\""
   },
   "repository": {
@@ -31,7 +31,7 @@
     "concurrently": "^6.2.0",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.2",
-    "tailwindcss": "^2.1.3"
+    "tailwindcss": "^2.2.7"
   },
   "devDependencies": {
     "postcss": "^8.3.5",

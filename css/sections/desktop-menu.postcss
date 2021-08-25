@@ -4,20 +4,20 @@
 
 
 .desktop-menu {
-  @apply border-b relative z-10;
+  @apply border-b relative z-20;
 }
 
 .desktop-menu__drawer {
   @apply h-[500px] w-[400px] p-5 mt-px;
   @apply hidden lg:block;
-  @apply absolute z-20 top-14 xl:top-16 2xl:top-20 -left-4;
+  @apply absolute z-30 top-14 xl:top-16 2xl:top-20 -left-4;
   @apply bg-white shadow-2xl;
   @apply transition-transform duration-500;
 }
 
 .desktop-menu__overlay {
   @apply hidden lg:block;
-  @apply fixed z-10 top-[12.9rem] xl:top-[15.5rem] 2xl:top-[18.2rem] right-0 bottom-0 left-0;
+  @apply fixed z-20 top-[12.9rem] xl:top-[15.5rem] 2xl:top-[18.2rem] right-0 bottom-0 left-0;
   @apply bg-secondary-900 bg-opacity-20;
   @apply transition-transform duration-500;
 }

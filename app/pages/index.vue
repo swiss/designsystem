@@ -11,8 +11,14 @@
     </header>
     <main id="main-content">
       <div class="container">
+        <h1>Demo Application</h1>
         <FormDemo />
       </div>
+      <BackToTopBtn
+        fixed
+        type="outline"
+        target="main-header"
+      />
     </main>
     <footer class="footer" id="main-footer">
       <footer-information />
@@ -31,6 +37,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import FormDemo from '../components/ch/sections/FormDemo.vue'
+import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
 
 export default {
   name: 'Index',
@@ -43,7 +50,8 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    FormDemo
+    FormDemo,
+    BackToTopBtn
   },
   methods: {
     getMobileMenuIsOpen() {
