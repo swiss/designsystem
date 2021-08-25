@@ -5,20 +5,38 @@ import Textarea from '../../ch/components/Textarea.vue'
   title="Components/Form/Textarea"
   component={Textarea}
   argTypes={{
-    type: {
+    variant: {
       control: {
         type: 'select',
         options: ['outline', 'negative'],
       },
     },
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    message: {},
+    messageType: {
+      control: {
+        type: 'select',
+        options: ['error', 'warning', 'success', 'info'],
+      },
+    }
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Textarea },
-  template: '<Textarea :type="type" :size="size" />',
+  template: `
+    <Textarea
+      :variant="variant"
+      :size="size"
+      :label="label"
+      :id="id"
+      :name="name"
+      :placeholder="placeholder"
+      :message="message"
+      :messageType="messageType"
+    >Test</Textarea>
+  `,
 })
 
 # Textarea
@@ -29,8 +47,12 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Example"
     args={{
-      type: 'outline',
+      variant: 'outline',
       size: 'base',
+      label: 'Label',
+      name: 'textarea-name',
+      id:'textarea-id',
+      placeholder: 'Placeholder'
     }}
   >
     {Template.bind({})}
@@ -44,7 +66,7 @@ export const Template = (args, { argTypes }) => ({
 - `input--negative` for standard textareas on dark background
 
 <Canvas style={{ backgroundColor: '#2f4356' }}>
-  <textarea class="input--negative input--base" value="Input text" />
+  <textarea class="input--negative input--base" />
 </Canvas>
 
 ## Textarea disabled state
@@ -52,8 +74,8 @@ export const Template = (args, { argTypes }) => ({
 - `input--disabled` or `disabled state on the input` to add the disabled style
 
 <Canvas>
-  <textarea class="input--outline input--base" disabled value="Input text" />
-  <textarea class="input--negative input--base" disabled value="Input text" />
+  <textarea class="input--outline input--base" disabled>Disabled</textarea>
+  <textarea class="input--negative input--base" disabled>Disabled and negative</textarea>
 </Canvas>
 
 ## Sizes
@@ -65,7 +87,7 @@ For size variations, the following css classes are built:
 - `input--lg` for large inputs
 
 <Canvas>
-  <textarea class="input--outline input--sm" value="input--sm" />
-  <textarea class="input--outline input--base" value="input--base" />
-  <textarea class="input--outline input--lg" value="input--lg" />
+  <textarea class="input--outline input--sm" >Small</textarea>
+  <textarea class="input--outline input--base" >Default</textarea>
+  <textarea class="input--outline input--lg" >Large</textarea>
 </Canvas>
