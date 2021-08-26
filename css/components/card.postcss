@@ -3,11 +3,12 @@
 \*----------------------------------------*/
 
 .card {
-
+    @apply flex flex-col;
+    @apply bg-white;
 }
 
 .card--default {
-
+    @apply shadow-2xl;
 }
 
 .card--highlight {
@@ -26,20 +27,29 @@
 
 }
 
-.card__body {
-
+.card__header {
+    @apply flex items-center;
+    @apply p-6;
+    @apply bg-secondary-100;
 }
 
-.card__header {
+.card__content {
+    @apply flex flex-col justify-between;
+    @apply h-full;
+}
 
+.card__body {
+
+    @apply px-6 pt-10 pb-12;
 }
 
 .card__footer {
-
+    @apply flex items-center justify-between;
+    @apply px-6 pb-6;
 }
 
 .card__footer__info {
-
+    @apply text-secondary-500 text-sm;
 }
 
 .card__footer__action {

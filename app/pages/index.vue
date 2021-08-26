@@ -14,6 +14,7 @@
         <h1>Demo Application</h1>
       </div>
       <TopNewsSection />
+      <ServicesSection />
       <BackToTopBtn
         fixed
         type="outline"
@@ -38,6 +39,7 @@ import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
 import TopNewsSection from "~/components/ch/sections/TopNewsSection";
+import ServicesSection from "~/components/ch/sections/ServicesSection";
 
 export default {
   name: 'Index',
@@ -51,7 +53,8 @@ export default {
     FooterInformation,
     FooterNavigation,
     BackToTopBtn,
-    TopNewsSection
+    TopNewsSection,
+    ServicesSection
   },
   methods: {
     getMobileMenuIsOpen() {

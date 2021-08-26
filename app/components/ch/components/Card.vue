@@ -6,18 +6,21 @@
     <div v-if="$slots.header" class="card__header">
       <slot name="header"></slot>
     </div>
-    <div class="card__body">
-      <slot></slot>
-    </div>
-    <div class="card__footer">
-      <div v-if="$slots.footerInfo" class="card__footer__info">
-        <slot name="footerInfo"></slot>
+      <div class="card__content">
+        <div class="card__body">
+          <slot></slot>
+        </div>
+        <div class="card__footer">
+          <div v-if="$slots.footerInfo" class="card__footer__info">
+            <slot name="footerInfo"></slot>
+          </div>
+          <div v-if="$slots.footerAction" class="card__footer__action">
+            <slot name="footerAction"></slot>
+          </div>
+        </div>
       </div>
-      <div v-if="$slots.footerAction" class="card__footer__action">
-        <slot name="footerAction"></slot>
-      </div>
     </div>
-  </div>
+
 </template>
 
 <script>
