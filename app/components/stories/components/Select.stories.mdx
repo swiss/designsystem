@@ -1,0 +1,185 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import Select from '../../ch/components/Select.vue'
+
+<Meta
+  title="Components/Form/Select"
+  component={Select}
+  argTypes={{
+    variant: {
+      control: {
+        type: 'select',
+        options: ['outline', 'negative'],
+      },
+    },
+    size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    message: {},
+    messageType: {
+      control: {
+        type: 'select',
+        options: ['error', 'warning', 'success', 'info'],
+      },
+    }
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Select },
+  template: `
+    <Select
+      :variant="variant"
+      :size="size"
+      :label="label"
+      :id="id"
+      :name="name"
+      :message="message"
+      :messageType="messageType"
+    >
+      <option disabled selected>Choose your country</option>
+      <option>Switzerland</option>
+      <option>Swaziland</option>
+      <option>Sweden</option>
+    </Select>
+  `,
+})
+
+# Select
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      variant: 'outline',
+      size: 'base',
+      label: 'Label',
+      name: 'radio-name',
+      id:'radio-id'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+TODO: update examples below:
+
+## Textarea negative type
+
+- `input--negative` for standard textareas on dark background
+
+<Canvas style={{ backgroundColor: '#2f4356' }}>
+  <div class="select">
+    <select
+      id="radio-id"
+      name="radio-name"
+      class="input--outline input--base input--negative"
+    >
+      <option>Choose your country</option>
+      <option>Switzerland</option>
+      <option>Swaziland</option>
+      <option>Sweden</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</Canvas>
+
+## Textarea disabled state
+
+- `input--disabled` or `disabled state on the input` to add the disabled style
+
+<Canvas>
+  <div class="select">
+    <select
+      id="radio-id"
+      name="radio-name"
+      class="input--outline input--base"
+      disabled
+    >
+      <option>Choose your country</option>
+      <option>Switzerland</option>
+      <option>Swaziland</option>
+      <option>Sweden</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</Canvas>
+
+## Sizes
+
+For size variations, the following css classes are built:
+
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
+
+<Canvas>
+  <div class="select">
+    <select
+      id="select-0"
+      name="radio-name"
+      class="input--outline input--sm"
+    >
+      <option>Small</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</Canvas>
+
+<Canvas>
+  <div class="select">
+    <select
+      id="select-0"
+      name="radio-name"
+      class="input--outline input--base"
+    >
+      <option>Default</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</Canvas>
+
+<Canvas>
+  <div class="select">
+    <select
+      id="select-0"
+      name="radio-name"
+      class="input--outline input--lg"
+    >
+      <option>Large</option>
+    </select>
+    <div class="select__icon">
+      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</Canvas>
