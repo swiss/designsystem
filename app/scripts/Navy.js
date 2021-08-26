@@ -62,7 +62,7 @@ const Navy = {
       Navy.level[i].classList.add(`navy__level-${i}`);
       Navy.container.appendChild(Navy.level[i]);
     }
-    targetElement.appendChild(Navy.container);
+    targetElement.prepend(Navy.container);
   },
 
   initMobile (navigationItems, target) {
@@ -78,6 +78,9 @@ const Navy = {
       const ul = nav.querySelector('ul');
       Navy.parseTree(ul, 0);
     });
+    // inject language-switcher into slide 0:
+    Navy.level[0].appendChild(document.getElementById('language-switcher-mobile'));
+
   },
 
   setDrawerXPosition (btn) {

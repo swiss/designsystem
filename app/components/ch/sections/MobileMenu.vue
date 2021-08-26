@@ -7,6 +7,7 @@
     <MainNavigation context="mobile" />
     <MetaNavigation context="mobile" />
     <TopBarNavigation context="mobile" />
+    <LanguageSwitcher context="mobile" />
   </div>
 </template>
 
@@ -14,6 +15,7 @@
 import MainNavigation from '../navigations/MainNavigation.vue'
 import MetaNavigation from '../navigations/MetaNavigation.vue'
 import TopBarNavigation from '../navigations/TopBarNavigation.vue'
+import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import Navy from '../../../scripts/Navy.js'
 
@@ -23,6 +25,7 @@ export default {
     MainNavigation,
     MetaNavigation,
     TopBarNavigation,
+    LanguageSwitcher,
     SvgIcon
   },
   props: {

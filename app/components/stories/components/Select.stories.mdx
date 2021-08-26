@@ -11,6 +11,7 @@ import Select from '../../ch/components/Select.vue'
         options: ['outline', 'negative'],
       },
     },
+    bare: {},
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
     message: {},
     messageType: {
@@ -28,6 +29,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <Select
       :variant="variant"
+      :bare="bare"
       :size="size"
       :label="label"
       :id="id"
@@ -52,6 +54,7 @@ export const Template = (args, { argTypes }) => ({
     name="Example"
     args={{
       variant: 'outline',
+      bare: true,
       size: 'base',
       label: 'Label',
       name: 'radio-name',
