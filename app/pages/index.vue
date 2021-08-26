@@ -15,6 +15,8 @@
       </div>
       <TopNewsSection />
       <ServicesSection />
+      <MostSeenSection />
+      <MediasSection />
       <BackToTopBtn
         fixed
         type="outline"
@@ -40,6 +42,8 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
 import TopNewsSection from "~/components/ch/sections/TopNewsSection";
 import ServicesSection from "~/components/ch/sections/ServicesSection";
+import MostSeenSection from "~/components/ch/sections/MostSeenSection";
+import MediasSection from "~/components/ch/sections/MediasSection";
 
 export default {
   name: 'Index',
@@ -54,7 +58,9 @@ export default {
     FooterNavigation,
     BackToTopBtn,
     TopNewsSection,
-    ServicesSection
+    ServicesSection,
+    MostSeenSection,
+    MediasSection
   },
   methods: {
     getMobileMenuIsOpen() {
