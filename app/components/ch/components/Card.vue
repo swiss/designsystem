@@ -10,7 +10,7 @@
         <div class="card__body">
           <slot></slot>
         </div>
-        <div class="card__footer">
+        <div :class="computedClassesFooter">
           <div v-if="$slots.footerInfo" class="card__footer__info">
             <slot name="footerInfo"></slot>
           </div>
@@ -44,6 +44,11 @@ export default {
       if (this.type) base += `card--${this.type} `
       return base
     },
+    computedClassesFooter () {
+      let base = 'card__footer '
+      if (!this.$slots.footerInfo) base += `card__footer--icon-only `
+      return base
+    }
   }
 }
 </script>

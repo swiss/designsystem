@@ -67,20 +67,7 @@
       <div class="grid grid-cols-6 gap-8 lg:gap-12">
         <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
           <div class="space-y-4">
-            <h3>Wandern</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-            </p>
-          </div>
-          <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
-          </template>
-        </Card>
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
-          <div class="space-y-4">
-            <h3>Historische Karten</h3>
+            <h3>Are</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -92,7 +79,19 @@
         </Card>
         <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
           <div class="space-y-4">
-            <h3>PLZ und Ortschaften</h3>
+            <h3>Energie</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+            </p>
+          </div>
+          <template v-slot:footerAction>
+            <Btn type="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
+          </template>
+        </Card>
+        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+          <div class="space-y-4">
+            <h3>Luftfahrt</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
