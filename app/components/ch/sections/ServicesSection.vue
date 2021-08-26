@@ -33,9 +33,6 @@
             <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
-
-
-
         <Card type="highlight" class="col-span-6 sm:col-span-3 md:col-span-2">
           <div class="space-y-4">
             <h3>Datenbezug</h3>
@@ -80,6 +77,9 @@
             <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
+      </div>
+      <div class="flex justify-end mt-4">
+        <Btn label="Alle News sehen" type="bare-negative" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
   </div>

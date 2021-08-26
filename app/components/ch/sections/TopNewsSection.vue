@@ -82,6 +82,9 @@
           </template>
         </Card>
       </div>
+      <div class="flex justify-end mt-4">
+        <Btn label="Alle News sehen" type="bare" icon-pos="right" icon="ArrowRight"></Btn>
+      </div>
     </div>
   </div>
 </template>
