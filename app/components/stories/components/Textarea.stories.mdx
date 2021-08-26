@@ -1,0 +1,95 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import Textarea from '../../ch/components/Textarea.vue'
+
+<Meta
+  title="Components/Form/Textarea"
+  component={Textarea}
+  argTypes={{
+    variant: {
+      control: {
+        type: 'select',
+        options: ['outline', 'negative'],
+      },
+    },
+    size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    message: {},
+    messageType: {
+      control: {
+        type: 'select',
+        options: ['error', 'warning', 'success', 'info'],
+      },
+    }
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Textarea },
+  template: `
+    <Textarea
+      :variant="variant"
+      :size="size"
+      :label="label"
+      :id="id"
+      :name="name"
+      :rows="rows"
+      :cols="cols"
+      :placeholder="placeholder"
+      :message="message"
+      :messageType="messageType"
+    >Test</Textarea>
+  `,
+})
+
+# Textarea
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      variant: 'outline',
+      size: 'base',
+      label: 'Label',
+      name: 'textarea-name',
+      id:'textarea-id',
+      placeholder: 'Placeholder'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+## Textarea negative type
+
+- `input--negative` for standard textareas on dark background
+
+<Canvas style={{ backgroundColor: '#2f4356' }}>
+  <textarea class="input--negative input--base" />
+</Canvas>
+
+## Textarea disabled state
+
+- `input--disabled` or `disabled state on the input` to add the disabled style
+
+<Canvas>
+  <textarea class="input--outline input--base" disabled>Disabled</textarea>
+  <textarea class="input--negative input--base" disabled>Disabled and negative</textarea>
+</Canvas>
+
+## Sizes
+
+For size variations, the following css classes are built:
+
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
+
+<Canvas>
+  <textarea class="input--outline input--sm" >Small</textarea>
+  <textarea class="input--outline input--base" >Default</textarea>
+  <textarea class="input--outline input--lg" >Large</textarea>
+</Canvas>

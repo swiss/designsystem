@@ -1,0 +1,87 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import Checkbox from '../../ch/components/Checkbox.vue'
+
+<Meta
+  title="Components/Form/Input Checkbox"
+  component={Checkbox}
+  argTypes={{
+    variant: {
+      control: {
+        type: 'select',
+        options: ['outline', 'negative'],
+      },
+    },
+    size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    message: {},
+    messageType: {
+      control: {
+        type: 'select',
+        options: ['error', 'warning', 'success', 'info'],
+      },
+    }
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Checkbox },
+  template: '<Checkbox :variant="variant" :size="size" :label="label" :id="id" :name="name" :value="value" :message="message" :messageType="messageType" />',
+})
+
+# Input Checkbox
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      variant: 'outline',
+      size: 'base',
+      label: 'Label',
+      name: 'checkbox-name',
+      id:'checkbox-id'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+## Checkbox negative type
+
+- `input--negative` for standard checkboxes on dark background
+
+<Canvas style={{ backgroundColor: '#2f4356' }}>
+  <input type="checkbox" class="input--negative input--base" />
+</Canvas>
+
+## Input disabled state
+
+- `input--disabled` or `disabled state on the input` to add the disabled style
+
+<Canvas>
+  <input type="checkbox" class="input--outline input--base" disabled />
+  <input type="checkbox" class="input--outline input--base" disabled checked />
+  <input type="checkbox" class="input--negative input--base" disabled />
+  <input type="checkbox" class="input--negative input--base" disabled checked />
+</Canvas>
+
+## Sizes
+
+For size variations, the following css classes are built:
+
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
+
+<Canvas>
+  <input type="checkbox" class="input--outline input--sm" value="input--sm" />
+  <input
+    type="checkbox"
+    class="input--outline input--base"
+    value="input--base"
+  />
+  <input type="checkbox" class="input--outline input--lg" value="input--lg" />
+</Canvas>

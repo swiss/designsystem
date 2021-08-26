@@ -1,6 +1,19 @@
-.form-control{
-  @apply flex flex-col;
+
+.form {
+  @apply space-y-6;
 }
-.label{
-  @apply flex items-center justify-between select-none;
+
+.form__group {}
+
+.form__group__input,
+.form__group__select {
+  @apply space-y-2;
+}
+
+.form__group__radio {
+  @apply mb-2;
+}
+
+.form__group__checkbox {
+  @apply mb-2;
 }

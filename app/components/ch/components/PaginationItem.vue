@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="classes" :aria-label="iconPos === 'only' ? label : ''">
+  <button type="button" :class="computedClasses" :aria-label="label">
     <SvgIcon
       v-if="this.icon"
       :icon="this.icon"
@@ -15,22 +15,20 @@
 </template>
 
 <script>
-import SvgIcon from '../components/SvgIcon.vue';
+
+import SvgIcon from "~/components/ch/components/SvgIcon";
 
 export default {
-  name: 'btn',
+  name: 'pagination',
   components: {
     SvgIcon
   },
   props: {
-    variant: {
+    type: {
       type: String,
       validator: (prop) => [
         'outline',
-        'bare',
-        'filled',
         'outline-negative',
-        'bare-negative'
       ].includes(prop)
     },
     size: {
@@ -43,31 +41,20 @@ export default {
     },
     icon: {
       type: String,
-      default: ''
-    },
-    iconPos: {
-      type: String,
-      validator: (prop) => [
-        'none',
-        'only',
-        'left',
-        'right',
-      ].includes(prop)
     },
     label: {
       type: String,
-      required: true,
     }
   },
 
   computed: {
-    classes () {
+    computedClasses () {
       let base = 'btn '
-      if (this.variant) base += `btn--${this.variant} `
+      if (this.type) base += `btn--${this.type} `
       if (this.size) base += `btn--${this.size} `
-      if (this.iconPos) base += `btn--icon-${this.iconPos} `
+      if (this.icon) base += `btn--icon-only `
       return base
-    },
+    }
   }
 }
 </script>

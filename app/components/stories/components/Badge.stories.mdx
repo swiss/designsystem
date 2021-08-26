@@ -5,7 +5,7 @@ import Badge from '../../ch/components/Badge.vue';
   title="Components/Badge"
   component={Badge}
   argTypes={{
-    color: { control: { type: 'select', options: ['gray', 'red', 'yellow', 'orange', 'green', 'blue', 'indigo', 'purple', 'pink'] } },
+    color: { control: { type: 'select', options: ['info', 'error', 'warning', 'success','gray', 'red', 'yellow', 'orange', 'green', 'blue', 'indigo', 'purple', 'pink'] } },
     size: { control: { type: 'select', options: ['base', 'sm'] } },
     icon: { control: { type: 'select', options: ['Cancel', 'Checkmark', undefined] } },
   }}
@@ -41,6 +41,13 @@ export const Template = (args, { argTypes }) => ({
 
 ## Colors
 For color variations, the following css classes are built:
+- `badge--info`
+- `badge--error`
+- `badge--warning`
+- `badge--success`
+
+and
+
 - `badge--gray`
 - `badge--red`
 - `badge--yellow`
@@ -50,6 +57,13 @@ For color variations, the following css classes are built:
 - `badge--indigo`
 - `badge--purple`
 - `badge--pink`
+
+<Canvas>
+    <button class="badge badge--info">info</button>
+    <button class="badge badge--warning">warning</button>
+    <button class="badge badge--error">error</button>
+    <button class="badge badge--success">success</button>
+</Canvas>
 
 <Canvas>
     <button class="badge badge--gray">gray</button>

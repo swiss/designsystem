@@ -1,6 +1,10 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./tailwind.safelist.txt'],
+  purge: [
+    './safelist.txt',
+    './app/pages/**/*.vue',
+    './app/components/ch/**/*.vue'
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -193,6 +197,7 @@ module.exports = {
       xl: '0px 10px 10px -5px rgba(0,0,0,0.03), 0px 16px 25px -10px rgba(0,0,0,0.07)',
       '2xl':
         '1px 12px 60px -15px rgba(0,0,0,0.11), 0px 10px 20px 0px rgba(0,0,0,0.03)',
+      none: '0px 0px 0px 0px rgba(0,0,0,0)',
     },
     borderRadius: {
       none: '0',
