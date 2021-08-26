@@ -1,13 +1,18 @@
 <template>
-<div :class="classes">
+<div :class="classes" v-if="!isClosed">
   <SvgIcon
-    v-if="this.icon"
-    :icon="this.icon"
+    v-if="icon"
+    :icon="icon"
     class="notification__icon"
   />
   <div class="notification__text">
     {{ text }}
   </div>
+  <button v-if="closeBtn" class="notification__close" @click="isClosed = true">
+    <SvgIcon
+      icon="Cancel"
+    />
+  </button>
 </div>
 </template>
 
@@ -38,6 +43,14 @@ export default {
       type: String,
       default: undefined
     },
+    isClosed: {
+      type: Boolean,
+      default: false
+    },
+    closeBtn: {
+      type: Boolean,
+      default: true
+    }
   },
 
   computed: {

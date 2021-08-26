@@ -12,7 +12,7 @@ import Notification from '../../ch/components/Notification.vue'
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Notification },
-  template: '<Notification :type="type" :icon="icon" :text="text" />',
+  template: '<Notification :type="type" :icon="icon" :text="text" :closeBtn="closeBtn" :isClosed="isClosed" />',
 })
 
 
@@ -27,6 +27,8 @@ export const Template = (args, { argTypes }) => ({
       type: 'info',
       icon: 'Info',
       text: 'This is a notification',
+      closeBtn: true,
+      isClosed: false
     }}
   >
     {Template.bind({})}
@@ -63,7 +65,7 @@ For type variations, the following css classes are built:
 
 ## Icons
 
-With the class `information__icon` an icon can be placed in the notification
+With the class `notification__icon` an icon can be placed in the notification
 
 <Canvas>
   <div>
@@ -85,7 +87,7 @@ With the class `information__icon` an icon can be placed in the notification
     </div>
     <div class="notification notification--error">
       <svg viewBox="0 0 24 24" class="notification__icon">
-        <path d="m11.32492 6.1479a1.08049 1.08049 0 0 1 .26856-.74219 1.00811 1.00811 0 0 1 .79589-.30273 1.02194 1.02194 0 0 1 .80079.30273 1.06615 1.06615 0 0 1 .27343.74219 1.03053 1.03053 0 0 1 -.27343.73242 1.04162 1.04162 0 0 1 -.80079.293 1.02733 1.02733 0 0 1 -.79589-.293 1.04412 1.04412 0 0 1 -.26856-.73242zm1.95313 13.3691h-1.80664v-10.56637h1.80664z" />
+        <path xmlns="http://www.w3.org/2000/svg" d="m11.36415 18.60742a1.07693 1.07693 0 0 1 .26855-.74414 1.01388 1.01388 0 0 1 .7959-.30078 1.02776 1.02776 0 0 1 .80078.30078 1.06258 1.06258 0 0 1 .27344.74414 1.02716 1.02716 0 0 1 -.27344.73438 1.04431 1.04431 0 0 1 -.80078.291 1.03 1.03 0 0 1 -.7959-.291 1.04075 1.04075 0 0 1 -.26855-.73438zm1.82617-3.1123h-1.63086l-.12695-10.18848h1.89449z" />
       </svg>
       <div class="notification__text">
         A new software update is available.
@@ -104,7 +106,7 @@ With the class `information__icon` an icon can be placed in the notification
 
 ## Complex content
 
-Place more complex content within the `information__content` element
+Place more complex content within the `notification__content` element
 
 <Canvas>
   <div>
