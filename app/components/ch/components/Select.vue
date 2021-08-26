@@ -7,9 +7,9 @@
     >
       {{ label }}
     </label>
-    <div class="select">
+    <div :class="selectWrapperClasses">
       <select
-        :class="classes"
+        :class="selectClasses"
         :id="id"
         :name="name"
       >
@@ -42,6 +42,10 @@ export default {
       validator: (prop) => ['outline', 'negative'].includes(prop),
       default: 'outline'
     },
+    bare: {
+      type: Boolean,
+      default: true,
+    },
     size: {
       type: String,
       validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
@@ -66,7 +70,12 @@ export default {
   },
 
   computed: {
-    classes() {
+    selectWrapperClasses() {
+      let base = 'select '
+      if (this.bare) base += `select--bare `
+      return base
+    },
+    selectClasses() {
       let base = ''
       if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `

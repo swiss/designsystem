@@ -11,6 +11,27 @@
   }
 }
 
+.select--bare {
+  width: auto;
+  display: inline-block;
+
+  select {
+    @apply inline-block pr-6;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
+  }
+
+  .select__icon {
+    @apply w-6 border-l-0;
+  }
+
+  .input--negative + .select__icon {
+    background-color: transparent;
+  }
+}
+
 select:disabled,
 .input--disabled select {
   @apply opacity-40;
