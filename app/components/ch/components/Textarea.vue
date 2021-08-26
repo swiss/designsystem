@@ -16,10 +16,8 @@
       :placeholder="placeholder"
     >
     </textarea>
-    <div v-if="message">
-      <div class="badge badge--sm" :class="`badge--${messageType}`">
-        {{ message }}
-      </div>
+    <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
+      {{ message }}
     </div>
   </div>
 </template>

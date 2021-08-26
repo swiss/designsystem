@@ -87,3 +87,26 @@ For size variations, the following css classes are built:
   <input class="input--outline input--base" value="input--base" />
   <input class="input--outline input--lg" value="input--lg" />
 </Canvas>
+
+## Messages
+
+If the field has error, an `input--error` class is added to the input element. Additionally
+a `badge badge--sm badge--error` element wraps the error message, right after the input element:
+
+<Canvas>
+<div class="form__group__input">
+  <label for="my-id" class="text--base">
+    Name
+  </label>
+  <input
+    type="outline"
+    id="my-id"
+    name="my-id"
+    placeholder="Placeholder"
+    class="input--outline input--base input--error"
+  />
+  <div class="badge badge--sm badge--error">
+    This field is required
+  </div>
+</div>
+</Canvas>

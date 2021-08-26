@@ -23,7 +23,7 @@ export default {
     SvgIcon
   },
   props: {
-    type: {
+    variant: {
       type: String,
       validator: (prop) => [
         'outline',
@@ -63,7 +63,7 @@ export default {
   computed: {
     classes () {
       let base = 'btn '
-      if (this.type) base += `btn--${this.type} `
+      if (this.variant) base += `btn--${this.variant} `
       if (this.size) base += `btn--${this.size} `
       if (this.iconPos) base += `btn--icon-${this.iconPos} `
       return base
