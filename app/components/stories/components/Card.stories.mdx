@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Card from '../../ch/components/Card.vue';
+
+<Meta
+  title="Components/Card"
+  component={Card}
+  argTypes={{
+    type:    { control: { type: 'select', options: ['default', 'highlight', 'image-left'] } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Card },
+  template: '' +
+    '<Card :type="type">' +
+    '<template v-slot:header>' +
+    'Header' +
+    '</template>' +
+    'Hello Slot' +
+    '</Card>',
+});
+
+# Back to top button
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      type: 'outline',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
