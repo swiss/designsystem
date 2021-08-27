@@ -39,7 +39,7 @@
         </Card>
       </div>
       <div class="flex justify-end mt-4">
-        <Btn label="Alle Medienmitteilungen ansehen" type="bare" icon-pos="right" icon="ArrowRight"></Btn>
+        <Btn label="Alle Medienmitteilungen ansehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
   </div>

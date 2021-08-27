@@ -64,7 +64,7 @@
         </Card>
       </div>
       <div class="flex justify-end mt-4">
-        <Btn label="Alle Aktualitäten ansehen" type="bare" icon-pos="right" icon="ArrowRight"></Btn>
+        <Btn label="Alle Aktualitäten ansehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
   </div>

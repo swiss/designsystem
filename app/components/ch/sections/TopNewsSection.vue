@@ -32,7 +32,7 @@
             Veranstaltung
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
         <Card type="default" class="col-span-6 sm:col-span-3">
@@ -51,7 +51,7 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
         <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
@@ -97,7 +97,7 @@
         </Card>
       </div>
       <div class="flex justify-end mt-4">
-        <Btn label="Alle News sehen" type="bare" icon-pos="right" icon="ArrowRight"></Btn>
+        <Btn label="Alle News sehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
   </div>

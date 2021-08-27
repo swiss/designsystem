@@ -79,7 +79,7 @@
         </Card>
       </div>
       <div class="flex justify-end mt-4">
-        <Btn label="Alle News sehen" type="bare-negative" icon-pos="right" icon="ArrowRight"></Btn>
+        <Btn label="Alle Dienstleistungen ansehen" variant="bare-negative" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
   </div>
