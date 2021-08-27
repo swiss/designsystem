@@ -3,8 +3,8 @@
     <div class="container">
       <h2 class="mb-10">Medienmitteilungen</h2>
 
-      <div class="grid grid-cols-6 gap-8 lg:gap-12">
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+      <div class="grid grid--responsive-cols-4 gap--responsive">
+        <Card type="default">
             <p>
               Verschiedene Adressen, Standorte einfach und schnell auf map.geo.admin.ch darstellen
             </p>
@@ -15,7 +15,7 @@
             <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+        <Card type="default">
           <p>
             Digitale Karten und Geoinformation im Unterricht
           </p>
@@ -26,9 +26,20 @@
             <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+        <Card type="default">
           <p>
             Swisstopo Daten sind neu in geo.admin.ch Geo- und Downloaddiensten kostenlos...
+          </p>
+          <template v-slot:footerInfo>
+            22. März 2012
+          </template>
+          <template v-slot:footerAction>
+            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+          </template>
+        </Card>
+        <Card type="default">
+          <p>
+            IWF würdigt Schweizer Umgang mit der Pandemie
           </p>
           <template v-slot:footerInfo>
             22. März 2012

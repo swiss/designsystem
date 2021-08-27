@@ -4,13 +4,13 @@
       <h2 class="mb-10">Meist gesehen</h2>
 
       <h3 class="mb-4">Top Karten</h3>
-      <div class="grid grid-cols-6 gap-8 lg:gap-12">
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+      <div class="grid grid--responsive-cols-3 gap--responsive">
+        <Card type="default">
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
           <div class="space-y-4">
-            <h3>Wandern</h3>
+            <h3 class="card__title">Wandern</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
               consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -21,15 +21,15 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+        <Card type="default">
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
           <div class="space-y-4">
-            <h3>Historische Karten</h3>
+            <h3 class="card__title">Historische Karten</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -39,15 +39,15 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+        <Card type="default">
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
           <div class="space-y-4">
-            <h3>PLZ und Ortschaften</h3>
+            <h3 class="card__title">PLZ und Ortschaften</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -58,40 +58,40 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
       </div>
 
       <h3 class="mt-10 mb-4">Top Themen</h3>
-      <div class="grid grid-cols-6 gap-8 lg:gap-12">
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+      <div class="grid grid--responsive-cols-3 gap--responsive">
+        <Card type="default">
           <div class="space-y-4">
-            <h3>Are</h3>
+            <h3 class="card__title">Are</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </div>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
           </template>
         </Card>
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+        <Card type="default">
           <div class="space-y-4">
-            <h3>Energie</h3>
+            <h3 class="card__title">Energie</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </div>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
           </template>
         </Card>
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+        <Card type="default">
           <div class="space-y-4">
-            <h3>Luftfahrt</h3>
+            <h3 class="card__title">Luftfahrt</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -99,7 +99,7 @@
             </p>
           </div>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
           </template>
         </Card>
       </div>

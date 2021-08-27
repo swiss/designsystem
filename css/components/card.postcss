@@ -12,7 +12,27 @@
 }
 
 .card--highlight {
+    @apply relative;
+    @apply ml-5 mt-5;
+    @apply lg:ml-7 lg:mt-7;
+    @apply transition-transform duration-300;
 
+    &::before {
+        content: '';
+        @apply absolute top-0 right-0 left-0 bottom-0 z-0;
+        @apply bg-secondary-600;
+        @apply -translate-x-5 -translate-y-5;
+        @apply lg:-translate-x-7 lg:-translate-y-7;
+        @apply transition-transform duration-300;
+    }
+
+    &:hover {
+        @apply -translate-x-2.5 -translate-y-2.5;
+
+        &::before {
+            @apply -translate-x-0 -translate-y-0;
+        }
+    }
 }
 
 .card--image-left {
@@ -36,10 +56,17 @@
 .card__content {
     @apply flex flex-col justify-between;
     @apply h-full;
+    @apply relative z-10;
+    @apply bg-white;
 }
 
 .card__body {
     @apply px-6 pt-10 pb-12;
+}
+
+.card__title {
+    @apply text-lg xl:text-xl 2xl:text-2xl;
+    @apply font-bold leading-5;
 }
 
 .card__footer {

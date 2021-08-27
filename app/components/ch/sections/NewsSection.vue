@@ -2,13 +2,13 @@
   <div class="py-10">
     <div class="container">
       <h2 class="mb-10">Jetzt aktuell</h2>
-      <div class="grid grid-cols-6 gap-8 lg:gap-12">
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+      <div class="grid grid--responsive-cols-3 gap--responsive">
+        <Card type="default">
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
           <div class="space-y-4">
-            <h3>Covid 19</h3>
+            <h3 class="card__title">Covid 19</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
               consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -23,12 +23,12 @@
             <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+        <Card type="default">
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
           <div class="space-y-4">
-            <h3>Auftritte und Anlässe während des Covid</h3>
+            <h3 class="card__title">Auftritte und Anlässe während des Covid</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -42,12 +42,12 @@
             <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
-        <Card type="default" class="col-span-6 sm:col-span-3 md:col-span-2">
+        <Card type="default">
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
           <div class="space-y-4">
-            <h3>Amtsvorsteherin</h3>
+            <h3 class="card__title">Amtsvorsteherin</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
