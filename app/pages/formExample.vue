@@ -11,14 +11,10 @@
     </header>
     <main id="main-content">
       <div class="container">
-        <h1 class="py-6">Demo Application</h1>
+        <h1 class="py-6">Form example</h1>
       </div>
-      <TopNewsSection />
-      <ServicesSection />
-      <NewsSection />
-      <MostSeenSection />
-      <PortraitSection />
-      <MediasSection />
+      <FormDemo />
+
       <BackToTopBtn
         fixed
         type="outline"
@@ -41,13 +37,8 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
+import FormDemo from '../components/ch/sections/FormDemo.vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
-import TopNewsSection from "~/components/ch/sections/TopNewsSection";
-import ServicesSection from "~/components/ch/sections/ServicesSection";
-import MostSeenSection from "~/components/ch/sections/MostSeenSection";
-import PortraitSection from "~/components/ch/sections/PortraitSection";
-import MediasSection from "~/components/ch/sections/MediasSection";
-import NewsSection from "~/components/ch/sections/NewsSection";
 
 export default {
   name: 'Index',
@@ -60,13 +51,8 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    BackToTopBtn,
-    TopNewsSection,
-    ServicesSection,
-    NewsSection,
-    MostSeenSection,
-    PortraitSection,
-    MediasSection
+    FormDemo,
+    BackToTopBtn
   },
   methods: {
     getMobileMenuIsOpen() {

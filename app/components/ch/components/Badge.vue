@@ -26,6 +26,10 @@ export default {
       type: String,
       default: 'gray',
       validator: (prop) => [
+        'info',
+        'error',
+        'warning',
+        'success',
         'gray',
         'red',
         'yellow',
