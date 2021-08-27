@@ -15,6 +15,7 @@
       </div>
       <TopNewsSection />
       <ServicesSection />
+      <NewsSection />
       <MostSeenSection />
       <MediasSection />
       <BackToTopBtn
@@ -44,6 +45,7 @@ import TopNewsSection from "~/components/ch/sections/TopNewsSection";
 import ServicesSection from "~/components/ch/sections/ServicesSection";
 import MostSeenSection from "~/components/ch/sections/MostSeenSection";
 import MediasSection from "~/components/ch/sections/MediasSection";
+import NewsSection from "~/components/ch/sections/NewsSection";
 
 export default {
   name: 'Index',
@@ -59,6 +61,7 @@ export default {
     BackToTopBtn,
     TopNewsSection,
     ServicesSection,
+    NewsSection,
     MostSeenSection,
     MediasSection
   },
