@@ -3,7 +3,7 @@
     <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
-      <TopBar />
+      <TopBar :isOpen="true" />
       <TopHeader />
       <DesktopMenu />
       <MobileMenu />

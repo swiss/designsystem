@@ -25,9 +25,150 @@
   @apply bg-secondary-600 text-white;
 }
 
+.top-bar__drawer__close {
+  @apply flex justify-end;
+}
+
+.top-bar__drawer__close__btn {
+  @apply flex items-center;
+}
+
+
+.top-bar__drawer__localization {
+  @apply border-b border-secondary-400;
+
+  .top-bar__drawer__localization__nav {
+    @apply mt-8 mb-12;
+
+    & ul {
+      @apply flex;
+      @apply space-x-6;
+    }
+
+    & ul > li {
+      @apply flex items-center;
+
+      .top-bar__drawer__localization__nav__icon {
+        @apply ml-8
+      }
+    }
+
+    & ul > li > a {
+      @apply text-secondary-100;
+
+      &.active {
+        @apply text-white font-bold;
+        @apply border-l-2 border-red-600 pl-2;
+      }
+    }
+  }
+}
+
+.top-bar__drawer__agencies {
+  @apply mt-12;
+
+  .top-bar__drawer__agencies__information {
+    @apply mt-10;
+    @apply lg:grid lg:grid-cols-3 lg:gap-16 flex flex-col;
+
+    .entry__websites {
+      @apply space-y-12 lg:space-y-20;
+
+      .entry__website {
+        @apply space-y-4;
+      }
+    }
+
+    .entry__departments {
+      @apply mt-12 lg:mt-0;
+
+      h4 {
+        @apply mb-4;
+      }
+
+      .entry__department {
+        @apply flex items-center justify-between;
+        @apply border-b border-secondary-400 py-2;
+
+        .entry__department__acronym {
+          @apply text-secondary-100;
+          @apply text-xs;
+        }
+
+        .entry__department__icon {
+          @apply h-6;
+          @apply ml-5;
+        }
+      }
+    }
+
+    .entry__amt {
+      @apply mt-12 lg:mt-0;
+
+      h4 {
+        @apply mb-4;
+      }
+
+      .entry__amt__search {
+        @apply flex items-center justify-between;
+        @apply bg-secondary-300;
+        @apply border border-secondary-400;
+
+        .search__field {
+          @apply font-bold text-2xl text-white;
+          @apply bg-secondary-300;
+          @apply p-3;
+          @apply w-full;
+          @apply outline-none;
+
+          &::placeholder {
+            @apply text-secondary-200;
+          }
+        }
+
+        .search__icon {
+          @apply h-8 mx-3;
+          @apply text-white;
+        }
+      }
+
+      .entry__amt__list__item {
+        @apply flex items-center justify-between;
+        @apply border border-secondary-400 p-3;
+        @apply hover:bg-secondary-700;
+
+        .entry__amt__list__icon {
+          @apply hidden;
+          @apply h-6;
+          @apply ml-5;
+        }
+
+        &:hover .entry__amt__list__icon {
+          @apply inline;
+        }
+
+        .entry__amt__accronym {
+          @apply flex;
+          @apply text-secondary-100;
+          @apply text-xs;
+
+          .entry__amt__accronym__icon {
+            @apply mx-2;
+          }
+        }
+      }
+    }
+  }
+}
+
 .top-bar__btn {
+  @apply flex items-center;
   @apply h-full px-4 -ml-4;
   @apply bg-secondary-600;
+
+  .top-bar__btn__icon {
+    @apply ml-2;
+  }
 }
 
 .top-bar__navigation {
