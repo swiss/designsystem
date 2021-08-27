@@ -22,10 +22,6 @@
         @apply text-red-600;
       }
 
-      svg {
-        height: 1.5em;
-      }
-
       .menu__item--active:after {
         content:'';
         @apply block bg-primary-500;
@@ -63,6 +59,38 @@
         @apply text-red-300;
       }
     }
+    .menu__item--brim {
+      @apply -mx-2 px-2 border-0;
+
+      &::after {
+        content: '';
+        border-color: inherit;
+        @apply border-b;
+        @apply absolute bottom-0 left-2 right-2;
+      }
+    }
+
+    .icon.menu__item__icon {
+      @apply h-6 md:h-7;
+    }
+  }
+
+  /* NON RESPONSIVE UTILITIES */
+
+  .menu__item--icon-on-hover {
+    & .menu__item__icon {
+      @apply opacity-0 transition-opacity duration-200;
+    }
+
+    &:hover .menu__item__icon {
+      @apply opacity-100;
+    }
+  }
+
+  .menu__item__flex {
+    @apply flex w-full items-center justify-between space-x-2;
   }
 }
+
+
 

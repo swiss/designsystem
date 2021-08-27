@@ -1,0 +1,37 @@
+/*----------------------------------------*\
+  TOP BAR
+\*----------------------------------------*/
+
+.search {
+  @apply flex items-center justify-between;
+}
+
+.search--negative {
+  @apply bg-secondary-300;
+  @apply border border-secondary-400;
+}
+
+.search__field {
+  @apply font-bold text-2xl text-white;
+  @apply bg-secondary-300;
+  @apply p-3;
+  @apply w-full;
+  @apply outline-none;
+
+  &::placeholder {
+    @apply text-secondary-200;
+  }
+}
+
+.search__icon {
+  @apply h-8 mx-3;
+  @apply text-white;
+}
+
+.search__results {
+  @apply max-h-[60vh];
+}
+
+.search__results--negative {
+  @apply border border-secondary-400;
+}

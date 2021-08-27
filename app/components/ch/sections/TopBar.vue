@@ -66,19 +66,19 @@
         </div>
 
         <div class="top-bar__drawer__agencies">
-          <h3>Eine andere Bundesbehörde besuchen</h3>
+          <h3 class="pb-4">Eine andere Bundesbehörde besuchen</h3>
 
-          <ul class="top-bar__drawer__agencies__information">
-            <li class="top-bar__drawer__agencies__information__entry entry__websites">
-              <div class="entry__website">
-                <h4>Zur Bundesrat Webseite gehen</h4>
+          <div class="grid grid-cols-3 gap-9 lg:gap-10 xl:gap-12 2xl:gap-16">
+            <div class="grid sm:grid-cols-2 gap-9 lg:grid-cols-none">
+              <div>
+                <h4 class="p-3">Zur Bundesrat Webseite gehen</h4>
                 <p>
                   Sieben Departementsvorsteherinnen und Departementsvorsteher bilden den Bundesrat.
                   Entschieden wird gemeinsam. Der Bundeskanzler unterstützt die Regierung.
                 </p>
                 <Btn label="Bundesrat Webseite besuchen" icon="External" icon-pos="right" type="outline-negative" size="sm" />
               </div>
-              <div class="entry__website">
+              <div>
                 <h4>Zur Bundeskanzlei Webseite gehen</h4>
                 <p>
                   Die Bundeskanzlei ist die Stabsstelle des Bundesrats und hat die Funktion eines Scharniers zwischen Regierung,
@@ -86,230 +86,271 @@
                 </p>
                 <Btn label="Bundeskanzlei Webseite besuchen" icon="External" icon-pos="right" type="outline-negative" size="sm" />
               </div>
-            </li>
-            <div class="top-bar__drawer__agencies__information__entry">
+            </div>
+
+            <div>
               <h4>Alle Departemente</h4>
               <ul class="menu">
-                <li class="menu__item menu__item--negative">
-                  <a href="javascript:void(0)">
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
                     <div>
-                      <h5>EDA</h5>
+                      <div class="overtitle">EDA</div>
                       <div>
                         Eidgenössisches Departement für auswärtige Angelegenheiten
                       </div>
                     </div>
                     <SvgIcon
                       icon="External"
-                      class="entry__department__icon"
+                      class="menu__item__icon"
                     />
                   </a>
                 </li>
-                <!--div class="entry__department">
-                  <div class="entry__department__info">
-                    <span class="entry__department__acronym">EDI</span>
-                    <p>Eidgenössisches Departement des Innern</p>
-                  </div>
-                  <a href="javascript:void(0)">
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
+                    <div>
+                      <div class="overtitle">EDI</div>
+                      <div>
+                        Eidgenössisches Departement des Innern
+                      </div>
+                    </div>
                     <SvgIcon
                       icon="External"
-                      class="entry__department__icon"
+                      class="menu__item__icon"
                     />
                   </a>
-                </div>
-                <div class="entry__department">
-                  <div class="entry__department__info">
-                    <span class="entry__department__acronym">EJPD</span>
-                    <p>Eidgenössisches Justiz- und Polizeidepartement</p>
-                  </div>
-                  <a href="javascript:void(0)">
+                </li>
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
+                    <div>
+                      <div class="overtitle">EJPD</div>
+                      <div>
+                        Eidgenössisches Justiz- und Polizeidepartement
+                      </div>
+                    </div>
                     <SvgIcon
                       icon="External"
-                      class="entry__department__icon"
+                      class="menu__item__icon"
                     />
                   </a>
-                </div>
-                <div class="entry__department">
-                  <div class="entry__department__info">
-                    <span class="entry__department__acronym">VBS</span>
-                    <p>Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport</p>
-                  </div>
-                  <a href="javascript:void(0)">
+                </li>
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
+                    <div>
+                      <div class="overtitle">VBS</div>
+                      <div>
+                        Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport
+                      </div>
+                    </div>
                     <SvgIcon
                       icon="External"
-                      class="entry__department__icon"
+                      class="menu__item__icon"
                     />
                   </a>
-                </div>
-                <div class="entry__department">
-                  <div class="entry__department__info">
-                    <span class="entry__department__acronym">EFD</span>
-                    <p>Eidgenössisches Finanzdepartement</p>
-                  </div>
-                  <a href="javascript:void(0)">
+                </li>
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
+                    <div>
+                      <div class="overtitle">EFD</div>
+                      <div>
+                        Eidgenössisches Finanzdepartement
+                      </div>
+                    </div>
                     <SvgIcon
                       icon="External"
-                      class="entry__department__icon"
+                      class="menu__item__icon"
                     />
                   </a>
-                </div>
-                <div class="entry__department">
-                  <div class="entry__department__info">
-                    <span class="entry__department__acronym">WBF</span>
-                    <p>Eidgenössisches Departement für Wirtschaft, Bildung und Forschung</p>
-                  </div>
-                  <a href="javascript:void(0)">
+                </li>
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
+                    <div>
+                      <div class="overtitle">WBF</div>
+                      <div>
+                        Eidgenössisches Departement für Wirtschaft, Bildung und Forschung
+                      </div>
+                    </div>
                     <SvgIcon
                       icon="External"
-                      class="entry__department__icon"
+                      class="menu__item__icon"
                     />
                   </a>
-                </div>
-                <div class="entry__department">
-                  <div class="entry__department__info">
-                    <span class="entry__department__acronym">UVEK</span>
-                    <p>Eidgenössisches Departement für Umwelt, Verkehr, Energie und Kommunikation</p>
-                  </div>
-                  <a href="javascript:void(0)">
+                </li>
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
+                    <div>
+                      <div class="overtitle">UVEK</div>
+                      <div>
+                        Eidgenössisches Departement für Umwelt, Verkehr, Energie und Kommunikation
+                      </div>
+                    </div>
                     <SvgIcon
                       icon="External"
-                      class="entry__department__icon"
+                      class="menu__item__icon"
                     />
                   </a>
-                </div-->
+                </li>
               </ul>
             </div>
-            <li class="top-bar__drawer__agencies__information__entry">
-              <div class="entry__amt">
-                <h4>Alle Ämter</h4>
-                <div class="entry__amt__content">
-                  <div class="entry__amt__search">
-                      <input class="search__field" type="text" placeholder="Amt suchen">
-                      <SvgIcon
-                        icon="Search"
-                        class="search__icon"
-                      />
-                  </div>
-                  <div class="entry__amt__list">
-                    <div class="entry__amt__list__item">
-                      <div class="entry__amt__info">
-                        <div class="entry__amt__accronym">
-                          EDA
-                          <SvgIcon
-                            icon="ArrowRight"
-                            class="entry__amt__accronym__icon"
-                          />
-                          BK
-                        </div>
-                        <p>Bundesamt für Kultur</p>
-                      </div>
-                      <a href="javascript:void(0)">
-                        <SvgIcon
-                          icon="External"
-                          class="entry__amt__list__icon"
-                        />
-                      </a>
-                    </div>
-                    <div class="entry__amt__list__item">
-                      <div class="entry__amt__info">
-                        <div class="entry__amt__accronym">
-                          EDA
-                          <SvgIcon
-                            icon="ArrowRight"
-                            class="entry__amt__accronym__icon"
-                          />
-                          BLV
-                        </div>
-                        <p>Bundesamt für Lebensmittelsicherheit und Veterinärwesen</p>
-                      </div>
-                      <a href="javascript:void(0)">
-                        <SvgIcon
-                          icon="External"
-                          class="entry__amt__list__icon"
-                        />
-                      </a>
-                    </div>
-                    <div class="entry__amt__list__item">
-                      <div class="entry__amt__info">
-                        <div class="entry__amt__accronym">
-                          UVEK
-                          <SvgIcon
-                            icon="ArrowRight"
-                            class="entry__amt__accronym__icon"
-                          />
-                          BS
-                        </div>
-                        <p>Bundesamt für Sozialversicherungen </p>
-                      </div>
-                      <a href="javascript:void(0)">
-                        <SvgIcon
-                          icon="External"
-                          class="entry__amt__list__icon"
-                        />
-                      </a>
-                    </div>
-                    <div class="entry__amt__list__item">
-                      <div class="entry__amt__info">
-                        <div class="entry__amt__accronym">
-                          EDA
-                          <SvgIcon
-                            icon="ArrowRight"
-                            class="entry__amt__accronym__icon"
-                          />
-                          BAR
-                        </div>
-                        <p>Schweizerisches Bundesarchiv</p>
-                      </div>
-                      <a href="javascript:void(0)">
-                        <SvgIcon
-                          icon="External"
-                          class="entry__amt__list__icon"
-                        />
-                      </a>
-                    </div>
-                    <div class="entry__amt__list__item">
-                      <div class="entry__amt__info">
-                        <div class="entry__amt__accronym">
-                          EDA
-                          <SvgIcon
-                            icon="ArrowRight"
-                            class="entry__amt__accronym__icon"
-                          />
-                          BK
-                        </div>
-                        <p>Bundesamt für Kultur</p>
-                      </div>
-                      <a href="javascript:void(0)">
-                        <SvgIcon
-                          icon="External"
-                          class="entry__amt__list__icon"
-                        />
-                      </a>
-                    </div>
-                    <div class="entry__amt__list__item">
-                      <div class="entry__amt__info">
-                        <div class="entry__amt__accronym">
-                          EDA
-                          <SvgIcon
-                            icon="ArrowRight"
-                            class="entry__amt__accronym__icon"
-                          />
-                          BK
-                        </div>
-                        <p>Bundesamt für Kultur</p>
-                      </div>
-                      <a href="javascript:void(0)">
-                        <SvgIcon
-                          icon="External"
-                          class="entry__amt__list__icon"
-                        />
-                      </a>
-                    </div>
 
-                  </div>
-                </div>
+            <div>
+              <h4>Alle Ämter</h4>
+              <div class="search search--negative search--large">
+                  <input class="search__field" type="text" placeholder="Amt suchen">
+                  <SvgIcon
+                    icon="Search"
+                    class="search__icon"
+                  />
               </div>
-            </li>
-          </ul>
+              <div class="search__results search__results--negative">
+                <ul class="menu">
+                  <li class="menu__item menu__item--negative menu__item--icon-on-hover">
+                    <a href="javascript:void(0)" class="menu__item__flex">
+                      <div>
+                        <div class="overtitle">
+                          <span>EDA</span>
+                          <SvgIcon icon="ArrowRight" class="icon--sm" />
+                          <span>BK</span>
+                        </div>
+                        <div>
+                          Bundesamt für Kultur
+                        </div>
+                      </div>
+                      <SvgIcon
+                        icon="External"
+                        class="menu__item__icon"
+                      />
+                    </a>
+                  </li>
+                  <li class="menu__item menu__item--negative menu__item--icon-on-hover">
+                    <a href="javascript:void(0)" class="menu__item__flex">
+                      <div>
+                        <div class="overtitle">
+                          <span>EDA</span>
+                          <SvgIcon icon="ArrowRight" class="icon--sm" />
+                          <span>BLV</span>
+                        </div>
+                        <div>
+                          Bundesamt für Lebensmittelsicherheit und Veterinärwesen
+                        </div>
+                      </div>
+                      <SvgIcon
+                        icon="External"
+                        class="menu__item__icon"
+                      />
+                    </a>
+                  </li>
+                  <li class="menu__item menu__item--negative menu__item--icon-on-hover">
+                    <a href="javascript:void(0)" class="menu__item__flex">
+                      <div>
+                        <div class="overtitle">
+                          <span>UVEK</span>
+                          <SvgIcon icon="ArrowRight" class="icon--sm" />
+                          <span>BS</span>
+                        </div>
+                        <div>
+                          Bundesamt für Sozialversicherungen
+                        </div>
+                      </div>
+                      <SvgIcon
+                        icon="External"
+                        class="menu__item__icon"
+                      />
+                    </a>
+                  </li>
+                  <li class="menu__item menu__item--negative menu__item--icon-on-hover">
+                    <a href="javascript:void(0)" class="menu__item__flex">
+                      <div>
+                        <div class="overtitle">
+                          <span>EDA</span>
+                          <SvgIcon icon="ArrowRight" class="icon--sm" />
+                          <span>BAR</span>
+                        </div>
+                        <div>
+                          Schweizerisches Bundesarchiv
+                        </div>
+                      </div>
+                      <SvgIcon
+                        icon="External"
+                        class="menu__item__icon"
+                      />
+                    </a>
+                  </li>
+                  <li class="menu__item menu__item--negative menu__item--icon-on-hover">
+                    <a href="javascript:void(0)" class="menu__item__flex">
+                      <div>
+                        <div class="overtitle">
+                          <span>EDA</span>
+                          <SvgIcon icon="ArrowRight" class="icon--sm" />
+                          <span>BK</span>
+                        </div>
+                        <div>
+                          Bundesamt für Kultur
+                        </div>
+                      </div>
+                      <SvgIcon
+                        icon="External"
+                        class="menu__item__icon"
+                      />
+                    </a>
+                  </li>
+                  <li class="menu__item menu__item--negative menu__item--icon-on-hover">
+                    <a href="javascript:void(0)" class="menu__item__flex">
+                      <div>
+                        <div class="overtitle">
+                          <span>EDA</span>
+                          <SvgIcon icon="ArrowRight" class="icon--sm" />
+                          <span>BAR</span>
+                        </div>
+                        <div>
+                          Schweizerisches Bundesarchiv
+                        </div>
+                      </div>
+                      <SvgIcon
+                        icon="External"
+                        class="menu__item__icon"
+                      />
+                    </a>
+                  </li>
+                  <li class="menu__item menu__item--negative menu__item--icon-on-hover">
+                    <a href="javascript:void(0)" class="menu__item__flex">
+                      <div>
+                        <div class="overtitle">
+                          <span>EDA</span>
+                          <SvgIcon icon="ArrowRight" class="icon--sm" />
+                          <span>BK</span>
+                        </div>
+                        <div>
+                          Bundesamt für Kultur
+                        </div>
+                      </div>
+                      <SvgIcon
+                        icon="External"
+                        class="menu__item__icon"
+                      />
+                    </a>
+                  </li>
+                  <li class="menu__item menu__item--negative menu__item--icon-on-hover">
+                    <a href="javascript:void(0)" class="menu__item__flex">
+                      <div>
+                        <div class="overtitle">
+                          <span>EDA</span>
+                          <SvgIcon icon="ArrowRight" class="icon--sm" />
+                          <span>BK</span>
+                        </div>
+                        <div>
+                          Bundesamt für Kultur
+                        </div>
+                      </div>
+                      <SvgIcon
+                        icon="External"
+                        class="menu__item__icon"
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
