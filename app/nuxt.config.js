@@ -32,18 +32,14 @@ export default {
     '@nuxtjs/tailwindcss',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/content
-    '@nuxt/content',
-  ],
-
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
 
   // Storybook for nuxt project: https://storybook.nuxtjs.org/setup#installation
   storybook: {
     addons: [
+      '@storybook/addon-links',
+      'storybook-addon-designs',
       '@storybook/addon-essentials',
       '@storybook/addon-a11y',
       '@whitespace/storybook-addon-html',

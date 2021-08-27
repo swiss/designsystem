@@ -23,6 +23,7 @@
         </button>
         <div class="top-bar__right">
           <TopBarNavigation context="desktop" />
+          <LanguageSwitcher context="desktop" />
         </div>
       </div>
     </div>
@@ -320,13 +321,15 @@
 import TopBarNavigation from '../navigations/TopBarNavigation.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import Btn from "~/components/ch/components/Btn";
+import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 
 export default {
   name: 'TopBar',
   components: {
     TopBarNavigation,
     SvgIcon,
-    Btn
+    Btn,
+    LanguageSwitcher
   },
   props: {
     isOpen: {

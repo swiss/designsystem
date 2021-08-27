@@ -5,7 +5,7 @@ import Btn from '../../ch/components/Btn.vue';
   title="Components/Button"
   component={Btn}
   argTypes={{
-    type:    { control: { type: 'select', options: ['outline', 'bare', 'filled', 'outline-negative', 'bare-negative'] } },
+    variant:    { control: { type: 'select', options: ['outline', 'bare', 'filled', 'outline-negative', 'bare-negative'] } },
     size:    { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
     icon:    { control: { type: 'select', options: ['ArrowRight', 'ArrowLeft', 'Checkmark'] } },
     iconPos: { control: { type: 'select', options: ['none', 'only','left', 'right'] } },
@@ -15,7 +15,7 @@ import Btn from '../../ch/components/Btn.vue';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Btn },
-  template: '<Btn :type="type" :size="size" :icon="icon" :iconPos="iconPos" :label="label" />',
+  template: '<Btn :variant="variant" :size="size" :icon="icon" :iconPos="iconPos" :label="label" />',
 });
 
 # Button
@@ -26,7 +26,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Example"
     args={{
-      type: 'outline',
+      variant: 'outline',
       size: 'base',
       icon: 'ArrowRight',
       iconPos: 'none',

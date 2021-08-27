@@ -1,14 +1,80 @@
 .select {
-  @apply inline-flex cursor-pointer flex-shrink-0 appearance-none select-none;
-  @apply px-4 leading-loose h-12 text-sm;
-  &:focus {
-    @apply outline-none;
+  @apply relative;
+
+  & select {
+    @apply pr-20;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+
+.select--bare {
+  width: auto;
+  display: inline-block;
+
+  select {
+    @apply inline-block pr-6;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
   }
 
-  /* disabled */
-  &-disabled,
-  &[disabled] {
-    @apply pointer-events-none;
+  .select__icon {
+    @apply w-6 border-l-0;
   }
 
+  .input--negative + .select__icon {
+    background-color: transparent;
+  }
+}
+
+select:disabled,
+.input--disabled select {
+  @apply opacity-40;
+
+  & + .select__icon {
+    @apply opacity-40;
+  }
+}
+
+.select__icon {
+  @apply w-12 h-full;
+  @apply flex items-center justify-center;
+  @apply absolute top-0 right-0;
+  @apply border-l border-text-500;
+  @apply pointer-events-none;
+
+  & svg {
+    @apply w-8 h-full;
+  }
+
+  .input--negative + & {
+    @apply text-white;
+    @apply border-secondary-300;
+    @apply bg-secondary-500;
+
+    & svg {
+      @apply fill-current;
+    }
+  }
+
+  .input--error + & {
+    @apply text-red-700 border-red-400;
+
+    & svg {
+      @apply fill-current;
+    }
+  }
+
+  .input--error.input--negative + &  {
+    @apply text-red-200 border-red-300;
+
+    & svg {
+      @apply fill-current;
+    }
+  }
 }

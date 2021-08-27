@@ -3,7 +3,7 @@
 \*----------------------------------------*/
 
 .notification {
-  @apply flex items-center;
+  @apply flex items-center relative;
   @apply p-4 rounded;
   @apply text-sm xl:text-base 2xl:text-lg;
   @apply shadow-lg;
@@ -54,6 +54,15 @@
     @apply bg-orange-500;
   }
 }
+
+.notification__close {
+  @apply absolute top-0 right-0;
+
+  svg {
+    @apply w-8 h-8;
+  }
+}
+
 
 .notification .link {
   color: inherit;

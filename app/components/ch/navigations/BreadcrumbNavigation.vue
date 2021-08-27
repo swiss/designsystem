@@ -124,16 +124,6 @@ export default {
   components: {
     SvgIcon
   },
-  props: {
-    context: {
-      type: String,
-      required: true,
-      validator: (prop) => [
-        'desktop',
-        'mobile'
-      ].includes(prop)
-    }
-  },
   computed: {
     breadcrumbNavigationClass () {
       let base = `breadcrumb-navigation `

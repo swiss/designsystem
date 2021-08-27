@@ -1,14 +1,3 @@
-.checkbox{
-
-  & ~ .checkbox-mark{
-    @apply flex select-none cursor-pointer items-center justify-center transition duration-200 ease-in-out;
-    &:before{
-      @apply transition duration-200 ease-in-out;
-      content: '';
-      display: block;
-    }
-  }
-  &:focus {
-    @apply outline-none;
-  }
+input[type='checkbox']:checked {
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.20692 0.293031C9.39439 0.480558 9.49971 0.734866 9.49971 1.00003C9.49971 1.26519 9.39439 1.5195 9.20692 1.70703L4.20692 6.70703C4.01939 6.8945 3.76508 6.99982 3.49992 6.99982C3.23475 6.99982 2.98045 6.8945 2.79292 6.70703L0.792919 4.70703C0.610761 4.51843 0.509966 4.26583 0.512245 4.00363C0.514523 3.74143 0.619692 3.49062 0.8051 3.30521C0.990508 3.1198 1.24132 3.01463 1.50352 3.01236C1.76571 3.01008 2.01832 3.11087 2.20692 3.29303L3.49992 4.58603L7.79292 0.293031C7.98045 0.10556 8.23475 0.000244141 8.49992 0.000244141C8.76508 0.000244141 9.01939 0.10556 9.20692 0.293031Z' fill='white'/%3E%3C/svg%3E%0A");
 }

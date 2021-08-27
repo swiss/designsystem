@@ -1,0 +1,72 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+<Meta
+  title="Foundations/Grids"
+/>
+
+# Grids
+
+Two types of grids are at your disposal: Default grids and Custom grids.
+
+# Default Grids
+Default grids propose standard alignments and responsiveness with a minimal amount of CSS classes. Ideal to align content in a grid, for example a list of Card elements. Use the following classes:
+- `grid grid--responsive-cols-2`
+- `grid grid--responsive-cols-3`
+- `grid grid--responsive-cols-4`
+
+Additionally, a `gap--responsive` class applies default spacings to the elements.
+
+## Default responsive grid, two cols
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-2 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</Canvas>
+
+## Default responsive grid, three cols
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-3 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+</Canvas>
+
+## Default responsive grid, four cols
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-4 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</Canvas>
+
+# Custom Grids
+
+You can use most of [Tailwind grid classes](https://tailwindcss.com/docs/grid-template-columns) to display your elements in a more specific way. You will have create a template in this project with the new classes or safelist the desired Tailwind classes, and to build the css file again.
+
+<a href="?path=/docs/implementation-add-tailwind-classes--page">More informations about adding Tailwind classes</a>
+
+
+## Custom responsive grid: one, three and five cols
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid md:grid-cols-3 lg:grid-rows-2 lg:grid-cols-5 gap-3 md:gap-5">
+    <div class="lg:row-span-2">1</div>
+    <div>2</div>
+    <div class="lg:col-span-3">3</div>
+    <div class="lg:col-span-3">4</div>
+    <div class="md:col-span-2 lg:col-span-1">5</div>
+  </div>
+</Canvas>
+
