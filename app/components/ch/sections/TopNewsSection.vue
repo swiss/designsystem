@@ -13,6 +13,20 @@
               Hatten Sie schon immer eine Idee, die sie mit Geodaten umsetzen wollten?
               Wollten Sie schon immer ein Problem mit Hilfe von Karten und Luftbildern lösen?
             </p>
+            <ul class="flex space-x-6">
+              <li class="flex items-center">
+                <SvgIcon icon="Calendar" size="xl" />
+                <p>10-12 Mai 2021</p>
+              </li>
+              <li class="flex items-center">
+                <SvgIcon icon="Clock" size="xl" />
+                <p>9 bis 11 Uhr</p>
+              </li>
+              <li class="flex items-center">
+                <SvgIcon icon="MapMarker" size="xl" />
+                <p>Zürich</p>
+              </li>
+            </ul>
           </div>
           <template v-slot:footerInfo>
             Veranstaltung

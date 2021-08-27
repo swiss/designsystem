@@ -17,6 +17,7 @@
       <ServicesSection />
       <NewsSection />
       <MostSeenSection />
+      <PortraitSection />
       <MediasSection />
       <BackToTopBtn
         fixed
@@ -44,6 +45,7 @@ import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
 import TopNewsSection from "~/components/ch/sections/TopNewsSection";
 import ServicesSection from "~/components/ch/sections/ServicesSection";
 import MostSeenSection from "~/components/ch/sections/MostSeenSection";
+import PortraitSection from "~/components/ch/sections/PortraitSection";
 import MediasSection from "~/components/ch/sections/MediasSection";
 import NewsSection from "~/components/ch/sections/NewsSection";
 
@@ -63,6 +65,7 @@ export default {
     ServicesSection,
     NewsSection,
     MostSeenSection,
+    PortraitSection,
     MediasSection
   },
   methods: {
