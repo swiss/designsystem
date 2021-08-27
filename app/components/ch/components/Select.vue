@@ -44,7 +44,7 @@ export default {
     },
     bare: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     size: {
       type: String,
