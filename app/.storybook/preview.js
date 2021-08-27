@@ -35,6 +35,10 @@ export const parameters = {
           ['List', 'Implementation'],
         ],
         'Implementation',
+        [
+          'HTML Structure',
+          'Add Tailwind classes'
+        ],
         'Components',
         ['Logo', 'Button'],
         'Sections',

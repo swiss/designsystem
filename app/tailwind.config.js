@@ -1,12 +1,19 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   mode: 'jit',
   purge: [
     './safelist.txt',
     './app/pages/**/*.vue',
-    './app/components/ch/**/*.vue'
+    './app/components/ch/**/*.vue',
+    './app/components/stories/foundations/**/*.mdx'
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      'xs': '480px',
+      ...defaultTheme.screens,
+    },
     colors: {
       primary: {
         50: '#ffedee',
