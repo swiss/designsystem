@@ -21,7 +21,7 @@
 }
 
 .top-bar__drawer {
-  @apply py-10;
+  @apply pt-6 md:pt-8;
   @apply bg-secondary-600 text-white;
 }
 
@@ -33,37 +33,82 @@
   @apply flex items-center;
 }
 
+.top-bar__main-title {
+  @apply py-3 md:py-4;
+}
 
-.top-bar__drawer__localization {
-  @apply border-b border-secondary-400;
+.top-bar__title {}
 
-  .top-bar__drawer__localization__nav {
-    @apply mt-8 mb-12;
+.localization {
+  @apply my-6 md:my-7 lg:my-8;
 
-    & ul {
-      @apply flex;
-      @apply space-x-6;
+  ul {
+    @apply flex flex-wrap;
+  }
+
+  li {
+    @apply flex items-center;
+  }
+
+  li:last-of-type {
+    @apply w-full md:w-auto;
+  }
+
+  a {
+    @apply text-secondary-100 my-2;
+
+    &.active {
+      @apply text-white font-bold;
+      @apply border-l-2 border-red-600 pl-2;
     }
+  }
 
-    & ul > li {
-      @apply flex items-center;
-
-      .top-bar__drawer__localization__nav__icon {
-        @apply ml-8
-      }
-    }
-
-    & ul > li > a {
-      @apply text-secondary-100;
-
-      &.active {
-        @apply text-white font-bold;
-        @apply border-l-2 border-red-600 pl-2;
-      }
-    }
+  .localization__icon {
+    @apply mx-4;
   }
 }
 
+.top-bar__grid {
+  @apply grid grid-cols-6;
+  @apply gap-x-9 lg:gap-x-10 xl:gap-x-12 2xl:gap-x-16;
+  @apply pt-3 md:pt-5;
+
+  grid-template-rows: auto 1fr;
+
+  & .search__results {
+    height: calc(100% - 187px);
+  }
+
+}
+
+.top-bar__grid__box-1 {
+  @apply col-span-6 md:col-span-3 pb-12;
+  @apply lg:col-span-2 lg:row-span-1;
+  @apply space-y-4 md:space-y-6;
+}
+
+.top-bar__grid__box-2 {
+  @apply col-span-6 md:col-span-3 pb-12;
+  @apply lg:col-span-2 lg:row-start-1;
+  @apply space-y-4 md:space-y-6;
+}
+
+.top-bar__grid__box-3 {
+  @apply col-span-6 md:col-span-3 pb-12;
+  @apply lg:col-span-2 lg:col-start-3 lg:row-start-1 lg:row-end-3;
+  @apply space-y-4 md:space-y-6;
+}
+
+.top-bar__grid__box-4 {
+  @apply col-span-6 md:col-span-3 pb-12;
+  @apply lg:col-span-2 lg:col-start-5 lg:row-start-1 lg:row-end-3;
+  @apply space-y-4 md:space-y-6;
+}
+
+
+
+
+/*
 .top-bar__drawer__agencies {
   @apply mt-12;
 
@@ -160,6 +205,7 @@
     }
   }
 }
+*/
 
 .top-bar__btn {
   @apply flex items-center;
@@ -170,6 +216,7 @@
     @apply ml-2;
   }
 }
+
 
 .top-bar__navigation {
   @apply h-full;

@@ -13,22 +13,21 @@
       <h3>Bleiben sie informiert</h3>
       <div class="footer-information__social">
         <a class="footer__link" href="facebook.com">
-          <svg-icon icon="Facebook" class="footer-information__icon" />
+          <SvgIcon icon="Facebook" class="footer-information__icon" />
           Facebook
         </a>
         <a href="twitter.com" class="footer__link">
-          <svg-icon icon="Twitter" class="footer-information__icon" />
+          <SvgIcon icon="Twitter" class="footer-information__icon" />
           Twitter
         </a>
         <a href="youtube.com" class="footer__link">
-          <svg-icon icon="Youtube" class="footer-information__icon" />
+          <SvgIcon icon="Youtube" class="footer-information__icon" />
           Youtube
         </a>
       </div>
-      <button class="btn btn--outline-negative btn--lg btn--icon-right">
-        <svg-icon icon="ArrowRight" class="btn__icon" />
-        Newsletter abonnieren
-      </button>
+
+      <Btn label="Newsletter abonnieren" icon="External" icon-pos="right" variant="outline-negative" />
+
     </li>
     <li class="footer-information__entry footer-information__entry--big">
       <h3>Weitere Informationen</h3>
@@ -38,21 +37,21 @@
             href="javascript:void(0)"
             class="footer__link footer-information__link--icon-right"
           >
-            <svg-icon icon="ArrowRight" class="footer-information__icon" />
+            <SvgIcon icon="ArrowRight" class="footer-information__icon" />
             Über uns
           </a>
           <a
             href="javascript:void(0)"
             class="footer__link footer-information__link--icon-right"
           >
-            <svg-icon icon="ArrowRight" class="footer-information__icon" />
+            <SvgIcon icon="ArrowRight" class="footer-information__icon" />
             Jobs
           </a>
           <a
             href="javascript:void(0)"
             class="footer__link footer-information__link--icon-right"
           >
-            <svg-icon icon="ArrowRight" class="footer-information__icon" />
+            <SvgIcon icon="ArrowRight" class="footer-information__icon" />
             Kontakt
           </a>
         </div>
@@ -61,21 +60,21 @@
             href="javascript:void(0)"
             class="footer__link footer-information__link--icon-right"
           >
-            <svg-icon icon="ArrowRight" class="footer-information__icon" />
+            <SvgIcon icon="ArrowRight" class="footer-information__icon" />
             Medien
           </a>
           <a
             href="javascript:void(0)"
             class="footer__link footer-information__link--icon-right"
           >
-            <svg-icon icon="ArrowRight" class="footer-information__icon" />
+            <SvgIcon icon="ArrowRight" class="footer-information__icon" />
             ...
           </a>
           <a
             href="javascript:void(0)"
             class="footer__link footer-information__link--icon-right"
           >
-            <svg-icon icon="ArrowRight" class="footer-information__icon" />
+            <SvgIcon icon="ArrowRight" class="footer-information__icon" />
             ...
           </a>
         </div>
@@ -86,10 +85,12 @@
 
 <script>
 import SvgIcon from '../components/SvgIcon.vue'
+import Btn from '../components/Btn.vue'
 
 export default {
   components: {
     SvgIcon,
+    Btn
   },
 }
 </script>

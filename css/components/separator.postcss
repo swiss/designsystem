@@ -1,0 +1,25 @@
+/*----------------------------------------*\
+  SEPARATOR
+\*----------------------------------------*/
+
+.separator {
+  &::before {
+    content: '';
+    @apply w-full;
+    @apply border-b border-secondary-300;
+  }
+}
+
+.separator--xl {
+  &::before {
+    @apply w-full h-4 md:h-5 lg:h-6 table;
+  }
+  &::after {
+    content: '';
+    @apply w-full h-4 md:h-5 lg:h-6 table;
+  }
+}
+
+.separator--negative::before {
+  @apply border-secondary-400;
+}

@@ -2,13 +2,27 @@
   TOP BAR
 \*----------------------------------------*/
 
-.search {
-  @apply flex items-center justify-between;
-}
+.search {}
 
 .search--negative {
   @apply bg-secondary-300;
-  @apply border border-secondary-400;
+}
+
+.search__group {
+  @apply flex items-stretch justify-between;
+
+  & .form__group__input {
+    @apply w-full;
+  }
+
+  & label {
+    @apply sr-only;
+  }
+
+  & input {
+    @apply h-auto text-xl font-bold shadow-none lg:py-4;
+    margin-top: 0 !important; /* TODO: remove this */
+  }
 }
 
 .search__field {
@@ -29,7 +43,8 @@
 }
 
 .search__results {
-  @apply max-h-[60vh];
+  @apply h-96;
+  @apply overflow-scroll;
 }
 
 .search__results--negative {
