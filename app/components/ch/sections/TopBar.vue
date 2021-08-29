@@ -85,12 +85,26 @@
                 Die Bundeskanzlei ist die Stabsstelle des Bundesrats und hat die Funktion eines Scharniers zwischen Regierung,
                 Verwaltung, Parlament und Öffentlichkeit.
               </p>
+              <Btn label="Bundeskanzlei Webseite besuchen" icon="External" icon-pos="right" variant="outline-negative" size="sm" />
             </div>
 
             <div class="top-bar__grid__box-3">
               <h4 class="top-bar__title">Alle Departemente</h4>
               <ul class="menu">
-
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
+                    <div>
+                      <div class="overtitle">EDA</div>
+                      <div>
+                        Eidgenössisches Departement für auswärtige Angelegenheiten
+                      </div>
+                    </div>
+                    <SvgIcon
+                      icon="External"
+                      class="menu__item__icon"
+                    />
+                  </a>
+                </li>
                 <li class="menu__item menu__item--negative menu__item--brim">
                   <a href="javascript:void(0)" class="menu__item__flex">
                     <div>
