@@ -1,5 +1,55 @@
 /*----------------------------------------*\
-  TOP BAR
+  MAIN SEARCH
+\*----------------------------------------*/
+
+.search--main {
+  @apply flex relative z-50;
+
+  & .form__group__input {
+    @apply w-full h-full;
+    @apply absolute right-0;
+  }
+
+  & input {
+    @apply bg-opacity-0;
+    @apply absolute right-0 z-30;
+    @apply cursor-pointer;
+    @apply opacity-0;
+    @apply shadow-none;
+    @apply transition-all duration-300;
+
+    &:focus {
+      @apply w-[45vw] z-0;
+      @apply opacity-100;
+      @apply cursor-text;
+      @apply shadow-2xl;
+    }
+  }
+}
+
+.search-opener {
+  @apply flex items-center;
+  @apply relative z-10;
+}
+
+.search-opener__title {
+  @apply sr-only lg:not-sr-only;
+}
+
+.search-opener__icon {
+  @apply w-10 lg:w-9;
+}
+
+
+.body--search-is-open {
+  .logo {
+    @apply opacity-0 xs:opacity-100;
+  }
+}
+
+
+/*----------------------------------------*\
+  TOP BAR SEARCH
 \*----------------------------------------*/
 
 .search {}
@@ -10,21 +60,25 @@
 
 .search__group {
   @apply flex items-stretch justify-between;
-  @apply h-16;
-
-  & .form__group__input {
-    @apply w-full;
-  }
 
   & label {
     @apply sr-only;
   }
 
   & input {
-    @apply h-full text-xl font-bold shadow-none lg:py-4;
+    @apply h-full lg:py-4;
     margin-top: 0 !important; /* TODO: remove this */
   }
+
+  .search--large & {
+    @apply h-16;
+
+    & input {
+      @apply text-xl font-bold shadow-none;
+    }
+  }
 }
+
 
 .search__field {
   @apply font-bold text-2xl text-white;
