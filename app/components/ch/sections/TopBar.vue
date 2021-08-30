@@ -196,7 +196,7 @@
               <h4 class="top-bar__title">Alle Ämter</h4>
               <div class="search search--negative search--large">
                 <div class="search__group">
-                  <Input type="text" id="text-id-0" label="Amt suchen" placeholder="Amt suchen" variant="negative" bare />
+                  <Input type="text" id="text-id-0" label="Amt suchen" placeholder="Amt suchen" variant="negative" />
                   <Btn label="Amt Suchen" icon="Search" icon-pos="only" variant="negative" size="lg" />
                 </div>
                 <div class="search__results search__results--negative">
