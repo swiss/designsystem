@@ -41,6 +41,7 @@ export default {
     computedClasses () {
       let base = 'card '
       if (this.type) base += `card--${this.type} `
+      if (this.$slots.footerAction) base += `card--clickable `
       return base
     },
     computedClassesFooter () {

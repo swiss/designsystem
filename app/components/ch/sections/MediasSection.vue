@@ -12,7 +12,7 @@
             22. März 2012
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
         <Card type="default">
@@ -23,7 +23,7 @@
             22. März 2012
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
         <Card type="default">
@@ -34,7 +34,7 @@
             22. März 2012
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
         <Card type="default">
@@ -45,7 +45,7 @@
             22. März 2012
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
       </div>

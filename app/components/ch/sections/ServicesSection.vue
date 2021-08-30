@@ -15,7 +15,7 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
         <Card type="highlight">
@@ -30,7 +30,7 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
       </div>
@@ -48,7 +48,7 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
         <Card type="highlight">
@@ -62,7 +62,7 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
         <Card type="highlight">
@@ -77,7 +77,7 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn type="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
           </template>
         </Card>
       </div>
