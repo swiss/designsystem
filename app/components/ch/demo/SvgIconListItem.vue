@@ -2,7 +2,7 @@
   <div class="storybook-icon">
     <svg-icon
       :icon="id"
-      size="2xl"
+      size="3xl"
     />
     <div class="storybook-icon__text">
       {{ id }}

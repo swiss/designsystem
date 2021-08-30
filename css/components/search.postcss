@@ -1,0 +1,53 @@
+/*----------------------------------------*\
+  TOP BAR
+\*----------------------------------------*/
+
+.search {}
+
+.search--negative {
+  @apply bg-secondary-300;
+}
+
+.search__group {
+  @apply flex items-stretch justify-between;
+  @apply h-16;
+
+  & .form__group__input {
+    @apply w-full;
+  }
+
+  & label {
+    @apply sr-only;
+  }
+
+  & input {
+    @apply h-full text-xl font-bold shadow-none lg:py-4;
+    margin-top: 0 !important; /* TODO: remove this */
+  }
+}
+
+.search__field {
+  @apply font-bold text-2xl text-white;
+  @apply bg-secondary-300;
+  @apply p-3;
+  @apply w-full;
+  @apply outline-none;
+
+  &::placeholder {
+    @apply text-secondary-200;
+  }
+}
+
+.search__icon {
+  @apply h-8 mx-3;
+  @apply text-white;
+}
+
+.search__results {
+  @apply h-96;
+  @apply overflow-scroll;
+}
+
+.search__results--negative {
+  @apply border border-secondary-400;
+}
