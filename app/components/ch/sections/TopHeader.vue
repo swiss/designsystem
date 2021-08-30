@@ -7,6 +7,7 @@
       />
       <div class="top-header__right">
         <MetaNavigation context="desktop" />
+        <SearchMain />
         <Burger
           @click.native="toggleMobileMenu()"
           :isOpen="getMobileMenuIsOpen()"
@@ -19,6 +20,7 @@
 <script>
 import Logo from '~/components/ch/components/Logo.vue';
 import Burger from '~/components/ch/components/Burger.vue';
+import SearchMain from '~/components/ch/components/SearchMain.vue';
 import MetaNavigation from '../navigations/MetaNavigation.vue'
 
 export default {
@@ -26,6 +28,7 @@ export default {
   components: {
     Logo,
     Burger,
+    SearchMain,
     MetaNavigation
   },
   methods: {
