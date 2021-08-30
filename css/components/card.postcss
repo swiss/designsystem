@@ -40,7 +40,12 @@
 }
 
 .card--clickable {
+    @apply relative;
 
+    button:after {
+        content: '';
+        @apply absolute top-0 right-0 left-0 bottom-0;
+    }
 }
 
 .card__image {
@@ -56,7 +61,7 @@
 .card__content {
     @apply flex flex-col justify-between;
     @apply h-full;
-    @apply relative z-10;
+    @apply z-10;
     @apply bg-white;
 }
 
