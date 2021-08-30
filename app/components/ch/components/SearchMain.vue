@@ -1,16 +1,15 @@
 <template>
   <div class="search search--main">
     <div class="search__group">
-      <Input type="text" id="text-id-0" label="Amt suchen" placeholder="Amt suchen" />
-      <!--Btn label="Amt Suchen" icon="Search" icon-pos="only" /-->
+      <Input type="text" id="text-id-0" label="Suche" placeholder="Suche" />
       <button
-        class="search-opener"
+        class="search__button"
         title="Toggle search"
       >
-        <span class="search-opener__title">Search</span>
+        <span class="search__button__title">Search</span>
         <SvgIcon
           icon="Search" size="full"
-          class="search-opener__icon"
+          class="search__button__icon"
         />
       </button>
     </div>
@@ -21,13 +20,11 @@
 <script>
 import SvgIcon from './SvgIcon.vue';
 import Input from './Input.vue';
-import Btn from './Btn.vue';
 
 export default {
   components: {
     SvgIcon,
-    Input,
-    Btn
+    Input
   },
 	name: 'SearchMain',
 	props: {

@@ -3,7 +3,8 @@
 \*----------------------------------------*/
 
 .search--main {
-  @apply flex relative z-50;
+  @apply flex;
+  @apply relative z-50;
 
   & .form__group__input {
     @apply w-full h-full;
@@ -19,7 +20,8 @@
     @apply transition-all duration-300;
 
     &:focus {
-      @apply w-[45vw] z-0;
+      @apply w-[40vw] xs:w-[35vw] lg:w-72;
+      @apply z-0;
       @apply opacity-100;
       @apply cursor-text;
       @apply shadow-2xl;
@@ -27,17 +29,22 @@
   }
 }
 
-.search-opener {
+.search__button {
   @apply flex items-center;
+  @apply lg:p-1 xl:p-2 2xl:py-3 ;
   @apply relative z-10;
 }
 
-.search-opener__title {
+.search__button__title {
   @apply sr-only lg:not-sr-only;
 }
 
-.search-opener__icon {
-  @apply w-10 lg:w-9;
+.search__button__icon {
+  @apply w-10 lg:w-7;
+
+  svg {
+    stroke-width: 0.5px;
+  }
 }
 
 
