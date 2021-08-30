@@ -3,90 +3,105 @@
 \*----------------------------------------*/
 
 .card {
-    @apply flex flex-col;
-    @apply bg-white;
+  @apply flex flex-col;
+  @apply bg-white;
 }
 
 .card--default {
-    @apply shadow-2xl;
-}
-
-.card--highlight {
-    @apply relative;
-    @apply ml-5 mt-5;
-    @apply lg:ml-7 lg:mt-7;
-    @apply transition-transform duration-300;
-
-    &::before {
-        content: '';
-        @apply absolute top-0 right-0 left-0 bottom-0 z-0;
-        @apply bg-secondary-600;
-        @apply -translate-x-5 -translate-y-5;
-        @apply lg:-translate-x-7 lg:-translate-y-7;
-        @apply transition-transform duration-300;
-    }
-
-    &:hover {
-        @apply -translate-x-2.5 -translate-y-2.5;
-
-        &::before {
-            @apply -translate-x-0 -translate-y-0;
-        }
-    }
-}
-
-.card--image-left {
-
+  @apply shadow-2xl;
 }
 
 .card--clickable {
-    @apply relative;
+  @apply relative;
+  @apply transition-shadow duration-300;
 
-    button:after {
-        content: '';
-        @apply absolute top-0 right-0 left-0 bottom-0;
+  button:after {
+    content: '';
+    @apply absolute top-0 right-0 left-0 bottom-0;
+  }
+
+  &:hover,
+  &:focus-within {
+    @apply shadow-md;
+    img {
+      @apply scale-102;
     }
+  }
+}
+
+.card--highlight {
+  @apply relative;
+  @apply ml-5 mt-5;
+  @apply lg:ml-7 lg:mt-7;
+  @apply transition-transform duration-300;
+
+  &::before {
+    content: '';
+    @apply absolute top-0 right-0 left-0 bottom-0 z-0;
+    @apply bg-secondary-600;
+    @apply -translate-x-5 -translate-y-5;
+    @apply lg:-translate-x-7 lg:-translate-y-7;
+    @apply transition-transform duration-300;
+  }
+
+  &:hover,
+  &:focus-within {
+    @apply -translate-x-1 -translate-y-1;
+
+    &::before {
+      @apply -translate-x-3 -translate-y-3;
+      @apply lg:-translate-x-4 lg:-translate-y-4;
+    }
+  }
 }
 
 .card__image {
+  @apply relative pb-[56.25%]; /* 16/9 ratio */
+  @apply overflow-hidden;
 
+  .grid--responsive-cols-2 & {
+    @apply relative pb-[50%]; /* 2/1 ratio */
+  }
+
+  img {
+    @apply absolute w-full h-full object-cover;
+    @apply transition-transform duration-300;
+  }
 }
 
 .card__header {
-    @apply flex items-center;
-    @apply p-6;
-    @apply bg-secondary-100;
+  @apply flex items-center;
+  @apply p-6;
+  @apply bg-secondary-100;
 }
 
 .card__content {
-    @apply flex flex-col justify-between;
-    @apply h-full;
-    @apply z-10;
-    @apply bg-white;
+  @apply flex flex-col justify-between;
+  @apply h-full;
+  @apply z-10;
+  @apply bg-white;
 }
 
 .card__body {
-    @apply px-6 pt-10 pb-12;
+  @apply px-6 pt-10 pb-12;
 }
 
 .card__title {
-    @apply text-lg xl:text-xl 2xl:text-2xl;
-    @apply font-bold leading-5;
+  @apply text-lg xl:text-xl 2xl:text-2xl;
+  @apply font-bold leading-5;
 }
 
 .card__footer {
-    @apply flex items-center justify-between;
-    @apply px-6 pb-6;
+  @apply flex items-center justify-between;
+  @apply px-6 pb-6;
 }
 
 .card__footer--icon-only {
-    @apply justify-end;
+  @apply justify-end;
 }
 
 .card__footer__info {
-    @apply text-secondary-500 text-sm;
+  @apply text-secondary-500 text-sm;
 }
 
-.card__footer__action {
-
-}
+.card__footer__action {}

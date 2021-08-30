@@ -14,6 +14,10 @@ module.exports = {
       'xs': '480px',
       ...defaultTheme.screens,
     },
+    scale: {
+      '102': '1.02',
+      ...defaultTheme.scale,
+    },
     colors: {
       primary: {
         50: '#ffedee',
