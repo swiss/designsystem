@@ -10,9 +10,7 @@
       <Breadcrumb />
     </header>
     <main id="main-content">
-      <div class="container">
-        <h1 class="py-6">Demo Application</h1>
-      </div>
+      <HeroHomepage />
       <TopNewsSection />
       <ServicesSection />
       <NewsSection />
@@ -48,6 +46,7 @@ import MostSeenSection from "~/components/ch/sections/MostSeenSection";
 import PortraitSection from "~/components/ch/sections/PortraitSection";
 import MediasSection from "~/components/ch/sections/MediasSection";
 import NewsSection from "~/components/ch/sections/NewsSection";
+import HeroHomepage from "~/components/ch/sections/HeroHomepage";
 
 export default {
   name: 'Index',
@@ -66,7 +65,8 @@ export default {
     NewsSection,
     MostSeenSection,
     PortraitSection,
-    MediasSection
+    MediasSection,
+    HeroHomepage
   },
   methods: {
     getMobileMenuIsOpen() {
