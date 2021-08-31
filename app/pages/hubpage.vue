@@ -10,18 +10,7 @@
       <Breadcrumb />
     </header>
     <main id="main-content">
-      <HeroHome />
-      <TopNewsSection />
-      <ServicesSection />
-      <NewsSection />
-      <MostSeenSection />
-      <PortraitSection />
-      <MediasSection />
-      <BackToTopBtn
-        fixed
-        type="outline"
-        target="main-header"
-      />
+      <HeroHub />
     </main>
     <footer class="footer" id="main-footer">
       <footer-information />
@@ -39,14 +28,7 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
-import TopNewsSection from "~/components/ch/sections/TopNewsSection";
-import ServicesSection from "~/components/ch/sections/ServicesSection";
-import MostSeenSection from "~/components/ch/sections/MostSeenSection";
-import PortraitSection from "~/components/ch/sections/PortraitSection";
-import MediasSection from "~/components/ch/sections/MediasSection";
-import NewsSection from "~/components/ch/sections/NewsSection";
-import HeroHome from "~/components/ch/sections/HeroHome";
+import HeroHub from "~/components/ch/sections/HeroHub";
 
 export default {
   name: 'Index',
@@ -59,14 +41,7 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    BackToTopBtn,
-    TopNewsSection,
-    ServicesSection,
-    NewsSection,
-    MostSeenSection,
-    PortraitSection,
-    MediasSection,
-    HeroHome
+    HeroHub
   },
   methods: {
     getMobileMenuIsOpen() {

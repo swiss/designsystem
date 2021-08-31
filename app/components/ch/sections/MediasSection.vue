@@ -62,7 +62,7 @@ import Btn from "~/components/ch/components/Btn";
 import SvgIcon from '../components/SvgIcon.vue';
 
 export default {
-  name: 'topHeader',
+  name: 'MediasSection',
   components: {
     Card,
     Btn,

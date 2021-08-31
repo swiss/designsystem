@@ -1,0 +1,39 @@
+
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import store from '@/.storybook/store';
+import Hubpage from '../../../pages/hubpage.vue';
+
+<Meta
+  title="Pages/Hubpage"
+  component={Hubpage}
+  argTypes={{
+    isOpen: { name:'Is open', control: { type: 'boolean' } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Hubpage },
+  store: store,
+  template: '<Hubpage />',
+});
+
+# Homepage example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      isOpen: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<a href="?path=/story/pages-hubpage--example">Go to the Canvas Tab</a>
+
+---
+
+<a href="?id=pages-homepage--hubpage" target="_blank">Open page in full width in a new tab</a>
+

@@ -23,7 +23,7 @@
 import Hero from "~/components/ch/components/Hero";
 
 export default {
-  name: 'HeroHomepage',
+  name: 'HeroHome',
   components: {
     Hero,
   },
