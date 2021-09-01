@@ -1,11 +1,11 @@
 
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import store from '@/.storybook/store';
-import hubPage from '../../../pages/hubPage.vue';
+import detailPageSimple from '../../../pages/detailPageSimple.vue';
 
 <Meta
-  title="Pages/Hub Page"
-  component={hubPage}
+  title="Pages/Detail Page Simple"
+  component={detailPageSimple}
   argTypes={{
     isOpen: { name:'Is open', control: { type: 'boolean' } },
   }}
@@ -13,9 +13,9 @@ import hubPage from '../../../pages/hubPage.vue';
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { hubPage },
+  components: { detailPageSimple },
   store: store,
-  template: '<hubPage />',
+  template: '<detailPageSimple />',
 });
 
 # Homepage example
@@ -31,9 +31,9 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<a href="?path=/story/pages-hubpage--example">Go to the Canvas Tab</a>
+<a href="?path=/story/pages-detail-page-simple--example">Go to the Canvas Tab</a>
 
 ---
 
-<a href="?id=pages-homepage--example" target="_blank">Open page in full width in a new tab</a>
+<a href="?id=pages-detail-page-simple--example" target="_blank">Open page in full width in a new tab</a>
 

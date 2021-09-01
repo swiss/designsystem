@@ -31,7 +31,7 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import HeroHub from "~/components/ch/sections/HeroHub";
 
 export default {
-  name: 'Index',
+  name: 'hubPage',
   components: {
     AlterBodyClasses,
     TopBar,
