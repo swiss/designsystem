@@ -10,8 +10,8 @@
 .desktop-menu__drawer {
   @apply hidden lg:block;
   @apply mt-px;
-  @apply w-[450px] p-4 pt-16 -left-4;
-  @apply xl:w-[650px] xl:p-8 xl:pt-20 xl:-left-8;
+  @apply w-[450px] p-6 pt-16 -left-4;
+  @apply xl:w-[650px] xl:p-10 xl:pt-20 xl:-left-8;
   @apply 2xl:w-[850px] 2xl:p-24 2xl:-left-24;
   @apply overflow-x-hidden overflow-y-scroll;
   @apply absolute z-30 top-14 xl:top-16 2xl:top-20;
@@ -46,6 +46,20 @@
     height: 0 !important;
     @apply overflow-hidden p-0 opacity-0;
     transition: opacity 300ms, height 1ms 300ms;
+  }
+}
+
+.desktop-menu__close {
+  @apply hidden lg:block;
+  @apply menu__action-btn;
+
+  @apply lg:absolute;
+  @apply lg:top-4 lg:right-0;
+  @apply xl:top-6 xl:right-4;
+  @apply 2xl:top-8 2xl:right-20;
+
+  & .icon {
+    @apply lg:h-5 lg:w-5;
   }
 }
 
