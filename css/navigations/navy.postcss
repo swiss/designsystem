@@ -7,8 +7,6 @@
   position: relative;
   perspective: 1200;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
 
   & li > a:not(.navy__back),
   & li > span:not(.navy__title),
@@ -52,13 +50,18 @@
 }
 
 .navy__back {
-  @apply menu__item lg:menu__item--condensed;
-  @apply justify-start;
-  @apply text-text-500;
+  @apply menu__action-btn;
+  @apply lg:absolute lg:-top-12 lg:-left-5;
+  @apply xl:-top-14 2xl:-top-16;
+  @apply justify-start !important;
+
+  & .icon {
+    @apply lg:h-5 lg:w-5;
+  }
 }
 
 .navy__title {
-  @apply menu__item;
+  @apply menu__item menu__item--title;
   @apply font-bold;
   @apply border-opacity-0;
 }

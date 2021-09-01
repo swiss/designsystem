@@ -11,6 +11,12 @@ const Navy = {
     });
     target.classList.remove('hidden');
 
+    // resize drawer height:
+    let paddingTop = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-top'));
+    let paddingBottom = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-bottom'));
+    let newHeight =  paddingTop + paddingBottom + target.offsetHeight + "px"
+    Navy.drawer.style.height = newHeight;
+
     // set focus on the `.back` button after the transition
     // 600ms is the duration of the sliding animation (find it in _navy.scss);
     setTimeout(function () { target.querySelector('.navy__back').focus() }, 610);
@@ -123,7 +129,7 @@ const Navy = {
     Navy.setDrawerXPosition(mainmenuBtn);
   },
 
-  initDesktop(navigationItem, target, overlay) {
+  initDesktop(navigationItem, target, overlay, closeButton) {
     // build navy structure and inject it in the target:
     Navy.buildSlides(target);
     Navy.drawer = document.querySelector(target);
@@ -131,6 +137,7 @@ const Navy = {
     Navy.currentMenuBtn = undefined;
 
     const nav = document.querySelector(navigationItem);
+    const closeBtn = document.querySelector(closeButton);
     const mainmenuBtns = nav.querySelectorAll(':scope > ul > li > a');
     const submenus = nav.querySelectorAll(':scope > ul > li > ul');
     const slide0 = Navy.drawer.querySelector(':scope > .navy > .navy__level-0');
@@ -160,6 +167,11 @@ const Navy = {
         // TODO: set correct x position for teh drawer
         // TODO: accessibility tab navigation
         // TODO: set active path
+      });
+
+      closeBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        Navy.closeSubmenu(mainmenuBtn, mainmenuBtn.relatedMenu, submenus)
       });
 
       Navy.overlay.addEventListener('click', function (event) {
