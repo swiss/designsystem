@@ -11,6 +11,12 @@ const Navy = {
     });
     target.classList.remove('hidden');
 
+    // resize drawer height:
+    let paddingTop = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-top'));
+    let paddingBottom = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-bottom'));
+    let newHeight =  paddingTop + paddingBottom + target.offsetHeight + "px"
+    Navy.drawer.style.height = newHeight;
+
     // set focus on the `.back` button after the transition
     // 600ms is the duration of the sliding animation (find it in _navy.scss);
     setTimeout(function () { target.querySelector('.navy__back').focus() }, 610);

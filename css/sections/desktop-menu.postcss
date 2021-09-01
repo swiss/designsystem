@@ -8,16 +8,46 @@
 }
 
 .desktop-menu__drawer {
-  @apply h-[500px] w-[400px] p-5 mt-px;
   @apply hidden lg:block;
-  @apply absolute z-30 top-14 xl:top-16 2xl:top-20 -left-4;
-  @apply bg-white shadow-2xl;
-  @apply transition-transform duration-500;
+  @apply mt-px;
+  @apply w-[450px] p-4 pt-16 -left-4;
+  @apply xl:w-[650px] xl:p-8 xl:pt-20 xl:-left-8;
+  @apply 2xl:w-[850px] 2xl:p-24 2xl:-left-24;
+  @apply overflow-x-hidden overflow-y-scroll;
+  @apply absolute z-30 top-14 xl:top-16 2xl:top-20;
+  @apply bg-white shadow-2xl opacity-100;
+  @apply transition-opacity duration-300;
+
+  & > * {
+    @apply transition-transform translate-y-0 duration-300;
+  }
+
+  &.hidden {
+    display: block !important;
+    height: 0 !important;
+    @apply overflow-hidden p-0 opacity-0;
+    transition: opacity 300ms, height 1ms 300ms, padding 1ms 300ms;
+
+    & > * {
+      @apply transition-transform -translate-y-8 duration-300;
+    }
+  }
 }
 
 .desktop-menu__overlay {
   @apply hidden lg:block h-[120vh];
   @apply absolute z-20 top-14 xl:top-16 2xl:top-20 right-0 bottom-0 left-0;
-  @apply bg-secondary-900 bg-opacity-20;
-  @apply transition-transform duration-500;
+  @apply bg-secondary-900 bg-opacity-20 opacity-100;
+  @apply transition-opacity duration-300;
+
+
+  &.hidden {
+    display: block !important;
+    height: 0 !important;
+    @apply overflow-hidden p-0 opacity-0;
+    transition: opacity 300ms, height 1ms 300ms;
+  }
 }
+
+
+
