@@ -35,6 +35,19 @@
       @apply h-[3px];
       @apply absolute right-4 bottom-0 left-4;
     }
+
+    &.clicked {
+      @apply bg-white shadow-2xl;
+      @apply relative z-50;
+      clip-path: inset(-50px -50px -1px -50px); /* crop shadow at the bottom */
+
+      &::after {
+        content:'';
+        @apply block bg-white;
+        @apply h-[3px];
+        @apply absolute right-0 left-0 -bottom-px;
+      }
+    }
   }
 
   & > ul > li > a > svg {

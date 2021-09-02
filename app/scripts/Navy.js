@@ -109,19 +109,16 @@ const Navy = {
       Navy.currentMenuBtn = mainmenuBtn;
       // set focus on the next button after the hidden .back button:
       mainmenuBtn.relatedMenu.querySelector(':scope > li > a ~ a').focus();
-
     }
     else if (mainmenuBtn === Navy.currentMenuBtn) {
-      Navy.drawer.classList.add('hidden');
-      Navy.overlay.classList.add('hidden');
-      mainmenuBtn.classList.remove('clicked');
-      Navy.currentMenuBtn = undefined;
+      this.closeSubmenu(mainmenuBtn)
     }
     else {
       Navy.drawer.classList.remove('hidden');
       Navy.overlay.classList.remove('hidden');
+      Navy.currentMenuBtn.classList.remove('clicked');
       mainmenuBtn.classList.add('clicked');
-      Navy.currentMenuBtn = undefined;
+      Navy.currentMenuBtn = mainmenuBtn;
     }
 
     Navy.displayRelatedSubmenu(relatedMenu, submenus);
@@ -171,15 +168,13 @@ const Navy = {
 
       closeBtn.addEventListener('click', function (event) {
         event.preventDefault();
-        Navy.closeSubmenu(mainmenuBtn, mainmenuBtn.relatedMenu, submenus)
+        Navy.closeSubmenu(mainmenuBtn)
       });
 
       Navy.overlay.addEventListener('click', function (event) {
         event.preventDefault();
-        Navy.closeSubmenu(mainmenuBtn, mainmenuBtn.relatedMenu, submenus)
+        Navy.closeSubmenu(mainmenuBtn)
       });
-
-
     });
   },
 }
