@@ -1,11 +1,11 @@
 <template>
   <div class="pt-8 pb-32">
-    <div class="container--md mx-auto">
+    <div class="container container--md mx-auto">
       <Hero type="wide">
         <template v-slot:title>
           Datenmodellablage: Model Repository für Geobasisdaten des Bundesrechts
         </template>
-        <p class="mt-24">
+        <p class="mt-24 font-bold text-2xl">
           Das Konzept des INTERLIS Model Repository (Datenmodellablage) sieht vor,
           Datenmodelle als http-Ressource nutzbar zu machen.
           Dabei werden die INTERLIS-Modelldateien auf einem Webserver abgelegt,
@@ -16,7 +16,11 @@
 
         <h2 class="mt-24">Datenmodellablage ansehen</h2>
         <p>
-          Der Modellkatalog kann unter models.geo.admin.ch angesehen werden.
+          Der Modellkatalog kann unter
+          <span class="text-red-600">
+            <a href="javascript:void(0)">models.geo.admin.ch</a>
+          </span>
+          angesehen werden.
           Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren.
           Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang.
           Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen.
