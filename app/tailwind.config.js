@@ -204,10 +204,10 @@ module.exports = {
       DEFAULT:
         '0px 1px 2px 0px rgba(0,0,0,0.06), 0px 1px 5px 0px rgba(0,0,0,0.08)',
       md: '0px 2px 4px -1px rgba(0,0,0,0.06), 0px 4px 10px -1px rgba(0,0,0,0.08)',
-      lg: '0px 4px 6px -2px rgba(0,0,0,0.04), 0px 10px 20px -6px rgba(0,0,0,0.07)',
-      xl: '0px 10px 10px -5px rgba(0,0,0,0.03), 0px 16px 25px -10px rgba(0,0,0,0.07)',
+      lg: '0px 2px 6px -1px rgba(0,0,0,0.05), 0px 5px 20px -3px rgba(0,0,0,0.08)',
+      xl: '0px 6px 10px -5px rgba(0,0,0,0.04), 0px 15px 25px -3px rgba(0,0,0,0.09)',
       '2xl':
-        '1px 12px 60px -15px rgba(0,0,0,0.11), 0px 10px 20px 0px rgba(0,0,0,0.03)',
+        '0px 10px 20px 0px rgba(0,0,0,0.05), 1px 10px 70px -8px rgba(0,0,0,0.13)',
       none: '0px 0px 0px 0px rgba(0,0,0,0)',
     },
     borderRadius: {
