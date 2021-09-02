@@ -12,7 +12,11 @@ module.exports = {
   theme: {
     screens: {
       'xs': '480px',
-      ...defaultTheme.screens,
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1800px',
     },
     scale: {
       '102': '1.02',

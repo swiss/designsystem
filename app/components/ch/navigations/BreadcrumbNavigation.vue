@@ -19,43 +19,36 @@
           <li>
             <a href="javascript:alert('link')">
               <span>News</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
           <li>
             <a href="javascript:alert('link')">
               <span>Geodaten</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
           <li>
             <a href="javascript:alert('link')">
               <span>Karten</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
           <li>
             <a href="javascript:alert('link')">
               <span>Geoportale</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
           <li>
             <a href="javascript:alert('link')" class="active">
               <span>Dienstleistungen</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
           <li>
             <a href="javascript:alert('link')">
               <span>Forschung und Lehre</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
           <li>
             <a href="javascript:alert('link')">
               <span>Über geo.admin.ch</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
         </ul>
@@ -70,19 +63,16 @@
           <li>
             <a href="javascript:alert('link')">
               <span>Link 1</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
           <li>
             <a href="javascript:alert('link')">
               <span>Link 2</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
           <li>
             <a href="javascript:alert('link')">
               <span>Link 3</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
         </ul>
@@ -107,7 +97,6 @@
           <li>
             <a href="javascript:alert('link')">
               <span>Next sibling with sub content</span>
-              <SvgIcon icon="ArrowRight" size="lg" aria-hidden="true" />
             </a>
           </li>
         </ul>
