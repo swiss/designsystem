@@ -11,13 +11,8 @@
         >
           <span>Alle Schweizer Bundesbehörden</span>
           <SvgIcon
-            v-if="!isOpen"
             icon="ChevronDown"
-            class="top-bar__btn__icon"
-          />
-          <SvgIcon
-            v-if="isOpen"
-            icon="ChevronUp"
+            size="lg"
             class="top-bar__btn__icon"
           />
         </button>
@@ -37,6 +32,7 @@
             <span>Schliessen</span>
             <SvgIcon
               icon="Cancel"
+              size="lg"
             />
           </button>
         </div>
