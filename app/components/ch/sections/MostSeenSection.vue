@@ -21,7 +21,12 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
           </template>
         </Card>
         <Card type="default">
@@ -39,7 +44,12 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
           </template>
         </Card>
         <Card type="default">
@@ -58,7 +68,12 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
           </template>
         </Card>
       </div>
@@ -74,7 +89,12 @@
             </p>
           </div>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowUpRight"
+              label="Weiterlesen"
+            />
           </template>
         </Card>
         <Card type="default">
@@ -86,7 +106,12 @@
             </p>
           </div>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowUpRight"
+              label="Weiterlesen"
+            />
           </template>
         </Card>
         <Card type="default">
@@ -99,7 +124,12 @@
             </p>
           </div>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowUpRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowUpRight"
+              label="Weiterlesen"
+            />
           </template>
         </Card>
       </div>
