@@ -23,7 +23,13 @@
 }
 
 .hero__image {
+  @apply relative pb-[37%];
+  @apply overflow-hidden;
+  @apply w-full;
 
+  img {
+    @apply absolute w-full h-full object-cover;
+  }
 }
 
 .hero--default {
@@ -32,6 +38,7 @@
 
 .hero--wide {
   @apply items-start;
+  @apply relative;
 
   .hero__content {
     @apply mt-16;
@@ -40,7 +47,16 @@
 }
 
 .hero--hub {
-  @apply flex-col-reverse items-end;
+  @apply flex-col-reverse;
+
+  .hero__image {
+    @apply pb-[50%];
+
+    img {
+      @apply right-0;
+      @apply max-w-[1060px] max-h-[380px];
+    }
+  }
 
   .hero__content {
     @apply mb-4;

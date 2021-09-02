@@ -1,14 +1,14 @@
 <template>
   <div :class="computedClasses">
-    <div v-if="$slots.image" class="hero__image">
+    <picture v-if="$slots.image" class="hero__image">
       <slot name="image"></slot>
-    </div>
-    <div class="hero__content">
+    </picture>
+    <pi class="hero__content">
       <h1 v-if="$slots.title" class="hero__title">
         <slot name="title"></slot>
       </h1>
       <slot></slot>
-    </div>
+    </pi>
   </div>
 </template>
 

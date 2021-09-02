@@ -3,7 +3,9 @@
     <div class="container">
       <Hero type="wide">
         <template v-slot:image>
-          <img src="https://placekitten.com/g/1620/600" alt="cat">
+          <source srcset="https://placekitten.com/g/1620/600"
+                  media="(min-width: 800px)">
+          <img src="https://placekitten.com/g/800/296" alt="cat">
         </template>
         <template v-slot:title>
           Who we are, what we do, all in one paragraph

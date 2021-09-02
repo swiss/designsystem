@@ -3,7 +3,9 @@
     <div class="container">
       <Hero type="hub">
         <template v-slot:image>
-          <img src="https://placekitten.com/g/1050/380" alt="cat">
+          <source srcset="https://placekitten.com/g/1060/380"
+                  media="(min-width: 800px)">
+          <img src="https://placekitten.com/g/600/222" alt="cat">
         </template>
         <template v-slot:title>
           Unsere Dienstleistungen
