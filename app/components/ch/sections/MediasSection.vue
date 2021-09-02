@@ -12,7 +12,12 @@
             22. März 2012
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Mehr anschauen"
+            />
           </template>
         </Card>
         <Card type="default">
@@ -23,7 +28,12 @@
             22. März 2012
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Mehr anschauen"
+            />
           </template>
         </Card>
         <Card type="default">
@@ -34,7 +44,12 @@
             22. März 2012
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Mehr anschauen"
+            />
           </template>
         </Card>
         <Card type="default">
@@ -45,12 +60,22 @@
             22. März 2012
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Mehr anschauen"
+            />
           </template>
         </Card>
       </div>
       <div class="flex justify-end mt-4">
-        <Btn label="Alle Medienmitteilungen ansehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
+        <Btn
+          label="Alle Medienmitteilungen ansehen"
+          variant="bare"
+          icon-pos="right"
+          icon="ArrowRight"
+        />
       </div>
     </div>
   </div>

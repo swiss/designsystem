@@ -1,7 +1,7 @@
 <template>
   <div class="search search--main">
     <div class="search__group">
-      <Input type="text" id="text-id-0" label="Suche" placeholder="Suche" />
+      <Input type="text" id="search-main" label="Suche" placeholder="Suche" />
       <button
         class="search__button"
         title="Toggle search"

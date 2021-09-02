@@ -1,6 +1,9 @@
 <template>
   <div :class="computedClass" :id="`language-switcher-${context}`">
-    <Select v-if="context=='desktop'" bare variant="negative">
+    <label for="lang-switcher" class="sr-only">
+      Select language
+    </label>
+    <Select v-if="context=='desktop'" id="lang-switcher" bare variant="negative">
       <option>DE</option>
       <option>FR</option>
       <option>IT</option>
