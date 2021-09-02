@@ -5,17 +5,20 @@ const Navy = {
     document.body.classList.add(`show-level-${level}`);
   },
 
+  resizeDrawerHeight(target) {
+    let paddingTop = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-top'));
+    let paddingBottom = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-bottom'));
+    let newHeight = paddingTop + paddingBottom + target.offsetHeight + "px"
+    Navy.drawer.style.height = newHeight;
+  },
+
   displayRelatedSubmenu (target, submenus) {
     [].forEach.call(submenus, function (submenu) {
       submenu.classList.add('hidden');
     });
     target.classList.remove('hidden');
 
-    // resize drawer height:
-    let paddingTop = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-top'));
-    let paddingBottom = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-bottom'));
-    let newHeight =  paddingTop + paddingBottom + target.offsetHeight + "px"
-    Navy.drawer.style.height = newHeight;
+    Navy.resizeDrawerHeight(target);
 
     // set focus on the `.back` button after the transition
     // 600ms is the duration of the sliding animation (find it in _navy.scss);
