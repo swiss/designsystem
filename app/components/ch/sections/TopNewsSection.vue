@@ -103,6 +103,41 @@
             <p>
               Description Dossier China strategy Description Description Dossier China strategy Description
             </p>
+            <ul class="menu">
+              <li class="menu__item menu__item--border">
+                <a href="javascript:void(0)" class="menu__item__flex">
+                  <div>
+                    Die Binnenwirtschaft
+                  </div>
+                  <SvgIcon
+                    icon="ArrowRight"
+                    class="menu__item__icon"
+                  />
+                </a>
+              </li>
+              <li class="menu__item menu__item--border">
+                <a href="javascript:void(0)" class="menu__item__flex">
+                  <div>
+                    Die Auswirkung auf die Schweiz
+                  </div>
+                  <SvgIcon
+                    icon="ArrowRight"
+                    class="menu__item__icon"
+                  />
+                </a>
+              </li>
+              <li class="menu__item menu__item--border">
+                <a href="javascript:void(0)" class="menu__item__flex">
+                  <div>
+                    Der Industriepolitische Ansatz
+                  </div>
+                  <SvgIcon
+                    icon="ArrowRight"
+                    class="menu__item__icon"
+                  />
+                </a>
+              </li>
+            </ul>
           </div>
         </Card>
         <Card type="default">
@@ -110,11 +145,21 @@
             <SvgIcon icon="Twitter" size="xl" class="mr-2" />
             <p>Tweets from @swiss_geoportal</p>
           </template>
+
+          <a class="twitter-timeline"
+            data-theme="light"
+            data-tweet-limit="1"
+            data-chrome="noheader, nofooter, noborders, transparent"
+            href="https://twitter.com/swiss_geoportal"
+          >
+            Tweets by swiss_geoportal
+          </a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           <template v-slot:footerAction>
             <Btn
               variant="outline"
               icon-pos="only"
-              icon="ArrowUpRight"
+              icon="ArrowRight"
               label="Weiterlesen"
             />
           </template>

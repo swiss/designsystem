@@ -9,8 +9,6 @@
     .menu__item {
       @apply flex items-center justify-between;
       @apply px-4 py-3 relative;
-      @apply text-sm 2xl:text-base;
-      @apply border-b border-opacity-0;
       @apply cursor-pointer;
       @apply transition-colors;
 
@@ -28,6 +26,10 @@
         @apply w-[3px];
         @apply absolute top-0 bottom-0 left-0;
       }
+    }
+
+    .menu__item--small {
+      @apply text-sm 2xl:text-base;
     }
 
     .menu__item--condensed {
@@ -49,7 +51,7 @@
     }
 
     .menu__item--border {
-      @apply border-opacity-100 border-secondary-100;
+      @apply border-b border-opacity-100 border-secondary-100;
     }
 
     .menu__item--grey {
@@ -59,7 +61,7 @@
     .menu__item--negative {
       @apply bg-secondary-600;
       @apply text-white;
-      @apply border-secondary-400;
+      @apply border-b border-secondary-400;
 
       &:hover {
         @apply bg-secondary-700;
