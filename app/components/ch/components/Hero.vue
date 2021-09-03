@@ -1,14 +1,31 @@
 <template>
-  <div :class="computedClasses">
-    <picture v-if="$slots.image" class="hero__image">
-      <slot name="image"></slot>
-    </picture>
-    <pi class="hero__content">
+  <div v-if="this.type !== '2-cols'">
+    <div :class="computedClasses" class="container">
       <h1 v-if="$slots.title" class="hero__title">
         <slot name="title"></slot>
       </h1>
-      <slot></slot>
-    </pi>
+      <p class="hero__description">
+        <slot></slot>
+      </p>
+      <picture v-if="$slots.image" class="hero__image">
+        <slot name="image"></slot>
+      </picture>
+    </div>
+  </div>
+  <div v-else>
+    <div :class="computedClasses" class="container">
+      <h1 v-if="$slots.title" class="hero__title">
+        <slot name="title"></slot>
+      </h1>
+      <div class="hero--2-cols__container">
+        <p class="hero__description">
+          <slot></slot>
+        </p>
+        <picture v-if="$slots.image" class="hero__image">
+          <slot name="image"></slot>
+        </picture>
+      </div>
+    </div>
   </div>
 </template>
 
