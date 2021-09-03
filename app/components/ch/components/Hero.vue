@@ -4,9 +4,9 @@
       <h1 v-if="$slots.title" class="hero__title">
         <slot name="title"></slot>
       </h1>
-      <p class="hero__description">
+      <div class="hero__description">
         <slot></slot>
-      </p>
+      </div>
       <picture v-if="$slots.image" class="hero__image">
         <slot name="image"></slot>
       </picture>
@@ -18,9 +18,9 @@
         <slot name="title"></slot>
       </h1>
       <div class="hero--2-cols__container">
-        <p class="hero__description">
+        <div class="hero__description">
           <slot></slot>
-        </p>
+        </div>
         <picture v-if="$slots.image" class="hero__image">
           <slot name="image"></slot>
         </picture>
