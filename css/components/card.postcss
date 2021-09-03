@@ -8,7 +8,7 @@
 }
 
 .card--default {
-  @apply shadow-2xl;
+  @apply shadow-lg;
 }
 
 .card--clickable {
@@ -22,10 +22,7 @@
 
   &:hover,
   &:focus-within {
-    @apply shadow-md;
-    img {
-      @apply scale-102;
-    }
+    @apply shadow-2xl;
   }
 }
 
@@ -46,11 +43,9 @@
 
   &:hover,
   &:focus-within {
-    @apply -translate-x-1 -translate-y-1;
 
     &::before {
-      @apply -translate-x-3 -translate-y-3;
-      @apply lg:-translate-x-4 lg:-translate-y-4;
+      @apply scale-102;
     }
   }
 }
@@ -65,7 +60,6 @@
 
   img {
     @apply absolute w-full h-full object-cover;
-    @apply transition-transform duration-300;
   }
 }
 
@@ -88,7 +82,7 @@
 
 .card__title {
   @apply text-lg xl:text-xl 2xl:text-2xl;
-  @apply font-bold leading-5;
+  @apply font-bold leading-6;
 }
 
 .card__footer {

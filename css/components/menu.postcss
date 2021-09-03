@@ -8,7 +8,7 @@
 
     .menu__item {
       @apply flex items-center justify-between;
-      @apply px-5 py-3 relative;
+      @apply px-4 py-3 relative;
       @apply text-sm 2xl:text-base;
       @apply border-b border-opacity-0;
       @apply cursor-pointer;
@@ -31,11 +31,21 @@
     }
 
     .menu__item--condensed {
-      @apply px-5 py-3;
+      @apply px-3 py-3;
+
+      & .icon {
+        @apply lg:h-6 lg:w-6;
+      }
+    }
+
+    .menu__item--action-btn {
+      @apply px-4 py-3;
+      @apply lg:text-xs 2xl:text-sm;
+      @apply text-text-500 focus:text-text-500;
     }
 
     .menu__item--mini {
-      @apply px-4 py-3;
+      @apply px-3 py-2;
     }
 
     .menu__item--border {
@@ -73,6 +83,10 @@
     .icon.menu__item__icon {
       @apply h-6 md:h-7;
     }
+
+    .menu__item--title {
+      @apply lg:px-0 hover:bg-white;
+    }
   }
 
   /* NON RESPONSIVE UTILITIES */
@@ -90,6 +104,20 @@
   .menu__item__flex {
     @apply flex w-full items-center justify-between space-x-2;
   }
+
+  .menu__action-btn {
+      @apply flex items-center justify-between;
+      @apply px-4 py-3 relative;
+      @apply text-sm 2xl:text-base;
+      @apply border-b border-opacity-0;
+      @apply cursor-pointer;
+      @apply transition-colors;
+      @apply text-text-500;
+
+      &:hover {
+        @apply bg-secondary-50;
+      }
+    }
 }
 
 

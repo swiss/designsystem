@@ -15,7 +15,12 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Mehr lesen über Datenmodellablage"
+            />
           </template>
         </Card>
         <Card type="highlight">
@@ -30,7 +35,12 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Mehr lesen über Geodienste"
+            />
           </template>
         </Card>
       </div>
@@ -48,7 +58,12 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Mehr lesen über Datenbezug"
+            />
           </template>
         </Card>
         <Card type="highlight">
@@ -62,7 +77,12 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Mehr lesen über Beratung"
+            />
           </template>
         </Card>
         <Card type="highlight">
@@ -77,7 +97,12 @@
             Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
-            <Btn variant="outline" icon-pos="only" icon="ArrowRight"></Btn>
+            <Btn
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Mehr lesen über Geodienste"
+            />
           </template>
         </Card>
       </div>

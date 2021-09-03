@@ -29,7 +29,8 @@ export default {
         'xl',
         '2xl',
         '3xl',
-        '4xl'
+        '4xl',
+        'full'
       ].includes(prop)
 		},
 		spin: {

@@ -5,11 +5,20 @@ const Navy = {
     document.body.classList.add(`show-level-${level}`);
   },
 
+  resizeDrawerHeight(target) {
+    let paddingTop = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-top'));
+    let paddingBottom = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-bottom'));
+    let newHeight = paddingTop + paddingBottom + target.offsetHeight + "px"
+    Navy.drawer.style.height = newHeight;
+  },
+
   displayRelatedSubmenu (target, submenus) {
     [].forEach.call(submenus, function (submenu) {
       submenu.classList.add('hidden');
     });
     target.classList.remove('hidden');
+
+    Navy.resizeDrawerHeight(target);
 
     // set focus on the `.back` button after the transition
     // 600ms is the duration of the sliding animation (find it in _navy.scss);
@@ -103,19 +112,16 @@ const Navy = {
       Navy.currentMenuBtn = mainmenuBtn;
       // set focus on the next button after the hidden .back button:
       mainmenuBtn.relatedMenu.querySelector(':scope > li > a ~ a').focus();
-
     }
     else if (mainmenuBtn === Navy.currentMenuBtn) {
-      Navy.drawer.classList.add('hidden');
-      Navy.overlay.classList.add('hidden');
-      mainmenuBtn.classList.remove('clicked');
-      Navy.currentMenuBtn = undefined;
+      this.closeSubmenu(mainmenuBtn)
     }
     else {
       Navy.drawer.classList.remove('hidden');
       Navy.overlay.classList.remove('hidden');
+      Navy.currentMenuBtn.classList.remove('clicked');
       mainmenuBtn.classList.add('clicked');
-      Navy.currentMenuBtn = undefined;
+      Navy.currentMenuBtn = mainmenuBtn;
     }
 
     Navy.displayRelatedSubmenu(relatedMenu, submenus);
@@ -123,7 +129,7 @@ const Navy = {
     Navy.setDrawerXPosition(mainmenuBtn);
   },
 
-  initDesktop(navigationItem, target, overlay) {
+  initDesktop(navigationItem, target, overlay, closeButton) {
     // build navy structure and inject it in the target:
     Navy.buildSlides(target);
     Navy.drawer = document.querySelector(target);
@@ -131,6 +137,7 @@ const Navy = {
     Navy.currentMenuBtn = undefined;
 
     const nav = document.querySelector(navigationItem);
+    const closeBtn = document.querySelector(closeButton);
     const mainmenuBtns = nav.querySelectorAll(':scope > ul > li > a');
     const submenus = nav.querySelectorAll(':scope > ul > li > ul');
     const slide0 = Navy.drawer.querySelector(':scope > .navy > .navy__level-0');
@@ -162,12 +169,15 @@ const Navy = {
         // TODO: set active path
       });
 
-      Navy.overlay.addEventListener('click', function (event) {
+      closeBtn.addEventListener('click', function (event) {
         event.preventDefault();
-        Navy.closeSubmenu(mainmenuBtn, mainmenuBtn.relatedMenu, submenus)
+        Navy.closeSubmenu(mainmenuBtn)
       });
 
-
+      Navy.overlay.addEventListener('click', function (event) {
+        event.preventDefault();
+        Navy.closeSubmenu(mainmenuBtn)
+      });
     });
   },
 }
