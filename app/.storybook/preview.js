@@ -25,6 +25,11 @@ export const parameters = {
     storySort: {
       order: [
         'Introduction',
+        'Doc for developers',
+        [
+          'HTML Structure',
+          'Add CSS classes'
+        ],
         'Foundations',
         [
           'Overview',
@@ -34,10 +39,11 @@ export const parameters = {
           'Icons',
           ['List', 'Implementation'],
         ],
-        'Implementation',
+        'Layouts',
         [
-          'HTML Structure',
-          'Add Tailwind classes'
+          'Grids',
+          'Sections',
+          'Containers',
         ],
         'Components',
         ['Logo', 'Button'],
