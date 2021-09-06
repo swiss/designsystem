@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import HeroHub from '../../ch/sections/HeroHub.vue'
+
+<Meta title="Sections/Hero/HeroHub" component={HeroHub} />
+
+export const Template = () => ({
+  props: [],
+  components: { HeroHub },
+  template: '<HeroHub />',
+})
+
+# Footer information
+
+<Canvas>
+  <Story name="Example">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+<a href="?path=/story/sections-hero-herohub--example">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a href="?id=sections-hero-herohub--example" target="_blank">
+  Open page in full width in a new tab
+</a>

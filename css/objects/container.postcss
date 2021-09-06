@@ -3,16 +3,22 @@
   CONTAINER
 \* ---------------------------------------- */
 
-.container {
-  @apply mx-auto;
-  @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 2xl:px-16;
-  @apply max-w-[1560px] 2xl:max-w-[1620px];
-}
+@layer utilities {
+  .container {
+    @apply mx-auto;
+    @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 2xl:px-16;
+    @apply max-w-[1560px] 2xl:max-w-[1620px];
+  }
 
-.container--flex {
-  @apply flex justify-between;
-}
+  .container--flex {
+    @apply flex justify-between;
+  }
 
-.container--sm {
-  @apply max-w-[640px] 2xl:max-w-[720px];
+  .container--sm {
+    @apply max-w-[640px] 2xl:max-w-[720px];
+  }
+
+  .container--md {
+    max-width: 910px;
+  }
 }
