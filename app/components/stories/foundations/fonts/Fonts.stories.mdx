@@ -6,7 +6,7 @@ import Fonts from '../../../ch/foundations/Fonts.vue';
   component={Fonts}
   argTypes={{
     textStyle: { name:'style and weight', control: { type: 'select', options: ['regular', 'italic', 'bold', 'bold-italic'] } },
-    size: { control: { type: 'select', options: ['h1', 'h2', 'h3', 'h4', 'h5', 'lg', 'base', 'sm', 'xs'] } },
+    size: { control: { type: 'select', options: ['3xl', '2xl', 'xl', 'lg', 'base', 'sm', 'xs'] } },
   }}
 />
 
@@ -19,7 +19,7 @@ export const Template = (args, { argTypes }) => ({
 # Fonts
 
 ## Headings
-For heading variations, the following css classes are built:
+For heading, the following css classes are built. These classes combine a text size and a font weight, useful for most of the titles
 - `.h1` for heading 1
 - `.h2` for heading 2
 - `.h3` for heading 3
@@ -28,16 +28,19 @@ For heading variations, the following css classes are built:
 
 <Canvas>
   <div>
-    <div class="h1 font--bold">Heading 1</div>
-    <div class="h2 font--bold">Heading 2</div>
-    <div class="h3 font--bold">Heading 3</div>
-    <div class="h4 font--bold">Heading 4</div>
-    <div class="h5 font--bold">Heading 5</div>
+    <div class="h1">Title heading 1</div>
+    <div class="h2">Title heading 2</div>
+    <div class="h3">Title heading 3</div>
+    <div class="h4">Title heading 4</div>
+    <div class="h5">Title heading 5</div>
   </div>
 </Canvas>
 
 ## Text sizes
-For size variations, the following css classes are built:
+If you need to control font-size only, the following responsive css classes are built:
+- `text--3xl` for 3xl
+- `text--2xl` for 2xl
+- `text--xl` for xl
 - `text--lg` for lg
 - `text--base` for base
 - `text--sm` for sm
@@ -45,10 +48,13 @@ For size variations, the following css classes are built:
 
 <Canvas>
   <div>
-    <div class="text--lg">lg</div>
-    <div class="text--base">base</div>
-    <div class="text--sm">sm</div>
-    <div class="text--xs">xs</div>
+    <div class="text--3xl">Text size 3xl</div>
+    <div class="text--2xl">Text size 2xl</div>
+    <div class="text--xl">Text size xl</div>
+    <div class="text--lg">Text size lg</div>
+    <div class="text--base">Text size base</div>
+    <div class="text--sm">Text size sm</div>
+    <div class="text--xs">Text size xs</div>
   </div>
 </Canvas>
 
@@ -81,7 +87,7 @@ As example you can modify the props values in the table below to combine the dif
     args={{
       label: 'Confoederatio helvetica',
       textStyle: 'bold',
-      size: 'h1'
+      size: '3xl'
     }}
   >
     {Template.bind({})}
