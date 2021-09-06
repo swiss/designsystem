@@ -1,12 +1,12 @@
 <template>
-  <Hero type="wide">
+  <Hero type="hub">
     <template v-slot:image>
-      <source srcset="https://placekitten.com/g/1620/600"
+      <source srcset="https://placekitten.com/g/1060/380"
               media="(min-width: 800px)">
-      <img src="https://placekitten.com/g/800/296" alt="cat">
+      <img src="https://placekitten.com/g/600/222" alt="cat">
     </template>
     <template v-slot:title>
-      Who we are, what we do, all in one paragraph
+      Unsere Dienstleistungen
     </template>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -21,7 +21,7 @@
 import Hero from "~/components/ch/components/Hero";
 
 export default {
-  name: 'HeroHome',
+  name: 'HeroHub',
   components: {
     Hero,
   },

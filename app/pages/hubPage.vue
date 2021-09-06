@@ -11,6 +11,7 @@
     </header>
     <main id="main-content">
       <HeroHub />
+      <ServicesSection />
     </main>
     <footer class="footer" id="main-footer">
       <footer-information />
@@ -29,6 +30,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import HeroHub from "~/components/ch/sections/HeroHub";
+import ServicesSection from '../components/ch/sections/ServicesSection.vue'
 
 export default {
   name: 'hubPage',
@@ -41,7 +43,8 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    HeroHub
+    HeroHub,
+    ServicesSection
   },
   methods: {
     getMobileMenuIsOpen() {

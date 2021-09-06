@@ -1,19 +1,17 @@
 <template>
-  <div class="py-8">
-    <Hero type="default">
-      <template v-slot:title>
-        Datenmodellablage: Model Repository für Geobasisdaten des Bundesrechts
-      </template>
-      <p>
-        Das Konzept des INTERLIS Model Repository (Datenmodellablage) sieht vor,
-        Datenmodelle als http-Ressource nutzbar zu machen.
-        Dabei werden die INTERLIS-Modelldateien auf einem Webserver abgelegt,
-        und können beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden.
-        Der Vorteil für einen Benutzer liegt darin, dass die Modelldateien und evtl.
-        weitere importierte Datenmodelle nicht lokal vorhanden sein müssen.
-      </p>
-    </Hero>
-  </div>
+  <Hero type="default">
+    <template v-slot:title>
+      Datenmodellablage: Model Repository für Geobasisdaten des Bundesrechts
+    </template>
+    <p>
+      Das Konzept des INTERLIS Model Repository (Datenmodellablage) sieht vor,
+      Datenmodelle als http-Ressource nutzbar zu machen.
+      Dabei werden die INTERLIS-Modelldateien auf einem Webserver abgelegt,
+      und können beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden.
+      Der Vorteil für einen Benutzer liegt darin, dass die Modelldateien und evtl.
+      weitere importierte Datenmodelle nicht lokal vorhanden sein müssen.
+    </p>
+  </Hero>
 </template>
 
 <script>
