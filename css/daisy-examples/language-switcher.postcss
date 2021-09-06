@@ -1,0 +1,39 @@
+/*----------------------------------------*\
+  LANGUAGE SWITCHER
+\*----------------------------------------*/
+
+.language-switcher {
+  @apply flex;
+
+  a {
+    @apply flex items-center;
+    @apply h-full px-4;
+  }
+}
+
+.language-switcher--mobile {
+  @apply flex;
+  @apply bg-secondary-500;
+
+  /* show only if flyout has first level of navigation visible: */
+  &:not(.show-level-0 &) {
+    @apply hidden;
+  }
+
+  nav {
+    @apply w-full;
+  }
+
+  ul {
+    @apply flex justify-around;
+  }
+
+  a {
+    @apply text-white p-4;
+  }
+
+}
+
+.language-switcher--desktop {
+  @apply hidden lg:flex;
+}
