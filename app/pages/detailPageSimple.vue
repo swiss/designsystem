@@ -11,9 +11,9 @@
     </header>
     <main id="main-content">
       <HeroDetailSimple />
-      <section class="section section--default">
+      <section class="section section--default section--pb-only">
         <div class="container container--md">
-          <h2 class="title--h2">
+          <h2 class="h2">
             Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
           </h2>
           <p>
@@ -29,7 +29,7 @@
             </picture>
             <figcaption>Image label here</figcaption>
           </figure>
-          <h2 class="title--h2">
+          <h2 class="h2">
             Datenmodellablage ansehen
           </h2>
           <p>

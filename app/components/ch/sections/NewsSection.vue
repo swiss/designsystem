@@ -1,7 +1,7 @@
 <template>
-  <div class="py-10">
+  <section class="section section--default">
     <div class="container">
-      <h2 class="mb-10">Jetzt aktuell</h2>
+      <h2 class="section__title">Jetzt aktuell</h2>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template v-slot:image>
@@ -78,11 +78,11 @@
           </template>
         </Card>
       </div>
-      <div class="flex justify-end mt-4">
+      <div class="section__action">
         <Btn label="Alle Aktualitäten ansehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

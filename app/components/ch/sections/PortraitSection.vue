@@ -1,9 +1,9 @@
 <template>
-  <div class="py-10">
+  <section class="section section--default">
     <div class="container">
-      <h2 class="mb-10">Amtsvorsteherin kurz vorgestellt</h2>
+      <h2 class="section__title">Amtsvorsteherin kurz vorgestellt</h2>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -8,7 +8,7 @@
         <div class="card-body">
           <h2 class="font-extrabold capitalize card-title">{{ title }} component</h2>
           <p class="text-sm text-neutral-content text-opacity-80">{{ desc }}</p>
-          <div class="flex justify-end mt-4">
+          <div class="section__action">
             <NuxtLink :to="link" class="btn btn-primary btn-sm xl:btn-md">
               See component
             </NuxtLink>

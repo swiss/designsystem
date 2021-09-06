@@ -1,7 +1,7 @@
 <template>
-  <div class="bg--secondary-50 py-10">
+  <section class="section bg--secondary-50">
     <div class="container">
-      <h2 class="mb-10">Unsere top news</h2>
+      <h2 class="section__title">Unsere top news</h2>
       <div class="grid grid--responsive-cols-2 gap--responsive">
         <Card type="default" >
           <template v-slot:image>
@@ -96,7 +96,7 @@
         <Card type="default">
           <template v-slot:header>
             <SvgIcon icon="FolderOpen" size="xl" class="mr-2" />
-            <p>Dossier</p>
+            <div>Dossier</div>
           </template>
           <div class="space-y-4">
             <h3 class="card__title">Chinastrategie 2025</h3>
@@ -143,7 +143,7 @@
         <Card type="default">
           <template v-slot:header>
             <SvgIcon icon="Twitter" size="xl" class="mr-2" />
-            <p>Tweets from @swiss_geoportal</p>
+            <div>Tweets from @swiss_geoportal</div>
           </template>
 
           <a class="twitter-timeline"
@@ -166,11 +166,11 @@
         </Card>
       </div>
 
-      <div class="flex justify-end mt-4">
+      <div class="section__action">
         <Btn label="Alle News sehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

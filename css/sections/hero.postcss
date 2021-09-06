@@ -3,13 +3,16 @@
 \*----------------------------------------*/
 
 .hero {
-  @apply flex flex-col;
   @apply pt-12 lg:pt-14 2xl:pt-20;
   @apply pb-16 lg:pb-20 2xl:pb-32;
 }
 
+.hero .container {
+  @apply flex flex-col;
+}
+
 .hero__title {
-  @apply font-bold;
+  @apply h1;
   @apply leading-tight;
   @apply mb-6 lg:mb-8 2xl:mb-10;
 }
@@ -20,7 +23,7 @@
 }
 
 .hero__image {
-  @apply relative;
+  @apply block relative;
   @apply overflow-hidden;
   @apply w-full;
 
@@ -31,14 +34,16 @@
 
 .hero--default {
 
+  .container {
+    @apply container--md;
+  }
+
   .hero__title {
     @apply order-1;
-    @apply container container--md;
   }
 
   .hero__description {
     @apply order-2;
-    @apply container container--md;
     @apply text-lg lg:text-xl 2xl:text-2xl;
     @apply font-bold;
   }
@@ -89,7 +94,6 @@
 .hero--2-cols {
 
   .hero__title {
-    @apply container--md;
     @apply mb-6 md:mb-12 lg:mb-24;
   }
 
