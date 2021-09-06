@@ -14,64 +14,105 @@ body {
   @apply font-regular;
 }
 
-h1,
-.h1 {
-  @apply text-3xl sm:text-4xl xl:text-5xl;
+@layer utilities {
+
+  .text--3xl {
+    @apply text-3xl sm:text-4xl xl:text-5xl;
+    @apply leading-tight;
+  }
+
+  .text--2xl {
+    @apply text-2xl sm:text-3xl xl:text-4xl;
+    @apply leading-snug;
+  }
+
+  .text--xl {
+    @apply text-xl sm:text-2xl xl:text-3xl;
+    @apply leading-tight;
+  }
+
+  .text--lg {
+    @apply text-lg xl:text-xl 2xl:text-2xl;
+  }
+
+  .text--base {
+    @apply text-base xl:text-lg 2xl:text-xl;
+  }
+
+  .text--sm {
+    @apply text-sm xl:text-base 2xl:text-lg;
+  }
+
+  .text--xs {
+    @apply text-xs xl:text-sm 2xl:text-base;
+  }
+
+  .font--regular,
+  .text--regular {
+    @apply font-regular;
+  }
+
+  .font--italic,
+  .text--italic {
+    @apply font-italic;
+  }
+
+  .font--bold,
+  .text--bold {
+    @apply font-bold;
+  }
+
+  .font--bold-italic,
+  .text--bold-italic {
+    @apply font-bold-italic;
+  }
+
+  .text--negative {
+    @apply text-white;
+  }
+
+  .overtitle {
+    @apply flex space-x-2;
+    @apply text-secondary-100;
+    @apply text-xs;
+  }
+
+  .h1 {
+    @apply text--3xl font-bold;
+    @apply pb-3;
+  }
+
+  .h2 {
+    @apply text--2xl font-bold;
+    @apply pb-2;
+  }
+
+  .h3 {
+    @apply text--xl font-bold;
+    @apply pb-2;
+  }
+
+  .h4 {
+    @apply text--lg font-bold;
+    @apply pb-2;
+  }
+
+  .h5 {
+    @apply text--base font-bold;
+    @apply pb-2;
+  }
 }
 
-h2,
-.h2 {
-  @apply text-2xl sm:text-3xl xl:text-4xl;
+main p {
+  @apply pb-4;
 }
 
-h3,
-.h3 {
-  @apply text-xl sm:text-2xl xl:text-3xl;
+main figure {
+  @apply pt-8 pb-12;
 }
 
-h4,
-.h4,
-.text--lg {
-  @apply text-lg xl:text-xl 2xl:text-2xl;
+main figcaption {
+  @apply text--sm py-2;
 }
 
-h5,
-.h5,
-.text--base {
-  @apply text-base xl:text-lg 2xl:text-xl;
-}
-
-.text--sm {
-  @apply text-sm xl:text-base 2xl:text-lg;
-}
-
-.text--xs {
-  @apply text-xs xl:text-sm 2xl:text-base;
-}
-
-.font--regular {
-  @apply font-regular;
-}
-
-.font--italic {
-  @apply font-italic;
-}
-
-.font--bold {
-  @apply font-bold;
-}
-
-.font--bold-italic {
-  @apply font-bold-italic;
-}
-
-.text--negative {
-  @apply text-white;
-}
-
-.overtitle {
-  @apply flex space-x-2;
-  @apply text-secondary-100;
-  @apply text-xs;
-}
 

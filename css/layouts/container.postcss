@@ -1,0 +1,40 @@
+
+/* ----------------------------------------*\
+  CONTAINER
+\* ---------------------------------------- */
+
+@layer utilities {
+  .container {
+    @apply mx-auto;
+    @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 2xl:px-16;
+    @apply max-w-[1560px] 2xl:max-w-[1620px];
+  }
+
+  .container--flex {
+    @apply flex justify-between;
+  }
+
+  .container--sm {
+    @apply max-w-[640px] 2xl:max-w-[720px];
+  }
+
+  .container--md {
+    @apply max-w-[910px] 2xl:max-w-[910px];
+  }
+
+  /* VERTICAL PADDINGS */
+
+  .container--py {
+    @apply py-14 lg:py-20 2xl:py-32;
+  }
+
+  .container--pt {
+    @apply pt-14 lg:pt-20 2xl:pt-32;
+    @apply pb-0 lg:pb-0 2xl:pb-0;
+  }
+
+  .container--pb {
+    @apply pt-0 lg:pt-0 2xl:pt-0;
+    @apply pb-14 lg:pb-20 2xl:pb-32;
+  }
+}

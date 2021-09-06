@@ -1,0 +1,59 @@
+/* ----------------------------------------*\
+  GLOBAL
+\* ---------------------------------------- */
+
+html {
+  @apply h-full;
+  height: -webkit-fill-available;
+  @apply overflow-y-scroll;
+  @apply font-regular;
+}
+
+body {
+  @apply h-full;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  @apply transition-transform duration-700;
+}
+
+.body--mobile-menu-is-open {
+  @apply overflow-hidden;
+  height: calc(100vh + 3rem);
+  transform: translateY(-3em);
+}
+
+#main-header {
+  @apply relative z-20;
+}
+
+#main-content {
+  @apply min-h-screen;
+  @apply relative z-10;
+}
+
+#main-footer {
+  @apply relative z-0;
+}
+
+.skip-to-content {
+  @apply inline-block px-4 py-2;
+  @apply absolute z-50 top-0 left-1/2;
+  @apply bg-secondary-900 text-white border-white border-2;
+  @apply shadow-md transition-transform;
+  transform: translateX(-50%) translateY(-200%);
+
+  &:focus {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+*:focus-visible {
+  @apply outline-none ring-2 ring-purple-300;
+}
+
+
+

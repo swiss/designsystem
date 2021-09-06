@@ -1,0 +1,25 @@
+/*----------------------------------------*\
+  GRIDS
+\*----------------------------------------*/
+
+.gap--responsive {
+  @apply gap-5 xs:gap-7 sm:gap-9 lg:gap-10 xl:gap-12 2xl:gap-16;
+}
+
+.grid {}
+
+.grid--responsive-cols-2 {
+  @apply md:grid-cols-2;
+}
+
+.grid--responsive-cols-3 {
+  @apply md:grid-cols-2 lg:grid-cols-3;
+}
+
+.grid--responsive-cols-4 {
+  @apply md:grid-cols-2 lg:grid-cols-4;
+}
+
+.grid + .grid {
+  @apply mt-5 xs:mt-7 sm:mt-9 lg:mt-10 xl:mt-12 2xl:mt-16 ;
+}

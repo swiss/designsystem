@@ -1,7 +1,7 @@
 <template>
-  <div class="bg--secondary-50 py-10">
+  <section class="section bg--secondary-50">
     <div class="container">
-      <h2 class="mb-10">Unsere top news</h2>
+      <h2 class="section__title">Unsere top news</h2>
       <div class="grid grid--responsive-cols-2 gap--responsive">
         <Card type="default" >
           <template v-slot:image>
@@ -96,36 +96,81 @@
         <Card type="default">
           <template v-slot:header>
             <SvgIcon icon="FolderOpen" size="xl" class="mr-2" />
-            <p>Dossier</p>
+            <div>Dossier</div>
           </template>
           <div class="space-y-4">
             <h3 class="card__title">Chinastrategie 2025</h3>
             <p>
               Description Dossier China strategy Description Description Dossier China strategy Description
             </p>
+            <ul class="menu">
+              <li class="menu__item menu__item--border">
+                <a href="javascript:void(0)" class="menu__item__flex">
+                  <div>
+                    Die Binnenwirtschaft
+                  </div>
+                  <SvgIcon
+                    icon="ArrowRight"
+                    class="menu__item__icon"
+                  />
+                </a>
+              </li>
+              <li class="menu__item menu__item--border">
+                <a href="javascript:void(0)" class="menu__item__flex">
+                  <div>
+                    Die Auswirkung auf die Schweiz
+                  </div>
+                  <SvgIcon
+                    icon="ArrowRight"
+                    class="menu__item__icon"
+                  />
+                </a>
+              </li>
+              <li class="menu__item menu__item--border">
+                <a href="javascript:void(0)" class="menu__item__flex">
+                  <div>
+                    Der Industriepolitische Ansatz
+                  </div>
+                  <SvgIcon
+                    icon="ArrowRight"
+                    class="menu__item__icon"
+                  />
+                </a>
+              </li>
+            </ul>
           </div>
         </Card>
         <Card type="default">
           <template v-slot:header>
             <SvgIcon icon="Twitter" size="xl" class="mr-2" />
-            <p>Tweets from @swiss_geoportal</p>
+            <div>Tweets from @swiss_geoportal</div>
           </template>
+
+          <a class="twitter-timeline"
+            data-theme="light"
+            data-tweet-limit="1"
+            data-chrome="noheader, nofooter, noborders, transparent"
+            href="https://twitter.com/swiss_geoportal"
+          >
+            Tweets by swiss_geoportal
+          </a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           <template v-slot:footerAction>
             <Btn
               variant="outline"
               icon-pos="only"
-              icon="ArrowUpRight"
+              icon="ArrowRight"
               label="Weiterlesen"
             />
           </template>
         </Card>
       </div>
 
-      <div class="flex justify-end mt-4">
+      <div class="section__action">
         <Btn label="Alle News sehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

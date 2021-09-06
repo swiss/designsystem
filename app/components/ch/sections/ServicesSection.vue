@@ -1,7 +1,7 @@
 <template>
-  <div class="bg--secondary-500 py-10">
+  <section class="section bg--secondary-500">
     <div class="container">
-      <h2 class="mb-10 text-white">Dienstleistungen</h2>
+      <h2 class="section__title">Dienstleistungen</h2>
       <div class="grid grid--responsive-cols-2 gap--responsive">
         <Card type="highlight">
           <div class="space-y-4">
@@ -108,11 +108,11 @@
       </div>
 
 
-      <div class="flex justify-end mt-4">
+      <div class="section__action">
         <Btn label="Alle Dienstleistungen ansehen" variant="bare-negative" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

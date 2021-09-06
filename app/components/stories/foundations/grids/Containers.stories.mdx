@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+<Meta
+  title="Layouts/Containers"
+/>
+
+# Containers
+
+`.container` classes and its variants give a structured horizontal constraint to the content. Depending of the viewport, it combines maximal width and paddings definitions to define content's width in a coherent way.
+
+<Canvas >
+<div class="container">
+  Container example. Element width is limited on large screens.
+</div>
+</Canvas>
+
+# Containers and sections
+
+`.container` is frequently a child of a `.section` element.
+- `.container` manage the horizontal spacings
+- `.section`manage the vertical spacings
+
+<Canvas >
+  <section class="section bg--secondary-100">
+    <div class="container">
+      Container into a section example
+    </div>
+  </section>
+</Canvas>
+
+
+

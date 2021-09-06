@@ -1,8 +1,8 @@
 <template>
-  <div class="bg--secondary-50">
+  <div class="section bg--secondary-50">
 
     <div class="container container--sm">
-      <h2 class="py-6">Classical input types</h2>
+      <h2 class="h2">Classical input types</h2>
       <div class="form">
         <div class="form__group">
           <Input type="text" id="text-id-0" label="Input type text" placeholder="Placeholder" />
@@ -27,7 +27,7 @@
         </div>
 
       </div>
-      <h2 class="py-6 mt-8">Other input types</h2>
+      <h2 class="h2 mt-8">Other input types</h2>
       <div class="form">
         <Input type="color" id="color-id" label="Input type color" placeholder="Placeholder" />
         <Input type="date" id="date-id" label="Input type date" placeholder="Placeholder" />

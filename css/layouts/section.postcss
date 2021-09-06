@@ -1,0 +1,75 @@
+/*----------------------------------------*\
+  SECTION
+\*----------------------------------------*/
+
+.section {
+  @apply w-full;
+}
+
+/*
+  If section has --default or has background color,
+  we add padding top:
+*/
+.section--default,
+.section[class^="bg--"],
+.section[class*=' bg--'] {
+  @apply container--py;
+}
+
+/*
+  Adding padding bottom only,
+  handy for the first section of consecutive sections:
+*/
+.section--pb-only {
+  @apply container--pb;
+}
+
+/*
+  If consecutive sections have same background,
+  we remove the padding top of the second section:
+*/
+.section--default + .section--default,
+.bg--white + .bg--white,
+.bg--secondary-900 + .bg--secondary-900,
+.bg--secondary-800 + .bg--secondary-800,
+.bg--secondary-700 + .bg--secondary-700,
+.bg--secondary-600 + .bg--secondary-600,
+.bg--secondary-500 + .bg--secondary-500,
+.bg--secondary-400 + .bg--secondary-400,
+.bg--secondary-300 + .bg--secondary-300,
+.bg--secondary-200 + .bg--secondary-200,
+.bg--secondary-100 + .bg--secondary-100,
+.bg--secondary-50  + .bg--secondary-50  {
+  @apply container--pb;
+}
+
+
+.section__title {
+  @apply text--bold text--2xl;
+  @apply pb-10;
+}
+
+.section__title--negative,
+.bg--secondary-900 .section__title,
+.bg--secondary-800 .section__title,
+.bg--secondary-700 .section__title,
+.bg--secondary-600 .section__title,
+.bg--secondary-500 .section__title {
+  @apply text-white;
+}
+
+
+.section__subtitle {
+  @apply text--bold text--lg;
+  @apply pb-10;
+
+  .grid + & {
+    @apply pt-12 lg:pt-16 2xl:pt-20;
+  }
+}
+
+.section__action {
+  @apply flex justify-end;
+  @apply pt-4;
+  @apply relative top-6 lg:top-8 2xl:top-12;
+}

@@ -198,10 +198,10 @@ module.exports = {
       '9xl': '8rem',
     },
     fontFamily: {
-      regular: 'FrutigerNeueLTPro-Regular',
-      italic: 'FrutigerNeueLTPro-Italic',
-      bold: 'FrutigerNeueLTPro-Bold',
-      'bold-italic': 'FrutigerNeueLTPro-BoldIt',
+      regular: ['FrutigerNeueLTPro-Regular', 'Hind', 'Fallback-font'],
+      italic: ['FrutigerNeueLTPro-Italic', 'Hind', 'Fallback-font'],
+      bold: ['FrutigerNeueLTPro-Bold', 'Hind', 'Fallback-font'],
+      'bold-italic': ['FrutigerNeueLTPro-BoldIt', 'Hind', 'Fallback-font'],
     },
     boxShadow: {
       sm: '0px 1px 2px 0px rgba(0,0,0,0.05)',

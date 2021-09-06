@@ -1,0 +1,79 @@
+.badge {
+  @apply inline-flex items-center;
+  @apply py-[0.2em] px-[1em];
+  @apply rounded-full;
+}
+
+/* COLORS */
+
+.badge--gray {
+  @apply text-gray-800;
+  @apply bg-secondary-100;
+}
+
+.badge--red,
+.badge--error {
+  @apply text-red-800;
+  @apply bg-red-100;
+}
+
+.badge--yellow {
+  @apply text-yellow-800;
+  @apply bg-yellow-100;
+}
+
+.badge--orange,
+.badge--warning {
+  @apply text-orange-800;
+  @apply bg-orange-100;
+}
+
+.badge--green,
+.badge--success {
+  @apply text-green-800;
+  @apply bg-green-100;
+}
+
+.badge--blue,
+.badge--info {
+  @apply text-blue-800;
+  @apply bg-blue-100;
+}
+
+.badge--indigo {
+  @apply text-indigo-800;
+  @apply bg-indigo-100;
+}
+
+.badge--purple {
+  @apply text-purple-800;
+  @apply bg-purple-100;
+}
+
+.badge--pink {
+  @apply text-pink-800;
+  @apply bg-pink-100;
+}
+
+
+/* SIZES */
+.badge,
+.badge--base {
+  @apply text-xs md:text-sm lg:text-base;
+  @apply leading-5 lg:leading-6;
+}
+
+.badge--sm {
+  @apply text-[10px] md:text-xs lg:text-sm;
+  @apply leading-4 md:leading-[1.35rem];
+}
+
+
+/* ICON */
+.badge__icon {
+  @apply h-full w-[1.5em];
+  @apply relative left-[0.4em];
+  @apply stroke-[0.3px] md:stroke-[0.35px] lg:stroke-[0.4px];
+  @apply stroke-current;
+}
+

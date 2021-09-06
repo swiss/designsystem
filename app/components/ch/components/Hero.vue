@@ -1,6 +1,9 @@
 <template>
-  <div v-if="this.type !== '2-cols'">
-    <div :class="computedClasses" class="container">
+  <section
+    v-if="this.type !== '2-cols'"
+    :class="computedClasses"
+  >
+    <div class="container">
       <h1 v-if="$slots.title" class="hero__title">
         <slot name="title"></slot>
       </h1>
@@ -11,9 +14,12 @@
         <slot name="image"></slot>
       </picture>
     </div>
-  </div>
-  <div v-else>
-    <div :class="computedClasses" class="container">
+  </section>
+  <section
+    v-else
+    :class="computedClasses"
+  >
+    <div class="container">
       <h1 v-if="$slots.title" class="hero__title">
         <slot name="title"></slot>
       </h1>
@@ -26,7 +32,7 @@
         </picture>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
