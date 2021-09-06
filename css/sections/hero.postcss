@@ -4,17 +4,19 @@
 
 .hero {
   @apply flex flex-col;
+  @apply pt-12 lg:pt-14 2xl:pt-20;
+  @apply pb-16 lg:pb-20 2xl:pb-32;
 }
 
 .hero__title {
   @apply font-bold;
   @apply leading-tight;
-  @apply mb-6;
+  @apply mb-6 lg:mb-8 2xl:mb-10;
 }
 
 .hero__description {
   @apply text-xl lg:text-2xl 2xl:text-3xl;
-  @apply leading-tight;
+  @apply leading-snug;
 }
 
 .hero__image {
@@ -31,13 +33,12 @@
 
   .hero__title {
     @apply order-1;
-    @apply container--md;
-    @apply mb-6 md:mb-12 lg:mb-24;
+    @apply container container--md;
   }
 
   .hero__description {
     @apply order-2;
-    @apply container--md;
+    @apply container container--md;
     @apply text-lg lg:text-xl 2xl:text-2xl;
     @apply font-bold;
   }
@@ -47,7 +48,7 @@
   @apply items-start;
 
   .hero__title {
-    @apply order-2;
+    @apply order-1 md:order-2;
     @apply md:w-2/3;
   }
 
@@ -58,7 +59,7 @@
 
   .hero__image {
     @apply order-1;
-    @apply mb-6 md:mb-12 lg:mb-20;
+    @apply mb-6 lg:mb-12 2xl:mb-24;
     @apply pb-[35%];
   }
 }

@@ -11,6 +11,34 @@
     </header>
     <main id="main-content">
       <HeroDetailSimple />
+      <section class="section section--default">
+        <div class="container container--md">
+          <h2 class="title--h2">
+            Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+          </h2>
+          <p>
+            Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+          </p>
+          <figure>
+            <picture>
+              <source
+                srcset="https://placekitten.com/g/1620/600"
+                media="(min-width: 800px)"
+              />
+              <img src="https://placekitten.com/g/800/296" alt="cat" />
+            </picture>
+            <figcaption>Image label here</figcaption>
+          </figure>
+          <h2 class="title--h2">
+            Datenmodellablage ansehen
+          </h2>
+          <p>
+            Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
+          </p>
+
+        </div>
+      </section>
+
     </main>
     <footer class="footer" id="main-footer">
       <footer-information />

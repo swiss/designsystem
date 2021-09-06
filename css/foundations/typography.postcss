@@ -14,64 +14,86 @@ body {
   @apply font-regular;
 }
 
-h1,
-.h1 {
-  @apply text-3xl sm:text-4xl xl:text-5xl;
+@layer utilities {
+  h1,
+  .h1 {
+    @apply text-3xl sm:text-4xl xl:text-5xl;
+    @apply leading-tight;
+  }
+
+  h2,
+  .h2 {
+    @apply text-2xl sm:text-3xl xl:text-4xl;
+    @apply leading-snug;
+  }
+
+  h3,
+  .h3 {
+    @apply text-xl sm:text-2xl xl:text-3xl;
+    @apply leading-tight;
+  }
+
+  h4,
+  .h4,
+  .text--lg {
+    @apply text-lg xl:text-xl 2xl:text-2xl;
+  }
+
+  h5,
+  .h5,
+  .text--base {
+    @apply text-base xl:text-lg 2xl:text-xl;
+  }
+
+  .text--sm {
+    @apply text-sm xl:text-base 2xl:text-lg;
+  }
+
+  .text--xs {
+    @apply text-xs xl:text-sm 2xl:text-base;
+  }
+
+  .font--regular {
+    @apply font-regular;
+  }
+
+  .font--italic {
+    @apply font-italic;
+  }
+
+  .font--bold {
+    @apply font-bold;
+  }
+
+  .font--bold-italic {
+    @apply font-bold-italic;
+  }
+
+  .text--negative {
+    @apply text-white;
+  }
+
+  .overtitle {
+    @apply flex space-x-2;
+    @apply text-secondary-100;
+    @apply text-xs;
+  }
 }
 
-h2,
-.h2 {
-  @apply text-2xl sm:text-3xl xl:text-4xl;
+.title--h1 {
+  @apply h1 font-bold;
 }
 
-h3,
-.h3 {
-  @apply text-xl sm:text-2xl xl:text-3xl;
+.title--h2 {
+  @apply h2 font-bold;
 }
 
-h4,
-.h4,
-.text--lg {
-  @apply text-lg xl:text-xl 2xl:text-2xl;
+.title--h3 {
+  @apply h3 font-bold;
 }
 
-h5,
-.h5,
-.text--base {
-  @apply text-base xl:text-lg 2xl:text-xl;
+.title--h4 {
+  @apply h4 font-bold;
 }
 
-.text--sm {
-  @apply text-sm xl:text-base 2xl:text-lg;
-}
-
-.text--xs {
-  @apply text-xs xl:text-sm 2xl:text-base;
-}
-
-.font--regular {
-  @apply font-regular;
-}
-
-.font--italic {
-  @apply font-italic;
-}
-
-.font--bold {
-  @apply font-bold;
-}
-
-.font--bold-italic {
-  @apply font-bold-italic;
-}
-
-.text--negative {
-  @apply text-white;
-}
-
-.overtitle {
-  @apply flex space-x-2;
-  @apply text-secondary-100;
-  @apply text-xs;
-}
 

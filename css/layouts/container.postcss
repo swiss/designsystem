@@ -19,6 +19,22 @@
   }
 
   .container--md {
-    max-width: 910px;
+    @apply max-w-[910px] 2xl:max-w-[910px];
+  }
+
+  /* VERTICAL PADDINGS */
+
+  .container--py {
+    @apply py-16 lg:py-24 2xl:py-32;
+  }
+
+  .container--pt {
+    @apply pt-16 lg:pt-24 2xl:pt-32;
+    @apply pb-0 lg:pb-0 2xl:pb-0;
+  }
+
+  .container--pb {
+    @apply pt-0 lg:pt-0 2xl:pt-0;
+    @apply pb-16 lg:pb-24 2xl:pb-32;
   }
 }

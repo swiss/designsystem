@@ -1,0 +1,40 @@
+/*----------------------------------------*\
+  SECTION
+\*----------------------------------------*/
+
+section,
+.section {}
+
+.section--default {
+  @apply container--pb;
+}
+
+/*
+  If section has background color,
+  we add padding top:
+*/
+.section--bg,
+section[class^="bg--"],
+section[class*=' bg--'],
+.section[class^="bg--"],
+.section[class*=' bg--'] {
+  @apply container--py;
+}
+
+/*
+  If consecutive sections have same background,
+  we remove the padding top of the second section:
+*/
+.bg--white + .bg--white,
+.bg--secondary-900 + .bg--secondary-900,
+.bg--secondary-800 + .bg--secondary-800,
+.bg--secondary-700 + .bg--secondary-700,
+.bg--secondary-600 + .bg--secondary-600,
+.bg--secondary-500 + .bg--secondary-500,
+.bg--secondary-400 + .bg--secondary-400,
+.bg--secondary-300 + .bg--secondary-300,
+.bg--secondary-200 + .bg--secondary-200,
+.bg--secondary-100 + .bg--secondary-100,
+.bg--secondary-50  + .bg--secondary-50  {
+  @apply container--pb;
+}

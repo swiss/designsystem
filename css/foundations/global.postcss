@@ -3,10 +3,14 @@
 \* ---------------------------------------- */
 
 html {
+  @apply h-full;
   height: -webkit-fill-available;
+  @apply overflow-y-scroll;
+  @apply font-regular;
 }
 
 body {
+  @apply h-full;
   min-height: 100vh;
   min-height: -webkit-fill-available;
   @apply transition-transform duration-700;
@@ -21,9 +25,12 @@ body {
 #main-header {
   @apply relative z-20;
 }
+
 #main-content {
+  @apply min-h-screen;
   @apply relative z-10;
 }
+
 #main-footer {
   @apply relative z-0;
 }
@@ -37,7 +44,6 @@ body {
 
   &:focus {
     transform: translateX(-50%) translateY(0);
-
   }
 }
 
