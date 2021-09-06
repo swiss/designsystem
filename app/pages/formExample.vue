@@ -10,9 +10,11 @@
       <Breadcrumb />
     </header>
     <main id="main-content">
-      <div class="container">
-        <h1 class="py-6">Form example</h1>
-      </div>
+      <Hero type="default">
+        <template v-slot:title>
+          Form Example
+        </template>
+      </Hero>
       <FormDemo />
 
       <BackToTopBtn
@@ -39,7 +41,7 @@ import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import FormDemo from '../components/ch/sections/FormDemo.vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
-
+import Hero from "~/components/ch/components/Hero";
 export default {
   name: 'Index',
   components: {
@@ -52,7 +54,8 @@ export default {
     FooterInformation,
     FooterNavigation,
     FormDemo,
-    BackToTopBtn
+    BackToTopBtn,
+    Hero
   },
   methods: {
     getMobileMenuIsOpen() {
