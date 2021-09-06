@@ -21,12 +21,17 @@
 
     &:focus {
       @apply w-[40vw] xs:w-[35vw] lg:w-72;
+      @apply pr-10;
       @apply z-0;
       @apply opacity-100;
       @apply cursor-text;
       @apply shadow-2xl;
     }
   }
+}
+
+.form__group__input:focus-within + .search__button > .search__button__title {
+  @apply hidden;
 }
 
 .search__button {
@@ -37,6 +42,7 @@
 
 .search__button__title {
   @apply sr-only lg:not-sr-only;
+  @apply lg:pr-3 lg:-mt-0.5;
 }
 
 .search__button__icon {
