@@ -16,15 +16,15 @@
             <ul class="flex flex-wrap">
               <li class="flex items-center mr-6 mb-2">
                 <SvgIcon icon="Calendar" size="xl" class="-ml-1.5 mr-1" />
-                <p>10-12 Mai 2021</p>
+                <div>10-12 Mai 2021</div>
               </li>
               <li class="flex items-center mr-6 mb-2">
                 <SvgIcon icon="Clock" size="xl" class="-ml-1.5 mr-1" />
-                <p>9 bis 11 Uhr</p>
+                <div>9 bis 11 Uhr</div>
               </li>
               <li class="flex items-center mr-6 mb-2">
                 <SvgIcon icon="MapMarker" size="xl" class="-ml-1.5 mr-1" />
-                <p>Zürich</p>
+                <div>Zürich</div>
               </li>
             </ul>
           </div>
