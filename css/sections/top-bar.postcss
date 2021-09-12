@@ -88,8 +88,13 @@
   }
 
   & .search__results {
-    height: calc(100% - 10.5rem);
-    position: absolute;
+    @apply max-h-[60vh] relative;
+
+    @media (min-width: 768px) {
+      max-height: auto;
+      height: calc(100% - 10.5rem);
+      position: absolute;
+    }
   }
 }
 
