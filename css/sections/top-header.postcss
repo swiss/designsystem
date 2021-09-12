@@ -6,7 +6,29 @@
   @apply py-3 md:py-4 lg:py-6 xl:py-8 2xl:py-10;
   @apply bg-white;
   @apply text-sm 2xl:text-base;
-  @apply border-b ;
+  @apply border-b;
+}
+
+.top-header__mobile-title {
+  @apply bg-secondary-100 xs:hidden;
+  @apply text-xs;
+  @apply relative -top-3;
+  @apply max-h-14;
+  @apply overflow-hidden;
+
+  transition: max-height 300ms;
+
+  .container {
+    @apply py-2 xs:py-0;
+  }
+
+  & br {
+    display: none;
+  }
+
+  .body--mobile-menu-is-open & {
+    @apply max-h-0;
+  }
 }
 
 .top-header__right {
