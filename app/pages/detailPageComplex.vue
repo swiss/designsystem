@@ -11,6 +11,17 @@
     </header>
     <main id="main-content">
       <HeroDetailComplex />
+      <section class="section section--default section--pb-only">
+        <div class="container container--md">
+          <h3 class="h3">
+            Simple text
+          </h3>
+          <p>
+            Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen.
+          </p>
+          <Accordion spaced />
+        </div>
+      </section>
     </main>
     <footer class="footer" id="main-footer">
       <footer-information />
@@ -29,6 +40,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import HeroDetailComplex from "~/components/ch/sections/HeroDetailComplex";
+import Accordion from '../components/ch/demo/Accordion.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -41,7 +53,8 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    HeroDetailComplex
+    HeroDetailComplex,
+    Accordion
   },
   methods: {
     getMobileMenuIsOpen() {

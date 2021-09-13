@@ -2,3 +2,42 @@
   ACCORDION
 \*----------------------------------------*/
 
+.accordion {}
+
+.accordion--spaced {
+  @apply py-8;
+}
+
+.accordion__item {
+  @apply border-t border-secondary-200;
+
+  &:last-of-type {
+    @apply border-b border-secondary-200;
+  }
+}
+
+.accordion__button {
+  @apply flex items-center justify-between;
+  @apply w-full px-2 py-3;
+  @apply font-bold;
+  @apply hover:bg-secondary-50 hover:text-red-500;
+  @apply transition-colors duration-200;
+}
+
+.accordion__arrow {
+  @apply transition-transform duration-200;
+
+  .active & {
+    @apply rotate-180;
+  }
+}
+
+.accordion__drawer {
+  @apply w-full max-h-0;
+  @apply overflow-hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion__content {
+  @apply w-full px-2 pt-4 pb-10;
+}
