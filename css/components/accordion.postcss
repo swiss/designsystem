@@ -2,59 +2,42 @@
   ACCORDION
 \*----------------------------------------*/
 
-ul {
-  list-style:none;
+.accordion {}
+
+.accordion--spaced {
+  @apply py-8;
 }
 
-#accordion button:focus{
-  border-radius:0px;
-  outline:none;
-}
-#accordion button{
-    outline: none;
-    background-color:DarkSeaGreen;
-    padding: 10px;
-    border:none;
-    border-bottom: 1px solid darkslategrey;
-    color: white;
-    width: 100%;
-    text-align:left;
-    font-size:16px;
-    border-radius:0px;
-}
-#accordion li{
-   border: 1px solid DarkSlateGray;
-  border-bottom: none;
+.accordion__item {
+  @apply border-t border-secondary-200;
 
-}
-.acc-item-content{
-  padding: 0px 10px;
-}
-.acc-item:last-child {
-  border-bottom: 1px solid DarkSlateGray;
-}
-#accordion button::after{
-  content: "\002B";
-  font-weight: 900;
-  font-size: 22px;
-  float:right;
+  &:last-of-type {
+    @apply border-b border-secondary-200;
+  }
 }
 
-#accordion{
-  width:80%;
-  max-width: 800px;
-  min-width: 275px;
-  margin:auto;
+.accordion__button {
+  @apply flex items-center justify-between;
+  @apply w-full px-2 py-3;
+  @apply font-bold;
+  @apply hover:bg-secondary-50 hover:text-red-500;
+  @apply transition-colors duration-200;
 }
-.acc-item-content{
-  max-height: 0;
-  overflow: hidden;
+
+.accordion__arrow {
+  @apply transition-transform duration-200;
+
+  .active & {
+    @apply rotate-180;
+  }
+}
+
+.accordion__drawer {
+  @apply w-full max-h-0;
+  @apply overflow-hidden;
   transition: max-height 0.3s ease-out;
 }
 
-#accordion button.active:after{
-    content: "\2212";
-  font-weight: 900;
-  font-size: 22px;
-  float:right;
+.accordion__content {
+  @apply w-full px-2 pt-4 pb-10;
 }

@@ -1,5 +1,4 @@
 const Accordion = {
-
   init(target) {
     let buttons = document.querySelectorAll(target)
     buttons.forEach(button => {
@@ -18,10 +17,7 @@ const Accordion = {
           button.setAttribute("aria-expanded", true)
         }
       })
-
-
     })
   },
 }
-
 export default Accordion

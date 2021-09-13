@@ -1,33 +1,38 @@
 <template>
-  <ul id="accordion">
-  <li>
-    <button aria-controls="content-1" aria-expanded="false" id="accordion-control-1">FAQ 1</button>
-    <div class="acc-item-content" aria-hidden="true" id="content-1">
-      <p>Answer 1!</p>
-    </div>
-  </li>
-  <li>
-    <button aria-controls="content-2" aria-expanded="false" id="accordion-control-2">FAQ 2</button>
-    <div class="acc-item-content" aria-hidden="true" id="content-2">
-      <p>Answer 2</p>
-    </div>
-  </li>
-  <li>
-    <button aria-controls="content-3" aria-expanded="false" id="accordion-control-3">FAQ 3</button>
-    <div class="acc-item-content" aria-hidden="true" id="content-3">
-      <p>Answer 3</p>
-    </div>
-  </li>
-  <li>
-    <button aria-controls="content-4" aria-expanded="false" id="accordion-control-4">FAQ 4 </button>
-    <div class="acc-item-content" aria-hidden="true" id="content-4">
-      <p>Answer 4</p>
-    </div>
-  </li>
-  <li>
-    <button aria-controls="content-5" aria-expanded="false" id="accordion-control-5">FAQ 5</button>
-    <div class="acc-item-content" aria-hidden="true" id="content-5">
-      <p>Answer 5</p>
+  <ul
+    id="accordion"
+    class="accordion "
+    :class="spaced ? 'accordion--spaced' : ''"
+  >
+  <li
+    v-for="(item, key) in demoData"
+    :key="`${key}`"
+    class="accordion__item"
+  >
+    <button
+      class="accordion__button"
+      aria-expanded="false"
+      :aria-controls="`content-${key}`"
+      :id="`accordion-control-${key}`"
+    >
+      <div class="accordion__title">
+        {{ item.title }}
+      </div>
+      <SvgIcon
+        icon="ChevronDown"
+        size="xl"
+        class="accordion__arrow"
+      />
+    </button>
+    <div
+      class="accordion__drawer"
+      aria-hidden="true"
+      :id="`content-${key}`"
+    >
+      <div
+        class="accordion__content"
+        v-html="item.content"
+      />
     </div>
   </li>
 </ul>
@@ -35,11 +40,37 @@
 
 <script>
 import Accordion from '../../../scripts/Accordion.js'
+import SvgIcon from '../components/SvgIcon.vue'
 
 export default {
   name: 'Accordion',
   components: {
-    Accordion
+    Accordion,
+    SvgIcon
+  },
+  props: {
+    spaced: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data: function () {
+    return {
+      demoData: [
+        {
+          title: 'Accordion item one',
+          content: 'Content here <br>second line'
+        },
+        {
+          title: 'Accordion item two',
+          content: 'Content here <br>second line<br>third line'
+        },
+        {
+          title: 'Accordion item three',
+          content: '<h4 class="h3">Demo list</h4><ul class="list list--bullet"><li>list item</li><li>list item</li></ul>'
+        }
+      ]
+    }
   },
   mounted () {
     Accordion.init (
