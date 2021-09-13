@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Hero from "~/components/ch/components/Hero";
+import Hero from "~/components/ch/sections/Hero";
 
 export default {
   name: 'HeroHub',
