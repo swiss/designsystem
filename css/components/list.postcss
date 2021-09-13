@@ -1,0 +1,40 @@
+/*----------------------------------------*\
+  LIST
+\*----------------------------------------*/
+
+.list {}
+
+.list--default {
+  @apply list-disc;
+  @apply list-inside;
+}
+
+.list--ordered {
+  @apply list-decimal;
+  @apply list-inside;
+}
+
+.list--roman {
+  @apply list-roman;
+  @apply list-inside;
+}
+
+.list--loose {
+  @apply space-y-2;
+}
+
+.list--negative {
+  @apply text-white;
+}
+
+.list--icon {
+  li {
+    @apply flex space-x-2;
+  }
+  .icon--xl {
+    @apply relative -top-1;
+  }
+  .icon--2xl {
+    @apply relative -top-2 lg:-top-3 2xl:-top-3.5;
+  }
+}

@@ -41,7 +41,7 @@ import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import FormDemo from '../components/ch/sections/FormDemo.vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
-import Hero from "~/components/ch/components/Hero";
+import Hero from "~/components/ch/sections/Hero";
 export default {
   name: 'Index',
   components: {
