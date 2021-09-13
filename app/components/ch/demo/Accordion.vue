@@ -32,3 +32,20 @@
   </li>
 </ul>
 </template>
+
+<script>
+import Accordion from '../../../scripts/Accordion.js'
+
+export default {
+  name: 'Accordion',
+  components: {
+    Accordion
+  },
+  mounted () {
+    Accordion.init (
+      '#accordion button'
+    )
+  }
+}
+</script>
+

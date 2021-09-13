@@ -2,3 +2,59 @@
   ACCORDION
 \*----------------------------------------*/
 
+ul {
+  list-style:none;
+}
+
+#accordion button:focus{
+  border-radius:0px;
+  outline:none;
+}
+#accordion button{
+    outline: none;
+    background-color:DarkSeaGreen;
+    padding: 10px;
+    border:none;
+    border-bottom: 1px solid darkslategrey;
+    color: white;
+    width: 100%;
+    text-align:left;
+    font-size:16px;
+    border-radius:0px;
+}
+#accordion li{
+   border: 1px solid DarkSlateGray;
+  border-bottom: none;
+
+}
+.acc-item-content{
+  padding: 0px 10px;
+}
+.acc-item:last-child {
+  border-bottom: 1px solid DarkSlateGray;
+}
+#accordion button::after{
+  content: "\002B";
+  font-weight: 900;
+  font-size: 22px;
+  float:right;
+}
+
+#accordion{
+  width:80%;
+  max-width: 800px;
+  min-width: 275px;
+  margin:auto;
+}
+.acc-item-content{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+#accordion button.active:after{
+    content: "\2212";
+  font-weight: 900;
+  font-size: 22px;
+  float:right;
+}
