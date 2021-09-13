@@ -228,6 +228,13 @@ module.exports = {
       '6xl': '1.5rem',
       full: '9999px',
     },
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+    },
   },
   variants: {
     extend: {},
