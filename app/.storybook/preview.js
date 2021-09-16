@@ -48,7 +48,7 @@ export const parameters = {
         'Components',
         ['Logo', 'Button'],
         'Sections',
-        ['Header', ['TopBar', 'TopHeader', 'DesktopMenu']],
+        ['Header', ['TopBar', 'TopHeader', 'DesktopMenu'], 'Hero',  'Content', 'Footer'],
         'Pages',
         ['Homepage'],
       ],
