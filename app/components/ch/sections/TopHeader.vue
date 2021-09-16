@@ -1,5 +1,13 @@
 <template>
   <div class="top-header">
+    <div
+      class="top-header__mobile-title"
+      aria-hidden="true"
+    >
+      <div class="container container--flex">
+        Design System for <br/>the Swiss Confederation
+      </div>
+    </div>
     <div class="container container--flex">
       <Logo
         title="Design System for <br/>the Swiss Confederation"
