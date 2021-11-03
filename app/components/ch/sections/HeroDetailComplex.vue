@@ -1,7 +1,7 @@
 <template>
   <Hero type="2-cols">
     <template v-slot:title>
-      Datenmodellablage: Model Repository für Geobasisdaten des Bundesrechts
+      Web Mapping Services WMS: Verfügbare Dienste und Daten
     </template>
     Das Konzept des INTERLIS Model Repository (Datenmodellablage) sieht vor,
     Datenmodelle als http-Ressource nutzbar zu machen.
