@@ -10,116 +10,9 @@
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)" role="button" class="navy__has-children">
+        <a href="javascript:alert('link)">
           <span>Geodaten</span>
-          <SvgIcon icon="ArrowRight" size="lg" />
         </a>
-        <ul>
-          <li>
-            <a href="javascript:void(0)" role="button" class="navy__back">
-              <SvgIcon icon="ArrowLeft" size="lg" />
-              <span>Back</span>
-            </a>
-            <span class="navy__title">Geodaten</span>
-            <a href="javascript:alert('link')">Überblick</a>
-          </li>
-          <li>
-            <a href="javascript:void(0)" role="button" class="navy__has-children">
-              <span>test level1</span>
-              <SvgIcon icon="ArrowRight" size="lg" />
-            </a>
-            <ul>
-              <li>
-                <a href="javascript:void(0)" role="button" class="navy__back">
-                  <SvgIcon icon="ArrowLeft" size="lg" />
-                  <span>Back</span>
-                </a>
-                <span class="navy__title">test level1</span>
-                <a href="javascript:alert('link')">Überblick</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" role="button" class="navy__has-children">
-                  <span>test level2</span>
-                  <SvgIcon icon="ArrowRight" size="lg" />
-                </a>
-                <ul>
-                  <li>
-                    <a href="javascript:void(0)" role="button" class="navy__back">
-                      <SvgIcon icon="ArrowLeft" size="lg" />
-                      <span>Back</span>
-                    </a>
-                    <span class="navy__title">test level2</span>
-                    <a href="javascript:alert('link')">Überblick</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)" role="button" class="navy__has-children">
-                      <span>test level3</span>
-                      <SvgIcon icon="ArrowRight" size="lg" />
-                    </a>
-                    <ul>
-                      <li>
-                        <a href="javascript:void(0)" role="button" class="navy__back">
-                          <SvgIcon icon="ArrowLeft" size="lg" />
-                          <span>Back</span>
-                        </a>
-                        <span class="navy__title">test level3</span>
-                        <a href="javascript:alert('link')">Überblick</a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)" role="button" class="navy__has-children">
-                          <span>test level4</span>
-                          <SvgIcon icon="ArrowRight" size="lg" />
-                        </a>
-                        <ul>
-                          <li>
-                            <a href="javascript:void(0)" role="button" class="navy__back">
-                              <SvgIcon icon="ArrowLeft" size="lg" />
-                              <span>Back</span>
-                            </a>
-                            <span class="navy__title">test level4</span>
-                            <a href="javascript:alert('link')">Überblick</a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)" role="button" class="navy__has-children">
-                              <span>test level5</span>
-                              <SvgIcon icon="ArrowRight" size="lg" />
-                            </a>
-                            <ul>
-                              <li>
-                                <a href="javascript:void(0)" role="button" class="navy__back">
-                                  <SvgIcon icon="ArrowLeft" size="lg" />
-                                  <span>Back</span>
-                                </a>
-                                <span class="navy__title">test level5</span>
-                                <a href="javascript:alert('link')">Überblick</a>
-                              </li>
-                              <li>
-                                <a href="javascript:void(0)" role="button" class="navy__has-children">
-                                  <span>test level6</span>
-                                  <SvgIcon icon="ArrowRight" size="lg" />
-                                </a>
-                                <ul>
-                                  <li>
-                                    <a href="javascript:void(0)" role="button" class="navy__back">
-                                      <SvgIcon icon="ArrowLeft" size="lg" />
-                                      <span>Back</span>
-                                    </a>
-                                    <span class="navy__title">test level6</span>
-                                    <a href="javascript:alert('link')">Überblick</a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
       </li>
       <li>
         <a href="javascript:alert('link')">
@@ -143,9 +36,55 @@
               <span>Back</span>
             </a>
             <span class="navy__title">Dienstleistungen</span>
-            <a href="javascript:alert('link')" class="active">Überblick</a>
+            <a href="javascript:alert('link')">Überblick</a>
           </li>
-          <li><a href="javascript:alert('link')">Zeitplan</a></li>
+          <li><a href="javascript:alert('link')">Datenmodellablage</a></li>
+          <li>
+            <a href="javascript:void(0)" role="button" class="navy__has-children active">
+              <span>Geodienste</span>
+              <SvgIcon icon="ArrowRight" size="lg" />
+            </a>
+            <ul>
+              <li>
+                <a href="javascript:void(0)" role="button" class="navy__back">
+                  <SvgIcon icon="ArrowLeft" size="lg" />
+                  <span>Back</span>
+                </a>
+                <span class="navy__title">Geodienste</span>
+                <a href="javascript:alert('link')">Überblick</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" role="button" class="navy__has-children active">
+                  <span>Darstellungsdienste</span>
+                  <SvgIcon icon="ArrowRight" size="lg" />
+                </a>
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)" role="button" class="navy__back">
+                      <SvgIcon icon="ArrowLeft" size="lg" />
+                      <span>Back</span>
+                    </a>
+                    <span class="navy__title">Darstellungsdienste</span>
+                    <a href="javascript:alert('link')">Überblick</a>
+                  </li>
+                  <li><a href="javascript:alert('link')" class="active">Web Map Services</a></li>
+                  <li><a href="javascript:alert('link')">Web tiling Services</a></li>
+                  <li><a href="javascript:alert('link')">Vector Tiles Service</a></li>
+                  <li><a href="javascript:alert('link')">Web Integration: iFrame</a></li>
+                  <li><a href="javascript:alert('link')">FAQ API</a></li>
+                </ul>
+              </li>
+
+              <!-- -->
+              <li><a href="javascript:alert('link')">Download-Dienste</a></li>
+              <li><a href="javascript:alert('link')">Linked Data Dienst: GeoDaten semantisch verlinken</a></li>
+              <li><a href="javascript:alert('link')">Allgemeine Nutzungsbedingungen und Betriebsbestimmungen der Bundes Geodaten-Infrastruktur BGDI</a></li>
+              <li><a href="javascript:alert('link')">Suchdienst CSW</a></li>
+              <li><a href="javascript:alert('link')">Konformitätsprüfung Geobasisdienste nach eCH-0056</a></li>
+              <li><a href="javascript:alert('link')">INSPIRE Dienste</a></li>
+              <!-- -->
+            </ul>
+          </li>
           <li><a href="javascript:alert('link')">Geodatenmodelle</a></li>
           <li><a href="javascript:alert('link')">FAQ</a></li>
           <li><a href="javascript:alert('link')">Koordinatenreferenzsysteme</a></li>

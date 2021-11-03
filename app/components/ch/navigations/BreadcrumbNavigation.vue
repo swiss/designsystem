@@ -60,45 +60,42 @@
           <SvgIcon icon="ChevronDown" class="breadcrumb__dropdown-icon" aria-hidden="true" />
         </a>
         <ul>
+          <li><a href="javascript:alert('link')">Datenmodellablage: Model Repository für Geobasisdaten des Bundesrechts</a></li>
+          <li><a href="javascript:alert('link')" class="active">Geodienste: Informationen zugänglich machen und vernetzen</a></li>
+          <li><a href="javascript:alert('link')">Datenbezug: einfach und direkt</a></li>
+          <li><a href="javascript:alert('link')">Beratung und Koordination: Umsetzen der Strategie</a></li>
+          <li><a href="javascript:alert('link')">RSS und Social Media</a></li>
+
+        </ul>
+      </li>
           <li>
-            <a href="javascript:alert('link')">
-              <span>Link 1</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Link 2</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Link 3</span>
-            </a>
-          </li>
+        <a href="#">
+          <SvgIcon icon="ChevronRight" class="breadcrumb__include-icon" aria-hidden="true" />
+          <span>Darstellungsdienste</span>
+          <SvgIcon icon="ChevronDown" class="breadcrumb__dropdown-icon" aria-hidden="true" />
+        </a>
+        <ul>
+          <li><a href="javascript:alert('link')">Download-Dienste</a></li>
+          <li><a href="javascript:alert('link')" class="active">Darstellungsdienste</a></li>
+          <li><a href="javascript:alert('link')">Linked Data Dienst: GeoDaten semantisch verlinken</a></li>
+          <li><a href="javascript:alert('link')">Nutzungsbedingungen und Betriebsbestimmungen der Infrastruktur</a></li>
+          <li><a href="javascript:alert('link')">Suchdienst CSW</a></li>
+          <li><a href="javascript:alert('link')">Konformitätsprüfung Geobasisdienste</a></li>
+          <li><a href="javascript:alert('link')">INSPIRE Dienste</a></li>
         </ul>
       </li>
       <li>
         <a href="#">
           <SvgIcon icon="ChevronRight" class="breadcrumb__include-icon" aria-hidden="true" />
-          <span>Datenmodellablage</span>
+          <span>Web Map Services</span>
           <SvgIcon icon="ChevronDown" class="breadcrumb__dropdown-icon" aria-hidden="true" />
         </a>
         <ul>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Previous sibling of Datenmodellablage</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Datenmodellablage</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Next sibling with sub content</span>
-            </a>
-          </li>
+          <li><a href="javascript:alert('link')" class="active">Web Map Services</a></li>
+          <li><a href="javascript:alert('link')">Web tiling Services</a></li>
+          <li><a href="javascript:alert('link')">Vector Tiles Service</a></li>
+          <li><a href="javascript:alert('link')">Web Integration: iFrame</a></li>
+          <li><a href="javascript:alert('link')">FAQ API</a></li>
         </ul>
       </li>
     </ul>

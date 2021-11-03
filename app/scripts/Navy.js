@@ -13,6 +13,7 @@ const Navy = {
   },
 
   displayRelatedSubmenu (target, submenus) {
+    console.log('displayRelatedMenu target: ', target);
     [].forEach.call(submenus, function (submenu) {
       submenu.classList.add('hidden');
     });
@@ -49,9 +50,12 @@ const Navy = {
       Navy.parseTree(btn.relatedMenu, level+1);
     });
 
-    [].forEach.call(backButtons, function (btn) {
-      btn.addEventListener('click', function () {
+    [].forEach.call(backButtons, function (backBtn) {
+      backBtn.relatedMenu = backBtn.parentElement.parentElement.parentElement.previousSibling.querySelector('ul');
+      backBtn.addEventListener('click', function () {
         Navy.showLevel(level);
+        Navy.displayRelatedSubmenu(backBtn.relatedMenu, submenus);
+        // Navy.resizeDrawerHeight(backBtn.relatedMenu);
       });
     });
   },
@@ -110,8 +114,6 @@ const Navy = {
       Navy.overlay.classList.remove('hidden');
       mainmenuBtn.classList.add('clicked');
       Navy.currentMenuBtn = mainmenuBtn;
-      // set focus on the next button after the hidden .back button:
-      mainmenuBtn.relatedMenu.querySelector(':scope > li > a ~ a').focus();
     }
     else if (mainmenuBtn === Navy.currentMenuBtn) {
       this.closeSubmenu(mainmenuBtn)
@@ -124,8 +126,7 @@ const Navy = {
       Navy.currentMenuBtn = mainmenuBtn;
     }
 
-    Navy.displayRelatedSubmenu(relatedMenu, submenus);
-    Navy.showLevel(0);
+    Navy.displayRelatedSubmenu(relatedMenu, submenus); 
     Navy.setDrawerXPosition(mainmenuBtn);
   },
 
