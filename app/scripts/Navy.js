@@ -92,7 +92,6 @@ const Navy = {
     });
     // inject language-switcher into slide 0:
     Navy.level[0].appendChild(document.getElementById('language-switcher-mobile'));
-
   },
 
   setDrawerXPosition (btn) {
@@ -140,33 +139,27 @@ const Navy = {
     const closeBtn = document.querySelector(closeButton);
     const mainmenuBtns = nav.querySelectorAll(':scope > ul > li > a');
     const submenus = nav.querySelectorAll(':scope > ul > li > ul');
-    const slide0 = Navy.drawer.querySelector(':scope > .navy > .navy__level-0');
+    const slide1 = Navy.drawer.querySelector(':scope > .navy > .navy__level-1');
     [].forEach.call(mainmenuBtns, function (mainmenuBtn) {
 
       // check if item has submenu
       mainmenuBtn.relatedMenu = mainmenuBtn.nextElementSibling
       if (!mainmenuBtn.relatedMenu) return
 
-      // inject menu in slide 0:
-      slide0.appendChild(mainmenuBtn.relatedMenu);
+      // inject menu in slide 1:
+      slide1.appendChild(mainmenuBtn.relatedMenu);
 
       // hide first .navy__back button:
       const firstBackBtn = mainmenuBtn.relatedMenu.querySelector(':scope > li > .navy__back')
       firstBackBtn.classList.add('hidden');
 
       // make first recursion:
-      Navy.parseTree(mainmenuBtn.relatedMenu, 0);
+      Navy.parseTree(mainmenuBtn.relatedMenu, 1);
 
       // add click events
       mainmenuBtn.addEventListener('click', function (event) {
         event.preventDefault();
         Navy.toggleSubmenu(mainmenuBtn, mainmenuBtn.relatedMenu, submenus)
-
-        // TODO: show correct level if a submenu is .active
-        // TODO: set correct height for the drawer
-        // TODO: set correct x position for teh drawer
-        // TODO: accessibility tab navigation
-        // TODO: set active path
       });
 
       closeBtn.addEventListener('click', function (event) {

@@ -54,7 +54,7 @@ export default {
       '#desktop-menu__overlay',
       '#desktop-menu-closer'
     )
-    Navy.showLevel(2); // for demo only, show 2nd level of sub-navigation
+    Navy.showLevel(3); // for demo only, show 3rd level of sub-navigation
 
     MenuMore.init(
       '#desktop-menu > .container > nav'

@@ -35,7 +35,8 @@ export default {
     }
   },
   mounted () {
-    Navy.initMobile('#mobile-menu > nav', '#mobile-menu' )
+    Navy.initMobile('#mobile-menu > nav', '#mobile-menu' );
+    Navy.showLevel(3); // for demo only, show 3rd level of sub-navigation
   }
 }
 </script>
