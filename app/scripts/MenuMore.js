@@ -68,7 +68,7 @@ const MenuMore = {
   },
 
   setButtonVisibility(btn, isVisible) {
-    isVisible ? btn.classList.remove('hidden') : btn.classList.add('hidden');
+    btn && isVisible ? btn.classList.remove('hidden') : btn.classList.add('hidden');
   },
 
   setButtonClickEvent(target, leftValue) {

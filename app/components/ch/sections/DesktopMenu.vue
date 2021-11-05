@@ -8,7 +8,7 @@
       id="desktop-menu__overlay"
     />
     <div class="container container--flex">
-      <MainNavigation context="desktop" />
+      <MainNavigation context="desktop" :isHomePage="isHomePage" />
       <div
         class="desktop-menu__drawer hidden"
         id="desktop-menu__drawer"
@@ -45,6 +45,20 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    isHomePage: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    getCurrentLevel () {
+      let currentLevel = 0;
+      if(!this.isHomePage) {
+        currentLevel = document.body.classList.contains('context--mobile') ? 3 : 2;
+      }
+      console.log('sldkfh', currentLevel)
+      return currentLevel;
     }
   },
   mounted () {
@@ -54,7 +68,15 @@ export default {
       '#desktop-menu__overlay',
       '#desktop-menu-closer'
     )
-    Navy.showLevel(3); // for demo only, show 3rd level of sub-navigation
+    // demo: show 2nd/3rd level of sub-navigation for detail pages depending the context, 
+    // or show the level 0 for homepage:
+    // on desktop, we have to open a level above,
+    // because level 0 is displayed as mainmenu
+    Navy.showLevel(this.getCurrentLevel()) ;     
+
+    window.addEventListener('resize', function(e) {
+      Navy.showLevel(this.getCurrentLevel());
+    }.bind(this), false);
 
     MenuMore.init(
       '#desktop-menu > .container > nav'

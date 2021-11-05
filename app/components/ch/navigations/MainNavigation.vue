@@ -3,110 +3,32 @@
     :class="mainnavigationClass"
     aria-label="Main navigation"
   >
-    <ul>
-      <li>
-        <a href="javascript:alert('link')">
-          <span>News</span>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:alert('link)">
-          <span>Geodaten</span>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:alert('link')">
-          <span>Karten</span>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:alert('link')">
-          <span>Geoportale</span>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" role="button" class="navy__has-children active">
-          <span>Dienstleistungen</span>
-          <SvgIcon icon="ArrowRight" size="lg" />
-        </a>
-        <ul>
-          <li>
-            <a href="javascript:void(0)" role="button" class="navy__back">
-              <SvgIcon icon="ArrowLeft" size="lg" />
-              <span>Back</span>
-            </a>
-            <span class="navy__title">Dienstleistungen</span>
-            <a href="javascript:alert('link')">Überblick</a>
-          </li>
-          <li><a href="javascript:alert('link')">Datenmodellablage</a></li>
-          <li>
-            <a href="javascript:void(0)" role="button" class="navy__has-children active">
-              <span>Geodienste</span>
-              <SvgIcon icon="ArrowRight" size="lg" />
-            </a>
-            <ul>
-              <li>
-                <a href="javascript:void(0)" role="button" class="navy__back">
-                  <SvgIcon icon="ArrowLeft" size="lg" />
-                  <span>Back</span>
-                </a>
-                <span class="navy__title">Geodienste</span>
-                <a href="javascript:alert('link')">Überblick</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" role="button" class="navy__has-children active">
-                  <span>Darstellungsdienste</span>
-                  <SvgIcon icon="ArrowRight" size="lg" />
-                </a>
-                <ul>
-                  <li>
-                    <a href="javascript:void(0)" role="button" class="navy__back">
-                      <SvgIcon icon="ArrowLeft" size="lg" />
-                      <span>Back</span>
-                    </a>
-                    <span class="navy__title">Darstellungsdienste</span>
-                    <a href="javascript:alert('link')">Überblick</a>
-                  </li>
-                  <li><a href="javascript:alert('link')" class="active">Web Map Services</a></li>
-                  <li><a href="javascript:alert('link')">Web tiling Services</a></li>
-                  <li><a href="javascript:alert('link')">Vector Tiles Service</a></li>
-                  <li><a href="javascript:alert('link')">Web Integration: iFrame</a></li>
-                  <li><a href="javascript:alert('link')">FAQ API</a></li>
-                </ul>
-              </li>
-
-              <!-- -->
-              <li><a href="javascript:alert('link')">Download-Dienste</a></li>
-              <li><a href="javascript:alert('link')">Linked Data Dienst: GeoDaten semantisch verlinken</a></li>
-              <li><a href="javascript:alert('link')">Allgemeine Nutzungsbedingungen und Betriebsbestimmungen der Bundes Geodaten-Infrastruktur BGDI</a></li>
-              <li><a href="javascript:alert('link')">Suchdienst CSW</a></li>
-              <li><a href="javascript:alert('link')">Konformitätsprüfung Geobasisdienste nach eCH-0056</a></li>
-              <li><a href="javascript:alert('link')">INSPIRE Dienste</a></li>
-              <!-- -->
-            </ul>
-          </li>
-          <li><a href="javascript:alert('link')">Geodatenmodelle</a></li>
-          <li><a href="javascript:alert('link')">FAQ</a></li>
-          <li><a href="javascript:alert('link')">Koordinatenreferenzsysteme</a></li>
-          <li><a href="javascript:alert('link')">Geografische Bezeichnungen</a></li>
-          <li><a href="javascript:alert('link')">Verwaltungseinheiten</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="javascript:alert('link')">
-          Forschung und Lehre
-        </a>
-      </li>
-    </ul>
+    <component :is="dummyContent"></component>
+    
+    <div class="more-buttons">
+      <button class="hidden more-button more-button--left" id="more-button-left">
+        <SvgIcon icon="ArrowLeft" size="lg" />
+        <span>More</span>
+      </button>
+      <button class="hidden more-button more-button--right" id="more-button-right">
+        <span>More</span>
+        <SvgIcon icon="ArrowRight" size="lg" />
+      </button>
+	  </div>
   </nav>
 </template>
 
 <script>
 import SvgIcon from '../components/SvgIcon.vue'
+import DummyMainNavigationForDetailPage from '../demo/DummyMainNavigationForDetailPage.vue'
+import DummyMainNavigationForHomePage from '../demo/DummyMainNavigationForHomePage.vue'
+
 export default {
   name: 'MainNavigation',
   components: {
-    SvgIcon
+    SvgIcon,
+    DummyMainNavigationForDetailPage,
+    DummyMainNavigationForHomePage
   },
   props: {
     context: {
@@ -116,6 +38,10 @@ export default {
         'desktop',
         'mobile'
       ].includes(prop)
+    },
+    isHomePage: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -123,6 +49,11 @@ export default {
       let base = `main-navigation `
       if (this.context) base += `main-navigation--${this.context} `
       return base
+    },
+
+    dummyContent () {
+      console.log('this.isHomePage', this.isHomePage);
+      return this.isHomePage ? 'DummyMainNavigationForHomePage' : 'DummyMainNavigationForDetailPage'
     }
   }
 }

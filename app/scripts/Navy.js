@@ -54,13 +54,11 @@ const Navy = {
       backBtn.addEventListener('click', function () {
         Navy.showLevel(level);
         Navy.displayRelatedSubmenu(backBtn.relatedMenu, submenus);
-        // Navy.resizeDrawerHeight(backBtn.relatedMenu);
       });
     });
   },
 
   buildSlides (target){
-    document.body.classList.add('show-level-0');
     const targetElement = document.querySelector(target);
 
     Navy.currentMenuLink = undefined
@@ -139,22 +137,22 @@ const Navy = {
     const closeBtn = document.querySelector(closeButton);
     const mainmenuBtns = nav.querySelectorAll(':scope > ul > li > a');
     const submenus = nav.querySelectorAll(':scope > ul > li > ul');
-    const slide1 = Navy.drawer.querySelector(':scope > .navy > .navy__level-1');
+    const slide0 = Navy.drawer.querySelector(':scope > .navy > .navy__level-0');
     [].forEach.call(mainmenuBtns, function (mainmenuBtn) {
 
       // check if item has submenu
       mainmenuBtn.relatedMenu = mainmenuBtn.nextElementSibling
       if (!mainmenuBtn.relatedMenu) return
 
-      // inject menu in slide 1:
-      slide1.appendChild(mainmenuBtn.relatedMenu);
+      // inject menu in slide 0:
+      slide0.appendChild(mainmenuBtn.relatedMenu);
 
       // hide first .navy__back button:
       const firstBackBtn = mainmenuBtn.relatedMenu.querySelector(':scope > li > .navy__back')
       firstBackBtn.classList.add('hidden');
 
       // make first recursion:
-      Navy.parseTree(mainmenuBtn.relatedMenu, 1);
+      Navy.parseTree(mainmenuBtn.relatedMenu, 0);
 
       // add click events
       mainmenuBtn.addEventListener('click', function (event) {

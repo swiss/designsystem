@@ -5,8 +5,8 @@
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
       <TopHeader />
-      <DesktopMenu />
-      <MobileMenu />
+      <DesktopMenu isHomePage />
+      <MobileMenu isHomePage />
       <Breadcrumb />
     </header>
     <main id="main-content">

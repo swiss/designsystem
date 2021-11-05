@@ -4,7 +4,7 @@
     class="mobile-menu"
     :class="isOpen ? 'mobile-menu--is-open' : '' "
   >
-    <MainNavigation context="mobile" />
+    <MainNavigation context="mobile" :isHomePage="isHomePage" />
     <MetaNavigation context="mobile" />
     <TopBarNavigation context="mobile" />
     <LanguageSwitcher context="mobile" />
@@ -32,11 +32,17 @@ export default {
     isOpen: {
       type: Boolean,
       default: false,
+    },
+    isHomePage: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
-    Navy.initMobile('#mobile-menu > nav', '#mobile-menu' );
-    Navy.showLevel(3); // for demo only, show 3rd level of sub-navigation
+    Navy.initMobile(
+      '#mobile-menu > nav', 
+      '#mobile-menu'
+    );
   }
 }
 </script>
