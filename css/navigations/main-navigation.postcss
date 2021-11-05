@@ -11,10 +11,23 @@
 
 .desktop-menu .main-navigation,
 .main-navigation--desktop {
-  @apply flex h-full;
+  @apply flex w-full h-full;
   @apply hidden lg:flex;
   @apply h-14 xl:h-16 2xl:h-20;
   @apply -ml-4;
+
+  @apply relative;
+
+  & > ul {
+    @apply w-full relative overflow-x-auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+  }
+
 
   ul {
     @apply flex h-full;
@@ -28,6 +41,11 @@
     @apply lg:flex lg:items-center relative;
     @apply lg:h-full lg:px-4;
     @apply hover:text-primary-600 leading-tight transition-colors;
+    @apply whitespace-nowrap;
+
+    &:focus-visible {
+      @apply ring-inset;
+    }
 
     &.active::after {
       content:'';

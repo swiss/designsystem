@@ -13,7 +13,6 @@ const Navy = {
   },
 
   displayRelatedSubmenu (target, submenus) {
-    console.log('displayRelatedMenu target: ', target);
     [].forEach.call(submenus, function (submenu) {
       submenu.classList.add('hidden');
     });

@@ -31,6 +31,7 @@
 import SvgIcon from '../components/SvgIcon.vue'
 import MainNavigation from '../navigations/MainNavigation.vue'
 import Navy from '../../../scripts/Navy.js'
+import MenuMore from '../../../scripts/MenuMore.js'
 
 export default {
   name: 'DesktopMenu',
@@ -54,6 +55,10 @@ export default {
       '#desktop-menu-closer'
     )
     Navy.showLevel(2); // for demo only, show 2nd level of sub-navigation
+
+    MenuMore.init(
+      '#desktop-menu > .container > nav'
+    );
   }
 }
 </script>

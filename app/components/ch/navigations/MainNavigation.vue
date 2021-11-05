@@ -74,15 +74,12 @@
                   <li><a href="javascript:alert('link')">FAQ API</a></li>
                 </ul>
               </li>
-
-              <!-- -->
               <li><a href="javascript:alert('link')">Download-Dienste</a></li>
               <li><a href="javascript:alert('link')">Linked Data Dienst: GeoDaten semantisch verlinken</a></li>
               <li><a href="javascript:alert('link')">Allgemeine Nutzungsbedingungen und Betriebsbestimmungen der Bundes Geodaten-Infrastruktur BGDI</a></li>
               <li><a href="javascript:alert('link')">Suchdienst CSW</a></li>
               <li><a href="javascript:alert('link')">Konformitätsprüfung Geobasisdienste nach eCH-0056</a></li>
               <li><a href="javascript:alert('link')">INSPIRE Dienste</a></li>
-              <!-- -->
             </ul>
           </li>
           <li><a href="javascript:alert('link')">Geodatenmodelle</a></li>
@@ -97,7 +94,32 @@
           Forschung und Lehre
         </a>
       </li>
+      <li>
+        <a href="javascript:alert('link')">
+          Über geo.admin.ch 
+        </a>
+      </li>
+      <li>
+        <a href="javascript:alert('link')">
+          Extra mainmenu example
+        </a>
+      </li>
+      <li>
+        <a href="javascript:alert('link')">
+          Try to limit mainmenus to 5
+        </a>
+      </li>
     </ul>
+    <div class="more-buttons">
+      <button class="hidden more-button more-button--left" id="more-button-left">
+        <SvgIcon icon="ArrowLeft" size="lg" />
+        <span>More</span>
+      </button>
+      <button class="hidden more-button more-button--right" id="more-button-right">
+        <span>More</span>
+        <SvgIcon icon="ArrowRight" size="lg" />
+      </button>
+	  </div>
   </nav>
 </template>
 
