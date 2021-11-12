@@ -3,7 +3,9 @@
 \*----------------------------------------*/
 
 
-.more-buttons {}
+.more-buttons {
+  @apply hidden lg:block;
+}
 
 .more-button {
   @apply flex items-center;
@@ -21,6 +23,10 @@
 
   &:focus-visible {
     @apply ring-inset;
+  }
+
+  &.hidden {
+    @apply hidden;
   }
 }
 

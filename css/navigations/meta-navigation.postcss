@@ -19,6 +19,16 @@
   @apply hidden lg:flex lg:mb-3 xl:mb-4;
 
   ul {
-    @apply flex;
+    @apply flex items-center;
+  }
+}
+
+.meta-navigation__item {
+  span {
+    @apply lg:sr-only;
+  }
+
+  svg {
+    @apply hidden lg:block;
   }
 }

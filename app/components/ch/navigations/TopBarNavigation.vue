@@ -9,16 +9,6 @@
           Anmelden
         </a>
       </li>
-      <li>
-        <a href="#">
-          Leichte Sprache
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          Gebärden Sprache
-        </a>
-      </li>
     </ul>
   </nav>
 </template>
