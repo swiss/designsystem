@@ -42,6 +42,7 @@ export default {
     iconClass () {
       let base = `icon `
       if (this.size)      base += `icon--${this.size} `
+      if (this.icon)      base += `icon--${this.icon} `
       if (this.spin)      base += `icon--spin `
       return base
     }

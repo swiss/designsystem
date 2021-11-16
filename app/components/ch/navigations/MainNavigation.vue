@@ -101,6 +101,21 @@
       </li>
       <li>
         <a href="javascript:alert('link')">
+          test1
+        </a>
+      </li>
+      <li>
+        <a href="javascript:alert('link')">
+          test2
+        </a>
+      </li>
+      <li>
+        <a href="javascript:alert('link')">
+          test3
+        </a>
+      </li>
+      <li>
+        <a href="javascript:alert('link')">
           Extra mainmenu example
         </a>
       </li>
@@ -109,17 +124,24 @@
           Try to limit mainmenus to 5
         </a>
       </li>
+      <!-- more button -->
+      <li id="more-button">
+        <a 
+          href="javascript:void(0)" role="button" 
+          class="navy__has-children desktop-menu__more"
+        >
+          <span>Mehr</span>
+          <SvgIcon icon="MoreFilled" size="lg" />
+        </a>
+        <ul>
+          <li>
+            <span class="navy__title">Mehr</span>
+            
+          </li>
+          <div id="more-container"></div>
+        </ul>
+      </li>  
     </ul>
-    <div class="more-buttons">
-      <button class="hidden more-button more-button--left" id="more-button-left">
-        <SvgIcon icon="ArrowLeft" size="lg" />
-        <span>More</span>
-      </button>
-      <button class="hidden more-button more-button--right" id="more-button-right">
-        <span>More</span>
-        <SvgIcon icon="ArrowRight" size="lg" />
-      </button>
-	  </div>
   </nav>
 </template>
 

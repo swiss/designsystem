@@ -48,17 +48,19 @@ export default {
     }
   },
   mounted () {
-    Navy.initDesktop(
-      '#desktop-menu > .container > nav',
-      '#desktop-menu__drawer',
-      '#desktop-menu__overlay',
-      '#desktop-menu-closer'
-    )
+    Navy.initDesktop({
+      'navigationItem': '#desktop-menu > .container > nav',
+      'target': '#desktop-menu__drawer',
+      'overlay': '#desktop-menu__overlay',
+      'closeButton': '#desktop-menu-closer'
+    });
     Navy.showLevel(2); // for demo only, show 2nd level of sub-navigation
 
-    MenuMore.init(
-      '#desktop-menu > .container > nav'
-    );
+    MenuMore.init({
+      'navigationItem': '#desktop-menu > .container > nav',
+      'moreButton': '#more-button', 
+      'moreContainer': '#more-container'
+    });
   }
 }
 </script>

@@ -129,18 +129,21 @@ const Navy = {
     Navy.setDrawerXPosition(mainmenuBtn);
   },
 
-  initDesktop(navigationItem, target, overlay, closeButton) {
+  initDesktop(options) {
+//// navigationItem, target, overlay, closeButton
+
     // build navy structure and inject it in the target:
-    Navy.buildSlides(target);
-    Navy.drawer = document.querySelector(target);
-    if (overlay) Navy.overlay = document.querySelector(overlay);
+    Navy.buildSlides(options.target);
+    Navy.drawer = document.querySelector(options.target);
+    if (options.overlay) Navy.overlay = document.querySelector(options.overlay);
     Navy.currentMenuBtn = undefined;
 
-    const nav = document.querySelector(navigationItem);
-    const closeBtn = document.querySelector(closeButton);
+    const nav = document.querySelector(options.navigationItem);
+    const closeBtn = document.querySelector(options.closeButton);
     const mainmenuBtns = nav.querySelectorAll(':scope > ul > li > a');
     const submenus = nav.querySelectorAll(':scope > ul > li > ul');
     const slide0 = Navy.drawer.querySelector(':scope > .navy > .navy__level-0');
+
     [].forEach.call(mainmenuBtns, function (mainmenuBtn) {
 
       // check if item has submenu
@@ -152,7 +155,7 @@ const Navy = {
 
       // hide first .navy__back button:
       const firstBackBtn = mainmenuBtn.relatedMenu.querySelector(':scope > li > .navy__back')
-      firstBackBtn.classList.add('hidden');
+      if (firstBackBtn) firstBackBtn.classList.add('hidden');
 
       // make first recursion:
       Navy.parseTree(mainmenuBtn.relatedMenu, 0);
