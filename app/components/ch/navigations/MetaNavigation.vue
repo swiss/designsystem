@@ -5,23 +5,56 @@
   >
     <ul>
       <li>
-        <a href="#">
-          Über uns
+        <a href="#" class="meta-navigation__item">
+          <span>
+            Leichte Sprache
+          </span>
+          <SvgIcon
+            icon="EasyLanguage"
+            size="lg"
+          />
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="meta-navigation__item">
+          <span>
+            Gebärden Sprache
+          </span>
+          <SvgIcon
+            icon="SignLanguage"
+            size="lg"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="#" class="meta-navigation__item">
         Jobs
       </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="meta-navigation__item">
           Kontakt
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="meta-navigation__item">
+          Newletter
+        </a>
+      </li>
+      <li>
+        <a href="#" class="meta-navigation__item">
           Medien
+        </a>
+      </li>
+      <li>
+        <a href="#" class="meta-navigation__more">
+          <span>
+           Mehr
+          </span>
+          <SvgIcon
+            icon="MoreFilled"
+            size="md"
+          />
         </a>
       </li>
     </ul>
@@ -29,8 +62,13 @@
 </template>
 
 <script>
+import SvgIcon from '../components/SvgIcon.vue';
+
 export default {
   name: 'MetaNavigation',
+  components: {
+    SvgIcon
+  },
   props: {
     context: {
       type: String,

@@ -1,70 +1,50 @@
 const MenuMore = {
 
-  init(navigationItem) {
-    this.wrapper = document.querySelector(navigationItem);
+  init(options) {
+    this.wrapper = document.querySelector(options.navigationItem);
     this.menu = this.wrapper.querySelector('ul');
-    this.btnLeft = document.getElementById('more-button-left');
-    this.btnRight = document.getElementById('more-button-right');
+    this.menuItems = this.menu.querySelectorAll('li');
+    this.moreBtn = document.querySelector(options.moreButton);
+    this.moreContainer = document.querySelector(options.moreContainer);
     this.threshold = 5;
-    
     this.menuWrapperSize = this.getMenuWrapperSize();
     this.menuSize = this.getMenuSize();
     
-    // start if menu larger than it's container
-    if (this.menuSize > this.menuWrapperSize) this.evaluateButtonsDisplay();
-    // recheck after a window resize 
-    window.addEventListener('resize', this.evaluateButtonsDisplay);
-
-    // TODO: 
-    // - scroll if a hidden mainmenu is selected
-    // - control tab navigation
+    // start once
+    this.startTriage();
+    // then recheck after a window resize 
+    window.addEventListener('resize', this.startTriage);
   },
 
-  evaluateButtonsDisplay () {
-    // get how much of menu is invisible and how much have we scrolled
-    let menuInvisibleSize = MenuMore.getMenuSize() - MenuMore.getMenuWrapperSize();
-    let menuPosition = MenuMore.getMenuPosition(); 
-    let menuEndOffset = menuInvisibleSize - MenuMore.threshold;
+  startTriage () {
+    let cumulatedSize = 0;
 
-    if (menuInvisibleSize <= 0) {
-      // hide both btns
-      MenuMore.setButtonVisibility(MenuMore.btnLeft, false);
-      MenuMore.setButtonVisibility(MenuMore.btnRight, false);
-    }
-    else if (menuPosition < MenuMore.threshold) {
-      MenuMore.startMenuMore();
-      // show btn right
-      MenuMore.setButtonVisibility(MenuMore.btnLeft, false);
-      MenuMore.setButtonVisibility(MenuMore.btnRight, true);
-      // assign click event
-      MenuMore.setButtonClickEvent(MenuMore.btnRight, 10000);
-    } 
-    else if (menuPosition < menuEndOffset) {
-      MenuMore.startMenuMore();
-      // show both
-      MenuMore.setButtonVisibility(MenuMore.btnLeft, true);
-      MenuMore.setButtonVisibility(MenuMore.btnRight, true);
-      // assign click event
-      MenuMore.setButtonClickEvent(MenuMore.btnLeft, 0);
-      MenuMore.setButtonClickEvent(MenuMore.btnRight, 10000);
-    } 
-    else if (menuPosition >= menuEndOffset) {
-      MenuMore.startMenuMore();
-      // show btn left
-      MenuMore.setButtonVisibility(MenuMore.btnLeft, true);
-      MenuMore.setButtonVisibility(MenuMore.btnRight, false);
-      // assign click event
-      MenuMore.setButtonClickEvent(MenuMore.btnLeft, 0);
-    }
-  },
+    // be sure everything is visible while resizing
+    MenuMore.menuItems.forEach(item => {
+      // move item back to the menu
+      if (item.parentElement.id === MenuMore.moreContainer.id) {
+        MenuMore.MoveContent(item, {target: MenuMore.menu, insertBefore: MenuMore.moreBtn})
+      }
+      item.style.display='block';
+    });
+    if ( MenuMore.menuSize <= MenuMore.getMenuWrapperSize() ) return;
 
-  startMenuMore () {
-    this.menu.addEventListener('scroll', this.evaluateButtonsDisplay);
-  },
+    MenuMore.menuItems.forEach(function(item, index, array){
+      // exclude the «more» button, displayed at the end of mainmenu
+      if (index < array.length - 1){
+        cumulatedSize += item.clientWidth;
 
-  stopMenuMore () {
-    this.setButtonVisibility(this.btnRight, false);
-    this.setButtonVisibility(this.btnLeft, false);
+        if (cumulatedSize > MenuMore.getRemainingSpace()) {
+          // item.style.display='none';
+          MenuMore.setButtonVisibility(MenuMore.moreBtn, true);
+          MenuMore.MoveContent(item, {target: MenuMore.moreContainer})
+          // MenuMore.createClone(item, {target: MenuMore.moreContainer})
+        } else {
+          MenuMore.setButtonVisibility(MenuMore.moreBtn, false);
+          // MenuMore.MoveContent(item, {target: MenuMore.menu})
+        }
+      }
+    });
   },
 
   setButtonVisibility(btn, isVisible) {
@@ -81,16 +61,24 @@ const MenuMore = {
     });
   },
 
+  MoveContent (item, option) {
+    if (option.insertBefore){
+      option.target.insertBefore(item, option.insertBefore);
+    } else {
+      option.target.appendChild(item);
+    }
+  },
+
   getMenuWrapperSize () {
     return this.wrapper.clientWidth;
   },
 
+  getRemainingSpace () {
+    return this.wrapper.clientWidth - this.moreBtn.clientWidth - this.threshold;
+  },
+
   getMenuSize () {
     return this.menu.scrollWidth;
-  },
-  
-  getMenuPosition () {
-    return this.menu.scrollLeft;
   },
 }
 

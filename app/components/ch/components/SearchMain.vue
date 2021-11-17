@@ -6,7 +6,7 @@
         class="search__button"
         title="Toggle search"
       >
-        <span class="search__button__title">Search</span>
+        <span class="search__button__title">Suche</span>
         <SvgIcon
           icon="Search" size="full"
           class="search__button__icon"
