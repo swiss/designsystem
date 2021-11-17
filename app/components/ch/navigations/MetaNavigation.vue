@@ -49,7 +49,7 @@
       <li>
         <a href="#" class="meta-navigation__more">
           <span>
-           More
+           Mehr
           </span>
           <SvgIcon
             icon="MoreFilled"

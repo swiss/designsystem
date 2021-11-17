@@ -6,23 +6,29 @@ const Navy = {
   },
 
   resizeDrawerHeight(target) {
+
     let paddingTop = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-top'));
     let paddingBottom = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-bottom'));
     let newHeight = paddingTop + paddingBottom + target.offsetHeight + "px"
     Navy.drawer.style.height = newHeight;
   },
 
-  displayRelatedSubmenu (target, submenus) {
+  displayRelatedSubmenu (relatedMenu, submenus) {
+    if (relatedMenu === undefined) return;
     [].forEach.call(submenus, function (submenu) {
       submenu.classList.add('hidden');
     });
-    target.classList.remove('hidden');
+    relatedMenu.classList.remove('hidden');
 
-    Navy.resizeDrawerHeight(target);
+    Navy.currentRelatedMenu = relatedMenu
+
+    Navy.resizeDrawerHeight(relatedMenu);
 
     // set focus on the `.back` button after the transition
     // 600ms is the duration of the sliding animation (find it in _navy.scss);
-    setTimeout(function () { target.querySelector('.navy__back').focus() }, 610);
+    if (relatedMenu.querySelector('.navy__back')) {
+      setTimeout(function () { relatedMenu.querySelector('.navy__back').focus() }, 610);
+    }
   },
 
   parseTree(ul, level) {
@@ -54,7 +60,6 @@ const Navy = {
       backBtn.addEventListener('click', function () {
         Navy.showLevel(level);
         Navy.displayRelatedSubmenu(backBtn.relatedMenu, submenus);
-        // Navy.resizeDrawerHeight(backBtn.relatedMenu);
       });
     });
   },
@@ -96,8 +101,22 @@ const Navy = {
   },
 
   setDrawerXPosition (btn) {
-    let rect = btn.getBoundingClientRect();
-    Navy.drawer.style.transform = `translateX(${rect.left}px)`;
+    if (btn === undefined) return;
+
+    let btnCoord = btn.getBoundingClientRect();
+    let leftPos = 0;
+
+    if (btn.offsetLeft + Navy.drawer.clientWidth > Navy.nav.clientWidth) {
+      leftPos = btnCoord.right - Navy.drawer.clientWidth;
+      Navy.drawer.classList.remove('with-offset');
+
+    } else {
+      leftPos = btnCoord.left;
+      Navy.drawer.classList.add('with-offset');
+    }
+    Navy.drawer.style.transform = `translateX(${leftPos}px)`;
+
+    Navy.currentBtn = btn;
   },
 
   closeSubmenu(mainmenuBtn) {
@@ -105,6 +124,7 @@ const Navy = {
     Navy.overlay.classList.add('hidden');
     mainmenuBtn.classList.remove('clicked');
     Navy.currentMenuBtn = undefined;
+    Navy.currentRelatedMenu = undefined;
   },
 
   toggleSubmenu(mainmenuBtn, relatedMenu, submenus) {
@@ -130,19 +150,24 @@ const Navy = {
   },
 
   initDesktop(options) {
-//// navigationItem, target, overlay, closeButton
 
-    // build navy structure and inject it in the target:
-    Navy.buildSlides(options.target);
-    Navy.drawer = document.querySelector(options.target);
+    // build navy structure and inject it in the drawer:
+    Navy.buildSlides(options.drawer);
+    Navy.drawer = document.querySelector(options.drawer);
     if (options.overlay) Navy.overlay = document.querySelector(options.overlay);
+    Navy.nav = document.querySelector(options.navigationNav);
     Navy.currentMenuBtn = undefined;
-
-    const nav = document.querySelector(options.navigationItem);
+    Navy.currentRelatedMenu = undefined;
+    
     const closeBtn = document.querySelector(options.closeButton);
-    const mainmenuBtns = nav.querySelectorAll(':scope > ul > li > a');
-    const submenus = nav.querySelectorAll(':scope > ul > li > ul');
+    const mainmenuBtns =Navy.nav.querySelectorAll(':scope > ul > li > a');
+    const submenus =Navy.nav.querySelectorAll(':scope > ul > li > ul');
     const slide0 = Navy.drawer.querySelector(':scope > .navy > .navy__level-0');
+
+    window.addEventListener('resize', function (){
+      Navy.setDrawerXPosition(Navy.currentMenuBtn);
+      Navy.resizeDrawerHeight(Navy.currentRelatedMenu);
+    });
 
     [].forEach.call(mainmenuBtns, function (mainmenuBtn) {
 

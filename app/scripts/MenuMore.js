@@ -7,18 +7,8 @@ const MenuMore = {
     this.moreBtn = document.querySelector(options.moreButton);
     this.moreContainer = document.querySelector(options.moreContainer);
     this.threshold = 5;
-
-    console.log('MenuMore.moreBtn', options.moreButton, MenuMore.moreBtn);
-    
     this.menuWrapperSize = this.getMenuWrapperSize();
     this.menuSize = this.getMenuSize();
-
-    // demo only: force level-0 to open when more button is clicked
-    this.moreBtn.addEventListener('click', function(){
-      document.body.classList.remove('show-level-0', 'show-level-1', 'show-level-2', 'show-level-3', 'show-level-4', 'show-level-5', 'show-level-6', 'show-level-7');
-      document.body.classList.add(`show-level-0`);
-    }); 
-
     
     // start once
     this.startTriage();
@@ -26,27 +16,12 @@ const MenuMore = {
     window.addEventListener('resize', this.startTriage);
   },
 
-  // evaluateButtonsDisplay () {
-  //   let containerIsTooSmall = MenuMore.getMenuWrapperSize() - MenuMore.getMenuSize() < 0;
-
-  //   if (containerIsTooSmall) {
-  //     console.log('container is too small')
-  //     MenuMore.setButtonVisibility(MenuMore.moreBtn, true);
-  //     MenuMore.startTriage()
-  //   } 
-  //   else {
-  //     console.log('container is ok')
-  //     MenuMore.setButtonVisibility(MenuMore.moreBtn, false);
-  //   }  
-  // },
-
   startTriage () {
     let cumulatedSize = 0;
 
-    
-
     // be sure everything is visible while resizing
     MenuMore.menuItems.forEach(item => {
+      // move item back to the menu
       if (item.parentElement.id === MenuMore.moreContainer.id) {
         MenuMore.MoveContent(item, {target: MenuMore.menu, insertBefore: MenuMore.moreBtn})
       }

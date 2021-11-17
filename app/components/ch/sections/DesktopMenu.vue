@@ -49,12 +49,20 @@ export default {
   },
   mounted () {
     Navy.initDesktop({
-      'navigationItem': '#desktop-menu > .container > nav',
-      'target': '#desktop-menu__drawer',
+      'navigationNav': '#desktop-menu > .container > nav',
+      'drawer': '#desktop-menu__drawer',
       'overlay': '#desktop-menu__overlay',
       'closeButton': '#desktop-menu-closer'
     });
-    Navy.showLevel(2); // for demo only, show 2nd level of sub-navigation
+
+    // demo only: force to show 2nd level of sub-navigation
+    Navy.showLevel(2); 
+
+    // demo only: force level-0 to open when more button is clicked
+    document.getElementById('more-button').addEventListener('click', function(){
+      document.body.classList.remove('show-level-0', 'show-level-1', 'show-level-2', 'show-level-3', 'show-level-4', 'show-level-5', 'show-level-6', 'show-level-7');
+      document.body.classList.add(`show-level-0`);
+    }); 
 
     MenuMore.init({
       'navigationItem': '#desktop-menu > .container > nav',

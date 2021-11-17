@@ -9,10 +9,10 @@
 
 .desktop-menu__drawer {
   @apply hidden lg:block;
-  @apply mt-px;
-  @apply w-[450px] p-6 pt-16 -left-4;
-  @apply xl:w-[650px] xl:p-10 xl:pt-20 xl:-left-8;
-  @apply 2xl:w-[850px] 2xl:p-24 2xl:-left-24;
+  @apply mt-0;
+  @apply w-[450px] p-8 pt-16 left-0;
+  @apply xl:w-[650px] xl:p-12 xl:pt-20;
+  @apply 2xl:w-[850px] 2xl:p-24;
   @apply overflow-x-hidden overflow-y-scroll;
   @apply absolute z-30 top-14 xl:top-16 2xl:top-20;
   @apply bg-white shadow-2xl opacity-100;
@@ -32,6 +32,10 @@
     & > * {
       @apply transition-transform -translate-y-8 duration-300;
     }
+  }
+
+  &.with-offset {
+    @apply -left-4 xl:-left-8 2xl:-left-20;
   }
 }
 
