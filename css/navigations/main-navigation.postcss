@@ -15,19 +15,7 @@
   @apply hidden lg:flex;
   @apply h-14 xl:h-16 2xl:h-20;
   @apply -ml-4;
-
   @apply relative;
-
-  & > ul {
-    @apply w-full relative overflow-x-auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-
-    &::-webkit-scrollbar {
-      display: none; 
-    }
-  }
-
 
   ul {
     @apply flex h-full;
@@ -40,8 +28,9 @@
   & > ul > li > a {
     @apply lg:flex lg:items-center relative;
     @apply lg:h-full lg:px-4;
-    @apply hover:text-primary-600 leading-tight transition-colors;
+    @apply hover:text-primary-600 leading-tight;
     @apply whitespace-nowrap;
+    @apply transition-all;
 
     &:focus-visible {
       @apply ring-inset;
@@ -58,13 +47,6 @@
       @apply bg-white shadow-2xl;
       @apply relative z-50;
       clip-path: inset(-50px -50px -1px -50px); /* crop shadow at the bottom */
-
-      &::after {
-        content:'';
-        @apply block bg-white;
-        @apply h-[3px];
-        @apply absolute right-0 left-0 -bottom-px;
-      }
     }
   }
 

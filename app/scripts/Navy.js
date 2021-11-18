@@ -3,6 +3,7 @@ const Navy = {
   showLevel(level) {
     document.body.classList.remove('show-level-0', 'show-level-1', 'show-level-2', 'show-level-3', 'show-level-4', 'show-level-5', 'show-level-6', 'show-level-7');
     document.body.classList.add(`show-level-${level}`);
+    Navy.currentLevel = level;
   },
 
   resizeDrawerHeight(target) {
@@ -13,21 +14,31 @@ const Navy = {
     Navy.drawer.style.height = newHeight;
   },
 
-  displayRelatedSubmenu (relatedMenu, submenus) {
+  displayRelatedSubmenu (btn, relatedMenu, submenus, isBackBtn) {
     if (relatedMenu === undefined) return;
     [].forEach.call(submenus, function (submenu) {
       submenu.classList.add('hidden');
     });
     relatedMenu.classList.remove('hidden');
 
-    Navy.currentRelatedMenu = relatedMenu
+    Navy.currentRelatedMenu = relatedMenu;
 
     Navy.resizeDrawerHeight(relatedMenu);
 
-    // set focus on the `.back` button after the transition
-    // 600ms is the duration of the sliding animation (find it in _navy.scss);
-    if (relatedMenu.querySelector('.navy__back')) {
-      setTimeout(function () { relatedMenu.querySelector('.navy__back').focus() }, 610);
+    // focus handling
+    function passFocus(){
+      // get first link of the current slide, set focus on it:
+      let firstLink = Navy.drawer.querySelector(`.navy__level-${Navy.currentLevel} ul > li a`)
+      firstLink == document.activeElement ? firstLink.blur() : firstLink.focus();
+    }
+
+    // set focus on submenu items if mainmenu btn is unfocused
+    if (!Navy.drawer.classList.contains('hidden')) {
+      btn.addEventListener('blur', passFocus, true)
+    }
+
+    if (isBackBtn) {
+      btn.addEventListener('blur', passFocus, true)
     }
   },
 
@@ -47,7 +58,7 @@ const Navy = {
       btn.addEventListener('click', function () {
         Navy.showLevel(level+1);
 
-        Navy.displayRelatedSubmenu(btn.relatedMenu, submenus);
+        Navy.displayRelatedSubmenu(btn, btn.relatedMenu, submenus);
         Navy.currentMenuLink = btn
       });
 
@@ -59,7 +70,7 @@ const Navy = {
       backBtn.relatedMenu = backBtn.parentElement.parentElement.parentElement.previousSibling.querySelector('ul');
       backBtn.addEventListener('click', function () {
         Navy.showLevel(level);
-        Navy.displayRelatedSubmenu(backBtn.relatedMenu, submenus);
+        Navy.displayRelatedSubmenu(backBtn, backBtn.relatedMenu, submenus, true);
       });
     });
   },
@@ -143,7 +154,7 @@ const Navy = {
       Navy.currentMenuBtn = mainmenuBtn;
     }
 
-    Navy.displayRelatedSubmenu(relatedMenu, submenus); 
+    Navy.displayRelatedSubmenu(mainmenuBtn, relatedMenu, submenus); 
     Navy.setDrawerXPosition(mainmenuBtn);
   },
 
@@ -156,6 +167,7 @@ const Navy = {
     Navy.nav = document.querySelector(options.navigationNav);
     Navy.currentMenuBtn = undefined;
     Navy.currentRelatedMenu = undefined;
+    Navy.currentLevel = 0;
     
     const closeBtn = document.querySelector(options.closeButton);
     const mainmenuBtns =Navy.nav.querySelectorAll(':scope > ul > li > a');

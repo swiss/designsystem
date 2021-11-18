@@ -60,8 +60,7 @@ export default {
 
     // demo only: force level-0 to open when more button is clicked
     document.getElementById('more-button').addEventListener('click', function(){
-      document.body.classList.remove('show-level-0', 'show-level-1', 'show-level-2', 'show-level-3', 'show-level-4', 'show-level-5', 'show-level-6', 'show-level-7');
-      document.body.classList.add(`show-level-0`);
+      Navy.showLevel(0); 
     }); 
 
     MenuMore.init({

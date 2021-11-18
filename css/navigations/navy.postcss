@@ -4,9 +4,9 @@
 
 
  .navy {
-  @apply h-full relative;
-  @apply pb-16 lg:pb-0;
-  perspective: 1200px;
+  position: relative;
+  perspective: 1200;
+  height: 100%;
 
   & li > a:not(.navy__back),
   & li > span:not(.navy__title),
@@ -89,10 +89,10 @@
   left: 0;
 
   /*
-  remark: adapt displaySubmenu function in
-  commom.js if the 600ms duration is modified:
+  remark: adapt displayRelatedSubmenu function in
+  Navy.js if the 600ms duration is modified:
   */
-  transform: translateX(120%);
+  transform: translateX(0%);
   transition: transform 600ms ease-in-out, opacity 600ms ease-in-out;
 }
 
@@ -112,15 +112,15 @@
   .navy__level-5,
   .navy__level-6,
   .navy__level-7 {
-    transform: translateX(120%);
-    opacity: 0.5;
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
 .show-level-1 {
   .navy__level-0 {
-    transform: translateX(-120%);
-    opacity: 0.5;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   .navy__level-1 {
     transform: translateX(0%);
@@ -132,16 +132,16 @@
   .navy__level-5,
   .navy__level-6,
   .navy__level-7 {
-    transform: translateX(120%);
-    opacity: 0.5;
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
 .show-level-2 {
   .navy__level-0,
   .navy__level-1 {
-    transform: translateX(-120%);
-    opacity: 0.5;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   .navy__level-2 {
     transform: translateX(0%);
@@ -152,8 +152,8 @@
   .navy__level-5,
   .navy__level-6,
   .navy__level-7 {
-    transform: translateX(120%);
-    opacity: 0.5;
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
@@ -161,8 +161,8 @@
   .navy__level-0,
   .navy__level-1,
   .navy__level-2 {
-    transform: translateX(-120%);
-    opacity: 0.5;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   .navy__level-3 {
     transform: translateX(0%);
@@ -172,8 +172,8 @@
   .navy__level-5,
   .navy__level-6,
   .navy__level-7 {
-    transform: translateX(120%);
-    opacity: 0.5;
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
@@ -182,8 +182,8 @@
   .navy__level-1,
   .navy__level-2,
   .navy__level-3 {
-    transform: translateX(-120%);
-    opacity: 0.5;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   .navy__level-4 {
     transform: translateX(0%);
@@ -192,8 +192,8 @@
   .navy__level-5,
   .navy__level-6,
   .navy__level-7 {
-    transform: translateX(120%);
-    opacity: 0.5;
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
@@ -203,8 +203,8 @@
   .navy__level-2,
   .navy__level-3,
   .navy__level-4 {
-    transform: translateX(-120%);
-    opacity: 0.5;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   .navy__level-5 {
     transform: translateX(0%);
@@ -212,8 +212,8 @@
   }
   .navy__level-6,
   .navy__level-7 {
-    transform: translateX(120%);
-    opacity: 0.5;
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
@@ -224,16 +224,16 @@
   .navy__level-3,
   .navy__level-4,
   .navy__level-5 {
-    transform: translateX(-120%);
-    opacity: 0.5;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   .navy__level-6 {
     transform: translateX(0%);
     opacity: 1;
   }
   .navy__level-7 {
-    transform: translateX(120%);
-    opacity: 0.5;
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
@@ -245,8 +245,8 @@
   .navy__level-4,
   .navy__level-5,
   .navy__level-6 {
-    transform: translateX(-120%);
-    opacity: 0.5;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   .navy__level-7 {
     transform: translateX(0%);
