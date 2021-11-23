@@ -12,7 +12,7 @@
 }
 
 .language-switcher--mobile {
-  @apply flex;
+  @apply flex pb-24;
   @apply bg-secondary-500;
 
   /* show only if flyout has first level of navigation visible: */
@@ -25,11 +25,11 @@
   }
 
   ul {
-    @apply flex justify-around;
+    @apply flex flex-wrap;
   }
 
   a {
-    @apply text-white p-4;
+    @apply text-white p-4 mr-3 xs:mr-5;
   }
 
 }
