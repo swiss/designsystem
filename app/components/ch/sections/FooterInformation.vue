@@ -10,6 +10,9 @@
             porttitor, imperdiet urna quis, venenatis mi. Aliquam mattis nibh orci,
             a pellentesque diam rutrum vel.
           </p>
+          <p>
+            © Geoportal
+          </p>
         </li>
         <li class="footer-information__entry">
           <h3>Bleiben sie informiert</h3>
@@ -70,14 +73,14 @@
                 class="footer__link footer-information__link--icon-right"
               >
                 <SvgIcon icon="ArrowRight" class="footer-information__icon" />
-                ...
+                Barrierefreiheit
               </a>
               <a
                 href="javascript:void(0)"
                 class="footer__link footer-information__link--icon-right"
               >
                 <SvgIcon icon="ArrowRight" class="footer-information__icon" />
-                ...
+                Impressum
               </a>
             </div>
           </div>
