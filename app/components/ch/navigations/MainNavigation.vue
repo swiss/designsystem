@@ -31,6 +31,10 @@
         </a>
         <ul>
           <li>
+            <a href="javascript:void(0)" role="button" class="navy__back">
+              <SvgIcon icon="ArrowLeft" size="lg" />
+              <span>Back</span>
+            </a>
             <span class="navy__title">Dienstleistungen</span>
             <a href="javascript:alert('link')">Überblick</a>
           </li>
