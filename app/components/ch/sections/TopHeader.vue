@@ -5,12 +5,12 @@
       aria-hidden="true"
     >
       <div class="container container--flex">
-        Design System for <br/>the Swiss Confederation
+        Eidgenössisches Departement für Verteidigung, <br/>Bevölkerungsschutz und Sport
       </div>
     </div>
     <div class="container container--flex">
       <Logo
-        title="Design System for <br/>the Swiss Confederation"
+        title="Eidgenössisches Departement für Verteidigung, <br/>Bevölkerungsschutz und Sport"
         accronym="DSS"
       />
       <div class="top-header__right">
