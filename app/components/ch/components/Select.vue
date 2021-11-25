@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: 'Input',
+  name: 'Select',
   props: {
     variant: {
       type: String,
