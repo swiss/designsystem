@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="!isHomePage"
     id="breadcrumb"
     class="breadcrumb container container--flex"
   >
@@ -17,6 +18,12 @@ import BreadcrumbNav from '../../../scripts/BreadcrumbNav.js'
 
 export default {
   name: 'Breadcrumb',
+  props: {
+    isHomePage: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {
    BreadcrumbNavigation
   },

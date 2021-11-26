@@ -7,7 +7,7 @@
       <TopHeader />
       <DesktopMenu isHomePage />
       <MobileMenu isHomePage />
-      <Breadcrumb />
+      <Breadcrumb isHomePage />
     </header>
     <main id="main-content">
       <HeroHome />
