@@ -28,6 +28,7 @@ export default {
    BreadcrumbNavigation
   },
   mounted() {
+    if (this.isHomePage) return
     BreadcrumbNav.init(
       '#breadcrumb > nav'
     )
