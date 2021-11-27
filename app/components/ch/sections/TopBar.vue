@@ -192,8 +192,23 @@
               <h4 class="top-bar__title">Alle Ämter</h4>
               <div class="search search--negative search--large">
                 <div class="search__group">
-                  <Input type="text" id="text-id-0" label="Amt suchen" placeholder="Amt suchen" variant="negative" />
-                  <Btn label="Amt Suchen" icon="Search" icon-pos="only" variant="negative" size="lg" />
+                  <input 
+                    @focus="isSearchInputFocused = true"
+                    @blur="isSearchInputFocused = false"
+                    type="text" 
+                    id="search-input" 
+                    label="Ämter filtern" 
+                    placeholder="Ämter filtern" 
+                    autocomplete="off" 
+                  />
+                <Btn 
+                  @click.native="resetSearchInput"
+                  label="Ämter filtern" 
+                  :icon="isSearchInputFocused ? 'CancelCircle' : 'Filter'" 
+                  icon-pos="only" 
+                  variant="bare-negative" 
+                  size="lg" 
+                />
                 </div>
                 <div class="search__results search__results--negative">
                   <ul class="menu">
@@ -357,7 +372,6 @@
 import TopBarNavigation from '../navigations/TopBarNavigation'
 import SvgIcon from '../components/SvgIcon'
 import Btn from "../components/Btn";
-import Input from "../components/Input";
 import LanguageSwitcher from '../components/LanguageSwitcher'
 
 export default {
@@ -366,14 +380,25 @@ export default {
     TopBarNavigation,
     SvgIcon,
     Btn,
-    Input,
     LanguageSwitcher
+  },
+  data: function(){
+    return {
+      isSearchInputFocused: false
+    }
   },
   props: {
     isOpen: {
       type: Boolean,
       default: false,
-    }
+    },  
   },
+  methods: {
+    resetSearchInput () {
+      const searchInput = document.getElementById('search-input')
+      searchInput.value = ''
+      searchInput.focus()
+    }
+  }
 }
 </script>

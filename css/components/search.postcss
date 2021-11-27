@@ -72,7 +72,7 @@
 }
 
 .search__group {
-  @apply flex items-stretch justify-between;
+  @apply flex items-stretch justify-between relative;
 
   & label {
     @apply sr-only;
@@ -80,8 +80,13 @@
 
   & input {
     @apply h-full lg:py-4;
-    margin-top: 0 !important; /* TODO: remove this */
+    @apply pr-12;
+    @apply relative z-10;
     @apply bg-white;
+  }
+
+  .search--negative & input {
+    @apply bg-secondary-400;
   }
 
   .search--large & {
@@ -90,6 +95,10 @@
     & input {
       @apply text-xl font-bold shadow-none;
     }
+  }
+
+  .btn {
+    @apply absolute top-0 right-0 bottom-0 z-20;
   }
 }
 
