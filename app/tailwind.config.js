@@ -8,7 +8,10 @@ module.exports = {
     './app/components/ch/**/*.vue',
     './app/components/stories/foundations/**/*.mdx'
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, // or 'media' or 'class',
+  corePlugins: {
+   container: false,
+  },
   theme: {
     screens: {
       'xs': '480px',
@@ -16,7 +19,8 @@ module.exports = {
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
-      '2xl': '1800px',
+      '2xl': '1536px',
+      '3xl': '1800px',
     },
     scale: {
       '102': '1.02',
