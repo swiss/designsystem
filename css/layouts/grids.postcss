@@ -71,34 +71,48 @@
 
 /* FIXED 12 COLS GRID */
 
-.grid--container {
+.grid--area {
   @apply grid grid-cols-12;
 }
 
-.grid__container--xs {
+.area--content {
   @apply col-span-12;
-  @apply  sm:col-start-2   sm:col-end-12;
-  @apply  md:col-start-3   md:col-end-11;
-  @apply  lg:col-start-3   lg:col-end-10;
-  @apply 2xl:col-start-4  2xl:col-end-10;
 }
 
-.grid__3-to-10 {
-  @apply col-span-12;
-  @apply  sm:col-start-1   sm:col-end-12;
-  @apply  lg:col-start-2   lg:col-end-10;
-  @apply 2xl:col-start-3  2xl:col-end-10;
+.area--content-xs {
+  @apply     col-span-12;
+  @apply  sm:col-span-10;
+  @apply  md:col-span-8 ;
+  @apply  lg:col-span-6 ;
+
+  @apply  sm:col-start-2;
+  @apply  md:col-start-3;
+  @apply  lg:col-start-4;
 }
 
-.grid__container--sm {
-  @apply col-span-12;
-  @apply lg:col-start-2 lg:col-end-11;
-  @apply 2xl:col-start-3 2xl:col-end-11;
+.area--content-sm {
+  @apply     col-span-12;
+  @apply  md:col-span-10;
+  @apply lg:col-span-8 ;
+
+  @apply  md:col-start-2;
+  @apply lg:col-start-3;
 }
 
-.grid__container--md {
+.area--content-md {
   @apply col-span-12;
   @apply lg:col-start-2 lg:col-end-12;
+}
+
+.area--content-1\/2 {
+  @apply     col-span-12;
+  @apply  sm:col-span-10;
+  @apply  md:col-span-8 ;
+  @apply  lg:col-span-6 ;
+
+  @apply  sm:col-start-2;
+  @apply  md:col-start-3;
+  @apply  lg:col-start-auto;
 }
 
 

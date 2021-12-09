@@ -15,7 +15,7 @@
           Web Mapping Services WMS: Verfügbare Dienste und Daten
         </template>
         <template v-slot:description>
-          Das Konzept des INTERLIS Model Repository (Datenmodellablage) sieht vor, Datenmodelle als http-Ressource nutzbar zu machen. Dabei werden die INTERLIS-Modelldateien auf einem Webserver abgelegt, und können beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden. Der Vorteil für einen Benutzer liegt darin, dass die Modelldateien und evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein müssen.
+          Das Konzept des INTERLIS Model Repository sieht vor, Datenmodelle als http-Ressource nutzbar zu machen. Dabei werden die INTERLIS-Modelldateien auf einem Webserver abgelegt, und können beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden. Der Vorteil für einen Benutzer liegt darin, dass die Modelldateien und evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein müssen.
         </template>
         <template v-slot:image>
           <figure>
@@ -32,8 +32,8 @@
       </Hero>
       <section class="section section--default section--pb-only">
         <div class="container">
-          <div class="grid grid--container gap--responsive">
-            <div class="grid__container--xs">
+          <div class="grid grid--area gap--responsive">
+            <div class="area--content-xs">
               <h2 class="h2">
                 Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
               </h2>
@@ -54,14 +54,35 @@
                 </picture>
                 <figcaption>Image label here — © Photograph Name</figcaption>
               </figure>
-
               <h2 class="h2">
                 Datenmodellablage ansehen
               </h2>
               <p>
                 Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
               </p>
+            </div>
 
+            <div class="area--content-1/2">
+              <figure>
+                <picture>
+                  <source
+                    srcset="https://placekitten.com/g/1600/1600"
+                    media="(min-width: 1024px)"
+                  />
+                  <img src="https://placekitten.com/g/1600/900" alt="cat" />
+                </picture>
+              </figure>
+            </div>
+            <div class="area--content-1/2">
+              <h2 class="h2">
+                Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+              </h2>
+              <p>
+                Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+              </p>
+              <p>
+                Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+              </p>
             </div>
           </div>
 
