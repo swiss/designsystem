@@ -105,8 +105,6 @@ const Navy = {
       const ul = nav.querySelector('ul');
       Navy.parseTree(ul, 0);
     });
-    // inject language-switcher into slide 0:
-    Navy.level[0].appendChild(document.getElementById('language-switcher-mobile'));
   },
 
   setDrawerXPosition (btn) {
