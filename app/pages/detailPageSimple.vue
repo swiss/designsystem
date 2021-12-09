@@ -24,56 +24,58 @@
                 srcset="https://placekitten.com/g/1600/900"
                 media="(min-width: 800px)"
               />
-              <img src="https://placekitten.com/g/1600/900" alt="cat" />
+              <img src="https://placekitten.com/g/1600/1200" alt="cat" />
             </picture>
             <figcaption>Image label here — © Photograph Name</figcaption>
           </figure>
         </template>
       </Hero>
       <section class="section section--default section--pb-only">
-        <div class="container">
-          <div class="grid grid--area gap--responsive">
-            <div class="area--content-xs">
-              <h2 class="h2">
-                Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
-              </h2>
-              <p>
-                Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
-              </p>
-              <p>
-                Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
-              </p>
+        <div class="container container--area gap--responsive">
+          <div class="container__area--xs">
+            <h2 class="h2">
+              Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+            </h2>
+            <p>
+              Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+            </p>
+            <p>
+              Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+            </p>
 
-              <figure>
-                <picture>
-                  <source
-                    srcset="https://placekitten.com/g/1600/900"
-                    media="(min-width: 800px)"
-                  />
-                  <img src="https://placekitten.com/g/1600/900" alt="cat" />
-                </picture>
-                <figcaption>Image label here — © Photograph Name</figcaption>
-              </figure>
-              <h2 class="h2">
-                Datenmodellablage ansehen
-              </h2>
-              <p>
-                Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
-              </p>
-            </div>
+            <figure>
+              <picture>
+                <source
+                  srcset="https://placekitten.com/g/1600/900"
+                  media="(min-width: 800px)"
+                />
+                <img src="https://placekitten.com/g/1600/900" alt="cat" />
+              </picture>
+              <figcaption>Image label here — © Photograph Name</figcaption>
+            </figure>
+            <h2 class="h2">
+              Datenmodellablage ansehen
+            </h2>
+            <p>
+              Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <div class="area--content-1/2">
-              <figure>
-                <picture>
-                  <source
-                    srcset="https://placekitten.com/g/1600/1600"
-                    media="(min-width: 1024px)"
-                  />
-                  <img src="https://placekitten.com/g/1600/900" alt="cat" />
-                </picture>
-              </figure>
-            </div>
-            <div class="area--content-1/2">
+      <section class="section section--default">
+        <div class="container container--area gap--responsive">
+          <div class="container__area AND grid grid--responsive-cols-2 gap--responsive">
+            <figure>
+              <picture>
+                <source
+                  srcset="https://placekitten.com/g/1600/1200"
+                  media="(min-width: 1024px)"
+                />
+                <img src="https://placekitten.com/g/800/600" alt="cat" />
+              </picture>
+            </figure>
+            <div>
               <h2 class="h2">
                 Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
               </h2>
@@ -85,7 +87,30 @@
               </p>
             </div>
           </div>
-
+        </div>
+        <div class="container container--area gap--responsive">
+          <div class="container__area AND grid grid--responsive-cols-2 grid--reverse gap--responsive">
+            <figure>
+              <picture>
+                <source
+                  srcset="https://placekitten.com/g/1600/1200"
+                  media="(min-width: 1024px)"
+                />
+                <img src="https://placekitten.com/g/1600/900" alt="cat" />
+              </picture>
+            </figure>
+            <div>
+              <h2 class="h2">
+                Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+              </h2>
+              <p>
+                Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+              </p>
+              <p>
+                Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

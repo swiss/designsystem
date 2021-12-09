@@ -4,7 +4,7 @@
     :class="computedClasses"
   >
     <div class="container">
-      <div class="grid grid--area gap--responsive">
+      <div class="grid container--area gap--responsive">
         <h1 v-if="$slots.title" class="hero__title">
           <slot name="title"></slot>
         </h1>
@@ -23,15 +23,15 @@
     :class="computedClasses"
   >
     <div class="container">
-      <div class="grid grid--area gap--responsive">
-        <h1 v-if="$slots.title" class="hero__title area--content-xs">
+      <div class="grid container--area gap--responsive">
+        <h1 v-if="$slots.title" class="hero__title container__area--xs">
           <slot name="title"></slot>
         </h1>
         <div class="hero--2-cols__container">
           <div v-if="$slots.description" class="hero__description">
             <slot name="description"></slot>
           </div>
-          <picture v-if="$slots.image" class="hero__image area--content-sm">
+          <picture v-if="$slots.image" class="hero__image container__area--sm">
             <slot name="image"></slot>
           </picture>
         </div>
@@ -44,8 +44,8 @@
     :class="computedClasses"
   >
     <div class="container">
-      <div class="grid grid--area gap--responsive">
-        <div class="area--content-xs">
+      <div class="grid container--area gap--responsive">
+        <div class="container__area--xs">
           <h1 v-if="$slots.title" class="hero__title">
             <slot name="title"></slot>
           </h1>
@@ -53,7 +53,7 @@
             <slot name="description"></slot>
           </div>
         </div>
-        <div v-if="$slots.image" class="area--content-sm">
+        <div v-if="$slots.image" class="container__area--sm">
           <slot name="image"></slot>
         </div>
       </div>

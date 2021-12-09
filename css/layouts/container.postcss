@@ -7,22 +7,11 @@
   .container {
     @apply mx-auto;
     @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 3xl:px-16;
-    @apply lg:w-[1024px] xl:w-[1180px] 2xl:w-[1536px] 3xl:w-[1680px];
+    @apply w-full 2xl:w-[1536px] 3xl:w-[1680px];
   }
 
   .container--flex {
     @apply flex justify-between;
-  }
-
-  .container--sm {
-    @apply max-w-[751px];
-
-    /* left align test*/
-    /* @apply 3xl:max-w-[1056px] 3xl:pr-[280px]; */
-  }
-
-  .container--md {
-    @apply max-w-[751px] lg:max-w-[955px] 3xl:max-w-[976px];
   }
 
   /* VERTICAL PADDINGS */
@@ -41,3 +30,43 @@
     @apply pb-14 lg:pb-20 3xl:pb-32;
   }
 }
+
+/* FIXED 12 COLS GRID */
+
+.container--area {
+  @apply grid grid-cols-12;
+
+  & + & {
+    @apply pt-5 xs:pt-7 sm:pt-9 lg:pt-10 xl:pt-12 3xl:pt-16;
+  }
+}
+
+.container__area {
+  @apply col-span-12;
+}
+
+.container__area--xs {
+  @apply     col-span-12;
+  @apply  md:col-span-10;
+  @apply  lg:col-span-8 ;
+  @apply  xl:col-span-6 ;
+
+  @apply  md:col-start-2;
+  @apply  lg:col-start-3;
+  @apply  xl:col-start-4;
+}
+
+.container__area--sm {
+  @apply     col-span-12;
+  @apply  lg:col-span-10;
+  @apply xl:col-span-8 ;
+
+  @apply  lg:col-start-2;
+  @apply xl:col-start-3;
+}
+
+.container__area--md {
+  @apply col-span-12;
+  @apply xl:col-start-2 xl:col-end-12;
+}
+
