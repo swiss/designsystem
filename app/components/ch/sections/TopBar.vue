@@ -18,7 +18,7 @@
         </button>
         <div class="top-bar__right">
           <TopBarNavigation context="desktop" />
-          <LanguageSwitcher context="desktop" />
+          <LanguageSwitcher />
         </div>
       </div>
     </div>
