@@ -38,11 +38,6 @@
       </li>
       <li>
         <a href="#" class="meta-navigation__item">
-          Newletter
-        </a>
-      </li>
-      <li>
-        <a href="#" class="meta-navigation__item">
           Medien
         </a>
       </li>
