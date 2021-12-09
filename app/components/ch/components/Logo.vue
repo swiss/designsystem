@@ -32,7 +32,7 @@ export default {
       default: '',
     },
     link: {
-      type: URL,
+      type: String,
       required: false,
       default: '/',
     }
