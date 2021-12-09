@@ -12,7 +12,7 @@
     <main id="main-content">
       <HeroDetailComplex />
       <section class="section section--default section--pb-only">
-        <div class="container container--md">
+        <div class="container">
           <h3 class="h3">
             Simple text
           </h3>
