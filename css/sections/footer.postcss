@@ -8,13 +8,10 @@
 }
 
 .footer-navigation {
-  @apply flex flex-col sm:flex-row;
+  @apply flex;
   @apply py-3;
   @apply space-y-2 sm:space-y-0 sm:space-x-4;
-
-  .footer__link {
-    @apply text-base;
-  }
+  @apply text--xs;
 }
 
 .footer__link {
@@ -40,9 +37,9 @@
 
 .footer-information__entry {
   @apply mb-8 lg:mb-0;
-  @apply text-white text-lg;
+  @apply text-white;
   h3 {
-    @apply text-2xl;
+    @apply text--xl;
     @apply mb-8;
   }
 

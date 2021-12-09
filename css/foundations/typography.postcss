@@ -10,24 +10,29 @@ html {
 }
 
 body {
-  @apply text-base xl:text-lg 3xl:text-xl;
+  @apply text-base 2xl:text-lg 3xl:text-xl;
   @apply font-regular;
 }
 
 @layer utilities {
 
+  .text--4xl {
+    @apply text-4xl sm:text-5xl xl:text-6xl 3xl:text-7xl;
+    @apply leading-tight;
+  }
+
   .text--3xl {
-    @apply text-3xl sm:text-4xl xl:text-5xl;
+    @apply text-3xl sm:text-4xl xl:text-5xl 3xl:text-6xl;
     @apply leading-tight;
   }
 
   .text--2xl {
-    @apply text-2xl sm:text-3xl xl:text-4xl;
-    @apply leading-snug;
+    @apply text-2xl sm:text-3xl xl:text-4xl 3xl:text-5xl;
+    @apply leading-tight;
   }
 
   .text--xl {
-    @apply text-xl sm:text-2xl xl:text-3xl;
+    @apply text-xl sm:text-2xl xl:text-3xl 3xl:text-4xl;
     @apply leading-tight;
   }
 
@@ -77,46 +82,43 @@ body {
     @apply text-xs;
   }
 
+
   .h1 {
     @apply text--3xl font-bold;
-    @apply pb-3;
+    @apply pb-6;
   }
 
   .h2 {
     @apply text--2xl font-bold;
-    @apply pb-2;
+    @apply pb-6;
   }
 
   .h3 {
     @apply text--xl font-bold;
-    @apply pb-2;
+    @apply pb-6;
   }
 
   .h4 {
     @apply text--lg font-bold;
-    @apply pb-2;
+    @apply pb-6;
   }
 
   .h5 {
     @apply text--base font-bold;
-    @apply pb-2;
+    @apply pb-6;
   }
 }
 
 main p {
-  @apply pb-4;
-}
-
-p + p {
-  @apply pt-4;
+  @apply pb-6;
 }
 
 main figure {
-  @apply pt-8 pb-12;
+  @apply pb-8;
 }
 
 main figcaption {
-  @apply text--sm py-2;
+  @apply text--xs pt-2 text-secondary-400 text-right;
 }
 
 

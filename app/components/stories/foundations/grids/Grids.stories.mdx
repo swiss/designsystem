@@ -6,17 +6,17 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 # Grids
 
-Two types of grids are at your disposal: Default grids and Custom grids.
+Three types of grids are at your disposal: Default grids, Asymmetric grids and Custom grids.
 
-# Default Grids
+# Responsive Grids
 Default grids propose standard alignments and responsiveness with a minimal amount of CSS classes. Ideal to align content in a grid, for example a list of Card elements. Use the following classes:
 - `grid grid--responsive-cols-2`
 - `grid grid--responsive-cols-3`
 - `grid grid--responsive-cols-4`
 
-Additionally, a `gap--responsive` class applies default spacings to the elements.
+Additionally, a `gap--responsive` class applies default spacings between elements.
 
-## Default responsive grid, two cols
+## Responsive grid, two cols
 
 <Canvas className="storybook-demo-grid">
   <div class="grid grid--responsive-cols-2 gap--responsive">
@@ -27,7 +27,7 @@ Additionally, a `gap--responsive` class applies default spacings to the elements
   </div>
 </Canvas>
 
-## Default responsive grid, three cols
+## Responsive grid, three cols
 
 <Canvas className="storybook-demo-grid">
   <div class="grid grid--responsive-cols-3 gap--responsive">
@@ -40,7 +40,7 @@ Additionally, a `gap--responsive` class applies default spacings to the elements
   </div>
 </Canvas>
 
-## Default responsive grid, four cols
+## Responsive grid, four cols
 
 <Canvas className="storybook-demo-grid">
   <div class="grid grid--responsive-cols-4 gap--responsive">
@@ -50,6 +50,104 @@ Additionally, a `gap--responsive` class applies default spacings to the elements
     <div>4</div>
   </div>
 </Canvas>
+
+# Fixed 12 cols Grid
+
+## Centered items
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--container gap--responsive">
+    <div class="grid__container--md">1</div>
+    <div class="grid__container--sm">2</div>
+    <div class="grid__container--xs">3</div>
+  </div>
+</Canvas>
+
+# Asymmetric Grids
+Asymmetric grids are responsive grids, but the columns have differentiated widths. This can be used to display images and content on two cols.
+- `grid grid--responsive-cols-1/4-3/4`
+- `grid grid--responsive-cols-3/4-1/4`
+- `grid grid--responsive-cols-1/3-2/3`
+- `grid grid--responsive-cols-2/3-1/3`
+
+An additional `grid grid--reverse` class helps you to flip right and left columns 
+
+## Quarters
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-1/4-3/4 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-1/4-3/4 grid--reverse gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-3/4-1/4 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-3/4-1/4 grid--reverse gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+## Thirds
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-1/3-2/3 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-1/3-2/3 grid--reverse gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-2/3-1/3 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-2/3-1/3 grid--reverse gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+## Halves
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-1/2-1/2 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--responsive-cols-1/2-1/2 grid--reverse gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
 
 # Custom Grids
 

@@ -1,35 +1,61 @@
 <template>
   <section
-    v-if="this.type !== '2-cols'"
+    v-if="this.type === 'wide'"
     :class="computedClasses"
   >
     <div class="container">
-      <h1 v-if="$slots.title" class="hero__title">
-        <slot name="title"></slot>
-      </h1>
-      <div class="hero__description">
-        <slot></slot>
-      </div>
-      <picture v-if="$slots.image" class="hero__image">
-        <slot name="image"></slot>
-      </picture>
-    </div>
-  </section>
-  <section
-    v-else
-    :class="computedClasses"
-  >
-    <div class="container">
-      <h1 v-if="$slots.title" class="hero__title">
-        <slot name="title"></slot>
-      </h1>
-      <div class="hero--2-cols__container">
-        <div class="hero__description">
-          <slot></slot>
+      <div class="grid grid--container gap--responsive">
+        <h1 v-if="$slots.title" class="hero__title">
+          <slot name="title"></slot>
+        </h1>
+        <div v-if="$slots.description" class="hero__description">
+          <slot name="description"></slot>
         </div>
         <picture v-if="$slots.image" class="hero__image">
           <slot name="image"></slot>
         </picture>
+      </div>
+    </div>
+  </section>
+
+  <section
+    v-else-if="this.type === '2-cols'"
+    :class="computedClasses"
+  >
+    <div class="container">
+      <div class="grid grid--container gap--responsive">
+        <h1 v-if="$slots.title" class="hero__title grid__container--xs">
+          <slot name="title"></slot>
+        </h1>
+        <div class="hero--2-cols__container">
+          <div v-if="$slots.description" class="hero__description">
+            <slot name="description"></slot>
+          </div>
+          <picture v-if="$slots.image" class="hero__image grid__container--sm">
+            <slot name="image"></slot>
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    v-else-if="this.type === 'default'"
+    :class="computedClasses"
+  >
+    <div class="container">
+      <div class="grid grid--container gap--responsive">
+        <div class="grid__container--xs">
+          <h1 v-if="$slots.title" class="hero__title">
+            <slot name="title"></slot>
+          </h1>
+          <div v-if="$slots.description" class="hero__description">
+            <slot name="description"></slot>
+          </div>
+        </div>
+        <div v-if="$slots.image" class="grid__container--sm">
+          <slot name="image"></slot>
+        </div>
       </div>
     </div>
   </section>
@@ -49,6 +75,7 @@ export default {
         '2-cols'
       ].includes(prop)
     },
+    default: 'default'
   },
 
   computed: {

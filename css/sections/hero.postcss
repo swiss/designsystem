@@ -4,22 +4,23 @@
 
 .hero {
   @apply pt-12 lg:pt-14 3xl:pt-20;
-  @apply pb-16 lg:pb-20 3xl:pb-32;
-}
+  @apply pb-8 lg:pb-12 3xl:pb-16;
 
-.hero .container {
-  @apply flex flex-col;
+  figure {
+    @apply py-0;
+  }
 }
 
 .hero__title {
-  @apply h1;
+  @apply text--3xl font-bold;
   @apply leading-tight;
   @apply mb-6 lg:mb-8 3xl:mb-10;
 }
 
 .hero__description {
-  @apply text-xl lg:text-2xl 3xl:text-3xl;
+  @apply text--lg;
   @apply leading-snug;
+  @apply font-bold;
 }
 
 .hero__image {
@@ -34,18 +35,12 @@
 
 .hero--default {
 
-  .container {
-    @apply container--md;
-  }
-
   .hero__title {
     @apply order-1;
   }
 
   .hero__description {
     @apply order-2;
-    @apply text-lg lg:text-xl 3xl:text-2xl;
-    @apply font-bold;
   }
 }
 
