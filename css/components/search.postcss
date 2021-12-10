@@ -3,7 +3,7 @@
 \*----------------------------------------*/
 
 .search--main {
-  @apply flex pr-1;
+  @apply flex;
   @apply relative z-50;
 
   & .form__group__input {
@@ -36,7 +36,7 @@
 
 .search__button {
   @apply flex items-center;
-  @apply lg:p-1 xl:p-2 3xl:py-3 ;
+  @apply lg:p-1 xl:p-2 2xl:py-3;
   @apply relative z-10;
 }
 
@@ -81,12 +81,13 @@
   & input {
     @apply h-full lg:py-4;
     @apply pr-12;
-    @apply relative z-10;
+    margin-top: 0 !important; /* TODO improve this */
     @apply bg-white;
   }
 
   .search--negative & input {
     @apply bg-secondary-400;
+    @apply relative z-10;
   }
 
   .search--large & {
