@@ -10,7 +10,7 @@ export default {
 	},
   methods: {
     alterMenuClasses () {
-      let mobilemenu = document.getElementById('mobile-menu')
+      let mobilemenu = document.getElementById('mobile-menu-id')
       let context = window.getComputedStyle(mobilemenu).display === "none" ? 'desktop' : 'mobile'
 
       if (context === 'mobile') {

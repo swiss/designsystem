@@ -1,6 +1,6 @@
 <template>
   <div
-    id="mobile-menu"
+    id="mobile-menu-id"
     class="mobile-menu"
     :class="isOpen ? 'mobile-menu--is-open' : '' "
   >
@@ -37,8 +37,8 @@ export default {
   },
   mounted () {
     Navy.initMobile(
-      '#mobile-menu > nav', 
-      '#mobile-menu'
+      '#mobile-menu-id > nav', 
+      '#mobile-menu-id'
     );
   }
 }
