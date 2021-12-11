@@ -45,7 +45,7 @@
   >
     <div class="container">
       <div class="grid container--area gap--responsive">
-        <div class="container__area--xs">
+        <div class="container__area--sm">
           <h1 v-if="$slots.title" class="hero__title">
             <slot name="title"></slot>
           </h1>
@@ -53,7 +53,7 @@
             <slot name="description"></slot>
           </div>
         </div>
-        <div v-if="$slots.image" class="container__area--sm">
+        <div v-if="$slots.image" class="container__area--md">
           <slot name="image"></slot>
         </div>
       </div>

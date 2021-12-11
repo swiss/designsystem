@@ -40,8 +40,8 @@
 .grid--responsive-cols-1\/4-3\/4,
 .grid--responsive-cols-3\/4-1\/4 {
   @media (min-width: theme('screens.md')) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-areas: "A B B B";
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-areas: "A A A B B B B B B B B B";
     
     & > *:nth-child(1) { grid-area: A; }
     & > *:nth-child(2) { grid-area: B; }
@@ -54,7 +54,9 @@
 }
 
 .grid--responsive-cols-3\/4-1\/4 {
-  grid-template-areas: "A A A B";
+  @media (min-width: theme('screens.md')) {
+    grid-template-areas: "A A A A A A A A A B B B";
+  }
 }
 
 .grid--responsive-cols-1\/3-2\/3,
@@ -80,4 +82,26 @@
 /* add margin between consecutive grids */
 .grid + .grid {
   @apply mt-5 xs:mt-7 sm:mt-9 lg:mt-10 xl:mt-12 3xl:mt-16 ;
+}
+
+
+
+/* GRID WITHIN CONTAINER AREAS */
+
+.container__area--md.grid--responsive-cols-1\/4-3\/4,
+.container__area--md .grid--responsive-cols-1\/4-3\/4 {
+  
+  @media (min-width: theme('screens.xl')) {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-areas: "A A B B B B B B B B";
+  }
+}
+
+.container__area--md.grid--responsive-cols-3\/4-1\/4,
+.container__area--md .grid--responsive-cols-3\/4-1\/4 {
+
+  @media (min-width: theme('screens.xl')) {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-areas: "A A A A A A A A B B";
+  }
 }
