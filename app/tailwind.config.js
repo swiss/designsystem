@@ -6,7 +6,7 @@ module.exports = {
     './safelist.txt',
     './app/pages/**/*.vue',
     './app/components/ch/**/*.vue',
-    './app/components/stories/foundations/**/*.mdx'
+    './app/components/stories/layout/*.mdx'
   ],
   darkMode: false, // or 'media' or 'class',
   corePlugins: {
