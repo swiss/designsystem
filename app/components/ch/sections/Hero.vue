@@ -43,19 +43,17 @@
     v-else-if="this.type === 'default'"
     :class="computedClasses"
   >
-    <div class="container">
-      <div class="grid container--area gap--responsive">
-        <div class="container__area--sm">
-          <h1 v-if="$slots.title" class="hero__title">
-            <slot name="title"></slot>
-          </h1>
-          <div v-if="$slots.description" class="hero__description">
-            <slot name="description"></slot>
-          </div>
+    <div class="container container--area gap--responsive">
+      <div class="container__area--sm">
+        <h1 v-if="$slots.title" class="hero__title">
+          <slot name="title"></slot>
+        </h1>
+        <div v-if="$slots.description" class="hero__description">
+          <slot name="description"></slot>
         </div>
-        <div v-if="$slots.image" class="container__area--md">
-          <slot name="image"></slot>
-        </div>
+      </div>
+      <div v-if="$slots.image" class="container__area--md">
+        <slot name="image"></slot>
       </div>
     </div>
   </section>
