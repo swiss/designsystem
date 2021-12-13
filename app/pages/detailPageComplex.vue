@@ -60,15 +60,37 @@
             <p>
               Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
             </p>
-            <div class="ratio ratio--16/9">
+            <div class="ratio ratio--16/9 ratio--mb">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/tHd7kesDCWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <p>
               Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
             </p> 
           </div>
-          <div class="container__area--aside">
-            <h2 class="h3">Aside</h2>
+          <div class="container__area--aside" >
+            <div class="sticky sticky--top">
+              <Card type="default">
+                <!--template v-slot:image>
+                  <img src="https://placekitten.com/g/775/350" alt="cat">
+                </template-->
+                <div class="space-y-4">
+                  <h3 class="card__title">Side notes, can be sticky</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                    consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  </p>
+                </div>
+                <template v-slot:footerAction>
+                  <Btn
+                    variant="outline"
+                    icon-pos="only"
+                    icon="ArrowRight"
+                    label="Weiterlesen"
+                  />
+                </template>
+              </Card>
+            </div>
           </div>
         </div>
           
@@ -153,7 +175,10 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import Hero from "~/components/ch/sections/Hero";
+import Hero from '~/components/ch/sections/Hero'
+import Card from '~/components/ch/components/Card'
+import Btn from '~/components/ch/components/Btn'
+import SvgIcon from '~/components/ch/components/SvgIcon'
 
 export default {
   name: 'detailPageSimple',
@@ -166,7 +191,10 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    Hero
+    Hero,
+    Card,
+    Btn,
+    SvgIcon
   },
   methods: {
     getMobileMenuIsOpen() {
