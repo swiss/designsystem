@@ -77,8 +77,6 @@
 
   @apply  lg:col-start-2;
 
-  @apply border-2 border-green-500;
-
   .grid--reverse & {
     @apply  lg:col-start-6;
   }
@@ -90,86 +88,8 @@
   @apply  lg:col-span-4;
   
   @apply  md:col-start-8;
-  @apply border-2 border-blue-500;
 
   .grid--reverse & {
     @apply  lg:col-start-2;
   }
-}
-
-
-
-
-.show-grid {
-  @media (min-width: theme('screens.md')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(0*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(1*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(2*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(3*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(4*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(5*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(6*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(7*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(8*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(9*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(10*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(11*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(12*100%/12 + 0px) 0/2.25rem 100%;
-  }
-  background-repeat:no-repeat;
-
-  @media (min-width: theme('screens.lg')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(0*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(1*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(2*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(3*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(4*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(5*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(6*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(7*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(8*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(9*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(10*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(11*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(12*100%/12 + 0px) 0/2.5rem 100%;
-  }
-  background-repeat:no-repeat;
-
-  @media (min-width: theme('screens.xl')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(0*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(1*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(2*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(3*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(4*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(5*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(6*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(7*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(8*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(9*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(10*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(11*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(12*100%/12 + 0px) 0/3rem 100%;
-  }
-  background-repeat:no-repeat;
-
-  @media (min-width: theme('screens.3xl')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(0*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(1*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(2*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(3*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(4*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(5*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(6*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(7*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(8*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(9*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(10*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(11*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.1),rgba(255,0,0,0.1)) calc(12*100%/12 + 0px) 0/4rem 100%;
-  }
-  background-repeat:no-repeat;
 }
