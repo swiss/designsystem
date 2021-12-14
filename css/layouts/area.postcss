@@ -3,64 +3,66 @@
   AREA
 \* ---------------------------------------- */
 
-.area {
-  @apply grid grid-cols-12;
- 
-  & + & {
-    @apply pt-5 xs:pt-7 sm:pt-9 lg:pt-10 xl:pt-12 3xl:pt-16;
-  }
-}
-
-.area__full {
-  @apply col-span-12;
-}
-
-.area__center--xs {
-  @apply     col-span-12;
-  @apply  md:col-span-10;
-  @apply  lg:col-span-8;
-  @apply  xl:col-span-6;
-
-  @apply  md:col-start-2;
-  @apply  lg:col-start-3;
-  @apply  xl:col-start-4;
-}
-
-.area__center--sm {
-  @apply     col-span-12;
-  @apply  md:col-span-10;
-  @apply  xl:col-span-8;
-
-  @apply  md:col-start-2;
-  @apply xl:col-start-3;
-}
-
-.area__center--md {
-  @apply col-span-12;
-  @apply xl:col-start-2 xl:col-end-12;
-}
-
-.area__main {
-  @apply     col-span-12;
-  @apply  md:col-span-7;
-  @apply  lg:col-span-6;
-
-  @apply  lg:col-start-2;
-
-  .area--reverse & {
-    @apply md:col-start-6 md:order-2;
-  }
-}
-
-.area__aside {
-  @apply     col-span-12;
-  @apply  md:col-span-5;
-  @apply  lg:col-span-4;
+@layer utilities {
+  .area {
+    @apply grid grid-cols-12;
   
-  @apply  md:col-start-8;
+    & + & {
+      @apply pt-5 xs:pt-7 sm:pt-9 lg:pt-10 xl:pt-12 3xl:pt-16;
+    }
+  }
 
-  .area--reverse & {
-    @apply md:col-start-1 md:order-1;
+  .area__full {
+    @apply col-span-12;
+  }
+
+  .area__center--xs {
+    @apply     col-span-12;
+    @apply  md:col-span-10;
+    @apply  lg:col-span-8;
+    @apply  xl:col-span-6;
+
+    @apply  md:col-start-2;
+    @apply  lg:col-start-3;
+    @apply  xl:col-start-4;
+  }
+
+  .area__center--sm {
+    @apply     col-span-12;
+    @apply  md:col-span-10;
+    @apply  xl:col-span-8;
+
+    @apply  md:col-start-2;
+    @apply xl:col-start-3;
+  }
+
+  .area__center--md {
+    @apply col-span-12;
+    @apply xl:col-start-2 xl:col-end-12;
+  }
+
+  .area__main {
+    @apply     col-span-12;
+    @apply  md:col-span-7;
+    @apply  lg:col-span-6;
+
     @apply  lg:col-start-2;
+
+    .area--reverse & {
+      @apply md:col-start-6 md:order-2;
+    }
+  }
+
+  .area__aside {
+    @apply     col-span-12;
+    @apply  md:col-span-5;
+    @apply  lg:col-span-4;
+    
+    @apply  md:col-start-8;
+
+    .area--reverse & {
+      @apply md:col-start-1 md:order-1;
+      @apply  lg:col-start-2;
+    }
   }
 }
