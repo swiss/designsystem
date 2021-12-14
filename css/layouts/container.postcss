@@ -33,7 +33,7 @@
 
 /* FIXED 12 COLS GRID */
 
-.container--area {
+.area {
   @apply grid grid-cols-12;
  
   & + & {
@@ -41,11 +41,11 @@
   }
 }
 
-.container__area {
+.area__full {
   @apply col-span-12;
 }
 
-.container__area--xs {
+.area__center--xs {
   @apply     col-span-12;
   @apply  md:col-span-10;
   @apply  lg:col-span-8;
@@ -56,7 +56,7 @@
   @apply  xl:col-start-4;
 }
 
-.container__area--sm {
+.area__center--sm {
   @apply     col-span-12;
   @apply  md:col-span-10;
   @apply  xl:col-span-8;
@@ -65,31 +65,31 @@
   @apply xl:col-start-3;
 }
 
-.container__area--md {
+.area__center--md {
   @apply col-span-12;
   @apply xl:col-start-2 xl:col-end-12;
 }
 
-.container__area--left {
+.area__main {
   @apply     col-span-12;
   @apply  md:col-span-7;
   @apply  lg:col-span-6;
 
   @apply  lg:col-start-2;
 
-  .grid--reverse & {
+  .area--reverse & {
     @apply  lg:col-start-6;
   }
 }
 
-.container__area--aside {
+.area__aside {
   @apply     col-span-12;
   @apply  md:col-span-5;
   @apply  lg:col-span-4;
   
   @apply  md:col-start-8;
 
-  .grid--reverse & {
+  .area--reverse & {
     @apply  lg:col-start-2;
   }
 }

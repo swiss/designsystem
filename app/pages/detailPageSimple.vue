@@ -31,8 +31,8 @@
         </template>
       </Hero>
       <section class="section section--default section--pb-only">
-        <div class="container container--area gap--responsive">
-          <div class="container__area--xs">
+        <div class="container area gap--responsive">
+          <div class="area__center--xs">
             <h2 class="h2">
               Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
             </h2>
@@ -67,7 +67,7 @@
             </p> 
           </div>
 
-          <div class="container__area--md AND grid grid--responsive-cols-1/4-3/4 gap--responsive">
+          <div class="area__center--md AND grid grid--responsive-cols-1/4-3/4 gap--responsive">
             <figure>
               <picture>
                 <source
@@ -87,7 +87,7 @@
             </div>
           </div>
 
-          <div class="container__area--sm AND grid grid--responsive-cols-1/4-3/4 gap--responsive">
+          <div class="area__center--sm AND grid grid--responsive-cols-1/4-3/4 gap--responsive">
             <figure>
               <picture>
                 <source
@@ -107,7 +107,7 @@
             </div>
           </div>
 
-          <div class="container__area--xs AND grid grid--responsive-cols-1/4-3/4 gap--responsive">
+          <div class="area__center--xs AND grid grid--responsive-cols-1/4-3/4 gap--responsive">
             <figure>
               <picture>
                 <source
@@ -127,7 +127,7 @@
             </div>
           </div>
 
-          <div class="container__area--md AND grid grid--responsive-cols-3/4-1/4 grid--reverse gap--responsive">
+          <div class="area__center--md AND grid grid--responsive-cols-3/4-1/4 grid--reverse gap--responsive">
             <figure>
               <picture>
                 <source
@@ -147,7 +147,7 @@
             </div>
           </div>
 
-          <div class="container__area--md AND grid grid--responsive-cols-1/3-2/3 gap--responsive">
+          <div class="area__center--md AND grid grid--responsive-cols-1/3-2/3 gap--responsive">
             <figure>
               <picture>
                 <source
@@ -167,7 +167,7 @@
             </div>
           </div>
 
-          <div class="container__area--md AND grid grid--responsive-cols-2/3-1/3 grid--reverse gap--responsive">
+          <div class="area__center--md AND grid grid--responsive-cols-2/3-1/3 grid--reverse gap--responsive">
             <figure>
               <picture>
                 <source
@@ -187,7 +187,7 @@
             </div>
           </div>
 
-          <div class="container__area--xs">
+          <div class="area__center--xs">
             <h2 class="h2">
               Datenmodellablage ansehen
             </h2>
@@ -201,8 +201,8 @@
       <Quote />
 
       <section class="section section--default">
-        <div class="container container--area gap--responsive">
-          <div class="container__area--md AND grid grid--responsive-cols-2 gap--responsive">
+        <div class="container area gap--responsive">
+          <div class="area__center--md AND grid grid--responsive-cols-2 gap--responsive">
             <figure>
               <picture>
                 <source
@@ -222,8 +222,8 @@
             </div>
           </div>
         </div>
-        <div class="container container--area gap--responsive">
-          <div class="container__area--md AND grid grid--responsive-cols-2 grid--reverse gap--responsive">
+        <div class="container area gap--responsive">
+          <div class="area__center--md AND grid grid--responsive-cols-2 grid--reverse gap--responsive">
             <figure>
               <picture>
                 <source

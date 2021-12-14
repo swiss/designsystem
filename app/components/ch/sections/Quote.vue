@@ -1,7 +1,7 @@
 <template>
   <section class="section bg--secondary-50">
-    <div class="container container--area gap--responsive">
-      <div class="container__area--md AND grid grid--responsive-cols-3/4-1/4 gap--responsive">
+    <div class="container area gap--responsive">
+      <div class="area__center--md AND grid grid--responsive-cols-3/4-1/4 gap--responsive">
         <div>
           <h3 class="h3">
             Unsere Welt entwickelt sich ohne Rücksicht, und das Ergebnis ist ein Verlust der Artenvielfalt, Energieprobleme, Staus in den Städten. Aber Geografie kann, wenn sie richtig eingesetzt wird, dazu genutzt werden, nachhaltige und lebenswertere Städte neu zu gestalten
