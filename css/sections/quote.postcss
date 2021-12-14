@@ -1,0 +1,44 @@
+/*----------------------------------------*\
+  QUOTE
+\*----------------------------------------*/
+
+.quote {
+  @apply area__center--md;
+  @apply grid grid--responsive-cols-3/4-1/4;
+  @apply gap--responsive;
+  @apply relative;
+
+  
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-areas: "A A A A A A A A A A B B";
+  
+  & > *:nth-child(1) { grid-area: A; }
+  & > *:nth-child(2) { grid-area: B; }
+}
+
+.quote__text {
+  @apply flex flex-col h-full justify-center;
+}
+
+.quote__title {
+  @apply pb-4 relative;
+  @apply text--xl text--bold text-secondary-600;
+  
+  &::before {
+    content: '«';
+    @apply block absolute;
+    @apply text-4xl xl:text-7xl;
+    @apply -top-9;
+    @apply xl:-top-8 xl:-left-12;
+    @apply text-secondary-600;
+  }
+
+  &::after {
+    content: ' »';
+  }
+}
+
+.quote__author {
+  @apply text--sm text-secondary-400;
+}
+
