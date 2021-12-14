@@ -96,22 +96,7 @@
           
       </section>
 
-      <section class="section bg--secondary-50">
-        <div class="container container--area gap--responsive">
-          <div class="container__area--md AND grid grid--responsive-cols-3/4-1/4 gap--responsive">
-            <h3 class="h3">Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote </h3>
-            <figure>
-              <picture>
-                <source
-                  srcset="https://placekitten.com/g/1200/1200"
-                  media="(min-width: 1024px)"
-                />
-                <img src="https://placekitten.com/g/800/600" alt="cat" />
-              </picture>
-            </figure>
-          </div>
-        </div>
-      </section>
+      <Quote />
 
       <section class="section section--default">
         <div class="container container--area gap--responsive">
@@ -175,10 +160,11 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import Hero from '~/components/ch/sections/Hero'
 import Card from '~/components/ch/components/Card'
 import Btn from '~/components/ch/components/Btn'
 import SvgIcon from '~/components/ch/components/SvgIcon'
+import Hero from '~/components/ch/sections/Hero'
+import Quote from '~/components/ch/sections/Quote'
 
 export default {
   name: 'detailPageSimple',
@@ -191,10 +177,11 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    Hero,
     Card,
     Btn,
-    SvgIcon
+    SvgIcon,
+    Hero,
+    Quote
   },
   methods: {
     getMobileMenuIsOpen() {
