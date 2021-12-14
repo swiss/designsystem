@@ -6,15 +6,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 # Containers
 
-`.container` classes and its variants give a structured horizontal constraint to the content. Depending of the viewport, it combines maximal width and paddings definitions to define content's width in a coherent way.
-
-<Canvas >
-<div class="container">
-  Container example. Element width is limited on large screens.
-</div>
-</Canvas>
-
-# Containers and sections
+`.container` classes and its variants give a structured horizontal constraint to the content. Depending of the viewport, it combines maximal width and horizontal paddings to define content's width in a coherent way.
 
 `.container` is frequently a child of a `.section` element.
 - `.container` manage the horizontal spacings
@@ -28,16 +20,17 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
   </section>
 </Canvas>
 
+# Variants
 
-# Fixed 12 cols Grid
+- `container--flex` displays its content horizontally
 
-## Centered items
-
-<Canvas className="storybook-demo-grid">
-  <div class="grid area gap--responsive">
-    <div class="area__full">area__full</div>
-    <div class="area__center--md">area__center--md</div>
-    <div class="area__center--sm">area__center--sm</div>
-    <div class="area__center--xs">area__center--xs</div>
-  </div>
+<Canvas >
+  <section class="section bg--secondary-100">
+    <div class="container container--flex">
+      <div>Child 1</div>
+      <div>Child 2</div>
+      <div>Child 3</div>
+    </div>
+  </section>
 </Canvas>
+

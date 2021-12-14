@@ -41,9 +41,10 @@ export const parameters = {
         ],
         'Layouts',
         [
-          'Grids',
           'Sections',
           'Containers',
+          'Areas',
+          'Grids',
           'Ratios'
         ],
         'Components',

@@ -1,0 +1,60 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+<Meta
+  title="Layouts/Areas"
+/>
+
+# Areas
+
+`.area` and variants are CSS classes based on a 12 columns CSS grid. 
+
+Combined with `.container` classes, it define the main layout within a strict but flexible structure. 
+
+# Centered areas
+
+Use the following classes for `area` children:
+- `area__full` fullfills the 12 columns
+- `area__center--md` fills 10 columns on large viewports 
+- `area__center--sm` fills 8 columns on large viewports
+- `area__center--xs` fills 6 columns on large viewports 
+
+Additionally, a `gap--responsive` class applies default spacings between areas.
+
+<Canvas className="storybook-demo-grid">
+  <section>
+    <div class="container AND area gap--responsive">
+      <div class="area__full">area__full</div>
+      <div class="area__center--md">area__center--md</div>
+      <div class="area__center--sm">area__center--sm</div>
+      <div class="area__center--xs">area__center--xs</div>
+    </div>
+  </section>
+</Canvas>
+
+# Main and Aside areas
+
+- `area__main` is left aligned per default, use it in combination with `area__aside` 
+- `area__aside` is right aligned per default
+- use `area area--reverse` on the parent to swap `area__main` and `area__aside`
+
+<Canvas className="storybook-demo-grid">
+  <section>
+    <div class="container AND area gap--responsive">
+      <div class="area__main">area__main</div>
+      <div class="area__aside">area__aside</div>
+    </div>
+  </section>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <section>
+    <div class="container AND area area--reverse gap--responsive">
+      <div class="area__main">area__main</div>
+      <div class="area__aside">area__aside</div>
+    </div>
+  </section>
+</Canvas>
+
+<sup>Remark: the `AND` class name in the example has no CSS property, it just helps readability</sup>
+
+

@@ -1,7 +1,7 @@
 <template>
   <div class="section bg--secondary-50">
 
-    <div class="container container--sm">
+    <div class="container">
       <h2 class="h2">Classical input types</h2>
       <div class="form">
         <div class="form__group">
