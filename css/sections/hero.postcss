@@ -26,13 +26,13 @@
   @apply block relative;
   @apply overflow-hidden;
   @apply w-full;
-
-  img {
-    @apply absolute w-full h-full object-cover;
-  }
 }
 
 .hero--default {
+
+  .hero__content {
+    @apply area__center--sm;
+  }
 
   .hero__title {
     @apply order-1;
@@ -41,19 +41,23 @@
   .hero__description {
     @apply order-2;
   }
+
+  .hero__image {
+    @apply area__center--md;
+  }
 }
 
 .hero--wide {
-  @apply items-start;
 
   .hero__title {
     @apply order-1 md:order-2;
-    @apply md:w-2/3;
+    @apply md:w-4/5;
   }
 
   .hero__description {
     @apply order-3;
-    @apply md:w-2/3;
+    @apply md:w-4/5  xl:w-2/3;
+    @apply pb-8;
   }
 
   .hero__image {
@@ -61,27 +65,31 @@
     @apply mb-6 lg:mb-12 3xl:mb-24;
     @apply pb-[35%];
   }
+
+  img {
+    @apply absolute w-full h-full object-cover;
+  }
 }
 
 .hero--hub {
-  @apply items-start;
+  @apply pb-16 md:pb-16 3xl:pb-28;
+
+  .hero__content {
+    @apply col-span-12;
+    @apply md:col-span-10;
+    @apply lg:col-span-8;
+  }
 
   .hero__title {
     @apply order-1;
-    @apply md:w-2/3;
   }
 
   .hero__description {
     @apply order-2;
-    @apply md:w-2/3;
   }
 
   .hero__image {
-    @apply order-3;
-    @apply self-end;
-    @apply md:w-2/3;
-    @apply mt-4;
-    @apply pb-[30%];
+    @apply area__aside;
   }
 }
 

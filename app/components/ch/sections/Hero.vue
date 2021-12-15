@@ -4,59 +4,37 @@
     :class="computedClasses"
   >
     <div class="container">
-      <div class="grid area gap--responsive">
-        <h1 v-if="$slots.title" class="hero__title">
-          <slot name="title"></slot>
-        </h1>
-        <div v-if="$slots.description" class="hero__description">
-          <slot name="description"></slot>
-        </div>
-        <picture v-if="$slots.image" class="hero__image">
-          <slot name="image"></slot>
-        </picture>
+      <h1 v-if="$slots.title" class="hero__title">
+        <slot name="title"></slot>
+      </h1>
+      <div v-if="$slots.description" class="hero__description">
+        <slot name="description"></slot>
       </div>
-    </div>
-  </section>
-
-  <section
-    v-else-if="this.type === '2-cols'"
-    :class="computedClasses"
-  >
-    <div class="container">
-      <div class="grid area gap--responsive">
-        <h1 v-if="$slots.title" class="hero__title area__center--xs">
-          <slot name="title"></slot>
-        </h1>
-        <div class="hero--2-cols__container">
-          <div v-if="$slots.description" class="hero__description">
-            <slot name="description"></slot>
-          </div>
-          <picture v-if="$slots.image" class="hero__image area__center--sm">
-            <slot name="image"></slot>
-          </picture>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    v-else-if="this.type === 'default'"
-    :class="computedClasses"
-  >
-    <div class="container area gap--responsive">
-      <div class="area__center--sm">
-        <h1 v-if="$slots.title" class="hero__title">
-          <slot name="title"></slot>
-        </h1>
-        <div v-if="$slots.description" class="hero__description">
-          <slot name="description"></slot>
-        </div>
-      </div>
-      <div v-if="$slots.image" class="area__center--md">
+      <div v-if="$slots.image" class="hero__image">
         <slot name="image"></slot>
       </div>
     </div>
   </section>
+
+  <section
+    v-else
+    :class="computedClasses"
+  >
+    <div class="container AND area gap--responsive">
+      <div class="hero__content">
+        <h1 v-if="$slots.title" class="hero__title">
+          <slot name="title"></slot>
+        </h1>
+        <div v-if="$slots.description" class="hero__description">
+          <slot name="description"></slot>
+        </div>
+      </div>
+      <div v-if="$slots.image" class="hero__image">
+        <slot name="image"></slot>
+      </div>
+    </div>
+  </section>
+
 </template>
 
 <script>

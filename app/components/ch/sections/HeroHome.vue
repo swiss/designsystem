@@ -8,12 +8,12 @@
     <template v-slot:title>
       Who we are, what we do, all in one paragraph
     </template>
-    <p>
+    <template v-slot:description>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Suspendisse tincidunt enim id orci facilisis placerat.
       Proin odio mauris, venenatis non placerat at, finibus non tortor.
       Mauris sodales ultrices neque sit amet cogsectetur.
-    </p>
+    </template>
   </Hero>
 </template>
 
