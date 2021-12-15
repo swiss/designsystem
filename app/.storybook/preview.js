@@ -1,4 +1,3 @@
-import '../../dist/main.css'
 import './docs-fullscreen.css'
 
 import { parameters as nuxtParameters } from '~~/.nuxt-storybook/storybook/preview.js'
@@ -26,10 +25,7 @@ export const parameters = {
       order: [
         'Introduction',
         'Doc for developers',
-        [
-          'HTML Structure',
-          'Add CSS classes'
-        ],
+        ['HTML Structure', 'Add CSS classes'],
         'Foundations',
         [
           'Overview',
@@ -40,17 +36,17 @@ export const parameters = {
           ['List', 'Implementation'],
         ],
         'Layouts',
-        [
-          'General',
-          'Sections',
-          'Containers',
-          'Grids',
-          'Ratios'
-        ],
+        ['General', 'Sections', 'Containers', 'Grids', 'Ratios'],
         'Components',
         ['Logo', 'Button'],
         'Sections',
-        ['Header', ['TopBar', 'TopHeader', 'DesktopMenu'], 'Hero',  'Content', 'Footer'],
+        [
+          'Header',
+          ['TopBar', 'TopHeader', 'DesktopMenu'],
+          'Hero',
+          'Content',
+          'Footer',
+        ],
         'Pages',
         ['Homepage'],
       ],
