@@ -19,13 +19,9 @@
         </template>
         <template v-slot:image>
           <figure>
-            <picture>
-              <source
-                srcset="https://placekitten.com/g/1600/900"
-                media="(min-width: 800px)"
-              />
-              <img src="https://placekitten.com/g/1600/1200" alt="cat" />
-            </picture>
+            <div class="ratio ratio--16/9">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/tHd7kesDCWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <figcaption>Image label here — © Photograph Name</figcaption>
           </figure>
         </template>
