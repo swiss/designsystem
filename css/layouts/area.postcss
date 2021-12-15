@@ -1,10 +1,10 @@
 
 /* ----------------------------------------*\
-  AREA
+  container--grid
 \* ---------------------------------------- */
 
 @layer utilities {
-  .area {
+  .container--grid {
     @apply grid grid-cols-12;
   
     & + & {
@@ -12,11 +12,11 @@
     }
   }
 
-  .area__full {
+  .container__full {
     @apply col-span-12;
   }
 
-  .area__center--xs {
+  .container__center--xs {
     @apply     col-span-12;
     @apply  md:col-span-10;
     @apply  lg:col-span-8;
@@ -27,7 +27,7 @@
     @apply  xl:col-start-4;
   }
 
-  .area__center--sm {
+  .container__center--sm {
     @apply     col-span-12;
     @apply  md:col-span-10;
     @apply  xl:col-span-8;
@@ -36,31 +36,31 @@
     @apply xl:col-start-3;
   }
 
-  .area__center--md {
+  .container__center--md {
     @apply col-span-12;
     @apply xl:col-start-2 xl:col-end-12;
   }
 
-  .area__main {
+  .container__main {
     @apply     col-span-12;
     @apply  md:col-span-7;
     @apply  lg:col-span-6;
 
     @apply  lg:col-start-2;
 
-    .area--reverse & {
+    .container--reverse & {
       @apply md:col-start-6 md:order-2;
     }
   }
 
-  .area__aside {
+  .container__aside {
     @apply     col-span-12;
     @apply  md:col-span-5;
     @apply  lg:col-span-4;
     
     @apply  md:col-start-8;
 
-    .area--reverse & {
+    .container--reverse & {
       @apply md:col-start-1 md:order-1;
       @apply  lg:col-start-2;
     }

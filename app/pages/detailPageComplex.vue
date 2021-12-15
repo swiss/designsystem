@@ -31,9 +31,9 @@
         </template>
       </Hero>
       <section class="section section--default section--pb-only">
-        <div class="container area gap--responsive">
+        <div class="container container--grid gap--responsive">
 
-          <div class="area__main">
+          <div class="container__main">
             <h2 class="h2">
               Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
             </h2>
@@ -67,7 +67,7 @@
               Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
             </p> 
           </div>
-          <div class="area__aside" >
+          <div class="container__aside" >
             <div class="sticky sticky--top">
               <Card type="default">
                 <!--template v-slot:image>
@@ -99,45 +99,127 @@
       <Quote />
 
       <section class="section section--default">
-        <div class="container area gap--responsive">
-          <div class="area__center--md AND grid grid--responsive-cols-2 gap--responsive">
-            <figure>
-              <picture>
-                <source
-                  srcset="https://placekitten.com/g/1600/1200"
-                  media="(min-width: 1024px)"
-                />
-                <img src="https://placekitten.com/g/800/600" alt="cat" />
-              </picture>
-            </figure>
-            <div>
-              <h2 class="h2">
-                Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
-              </h2>
-              <p>
-                Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden. Modelldokumentation zur Publikation eingereicht werden.
-              </p>
+        <div class="container container--grid gap--responsive">
+          <div class="container__center--md">
+            <div class="grid grid--responsive-cols-2 gap--responsive">
+              <figure>
+                <picture>
+                  <source
+                    srcset="https://placekitten.com/g/1600/1200"
+                    media="(min-width: 1024px)"
+                  />
+                  <img src="https://placekitten.com/g/800/600" alt="cat" />
+                </picture>
+              </figure>
+              <div>
+                <h2 class="h2">
+                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+                </h2>
+                <p>
+                  Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden. Modelldokumentation zur Publikation eingereicht werden.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid--responsive-cols-2 grid--reverse gap--responsive">
+              <figure>
+                <picture>
+                  <source
+                    srcset="https://placekitten.com/g/1600/1200"
+                    media="(min-width: 1024px)"
+                  />
+                  <img src="https://placekitten.com/g/1600/900" alt="cat" />
+                </picture>
+              </figure>
+              <div>
+                <h2 class="h2">
+                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+                </h2>
+                <p>
+                  Über den Kontakt models@geo.admin.ch können und die Modelldokumentation zur Publikation eingereicht models@geo.admin.ch können und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="container area gap--responsive">
-          <div class="area__center--md AND grid grid--responsive-cols-2 grid--reverse gap--responsive">
-            <figure>
-              <picture>
-                <source
-                  srcset="https://placekitten.com/g/1600/1200"
-                  media="(min-width: 1024px)"
-                />
-                <img src="https://placekitten.com/g/1600/900" alt="cat" />
-              </picture>
-            </figure>
-            <div>
-              <h2 class="h2">
-                Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
-              </h2>
-              <p>
-                Über den Kontakt models@geo.admin.ch können und die Modelldokumentation zur Publikation eingereicht models@geo.admin.ch können und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
-              </p>
+      </section>
+
+      <section class="section bg--secondary-50">
+        <div class="container">
+          <div class="grid grid--responsive-cols-3 gap--responsive">
+            <Card type="default">
+              <div class="space-y-4">
+                <h3 class="card__title">Card example</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                  sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                </p>
+              </div>
+            </Card>
+            <Card type="default">
+              <div class="space-y-4">
+                <h3 class="card__title">Card example</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                  sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                </p>
+              </div>
+            </Card>
+            <Card type="default">
+              <div class="space-y-4">
+                <h3 class="card__title">Card example</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                  sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                </p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__full">
+            <div class="grid grid--responsive-cols-2/3-1/3 gap--responsive">
+              <figure>
+                <picture>
+                  <source
+                    srcset="https://placekitten.com/g/1600/1200"
+                    media="(min-width: 1024px)"
+                  />
+                  <img src="https://placekitten.com/g/800/600" alt="cat" />
+                </picture>
+              </figure>
+              <div>
+                <h2 class="h2">
+                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+                </h2>
+                <p>
+                  Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden. Modelldokumentation zur Publikation eingereicht werden.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid--responsive-cols-1/3-2/3 grid--reverse gap--responsive">
+              <figure>
+                <picture>
+                  <source
+                    srcset="https://placekitten.com/g/1600/1200"
+                    media="(min-width: 1024px)"
+                  />
+                  <img src="https://placekitten.com/g/1600/900" alt="cat" />
+                </picture>
+              </figure>
+              <div>
+                <h2 class="h2">
+                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+                </h2>
+                <p>
+                  Über den Kontakt models@geo.admin.ch können und die Modelldokumentation zur Publikation eingereicht models@geo.admin.ch können und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+                </p>
+              </div>
             </div>
           </div>
         </div>

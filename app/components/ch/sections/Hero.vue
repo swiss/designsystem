@@ -20,7 +20,7 @@
     v-else
     :class="computedClasses"
   >
-    <div class="container AND area gap--responsive">
+    <div class="container container--grid gap--responsive">
       <div class="hero__content">
         <h1 v-if="$slots.title" class="hero__title">
           <slot name="title"></slot>

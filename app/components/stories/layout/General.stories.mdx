@@ -4,49 +4,49 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
   title="Layouts/General"
 />
 
-# Anatomy of a layout
+# Sections and containers
 
-Schematically, a `section` contains a `container`. A `container` contains an `area` and its children.
+Schematically, a `section` contains a `container`. 
+- `.section` manage the vertical spacing
+- `.container` manage the horizontal spacing
 
 ```html
 <main id="main-content">     
   <section class="section">
     <div class="container">
-      <div class="area">
-        <div class="area__[variant]" />
-      </div>
+      <!-- Content -->
     </div>
   </section>
 </main>
 ```
 
-A bit more concise, the `container`can be combined with the `area` element.
+ Apply the `container--grid` variant to create a 12 cols grid container.
 
 ```html
 <main id="main-content">     
   <section class="section">
-    <div class="container AND area">
-      <div class="area__[variant]" />
+    <div class="container container--grid">
+      <div class="container__[variant]">
     </div>
   </section>
 </main>
 ```
 
-Remark: the `AND` class name in the example has no CSS property, it just helps readability
+# Complete example for a simple section
 
-# Complete example for a simple page layout
-
-On the basis explained above, additional classes adjeust the global layout of a section:
+On the basis explained above, additional classes adjust the global layout of a section:
 
 ```html
 <main id="main-content">     
   <section class="section section--default">
-    <div class="container area gap--responsive">
-      <div class="area__center--xs">
-        <!-- Content displayed in a tight and centered area -->
+    <div class="container container--grid gap--responsive">
+      <div class="container__center--xs">
+        <!-- Content displayed in a tight and centered container -->
       </div>
-      <div class="area__center--md AND grid grid--responsive-cols-2 gap--responsive">
-        <!-- Content on 2 columns, in a medium and centered area -->
+      <div class="container__center--md">
+        <div class="grid grid--responsive-cols-2 gap--responsive">
+          <!-- Content on 2 columns, in a medium and centered container -->
+        </div>
       </div>
     </div>
   </section>
@@ -57,17 +57,17 @@ Check the complete example of a <a href="?path=/docs/pages-detail-page-simple--e
 
 
 
-# Example for a main and aside page layout
+# Example for a main + aside section
 
 ```html
 <main id="main-content">     
   <section class="section section--default">
-    <div class="container area gap--responsive">
-      <div class="area__main">
-        <!-- Main content, displayed in a left aligned area -->
+    <div class="container container--grid gap--responsive">
+      <div class="container__main">
+        <!-- Main content, displayed in a left aligned container--grid -->
       </div>
-      <div class="area__aside">
-        <!-- Aside content, displayed in a right aligned area -->
+      <div class="container__aside">
+        <!-- Aside content, displayed in a right aligned container--grid -->
       </div> 
     </div>
   </section>

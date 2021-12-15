@@ -44,7 +44,6 @@ export const parameters = {
           'General',
           'Sections',
           'Containers',
-          'Areas',
           'Grids',
           'Ratios'
         ],

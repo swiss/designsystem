@@ -1,6 +1,6 @@
 <template>
   <section class="section bg--secondary-50">
-    <div class="container area gap--responsive">
+    <div class="container container--grid gap--responsive">
       <div class="quote">
         <div class="quote__text">
           <h3 class="quote__title">
