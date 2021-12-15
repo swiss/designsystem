@@ -10,8 +10,8 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 `.container` is frequently a child of a `.section` element.
 
-<Canvas className="storybook-demo-grid">
-  <section>
+<Canvas className="storybook-demo-grid storybook-show-container">
+  <section class="section section--default">
     <div class="container">
       Container with horizontal padding and limited width on large viewport
     </div>
@@ -22,7 +22,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 - `container--flex` displays its content horizontally
 
-<Canvas className="storybook-demo-grid">
+<Canvas className="storybook-demo-grid storybook-show-container">
   <section>
     <div class="container container--flex">
       <div>Child 1</div>
@@ -44,11 +44,11 @@ Use the following classes for `container--grid` children:
 - `container__center--sm` fills 8 columns on large viewports
 - `container__center--xs` fills 6 columns on large viewports 
 
-Additionally, a `gap--responsive` class applies default spacings between container--grids.
+Additionally, a `gap--responsive` class applies default spacings between grid items.
 
-<Canvas className="storybook-demo-grid">
+<Canvas className="storybook-demo-grid storybook-show-grid">
   <section>
-    <div class="container AND container--grid gap--responsive">
+    <div class="container container--grid gap--responsive">
       <div class="container__full">container__full</div>
       <div class="container__center--md">container__center--md</div>
       <div class="container__center--sm">container__center--sm</div>
@@ -63,16 +63,16 @@ Additionally, a `gap--responsive` class applies default spacings between contain
 - `container__aside` is right aligned per default
 - use `container--grid container--reverse` on the parent to swap `container__main` and `container__aside`
 
-<Canvas className="storybook-demo-grid">
+<Canvas className="storybook-demo-grid storybook-show-grid">
   <section>
-    <div class="container AND container--grid gap--responsive">
+    <div class="container container--grid gap--responsive">
       <div class="container__main">container__main</div>
       <div class="container__aside">container__aside</div>
     </div>
   </section>
 </Canvas>
 
-<Canvas className="storybook-demo-grid">
+<Canvas className="storybook-demo-grid storybook-show-grid">
   <section>
     <div class="container container--grid container--reverse gap--responsive">
       <div class="container__main">container__main</div>
