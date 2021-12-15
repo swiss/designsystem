@@ -1,0 +1,78 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+
+<Meta
+  title="Layouts/General"
+/>
+
+# Anatomy of a layout
+
+Schematically, a `section` contains a `container`. A `container` contains an `area` and its children.
+
+```html
+<main id="main-content">     
+  <section class="section">
+    <div class="container">
+      <div class="area">
+        <div class="area__[variant]" />
+      </div>
+    </div>
+  </section>
+</main>
+```
+
+A bit more concise, the `container`can be combined with the `area` element.
+
+```html
+<main id="main-content">     
+  <section class="section">
+    <div class="container AND area">
+      <div class="area__[variant]" />
+    </div>
+  </section>
+</main>
+```
+
+Remark: the `AND` class name in the example has no CSS property, it just helps readability
+
+# Complete example for a simple page layout
+
+On the basis explained above, additional classes adjeust the global layout of a section:
+
+```html
+<main id="main-content">     
+  <section class="section section--default">
+    <div class="container area gap--responsive">
+      <div class="area__center--xs">
+        <!-- Content displayed in a tight and centered area -->
+      </div>
+      <div class="area__center--md AND grid grid--responsive-cols-2 gap--responsive">
+        <!-- Content on 2 columns, in a medium and centered area -->
+      </div>
+    </div>
+  </section>
+</main>
+```
+
+Check the complete example of a <a href="?path=/docs/pages-detail-page-simple--example">Simple page</a>
+
+
+
+# Example for a main and aside page layout
+
+```html
+<main id="main-content">     
+  <section class="section section--default">
+    <div class="container area gap--responsive">
+      <div class="area__main">
+        <!-- Main content, displayed in a left aligned area -->
+      </div>
+      <div class="area__aside">
+        <!-- Aside content, displayed in a right aligned area -->
+      </div> 
+    </div>
+  </section>
+</main>
+```
+
+Check the complete example of a <a href="?path=/docs/pages-detail-page-complex--example">Complex page</a>
+

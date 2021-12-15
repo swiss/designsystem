@@ -41,6 +41,7 @@ export const parameters = {
         ],
         'Layouts',
         [
+          'General',
           'Sections',
           'Containers',
           'Areas',
