@@ -4,13 +4,13 @@
       <h2 class="section__title">Dienstleistungen</h2>
       <div class="grid grid--responsive-cols-2 gap--responsive">
         <Card type="highlight">
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Datenmodellablage</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>
@@ -24,13 +24,13 @@
           </template>
         </Card>
         <Card type="highlight">
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Geodienste</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>
@@ -47,13 +47,13 @@
 
       <div class="grid grid--responsive-cols-3 gap--responsive mt-16">
         <Card type="highlight">
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Datenbezug</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>
@@ -67,12 +67,12 @@
           </template>
         </Card>
         <Card type="highlight">
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Beratung und Koordination</h3>
             <p>
               At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>
@@ -86,13 +86,13 @@
           </template>
         </Card>
         <Card type="highlight">
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Geodienste</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>
