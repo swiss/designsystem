@@ -15,9 +15,9 @@
       :aria-controls="`content-${key}`"
       :id="`accordion-control-${key}`"
     >
-      <div class="accordion__title">
+      <h3 class="accordion__title">
         {{ item.title }}
-      </div>
+      </h3>
       <SvgIcon
         icon="ChevronDown"
         size="xl"
