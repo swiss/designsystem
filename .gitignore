@@ -5,3 +5,4 @@ app/storybook-static/*
 app/.nuxt-storybook/*
 
 .idea/
+.DS_Store
