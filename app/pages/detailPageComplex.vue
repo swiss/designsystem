@@ -22,7 +22,7 @@
             <div class="ratio ratio--16/9">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/tHd7kesDCWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <figcaption>Image label here — © Photograph Name</figcaption>
+            <figcaption>Video label here — © Photograph Name</figcaption>
           </figure>
         </template>
       </Hero>
@@ -92,7 +92,7 @@
           
       </section>
 
-      <Quote />
+      <QuoteSection />
 
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
@@ -242,7 +242,7 @@ import Card from '~/components/ch/components/Card'
 import Btn from '~/components/ch/components/Btn'
 import SvgIcon from '~/components/ch/components/SvgIcon'
 import Hero from '~/components/ch/sections/Hero'
-import Quote from '~/components/ch/sections/Quote'
+import QuoteSection from '~/components/ch/sections/QuoteSection'
 
 export default {
   name: 'detailPageSimple',
@@ -259,7 +259,7 @@ export default {
     Btn,
     SvgIcon,
     Hero,
-    Quote
+    QuoteSection
   },
   methods: {
     getMobileMenuIsOpen() {

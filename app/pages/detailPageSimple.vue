@@ -112,7 +112,7 @@
           </div>
         </section>
 
-      <Quote />
+      <QuoteSection />
 
       <section class="section section--default">
           <div class="container container--grid gap--responsive">
@@ -150,7 +150,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import Hero from "~/components/ch/sections/Hero"
-import Quote from "~/components/ch/sections/Quote"
+import QuoteSection from "~/components/ch/sections/QuoteSection"
 import Accordion from "~/components/ch/components/Accordion"
 
 export default {
@@ -165,7 +165,7 @@ export default {
     FooterInformation,
     FooterNavigation,
     Hero,
-    Quote,
+    QuoteSection,
     Accordion
   },
   methods: {

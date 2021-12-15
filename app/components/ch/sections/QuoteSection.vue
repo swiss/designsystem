@@ -13,7 +13,7 @@
         <figure class="quote__image">
           <picture>
             <source
-              srcset="https://placekitten.com/g/600/600"
+              srcset="https://placekitten.com/g/800/800"
               media="(min-width: 1024px)"
             />
             <img src="https://placekitten.com/g/400/400" alt="cat"  class="shadow-2xl" />
@@ -27,7 +27,7 @@
 <script>
 
 export default {
-  name: 'Quote',
+  name: 'QuoteSection',
   props: {},
   components: {},
 }
