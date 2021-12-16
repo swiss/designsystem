@@ -81,3 +81,124 @@ Additionally, a `gap--responsive` class applies default spacings between grid it
   </section>
 </Canvas>
 
+
+----------
+
+
+# Homepage and hub pages structure
+
+The default full width of `container` is used for hub pages and homepage. It's generallay populated with Card displayed on a grid.
+
+```html
+<main id="main-content">
+  <Hero />
+  <section class="section bg--secondary-50">
+    <div class="container">
+      <h2 class="section__title">Section title</h2>
+      <div class="grid grid--responsive-cols-3 gap--responsive">
+        <!-- Content here, for example 3 column card list on gray background -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--default">
+    <div class="container">
+      <h2 class="section__title">Section title</h2>
+      <div class="grid grid--responsive-cols-2 gap--responsive">
+        <!-- Content here, for example 2 columns card list on white background -->
+      </div>
+    </div>
+  </section>
+</main>
+```
+
+- <a href="?path=/docs/pages-homepage--example">Homepage complete example</a>
+- <a href="?path=/docs/pages-hub-page--example">Hub page complete example</a>
+
+
+# Default page structure
+
+Default page's content is mainly displayed into a `container__center--xs` sub-container. 
+
+We can give a visual rythm to the page by inserting text-image blocks in a broader `container__center--sm` or `container__center--md` container, and then continue the content flow into a `container__center--xs` container again.
+
+Consecutive sections with different full width backgrounds will give visual rythm too, for example the quote section:
+
+```html
+<main id="main-content">
+  <Hero />
+  <section class="section section--default section--pb-only"> 
+    <div class="container container--grid gap--responsive">
+      <div class="container__center--xs">
+        <!-- Content flow here -->
+      </div>
+      <div class="container__center--sm">
+        <div class="grid grid--responsive-cols-1/4-3/4 gap--responsive">
+          <!-- visual break with image left and text right, the container is broader -->
+        </div>
+      </div>
+      <div class="container__center--xs">
+        <!-- Content flow continues here -->
+      </div>
+    </div>
+  </section>
+
+  <QuoteSection>
+    <!-- visual break here, the quote takes the whole screen width -->
+  </QuoteSection>
+
+  <section class="section section--default"> 
+    <div class="container container--grid gap--responsive">
+      <div class="container__center--xs">
+        <!-- Content flow continues here -->
+      </div>
+    </div>
+  </section>
+</main>
+```
+
+- <a href="?path=/docs/pages-detail-page-simple--example">Default page complete example</a>
+
+
+# Complex page structure
+
+Complex page's main content can be displayed into a `container__main` sub-container, and side content can be displayed into a `container__aside` sub-container.
+Then, the content can be rythmed by consecutive sections with different backgrounds, and different rythms for text-image displays. A broader freedom should be possible while building these pages.
+
+```html
+<main id="main-content">
+  <Hero />
+  <section class="section section--default section--pb-only"> 
+    <div class="container container--grid gap--responsive">
+      <div class="container__main">
+        <!-- Main content flow here -->
+      </div>
+      <div class="container__aside">
+         <!-- Side content flow here -->
+      </div>
+    </div>
+  </section>
+
+  <QuoteSection>
+    <!-- visual break here, the quote takes the whole screen width -->
+  </QuoteSection>
+
+  <section class="section section--default">
+    <div class="container">
+      <div class="grid grid--responsive-cols-2 gap--responsive">
+        <!-- Content here, for example 2 columns text-image block on white background -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg--secondary-50">
+    <div class="container">
+      <div class="grid grid--responsive-cols-3 gap--responsive">
+        <!-- Content here, for example 3 columns card list on gray background -->
+      </div>
+    </div>
+  </section>
+</main>
+```
+
+- <a href="?path=/docs/pages-detail-page-complex--example">Complex page complete example</a>
