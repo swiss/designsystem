@@ -10,7 +10,22 @@
       <Breadcrumb isHomePage />
     </header>
     <main id="main-content">
-      <HeroHome />
+      <Hero type="wide">
+        <template v-slot:image>
+          <source srcset="https://placekitten.com/g/1620/600"
+                  media="(min-width: 800px)">
+          <img src="https://placekitten.com/g/800/296" alt="cat">
+        </template>
+        <template v-slot:title>
+          Who we are, what we do, all in one paragraph
+        </template>
+        <template v-slot:description>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Suspendisse tincidunt enim id orci facilisis placerat.
+          Proin odio mauris, venenatis non placerat at, finibus non tortor.
+          Mauris sodales ultrices neque sit amet cogsectetur.
+        </template>
+      </Hero>
       <TopNewsSection />
       <ServicesSection />
       <NewsSection />
@@ -46,7 +61,7 @@ import MostSeenSection from "~/components/ch/sections/MostSeenSection";
 import PortraitSection from "~/components/ch/sections/PortraitSection";
 import MediasSection from "~/components/ch/sections/MediasSection";
 import NewsSection from "~/components/ch/sections/NewsSection";
-import HeroHome from "~/components/ch/sections/HeroHome";
+import Hero from "~/components/ch/sections/Hero";
 
 export default {
   name: 'Index',
@@ -66,7 +81,7 @@ export default {
     MostSeenSection,
     PortraitSection,
     MediasSection,
-    HeroHome
+    Hero
   },
   methods: {
     getMobileMenuIsOpen() {

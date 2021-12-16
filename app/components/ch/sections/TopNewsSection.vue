@@ -145,16 +145,17 @@
             <SvgIcon icon="Twitter" size="xl" class="mr-2" />
             <div>Tweets from @swiss_geoportal</div>
           </template>
-
-          <a class="twitter-timeline"
-            data-theme="light"
-            data-tweet-limit="1"
-            data-chrome="noheader, nofooter, noborders, transparent"
-            href="https://twitter.com/swiss_geoportal"
-          >
-            Tweets by swiss_geoportal
-          </a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <template v-slot:body>
+            <a class="twitter-timeline"
+              data-theme="light"
+              data-tweet-limit="1"
+              data-chrome="noheader, nofooter, noborders, transparent"
+              href="https://twitter.com/swiss_geoportal"
+            >
+              Tweets by swiss_geoportal
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </template>
           <template v-slot:footerAction>
             <Btn
               variant="outline"
