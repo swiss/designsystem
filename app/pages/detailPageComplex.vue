@@ -22,7 +22,7 @@
             <div class="ratio ratio--16/9">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/tHd7kesDCWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <figcaption>Video label here — © Photograph Name</figcaption>
+            <figcaption>Video label here —&nbsp;©&nbsp;Photograph Name</figcaption>
           </figure>
         </template>
       </Hero>
@@ -48,7 +48,7 @@
                 />
                 <img src="https://placekitten.com/g/1600/900" alt="cat" />
               </picture>
-              <figcaption>Image label here — © Photograph Name</figcaption>
+              <figcaption>Image label here —&nbsp;©&nbsp;Photograph Name</figcaption>
             </figure>
             <h2 class="h2">
               Datenmodellablage ansehen

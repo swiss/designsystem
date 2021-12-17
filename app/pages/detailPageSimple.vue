@@ -26,7 +26,7 @@
               />
               <img src="https://placekitten.com/g/1600/1200" alt="cat" />
             </picture>
-            <figcaption>Image label here — © Photograph Name</figcaption>
+            <figcaption>Datenmodelle als http-Ressource nutzbar zu machen. Der Vorteil für einen Benutzer liegt darin, dass die Modelldateien und evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein müssen —&nbsp;©&nbsp;Photograph Name</figcaption>
           </figure>
         </template>
       </Hero>
@@ -51,7 +51,7 @@
                 />
                 <img src="https://placekitten.com/g/1600/900" alt="cat" />
               </picture>
-              <figcaption>Image label here — © Photograph Name</figcaption>
+              <figcaption>Image label here —&nbsp;©&nbsp;Photograph Name</figcaption>
             </figure>
             <h2 class="h2">
               Datenmodellablage ansehen
@@ -109,6 +109,35 @@
             </h2>
             <p>
               Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
+            </p>
+          </div>
+          <div class="container__center--sm">
+            <div class="grid grid--responsive-cols-3/4-1/4 grid--reverse gap--responsive">
+              <figure>
+                <picture>
+                  <source
+                    srcset="https://placekitten.com/g/1600/1200"
+                    media="(min-width: 1024px)"
+                  />
+                  <img src="https://placekitten.com/g/800/600" alt="cat" />
+                </picture>
+              </figure>
+              <div>
+                <h2 class="h2">
+                  Modelldokumentation
+                </h2>
+                <p>
+                  Über den Kontakt models@geo.admin.ch können die Modelldokumentation zur Publikation eingereicht werden. Über den Kontakt models@geo.admin.ch können die zur Publikation eingereicht werden.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container__center--xs">
+            <h2 class="h2">
+              Modellkatalog ansehen
+            </h2>
+            <p>
+              Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
             </p>
           </div>
         </div>
