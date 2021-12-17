@@ -2,22 +2,29 @@
   RATIO
 \*----------------------------------------*/
 
-.ratio {}
+.ratio {
+  @apply relative;
+
+  & > * {
+    @apply w-full h-full;
+    @apply absolute top-0 right-0 bottom-0 left-0;
+  }
+}
 
 .ratio--1\/1 {
-  @apply aspect-w-1 aspect-h-1;
+  @apply pb-[98%]; /* ratio 1:1, with visual correction */
 }
 
 .ratio--2\/1 {
-  @apply aspect-w-2 aspect-h-1;
+  @apply pb-[50%]; /* ratio 2:1 */
 }
 
 .ratio--4\/3 {
-  @apply aspect-w-4 aspect-h-3;
+  @apply pb-[75%]; /* ratio 4:3 */
 }
 
 .ratio--16\/9 {
-  @apply aspect-w-16 aspect-h-9;
+  @apply pb-[56.25%]; /* ratio 16:9 */
 }
 
 .ratio--mb {

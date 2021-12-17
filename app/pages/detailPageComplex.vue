@@ -19,14 +19,10 @@
         </template>
         <template v-slot:image>
           <figure>
-            <picture>
-              <source
-                srcset="https://placekitten.com/g/1600/900"
-                media="(min-width: 800px)"
-              />
-              <img src="https://placekitten.com/g/1600/1200" alt="cat" />
-            </picture>
-            <figcaption>Image label here — © Photograph Name</figcaption>
+            <div class="ratio ratio--16/9">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/tHd7kesDCWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <figcaption>Video label here — © Photograph Name</figcaption>
           </figure>
         </template>
       </Hero>
@@ -73,14 +69,14 @@
                 <!--template v-slot:image>
                   <img src="https://placekitten.com/g/775/350" alt="cat">
                 </template-->
-                <div class="space-y-4">
+                <template v-slot:body>
                   <h3 class="card__title">Side notes, can be sticky</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
                     consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                     sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   </p>
-                </div>
+                </template>
                 <template v-slot:footerAction>
                   <Btn
                     variant="outline"
@@ -96,7 +92,7 @@
           
       </section>
 
-      <Quote />
+      <QuoteSection />
 
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
@@ -147,34 +143,34 @@
         <div class="container">
           <div class="grid grid--responsive-cols-3 gap--responsive">
             <Card type="default">
-              <div class="space-y-4">
+              <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
                   consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                   sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 </p>
-              </div>
+              </template>
             </Card>
             <Card type="default">
-              <div class="space-y-4">
+              <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
                   consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                   sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 </p>
-              </div>
+              </template>
             </Card>
             <Card type="default">
-              <div class="space-y-4">
+              <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
                   consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                   sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 </p>
-              </div>
+              </template>
             </Card>
           </div>
         </div>
@@ -246,7 +242,7 @@ import Card from '~/components/ch/components/Card'
 import Btn from '~/components/ch/components/Btn'
 import SvgIcon from '~/components/ch/components/SvgIcon'
 import Hero from '~/components/ch/sections/Hero'
-import Quote from '~/components/ch/sections/Quote'
+import QuoteSection from '~/components/ch/sections/QuoteSection'
 
 export default {
   name: 'detailPageSimple',
@@ -263,7 +259,7 @@ export default {
     Btn,
     SvgIcon,
     Hero,
-    Quote
+    QuoteSection
   },
   methods: {
     getMobileMenuIsOpen() {

@@ -7,7 +7,7 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Covid 19</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
@@ -15,7 +15,7 @@
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
             <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>
@@ -32,14 +32,14 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Auftritte und Anlässe während des Covid</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
             <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>
@@ -56,7 +56,7 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Amtsvorsteherin</h3>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -64,7 +64,7 @@
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
             <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>

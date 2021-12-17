@@ -5,14 +5,15 @@
 
  .navy {
   position: relative;
-  perspective: 1200;
+  perspective: 1200px;
   height: 100%;
 
   & li > a:not(.navy__back),
   & li > span:not(.navy__title),
   & li > button {
-    @apply menu__item menu__item--small lg:menu__item--condensed;
+    @apply menu__item menu__item--small;
     @apply menu__item--border w-full;
+    @apply xl:px-3 xl:py-3;
 
     &.active::after {
       content:'';
@@ -42,10 +43,12 @@
 }
 
 .navy__has-children {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: row;
+  @apply flex flex-row;
+  @apply items-start justify-between;
+
+  & .icon {
+    @apply h-5 w-5;
+  }
 }
 
 .navy__back {

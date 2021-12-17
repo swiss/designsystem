@@ -7,7 +7,7 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Geo.Hackmin</h3>
             <p>
               Hatten Sie schon immer eine Idee, die sie mit Geodaten umsetzen wollten?
@@ -27,7 +27,7 @@
                 <div>Zürich</div>
               </li>
             </ul>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Veranstaltung
           </template>
@@ -44,7 +44,7 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Daten und Dienste online kostenlos als Open Government Data (OGD)</h3>
             <p>
               Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -52,7 +52,7 @@
               Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
               Lorem
             </p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>
@@ -72,7 +72,7 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Daten und Dienste online kostenlos als Open Government Data (OGD)</h3>
             <p>
               Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
@@ -80,7 +80,7 @@
               no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
             </p>
             <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
-          </div>
+          </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
           </template>
@@ -98,7 +98,7 @@
             <SvgIcon icon="FolderOpen" size="xl" class="mr-2" />
             <div>Dossier</div>
           </template>
-          <div class="space-y-4">
+          <template v-slot:body>
             <h3 class="card__title">Chinastrategie 2025</h3>
             <p>
               Description Dossier China strategy Description Description Dossier China strategy Description
@@ -138,23 +138,24 @@
                 </a>
               </li>
             </ul>
-          </div>
+          </template>
         </Card>
         <Card type="default">
           <template v-slot:header>
             <SvgIcon icon="Twitter" size="xl" class="mr-2" />
             <div>Tweets from @swiss_geoportal</div>
           </template>
-
-          <a class="twitter-timeline"
-            data-theme="light"
-            data-tweet-limit="1"
-            data-chrome="noheader, nofooter, noborders, transparent"
-            href="https://twitter.com/swiss_geoportal"
-          >
-            Tweets by swiss_geoportal
-          </a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <template v-slot:body>
+            <a class="twitter-timeline"
+              data-theme="light"
+              data-tweet-limit="1"
+              data-chrome="noheader, nofooter, noborders, transparent"
+              href="https://twitter.com/swiss_geoportal"
+            >
+              Tweets by swiss_geoportal
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </template>
           <template v-slot:footerAction>
             <Btn
               variant="outline"

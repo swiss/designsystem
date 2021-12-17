@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import QuoteSection from '../../ch/sections/QuoteSection.vue'
+
+<Meta title="Sections/Content/Quote" component={QuoteSection} />
+
+export const Template = () => ({
+  props: [],
+  components: { QuoteSection },
+  template: '<QuoteSection />',
+})
+
+# Quote Section
+
+<Canvas>
+  <Story name="Example">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+<a href="?path=/story/sections-quote--example">
+  Go to the Canvas Tab
+</a>
+
+---
+    
+<a href="?id=sections-content-quote--example&viewMode=story" target="_blank">
+  Open page in full width in a new tab
+</a>
