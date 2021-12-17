@@ -11,15 +11,23 @@
   }
 }
 
+.hero__content {
+  @apply space-y-6 lg:space-y-8 3xl:space-y-10;
+}
+
 .hero__title {
   @apply text--3xl font-bold;
   @apply leading-tight;
-  @apply mb-6 lg:mb-8 3xl:mb-10;
 }
 
 .hero__description {
   @apply text--lg;
   @apply leading-snug;
+}
+
+.hero__cta .btn {
+  @apply mr-4 md:mr-5 xl:mr-6;
+  @apply mb-4 md:mb-5 xl:mb-6;
 }
 
 .hero__image {
@@ -34,40 +42,55 @@
     @apply container__center--sm;
   }
 
-  .hero__title {
-    @apply order-1;
-  }
-
-  .hero__description {
-    @apply order-2;
-  }
-
   .hero__image {
     @apply container__center--md;
   }
 }
 
-.hero--wide {
+.hero--main-image {
+  @apply container--py;
 
-  .hero__title {
-    @apply order-1 md:order-2;
-    @apply md:w-4/5;
+  .hero__content {
+    @apply     col-span-12;
+    @apply  md:col-span-6;
+    @apply flex flex-col h-full justify-center;
   }
 
-  .hero__description {
-    @apply order-3;
-    @apply md:w-4/5  xl:w-2/3;
-    @apply pb-8;
+  .hero__title {
+    @apply text--3xl;
   }
 
   .hero__image {
-    @apply order-1;
-    @apply mb-6 lg:mb-12 3xl:mb-24;
-    @apply pb-[35%];
+    @apply     col-span-12;
+    @apply  md:col-span-6;
   }
 
   img {
-    @apply absolute w-full h-full object-cover;
+    @apply shadow-2xl;
+  }
+}
+
+.hero--main {
+  @apply py-20 lg:py-32 3xl:py-40;
+
+  .hero__content {
+    @apply     col-span-12;
+    @apply  md:col-span-10;
+    @apply  lg:col-span-8;
+    @apply flex flex-col h-full justify-center;
+  }
+
+  .hero__title {
+    @apply text--4xl;
+  }
+
+  .hero__image {
+    @apply     col-span-12;
+    @apply  md:col-span-6;
+  }
+
+  img {
+    @apply shadow-2xl;
   }
 }
 

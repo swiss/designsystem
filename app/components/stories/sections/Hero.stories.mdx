@@ -1,0 +1,139 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Hero from '../../ch/sections/Hero.vue';
+import Btn from '../../ch/components/Btn.vue';
+
+<Meta
+  title="Sections/Content/Hero"
+  components={Hero}
+  argTypes={{
+    type: { 
+      name:'Type', 
+      control: { 
+        type: 'select', 
+        options: ['default', 'main', 'main-image', 'hub', 'hidden'] 
+      }
+    },
+    
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Hero,Btn },
+  template:
+    `
+    <Hero :type="type">
+      <template 
+        v-if="${args.type == 'main-image' || args.type == 'default'}" 
+        v-slot:image
+      >
+        <picture>
+          <img 
+            v-if="${args.type == 'main-image'}" 
+            src="https://placekitten.com/g/1200/900" alt="ratio is 4/3"
+          >
+          <img 
+            v-if="${args.type == 'default'}" 
+            src="https://placekitten.com/g/1600/900" alt="ratio is 16/9"
+          >
+        </picture>
+      </template>
+      <template v-slot:title>
+        Willkommen zu Hause. Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
+      </template>
+      <template v-slot:description>
+        Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
+      </template>
+      <template 
+        v-if="${args.type == 'main-image' || args.type == 'main'}"  
+        v-slot:cta
+      >
+        <Btn
+            variant="outline"
+            icon-pos="right"
+            icon="ArrowRight"
+            label="Unsere Dienstleistungen"
+          />
+      </template>      
+    </Hero>
+    `,
+});
+
+# Hero
+
+## Main hero without image
+
+Use it on the homepage or on landing pages
+
+<Canvas>
+  <Story
+    name="Main without image"
+    args={{
+      type: 'main',   
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Main hero with image
+
+Use it on the homepage or on landing pages
+<Canvas>
+  <Story
+    name="Main with image"
+    args={{
+      type: 'main-image',   
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Hero for hub pages
+
+<Canvas>
+  <Story
+    name="Hub page"
+    args={{
+      type: 'hub',   
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Hero for detail pages
+
+<Canvas>
+  <Story
+    name="Detail page"
+    args={{
+      type: 'default',   
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Hero for screenreaders only 
+
+If there isn't any specific content for the hero, we still need to display a `h1` title for screen readers. 
+Set type to `sr-only` to hide the component visually. Check the <a href="?path=/story/sections-content-hero--example">Storybook Canvas Tab</a> to display the HTML markup.
+<Canvas>
+  <Story
+    name="Screen readers only"
+    args={{
+      type: 'sr-only',   
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+<a href="?path=/story/sections-content-hero--example">Go to the Canvas Tab</a>
+
+
+

@@ -1,21 +1,8 @@
 <template>
-  <section
-    v-if="this.type === 'wide'"
-    :class="computedClasses"
-  >
-    <div class="container">
-      <h1 v-if="$slots.title" class="hero__title">
-        <slot name="title"></slot>
-      </h1>
-      <div v-if="$slots.description" class="hero__description">
-        <slot name="description"></slot>
-      </div>
-      <div v-if="$slots.image" class="hero__image">
-        <slot name="image"></slot>
-      </div>
-    </div>
-  </section>
-
+  <h1 v-if="$slots.title && this.type == 'sr-only'" class="sr-only">
+    <slot name="title"></slot>
+    <slot name="description"></slot>
+  </h1>
   <section
     v-else
     :class="computedClasses"
@@ -28,13 +15,15 @@
         <div v-if="$slots.description" class="hero__description">
           <slot name="description"></slot>
         </div>
+        <div v-if="$slots.cta" class="hero__cta">
+          <slot name="cta"></slot>
+        </div>
       </div>
       <div v-if="$slots.image" class="hero__image">
         <slot name="image"></slot>
       </div>
     </div>
   </section>
-
 </template>
 
 <script>
@@ -46,12 +35,12 @@ export default {
       type: String,
       validator: (prop) => [
         'default',
-        'wide',
+        'main',
+        'main-image',
         'hub',
-        '2-cols'
+        'sr-only'
       ].includes(prop)
-    },
-    default: 'default'
+    }
   },
 
   computed: {

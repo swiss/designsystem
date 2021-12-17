@@ -197,9 +197,9 @@ module.exports = {
       '4xl': '2rem',
       '5xl': '2.5rem',
       '6xl': '3rem',
-      '7xl': '4rem',
-      '8xl': '5rem',
-      '9xl': '7rem',
+      '7xl': '3.5rem',
+      '8xl': '4rem',
+      '9xl': '5rem',
     },
     fontFamily: {
       regular: ['FrutigerNeueLTPro-Regular', 'Hind', 'Fallback-font'],
@@ -212,10 +212,10 @@ module.exports = {
       DEFAULT:
         '0px 1px 2px 0px rgba(0,0,0,0.06), 0px 1px 5px 0px rgba(0,0,0,0.08)',
       md: '0px 2px 4px -1px rgba(0,0,0,0.06), 0px 4px 10px -1px rgba(0,0,0,0.08)',
-      lg: '0px 2px 6px -1px rgba(0,0,0,0.05), 0px 5px 20px -3px rgba(0,0,0,0.08)',
-      xl: '0px 6px 10px -5px rgba(0,0,0,0.04), 0px 15px 25px -3px rgba(0,0,0,0.09)',
+      lg: '0px 2px 6px -1px rgba(0,0,0,0.06), 0px 5px 20px -3px rgba(0,0,0,0.08)',
+      xl: '0px 6px 10px -5px rgba(0,0,0,0.06), 0px 15px 25px -3px rgba(0,0,0,0.09)',
       '2xl':
-        '0px 10px 20px 0px rgba(0,0,0,0.05), 1px 10px 70px -8px rgba(0,0,0,0.13)',
+        '0px 10px 20px 0px rgba(0,0,0,0.06), 1px 10px 70px -8px rgba(0,0,0,0.13)',
       none: '0px 0px 0px 0px rgba(0,0,0,0)',
     },
     borderRadius: {

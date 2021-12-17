@@ -10,21 +10,27 @@
       <Breadcrumb isHomePage />
     </header>
     <main id="main-content">
-      <Hero type="wide">
-        <template v-slot:image>
-          <source srcset="https://placekitten.com/g/1620/600"
-                  media="(min-width: 800px)">
-          <img src="https://placekitten.com/g/800/296" alt="cat">
-        </template>
+      <Hero type="main">
         <template v-slot:title>
-          Who we are, what we do, all in one paragraph
+          Willkommen zu Hause. Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
         </template>
         <template v-slot:description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Suspendisse tincidunt enim id orci facilisis placerat.
-          Proin odio mauris, venenatis non placerat at, finibus non tortor.
-          Mauris sodales ultrices neque sit amet cogsectetur.
+          Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
         </template>
+        <template v-slot:cta>
+          <Btn
+            variant="outline"
+            icon-pos="right"
+            icon="ArrowRight"
+            label="Unsere Dienstleistungen"
+          />
+          <Btn
+            variant="outline"
+            icon-pos="right"
+            icon="ArrowRight"
+            label="Über uns"
+          />
+        </template>      
       </Hero>
       <TopNewsSection />
       <ServicesSection />
@@ -54,14 +60,15 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
+import TopNewsSection from "~/components/ch/sections/TopNewsSection"
+import ServicesSection from "~/components/ch/sections/ServicesSection"
+import MostSeenSection from "~/components/ch/sections/MostSeenSection"
+import PortraitSection from "~/components/ch/sections/PortraitSection"
+import MediasSection from "~/components/ch/sections/MediasSection"
+import NewsSection from "~/components/ch/sections/NewsSection"
+import Hero from "~/components/ch/sections/Hero"
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
-import TopNewsSection from "~/components/ch/sections/TopNewsSection";
-import ServicesSection from "~/components/ch/sections/ServicesSection";
-import MostSeenSection from "~/components/ch/sections/MostSeenSection";
-import PortraitSection from "~/components/ch/sections/PortraitSection";
-import MediasSection from "~/components/ch/sections/MediasSection";
-import NewsSection from "~/components/ch/sections/NewsSection";
-import Hero from "~/components/ch/sections/Hero";
+import Btn from '../components/ch/components/Btn.vue'
 
 export default {
   name: 'Index',
@@ -74,14 +81,15 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    BackToTopBtn,
     TopNewsSection,
     ServicesSection,
     NewsSection,
     MostSeenSection,
     PortraitSection,
     MediasSection,
-    Hero
+    Hero,
+    BackToTopBtn,
+    Btn
   },
   methods: {
     getMobileMenuIsOpen() {

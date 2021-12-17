@@ -10,23 +10,80 @@
       <Breadcrumb />
     </header>
     <main id="main-content">
-      <Hero type="default">
+      <Hero type="main-image">
+        <template v-slot:image>
+          <picture>
+            <source 
+              srcset="https://placekitten.com/g/1200/900"
+              media="(min-width: 800px)"
+            >
+            <img src="https://placekitten.com/g/900/600" alt="cat">
+          </picture>
+        </template>
         <template v-slot:title>
-          Web Mapping Services WMS: Verfügbare Dienste und Daten
+          Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport
         </template>
         <template v-slot:description>
-          Das Konzept des INTERLIS Model Repository sieht vor, Datenmodelle als http-Ressource nutzbar zu machen. Dabei werden die INTERLIS-Modelldateien auf einem Webserver abgelegt, und können beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden. Der Vorteil für einen Benutzer liegt darin, dass die Modelldateien und evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein müssen.
+          Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
         </template>
-        <template v-slot:image>
-          <figure>
-            <div class="ratio ratio--16/9">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/tHd7kesDCWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <figcaption>Video label here —&nbsp;©&nbsp;Photograph Name</figcaption>
-          </figure>
-        </template>
+        <template v-slot:cta>
+          <Btn
+            variant="outline"
+            icon-pos="right"
+            icon="ArrowRight"
+            label="Unsere Dienstleistungen"
+          />
+          <Btn
+            variant="outline"
+            icon-pos="right"
+            icon="ArrowRight"
+            label="Über uns"
+          />
+        </template>      
       </Hero>
-      <section class="section section--default section--pb-only">
+      <section class="section bg--secondary-50">
+        <div class="container">
+          <div class="grid grid--responsive-cols-4 gap--responsive">
+            <Card type="default">
+              <template v-slot:body>
+                <h3 class="card__title">Card example</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet.
+                </p>
+              </template>
+            </Card>
+            <Card type="default">
+              <template v-slot:body>
+                <h3 class="card__title">Card example</h3>
+                <p>
+                  Sed onsetetur sadipscing elitr ipsum dolor sit amet, consetetur sadipscing elitr,
+                  sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                </p>
+              </template>
+            </Card>
+            <Card type="default">
+              <template v-slot:body>
+                <h3 class="card__title">Card example</h3>
+                <p>
+                  Consetetur sadipscing elitr sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                  sed Lorem ipsum dolor sit amet.
+                </p>
+              </template>
+            </Card>
+            <Card type="default">
+              <template v-slot:body>
+                <h3 class="card__title">Card example</h3>
+                <p>
+                  Vonsetetur sadipscing elitr, onsetetur sadipscing elitr sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                </p>
+              </template>
+            </Card>
+          </div>
+        </div>
+      </section>
+      <section class="section section--default">
         <div class="container container--grid gap--responsive">
 
           <div class="container__main">
