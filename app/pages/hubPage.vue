@@ -10,7 +10,17 @@
       <Breadcrumb />
     </header>
     <main id="main-content">
-      <HeroHub />
+      <Hero type="hub">
+        <template v-slot:title>
+          Unsere Dienstleistungen
+        </template>
+        <template v-slot:description>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Suspendisse tincidunt enim id orci facilisis placerat.
+          Proin odio mauris, venenatis non placerat at, finibus non tortor.
+          Mauris sodales ultrices neque sit amet cogsectetur.
+        </template>
+      </Hero>
       <ServicesSection />
     </main>
     <footer class="footer" id="main-footer">
@@ -29,7 +39,7 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import HeroHub from "~/components/ch/sections/HeroHub";
+import Hero from "~/components/ch/sections/Hero";
 import ServicesSection from '../components/ch/sections/ServicesSection.vue'
 
 export default {
@@ -43,7 +53,7 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    HeroHub,
+    Hero,
     ServicesSection
   },
   methods: {
