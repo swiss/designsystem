@@ -1,7 +1,7 @@
 module.exports = {
   plugins: {
     'postcss-import': {},
-    'postcss-nested': {},
+    'tailwindcss/nesting': {},
     ...(process.env.NODE_ENV === 'css'
       ? { tailwindcss: { config: './app/tailwind.config.js' } }
       : {}),

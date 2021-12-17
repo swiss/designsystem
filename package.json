@@ -36,7 +36,6 @@
   },
   "devDependencies": {
     "postcss": "^8.3.5",
-    "postcss-nested": "^5.0.5",
     "svg-inline-loader": "^0.8.2"
   }
 }
