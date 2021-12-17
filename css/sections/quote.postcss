@@ -4,10 +4,30 @@
 
 .quote {
   @apply container__center--md;
-  @apply grid grid--responsive-cols-3/4-1/4;
+  @apply grid;
   @apply gap--responsive;
   @apply relative;
 
+  @media (min-width: theme('screens.md')) {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-template-areas: "A A A A A A A A A B B B";
+      
+      & > *:nth-child(1) { grid-area: A; }
+      & > *:nth-child(2) { grid-area: B; }
+
+      &.grid--reverse {
+        & > *:nth-child(1) { grid-area: B; }
+        & > *:nth-child(2) { grid-area: A; }
+      }
+    }
+
+    &.container__center--md,
+    .container__center--md & {
+      @media (min-width: theme('screens.xl')) {
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        grid-template-areas: "A A A A A A A A B B";
+      }
+    }
   
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-template-areas: "A A A A A A A A A A B B";

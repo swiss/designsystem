@@ -47,10 +47,10 @@
     @apply  lg:col-span-6;
 
     @apply  lg:col-start-2;
+  }
 
-    .container--reverse & {
-      @apply md:col-start-6 md:order-2;
-    }
+  .container--reverse .container__main {
+    @apply md:col-start-6 md:order-2;
   }
 
   .container__aside {
@@ -59,10 +59,10 @@
     @apply  lg:col-span-4;
     
     @apply  md:col-start-8;
+  }
 
-    .container--reverse & {
-      @apply md:col-start-1 md:order-1;
-      @apply  lg:col-start-2;
-    }
+  .container--reverse .container__aside {
+    @apply md:col-start-1 md:order-1;
+    @apply  lg:col-start-2;
   }
 }
