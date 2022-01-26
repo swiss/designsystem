@@ -21,7 +21,7 @@ If the video need a label, use the `figure` and `figcaption`combination.
 </figure>
 ```
 
-Then, the parent `container` will constraint the video width: 
+Wrapped into a `ratio` parent, the `iframe` element becomes responsive and keeps a specific ratio. Thus, the video width is defined by the `container` parent, and the video height is defined by the `ratio--[variant]` class. The `width` and the `height` attributes of the `iframe` element have no effect anymore.
 
 <Canvas>
   <div class="container container--grid gap--responsive">
