@@ -68,24 +68,44 @@
 
           <div class="top-bar__grid">
             <div class="top-bar__grid__box-1">
-              <h4 class="top-bar__title">Zur Bundesrat Webseite gehen</h4>
-              <p>
-                Sieben Departementsvorsteherinnen und Departementsvorsteher bilden den Bundesrat.
-                Entschieden wird gemeinsam. Der Bundeskanzler unterstützt die Regierung.
-              </p>
-              <Btn label="Bundesrat Webseite besuchen" icon="External" icon-pos="right" variant="outline-negative" size="sm" />
+              <h4 class="top-bar__title">Regierung</h4>
+              <ul class="menu">
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
+                    <div>
+                      <div class="overtitle">BR</div>
+                      <div>
+                        Der Schweizerische Bundesrat
+                      </div>
+                    </div>
+                    <SvgIcon
+                      icon="External"
+                      class="menu__item__icon"
+                    />
+                  </a>
+                </li>
+                <li class="menu__item menu__item--negative menu__item--brim">
+                  <a href="javascript:void(0)" class="menu__item__flex">
+                    <div>
+                      <div class="overtitle">BK</div>
+                      <div>
+                        Die Schweizerische Bundeskanzlei – die Stabsstelle des Bundesrats
+                      </div>
+                    </div>
+                    <SvgIcon
+                      icon="External"
+                      class="menu__item__icon"
+                    />
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="top-bar__grid__box-2">
-              <h4 class="top-bar__title">Zur Bundeskanzlei Webseite gehen</h4>
-              <p>
-                Die Bundeskanzlei ist die Stabsstelle des Bundesrats und hat die Funktion eines Scharniers zwischen Regierung,
-                Verwaltung, Parlament und Öffentlichkeit.
-              </p>
-              <Btn label="Bundeskanzlei Webseite besuchen" icon="External" icon-pos="right" variant="outline-negative" size="sm" />
+              <!-- Potential additional information here -->
             </div>
 
             <div class="top-bar__grid__box-3">
-              <h4 class="top-bar__title">Alle Departemente</h4>
+              <h4 class="top-bar__title">Departemente</h4>
               <ul class="menu">
                 <li class="menu__item menu__item--negative menu__item--brim">
                   <a href="javascript:void(0)" class="menu__item__flex">
@@ -189,7 +209,7 @@
             </div>
 
             <div class="top-bar__grid__box-4">
-              <h4 class="top-bar__title">Alle Ämter</h4>
+              <h4 class="top-bar__title">Ämter</h4>
               <div class="search search--negative search--large">
                 <div class="search__group">
                   <input 
