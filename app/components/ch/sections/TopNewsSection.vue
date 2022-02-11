@@ -140,7 +140,7 @@
             </ul>
           </template>
         </Card>
-        <Card type="default">
+        <Card type="twitter">
           <template v-slot:header>
             <SvgIcon icon="Twitter" size="xl" class="mr-2" />
             <div>Tweets from @swiss_geoportal</div>
@@ -148,7 +148,7 @@
           <template v-slot:body>
             <a class="twitter-timeline"
               data-theme="light"
-              data-tweet-limit="1"
+              data-tweet-limit="4"
               data-chrome="noheader, nofooter, noborders, transparent"
               href="https://twitter.com/swiss_geoportal"
             >

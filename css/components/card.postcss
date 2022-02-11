@@ -50,6 +50,19 @@
   }
 }
 
+.card--twitter {
+  @apply shadow-lg;
+
+  .card__body {
+    @apply p-3;
+    @apply max-h-[700px] overflow-y-scroll;
+  }
+
+  .card__footer {
+    @apply pt-6;
+  }
+}
+
 .card__image {
   @apply relative pb-[56.25%]; /* 16/9 ratio */
   @apply overflow-hidden;
