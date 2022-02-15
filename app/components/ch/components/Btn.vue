@@ -1,5 +1,11 @@
 <template>
-  <button type="button" :class="classes" :aria-label="iconPos === 'only' ? label : ''">
+  <component 
+    :is="tag" 
+    :href="link" 
+    :type="type" 
+    :class="classes" 
+    :aria-label="aria"
+  >
     <SvgIcon
       v-if="this.icon"
       :icon="this.icon"
@@ -11,7 +17,7 @@
     >
       {{ label }}
     </span>
-  </button>
+  </component>
 </template>
 
 <script>
@@ -23,6 +29,10 @@ export default {
     SvgIcon
   },
   props: {
+    to: {
+      type: String,
+      required: false
+    },
     variant: {
       type: String,
       validator: (prop) => [
@@ -61,6 +71,22 @@ export default {
   },
 
   computed: {
+    tag () {
+      return this.to ? 'a' : 'button'
+    },
+
+    type () {
+      return this.to ? false : 'button'
+    },
+
+    link () {
+      return this.to ? this.to : false
+    },
+
+    aria () {
+      return this.iconPos === 'only' && this.type === 'button' ? this.label : false
+    },
+    
     classes () {
       let base = 'btn '
       if (this.variant) base += `btn--${this.variant} `

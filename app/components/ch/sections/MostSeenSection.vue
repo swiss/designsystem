@@ -21,6 +21,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -44,6 +45,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -68,6 +70,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -89,6 +92,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowUpRight"
@@ -106,6 +110,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowUpRight"
@@ -124,6 +129,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowUpRight"

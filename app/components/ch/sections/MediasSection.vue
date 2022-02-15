@@ -13,6 +13,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -29,6 +30,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -45,6 +47,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -61,6 +64,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -71,6 +75,7 @@
       </div>
       <div class="section__action">
         <Btn
+          to="#"
           label="Alle Medienmitteilungen ansehen"
           variant="bare"
           icon-pos="right"

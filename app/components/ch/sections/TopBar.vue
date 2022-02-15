@@ -391,7 +391,7 @@
 <script>
 import TopBarNavigation from '../navigations/TopBarNavigation'
 import SvgIcon from '../components/SvgIcon'
-import Btn from "../components/Btn";
+import Btn from "../components/Btn"
 import LanguageSwitcher from '../components/LanguageSwitcher'
 
 export default {

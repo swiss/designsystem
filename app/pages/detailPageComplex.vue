@@ -28,12 +28,14 @@
         </template>
         <template v-slot:cta>
           <Btn
+            to="#"
             variant="outline"
             icon-pos="right"
             icon="ArrowRight"
             label="Unsere Dienstleistungen"
           />
           <Btn
+            to="#"
             variant="outline"
             icon-pos="right"
             icon="ArrowRight"
@@ -136,6 +138,7 @@
                 </template>
                 <template v-slot:footerAction>
                   <Btn
+                    to="#"
                     variant="outline"
                     icon-pos="only"
                     icon="ArrowRight"

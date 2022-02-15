@@ -5,7 +5,7 @@
 /* TYPES */
 .btn {
   @apply inline-flex items-center;
-  @apply px-[1em];
+  @apply px-4;
   @apply leading-tight;
   @apply rounded-sm;
   @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
@@ -19,6 +19,7 @@
 }
 
 .btn--bare {
+  @apply px-1;
   @apply text-secondary-800 font-normal;
   @apply hover:text-primary-600;
 }
@@ -48,20 +49,20 @@
 /* SIZES */
 .btn,
 .btn--base {
-  @apply min-h-[40px] md:min-h-[44px] lg:min-h-[48px];
-  @apply text-sm md:text-base lg:text-lg;
+  @apply min-h-[44px] xl:min-h-[48px] 3xl:min-h-[52px];
+  @apply text--base;
   @apply leading-5 lg:leading-6;
 }
 
 .btn--sm {
-  @apply min-h-[34px] md:min-h-[40px] lg:min-h-[44px];
-  @apply text-xs md:text-sm lg:text-base;
+  @apply min-h-[34px] xl:min-h-[40px] 3xl:min-h-[44px];
+  @apply text--sm;
   @apply leading-4 lg:leading-5;
 }
 
 .btn--lg {
-  @apply min-h-[44px] md:min-h-[48px] lg:min-h-[54px];
-  @apply text-base md:text-lg lg:text-xl;
+  @apply min-h-[48px] xl:min-h-[52px] 3xl:min-h-[56px];
+  @apply text--lg;
   @apply leading-6;
 }
 

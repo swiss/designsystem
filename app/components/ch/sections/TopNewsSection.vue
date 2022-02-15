@@ -33,6 +33,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -58,6 +59,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -86,6 +88,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -158,6 +161,7 @@
           </template>
           <template v-slot:footerAction>
             <Btn
+              to="#"
               variant="outline"
               icon-pos="only"
               icon="ArrowRight"
@@ -168,7 +172,7 @@
       </div>
 
       <div class="section__action">
-        <Btn label="Alle News sehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
+        <Btn to="#" label="Alle News sehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
   </section>

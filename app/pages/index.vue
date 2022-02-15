@@ -19,12 +19,14 @@
         </template>
         <template v-slot:cta>
           <Btn
+            to="#"
             variant="outline"
             icon-pos="right"
             icon="ArrowRight"
             label="Unsere Dienstleistungen"
           />
           <Btn
+            to="#"
             variant="outline"
             icon-pos="right"
             icon="ArrowRight"

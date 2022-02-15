@@ -39,11 +39,26 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Example" />
 
-## Button types
+## Button or link
+You can use the same class names for `button` or `a` elements
+<Canvas>
+<button type="button" class="btn btn--base btn--outline">
+  <span class="btn__text">
+    I am a button
+  </span>
+</button>
+<a href="#" class="btn btn--base btn--outline">
+  <span class="btn__text">
+    I am a link
+  </span>
+</a>
+</Canvas>
+
+## Button variations
 For type variations, the following css classes are built:
 - `btn--outline` for standard buttons
-- `btn--bare` for buttons without strokes
 - `btn--filled` for buttons used in a form
+- `btn--bare` for buttons without strokes
 
 <Canvas>
 <button type="button" class="btn btn--base btn--outline">
@@ -51,14 +66,14 @@ For type variations, the following css classes are built:
     btn--outline
   </span>
 </button>
-<button type="button" class="btn btn--base btn--bare">
-  <span class="btn__text">
-    btn--bare
-  </span>
-</button>
 <button type="button" class="btn btn--base btn--filled">
   <span class="btn__text">
     btn--filled
+  </span>
+</button>
+<button type="button" class="btn btn--base btn--bare">
+  <span class="btn__text">
+    btn--bare
   </span>
 </button>
 </Canvas>
