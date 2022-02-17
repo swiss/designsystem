@@ -1,5 +1,5 @@
 <template>
-  <section class="section section--default bg--secondary-50">
+  <section class="section bg--secondary-50">
     <div class="container container--grid">
       <div class="container__center--md">
         <div class="grid grid--responsive-cols-2 gap--responsive">
