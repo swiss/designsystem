@@ -56,19 +56,19 @@
               :content='[
                 {
                   title: "Öffnungszeiten",
-                  content:  "<table>" +
-                            "<tr> <td>Montag</td>     <td>08:00 - 12:00</td> <td>13:00 - 17:00</td> </tr>" + 
-                            "<tr> <td>Dienstag</td>   <td>08:00 - 12:00</td> <td>13:00 - 17:00</td> </tr>" +
-                            "<tr> <td>Mittwoch</td>   <td>08:00 - 12:00</td> <td>13:00 - 17:00</td> </tr>" +
-                            "<tr> <td>Donnerstag</td> <td>08:00 - 12:00</td> <td>13:00 - 17:00</td> </tr>" +
-                            "<tr> <td>Freitag</td>    <td>08:00 - 12:00</td> <td>Geschlossen</td> </tr>" +
+                  content:  "<table class=\"table table--compact\">" +
+                            "<tr> <td>Montag</td>     <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>" + 
+                            "<tr> <td>Dienstag</td>   <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>" +
+                            "<tr> <td>Mittwoch</td>   <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>" +
+                            "<tr> <td>Donnerstag</td> <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>" +
+                            "<tr> <td>Freitag</td>    <td>08:00-12:00</td> <td>Geschlossen</td> </tr>" +
                             "</table>"
                 }
               ]'
             />
           </div>
           <div class="space-y-6">
-            <iframe src='https://map.geo.admin.ch/embed.html?topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,ch.swisstopo.swisstlm3d-wanderwege,ch.bav.haltestellen-oev&layers_visibility=false,false,false,true,true&layers_timestamp=18641231,,,,&layers_opacity=1,1,1,0.65,0.7&lang=fr&E=2612569.69&N=1176170.16&zoom=2' width='400' height='300' frameborder='0' style='border:0'></iframe>
+            <iframe src='https://map.geo.admin.ch/embed.html?topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,ch.swisstopo.swisstlm3d-wanderwege,ch.bav.haltestellen-oev&layers_visibility=false,false,false,true,true&layers_timestamp=18641231,,,,&layers_opacity=1,1,1,0.65,0.7&lang=fr&E=2612569.69&N=1176170.16&zoom=2' width='100%' height='318' frameborder='0' style='border:0'></iframe>
             <ul class="list list--icon list--loose">
               <li>
                 <Btn 

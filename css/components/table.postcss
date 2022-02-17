@@ -32,16 +32,19 @@ tbody {
 }
 
 .table--compact {
+  @apply border-0;
+  @apply shadow-none;
+
   thead {
     th {
-      @apply px-4 py-3 pr-0;
+      @apply pr-4 pl-0 py-3;
     }
   }
   
   tbody {
     td,
     th {
-      @apply px-4 py-3 pr-0;
+      @apply pr-4 pl-0 py-3;
     }
   }
 }
