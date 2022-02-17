@@ -16,7 +16,7 @@
             <ul class="list list--icon list--loose">
               <li>
                 <Btn 
-                  to="#"
+                  to="tel: +41 31 123 4567"
                   label="Tel. +41 31 123 4567" 
                   icon="Phone" 
                   icon-pos="left" 
@@ -25,8 +25,8 @@
               </li>
               <li>
                 <Btn 
-                  to="#"
-                  label="Fax +41 31 123 4567" 
+                  to="tel: +41 31 123 4568"
+                  label="Fax +41 31 123 4568" 
                   icon="Fax" 
                   icon-pos="left" 
                   variant="link" 
@@ -34,7 +34,7 @@
               </li>
               <li>
                 <Btn 
-                  to="#"
+                  to="mailto:info@geo.admin.ch"
                   label="E-Mail info@geo.admin.ch" 
                   icon="Envelope" 
                   icon-pos="left" 
