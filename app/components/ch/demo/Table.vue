@@ -1,5 +1,5 @@
 <template>
-  <table>
+  <table :class="computedClasses">
     <thead>
       <th>Name</th>
       <th>Job</th>
@@ -46,3 +46,26 @@
     </tbody>
   </table>
 </template>
+
+<script>
+
+export default {
+  name: 'Table',
+  props: {
+    variant: {
+      type: String,
+      validator: (prop) => [
+        'compact'
+      ].includes(prop)
+    },
+  },
+
+  computed: {
+    computedClasses () {
+      let base = 'table '
+      if (this.variant) base += `table--${this.variant} `
+      return base
+    }
+  }
+}
+</script>

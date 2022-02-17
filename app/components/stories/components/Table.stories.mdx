@@ -1,18 +1,36 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import Table from '../../ch/demo/Table.vue'
 
-<Meta title="Components/Table" component={Table} />
+<Meta 
+  title="Components/Table" 
+  component={Table}
+  argTypes={{
+    variant: { 
+      control: { 
+        type: 'select', 
+        options: ['default', 'compact'] 
+      } 
+    }
+  }} 
+/>
 
-export const Template = () => ({
-  props: [],
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
   components: { Table },
-  template: '<Table />',
-})
+  template: '<Table :variant="variant" />',
+});
 
 # Table
 
 <Canvas>
-  <Story name="Example">{Template.bind({})}</Story>
+  <Story 
+    name="Example"
+    args={{
+      variant: 'default',
+    }}
+  >
+    {Template.bind({})
+  }</Story>
 </Canvas>
 
 <ArgsTable story="Example" />

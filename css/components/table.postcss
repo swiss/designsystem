@@ -1,4 +1,5 @@
-table {
+table,
+.table {
   @apply w-full;
   @apply border border-text-200;
   @apply shadow-md;
@@ -6,24 +7,41 @@ table {
 thead {
   @apply bg-secondary-50;
 
-  & th {
+  th {
     @apply px-6 py-4;
     @apply text-left;
     @apply text-text-600 uppercase text-sm;
   }
 }
 
-tbody tr {
-  @apply border-t border-text-300;
+tbody {
+  tr {
+    @apply border-t border-text-300;
+  }
 
-  & td,
+  td,
   th {
     @apply px-6 py-4;
     @apply text-base;
     @apply text-gray-500;
   }
 
-  & th {
+  th {
     @apply text-gray-900 font-bold text-left;
+  }
+}
+
+.table--compact {
+  thead {
+    th {
+      @apply px-4 py-3 pr-0;
+    }
+  }
+  
+  tbody {
+    td,
+    th {
+      @apply px-4 py-3 pr-0;
+    }
   }
 }
