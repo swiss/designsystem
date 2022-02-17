@@ -40,7 +40,8 @@ export default {
         'bare',
         'filled',
         'outline-negative',
-        'bare-negative'
+        'bare-negative',
+        'link'
       ].includes(prop)
     },
     size: {

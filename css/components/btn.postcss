@@ -19,9 +19,20 @@
 }
 
 .btn--bare {
-  @apply px-1;
+  @apply px-2;
   @apply text-secondary-800 font-normal;
   @apply hover:text-primary-600;
+}
+
+.btn--link {
+  @apply pr-2 pl-0;
+  @apply text-primary-600 font-normal;
+  @apply hover:text-primary-700;
+
+  .btn__icon {
+    @apply w-10;
+    @apply stroke-0 md:stroke-[0.05px] lg:stroke-[0.1px];
+  }
 }
 
 .btn--filled {
