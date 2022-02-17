@@ -1,11 +1,11 @@
 <template>
   <ul
-    id="accordion"
+    :id="`accordion-${id}`"
     class="accordion "
     :class="spaced ? 'accordion--spaced' : ''"
   >
   <li
-    v-for="(item, key) in demoData"
+    v-for="(item, key) in content"
     :key="`${key}`"
     class="accordion__item"
   >
@@ -49,32 +49,23 @@ export default {
     SvgIcon
   },
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     spaced: {
       type: Boolean,
       default: false
+    },
+    content: {
+      type: Array,
+      required: true
     }
   },
-  data: function () {
-    return {
-      demoData: [
-        {
-          title: 'Accordion item one',
-          content: 'Content here <br>second line'
-        },
-        {
-          title: 'Accordion item two',
-          content: 'Content here <br>second line<br>third line'
-        },
-        {
-          title: 'Accordion item three',
-          content: '<h4 class="h3">Demo list</h4><ul class="list list--bullet"><li>list item</li><li>list item</li></ul>'
-        }
-      ]
-    }
-  },
+  
   mounted () {
     Accordion.init (
-      '#accordion button'
+      `#accordion-${this.id} button`
     )
   }
 }
