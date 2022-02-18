@@ -2,21 +2,21 @@
   SEPARATOR
 \*----------------------------------------*/
 
-.separator {
-  &::before {
-    content: '';
-    @apply w-full;
-    @apply border-b border-secondary-300;
-  }
+.separator::before {
+  content: '';
+  @apply w-full block;
+  @apply border-b border-secondary-300;
 }
 
 .separator--xl {
   &::before {
-    @apply w-full h-4 md:h-5 lg:h-6 table;
+    @apply w-full block;
+    @apply h-4 md:h-5 lg:h-6;
   }
   &::after {
     content: '';
-    @apply w-full h-4 md:h-5 lg:h-6 table;
+    @apply w-full block;
+    @apply h-4 md:h-5 lg:h-6;
   }
 }
 
