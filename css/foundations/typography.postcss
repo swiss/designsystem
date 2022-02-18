@@ -114,20 +114,27 @@ body {
   }
 }
 
-main p {
-  @apply pb-6;
-}
-
 figure {
   @apply pt-2;
 }
 
 figcaption {
   @apply text--xs pt-2 text-secondary-400 text-right;
-  @apply pb-8;
 }
 
 address {
   @apply not-italic;
 }
 
+
+/* VERTICAL SPACING */
+
+main p:not(:last-child),
+main ul:not(:last-child),
+main iframe:not(:last-child) {
+  @apply pb-6;
+}
+
+.vertical-spacing {
+  @apply space-y-10;
+}
