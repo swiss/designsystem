@@ -1,32 +1,31 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: 'jit',
-  purge: [
+  content: [
     './safelist.txt',
     './app/pages/**/*.vue',
     './app/components/ch/**/*.vue',
-    './app/components/stories/layout/*.mdx'
+    './app/components/stories/layout/*.mdx',
   ],
-  darkMode: false, // or 'media' or 'class',
   corePlugins: {
-   container: false,
+    container: false,
   },
   theme: {
     screens: {
-      'xs': '480px',
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
+      xs: '480px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
       '2xl': '1536px',
       '3xl': '1800px',
     },
     scale: {
-      '102': '1.02',
+      102: '1.02',
       ...defaultTheme.scale,
     },
     colors: {
+      current: 'currentColor',
       primary: {
         50: '#ffedee',
         100: '#fae1e2',
@@ -242,5 +241,5 @@ module.exports = {
   },
   variants: {
     extend: {},
-  }
+  },
 }
