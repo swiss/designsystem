@@ -90,27 +90,27 @@ body {
 
   .h1 {
     @apply text--3xl font-bold;
-    @apply pb-6;
+    @apply mb-4;
   }
 
   .h2 {
     @apply text--2xl font-bold;
-    @apply pb-6;
+    @apply mb-4;
   }
 
   .h3 {
     @apply text--xl font-bold;
-    @apply pb-6;
+    @apply mb-4;
   }
 
   .h4 {
     @apply text--lg font-bold;
-    @apply pb-6;
+    @apply mb-4;
   }
 
   .h5 {
     @apply text--base font-bold;
-    @apply pb-6;
+    @apply mb-4;
   }
 }
 
@@ -120,7 +120,6 @@ figure {
 
 figcaption {
   @apply text--xs pt-2 text-secondary-400;
-  @apply pb-8;
 }
 
 address {
@@ -128,14 +127,30 @@ address {
 }
 
 
+
 /* VERTICAL SPACING */
 
-main p:not(:last-child),
-main ul:not(:last-child),
-main iframe:not(:last-child) {
-  @apply pb-6;
+.vertical-spacing {
+  @apply space-y-4;
 }
 
-.vertical-spacing {
-  @apply space-y-10;
+.vertical-spacing ol, 
+.vertical-spacing ul, 
+.vertical-spacing menu,
+.vertical-spacing table,
+.vertical-spacing figure,
+.vertical-spacing iframe {
+  @apply py-8;
+}
+
+.vertical-spacing .text-image {
+  @apply py-8;
+}
+
+.vertical-spacing p + h1,
+.vertical-spacing p + h2,
+.vertical-spacing p + h3,
+.vertical-spacing p + h4,
+.vertical-spacing p + h5 {
+  @apply pt-8;
 }

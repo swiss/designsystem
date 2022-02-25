@@ -50,7 +50,7 @@ export default {
     computedGridClasses () {
       let base = 'grid gap--responsive '
       if (this.imagePos ==='left') {
-        base += `grid--responsive-cols-1/4-3/4 `
+        base += `grid--responsive-cols-3/4-1/4 grid--reverse`
       } else {
         base += `grid--responsive-cols-3/4-1/4 `
       } 
