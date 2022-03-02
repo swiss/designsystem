@@ -8,7 +8,7 @@ import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 
 ## Bare list
 
-Per default, all styles from `ul` and `ol` lists are removed and items are stacked:
+Per default, all styles from `ul` and `ol` lists are removed:
 
 <Canvas>
 <ul>
@@ -17,9 +17,27 @@ Per default, all styles from `ul` and `ol` lists are removed and items are stack
 </ul>
 </Canvas>
 
-## Default List
+## Lists in the main content
 
-Use `.list .list--default` variant on `ul` for dotted lists.
+In the `main` element, the lists have a default style applied
+<Canvas>
+  <main>
+    <ul>
+      <li>List item</li>
+      <li>List item</li>
+    </ul>
+    <ol>
+      <li>List item</li>
+      <li>List item</li>
+    </ol>
+  </main>
+</Canvas>
+
+Use `.list .list--bare` in case you want to remove eventual default styles on your list
+
+## Dotted List
+
+Out of the `main` element, use `.list .list--default` variant on `ul` for dotted lists.
 This can be applied on a `ol` list too.
 
 <Canvas>

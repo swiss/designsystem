@@ -4,14 +4,22 @@
 
 .list {}
 
-.list--default {
-  @apply list-disc;
-  @apply list-inside;
+.list--bare {
+  @apply list-none;
 }
 
-.list--ordered {
+.list--default,
+main ul {
+  @apply list-disc;
+  @apply list-inside;
+  @apply space-y-1;
+}
+
+.list--ordered,
+main ol {
   @apply list-decimal;
   @apply list-inside;
+  @apply space-y-1;
 }
 
 .list--roman {

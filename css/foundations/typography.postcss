@@ -126,6 +126,29 @@ address {
   @apply not-italic;
 }
 
+strong,
+b {
+  @apply font-bold;
+}
+
+del,
+strike {
+  @apply line-through;
+}
+
+u {
+  @apply underline;
+}
+
+mark {
+  @apply bg-primary-200 py-0.5 px-1;
+}
+
+em,
+i {
+  @apply font-italic;
+}
+
 
 
 /* VERTICAL SPACING */
@@ -163,5 +186,11 @@ address {
   .vertical-spacing p + h4,
   .vertical-spacing p + h5 {
     @apply extra-top-spacing;
+  }
+
+  .vertical-spacing ul + ul,
+  .vertical-spacing ol + ul,
+  .vertical-spacing ul + ol {
+    @apply pt-0;
   }
 }

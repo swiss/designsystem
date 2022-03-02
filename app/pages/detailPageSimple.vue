@@ -109,8 +109,24 @@
             <p>
               Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
             </p> 
+            <p>
+              Der <strong>strong</strong> Modellkatalog kann unter <mark>mark</mark> angesehen werden <del>Strike through</del> and <u>underline</u>. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
+            </p> 
+            <ul>
+              <li>Ein neues minimales Geodatenmodell in der Datenmodellablage publizieren</li>
+              <li>List item neues Modell in der Datenmodellablage publizieren</li>
+              <li>Ein neues minimales Geodatenmodell in der Datenmodellablage publizieren</li>
+              <li>List item neues Modell in der Datenmodellablage publizieren</li>
+            </ul>
 
-            <Accordion id="2"
+            <ol>
+              <li>Ein neues minimales Geodatenmodell in der Datenmodellablage publizieren</li>
+              <li>List item neues Modell in der Datenmodellablage publizieren</li>
+              <li>Ein neues minimales Geodatenmodell in der Datenmodellablage publizieren</li>
+              <li>List item neues Modell in der Datenmodellablage publizieren</li>
+            </ol>
+
+            <Accordion id="345"
               :content='[
                 {
                   title: "Accordion item one",
@@ -122,7 +138,7 @@
                 },
                 {
                   title: "Accordion item three",
-                  content: "<h4 class=\"h3\">** Demo list</h4><ul class=\"list list--bullet\"><li>list item</li><li>list item</li></ul>"
+                  content: "<h4 class=\"h3\">Demo list</h4><ul class=\"list list--bullet\"><li>list item</li><li>list item</li></ul>"
                 }
               ]'
             />
