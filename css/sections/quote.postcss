@@ -29,7 +29,7 @@
   @apply text--bold text-secondary-600;
   
   &::before {
-    content: '«';
+    content: '\00ab';
     @apply block absolute;
     @apply text-4xl xl:text-7xl;
     @apply -top-9;
@@ -38,7 +38,7 @@
   }
 
   &::after {
-    content: ' »';
+    content: ' \00bb';
   }
 }
 
