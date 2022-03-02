@@ -2,7 +2,10 @@
   ACCORDION
 \*----------------------------------------*/
 
-.accordion {}
+.accordion,
+main .accordion {
+  @apply pl-0;
+}
 
 .accordion--spaced {
   @apply py-8;
@@ -10,7 +13,8 @@
 
 .accordion__item {
   @apply border-t border-secondary-200;
-  @apply list-none;
+  @apply list-none; 
+  @apply mt-0 !important;
 
   &:last-of-type {
     @apply border-b border-secondary-200;
