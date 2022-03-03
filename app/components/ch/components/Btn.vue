@@ -41,7 +41,8 @@ export default {
         'filled',
         'outline-negative',
         'bare-negative',
-        'link'
+        'link',
+        'link-negative'
       ].includes(prop)
     },
     size: {

@@ -1,0 +1,48 @@
+/*----------------------------------------*\
+  ALERT BANNER
+\*----------------------------------------*/
+
+
+
+.alert-banner {
+    /* @include background.bleed(var(--wb-ds-color-error--dark), "small");
+    --wb-ds-icon-fill: var(--wb-ds-color-gray--white);
+    color: var(--wb-ds-color-gray--white); */
+    @apply bg-primary-900;
+    @apply text-white;
+
+    p {
+      @apply text--sm;
+    }
+}
+
+.alert-banner__wrapper {
+    @apply flex items-start;
+    @apply container;
+    @apply py-4 md:py-6 xl:py-8;
+}
+
+.alert-banner__grid {
+  @apply grid grid-cols-1 gap-3;
+  @apply md:grid md:grid-cols-3 md:gap-6;
+  @apply lg:grid lg:grid-cols-4 lg:gap-8;
+}
+
+.alert-banner__header {
+  @apply md:col-span-4;
+  @apply lg:col-span-1 lg:row-start-1;
+}
+
+.alert-banner__content {
+  @apply md:col-span-3 md:row-start-2;
+  @apply lg:col-span-2 lg:row-start-1;
+}
+
+.alert-banner__list {
+  @apply md:col-span-1 md:row-start-2;
+  @apply lg:col-span-1 lg:row-start-1;
+}
+
+.alert-banner__link {
+    
+}

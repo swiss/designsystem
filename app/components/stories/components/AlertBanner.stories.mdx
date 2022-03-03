@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import AlertBanner from '../../ch/components/AlertBanner.vue'
+
+<Meta
+  title="Components/AlertBanner"
+  component={AlertBanner}
+  argTypes={{
+    type: { control: { type: 'select', options: ['Hochwasser', 'Earthquake', 'Something really bad'] } },
+    icon: { control: { type: 'select', options: ['InfoCircle'] } },
+  }} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { AlertBanner },
+  template: '<AlertBanner :title="title" :type="type" :lastUpdated="lastUpdated" :icon="icon" :text="text" :introLink="introLink" :link="link" :closeBtn="closeBtn" :isClosed="isClosed" />',
+})
+
+
+# AlertBanner
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      title: 'Warnungen des Bundes',
+      type: 'Hochwasser',
+      lastUpdated: 'Aktualisiert am: 11.09.2016, 11:13',
+      icon: 'InfoCircle',
+      text: 'Die Hochwassergefahr im Kanton Tessin geht ab Mittwoch 12 Uhr wieder zurück. Der Wasserstand sinkt allmählich und mit weiteren Überschwemmungen ist nicht zu rechnen. Beachten Sie jedoch weiterhin die Weisungen der Behörden und Einsatzkräfte vor Ort.',
+      introLink: 'Weitere Informationen finden Sie unter:',
+      link: {
+        href: "https://www.naturgefahren.ch/home.html?tab=actualdanger",
+        label: "naturgefahren.ch",
+        icon: "External"
+      },
+      closeBtn: false,
+      isClosed: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
