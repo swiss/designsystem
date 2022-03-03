@@ -68,7 +68,11 @@
             />
           </div>
           <div class="space-y-6">
-            <iframe src='https://map.geo.admin.ch/embed.html?topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,ch.swisstopo.swisstlm3d-wanderwege,ch.bav.haltestellen-oev&layers_visibility=false,false,false,true,true&layers_timestamp=18641231,,,,&layers_opacity=1,1,1,0.65,0.7&lang=fr&E=2612569.69&N=1176170.16&zoom=2' width='100%' height='330' frameborder='0' style='border:0'></iframe>
+            <iframe 
+              name="Interactive Map"
+              role="presentation"
+              src='https://map.geo.admin.ch/embed.html?topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,ch.swisstopo.swisstlm3d-wanderwege,ch.bav.haltestellen-oev&layers_visibility=false,false,false,true,true&layers_timestamp=18641231,,,,&layers_opacity=1,1,1,0.65,0.7&lang=fr&E=2612569.69&N=1176170.16&zoom=2' width='100%' height='330' frameborder='0' style='border:0'>
+            </iframe>
             <ul class="list list--icon list--loose">
               <li>
                 <Btn 
