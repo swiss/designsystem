@@ -17,6 +17,7 @@ main p a {
   @apply block;
 }
 
+.link--external,
 main p a[rel*="external"],
 main p a[target="_blank"] {
   position: relative;
@@ -24,7 +25,7 @@ main p a[target="_blank"] {
   &::after {
     content: '';
     @apply inline-block relative w-[1em] h-[1em];
-    @apply top-[0.25em] mx-[0.125em];
+    @apply top-[0.2em] mx-[0.125em];
     @apply bg-current;
     mask-repeat: no-repeat;
     mask-image: var(--icon-external-link);
