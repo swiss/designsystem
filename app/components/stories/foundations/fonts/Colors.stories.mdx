@@ -10,19 +10,41 @@ export const Template = (args, { argTypes }) => ({
 
 # Text colors
 
+Text colors should be automatically defined. You can force them with specific classes though:
+
+<Canvas>
+  <div>
+    <div class="color--default">color--default</div>
+    <div class="color--light">color--light</div>
+    <div class="color--link">color--link</div>
+  </div>
+</Canvas>
+
+# Negative color
+
+<Canvas className="storybook-bg-negative">
+  <div>
+    <div class="color--negative">color--negative</div>
+  </div>
+</Canvas>
+
+# All text color variants
+
+Colors have a complete spectrum based on Tailwind configuration. Use them with precaution and be sure the contrast fit the accessibility recommendations.
+
 <Canvas>
   <div class="storybook-backgrounds">
     <div class="color--text-900">color--text-900</div>
-    <div class="color--text-800">color--text-800</div>
+    <div class="color--text-800">color--text-800 – default text color</div>
     <div class="color--text-700">color--text-700</div>
     <div class="color--text-600">color--text-600</div>
-    <div class="color--text-500">color--text-500</div>
-    <div class="color--text-400">color--text-400</div>
-    <div class="color--text-300">color--text-300</div>
-    <div class="color--text-200">color--text-200</div>
-    <div class="color--text-100">color--text-100</div>
-    <div class="color--text-50">color--text-50</div>
-    <div class="color--white">color--white</div>
+    <div class="color--text-500">color--text-500 – still AA Accessible on white backgrounds</div>
+    <div class="color--text-400  bg--secondary-900">color--text-400</div>
+    <div class="color--text-300  bg--secondary-800">color--text-300</div>
+    <div class="color--text-200  bg--secondary-700">color--text-200</div>
+    <div class="color--text-100  bg--secondary-600">color--text-100</div>
+    <div class="color--text-50   bg--secondary-500">color--text-50</div>
+    <div class="color--white     bg--secondary-400">color--white</div>
   </div>
 </Canvas>
 
@@ -31,14 +53,14 @@ export const Template = (args, { argTypes }) => ({
     <div class="color--red-900">color--red-900</div>
     <div class="color--red-800">color--red-800</div>
     <div class="color--red-700">color--red-700</div>
-    <div class="color--red-600">color--red-600</div>
+    <div class="color--red-600">color--red-600 – default link color</div>
     <div class="color--red-500">color--red-500</div>
-    <div class="color--red-400">color--red-400</div>
-    <div class="color--red-300">color--red-300</div>
-    <div class="color--red-200">color--red-200</div>
-    <div class="color--red-100">color--red-100</div>
-    <div class="color--red-50">color--red-50</div>
-    <div class="color--white">color--white</div>
+    <div class="color--red-400  bg--secondary-900">color--red-400</div>
+    <div class="color--red-300  bg--secondary-800">color--red-300</div>
+    <div class="color--red-200  bg--secondary-700">color--red-200</div>
+    <div class="color--red-100  bg--secondary-600">color--red-100</div>
+    <div class="color--red-50   bg--secondary-500">color--red-50</div>
+    <div class="color--white    bg--secondary-400">color--white</div>
   </div>
 </Canvas>
 
