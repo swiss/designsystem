@@ -14,6 +14,7 @@
     "@nuxt/content": "^1.14.0",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
+    "swiper-vue2": "^1.0.6",
     "vue-inline-svg": "^2.0.0"
   },
   "devDependencies": {
