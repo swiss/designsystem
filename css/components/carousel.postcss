@@ -2,21 +2,75 @@
   CAROUSEL
 \*----------------------------------------*/
 
-.carousel__pagination {
-  @apply flex justify-center space-x-3;
+.carousel {
+  @apply relative;
+
+  figure {
+    @apply pt-0;
+  }
 }
 
-.carousel__prev {
-  
+.carousel__fonctions {
+  @apply flex justify-center items-center py-2;
+}
+
+.carousel__prev,
+.carousel__next {
+  @apply bg-white hover:text-red-600;
+  @apply transition-colors duration-200;
+
+  & svg {
+    @apply w-10 h-10;
+  }
+}
+
+.carousel__pagination {
+  @apply flex justify-center px-6;
 }
 
 .carousel__bullet {
-  @apply block w-4 h-4 rounded-full bg-red-200;
+  @apply block w-4 h-4 rounded-full mx-2;
+  @apply bg-white border border-text-800;
+  @apply hover:border-red-600 hover:bg-red-500;
+  @apply transition-colors duration-200;
 }
 
 .carousel__bullet--active {
-  @apply bg-red-900;
+  @apply bg-text-800;
 }
+
+.carousel--fraction {
+  .carousel__fonctions {
+    @apply justify-end;
+  }
+}
+
+.carousel--bullets {
+  .carousel__prev {
+    @apply lg:absolute lg:top-0 lg:bottom-[60px] lg:-left-14 lg:z-10;
+    @apply 2xl:-left-20;
+    @apply order-1;
+  }
+
+  .carousel__pagination {
+    @apply order-2;
+  }
+  
+  .carousel__next {
+    @apply lg:absolute lg:top-0 lg:bottom-[60px] lg:-right-14 lg:z-10;
+    @apply 2xl:-right-20;
+    @apply bg-white;
+    @apply order-3;
+  }
+
+  svg {
+    @apply w-12 h-12;
+    @apply lg:w-14 lg:h-14;
+    @apply 2xl:w-20 2xl:h-20;
+  }
+}
+
+
 
 
 /* swiper container */

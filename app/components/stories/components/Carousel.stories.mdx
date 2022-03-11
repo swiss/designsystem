@@ -1,53 +1,229 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
-import Carousel from '../../ch/components/Carousel.vue'
-import CarouselItem from '../../ch/components/CarouselItem.vue'
+import CarouselExample from '../../ch/demo/CarouselExample.vue'
 
 <Meta 
   title="Components/Carousel" 
-  component={Carousel} 
+  component={CarouselExample} 
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Carousel, CarouselItem }, 
+  components: { CarouselExample}, 
   template:
     `
-    <Carousel :breakpoints="breakpoints" paginationType="bullets">
-      <CarouselItem>
-        SLIDE ONE
-      </CarouselItem>
-      <CarouselItem>
-        SLIDE TWO
-      </CarouselItem>
-    </Carousel>
+    <div class="container">
+      <CarouselExample 
+        :breakpoints="breakpoints" 
+        :paginationType="paginationType" 
+        :loop="loop" 
+        :id="id"
+        :slides="slides"
+      />
+    </div>
     `,
 })
 
-
 # Carousel
+
+## Bullets as pagination
+If the number of images is relatively low (around 5), use the `bullets` variant.
 
 <Canvas>
   <Story
-    name="Example"
+    name="With bullets"
     args={{
+      id: 1,
       loop: true,
-      breakpoints: {
-        '640': {
-          slidesPerView: 2,
-          spaceBetween: 20,
+      paginationType: 'bullets',
+      slides: [
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=29',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=29',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
         },
-        '768': {
-          slidesPerView: 3,
-          spaceBetween: 40,
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=28',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=28',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image two —&nbsp;©&nbsp;Photograph Name',
         },
-        '1024': {
-          slidesPerView: 4,
-          spaceBetween: 50,
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=1045',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=1045',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
         }
-      }
+      ]
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
+
+## Fraction as navigation
+If the number of images is higher than 5, it's better to use the `fraction` variant.
+
+<Canvas>
+  <Story
+    name="With fraction"
+    args={{
+      id: 2,
+      loop: false,
+      paginationType: 'fraction',
+      slides: [
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=29',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=29',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
+        },
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=28',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=28',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image two —&nbsp;©&nbsp;Photograph Name',
+        },
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=10',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=10',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
+        },
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=11',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=11',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
+        },
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=114',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=114',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image two —&nbsp;©&nbsp;Photograph Name',
+        },
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=128',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=128',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
+        },
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=15',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=15',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
+        },
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=177',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=177',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
+        }
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 
