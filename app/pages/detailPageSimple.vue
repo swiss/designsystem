@@ -44,6 +44,14 @@
               Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
             </p>
 
+            <SlideshowExample 
+              :breakpoints="breakpoints" 
+              :paginationType="bullets" 
+              :loop="loop" 
+              :id="1"
+              :slides="slides"
+            />
+
             <figure>
               <picture>
                 <source
@@ -224,6 +232,7 @@ import QuoteSection from "~/components/ch/sections/QuoteSection"
 import ContactSection from "~/components/ch/sections/ContactSection"
 import Accordion from "~/components/ch/components/Accordion"
 import TextImage from "~/components/ch/components/TextImage"
+import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -240,7 +249,59 @@ export default {
     QuoteSection,
     ContactSection,
     Accordion,
-    TextImage
+    TextImage,
+    SlideshowExample
+  },
+  data: function () {
+    return {
+      slides: [
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=29',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=29',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
+        },
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=28',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=28',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image two —&nbsp;©&nbsp;Photograph Name',
+        },
+        { 
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=1045',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=1045',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
+        }
+      ]
+    }
   },
   methods: {
     getMobileMenuIsOpen() {

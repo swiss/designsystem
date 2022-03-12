@@ -16,8 +16,13 @@
 
 .carousel__prev,
 .carousel__next {
-  @apply bg-white hover:text-red-600;
+  @apply hover:text-red-600;
   @apply transition-colors duration-200;
+
+  &[disabled] {
+    @apply bg-white;
+    @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white opacity-50;
+  }
 
   & svg {
     @apply w-10 h-10;
@@ -30,22 +35,24 @@
 
 .carousel__bullet {
   @apply block w-4 h-4 rounded-full mx-2;
-  @apply bg-white border border-text-800;
+  @apply bg-white border border-text-600;
   @apply hover:border-red-600 hover:bg-red-500;
   @apply transition-colors duration-200;
 }
 
 .carousel__bullet--active {
-  @apply bg-text-800;
+  @apply bg-text-600;
 }
 
 .carousel--fraction {
+
   .carousel__fonctions {
     @apply justify-end;
   }
 }
 
 .carousel--bullets {
+
   .carousel__prev {
     @apply lg:absolute lg:top-0 lg:bottom-[60px] lg:-left-14 lg:z-10;
     @apply 2xl:-left-20;
@@ -59,11 +66,11 @@
   .carousel__next {
     @apply lg:absolute lg:top-0 lg:bottom-[60px] lg:-right-14 lg:z-10;
     @apply 2xl:-right-20;
-    @apply bg-white;
     @apply order-3;
   }
 
-  svg {
+  .carousel__prev svg,
+  .carousel__next svg {
     @apply w-12 h-12;
     @apply lg:w-14 lg:h-14;
     @apply 2xl:w-20 2xl:h-20;
@@ -71,6 +78,55 @@
 }
 
 
+.carousel--cards {
+
+  .swiper-container {
+    @apply p-12 !pt-0;
+    @apply  -mr-12 -ml-12 -mb-12;
+    @apply 2xl:p-14;
+    @apply  2xl:-mr-14 2xl:-ml-14 2xl:-mb-14;
+  } 
+
+  .carousel__fonctions {
+    @apply pt-10 2xl:pt-14 pb-0 -mb-4;
+  }
+
+  
+  .carousel__prev {
+    @apply order-1;
+    @apply 2xl:absolute  2xl:z-10;
+    @apply 2xl:top-0 2xl:bottom-0 2xl:left-0;
+    @apply 2xl:-translate-x-full;
+    @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white;
+  }
+  
+  .carousel__next {
+    @apply order-3;
+    @apply 2xl:absolute 2xl:top-0 2xl:bottom-0 2xl:right-0 2xl:z-10;
+    @apply 2xl:translate-x-full;
+    @apply 2xl:bg-gradient-to-l 2xl:via-white 2xl:from-white;
+
+  }
+
+  .carousel__pagination {
+    @apply order-2;
+    @apply px-4;
+  }
+
+
+  .carousel__prev svg,
+  .carousel__next svg {
+    @apply w-12 h-12;
+    @apply lg:w-14 lg:h-14;
+    @apply 2xl:w-20 2xl:h-20;
+    @apply 3xl:w-24 3xl:h-24;
+  }
+}
+
+/*
+  @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 3xl:px-16;
+    @apply w-full 2xl:w-[1536px] 3xl:w-[1680px];
+*/
 
 
 /* swiper container */

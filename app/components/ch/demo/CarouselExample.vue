@@ -3,10 +3,37 @@
     :class="computedClasses"
   >
     <swiper
-      :loop="loop"
-      :breakpoints="breakpoints"
       :speed="500"
-      :autoHeight="true"
+      :autoHeight="false"
+      :loop="false"
+      :slidesPerView="1"
+      :spaceBetween="20"
+      :breakpoints= "{
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 28
+        },
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 36
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 36
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        },
+        1280: {
+          slidesPerView: 3,
+          spaceBetween: 48
+        },
+        1800: {
+          slidesPerView: 3,
+          spaceBetween: 64
+        },
+      }"
       :keyboard="{
         enabled: true,
         onlyInViewport: false,
@@ -18,39 +45,181 @@
       :simulateTouch="true"
       :slideToClickedSlide="false"
       :pagination="{
-          type: paginationType,
+          type: 'bullets',
           el: `#carousel-pagination-${id}`,
           clickable: true,
           bulletElement: 'button',
           bulletClass: 'carousel__bullet',
           bulletActiveClass: 'carousel__bullet--active'
       }"
-      :slides-per-view="1"
-      :space-between="16"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
     >
-      <swiper-slide
-        v-for="(slide, index) in slides"
-        :key="`slide-${index}`"
-      >
-        <figure>
-          <picture>
-            <source
-              :srcset="slide.source.srcset"
-              :height="slide.source.height"
-              :width="slide.source.width"
-              :media="slide.source.media"
+      <swiper-slide>
+        <Card type="default">
+          <template v-slot:image>
+            <img src="https://picsum.photos/1024/768?random=1" alt="cat">
+          </template>
+          <template v-slot:body>
+            <h3 class="card__title">Covid 19</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+            </p>
+            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
+          </template>
+          <template v-slot:footerInfo>
+            Dienstleistungen & Produkte
+          </template>
+          <template v-slot:footerAction>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
             />
-            <img 
-              :src="slide.image.src" 
-              :alt="slide.image.alt" 
-              :height="slide.image.height"
-              :width="slide.image.width"
+          </template>
+        </Card>
+      </swiper-slide>
+      <swiper-slide>
+        <Card type="default">
+          <template v-slot:image>
+            <img src="https://picsum.photos/1024/768?random=2" alt="cat">
+          </template>
+          <template v-slot:body>
+            <h3 class="card__title">Covid 19</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+            </p>
+            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
+          </template>
+          <template v-slot:footerInfo>
+            Dienstleistungen & Produkte
+          </template>
+          <template v-slot:footerAction>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
             />
-          </picture>
-          <figcaption v-html="slide.caption" />
-        </figure>
+          </template>
+        </Card>
+      </swiper-slide>
+      <swiper-slide>
+        <Card type="default">
+          <template v-slot:image>
+            <img src="https://picsum.photos/1024/768?random=3" alt="cat">
+          </template>
+          <template v-slot:body>
+            <h3 class="card__title">Covid 19</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+            </p>
+            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
+          </template>
+          <template v-slot:footerInfo>
+            Dienstleistungen & Produkte
+          </template>
+          <template v-slot:footerAction>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
+          </template>
+        </Card>
+      </swiper-slide>
+      <swiper-slide>
+        <Card type="default">
+          <template v-slot:image>
+            <img src="https://picsum.photos/1024/768?random=4" alt="cat">
+          </template>
+          <template v-slot:body>
+            <h3 class="card__title">Covid 19</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+            </p>
+            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
+          </template>
+          <template v-slot:footerInfo>
+            Dienstleistungen & Produkte
+          </template>
+          <template v-slot:footerAction>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
+          </template>
+        </Card>
+      </swiper-slide>
+      <swiper-slide>
+        <Card type="default">
+          <template v-slot:image>
+            <img src="https://picsum.photos/1024/768?random=5" alt="cat">
+          </template>
+          <template v-slot:body>
+            <h3 class="card__title">Covid 19</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+            </p>
+            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
+          </template>
+          <template v-slot:footerInfo>
+            Dienstleistungen & Produkte
+          </template>
+          <template v-slot:footerAction>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
+          </template>
+        </Card>
+      </swiper-slide>
+      <swiper-slide>
+        <Card type="default">
+          <template v-slot:image>
+            <img src="https://picsum.photos/1024/768?random=6" alt="cat">
+          </template>
+          <template v-slot:body>
+            <h3 class="card__title">Covid 19</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+            </p>
+            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
+          </template>
+          <template v-slot:footerInfo>
+            Dienstleistungen & Produkte
+          </template>
+          <template v-slot:footerAction>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
+          </template>
+        </Card>
       </swiper-slide>
     </swiper>
     <div class="carousel__fonctions">
@@ -86,6 +255,8 @@ import { Navigation, Pagination, A11y } from 'swiper'
 import { SwiperCore, Swiper, SwiperSlide } from 'swiper-vue2'
 
 import SvgIcon from '../components/SvgIcon.vue'
+import Card from '../components/Card'
+import Btn from '../components/Btn'
 
 SwiperCore.use([Navigation, Pagination])
 
@@ -93,39 +264,23 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    SvgIcon
+    SvgIcon,
+    Card,
+    Btn
   },
   props: {
     id: {
       type: Number,
       default: 1
     },
-    loop: {
-      type: Boolean,
-      default: false
-    },
     breakpoints: {
       type: Object
     },
-    paginationType: {
-      type: String,
-      validator: (prop) => [
-        'bullets',
-        'fraction',
-        'progressbar'
-      ].includes(prop),
-      default: 'bullets'
-    },
-    slides: {
-      type: Array,
-      required: true
-    }
   },
 
   computed: {
     computedClasses () {
-      let base = 'carousel '
-      if (this.paginationType) base += `carousel--${this.paginationType} `
+      let base = 'carousel carousel--cards'
       return base
     },
   }

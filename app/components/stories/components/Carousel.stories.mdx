@@ -11,29 +11,28 @@ export const Template = (args, { argTypes }) => ({
   components: { CarouselExample}, 
   template:
     `
-    <div class="container">
-      <CarouselExample 
-        :breakpoints="breakpoints" 
-        :paginationType="paginationType" 
-        :loop="loop" 
-        :id="id"
-        :slides="slides"
-      />
-    </div>
+    <div class="section section--default section--carousel">
+      <div class="container">
+        <CarouselExample 
+          :breakpoints="breakpoints" 
+          :paginationType="paginationType" 
+          :id="id"
+          :slides="slides"
+        />
+      </div>
+    </section>
     `,
 })
 
 # Carousel
-
-## Bullets as pagination
-If the number of images is relatively low (around 5), use the `bullets` variant.
+They are used to display a collection of complex items (teasers or cards for example). This component is similar to the `Slideshow` component, but with a difference on large screens: several items are visible at same time. 
+Carousels are built with https://swiperjs.com/. 
 
 <Canvas>
   <Story
     name="With bullets"
     args={{
       id: 1,
-      loop: true,
       paginationType: 'bullets',
       slides: [
         { 
@@ -88,142 +87,5 @@ If the number of images is relatively low (around 5), use the `bullets` variant.
   </Story>
 </Canvas>
 
-## Fraction as navigation
-If the number of images is higher than 5, it's better to use the `fraction` variant.
-
-<Canvas>
-  <Story
-    name="With fraction"
-    args={{
-      id: 2,
-      loop: false,
-      paginationType: 'fraction',
-      slides: [
-        { 
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=29',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=29',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
-        },
-        { 
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=28',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=28',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: 'Image two —&nbsp;©&nbsp;Photograph Name',
-        },
-        { 
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=10',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=10',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
-        },
-        { 
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=11',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=11',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
-        },
-        { 
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=114',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=114',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: 'Image two —&nbsp;©&nbsp;Photograph Name',
-        },
-        { 
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=128',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=128',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
-        },
-        { 
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=15',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=15',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
-        },
-        { 
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=177',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=177',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
-        }
-      ]
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
 
 
