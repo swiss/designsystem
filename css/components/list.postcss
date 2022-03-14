@@ -10,14 +10,14 @@ main .list--bare {
 }
 
 .list--default,
-main ul {
+main ul:not([class]) {
   @apply list-disc;
   @apply list-outside pl-5;
   @apply space-y-2;
 }
 
 .list--ordered,
-main ol {
+main ol:not([class]) {
   @apply list-decimal;
   @apply list-outside pl-5;
   @apply space-y-2;
