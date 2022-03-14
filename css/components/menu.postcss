@@ -3,119 +3,117 @@
 \*----------------------------------------*/
 
 @layer utilities {
-  @variants responsive {
-    .menu {
-      @apply list-none;
-    }
-
-    .menu__item {
-      @apply flex items-center justify-between;
-      @apply px-4 py-3 relative;
-      @apply cursor-pointer;
-      @apply transition-colors;
-    }
-
-    .menu__item--small {
-      @apply text-sm 3xl:text-base;
-    }
-
-    .menu__item--action-btn {
-      @apply px-4 py-3;
-      @apply lg:text-xs 3xl:text-sm;
-      @apply text-text-500 focus:text-text-500;
-    }
-
-    .menu__item--mini {
-      @apply px-3 py-2;
-    }
-
-    .menu__item--border {
-      @apply border-b border-opacity-100 border-secondary-100;
-    }
-
-    .menu__item--grey {
-      @apply bg-secondary-50;
-    }
-
-    .menu__item--negative {
-      @apply bg-secondary-600;
-      @apply text-white;
-      @apply border-b border-secondary-400;
-    }
-
-    .menu__item.menu__item--negative:hover {
-      @apply bg-secondary-700;
-    }
-
-    .menu__item--negative:focus {
-      @apply text-red-300;
-    }
-
-    .menu__item--brim {
-      @apply px-2;
-    }
-
-    .icon.menu__item__icon {
-      @apply h-6 md:h-7;
-    }
-
-    .menu__item--title {
-      @apply lg:px-0 hover:bg-white;
-    }
+  .menu {
+    @apply list-none;
   }
 
-  /* NON RESPONSIVE UTILITIES */
-
-  .menu__item:hover {
-    @apply bg-secondary-50;
-  }
-
-  .menu__item:focus {
-    @apply text-red-600;
-  }
-
-  .menu__item--active:after {
-    content:'';
-    @apply block bg-primary-500;
-    @apply w-[3px];
-    @apply absolute top-0 bottom-0 left-0;
-  }
-
-  .menu__item--condensed {
-    @apply px-3 py-3;
-  }
-
-  .menu__item--condensed .icon {
-    @apply lg:h-6 lg:w-6;
-  }
-
-  .menu__item--icon-on-hover {
-    & .menu__item__icon {
-      @apply opacity-0 transition-opacity duration-200;
-    }
-
-    &:hover .menu__item__icon {
-      @apply opacity-100;
-    }
-  }
-
-  .menu__item__flex {
-    @apply flex w-full items-center justify-between space-x-2;
-  }
-
-  .menu__action-btn {
+  .menu__item {
     @apply flex items-center justify-between;
     @apply px-4 py-3 relative;
-    @apply text-sm 3xl:text-base;
-    @apply border-b border-opacity-0;
     @apply cursor-pointer;
     @apply transition-colors;
-    @apply text-text-500;
   }
 
-  .menu__action-btn:hover {
+  .menu__item--small {
+    @apply text-sm 3xl:text-base;
+  }
+
+  .menu__item--action-btn {
+    @apply px-4 py-3;
+    @apply lg:text-xs 3xl:text-sm;
+    @apply text-text-500 focus:text-text-500;
+  }
+
+  .menu__item--mini {
+    @apply px-4 py-2;
+  }
+
+  .menu__item--border {
+    @apply border-b border-opacity-100 border-secondary-100;
+  }
+
+  .menu__item--grey {
     @apply bg-secondary-50;
   }
+
+  .menu__item--negative {
+    @apply bg-secondary-600;
+    @apply text-white;
+    @apply border-b border-secondary-400;
+  }
+
+  .menu__item.menu__item--negative:hover {
+    @apply bg-secondary-700;
+  }
+
+  .menu__item--negative:focus {
+    @apply text-red-300;
+  }
+
+  .menu__item--brim {
+    @apply px-2;
+  }
+
+  .icon.menu__item__icon {
+    @apply h-6 md:h-7;
+  }
+
+  .menu__item--title {
+    @apply lg:px-0 hover:bg-white;
+  }
+}
+
+/* NON RESPONSIVE UTILITIES */
+
+.menu__item:hover {
+  @apply bg-secondary-50;
+}
+
+.menu__item:focus {
+  @apply text-red-600;
+}
+
+.menu__item--active:after {
+  content:'';
+  @apply block bg-primary-500;
+  @apply w-[3px];
+  @apply absolute top-0 bottom-0 left-0;
+}
+
+.menu__item--condensed {
+  @apply px-3 py-3;
+}
+
+.menu__item--condensed .icon {
+  @apply lg:h-6 lg:w-6;
+}
+
+.menu__item--icon-on-hover {
+  & .menu__item__icon {
+    @apply opacity-0 transition-opacity duration-200;
+  }
+
+  &:hover .menu__item__icon {
+    @apply opacity-100;
+  }
+}
+
+.menu__item__flex {
+  @apply flex w-full items-center justify-between space-x-2;
+}
+
+.menu__action-btn {
+  @apply flex items-center justify-between;
+  @apply px-4 py-3 relative;
+  @apply text-sm 3xl:text-base;
+  @apply border-0 border-opacity-0;
+  @apply cursor-pointer;
+  @apply transition-colors;
+  @apply text-text-500;
+}
+
+.menu__action-btn:hover {
+  @apply bg-secondary-50;
 }
 
 
