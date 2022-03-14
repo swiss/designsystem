@@ -145,7 +145,7 @@
                   content: "Content here <br>second line<br>third line"
                 },
                 {
-                  title: "Accordion item three",
+                  title: "Accordion item three. this one has a long title, like this we can test how it displays on two lines",
                   content: "<h4 class=\"h3\">Demo list</h4><ul class=\"list list--bullet\"><li>list item</li><li>list item</li></ul>"
                 }
               ]'
