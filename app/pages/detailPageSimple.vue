@@ -115,14 +115,14 @@
               Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
             </p>
             <p>
-              Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
+              Der Modellkatalog kann unter angesehen werden. Datenmodellablage <a href="#" target="_blank">external link</a> publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
             </p> 
             <p>
               Der <strong>strong</strong> Modellkatalog kann unter <mark>mark</mark> angesehen werden <del>Strike through</del> and <u>underline</u>. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
             </p> 
             <ul>
               <li>Ein neues minimales Geodatenmodell in der Datenmodellablage publizieren</li>
-              <li>List item neues Modell in der Datenmodellablage publizieren</li>
+              <li>List item neues <a href="#" target="_blank">external link in list</a> publizieren</li>
               <li>Ein neues minimales Geodatenmodell in der Datenmodellablage publizieren</li>
               <li>List item neues Modell in der Datenmodellablage publizieren</li>
             </ul>
