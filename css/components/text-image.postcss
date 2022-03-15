@@ -40,20 +40,7 @@
 
 .text-image {
   .container__center--xs & {
-    @media (min-width: theme('screens.md')) {
-      margin-left:  calc((100vw - 6em ) / -12 );
-      margin-right: calc((100vw - 6em ) / -12 );
-    }
-
-    @media (min-width: theme('screens.xl')) {
-      margin-left:  calc((theme('screens.xl') - 6em ) / -12 );
-      margin-right: calc((theme('screens.xl') - 6em ) / -12 );
-    }
-
-    @media (min-width: theme('screens.2xl')) {
-      margin-left:  calc((theme('screens.2xl') - 6em ) / -12 );
-      margin-right: calc((theme('screens.2xl') - 6em ) / -12 );
-    }
+    @apply broader-than-container;
   }
 }
 

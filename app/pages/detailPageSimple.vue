@@ -114,6 +114,9 @@
             <p>
               Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
             </p>
+            <blockquote>
+              Der Modellkatalog kann unter angesehen werden. Simple quote in a text flow. 
+            </blockquote>
             <p>
               Der Modellkatalog kann unter angesehen werden. Datenmodellablage <a href="#" target="_blank">external link</a> publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
             </p> 

@@ -10,13 +10,17 @@
   grid-template-areas: "A B";
 }
 
+.quote-font-size {
+  @apply xs:text-lg md:text-xl lg:text-2xl xl:text-3xl 3xl:text-4xl;
+}
+
 .quote__text {
   @apply flex flex-col h-full justify-center;
 }
 
 .quote__title {
   @apply pb-2 relative;
-  @apply xs:text-lg md:text-xl lg:text-2xl xl:text-3xl 3xl:text-4xl;
+  @apply quote-font-size;
   @apply text--bold text-secondary-600;
   @apply xl:-indent-9;
   
@@ -58,4 +62,28 @@
     @apply w-full h-full object-cover;
   }
 }
+
+
+blockquote { 
+  @apply quote__title;
+  @apply quote-font-size;
+  
+  @apply pt-12 pb-10;
+  @apply xl:py-14;
+  @apply bg-secondary-50;
+  @apply !my-7 xl:!my-8;
+
+  .container__center--xs & {
+    margin-left:  calc((100vw - 6em ) / -12 );
+    margin-right: calc((100vw - 6em ) / -12 );
+
+    padding-left:  calc((100vw - 6em ) / 12 );
+    padding-right: calc((100vw - 6em ) / 12 );
+  }
+
+  &::before {
+    @apply top-8;
+  }
+}
+
 
