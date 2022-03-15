@@ -3,20 +3,11 @@
 \*----------------------------------------*/
 
 .quote {
-  @apply container__center--md;
-  @apply grid;
-  @apply gap--responsive;
-  @apply relative;
-
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-areas: "A A A A A A A A A B B B";
+  @apply container__center--md gap--responsive;
+  @apply grid justify-center;
   
-  & > *:nth-child(1) { grid-area: A; }
-  & > *:nth-child(2) { grid-area: B; }
-
-  @media (min-width: theme('screens.md')) {
-    grid-template-areas: "A A A A A A A A A A B B";
-  }
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-template-areas: "A B";
 }
 
 .quote__text {
@@ -24,25 +15,47 @@
 }
 
 .quote__title {
-  @apply pb-4 relative;
+  @apply pb-2 relative;
   @apply xs:text-lg md:text-xl lg:text-2xl xl:text-3xl 3xl:text-4xl;
   @apply text--bold text-secondary-600;
+  @apply xl:-indent-9;
   
   &::before {
     content: '\00ab';
+    @apply leading-[0];
+
     @apply block absolute;
-    @apply text-4xl xl:text-7xl;
-    @apply -top-9;
-    @apply xl:-top-8 xl:-left-12;
+    @apply text-4xl;
+    @apply -top-4;
+
+    @apply xl:inline xl:static;
+    @apply xl:text-6xl;
+    @apply xl:-top-0;
     @apply text-secondary-600;
   }
 
   &::after {
     content: ' \00bb';
+    @apply text-4xl xl:text-6xl;
+    @apply leading-[0];
+    @apply relative top-[0.05em];
   }
 }
 
 .quote__author {
   @apply text--sm text-secondary-400;
+}
+
+.quote__image {
+  @apply h-16 w-16;
+  @apply md:h-28 md:w-28;
+  @apply lg:h-36 lg:w-36;
+  @apply xl:h-40 xl:w-40;
+  @apply 2xl:h-44 2xl:w-44;
+
+  picture,
+  img {
+    @apply w-full h-full object-cover;
+  }
 }
 

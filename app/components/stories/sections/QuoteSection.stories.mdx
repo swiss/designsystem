@@ -1,18 +1,73 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import QuoteSection from '../../ch/sections/QuoteSection.vue'
 
-<Meta title="Sections/Content/Quote" component={QuoteSection} />
+<Meta 
+  title="Sections/Content/Quote" 
+  component={QuoteSection}
+/>
 
-export const Template = () => ({
-  props: [],
-  components: { QuoteSection },
-  template: '<QuoteSection />',
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { QuoteSection}, 
+  template: 
+  `
+    <QuoteSection 
+      :quote="quote" 
+      :author="author" 
+      :image="image" 
+    />
+  `,
 })
 
 # Quote Section
 
 <Canvas>
-  <Story name="Example">{Template.bind({})}</Story>
+  <Story
+    name="Long quote"
+    args={{
+      quote: "Unsere Welt entwickelt sich ohne Rücksicht, und das Ergebnis ist ein Verlust der Artenvielfalt, Energieprobleme, Staus in den Städten. Aber Geografie kann, wenn sie richtig eingesetzt wird, dazu genutzt werden, nachhaltige und lebenswertere Städte neu zu gestalten",
+      author: 'Jack Dangermond, geograph',
+      image: { 
+        src: 'https://picsum.photos/1024/768/?image=29',
+        width: '1024',
+        height: '768',
+        alt: 'image name',
+        source: {
+          srcset: 'https://picsum.photos/2048/1152/?image=29',
+          width: '2048',
+          height: '1152',
+          media: '(min-width: 1024px)',
+        },
+        caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Short quote"
+    args={{
+      quote: "Begin anywhere.",
+      author: 'John Cage',
+      image: { 
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/576px-John_Cage_%281988%29.jpg',
+        width: '400',
+        height: '400',
+        alt: 'image name',
+        source: {
+          srcset: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/768px-John_Cage_%281988%29.jpg',
+          width: '800',
+          height: '800',
+          media: '(min-width: 1024px)',
+        }
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 <!--ArgsTable story="Example" /-->

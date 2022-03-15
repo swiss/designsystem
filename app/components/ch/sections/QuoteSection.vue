@@ -4,19 +4,19 @@
       <div class="quote">
         <div class="quote__text">
           <h3 class="quote__title">
-            Unsere Welt entwickelt sich ohne Rücksicht, und das Ergebnis ist ein Verlust der Artenvielfalt, Energieprobleme, Staus in den Städten. Aber Geografie kann, wenn sie richtig eingesetzt wird, dazu genutzt werden, nachhaltige und lebenswertere Städte neu zu gestalten
+            {{ quote }}
           </h3>
           <div class="quote__author">
-            Jack Dangermond, geograph
+            {{ author }}
           </div>
         </div>
-        <figure class="quote__image">
+        <figure v-if="image" class="quote__image">
           <picture>
-            <source
-              srcset="https://placekitten.com/g/800/800"
-              media="(min-width: 1024px)"
+            <source v-if="image.source" 
+              :srcset="image.source.srcset"
+              :media="image.source.media"
             />
-            <img src="https://placekitten.com/g/400/400" alt="cat"  class="shadow-2xl" />
+            <img :src="image.src" :alt="image.alt"  class="shadow-2xl" />
           </picture>
         </figure>
       </div>
@@ -28,7 +28,17 @@
 
 export default {
   name: 'QuoteSection',
-  props: {},
+  props: {
+    quote: {
+      type: String,
+    },
+    author: {
+      type: String,
+    },
+    image: {
+      type: Object
+    }
+  },
   components: {},
 }
 </script>
