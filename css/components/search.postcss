@@ -105,14 +105,18 @@
 
 
 .search__field {
-  @apply font-bold text-2xl text-white;
-  @apply bg-secondary-300;
+  @apply font-bold text-2xl;
   @apply p-3;
   @apply w-full;
   @apply outline-none;
 
   &::placeholder {
     @apply text-secondary-200;
+  }
+
+  .search--negative & {
+    @apply text-white;
+    @apply bg-secondary-300;
   }
 }
 
@@ -130,3 +134,21 @@
 .search__results--negative {
   @apply border border-secondary-400;
 }
+
+
+
+
+/*----------------------------------------*\
+ SEARCH RESULTS PAGE
+\*----------------------------------------*/
+
+.search--page-result {
+  @apply md:w-2/3 lg:w-1/2;
+  @apply pt-4 md:pt-6 2xl:pt-8;
+
+  svg { 
+    @apply w-10 h-10;
+    @apply stroke-0;
+  }
+}
+
