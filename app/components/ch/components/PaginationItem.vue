@@ -34,7 +34,6 @@ export default {
     size: {
       type: String,
       validator: (prop) => [
-        'sm',
         'base',
         'lg'
       ].includes(prop)

@@ -59,8 +59,24 @@
                 </Select>
               </div>
             </div>
+            
             <SearchResultsList 
               :itemList="searchResults"
+            />
+            
+            <Pagination
+              class="pagination--right"
+              :currentPage="pagination.currentPage"
+              :totalPages="pagination.totalPages"
+              :paginationItems="pagination.items"
+            />
+
+            <Notification 
+              type="info" 
+              icon="InfoCircle" 
+              :closeBtn="false"
+              text="<div class='text--bold'>Unzufrieden mit der Suche?</div>
+Bitte helfen Sie uns, unsere Suche zu verbessern, indem Sie uns eine Rückmeldung darüber geben, was schief gelaufen ist oder fehlt." 
             />
           </div>
         </div>
@@ -87,6 +103,8 @@ import SvgIcon from '../components/ch/components/SvgIcon'
 import Btn from "../components/ch/components/Btn"
 import Select from '../components/ch/components/Select.vue'
 import SearchResultsList from '../components/ch/components/SearchResultsList.vue'
+import Pagination from '../components/ch/components/Pagination.vue'
+import Notification from '../components/ch/components/Notification.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -102,19 +120,36 @@ export default {
     SvgIcon,
     Btn,
     Select,
-    SearchResultsList
-
+    SearchResultsList,
+    Pagination,
+    Notification
   },
 
   data: function(){
     return {
       isSearchInputFocused: false,
+      pagination: {
+        currentPage: '1',
+        totalPages: 'von 13 Seiten',
+        items: [
+          {
+            icon: "ChevronLeft",
+            label: "Previous Page",
+            link: "#prev"
+          },
+          {
+            icon: "ChevronRight",
+            label: "Next Page",
+            link: "#next"
+          }
+        ]
+      },
       searchResults: [
         { 
           title: 'Search result one',
           content: 'Max 150 chars, then truncate .Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...',
           href: '#',
-          type: 'Blogpost',
+          type: 'Article',
           date: '12. April 2022',
           specifications: 'Specifications related to content type (Author, PDF specs etc)',
           topics: 'Topic one    |   Topic two  |  Max three topics',
@@ -164,7 +199,7 @@ export default {
         },
         { 
           title: "Search result four. Display a minimum of ten items", 
-          content: "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
+          content: "Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ",
           href: 'http://admin.ch',
           type: 'Blogpost',
           date: '12. April 2022',

@@ -1,15 +1,32 @@
 <template>
-  <ul class="pagination">
-    <li v-for="(item, index) in paginationItems" :key="`item-${index}`">
-      <PaginationItem
-        :icon="item.icon"
-        :label="item.label"
-        :link="item.link"
-        :type="type"
-        :size="size"
-      />
-    </li>
-  </ul>
+  <div 
+    class="pagination"
+    :class="!field ? 'pagination--extended' : '' "
+  >
+    <input 
+      v-if="field"
+      class="pagination__input"
+      :class="computedClasses" 
+      :value="currentPage" 
+    />  
+    <div 
+      v-if="field"
+      class="pagination__text"
+    >
+      {{ totalPages }}
+    </div>
+    <ul class="pagiantion_items">
+      <li v-for="(item, index) in paginationItems" :key="`item-${index}`">
+        <PaginationItem
+          :icon="item.icon"
+          :label="item.label"
+          :link="item.link"
+          :type="type"
+          :size="size"
+        />
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -21,50 +38,10 @@ export default {
   components: {
     PaginationItem
   },
-  data: function () {
-    return {
-      paginationItems : [
-        {
-          icon: "ChevronLineLeft",
-          label: "Back to first Page",
-          link: "#1"
-        },
-        {
-          icon: "ChevronLeft",
-          label: "Previous Page",
-          link: "#prev"
-        },
-        {
-          label: "1",
-          link: "#1"
-        },
-        {
-          label: "2",
-          link: "#2"
-        },
-        {
-          label: "3",
-          link: "#3"
-        },
-        {
-          label: "...",
-        },
-        {
-          icon: "ChevronRight",
-          label: "Next Page",
-          link: "#next"
-        },
-        {
-          icon: "ChevronLineRight",
-          label: "Go to last Page",
-          link: "#last"
-        },
-      ]
-    }
-  },
   props: {
     type: {
       type: String,
+      default: 'outline',
       validator: (prop) => [
         'outline',
         'outline-negative',
@@ -72,12 +49,35 @@ export default {
     },
     size: {
       type: String,
+      default: 'base',
       validator: (prop) => [
         'sm',
         'base',
         'lg'
       ].includes(prop)
     },
+    field: {
+      type: Boolean,
+      default: true
+    },
+    currentPage: {
+      type: String
+    },
+    totalPages: {
+      type: String
+    },
+    paginationItems: {
+      type: Array
+    }
+  },
+  
+  computed: {
+    computedClasses () {
+      let base = 'input '
+      if (this.type) base += `input--${this.type} `
+      if (this.size) base += `input--${this.size} `
+      return base
+    }
   }
 }
 </script>

@@ -5,9 +5,7 @@
     :icon="icon"
     class="notification__icon"
   />
-  <div class="notification__text">
-    {{ text }}
-  </div>
+  <div class="notification__text" v-html="text" />
   <button v-if="closeBtn" class="notification__close" @click="isClosed = true">
     <SvgIcon
       icon="Cancel"
