@@ -143,7 +143,7 @@
 \*----------------------------------------*/
 
 .search--page-result {
-  @apply md:w-2/3 lg:w-1/2;
+  @apply md:w-4/5 lg:w-1/2;
   @apply pt-4 md:pt-6 2xl:pt-8;
 
   svg { 
@@ -152,3 +152,53 @@
   }
 }
 
+.search-results {
+  @apply md:w-4/5 lg:w-3/4;
+}
+
+.search-results__header {
+  @apply flex items-center justify-between;
+  @apply py-4 lg:py-6 2xl:py-8;
+  @apply border-b border-secondary-300;
+}
+
+.search-results__item {
+  @apply block sm:flex sm:justify-between;
+  @apply py-4 lg:py-6 2xl:py-8;
+  @apply px-2;
+  @apply border-b border-secondary-300;
+  @apply transition-colors duration-200 ease-in-out;
+
+  &:hover {
+    @apply bg-secondary-50;
+  }
+}
+
+.search-results__item__text {
+  @apply sm:w-2/3 space-y-2 lg:space-y-3 2xl:space-y-4;
+}
+
+.search-results__icons {
+  @apply flex space-x-4;
+}
+
+.search-results__item__image {
+  @apply sm:w-1/5 block;
+  
+  & picture {
+    @media (min-width: theme('screens.sm')) {
+      @apply block ratio ratio--1/1;
+    }
+  }
+
+  & img {
+    @apply max-w-[50%] sm:max-w-none;
+    @apply sm:object-contain sm:object-right;
+    @apply shadow-none;
+  }
+}
+
+.search-results__footer {
+  @apply flex items-center justify-between;
+  @apply py-4 lg:py-6 2xl:py-8;
+}

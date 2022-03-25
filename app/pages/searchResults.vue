@@ -38,10 +38,30 @@
         </div>
       </section>
       <section class="section section--default">
-        <div class="container container--grid gap--responsive">
-          <div class="search-result">
-            <h3>Search Result 1</h3>
-            <p>Description</p>
+        <div class="container gap--responsive">
+          <div class="search-results">
+            <div class="search-results__header">
+              <div>
+                10 von 127 Suchergibnisse
+              </div>
+              <div>
+                <Select
+                  variant="outline"
+                  :bare="true"
+                  size="sm"
+                  label="Sortierung nach"
+                  :id="654"
+                  name="Sort"
+                >
+                  <option selected>Relevanz</option>
+                  <option>Datum</option>
+                  <option>...</option>
+                </Select>
+              </div>
+            </div>
+            <SearchResultsList 
+              :itemList="searchResults"
+            />
           </div>
         </div>
       </section>
@@ -65,6 +85,8 @@ import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import SvgIcon from '../components/ch/components/SvgIcon'
 import Btn from "../components/ch/components/Btn"
+import Select from '../components/ch/components/Select.vue'
+import SearchResultsList from '../components/ch/components/SearchResultsList.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -78,12 +100,77 @@ export default {
     FooterInformation,
     FooterNavigation,
     SvgIcon,
-    Btn
+    Btn,
+    Select,
+    SearchResultsList
+
   },
 
   data: function(){
     return {
-      isSearchInputFocused: false
+      isSearchInputFocused: false,
+      searchResults: [
+        { 
+          title: 'Search result one',
+          content: 'Max 150 chars, then truncate .Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...',
+          href: '#',
+          type: 'Blogpost',
+          date: '12. April 2022',
+          specifications: 'Specifications related to content type (Author, PDF specs etc)',
+          topics: 'Topic one    |   Topic two  |  Max three topics',
+          isVideo: 'true',
+          isEasyLanguage: 'true',
+          isSignLanguage: 'true',
+          image: { 
+            src: 'https://picsum.photos/230/130/?image=29',
+            width: '230',
+            height: '130',
+            alt: 'image name',
+            source: {
+              srcset: 'https://picsum.photos/460/260/?image=29',
+              width: '460',
+              height: '260',
+              media: '(min-width: 1024px)',
+            }
+          }
+        },
+        { 
+          title: 'Search result two',
+          content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma',
+          href: '#',
+          type: 'Blogpost',
+          date: '12. April 2022',
+          specifications: 'Specifications related to content type (Author, PDF specs etc)',
+          topics: 'Topic one    |   Topic two  |  Max three topics',
+          image: { 
+            src: 'https://picsum.photos/130/230/?image=29',
+            width: '130',
+            height: '230',
+            alt: 'image name',
+            source: {
+              srcset: 'https://picsum.photos/260/400/?image=29',
+              width: '260',
+              height: '400',
+              media: '(min-width: 1024px)',
+            }
+          }
+        },
+        { 
+          title: "Search result three", 
+          content: "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
+          href: 'http://admin.ch',
+          type: 'Blogpost',
+          date: '12. April 2022',
+        },
+        { 
+          title: "Search result four. Display a minimum of ten items", 
+          content: "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
+          href: 'http://admin.ch',
+          type: 'Blogpost',
+          date: '12. April 2022',
+        }
+
+      ]
     }
   },
   props: {
