@@ -1,0 +1,96 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import DownloadList from '../../ch/components/DownloadList.vue'
+
+<Meta
+  title="Components/DownloadList"
+  component={DownloadList}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { DownloadList },
+  template: '<ul><DownloadList v-for="item in content" id="1" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul>'
+})
+
+
+# DownloadList
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      content: [
+        { title:"Information on the usage of websites", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor.", url:"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", type:"PDF", date:"13.01.2022" },
+        { title:"Information on the usage of websites", description:"", url:"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", type:"JPEG", date:"22.01.2022" },
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+# Interaction and accessibility
+
+Each DownloadList item is it's own button, they  can also be added within a list and their width is contained by the outer parent element.
+
+```html
+<button href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+  target="_blank" download="Information on the usage of websites" id="download-item-1"
+  class="download-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+    class="download-item-icon icon icon--xl icon--Download ">
+    <path xmlns="http://www.w3.org/2000/svg"
+      d="m19.419 13.698-.375-.649-6.294 3.634v-12.228h-.75v12.228l-6.294-3.634-.375.649 7.044 4.067z">
+    </path>
+    <path xmlns="http://www.w3.org/2000/svg" d="m6.00576 19.91649h12.76855v.75h-12.76855z"></path>
+  </svg>
+  <div>
+    <p class="download-item-title">
+      Information on the usage of websites
+    </p>
+    <p class="download-item-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus
+      rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh,
+      pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget,
+      sodales est. Duis at ultrices odio, ac egestas dolor.
+    </p>
+    <p class="download-meta-info"><span class="download-item-size">
+        PDF
+      </span> <span class="download-item-meta-divider">|</span> <span class="download-item-date">
+        13.01.2022
+      </span></p>
+  </div>
+</button>
+```
+
+During interactions, the DownloadList items are highlighted and the user can click on them to trigger the download. The DownloadList items are also accessible by tabbing through them.
+
+```javascript
+const DownloadItem = {
+  init(target) {
+    // trigger download intead of routinf on click
+    let buttons = document.querySelectorAll(target)
+    buttons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault()
+        let url = button.getAttribute('href')
+        let name = button.getAttribute('download')
+        let a = document.createElement('a')
+        a.href = url
+        a.download = name
+        a.click()
+      })
+    })
+  },
+}
+export default DownloadItem
+```
+
+<a href="?path=/story/components-DownloadList--example">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a href="?id=components-DownloadList--example" target="_blank">
+  Open page in full width in a new tab
+</a>
