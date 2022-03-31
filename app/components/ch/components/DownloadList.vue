@@ -15,15 +15,7 @@
         <p v-if="description" class="download-item__description">
           {{ description }}
         </p>
-        <p class="download-meta-info">
-          <span class="download-item__size">
-            {{ type }}
-          </span>
-          <span class="download-item__meta-divider">|</span>
-          <span class="download-item__date">
-            {{ date }}
-          </span>
-        </p>
+        <MetaInfo :metainfos="[type, date]" />
       </div>
     </button>
   </li>
@@ -32,10 +24,12 @@
 <script>
 import SvgIcon from '../components/SvgIcon.vue'
 import DownloadItem from '../../../scripts/DownloadItem.js'
+import MetaInfo from './MetaInfo.vue'
 export default {
-  name: 'Accordion',
+  name: 'DownloadItem',
   components: {
     SvgIcon,
+    MetaInfo,
   },
   props: {
     id: {
