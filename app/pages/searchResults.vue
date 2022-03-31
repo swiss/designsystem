@@ -16,8 +16,6 @@
           <div class="search search--large search--page-result">
             <div class="search__group">
               <input 
-                @focus="isSearchInputFocused = true"
-                @blur="isSearchInputFocused = false"
                 type="text" 
                 id="search-input" 
                 label="Ämter filtern" 
@@ -26,9 +24,8 @@
                 autocomplete="off" 
               />
             <Btn 
-              @click.native="resetSearchInput"
               label="Ämter filtern" 
-              :icon="isSearchInputFocused ? 'CancelCircle' : 'Search'" 
+              icon="Search" 
               icon-pos="only" 
               variant="bare" 
               size="lg" 
@@ -55,7 +52,6 @@
                 >
                   <option selected>Relevanz</option>
                   <option>Datum</option>
-                  <option>...</option>
                 </Select>
               </div>
             </div>
@@ -217,12 +213,6 @@ export default {
   methods: {
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
-    },
-
-    resetSearchInput () {
-      const searchInput = document.getElementById('search-input')
-      searchInput.value = ''
-      searchInput.focus()
     }
   }
 }
