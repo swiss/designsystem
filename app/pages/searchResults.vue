@@ -39,20 +39,14 @@
           <div class="search-results">
             <div class="search-results__header">
               <div>
-                10 von 127 <br> Suchergibnisse
+                <strong>10 von 127</strong>Suchergebnisse
               </div>
-              <div>
-                <Select
-                  variant="outline"
-                  :bare="true"
-                  size="sm"
-                  label="Sortierung nach"
-                  :id="654"
-                  name="Sort"
-                >
-                  <option selected>Relevanz</option>
-                  <option>Datum</option>
-                </Select>
+              <div class="search-results__sort" role="group" aria-labelledby="radio-group-label-1">
+                <div id="radio-group-label-1">Sortierung nach</div>
+                <div class="form__group">
+                  <Radio id="radio-s0" name="radio-group-1" label="Relevanz" value="relevance" checked />
+                  <Radio id="radio-s1" name="radio-group-1" label="Datum" value="date" />
+                </div>
               </div>
             </div>
             
@@ -97,7 +91,7 @@ import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import SvgIcon from '../components/ch/components/SvgIcon'
 import Btn from "../components/ch/components/Btn"
-import Select from '../components/ch/components/Select.vue'
+import Radio from '../components/ch/components/Radio.vue'
 import SearchResultsList from '../components/ch/components/SearchResultsList.vue'
 import Pagination from '../components/ch/components/Pagination.vue'
 import Notification from '../components/ch/components/Notification.vue'
@@ -115,7 +109,7 @@ export default {
     FooterNavigation,
     SvgIcon,
     Btn,
-    Select,
+    Radio,
     SearchResultsList,
     Pagination,
     Notification

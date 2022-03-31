@@ -155,13 +155,25 @@
 }
 
 .search-results__header {
-  @apply flex gap-x-8 items-center justify-between;
+  @apply flex gap-x-8 items-end justify-between;
   @apply text--sm;
-  @apply py-4 lg:py-6 2xl:py-8;
+  @apply py-4 sm:py-6 2xl:py-8;
   @apply border-b border-secondary-300;
 
-  br {
-    @apply sm:hidden;
+  strong {
+    @apply block sm:inline mr-[1ex];
+  }
+}
+
+.search-results__sort {
+  @apply flex flex-wrap gap-x-4 justify-end;
+
+  .form__group {
+    @apply flex gap-x-4;
+  }
+
+  .form__group__radio {
+    @apply mb-0;
   }
 }
 
@@ -169,9 +181,6 @@
   @apply my-16;
 }
 
-.search-results .form__group__select {
-  @apply text-right;
-}
 
 
 

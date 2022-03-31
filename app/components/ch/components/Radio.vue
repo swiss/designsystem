@@ -6,6 +6,8 @@
       :id="id"
       :name="name"
       :value="value"
+      :checked="checked"
+
     />
     <label
       v-if="label"
@@ -47,6 +49,9 @@ export default {
     },
     message: {
       type: String,
+    },
+    checked: {
+      type: Boolean,
     },
     messageType: {
       type: String,
