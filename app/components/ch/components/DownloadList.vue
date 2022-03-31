@@ -4,7 +4,7 @@
       class="download-item"
       :href="url"
       target="_blank"
-      :download="title"
+      :download="filename"
       :id="`download-item-${id}`"
     >
       <SvgIcon icon="Download" size="xl" class="download-item__icon" />
@@ -41,6 +41,10 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+    filename: {
+      type: String,
+      required: false,
     },
     description: {
       type: String,

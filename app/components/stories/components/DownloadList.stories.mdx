@@ -9,7 +9,7 @@ import DownloadList from '../../ch/components/DownloadList.vue'
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { DownloadList },
-  template: '<ul><DownloadList v-for="item in content" id="1" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul>'
+  template: '<ul><DownloadList v-for="item in content" id="1" :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul>'
 })
 
 
@@ -20,8 +20,8 @@ export const Template = (args, { argTypes }) => ({
     name="Example"
     args={{
       content: [
-        { title:"Information on the usage of websites", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor.", url:"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", type:"PDF", date:"13.01.2022" },
-        { title:"Information on the usage of websites", description:"", url:"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", type:"JPEG", date:"22.01.2022" },
+        { filename:"example.pdf" ,title:"Information on the usage of websites", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor.", url:"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", type:"PDF", date:"13.01.2022" },
+        { filename:"example.pdf" ,title:"Information on the usage of websites", description:"", url:"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", type:"JPEG", date:"22.01.2022" },
       ]
     }}
   >
