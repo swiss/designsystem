@@ -7,20 +7,20 @@
       :download="title"
       :id="`download-item-${id}`"
     >
-      <SvgIcon icon="Download" size="xl" class="download-item-icon" />
+      <SvgIcon icon="Download" size="xl" class="download-item__icon" />
       <div>
-        <p class="download-item-title">
+        <p class="download-item__title">
           {{ title }}
         </p>
-        <p v-if="description" class="download-item-description">
+        <p v-if="description" class="download-item__description">
           {{ description }}
         </p>
         <p class="download-meta-info">
-          <span class="download-item-size">
+          <span class="download-item__size">
             {{ type }}
           </span>
-          <span class="download-item-meta-divider">|</span>
-          <span class="download-item-date">
+          <span class="download-item__meta-divider">|</span>
+          <span class="download-item__date">
             {{ date }}
           </span>
         </p>
