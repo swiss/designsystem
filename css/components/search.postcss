@@ -136,7 +136,6 @@
 }
 
 
-
 /*----------------------------------------*\
  SEARCH RESULTS PAGE
 \*----------------------------------------*/
@@ -156,13 +155,22 @@
 }
 
 .search-results__header {
-  @apply flex items-center justify-between;
+  @apply flex gap-x-8 items-center justify-between;
+  @apply text--sm;
   @apply py-4 lg:py-6 2xl:py-8;
   @apply border-b border-secondary-300;
+
+  br {
+    @apply sm:hidden;
+  }
 }
 
 .search-results .notification {
-  @apply lg:w-2/3 my-16;
+  @apply my-16;
+}
+
+.search-results .form__group__select {
+  @apply text-right;
 }
 
 

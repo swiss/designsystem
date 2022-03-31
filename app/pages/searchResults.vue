@@ -42,7 +42,7 @@
           <div class="search-results">
             <div class="search-results__header">
               <div>
-                10 von 127 Suchergibnisse
+                10 von 127 <br> Suchergibnisse
               </div>
               <div>
                 <Select
