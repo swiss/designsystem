@@ -152,7 +152,7 @@ export default {
           type: 'Article',
           date: '12. April 2022',
           specifications: 'Specifications related to content type (Author, PDF specs etc)',
-          topics: 'Topic one    |   Topic two  |  Max three topics',
+          topics: ['Topic one', 'Topic two'],
           isVideo: 'true',
           isEasyLanguage: 'true',
           isSignLanguage: 'true',
@@ -176,7 +176,7 @@ export default {
           type: 'Blogpost',
           date: '12. April 2022',
           specifications: 'Specifications related to content type (Author, PDF specs etc)',
-          topics: 'Topic one    |   Topic two  |  Max three topics',
+          topics: ['Topic one', 'Topic two', 'Topic three'],
           image: { 
             src: 'https://picsum.photos/130/230/?image=29',
             width: '130',

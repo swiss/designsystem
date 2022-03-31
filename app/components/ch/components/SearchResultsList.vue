@@ -6,43 +6,19 @@
   >
     <a
       :href="item.href"
-      class="search-results__item"
+      class="search-result"
     >
-      <div class="search-results__item__text">
-        <div class="text--sm text--light">
-          {{ item.type }} | {{ item.date }}
-        </div>
-        <h3 class="text--xl text--bold">
-          {{ item.title }}
-        </h3>
-        <div>
-          {{ item.content }}
-        </div>
-        <div class="text--sm text--light">
-          {{ item.specifications }}
-        </div>
-        <div class="text--sm text--light">
-          {{ item.topics }}
-        </div>
-        <div class="search-results__icons">
-          <SvgIcon
-            v-if="item.isVideo"
-            icon="Video"
-            size="2xl"
-          />
-          <SvgIcon
-            v-if="item.isEasyLanguage"
-            icon="EasyLanguage"
-            size="2xl"
-          />
-          <SvgIcon
-            v-if="item.isSignLanguage"
-            icon="SignLanguage"
-            size="2xl"
-          />
-        </div>
+      <MetaInfo :metainfos="[item.type, item.date]" />
+      <h3 class="search-result__title">
+        {{ item.title }}
+      </h3>
+      <div class="search-result__description">
+        {{ item.content }}
       </div>
-      <figure v-if="item.image" class="search-results__item__image">
+      <div class="search-result__specs">
+        {{ item.specifications }}
+      </div>
+      <figure v-if="item.image" class="search-result__image">
         <picture>
           <source v-if="item.image.source" 
             :srcset="item.image.source.srcset"
@@ -51,6 +27,24 @@
           <img :src="item.image.src" :alt="item.image.alt"  class="shadow-2xl" />
         </picture>
       </figure>
+      <div class="search-result__icons">
+        <SvgIcon
+          v-if="item.isVideo"
+          icon="Video"
+          size="xl"
+        />
+        <SvgIcon
+          v-if="item.isEasyLanguage"
+          icon="EasyLanguage"
+          size="xl"
+        />
+        <SvgIcon
+          v-if="item.isSignLanguage"
+          icon="SignLanguage"
+          size="xl"
+        />
+      </div>
+      <MetaInfo :metainfos="item.topics" />
     </a>
 
   </li>
@@ -59,11 +53,13 @@
 
 <script>
 import SvgIcon from '../components/SvgIcon.vue'
+import MetaInfo from '../components/MetaInfo.vue'
 
 export default {
   name: 'SearchresultsList',
   components: {
-    SvgIcon
+    SvgIcon,
+    MetaInfo
   },
   props: {
     itemList: {
