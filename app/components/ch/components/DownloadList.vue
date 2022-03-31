@@ -1,6 +1,6 @@
 <template>
   <li>
-    <button
+    <a
       class="download-item"
       :href="url"
       target="_blank"
@@ -17,7 +17,7 @@
         </p>
         <MetaInfo :metainfos="[type, date]" />
       </div>
-    </button>
+    </a>
   </li>
 </template>
 
