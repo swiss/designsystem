@@ -23,7 +23,6 @@
 
 <script>
 import SvgIcon from '../components/SvgIcon.vue'
-import DownloadItem from '../../../scripts/DownloadItem.js'
 import MetaInfo from './MetaInfo.vue'
 export default {
   name: 'DownloadItem',
@@ -62,10 +61,6 @@ export default {
       type: String,
       required: true,
     },
-  },
-
-  mounted() {
-    DownloadItem.init(`#download-item-${this.id}`)
   },
 }
 </script>

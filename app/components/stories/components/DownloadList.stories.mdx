@@ -32,6 +32,7 @@ export const Template = (args, { argTypes }) => ({
 # Interaction and accessibility
 
 Each DownloadList item is it's own button, they  can also be added within a list and their width is contained by the outer parent element.
+During interactions, the DownloadList items are highlighted and the user can click on them to trigger the download. The DownloadList items are also accessible by tabbing through them.
 
 ```html
 <ul>
@@ -87,28 +88,8 @@ Each DownloadList item is it's own button, they  can also be added within a list
 </ul>
 ```
 
-During interactions, the DownloadList items are highlighted and the user can click on them to trigger the download. The DownloadList items are also accessible by tabbing through them.
 
-```javascript
-const DownloadItem = {
-  init(target) {
-    // trigger download intead of routinf on click
-    let buttons = document.querySelectorAll(target)
-    buttons.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        event.preventDefault()
-        let url = button.getAttribute('href')
-        let name = button.getAttribute('download')
-        let a = document.createElement('a')
-        a.href = url
-        a.download = name
-        a.click()
-      })
-    })
-  },
-}
-export default DownloadItem
-```
+
 
 <a href="?id=components-downloaditem--example">
   Go to the Canvas Tab
