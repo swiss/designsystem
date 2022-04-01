@@ -65,8 +65,8 @@
               type="info" 
               icon="InfoCircle" 
               :closeBtn="false"
-              text="<div class='text--bold'>Unzufrieden mit der Suche?</div>
-<div>Bitte helfen Sie uns, unsere Suche zu verbessern, indem Sie uns eine Rückmeldung darüber geben, was schief gelaufen ist oder fehlt.</div><a href='#'>Send a improvement proposal</link>" 
+              text="<h5 class='text--bold'>Unzufrieden mit der Suche?</h5>
+<div>Bitte helfen Sie uns, unsere Suche zu verbessern, indem Sie uns eine Rückmeldung darüber geben, was schief gelaufen ist oder fehlt.</div><a href='#' class='link'>Send a improvement proposal</link>" 
             />
           </div>
         </div>
