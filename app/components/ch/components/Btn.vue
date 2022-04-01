@@ -12,7 +12,6 @@
       class="btn__icon"
     />
     <span
-      v-if="this.label"
       class="btn__text"
     >
       {{ label }}
