@@ -16,13 +16,14 @@
 
 .quote__text {
   @apply flex flex-col h-full justify-center;
+  @apply lg:pl-9 xl:pl-0;
 }
 
 .quote__title {
   @apply pb-2 relative;
   @apply quote-font-size;
   @apply text--bold text-secondary-600;
-  @apply xl:-indent-9;
+  @apply lg:-indent-9;
   
   &::before {
     content: '\00ab';
@@ -32,17 +33,17 @@
     @apply text-4xl;
     @apply -top-4;
 
-    @apply xl:inline xl:static;
-    @apply xl:text-6xl;
-    @apply xl:-top-0;
+    @apply lg:inline lg:relative;
+    @apply lg:text-6xl;
+    @apply lg:top-[0.05em];
     @apply text-secondary-600;
   }
 
   &::after {
     content: ' \00bb';
-    @apply text-4xl xl:text-6xl;
-    @apply leading-[0];
     @apply relative top-[0.05em];
+    @apply text-4xl lg:text-6xl;
+    @apply leading-[0];
   }
 }
 
@@ -69,9 +70,9 @@ blockquote {
   @apply quote-font-size;
   
   @apply pt-12 pb-10;
-  @apply xl:py-14;
+  @apply lg:py-14;
   @apply bg-secondary-50;
-  @apply !my-7 xl:!my-8;
+  @apply !my-7 lg:!my-8;
 
   .container__center--xs & {
     margin-left:  calc((100vw - 6em ) / -12 );
@@ -82,7 +83,7 @@ blockquote {
   }
 
   &::before {
-    @apply top-8;
+    @apply top-8 lg:top-0;
   }
 }
 
