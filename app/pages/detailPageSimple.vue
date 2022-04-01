@@ -153,7 +153,7 @@
               <li>List item neues Modell in der Datenmodellablage publizieren</li>
             </ol>
 
-            <Accordion id="345"
+            <Accordion id="3456"
               :content='[
                 {
                   title: "Accordion item one",

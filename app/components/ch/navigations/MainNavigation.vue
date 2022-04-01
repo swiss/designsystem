@@ -125,7 +125,7 @@
         </a>
       </li>
       <!-- more button -->
-      <li id="more-button">
+      <li v-if="context=='desktop'" id="more-button">
         <a 
           href="javascript:void(0)" role="button" 
           class="navy__has-children desktop-menu__more"

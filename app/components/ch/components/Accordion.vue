@@ -12,8 +12,8 @@
     <button
       class="accordion__button"
       aria-expanded="false"
-      :aria-controls="`content-${key}`"
-      :id="`accordion-control-${key}`"
+      :aria-controls="`content-${id}-${key}`"
+      :id="`accordion-control-${id}-${key}`"
     >
       <h3 class="accordion__title">
         {{ item.title }}
@@ -27,7 +27,7 @@
     <div
       class="accordion__drawer"
       aria-hidden="true"
-      :id="`content-${key}`"
+      :id="`content-${id}-${key}`"
     >
       <div
         class="accordion__content"
