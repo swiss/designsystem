@@ -185,6 +185,10 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
     },
+    fontWeight: {
+      normal: 400,
+      bold: 400,
+    },
     fontSize: {
       xs: '0.75rem',
       sm: '0.875rem',
