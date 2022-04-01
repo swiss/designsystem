@@ -3,15 +3,13 @@
     <a
       class="download-item"
       :href="url"
-      target="_blank"
-      :download="filename"
-      :id="`download-item-${id}`"
+      download
     >
       <SvgIcon icon="Download" size="xl" class="download-item__icon" />
       <div>
-        <p class="download-item__title">
+        <h5 class="download-item__title">
           {{ title }}
-        </p>
+        </h5>
         <p v-if="description" class="download-item__description">
           {{ description }}
         </p>
@@ -31,12 +29,6 @@ export default {
     MetaInfo,
   },
   props: {
-    id: {
-      type: String,
-      required: false,
-      // generate default randomized id if not existing
-      default: () => Math.random().toString(36).substring(2, 15),
-    },
     title: {
       type: String,
       required: true,

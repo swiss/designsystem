@@ -9,7 +9,7 @@ import DownloadList from '../../ch/components/DownloadList.vue'
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { DownloadList },
-  template: '<ul><DownloadList v-for="item in content" id="1" :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul>'
+  template: '<ul><DownloadList v-for="item in content" :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul>'
 })
 
 
@@ -20,8 +20,22 @@ export const Template = (args, { argTypes }) => ({
     name="Example"
     args={{
       content: [
-        { filename:"example.pdf" ,title:"Information on the usage of websites", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor.", url:"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", type:"PDF", date:"13.01.2022" },
-        { filename:"example.pdf" ,title:"Information on the usage of websites", description:"", url:"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", type:"JPEG", date:"22.01.2022" },
+        { 
+          filename:"dummy.pdf" ,
+          title:"Information on the usage of websites",
+          description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor.",
+          url:"../../../static/documents/dummy.pdf",
+          type:"PDF",
+          date:"13.01.2022" 
+        },
+        { 
+          filename:"image.png", 
+          title:"Information on the usage of websites", 
+          description:"", 
+          url:"../../../static/images/html-structure.png", 
+          type:"PNG", 
+          date:"22.01.2022" 
+        },
       ]
     }}
   >
@@ -29,74 +43,42 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-# Interaction and accessibility
 
-Each DownloadList item is it's own button, they  can also be added within a list and their width is contained by the outer parent element.
+## Interaction and accessibility
+
+Each DownloadList item is it's own link, they can also be added within a list and their width is contained by the outer parent element.
 During interactions, the DownloadList items are highlighted and the user can click on them to trigger the download. The DownloadList items are also accessible by tabbing through them.
 
-```html
-<ul>
-  <li><a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-      target="_blank" download="Information on the usage of websites" id="download-item-1"
-      class="download-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-        class="download-item__icon icon icon--xl icon--Download ">
-        <path xmlns="http://www.w3.org/2000/svg"
-          d="m19.419 13.698-.375-.649-6.294 3.634v-12.228h-.75v12.228l-6.294-3.634-.375.649 7.044 4.067z">
-        </path>
-        <path xmlns="http://www.w3.org/2000/svg" d="m6.00576 19.91649h12.76855v.75h-12.76855z">
-        </path>
-      </svg>
-      <div>
-        <p class="download-item__title">
-          Information on the usage of websites
-        </p>
-        <p class="download-item__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus
-          luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas
-          urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus
-          purus eget, sodales est. Duis at ultrices odio, ac egestas dolor.
-        </p>
-        <p class="meta-info"><span class="meta-info__item">
-            PDF
-          </span><span class="meta-info__item">
-            13.01.2022
-          </span></p>
-      </div>
-    </a></li>
-  <li><a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-      target="_blank" download="Information on the usage of websites" id="download-item-1"
-      class="download-item"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-        class="download-item__icon icon icon--xl icon--Download ">
-        <path xmlns="http://www.w3.org/2000/svg"
-          d="m19.419 13.698-.375-.649-6.294 3.634v-12.228h-.75v12.228l-6.294-3.634-.375.649 7.044 4.067z">
-        </path>
-        <path xmlns="http://www.w3.org/2000/svg" d="m6.00576 19.91649h12.76855v.75h-12.76855z">
-        </path>
-      </svg>
-      <div>
-        <p class="download-item__title">
-          Information on the usage of websites
-        </p>
-        <!---->
-        <p class="meta-info"><span class="meta-info__item">
-            JPEG
-          </span><span class="meta-info__item">
-            22.01.2022
-          </span></p>
-      </div>
-    </a></li>
-</ul>
+
+## Download vs navigation
+
+If the DownloadList item points to a document placed on the same server as the application, add the `download` attribute on your link. This will download the document instead of opening it in the browser.
+
+``` html
+<a download class="download-item" href="..url-to-your-document">
+  <SvgIcon icon="Download" size="xl" class="download-item__icon" />
+  <div>
+    <h5 class="download-item__title">Title</h5>
+    <p class="download-item__description">Optional description</p>
+    <p class="meta-info">
+      <span class="meta-info__item">meta-info 1</span>
+      <span class="meta-info__item">meta-info 2</span>
+    </p>
+  </div>
+</a>
 ```
 
+If the DownloadList item points to an external document, a JavaScript or backend approach has to be applied. 
+
+And if the cross-origin problematic can't be solved, add a `target="_blank"` attribute on the link for a slightly better interaction.
 
 
-
-<a href="?id=components-downloaditem--example">
+<a href="?path=/story/components-downloadlist--example">
   Go to the Canvas Tab
 </a>
 
 ---
 
-<a href="?id=components-downloaditem--example" target="_blank">
+<a href="?id=components-downloadlist--example&args=&viewMode=story" target="_blank">
   Open page in full width in a new tab
 </a>
