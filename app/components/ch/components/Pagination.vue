@@ -8,6 +8,7 @@
       class="pagination__input"
       :class="computedClasses" 
       :value="currentPage" 
+      aria-label="pagination input"
     />  
     <div 
       v-if="field"
