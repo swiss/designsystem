@@ -15,7 +15,7 @@
     >
       {{ totalPages }}
     </div>
-    <ul class="pagiantion_items">
+    <ul class="pagination_items">
       <li v-for="(item, index) in paginationItems" :key="`item-${index}`">
         <PaginationItem
           :icon="item.icon"
