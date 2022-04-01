@@ -35,22 +35,38 @@
           <div class="container__center--xs vertical-spacing">
            
             <h2 class="h2">
-              Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+              Carousel with few images
             </h2>
             <p>
-              Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
-            </p>
-            <p>
-              Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+              To display a few images as a carousel, set the pagination type to «bullets». Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
             </p>
 
             <SlideshowExample 
               :breakpoints="breakpoints" 
-              :paginationType="bullets" 
+              paginationType="bullets" 
               :loop="loop" 
               :id="1"
               :slides="slides"
             />
+
+            <h2 class="h2">
+              Carousel with more than 5 images
+            </h2>
+            <p>
+              To display a more images in a carousel, set the pagination type to «fraction». Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+            </p>
+
+            <SlideshowExample 
+              :breakpoints="breakpoints" 
+              paginationType="fraction" 
+              :loop="loop" 
+              :id="2"
+              :slides="slides"
+            />
+
+            <p>
+              To display a single image, use the recommended markup with figure, picture and img elements.
+            </p>
 
             <figure>
               <picture>

@@ -61,11 +61,8 @@
           <template v-slot:body>
             <h3 class="card__title">Covid 19</h3>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
-            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
           </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
@@ -89,11 +86,8 @@
           <template v-slot:body>
             <h3 class="card__title">Covid 19</h3>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
-            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
           </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
@@ -117,11 +111,8 @@
           <template v-slot:body>
             <h3 class="card__title">Covid 19</h3>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
-            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
           </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
@@ -145,11 +136,8 @@
           <template v-slot:body>
             <h3 class="card__title">Covid 19</h3>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
-            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
           </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
@@ -173,11 +161,8 @@
           <template v-slot:body>
             <h3 class="card__title">Covid 19</h3>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
-            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
           </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
@@ -201,11 +186,8 @@
           <template v-slot:body>
             <h3 class="card__title">Covid 19</h3>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
-            <p class="text-sm font-bold">Annelies Zimmermann / Mai 10</p>
           </template>
           <template v-slot:footerInfo>
             Dienstleistungen & Produkte
