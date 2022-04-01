@@ -21,7 +21,6 @@
           type: paginationType,
           el: `#carousel-pagination-${id}`,
           clickable: true,
-          bulletElement: 'button',
           bulletClass: 'carousel__bullet',
           bulletActiveClass: 'carousel__bullet--active'
       }"
