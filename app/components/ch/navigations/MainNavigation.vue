@@ -138,7 +138,7 @@
             <span class="navy__title">Mehr</span>
             
           </li>
-          <div id="more-container"></div>
+          <li id="more-container"></li>
         </ul>
       </li>  
     </ul>
