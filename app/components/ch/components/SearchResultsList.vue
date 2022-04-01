@@ -9,9 +9,9 @@
       class="search-result"
     >
       <MetaInfo :metainfos="[item.type, item.date]" />
-      <h3 class="search-result__title">
+      <h2 class="search-result__title">
         {{ item.title }}
-      </h3>
+      </h2>
       <div class="search-result__description">
         {{ item.content }}
       </div>
