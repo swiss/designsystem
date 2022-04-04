@@ -5,7 +5,7 @@
       <option>DE</option>
       <option>FR</option>
       <option>IT</option>
-      <option disabled>RU</option>
+      <option disabled>RM</option>
       <option>EN</option>
     </Select>
   </div>
