@@ -3,10 +3,20 @@
 \*----------------------------------------*/
 
 .language-switcher {
-  @apply flex;
+  @apply flex cursor-pointer;
 
   a {
     @apply flex items-center;
     @apply h-full px-4;
   }
+
+  select {
+    @apply cursor-pointer;
+  }
+
+  .select__icon {
+    @apply w-7;
+  }
+
 }
+

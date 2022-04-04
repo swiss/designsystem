@@ -1,13 +1,11 @@
 <template>
   <div :class="computedClass">
-    <label for="lang-switcher" class="sr-only">
-      Select language
-    </label>
+    <label for="lang-switcher" class="sr-only"> Select language </label>
     <Select id="lang-switcher" bare variant="negative">
       <option>DE</option>
       <option>FR</option>
       <option>IT</option>
-      <option>RU</option>
+      <option disabled>RU</option>
       <option>EN</option>
     </Select>
   </div>
@@ -19,13 +17,13 @@ import Select from '../components/Select.vue'
 export default {
   name: 'LanguageSwitcher',
   components: {
-    Select
+    Select,
   },
   computed: {
-    computedClass () {
+    computedClass() {
       let base = `language-switcher `
       return base
-    }
-  }
+    },
+  },
 }
 </script>
