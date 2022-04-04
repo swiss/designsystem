@@ -1,4 +1,5 @@
 <template>
+  <!-- prettier-ignore -->
   <div>
     <ClassTable v-bind:data="{
       components : [
