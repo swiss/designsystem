@@ -205,7 +205,12 @@ module.exports = {
       '9xl': '5rem',
     },
     fontFamily: {
-      regular: ['FrutigerNeueLTPro-Regular', 'Hind', 'Fallback-font'],
+      regular: [
+        'FrutigerNeueLTPro-Regular',
+        'Hind',
+        'Fallback-font',
+        'Sans-Serif',
+      ],
       italic: ['FrutigerNeueLTPro-Italic', 'Hind', 'Fallback-font'],
       bold: ['FrutigerNeueLTPro-Bold', 'Hind', 'Fallback-font'],
       'bold-italic': ['FrutigerNeueLTPro-BoldIt', 'Hind', 'Fallback-font'],
