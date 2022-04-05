@@ -1,9 +1,10 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
 import Tabs from '../../ch/demo/Tabs.vue'
+import TabsLarge from '../../ch/demo/TabsLarge.vue'
 
 <Meta
   title="Components/Tabs"
-  component={Tabs}
+  component={Tabs, TabsLarge}
   argTypes={{
   }}
 />
@@ -14,8 +15,14 @@ export const Template = (args, { argTypes }) => ({
   template: '<Tabs />',
 });
 
-# Tabs
+export const TemplateLarge = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { TabsLarge },
+  template: '<TabsLarge />',
+});
 
+# Tabs
+Tabs are used to group related content. They can also be used to switch between views.
 <Canvas>
   <Story
     name="Example"
@@ -27,6 +34,18 @@ export const Template = (args, { argTypes }) => ({
   }</Story>
 </Canvas>
 
+# Overflowing Tabs
+While it is not advised to use more than 3 tabs, it can happen that the tabs are too large to fit in the available space. In this case, the tabcontainer can be made to overflow.
+<Canvas>
+  <Story
+    name="LargeExample"
+    args={{
+      variant: 'default',
+    }}
+  >
+    {TemplateLarge.bind({})
+  }</Story>
+</Canvas>
 
 <a href="?path=/story/components-tabs--example">
   Go to the Canvas Tab
