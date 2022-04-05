@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+import Tabs from '../../ch/demo/Tabs.vue'
+
+<Meta
+  title="Components/Tabs"
+  component={Tabs}
+  argTypes={{
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Tabs },
+  template: '<Tabs />',
+});
+
+# Tabs
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      variant: 'default',
+    }}
+  >
+    {Template.bind({})
+  }</Story>
+</Canvas>
+
+
+<a href="?path=/story/components-tabs--example">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a href="?id=components-tabs--example" target="_blank">
+  Open page in full width in a new tab
+</a>
