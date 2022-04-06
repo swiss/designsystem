@@ -12,13 +12,13 @@ import TabsLarge from '../../ch/demo/TabsLarge.vue'
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Tabs },
-  template: '<Tabs />',
+  template: '<div class="container bg-gray-50"><br /><Tabs /><br /></div>',
 });
 
 export const TemplateLarge = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { TabsLarge },
-  template: '<TabsLarge />',
+  template: '<div class="container bg-gray-50"><br /><TabsLarge /><br /></div>',
 });
 
 # Tabs

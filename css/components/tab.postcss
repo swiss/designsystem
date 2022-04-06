@@ -2,15 +2,32 @@
   TAB
 \*----------------------------------------*/
 
+.tabs {
+  .container__center--xs & {
+    @apply bg-gray-50 py-8;
+    @apply broader-than-container;
+
+    padding-left:  calc((100vw - 6em ) / 12 );
+    padding-right: calc((100vw - 6em ) / 12 );
+  }
+
+  .tab__control {
+     &:hover:not(.tab__control--active) {
+      @apply bg-gray-100;
+    }
+  }
+
+}
+
 .tab__controls {
   @apply flex;
   @apply overflow-x-auto whitespace-nowrap;
 }
 
 .tab__control {
-  @apply bg-white;
   @apply px-4 py-2;
   &.tab__control--active {
+    @apply bg-white;
     @apply relative;
     @apply border-t-4 border-red-600;
     &:after {
@@ -21,14 +38,14 @@
       @apply absolute w-full bg-white;
     }
   }
-  &:hover {
+  &:hover:not(.tab__control--active) {
     @apply bg-gray-50;
   }
 
 }
 
 .tab__container {
-  @apply border border-gray-50;
+  @apply border border-gray-50 bg-white;
   @apply md:px-6 px-4 pb-6;
 
   &.tab__container--is-hidden {

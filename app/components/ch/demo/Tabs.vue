@@ -41,7 +41,7 @@
     >
       <div>
         <ul>
-          <li>
+          <li class="list--bare">
             <a href="#" download="" class="download-item">
               <svg
                 viewBox="0 0 24 24"
@@ -67,7 +67,7 @@
               </div></a
             >
           </li>
-          <li>
+          <li class="list--bare">
             <a href="#" download="" class="download-item">
               <svg
                 viewBox="0 0 24 24"
