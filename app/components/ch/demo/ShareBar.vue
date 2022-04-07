@@ -3,7 +3,13 @@
     <div class="share-bar">
       <div class="flex share-container">
         <Print />
-        <SvgIcon icon="Share" size="lg" />
+        <button
+          aria-label="Share document"
+          class="btn btn--bare"
+          onClick="void();"
+        >
+          <SvgIcon aria-hidden="true" icon="Share" size="xl" />
+        </button>
       </div>
     </div>
   </div>

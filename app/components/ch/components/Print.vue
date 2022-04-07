@@ -2,13 +2,13 @@
   <div>
     <button
       aria-label="Print document"
-      class="print-button"
+      class="btn btn--bare"
       onClick="window.print()"
     >
       <SvgIcon
         aria-hidden="true"
         icon="Printer"
-        size="lg"
+        size="xl"
         class="print-button__icon"
       />
     </button>
