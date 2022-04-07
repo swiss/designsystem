@@ -6,7 +6,7 @@
       onClick="window.print()"
     >
       <SvgIcon
-        aria-hidden=""
+        aria-hidden="true"
         icon="Printer"
         size="lg"
         class="print-button__icon"
