@@ -3,8 +3,17 @@
 \*----------------------------------------*/
 /* No header, no footer, no logo*/
 @media print {
+  html {
+    font-size: 12px !important;
+  }
+
   #main-header,
   #main-footer {
     display: none !important;
+  }
+
+  div,
+  p {
+    break-inside: avoid;
   }
 }
