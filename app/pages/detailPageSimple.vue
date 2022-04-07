@@ -8,7 +8,7 @@
       <DesktopMenu />
       <MobileMenu />
       <Breadcrumb />
-      <div class="flex items-end">
+      <div class="flex flex-row-reverse items-end">
         <div class="flex share-container">
           <Print />
           <SvgIcon icon="Share" size="lg" />
@@ -479,29 +479,29 @@ export default {
       breakpoints: {
         480: {
           slidesPerView: 1,
-          spaceBetween: 28
+          spaceBetween: 28,
         },
         640: {
           slidesPerView: 1,
-          spaceBetween: 36
+          spaceBetween: 36,
         },
         768: {
           slidesPerView: 2,
-          spaceBetween: 36
+          spaceBetween: 36,
         },
         1024: {
           slidesPerView: 3,
-          spaceBetween: 40
+          spaceBetween: 40,
         },
         1280: {
           slidesPerView: 3,
-          spaceBetween: 48
+          spaceBetween: 48,
         },
         1800: {
           slidesPerView: 3,
-          spaceBetween: 64
+          spaceBetween: 64,
         },
-      }
+      },
     }
   },
   methods: {
