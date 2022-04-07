@@ -8,6 +8,12 @@
       <DesktopMenu />
       <MobileMenu />
       <Breadcrumb />
+      <div class="flex items-end">
+        <div class="flex share-container">
+          <Print />
+          <SvgIcon icon="Share" size="lg" />
+        </div>
+      </div>
     </header>
     <main id="main-content">
       <Hero type="default">
@@ -397,6 +403,8 @@ import Accordion from '~/components/ch/components/Accordion'
 import TextImage from '~/components/ch/components/TextImage'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 import Tabs from '~/components/ch/demo/Tabs.vue'
+import Print from '~/components/ch/components/Print.vue'
+import SvgIcon from '~/components/ch/components/SvgIcon.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -416,6 +424,8 @@ export default {
     TextImage,
     SlideshowExample,
     Tabs,
+    Print,
+    SvgIcon,
   },
   data: function () {
     return {
