@@ -1,0 +1,59 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+import Tabs from '../../ch/demo/Tabs.vue'
+import TabsLarge from '../../ch/demo/TabsLarge.vue'
+
+<Meta
+  title="Components/Tabs"
+  component={Tabs, TabsLarge}
+  argTypes={{
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Tabs },
+  template: '<div class="container bg-gray-50"><br /><Tabs /><br /></div>',
+});
+
+export const TemplateLarge = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { TabsLarge },
+  template: '<div class="container bg-gray-50"><br /><TabsLarge /><br /></div>',
+});
+
+# Tabs
+Tabs are used to group related content. They can also be used to switch between views. For a better distinction between the main content and the tabs it's recommended to use a container with the class "bg-gray-50" as a parent of the tabs.
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      variant: 'default',
+    }}
+  >
+    {Template.bind({})
+  }</Story>
+</Canvas>
+
+# Overflowing Tabs
+While it is not advised to use more than 4 tabs, it can happen that the tabs are too large or too many to fit in the available space. In this case, the tabcontainer can be made to overflow.
+Keep in mind that you should always show a small part of the overflowing tabs so that the users have a visual clue that there are more tabs available.
+<Canvas>
+  <Story
+    name="LargeExample"
+    args={{
+      variant: 'default',
+    }}
+  >
+    {TemplateLarge.bind({})
+  }</Story>
+</Canvas>
+
+<a href="?path=/story/components-tabs--example">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a href="?id=components-tabs--example" target="_blank">
+  Open page in full width in a new tab
+</a>
