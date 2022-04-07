@@ -1,8 +1,10 @@
 <template>
-  <div class="flex flex-row-reverse items-end">
-    <div class="flex share-container">
-      <Print />
-      <SvgIcon icon="Share" size="lg" />
+  <div class="container">
+    <div class="share-bar">
+      <div class="flex share-container">
+        <Print />
+        <SvgIcon icon="Share" size="lg" />
+      </div>
     </div>
   </div>
 </template>
