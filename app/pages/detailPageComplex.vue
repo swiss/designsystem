@@ -8,23 +8,27 @@
       <DesktopMenu />
       <MobileMenu />
       <Breadcrumb />
+      <ShareBar />
     </header>
     <main id="main-content">
       <Hero type="main-image">
         <template v-slot:image>
           <picture>
-            <source 
+            <source
               srcset="https://placekitten.com/g/1200/900"
               media="(min-width: 800px)"
-            >
-            <img src="https://placekitten.com/g/900/600" alt="cat">
+            />
+            <img src="https://placekitten.com/g/900/600" alt="cat" />
           </picture>
         </template>
         <template v-slot:title>
-          Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport
+          Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und
+          Sport
         </template>
         <template v-slot:description>
-          Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
+          Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz
+          und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen
+          Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
         </template>
         <template v-slot:cta>
           <Btn
@@ -41,7 +45,7 @@
             icon="ArrowRight"
             label="Über uns"
           />
-        </template>      
+        </template>
       </Hero>
       <section class="section bg--secondary-50">
         <div class="container">
@@ -50,8 +54,9 @@
               <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet.
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet.
                 </p>
               </template>
             </Card>
@@ -59,8 +64,9 @@
               <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
-                  Sed onsetetur sadipscing elitr ipsum dolor sit amet, consetetur sadipscing elitr,
-                  sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Sed onsetetur sadipscing elitr ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                  consetetur sadipscing elitr, sed
                 </p>
               </template>
             </Card>
@@ -68,9 +74,10 @@
               <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
-                  Consetetur sadipscing elitr sadipscing elitr, sed Lorem ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                  sed Lorem ipsum dolor sit amet.
+                  Consetetur sadipscing elitr sadipscing elitr, sed Lorem ipsum
+                  dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                  dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                  dolor sit amet.
                 </p>
               </template>
             </Card>
@@ -78,7 +85,8 @@
               <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
-                  Vonsetetur sadipscing elitr, onsetetur sadipscing elitr sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Vonsetetur sadipscing elitr, onsetetur sadipscing elitr sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 </p>
               </template>
             </Card>
@@ -87,16 +95,20 @@
       </section>
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
-
           <div class="container__main">
             <h2 class="h2">
-              Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+              Ein neues «minimales Geodatenmodell» in der Datenmodellablage
+              publizieren
             </h2>
             <p>
-              Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+              Über den Kontakt models@geo.admin.ch können die
+              INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+              Dokument) zur Publikation eingereicht werden.
             </p>
             <p>
-              Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+              Über den Kontakt models@geo.admin.ch können die
+              INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+              Dokument) zur Publikation eingereicht werden.
             </p>
 
             <figure>
@@ -107,22 +119,48 @@
                 />
                 <img src="https://placekitten.com/g/1600/900" alt="cat" />
               </picture>
-              <figcaption>Image label here —&nbsp;©&nbsp;Photograph Name</figcaption>
+              <figcaption>
+                Image label here —&nbsp;©&nbsp;Photograph Name
+              </figcaption>
             </figure>
-            <h2 class="h2">
-              Datenmodellablage ansehen
-            </h2>
+            <h2 class="h2">Datenmodellablage ansehen</h2>
             <p>
-              Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
+              Der Modellkatalog kann unter
+              <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
+              «minimales Geodatenmodell» in der Datenmodellablage publizieren.
+              Für die Publikation der «minimalen Geodatenmodelle» besteht kein
+              direkter Online-Zugang. Die Datenmodellablage ist moderiert und
+              die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen.
+              Entsprechend der Empfehlungen zur Modellierung wird die
+              Modelldokumentation veröffentlicht oder verlinkt. Die
+              INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
+              eingepflegt.
             </p>
             <div class="ratio ratio--16/9 ratio--mb">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/tHd7kesDCWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/tHd7kesDCWk"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
             </div>
             <p>
-              Der Modellkatalog kann unter <a href="#">models.geo.admin.ch</a>   angesehen werden. Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren. Für die Publikation der «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang. Die Datenmodellablage ist moderiert und die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird die Modelldokumentation veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage eingepflegt.
-            </p> 
+              Der Modellkatalog kann unter
+              <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
+              «minimales Geodatenmodell» in der Datenmodellablage publizieren.
+              Für die Publikation der «minimalen Geodatenmodelle» besteht kein
+              direkter Online-Zugang. Die Datenmodellablage ist moderiert und
+              die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen.
+              Entsprechend der Empfehlungen zur Modellierung wird die
+              Modelldokumentation veröffentlicht oder verlinkt. Die
+              INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
+              eingepflegt.
+            </p>
           </div>
-          <div class="container__aside" >
+          <div class="container__aside">
             <div class="sticky sticky--top">
               <Card type="default">
                 <!--template v-slot:image>
@@ -131,9 +169,10 @@
                 <template v-slot:body>
                   <h3 class="card__title">Side notes, can be sticky</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-                    consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   </p>
                 </template>
                 <template v-slot:footerAction>
@@ -149,7 +188,6 @@
             </div>
           </div>
         </div>
-          
       </section>
 
       <QuoteSection />
@@ -169,14 +207,20 @@
               </figure>
               <div>
                 <h2 class="h2">
-                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage
+                  publizieren
                 </h2>
                 <p>
-                  Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden. Modelldokumentation zur Publikation eingereicht werden.
+                  Über den Kontakt models@geo.admin.ch können die
+                  INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+                  Dokument) zur Publikation eingereicht werden.
+                  Modelldokumentation zur Publikation eingereicht werden.
                 </p>
               </div>
             </div>
-            <div class="grid grid--responsive-cols-2 grid--reverse gap--responsive">
+            <div
+              class="grid grid--responsive-cols-2 grid--reverse gap--responsive"
+            >
               <figure>
                 <picture>
                   <source
@@ -188,10 +232,14 @@
               </figure>
               <div>
                 <h2 class="h2">
-                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage
+                  publizieren
                 </h2>
                 <p>
-                  Über den Kontakt models@geo.admin.ch können und die Modelldokumentation zur Publikation eingereicht models@geo.admin.ch können und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+                  Über den Kontakt models@geo.admin.ch können und die
+                  Modelldokumentation zur Publikation eingereicht
+                  models@geo.admin.ch können und die Modelldokumentation (als
+                  PDF Dokument) zur Publikation eingereicht werden.
                 </p>
               </div>
             </div>
@@ -206,9 +254,10 @@
               <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                  sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 </p>
               </template>
             </Card>
@@ -216,9 +265,10 @@
               <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                  sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 </p>
               </template>
             </Card>
@@ -226,9 +276,10 @@
               <template v-slot:body>
                 <h3 class="card__title">Card example</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                  sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 </p>
               </template>
             </Card>
@@ -251,14 +302,20 @@
               </figure>
               <div>
                 <h2 class="h2">
-                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage
+                  publizieren
                 </h2>
                 <p>
-                  Über den Kontakt models@geo.admin.ch können die INTERLIS-Modelldatei und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden. Modelldokumentation zur Publikation eingereicht werden.
+                  Über den Kontakt models@geo.admin.ch können die
+                  INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+                  Dokument) zur Publikation eingereicht werden.
+                  Modelldokumentation zur Publikation eingereicht werden.
                 </p>
               </div>
             </div>
-            <div class="grid grid--responsive-cols-1/3-2/3 grid--reverse gap--responsive">
+            <div
+              class="grid  grid--responsive-cols-1/3-2/3 grid--reverse gap--responsive"
+            >
               <figure>
                 <picture>
                   <source
@@ -270,17 +327,20 @@
               </figure>
               <div>
                 <h2 class="h2">
-                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage publizieren
+                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage
+                  publizieren
                 </h2>
                 <p>
-                  Über den Kontakt models@geo.admin.ch können und die Modelldokumentation zur Publikation eingereicht models@geo.admin.ch können und die Modelldokumentation (als PDF Dokument) zur Publikation eingereicht werden.
+                  Über den Kontakt models@geo.admin.ch können und die
+                  Modelldokumentation zur Publikation eingereicht
+                  models@geo.admin.ch können und die Modelldokumentation (als
+                  PDF Dokument) zur Publikation eingereicht werden.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
     </main>
     <footer class="footer" id="main-footer">
       <footer-information />
@@ -303,6 +363,7 @@ import Btn from '~/components/ch/components/Btn'
 import SvgIcon from '~/components/ch/components/SvgIcon'
 import Hero from '~/components/ch/sections/Hero'
 import QuoteSection from '~/components/ch/sections/QuoteSection'
+import ShareBar from '~/components/ch/demo/ShareBar.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -319,7 +380,8 @@ export default {
     Btn,
     SvgIcon,
     Hero,
-    QuoteSection
+    QuoteSection,
+    ShareBar,
   },
   methods: {
     getMobileMenuIsOpen() {

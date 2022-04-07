@@ -8,6 +8,7 @@
       <DesktopMenu />
       <MobileMenu />
       <Breadcrumb />
+      <ShareBar />
     </header>
     <main id="main-content">
       <Hero type="default">
@@ -55,7 +56,7 @@
             <SlideshowExample
               :breakpoints="breakpoints"
               paginationType="bullets"
-              :loop="loop"
+              loop="loop"
               :id="1"
               :slides="slides"
             />
@@ -71,7 +72,7 @@
             <SlideshowExample
               :breakpoints="breakpoints"
               paginationType="fraction"
-              :loop="loop"
+              loop="loop"
               :id="2"
               :slides="slides"
             />
@@ -397,6 +398,7 @@ import Accordion from '~/components/ch/components/Accordion'
 import TextImage from '~/components/ch/components/TextImage'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 import Tabs from '~/components/ch/demo/Tabs.vue'
+import ShareBar from '../components/ch/demo/ShareBar.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -416,6 +418,7 @@ export default {
     TextImage,
     SlideshowExample,
     Tabs,
+    ShareBar,
   },
   data: function () {
     return {
@@ -466,6 +469,32 @@ export default {
           caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
         },
       ],
+      breakpoints: {
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 28,
+        },
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 36,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 36,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        1280: {
+          slidesPerView: 3,
+          spaceBetween: 48,
+        },
+        1800: {
+          slidesPerView: 3,
+          spaceBetween: 64,
+        },
+      },
     }
   },
   methods: {
