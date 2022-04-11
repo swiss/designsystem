@@ -152,7 +152,23 @@
           
       </section>
 
-      <QuoteSection />
+      <QuoteSection
+        quote="Begin anywhere."
+        author="John Cage"
+        :image="{
+          src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/576px-John_Cage_%281988%29.jpg',
+          width: '400',
+          height: '400',
+          alt: 'image name',
+          source: {
+            srcset:
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/768px-John_Cage_%281988%29.jpg',
+            width: '800',
+            height: '800',
+            media: '(min-width: 1024px)',
+          },
+        }"
+      />
 
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
