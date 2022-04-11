@@ -19,18 +19,22 @@
         },
         768: {
           slidesPerView: 2,
+          slidesPerGroup: 2,
           spaceBetween: 36
         },
         1024: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
           spaceBetween: 40
         },
         1280: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
           spaceBetween: 48
         },
         1800: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
           spaceBetween: 64
         },
       }"
