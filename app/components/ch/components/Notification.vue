@@ -6,7 +6,12 @@
     class="notification__icon"
   />
   <div class="notification__text" v-html="text" />
-  <button v-if="closeBtn" class="notification__close" @click="isClosed = true">
+  <button 
+    v-if="closeBtn" 
+    class="notification__close" 
+    @click="isClosed = true"
+    aria-label="Close notification"  
+  >
     <SvgIcon
       icon="Cancel"
     />
