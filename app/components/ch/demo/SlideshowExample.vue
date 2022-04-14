@@ -48,7 +48,12 @@
               :width="slide.image.width"
             />
           </picture>
-          <figcaption v-html="slide.caption" />
+          <figcaption v-if="slide.caption">
+            <span v-if="slide.caption.title">{{ slide.caption.title }}</span>
+            <span v-if="slide.caption.title && slide.caption.description">  —&nbsp;</span>
+            <span v-if="slide.caption.description">{{ slide.caption.description }}</span>
+            <span v-if="slide.caption.copyright"> —&nbsp;©&nbsp;{{ slide.caption.copyright }}</span>
+          </figcaption>
         </figure>
       </swiper-slide>
     </swiper>

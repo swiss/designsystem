@@ -436,7 +436,11 @@ export default {
             height: '1152',
             media: '(min-width: 1024px)',
           },
-          caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
+          caption: {
+            title: 'Image one title',
+            description: 'Image one description',
+            copyright: 'Photograph name'
+          }
         },
         {
           image: {
@@ -451,7 +455,10 @@ export default {
             height: '1152',
             media: '(min-width: 1024px)',
           },
-          caption: 'Image two —&nbsp;©&nbsp;Photograph Name',
+          caption: {
+            title: 'Image two, title without description',
+            copyright: 'Photograph name'
+          }
         },
         {
           image: {
@@ -466,7 +473,10 @@ export default {
             height: '1152',
             media: '(min-width: 1024px)',
           },
-          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
+          caption: {
+            description: 'Image three, description only',
+            copyright: 'Photograph name'
+          }
         },
       ],
     }
