@@ -16,9 +16,11 @@
   @apply transition-shadow duration-300;
   @apply cursor-pointer;
 
-  button:after {
+  a::after,
+  button::after {
     content: '';
     @apply absolute top-0 right-0 left-0 bottom-0;
+    background-color: rgba(255,0,0,0.2);
   }
 
   &:hover,
