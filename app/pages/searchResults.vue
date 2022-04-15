@@ -23,21 +23,39 @@
                 value="Search entry here"
                 autocomplete="off" 
               />
-            <Btn 
-              label="Ämter filtern" 
-              icon="Search" 
-              icon-pos="only" 
-              variant="bare" 
-              size="lg" 
-            />
+              <div
+                class="btn"
+                v-if="isLoading"
+              >
+                <SvgIcon
+                  icon="Spinner"
+                  size="lg"
+                  class="btn__icon icon--spin"
+                />
+              </div>
+              <Btn 
+                v-else
+                label="Ämter filtern" 
+                icon="Search" 
+                icon-pos="only" 
+                variant="bare" 
+                size="lg" 
+              />
             </div>
           </div>
         </div>
       </section>
       <section class="section section--default">
         <div class="container gap--responsive">
-          <div class="search-results">
-            <div class="search-results__header">
+          <div 
+            class="search-results"
+            aria-live="polite"
+            :aria-busy="isLoading"
+          >
+            <div 
+              v-if="!noResults && !isLoading"
+              class="search-results__header"
+            >
               <div>
                 <strong>10 von 127</strong>Suchergebnisse
               </div>
@@ -50,11 +68,45 @@
               </div>
             </div>
             
-            <SearchResultsList 
+            <SearchResultsList
+              v-if="!noResults && !isLoading" 
               :itemList="searchResults"
             />
+            <div
+              v-if="isLoading"
+              class="my-16"
+            >
+              <h2 class="sr-only">
+                Search is loading
+              </h2>
+              <SvgIcon
+                icon="Spinner"
+                size="2xl"
+                class="icon--spin"
+              />
+            </div>
+            <div
+              v-if="noResults && !isLoading"
+              class="search-results__no-results"
+            >
+              <h2 class="text--xl">
+                Die Suche nach <span class="text--bold">«My search keyword»</span> ergab keine Treffer auf der Behördenwebsite <span class="text--bold">«NameNextLogo»</span>  
+              </h2>
+              <h3 class="h4">Tipps zur Suche</h3>
+              <ul class="list list--default">
+                <li>Überprüfen Sie die Schreibweise Ihres Suchbegriffes</li>
+                <li>Verwenden Sie einen anderen bzw. allgemeineren Begriff</li>
+                <li>Verwenden Sie ggf. weniger Suchbegriffe</li>
+                <li>Wechseln Sie die Behördenwebsite</li>
+              </ul>
+              <h3 class="h4">Hinweis</h3>
+              <p>
+                Die Suche ist momentan auf die Behördenwebsite "[NameNextLogo]" beschränkt. Eine behördenübergreifende Suche über die Domain *.admin.ch ist erst in Erarbeitung.
+              </p>
+            </div>
             
             <Pagination
+              v-if="!noResults && !isLoading"
               class="pagination--right"
               :currentPage="pagination.currentPage"
               :totalPages="pagination.totalPages"
@@ -62,11 +114,12 @@
             />
 
             <Notification 
+              v-if="!isLoading"
               type="info" 
               icon="InfoCircle" 
               :closeBtn="false"
-              text="<div class='text--bold'>Unzufrieden mit der Suche?</div>
-<div>Bitte helfen Sie uns, unsere Suche zu verbessern, indem Sie uns eine Rückmeldung darüber geben, was schief gelaufen ist oder fehlt.</div><a href='#' class='link'>Send a improvement proposal</link>" 
+              text="<div class='text--bold'>Haben Sie nicht gefunden wonach Sie suchen?</div>
+<div>Gerne geben wir Ihnen auch persönlich Auskunft. Bitte melden Sie sich via Kontaktformular bei uns.</div><a href='#' class='link'>Kontaktformular</link>" 
             />
           </div>
         </div>
@@ -199,7 +252,11 @@ export default {
     }
   },
   props: {
-    isOpen: {
+    noResults: {
+      type: Boolean,
+      default: false,
+    },
+    isLoading: {
       type: Boolean,
       default: false,
     },  
