@@ -75,7 +75,7 @@
             <div
               v-if="isLoading"
               class="my-16"
-            />
+            >
               <h2 class="sr-only">
                 Search is loading
               </h2>
