@@ -89,8 +89,8 @@
               v-if="noResults && !isLoading"
               class="search-results__no-results"
             >
-              <h2 class="h3">
-                Leider ergab die Suche nach dem Begriff «My search keyword» keine Treffer auf der Behördenwebsite «NameNextLogo»  
+              <h2 class="text--xl">
+                Die Suche nach <span class="text--bold">«My search keyword»</span> ergab keine Treffer auf der Behördenwebsite <span class="text--bold">«NameNextLogo»</span>  
               </h2>
               <h3 class="h4">Tipps zur Suche</h3>
               <ul class="list list--default">
@@ -118,8 +118,8 @@
               type="info" 
               icon="InfoCircle" 
               :closeBtn="false"
-              text="<div class='text--bold'>Unzufrieden mit der Suche?</div>
-<div>Bitte helfen Sie uns, unsere Suche zu verbessern, indem Sie uns eine Rückmeldung darüber geben, was schief gelaufen ist oder fehlt.</div><a href='#' class='link'>Send a improvement proposal</link>" 
+              text="<div class='text--bold'>Haben Sie nicht gefunden wonach Sie suchen?</div>
+<div>Gerne geben wir Ihnen auch persönlich Auskunft. Bitte melden Sie sich via Kontaktformular bei uns.</div><a href='#' class='link'>Kontaktformular</link>" 
             />
           </div>
         </div>
