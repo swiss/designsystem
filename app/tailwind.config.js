@@ -11,6 +11,11 @@ module.exports = {
     container: false,
   },
   theme: {
+    extend: {
+      animation: {
+        'spin-fast': 'spin 0.5s linear infinite',
+      }
+    },
     screens: {
       xs: '480px',
       sm: '640px',

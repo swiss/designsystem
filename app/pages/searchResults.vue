@@ -23,22 +23,37 @@
                 value="Search entry here"
                 autocomplete="off" 
               />
-            <Btn 
-              label="Ämter filtern" 
-              icon="Search" 
-              icon-pos="only" 
-              variant="bare" 
-              size="lg" 
-            />
+              <div
+                class="btn"
+                v-if="isLoading"
+              >
+                <SvgIcon
+                  icon="Spinner"
+                  size="lg"
+                  class="btn__icon icon--spin"
+                />
+              </div>
+              <Btn 
+                v-else
+                label="Ämter filtern" 
+                icon="Search" 
+                icon-pos="only" 
+                variant="bare" 
+                size="lg" 
+              />
             </div>
           </div>
         </div>
       </section>
       <section class="section section--default">
         <div class="container gap--responsive">
-          <div class="search-results">
+          <div 
+            class="search-results"
+            aria-live="polite"
+            :aria-busy="isLoading"
+          >
             <div 
-              v-if="!noResults"
+              v-if="!noResults && !isLoading"
               class="search-results__header"
             >
               <div>
@@ -54,11 +69,24 @@
             </div>
             
             <SearchResultsList
-              v-if="!noResults" 
+              v-if="!noResults && !isLoading" 
               :itemList="searchResults"
             />
             <div
-              v-if="noResults"
+              v-if="isLoading"
+              class="my-16"
+            />
+              <h2 class="sr-only">
+                Search is loading
+              </h2>
+              <SvgIcon
+                icon="Spinner"
+                size="2xl"
+                class="icon--spin"
+              />
+            </div>
+            <div
+              v-if="noResults && !isLoading"
               class="search-results__no-results"
             >
               <h2 class="h3">
@@ -78,7 +106,7 @@
             </div>
             
             <Pagination
-              v-if="!noResults"
+              v-if="!noResults && !isLoading"
               class="pagination--right"
               :currentPage="pagination.currentPage"
               :totalPages="pagination.totalPages"
@@ -86,6 +114,7 @@
             />
 
             <Notification 
+              v-if="!isLoading"
               type="info" 
               icon="InfoCircle" 
               :closeBtn="false"
@@ -224,6 +253,10 @@ export default {
   },
   props: {
     noResults: {
+      type: Boolean,
+      default: false,
+    },
+    isLoading: {
       type: Boolean,
       default: false,
     },  

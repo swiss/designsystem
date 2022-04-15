@@ -15,7 +15,7 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { searchResults },
   store: store,
-  template: '<searchResults :noResults="noResults" />',
+  template: '<searchResults :noResults="noResults" :isLoading="isLoading" />',
 });
 
 # Search results
@@ -25,6 +25,7 @@ export const Template = (args, { argTypes }) => ({
     name="With results"
     args={{
       noResults: false,
+      isLoading: false
     }}
   >
     {Template.bind({})}
@@ -44,6 +45,7 @@ export const Template = (args, { argTypes }) => ({
     name="Without results"
     args={{
       noResults: true,
+      isLoading: false
     }}
   >
     {Template.bind({})}
@@ -55,4 +57,26 @@ export const Template = (args, { argTypes }) => ({
 ---
 
 <a href="?id=pages-search-results--without-results&args=&viewMode=story" target="_blank">Open page in full width in a new tab</a>
+
+
+
+# Loading example
+
+<Canvas>
+  <Story
+    name="When Loading"
+    args={{
+      noResults: true,
+      isLoading: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<a href="?path=/story/pages-search-results--example">Go to the Canvas Tab</a>
+
+---
+
+<a href="?id=pages-search-results--when-loading&args=&viewMode=story" target="_blank">Open page in full width in a new tab</a>
 
