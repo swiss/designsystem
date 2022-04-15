@@ -37,7 +37,10 @@
       <section class="section section--default">
         <div class="container gap--responsive">
           <div class="search-results">
-            <div class="search-results__header">
+            <div 
+              v-if="!noResults"
+              class="search-results__header"
+            >
               <div>
                 <strong>10 von 127</strong>Suchergebnisse
               </div>
@@ -50,11 +53,32 @@
               </div>
             </div>
             
-            <SearchResultsList 
+            <SearchResultsList
+              v-if="!noResults" 
               :itemList="searchResults"
             />
+            <div
+              v-if="noResults"
+              class="search-results__no-results"
+            >
+              <h2 class="h3">
+                Leider ergab die Suche nach dem Begriff «My search keyword» keine Treffer auf der Behördenwebsite «NameNextLogo»  
+              </h2>
+              <h3 class="h4">Tipps zur Suche</h3>
+              <ul class="list list--default">
+                <li>Überprüfen Sie die Schreibweise Ihres Suchbegriffes</li>
+                <li>Verwenden Sie einen anderen bzw. allgemeineren Begriff</li>
+                <li>Verwenden Sie ggf. weniger Suchbegriffe</li>
+                <li>Wechseln Sie die Behördenwebsite</li>
+              </ul>
+              <h3 class="h4">Hinweis</h3>
+              <p>
+                Die Suche ist momentan auf die Behördenwebsite "[NameNextLogo]" beschränkt. Eine behördenübergreifende Suche über die Domain *.admin.ch ist erst in Erarbeitung.
+              </p>
+            </div>
             
             <Pagination
+              v-if="!noResults"
               class="pagination--right"
               :currentPage="pagination.currentPage"
               :totalPages="pagination.totalPages"
@@ -199,7 +223,7 @@ export default {
     }
   },
   props: {
-    isOpen: {
+    noResults: {
       type: Boolean,
       default: false,
     },  

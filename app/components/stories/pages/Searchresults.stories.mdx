@@ -7,7 +7,7 @@ import searchResults from '../../../pages/searchResults.vue';
   title="Pages/Search Results"
   component={searchResults}
   argTypes={{
-    isOpen: { name:'Is open', control: { type: 'boolean' } },
+    noResults: { name:'No results', control: { type: 'boolean' } },
   }}
 />
 
@@ -15,16 +15,16 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { searchResults },
   store: store,
-  template: '<searchResults />',
+  template: '<searchResults :noResults="noResults" />',
 });
 
 # Search results
 
 <Canvas>
   <Story
-    name="Example"
+    name="With results"
     args={{
-      isOpen: false,
+      noResults: false,
     }}
   >
     {Template.bind({})}
@@ -35,5 +35,24 @@ export const Template = (args, { argTypes }) => ({
 
 ---
 
-<a href="?id=pages-search-results--example" target="_blank">Open page in full width in a new tab</a>
+<a href="?id=pages-search-results--with-results&args=&viewMode=story" target="_blank">Open page in full width in a new tab</a>
+
+# No results
+
+<Canvas>
+  <Story
+    name="Without results"
+    args={{
+      noResults: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<a href="?path=/story/pages-search-results--example">Go to the Canvas Tab</a>
+
+---
+
+<a href="?id=pages-search-results--without-results&args=&viewMode=story" target="_blank">Open page in full width in a new tab</a>
 
