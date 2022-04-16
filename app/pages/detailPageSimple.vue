@@ -54,7 +54,6 @@
             </p>
 
             <SlideshowExample
-              :breakpoints="breakpoints"
               paginationType="bullets"
               loop="loop"
               :id="1"
@@ -70,7 +69,6 @@
             </p>
 
             <SlideshowExample
-              :breakpoints="breakpoints"
               paginationType="fraction"
               loop="loop"
               :id="2"

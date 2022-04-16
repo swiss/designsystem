@@ -44,7 +44,7 @@
           size="xl"
         />
       </div>
-      <MetaInfo :metainfos="item.topics" />
+      <MetaInfo v-if="item.topics" :metainfos="item.topics" />
     </a>
 
   </li>

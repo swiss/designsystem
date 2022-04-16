@@ -26,8 +26,6 @@
       }"
       :slides-per-view="1"
       :space-between="16"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
     >
       <swiper-slide
         v-for="(slide, index) in slides"
