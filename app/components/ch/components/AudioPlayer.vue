@@ -24,8 +24,7 @@ export default {
   name: 'AudioPlayer',
   props: {
     title: {
-      type: String,
-      default: "Audio file"
+      type: String
     },
     description: {
       type: String,
