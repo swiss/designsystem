@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import Audio from '../../ch/components/Audio.vue'
+
+<Meta
+  title="Components/Audio"
+  component={Audio}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Audio },
+  template: '<Audio :url="url"  />'
+})
+
+
+# Audio
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      url:"../../../static/sounds/demo.mp3",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+## Interaction and accessibility
+
+Each Audio...
+
+
+<a href="?path=/story/components-audio--example">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a href="?id=components-audio--example&args=&viewMode=story" target="_blank">
+  Open page in full width in a new tab
+</a>
