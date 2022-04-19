@@ -12,7 +12,6 @@
 
   select {
     @apply cursor-pointer;
-    @apply hover:text-text-300 focus:text-text-300;
   }
 
   option {
@@ -25,5 +24,12 @@
     @apply w-7;
   }
 
+  .select {
+    &:hover {
+        select, .select__icon {
+          @apply text-text-300;
+        }
+    }
+  }
 }
 
