@@ -10,18 +10,12 @@
     padding-left:  calc((100vw - 6em ) / 12 );
     padding-right: calc((100vw - 6em ) / 12 );
   }
-
-  .tab__control {
-     &:hover:not(.tab__control--active) {
-      @apply bg-gray-100;
-    }
-  }
-
 }
 
 .tab__controls {
   @apply flex;
   @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;
+  @apply border-b;
 
   /* hide scrollbar with ability to still scroll */ 
   -ms-overflow-style: none;
@@ -33,28 +27,33 @@
 }
 
 .tab__control {
-  @apply px-4 py-2;
+  @apply px-4 py-4;
+
   &.tab__control--active {
-    @apply bg-white;
     @apply relative;
-    @apply border-t-4 border-red-600;
-    &:after {
-      content:"";
-      height: 1px;
-      bottom: -1px;
-      left:0px;
-      @apply absolute w-full bg-white;
+
+    &::after {
+      content:'';
+      @apply block bg-primary-500;
+      @apply h-[3px];
+      @apply absolute right-4 bottom-0 left-4;
     }
   }
   &:hover:not(.tab__control--active) {
-    @apply bg-gray-50;
+    @apply text-primary-600;
   }
+  &:first-child {
+    @apply pl-0;
 
+    &::after {
+      @apply left-0;
+    }
+  }
 }
 
 .tab__container {
   @apply border border-gray-50 bg-white;
-  @apply md:px-6 px-4 pb-6;
+  @apply pb-6;
 
   &.tab__container--is-hidden {
     @apply hidden
