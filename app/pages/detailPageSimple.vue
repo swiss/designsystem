@@ -216,9 +216,7 @@
               veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in
               jedem Fall in die Datenmodellablage eingepflegt.
             </p>
-            <div class="bg-gray-50">
-              <Tabs></Tabs>
-            </div>
+            <Tabs></Tabs>
             <ul>
               <li>
                 Ein neues minimales Geodatenmodell in der Datenmodellablage
