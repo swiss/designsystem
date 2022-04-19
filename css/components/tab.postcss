@@ -22,6 +22,14 @@
 .tab__controls {
   @apply flex;
   @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;
+
+  /* hide scrollbar with ability to still scroll */ 
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+
+  &::-webkit-scrollbar { 
+    display: none;
+  }
 }
 
 .tab__control {
