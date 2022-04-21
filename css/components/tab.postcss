@@ -9,6 +9,17 @@
   }
 }
 
+.tab__controls-container {
+  @apply relative;
+
+  &::after {
+    content: '';
+    @apply absolute right-0 top-0 bottom-1 w-20;
+    @apply pointer-events-none;
+    @apply bg-gradient-to-l from-white;
+  }
+}
+
 .tab__controls {
   @apply flex;
   @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;

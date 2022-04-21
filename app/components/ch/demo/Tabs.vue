@@ -1,35 +1,37 @@
 <template>
   <div class="tabs">
-    <div class="tab__controls" role="tablist" aria-label="Additional Content">
-      <button
-        class="tab__control tab__control--active"
-        type="button"
-        role="tab"
-        aria-selected="true"
-        aria-controls="tab-1"
-      >
-        Publications
-      </button>
-      <button
-        class="tab__control"
-        type="button"
-        role="tab"
-        aria-selected="false"
-        aria-controls="tab-2"
-        tabindex="-1"
-      >
-        Events
-      </button>
-      <button
-        class="tab__control"
-        type="button"
-        role="tab"
-        aria-selected="false"
-        aria-controls="tab-3"
-        tabindex="-1"
-      >
-        FAQ
-      </button>
+    <div class="tab__controls-container">
+      <div class="tab__controls" role="tablist" aria-label="Additional Content">
+        <button
+          class="tab__control tab__control--active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tab-1"
+        >
+          Publications
+        </button>
+        <button
+          class="tab__control"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-2"
+          tabindex="-1"
+        >
+          Events
+        </button>
+        <button
+          class="tab__control"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-3"
+          tabindex="-1"
+        >
+          FAQ
+        </button>
+      </div>
     </div>
 
     <div
