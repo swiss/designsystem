@@ -27,6 +27,11 @@
 
   .select__icon {
     @apply w-7;
+    @apply transition-transform duration-200;
+  }
+
+  select:focus + .select__icon {
+    @apply rotate-180;
   }
 
   .select {
