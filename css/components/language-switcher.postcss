@@ -3,20 +3,18 @@
 \*----------------------------------------*/
 
 .language-switcher {
-  @apply flex cursor-pointer;
+  @apply flex h-full cursor-pointer;
 
-  a {
-    @apply flex items-center;
-    @apply h-full px-4;
+  .form__group__select, 
+  .select {
+    @apply h-full;
   }
 
   select {
+    @apply box-border;
+    @apply w-[5em] 2xl:w-[4.5em] h-full;
     @apply cursor-pointer;
-    @apply box-border w-[5em];
-
-    @media screen(2xl) {
-      @apply w-[4.5em];
-    }
+    @apply hover:text-text-300 focus:text-text-300;
     @apply transition-colors;
   }
 
@@ -31,12 +29,9 @@
     @apply transition-colors;
   }
 
-  .select {
-    &:hover {
-        select, .select__icon {
-          @apply text-text-300;
-        }
-    }
+  select:hover + .select__icon,
+  select:focus + .select__icon {
+    @apply text-text-300;
   }
 }
 
