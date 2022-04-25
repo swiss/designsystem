@@ -102,7 +102,7 @@
               <div>
                 <h5 class="download-item__title">Instructions on isolation</h5>
                 <p class="download-item__description">Description</p>
-                <p class="meta-info">
+                <p class="download-item__meta-info meta-info">
                   <span class="meta-info__item"> PDF </span
                   ><span class="meta-info__item"> 13.01.2022 </span>
                 </p>
@@ -129,7 +129,7 @@
                 <h5 class="download-item__title">
                   The Confederation’s measures to combat the coronavirus
                 </h5>
-                <p class="meta-info">
+                <p class="download-item__meta-info meta-info">
                   <span class="meta-info__item"> PDF </span
                   ><span class="meta-info__item"> 22.01.2022 </span>
                 </p>
