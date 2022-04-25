@@ -233,7 +233,7 @@
             </p>
 
             <ul class="download-items">
-              <DownloadList
+              <DownloadItem
                 :filename="'dummy.pdf'"
                 :title="'Information on the usage of websites'"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
@@ -241,7 +241,7 @@
                 :type="'PDF'"
                 :date="'22.01.2022'"
               />
-              <DownloadList
+              <DownloadItem
                 :filename="'image.png'"
                 :title="'Information on the usage of websites'"
                 description=""
@@ -428,7 +428,7 @@ import Accordion from '~/components/ch/components/Accordion'
 import TextImage from '~/components/ch/components/TextImage'
 import AudioPlayer from '~/components/ch/components/AudioPlayer'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
-import DownloadList from '~/components/ch/components/DownloadList.vue'
+import DownloadItem from '~/components/ch/components/DownloadItem.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 export default {
   name: 'detailPageSimple',
@@ -448,7 +448,7 @@ export default {
     TextImage,
     AudioPlayer,
     SlideshowExample,
-    DownloadList,
+    DownloadItem,
     ShareBar,
   },
   data: function () {
