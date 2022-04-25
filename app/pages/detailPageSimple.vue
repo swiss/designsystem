@@ -216,7 +216,26 @@
               veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in
               jedem Fall in die Datenmodellablage eingepflegt.
             </p>
-            <Tabs></Tabs>
+
+            <ul class="download-items">
+              <DownloadList
+                :filename="'dummy.pdf'"
+                :title="'Information on the usage of websites'"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
+                :url="'../../../static/documents/dummy.pdf'"
+                :type="'PDF'"
+                :date="'22.01.2022'"
+              />
+              <DownloadList
+                :filename="'image.png'"
+                :title="'Information on the usage of websites'"
+                description=""
+                :url="'../../../static/images/html-structure.png'"
+                :type="'PNG'"
+                :date="'22.01.2022'"
+              />
+            </ul>
+
             <ul>
               <li>
                 Ein neues minimales Geodatenmodell in der Datenmodellablage
@@ -393,9 +412,8 @@ import ContactSection from '~/components/ch/sections/ContactSection'
 import Accordion from '~/components/ch/components/Accordion'
 import TextImage from '~/components/ch/components/TextImage'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
-import Tabs from '~/components/ch/demo/Tabs.vue'
+import DownloadList from '~/components/ch/components/DownloadList.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
-
 export default {
   name: 'detailPageSimple',
   components: {
@@ -413,7 +431,7 @@ export default {
     Accordion,
     TextImage,
     SlideshowExample,
-    Tabs,
+    DownloadList,
     ShareBar,
   },
   data: function () {
