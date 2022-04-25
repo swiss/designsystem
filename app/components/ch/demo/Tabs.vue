@@ -42,7 +42,7 @@
       class="tab__container"
     >
       <div>
-        <ul>
+        <ul class="download-items">
           <li class="list--bare">
             <a href="#" download="" class="download-item">
               <svg
