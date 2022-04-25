@@ -47,16 +47,21 @@
 }
 
 .tab__control {
+  @apply relative;
   @apply px-4 py-4;
 
-  &.tab__control--active {
-    @apply relative;
+  &::after {
+    content:'';
+    @apply block;
+    @apply h-[3px];
+    @apply absolute right-4 bottom-0 left-4;
+    @apply transition;
+  }
 
+  &.tab__control--active, 
+  &:hover {
     &::after {
-      content:'';
-      @apply block bg-primary-500;
-      @apply h-[3px];
-      @apply absolute right-4 bottom-0 left-4;
+      @apply bg-primary-500;
     }
   }
   &:hover:not(.tab__control--active) {
