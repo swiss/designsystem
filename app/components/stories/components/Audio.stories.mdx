@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import AudioPlayer from '../../ch/components/AudioPlayer.vue'
+
+<Meta
+  title="Components/AudioPlayer"
+  component={AudioPlayer}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { AudioPlayer },
+  template: '<AudioPlayer :url="url" :title="title" :description="description" :type="type" :copyright="copyright"  />'
+})
+
+
+# Audio player
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      title: "First of August speech",
+      description: "Hier kommt ein Kurzbeschriebund so weiter Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+      copyright: "Reuters",
+      url: "https://www.admin.ch/dam/gov/de/Dokumentation/Reden/1-August/DE.MP3",
+      type: "audio/mp3", 
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Use the default `<audio>` element to play audio documents. Every `<audio>` element should be wrapped into a `div.auto-player` element, to keep consistent styling. 
+
+<a href="?path=/story/components-audioplayer--example">
+  Go to the Canvas Tab
+</a>
+
+---
+<a href="?id=components-audioplayer--example&args=&viewMode=story" target="_blank">
+  Open page in full width in a new tab
+</a>

@@ -93,6 +93,20 @@
               </figcaption>
             </figure>
 
+            <h2 class="h2">Audio player</h2>
+            <p>
+              Use a default audio element wrapped into an audio player class. Die Datenmodellablage ist moderiert und
+              die Erfassung neuer Datenmodelle wird durch Modellierung vorgenommen.
+            </p>
+
+            <AudioPlayer
+              title="First of August speech"
+              description="Hier kommt ein Kurzbeschriebund so weiter Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+              copyright="Reuters"
+              url="https://www.admin.ch/dam/gov/de/Dokumentation/Reden/1-August/DE.MP3"
+              type="audio/mp3"
+            />
+
             <h2 class="h2">Datenmodellablage ansehen</h2>
             <p>
               Der Modellkatalog kann unter
@@ -394,6 +408,7 @@ import QuoteSection from '~/components/ch/sections/QuoteSection'
 import ContactSection from '~/components/ch/sections/ContactSection'
 import Accordion from '~/components/ch/components/Accordion'
 import TextImage from '~/components/ch/components/TextImage'
+import AudioPlayer from '~/components/ch/components/AudioPlayer'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 import Tabs from '~/components/ch/demo/Tabs.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
@@ -414,6 +429,7 @@ export default {
     ContactSection,
     Accordion,
     TextImage,
+    AudioPlayer,
     SlideshowExample,
     Tabs,
     ShareBar,
