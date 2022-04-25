@@ -3,20 +3,35 @@
 \*----------------------------------------*/
 
 .language-switcher {
-  @apply flex cursor-pointer;
+  @apply flex h-full cursor-pointer;
 
-  a {
-    @apply flex items-center;
-    @apply h-full px-4;
+  .form__group__select, 
+  .select {
+    @apply h-full;
   }
 
   select {
+    @apply box-border;
+    @apply w-[5em] 2xl:w-[4.5em] h-full;
     @apply cursor-pointer;
+    @apply hover:text-text-300 focus:text-text-300;
+    @apply transition-colors;
+  }
+
+  option {
+    &:disabled {
+      @apply text-text-400;
+    }
   }
 
   .select__icon {
     @apply w-7;
+    @apply transition-colors;
   }
 
+  select:hover + .select__icon,
+  select:focus + .select__icon {
+    @apply text-text-300;
+  }
 }
 
