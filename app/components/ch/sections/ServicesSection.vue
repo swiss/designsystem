@@ -1,9 +1,14 @@
 <template>
   <section class="section bg--secondary-500">
     <div class="container">
-      <h2 class="section__title">Dienstleistungen</h2>
+      <h2 
+        v-if="isHomePage"
+        class="section__title"
+      >
+        Dienstleistungen
+      </h2>
       <div class="grid grid--responsive-cols-2 gap--responsive">
-        <Card type="highlight">
+        <Card type="default">
           <template v-slot:body>
             <h3 class="card__title">Datenmodellablage</h3>
             <p>
@@ -24,7 +29,7 @@
             />
           </template>
         </Card>
-        <Card type="highlight">
+        <Card type="default">
           <template v-slot:body>
             <h3 class="card__title">Geodienste</h3>
             <p>
@@ -48,7 +53,7 @@
       </div>
 
       <div class="grid grid--responsive-cols-3 gap--responsive mt-16">
-        <Card type="highlight">
+        <Card type="default">
           <template v-slot:body>
             <h3 class="card__title">Datenbezug</h3>
             <p>
@@ -69,7 +74,7 @@
             />
           </template>
         </Card>
-        <Card type="highlight">
+        <Card type="default">
           <template v-slot:body>
             <h3 class="card__title">Beratung und Koordination</h3>
             <p>
@@ -89,7 +94,7 @@
             />
           </template>
         </Card>
-        <Card type="highlight">
+        <Card type="default">
           <template v-slot:body>
             <h3 class="card__title">Geodienste</h3>
             <p>
@@ -113,7 +118,10 @@
       </div>
 
 
-      <div class="section__action">
+      <div
+        v-if="isHomePage"
+        class="section__action"
+      >
         <Btn to="#" label="Alle Dienstleistungen ansehen" variant="bare-negative" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
@@ -131,6 +139,12 @@ export default {
     Card,
     Btn,
     SvgIcon,
+  },
+  props: {
+    isHomePage: {
+      type: Boolean,
+      default: false
+    }
   },
 };
 </script>

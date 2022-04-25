@@ -125,8 +125,12 @@ figure {
   @apply pt-2;
 }
 
-figcaption {
+.legend {
   @apply text--xs pt-2 text-secondary-400;
+}
+
+figcaption {
+  @apply legend;
 }
 
 address {
@@ -181,8 +185,8 @@ i {
   .vertical-spacing ul, 
   .vertical-spacing menu,
   .vertical-spacing table,
-  .vertical-spacing figure,
-  .vertical-spacing iframe,
+  .vertical-spacing > figure,
+  .vertical-spacing > iframe,
   .vertical-spacing .carousel {
     @apply extra-top-spacing;
     @apply extra-bottom-spacing;

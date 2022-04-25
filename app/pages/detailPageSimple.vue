@@ -93,6 +93,20 @@
               </figcaption>
             </figure>
 
+            <h2 class="h2">Audio player</h2>
+            <p>
+              Use a default audio element wrapped into an audio player class. Die Datenmodellablage ist moderiert und
+              die Erfassung neuer Datenmodelle wird durch Modellierung vorgenommen.
+            </p>
+
+            <AudioPlayer
+              title="First of August speech"
+              description="Hier kommt ein Kurzbeschriebund so weiter Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+              copyright="Reuters"
+              url="https://www.admin.ch/dam/gov/de/Dokumentation/Reden/1-August/DE.MP3"
+              type="audio/mp3"
+            />
+
             <h2 class="h2">Datenmodellablage ansehen</h2>
             <p>
               Der Modellkatalog kann unter
@@ -107,17 +121,18 @@
               eingepflegt.
             </p>
 
-            <div class="ratio ratio--16/9 ratio--mb">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/tHd7kesDCWk"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
+            <figure>
+              <div class="ratio ratio--16/9">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+                  title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
+                  frameborder="0"
+                />
+              </div>
+              <figcaption>Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal</figcaption>
+            </figure>
 
             <p>
               Der Modellkatalog kann unter
@@ -411,6 +426,7 @@ import QuoteSection from '~/components/ch/sections/QuoteSection'
 import ContactSection from '~/components/ch/sections/ContactSection'
 import Accordion from '~/components/ch/components/Accordion'
 import TextImage from '~/components/ch/components/TextImage'
+import AudioPlayer from '~/components/ch/components/AudioPlayer'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 import DownloadList from '~/components/ch/components/DownloadList.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
@@ -430,6 +446,7 @@ export default {
     ContactSection,
     Accordion,
     TextImage,
+    AudioPlayer,
     SlideshowExample,
     DownloadList,
     ShareBar,
