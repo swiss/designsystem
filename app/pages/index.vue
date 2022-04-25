@@ -35,7 +35,7 @@
         </template>      
       </Hero>
       <TopNewsSection />
-      <ServicesSection />
+      <ServicesSection isHomePage />
       <NewsSection />
       <MostSeenSection />
       <PortraitSection />
