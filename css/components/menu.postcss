@@ -2,78 +2,75 @@
   MENU
 \*----------------------------------------*/
 
-@layer utilities {
-  .menu {
-    @apply list-none;
-  }
 
-  .menu__item {
-    @apply flex items-center justify-between;
-    @apply px-4 py-3 relative;
-    @apply cursor-pointer;
-    @apply transition-colors;
-  }
+.menu {
+  @apply list-none;
+}
 
-  .menu__item--small {
-    @apply text-sm 3xl:text-base;
-  }
+.menu__item {
+  @apply flex items-center justify-between;
+  @apply px-4 py-3 relative;
+  @apply cursor-pointer;
+  @apply transition-colors;
+  
+  @apply hover:bg-secondary-50;
+  @apply focus:text-red-600;
+}
 
-  .menu__item--action-btn {
-    @apply px-4 py-3;
-    @apply lg:text-xs 3xl:text-sm;
-    @apply text-text-500 focus:text-text-500;
-  }
 
-  .menu__item--mini {
-    @apply px-4 py-2;
-  }
+.menu__item--small {
+  @apply text-sm 3xl:text-base;
+}
 
-  .menu__item--border {
-    @apply border-b border-opacity-100 border-secondary-100;
-  }
+.menu__item--action-btn {
+  @apply px-4 py-3;
+  @apply lg:text-xs 3xl:text-sm;
+  @apply text-text-500 focus:text-text-500;
+}
 
-  .menu__item--grey {
-    @apply bg-secondary-50;
-  }
+.menu__item--mini {
+  @apply px-4 py-2;
+}
 
-  .menu__item--negative {
-    @apply bg-secondary-600;
-    @apply text-white;
-    @apply border-b border-secondary-400;
-  }
+.menu__item--border {
+  @apply border-b border-opacity-100 border-secondary-100;
+}
 
-  .menu__item.menu__item--negative:hover {
-    @apply bg-secondary-700;
-  }
+.menu__item--grey {
+  @apply bg-secondary-50;
+}
 
-  .menu__item--negative:focus {
-    @apply text-red-300;
-  }
+.menu__item--negative {
+  @apply bg-secondary-600;
+  @apply text-white;
+  @apply border-b border-secondary-400;
+}
 
-  .menu__item--brim {
-    @apply px-2;
-  }
+.menu__item.menu__item--negative:hover {
+  @apply bg-secondary-700;
+}
 
-  .icon.menu__item__icon {
-    @apply h-6 md:h-7;
-  }
+.menu__item--negative:focus {
+  @apply text-red-300;
+}
 
-  .menu__item--title {
-    @apply lg:px-0 hover:bg-white;
-  }
+.menu__item--brim {
+  @apply px-2;
+}
+
+.icon.menu__item__icon {
+  @apply h-6 md:h-7;
+}
+
+.menu__item--title {
+  @apply lg:px-0 hover:bg-white;
+  @apply cursor-default;
 }
 
 /* NON RESPONSIVE UTILITIES */
 
-.menu__item:hover {
-  @apply bg-secondary-50;
-}
 
-.menu__item:focus {
-  @apply text-red-600;
-}
-
-.menu__item--active:after {
+.menu__item--active::after {
   content:'';
   @apply block bg-primary-500;
   @apply w-[3px];
