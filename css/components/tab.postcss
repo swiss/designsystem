@@ -14,9 +14,13 @@
 
   &::after {
     content: '';
-    @apply absolute right-0 top-0 bottom-1 w-20;
+    @apply absolute right-0 top-0 bottom-1 w-10;
     @apply pointer-events-none;
     @apply bg-gradient-to-l from-white;
+
+    @screen sm {
+      @apply w-20;
+    }
   }
 }
 
