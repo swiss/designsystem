@@ -22,7 +22,7 @@ export const TemplateLarge = (args, { argTypes }) => ({
 });
 
 # Tabs
-Tabs are used to group related content. They can also be used to switch between views. For a better distinction between the main content and the tabs it's recommended to use a container with the class "bg-gray-50" as a parent of the tabs.
+Tabs are used to group related content. They can also be used to switch between views. On normal detail pages, prefer accordeons to tabs to avoid overflowing tabs.
 <Canvas>
   <Story
     name="Example"
@@ -37,6 +37,7 @@ Tabs are used to group related content. They can also be used to switch between 
 # Overflowing Tabs
 While it is not advised to use more than 4 tabs, it can happen that the tabs are too large or too many to fit in the available space. In this case, the tabcontainer can be made to overflow.
 Keep in mind that you should always show a small part of the overflowing tabs so that the users have a visual clue that there are more tabs available.
+If the tabs are placed in a grey container (.bg--secondary-50), the colors will update accordingly.
 <Canvas style={{ backgroundColor: '#F0F4F7' }}>
   <Story
     name="LargeExample"
