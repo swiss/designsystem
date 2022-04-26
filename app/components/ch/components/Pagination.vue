@@ -24,6 +24,7 @@
           :link="item.link"
           :type="type"
           :size="size"
+          :disabled="index===0 && currentPage==='1'"
         />
       </li>
     </ul>

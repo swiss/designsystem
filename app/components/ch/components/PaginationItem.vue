@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="computedClasses" :aria-label="label">
+  <button type="button" :class="computedClasses" :aria-label="label" :disabled="disabled">
     <SvgIcon
       v-if="this.icon"
       :icon="this.icon"
@@ -43,6 +43,10 @@ export default {
     },
     label: {
       type: String,
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
 
