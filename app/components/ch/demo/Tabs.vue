@@ -39,8 +39,14 @@
       role="tabpanel"
       id="tab-1"
       aria-labelledby="tab-1"
-      class="tab__container"
+      class="tab__container vertical-spacing"
     >
+      <h4 class="h4">Title</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ipsum nisl, ultricies quis aliquet ac, ultrices nec felis. Proin gravida purus et ipsum placerat</p>
+      <ul class="list--default">
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
     </div>
 
     <div
