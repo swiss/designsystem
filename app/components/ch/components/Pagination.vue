@@ -1,16 +1,16 @@
 <template>
-  <div 
+  <div
     class="pagination"
     :class="!field ? 'pagination--extended' : '' "
   >
-    <input 
+    <input
       v-if="field"
       class="pagination__input"
-      :class="computedClasses" 
-      :value="currentPage" 
+      :class="computedClasses"
+      :value="currentPage"
       aria-label="pagination input"
-    />  
-    <div 
+    />
+    <div
       v-if="field"
       class="pagination__text"
     >
@@ -71,7 +71,7 @@ export default {
       type: Array
     }
   },
-  
+
   computed: {
     computedClasses () {
       let base = 'input '
