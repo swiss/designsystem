@@ -7,7 +7,7 @@
       v-if="field"
       class="pagination__input"
       :class="computedClasses"
-      :value="currentPage"
+      v-model="currentPage"
       aria-label="pagination input"
     />
     <div
@@ -49,15 +49,6 @@ export default {
         'outline-negative',
       ].includes(prop)
     },
-    size: {
-      type: String,
-      default: 'base',
-      validator: (prop) => [
-        'sm',
-        'base',
-        'lg'
-      ].includes(prop)
-    },
     field: {
       type: Boolean,
       default: true
@@ -75,9 +66,8 @@ export default {
 
   computed: {
     computedClasses () {
-      let base = 'input '
+      let base = 'input input--base '
       if (this.type) base += `input--${this.type} `
-      if (this.size) base += `input--${this.size} `
       return base
     }
   }
