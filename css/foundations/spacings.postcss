@@ -1,0 +1,37 @@
+/*----------------------------------------*\
+  VERTICAL SPACING
+\*----------------------------------------*/
+
+.vertical-spacing {
+  @apply space-y-3;
+  @apply xl:space-y-4;
+}
+
+.extra-top-spacing {
+  @apply pt-7;
+  @apply xl:pt-8;
+}
+
+.extra-bottom-spacing {
+  @apply pb-7;
+  @apply xl:pb-8;
+}
+
+.vertical-spacing > :not(p, h1, h2, h3, h4, h5) {
+  @apply extra-top-spacing;
+  @apply extra-bottom-spacing;
+}
+
+.vertical-spacing p + h1,
+.vertical-spacing p + h2,
+.vertical-spacing p + h3,
+.vertical-spacing p + h4,
+.vertical-spacing p + h5 {
+  @apply extra-top-spacing;
+}
+
+.vertical-spacing ul + ul,
+.vertical-spacing ol + ul,
+.vertical-spacing ul + ol {
+  @apply pt-0;
+}
