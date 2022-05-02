@@ -1,5 +1,7 @@
 <template>
   <h1 v-if="$slots.title && this.type == 'sr-only'" class="sr-only">
+    <slot name="type"></slot>
+    <slot name="date"></slot>
     <slot name="title"></slot>
     <slot name="description"></slot>
   </h1>
