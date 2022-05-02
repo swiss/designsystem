@@ -44,7 +44,7 @@ export const Template = (args, { argTypes }) => ({
         Webartikel
       </template>
       <template
-        v-if="${args.type != 'main-image'}"
+        v-if="${args.type != 'main-image' && args.type != 'hub'}"
         v-slot:date
       >
         23. Februar 2022
