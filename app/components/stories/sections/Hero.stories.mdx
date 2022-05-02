@@ -21,7 +21,7 @@ export const Template = (args, { argTypes }) => ({
   components: { Hero,Btn },
   template:
     `
-    <Hero :type="type">
+    <Hero :type="type" :meta-infos="metaInfos">
       <template
         v-if="${args.type == 'main-image' || args.type == 'default'}"
         v-slot:image
@@ -36,18 +36,6 @@ export const Template = (args, { argTypes }) => ({
             src="https://placekitten.com/g/1600/900" alt="ratio is 16/9"
           >
         </picture>
-      </template>
-      <template
-        v-if="${args.type != 'main-image'}"
-        v-slot:type
-      >
-        Webartikel
-      </template>
-      <template
-        v-if="${args.type != 'main-image' && args.type != 'hub'}"
-        v-slot:date
-      >
-        23. Februar 2022
       </template>
       <template v-slot:title>
         Willkommen zu Hause. Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
@@ -82,6 +70,7 @@ Use it on the homepage or on landing pages
     name="Main without image"
     args={{
       type: 'main',
+      metaInfos: ['Webartikel', '23. Februar 2022']
     }}
   >
     {Template.bind({})}
@@ -109,6 +98,7 @@ Use it on the homepage or on landing pages
     name="Hub page"
     args={{
       type: 'hub',
+      metaInfos: ['Webartikel']
     }}
   >
     {Template.bind({})}
@@ -122,6 +112,7 @@ Use it on the homepage or on landing pages
     name="Detail page"
     args={{
       type: 'default',
+      metaInfos: ['Webartikel']
     }}
   >
     {Template.bind({})}

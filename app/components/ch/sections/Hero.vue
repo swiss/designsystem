@@ -11,13 +11,10 @@
   >
     <div class="container container--grid gap--responsive">
       <div class="hero__content">
-        <div
-          v-if="this.$slots.type || this.$slots.date"
-          class="hero__meta-info meta-info"
-        >
-          <span v-if="this.$slots.type" class="meta-info__item"><slot name="type"></slot></span>
-          <span v-if="this.$slots.date" class="meta-info__item"><slot name="date"></slot></span>
-        </div>
+        <MetaInfo
+          v-if="metaInfos"
+          :metainfos="metaInfos"
+        />
         <h1 v-if="$slots.title" class="hero__title">
           <slot name="title"></slot>
         </h1>
@@ -37,8 +34,13 @@
 
 <script>
 
+import MetaInfo from '../components/MetaInfo.vue'
+
 export default {
   name: 'Hero',
+  components: {
+    MetaInfo,
+  },
   props: {
     type: {
       type: String,
@@ -49,6 +51,10 @@ export default {
         'hub',
         'sr-only'
       ].includes(prop)
+    },
+    metaInfos: {
+      type: Array,
+      required: false
     }
   },
 
