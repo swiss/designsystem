@@ -37,10 +37,16 @@ export const Template = (args, { argTypes }) => ({
           >
         </picture>
       </template>
-      <template v-slot:type>
+      <template
+        v-if="${args.type != 'main-image'}"
+        v-slot:type
+      >
         Webartikel
       </template>
-      <template v-slot:date>
+      <template
+        v-if="${args.type != 'main-image'}"
+        v-slot:date
+      >
         23. Februar 2022
       </template>
       <template v-slot:title>
