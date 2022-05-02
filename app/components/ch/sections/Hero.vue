@@ -9,6 +9,10 @@
   >
     <div class="container container--grid gap--responsive">
       <div class="hero__content">
+        <div class="hero__meta-info meta-info">
+          <span v-if="this.$slots.type" class="meta-info__item"><slot name="type"></slot></span>
+          <span v-if="this.$slots.date" class="meta-info__item"><slot name="date"></slot></span>
+        </div>
         <h1 v-if="$slots.title" class="hero__title">
           <slot name="title"></slot>
         </h1>
