@@ -6,16 +6,12 @@
     :class="classes"
     :aria-label="aria"
   >
-    <!-- TODO: IF REMOVABLE
-      <SvgIcon
-      v-if="this.icon"
-      :icon="this.icon"
-      class="btn__icon"
-    /> -->
-    <span
-      class="tag__text"
-    >
-      {{ label }}
+    <span class="tag__inner">
+      <span
+        class="tag__text"
+      >
+        {{ label }}
+      </span>
     </span>
   </component>
 </template>
@@ -32,22 +28,6 @@ export default {
     to: {
       type: String,
       required: false
-    },
-    variant: {
-      type: String,
-      validator: (prop) => [
-        'default',
-        'removable'
-      ].includes(prop)
-    },
-    size: {
-      type: String,
-      validator: (prop) => [
-        'sm',
-        'base',
-        'lg',
-        'xl'
-      ].includes(prop)
     },
     label: {
       type: String,
@@ -74,8 +54,6 @@ export default {
 
     classes () {
       let base = 'tag '
-      if (this.variant) base += `tag--${this.variant} `
-      if (this.size) base += `tag--${this.size} `
       return base
     },
   }

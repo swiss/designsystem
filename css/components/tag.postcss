@@ -3,16 +3,10 @@
 \*----------------------------------------*/
 
 /* TYPES */
+
 .tag {
   @apply inline-flex items-center;
-  @apply px-4;
-  @apply leading-tight;
-  @apply rounded-sm;
-  @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
-}
-
-.tag--removable {
-  /* TODO */
+  @apply focus:outline-none ring-0;
 }
 
 
@@ -24,32 +18,30 @@
   @apply leading-5 lg:leading-6;
 }
 
-.tag--sm {
-  @apply min-h-[34px] xl:min-h-[40px] 3xl:min-h-[44px];
-  @apply text--sm;
-  @apply leading-4 lg:leading-5;
+
+/* INNER */
+
+.tag__inner {
+  @apply px-4 2xl:px-5;
+  @apply leading-tight;
+  @apply bg-gray-100;
+  @apply rounded-full;
+  
+
+  :hover > & {
+    @apply bg-gray-200;
+  }
+
+  :focus > & {
+    @apply outline-none ring-2 ring-purple-300;
+  }
 }
 
-.tag--lg {
-  @apply min-h-[48px] xl:min-h-[52px] 3xl:min-h-[56px];
-  @apply text--lg;
-  @apply leading-6;
-}
-
-.tag-xl {
-  /* TODO */ 
-}
 
 /* TEXT */
 
 .tag__text {
-  @apply py-2 text-left;
-}
-
-/* ICONS */
-
-.tag__icon {
-  @apply w-[1.4em] h-full;
-  @apply stroke-[0.3px] md:stroke-[0.35px] lg:stroke-[0.4px];
-  @apply stroke-current;
+  @apply inline-block;
+  @apply py-1.5 xl:py-2;
+  @apply text-left;
 }
