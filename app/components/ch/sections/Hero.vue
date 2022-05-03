@@ -41,7 +41,6 @@
 import MetaInfo from '../components/MetaInfo.vue'
 import Authors from '../components/Authors.vue'
 
-
 export default {
   name: 'Hero',
   components: {
