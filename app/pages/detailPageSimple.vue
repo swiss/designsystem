@@ -360,7 +360,7 @@
 
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
-          <div class="container__center--xs">
+          <div class="container__center--xs vertical-spacing">
             <h2 class="h2">
               Ein neues «minimales Geodatenmodell» in der Datenmodellablage
               publizieren
@@ -382,11 +382,10 @@
               INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
               eingepflegt.
             </p>
+            <RelatedTags :tags="tags"></RelatedTags>
           </div>
         </div>
       </section>
-
-      <RelatedTags :tags="tags"></RelatedTags>
 
       <ContactSection />
     </main>
@@ -414,7 +413,7 @@ import TextImage from '~/components/ch/components/TextImage'
 import AudioPlayer from '~/components/ch/components/AudioPlayer'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 import Tabs from '~/components/ch/demo/Tabs.vue'
-import RelatedTags from '~/components/ch/sections/RelatedTags.vue'
+import RelatedTags from '~/components/ch/components/RelatedTags.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 
 export default {
