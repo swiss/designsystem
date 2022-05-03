@@ -11,7 +11,7 @@
       <ShareBar />
     </header>
     <main id="main-content">
-      <Hero type="default" :authors="authors">
+      <Hero type="default" :meta-infos="metaInfos" :authors="authors">
         <template v-slot:title>
           Web Mapping Services WMS: Verfügbare Dienste und Daten
         </template>
@@ -497,6 +497,7 @@ export default {
           }
         },
       ],
+      metaInfos: ['Webartikel', '23. Februar 2022'],
       authors:[
         {
           name: 'Maria Muster',
