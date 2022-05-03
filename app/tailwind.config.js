@@ -31,6 +31,7 @@ module.exports = {
     },
     colors: {
       current: 'currentColor',
+      inherit: 'inherit',
       primary: {
         50: '#ffedee',
         100: '#fae1e2',

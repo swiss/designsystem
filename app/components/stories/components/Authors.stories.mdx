@@ -1,0 +1,136 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import Authors from '../../ch/components/Authors.vue'
+
+<Meta
+  title="Components/Authors"
+  component={Authors}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Authors },
+  template: '<Authors :authors="authors" />'
+})
+
+
+# Authors
+
+
+## Example
+
+Full example with several authors, with pictures.
+
+**Important:** in this case, each author should have a picture. Four authors and less pictures shouldn't happen.
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      authors:[
+        {
+          name: 'Maria Muster',
+          img: 'https://picsum.photos/120/120/?image=29'
+        },
+        {
+          name: 'Jean-Jaques Langerename',
+          img: 'https://picsum.photos/120/120/?image=29',
+          link: '#'
+        },
+        {
+          name: 'Hans Höllman',
+          img: 'https://picsum.photos/120/120/?image=29',
+        },
+        {
+          name: 'Katja Anna-Beerli',
+          img: 'https://picsum.photos/120/120/?image=29',
+        }
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+## Example without images
+
+Example with several authors, without pictures.
+
+<Canvas>
+  <Story
+    name="Example w/o pictures"
+    args={{
+      authors:[
+        {
+          name: 'Maria Muster',
+        },
+        {
+          name: 'Jean-Jaques Langerename',
+          link: '#'
+        },
+        {
+          name: 'Hans Höllman',
+        },
+        {
+          name: 'Katja Anna-Beerli',
+        }
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+## Example with one author
+
+Example with only one author, with picture.
+
+**Important:** in this case, add the class `.authors--single` to `.authors` componenent.
+
+<Canvas>
+  <Story
+    name="One author"
+    args={{
+      authors:[
+        {
+          name: 'Jean-Marie Rolf-Arnaud-Peterson',
+          img: 'https://picsum.photos/120/120/?image=29'
+          //img: "../../../static/images/author1.png",
+          //img: "../../../static/images/html-structure.png",
+        },
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Example with one author, without image
+
+Example with only one author, without picture.
+
+<Canvas>
+  <Story
+    name="One author w/o image"
+    args={{
+      authors:[
+        {
+          name: 'Maria Muster',
+        }
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<a href="?path=/story/components-authors--example">
+  Go to the Canvas Tab
+</a>
+
+---
+<a href="?id=components-authors--example&args=&viewMode=story" target="_blank">
+  Open page in full width in a new tab
+</a>
+
