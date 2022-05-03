@@ -500,20 +500,20 @@ export default {
       authors:[
         {
           name: 'Maria Muster',
-          img: '../../../static/images/author1.jpg'
+          img: 'https://picsum.photos/120/120/?image=29',
         },
         {
           name: 'Jean-Jaques Langerename',
-          img: '../../../static/images/author2.jpg',
+          img: 'https://picsum.photos/120/120/?image=30',
           url: '#'
         },
         {
           name: 'Hans Höllman',
-          img: '../../../static/images/author3.jpg',
+          img: 'https://picsum.photos/120/120/?image=31',
         },
         {
           name: 'Katja Anna-Beerli',
-          img: '../../../static/images/author4.jpg',
+          img: 'https://picsum.photos/120/120/?image=32',
         }
       ],
       tags:[
