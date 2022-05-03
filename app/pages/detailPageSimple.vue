@@ -386,6 +386,8 @@
         </div>
       </section>
 
+      <RelatedTags :tags="tags"></RelatedTags>
+
       <ContactSection />
     </main>
     <footer class="footer" id="main-footer">
@@ -412,6 +414,7 @@ import TextImage from '~/components/ch/components/TextImage'
 import AudioPlayer from '~/components/ch/components/AudioPlayer'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 import Tabs from '~/components/ch/demo/Tabs.vue'
+import RelatedTags from '~/components/ch/sections/RelatedTags.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 
 export default {
@@ -433,6 +436,7 @@ export default {
     AudioPlayer,
     SlideshowExample,
     Tabs,
+    RelatedTags,
     ShareBar,
   },
   data: function () {
@@ -494,6 +498,16 @@ export default {
           }
         },
       ],
+      tags:[
+        { label: 'Datenmodell', url: '#' },
+        { label: 'Energie', url: '#' },
+        { label: 'INTERLIS', url: '#' },
+        { label: 'GKG/KOGIS', url: '#' },
+        { label: 'Datenmodell', url: '#' },
+        { label: 'Energie', url: '#' },
+        { label: 'INTERLIS', url: '#' },
+        { label: 'GKG/KOGIS', url: '#' }
+      ]
     }
   },
   methods: {

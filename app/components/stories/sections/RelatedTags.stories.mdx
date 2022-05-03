@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import RelatedTags from '../../ch/sections/RelatedTags.vue'
+
+<Meta
+  title="Sections/Content/RelatedTags"
+  component={RelatedTags}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { RelatedTags },
+  template: '<RelatedTags :tags="tags" />'
+})
+
+
+# Related Tags
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      tags:[
+        { label: 'Datenmodell', url: '#' },
+        { label: 'Energie', url: '#' },
+        { label: 'INTERLIS', url: '#' },
+        { label: 'GKG/KOGIS', url: '#' },
+        { label: 'Datenmodell', url: '#' },
+        { label: 'Energie', url: '#' },
+        { label: 'INTERLIS', url: '#' },
+        { label: 'GKG/KOGIS', url: '#' }
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<a href="?path=/story/components-relatedtags--example">
+  Go to the Canvas Tab
+</a>
+
+---
+<a href="?id=components-relatedtags--example&args=&viewMode=story" target="_blank">
+  Open page in full width in a new tab
+</a>
+
