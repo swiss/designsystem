@@ -11,7 +11,7 @@
       <ShareBar />
     </header>
     <main id="main-content">
-      <Hero type="default">
+      <Hero type="default" :authors="authors">
         <template v-slot:title>
           Web Mapping Services WMS: Verfügbare Dienste und Daten
         </template>
@@ -498,15 +498,34 @@ export default {
           }
         },
       ],
+      authors:[
+        {
+          name: 'Maria Muster',
+          img: '../../../static/images/author1.jpg'
+        },
+        {
+          name: 'Jean-Jaques Langerename',
+          img: '../../../static/images/author2.jpg',
+          url: '#'
+        },
+        {
+          name: 'Hans Höllman',
+          img: '../../../static/images/author3.jpg',
+        },
+        {
+          name: 'Katja Anna-Beerli',
+          img: '../../../static/images/author4.jpg',
+        }
+      ],
       tags:[
         { label: 'Datenmodell', url: '#' },
         { label: 'Energie', url: '#' },
         { label: 'INTERLIS', url: '#' },
         { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Datenmodell', url: '#' },
         { label: 'Energie', url: '#' },
         { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' }
+        { label: 'GKG/KOGIS', url: '#' },
+        { label: 'Datenmodell', url: '#' },
       ]
     }
   },
