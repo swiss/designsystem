@@ -23,7 +23,7 @@
         v-for="(author, index) in authors"
         :key="author.name"
       >
-        <a v-if="author.link" :href="author.link" class="link">{{ author.name}}</a><!-- comment avoids empty space before ','
+        <a v-if="author.url" :href="author.url" class="link">{{ author.name}}</a><!-- comment avoids empty space before ','
         --><span v-else>{{ author.name}}</span><!--
         --><span v-if="index!==authors.length-1">, </span>
       </span>
