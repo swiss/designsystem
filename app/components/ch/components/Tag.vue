@@ -29,6 +29,13 @@ export default {
       type: String,
       required: false
     },
+    variant: {
+      type: String,
+      validator: (prop) => [
+        'default',
+        'active'
+      ].includes(prop)
+    },
     label: {
       type: String,
       required: true,
@@ -54,6 +61,7 @@ export default {
 
     classes () {
       let base = 'tag '
+      if (this.variant) base += `tag--${this.variant} `
       return base
     },
   }

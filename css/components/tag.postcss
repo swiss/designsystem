@@ -8,10 +8,27 @@
   @apply inline-flex items-center;
   @apply mr-3 md:mb-0.5 lg:mb-1;
   @apply focus:outline-none ring-0;
+
+  &:focus .tag__inner { 
+    @apply outline-none ring-2 ring-purple-300;
+  }
+}
+
+.tag__inner {
+  @apply px-4 2xl:px-5;
+  @apply leading-tight;
+  @apply rounded-full;
+}
+
+.tag__text {
+  @apply inline-block;
+  @apply py-1.5 xl:py-2;
+  @apply text-left;
 }
 
 
 /* SIZES */
+
 .tag,
 .tag--base {
   @apply min-h-[44px] xl:min-h-[48px] 3xl:min-h-[52px];
@@ -20,29 +37,23 @@
 }
 
 
-/* INNER */
+/* TYPES */
 
-.tag__inner {
-  @apply px-4 2xl:px-5;
-  @apply leading-tight;
-  @apply bg-gray-100;
-  @apply rounded-full;
-  
-
-  :hover > & {
-    @apply bg-gray-200;
+.tag, 
+.tag--default {
+  .tag__inner {
+    @apply bg-gray-100;
   }
 
-  :focus > & {
-    @apply outline-none ring-2 ring-purple-300;
+  &:hover .tag__inner { 
+    @apply bg-gray-200;
   }
 }
 
+.tag--active {  
+  @apply pointer-events-none; 
 
-/* TEXT */
-
-.tag__text {
-  @apply inline-block;
-  @apply py-1.5 xl:py-2;
-  @apply text-left;
+  .tag__inner {
+    @apply text-white bg-gray-800;
+  }
 }
