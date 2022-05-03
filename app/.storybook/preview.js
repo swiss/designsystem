@@ -36,7 +36,7 @@ export const parameters = {
           ['List', 'Implementation'],
         ],
         'Layouts',
-        ['General', 'Sections', 'Containers', 'Grids', 'Ratios'],
+        ['General', 'Sections', 'Containers', 'Grids', 'Spacings', 'Ratios'],
         'Components',
         ['Logo', 'Button'],
         'Sections',

@@ -1,25 +1,27 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
-import DownloadList from '../../ch/components/DownloadList.vue'
+import DownloadItem from '../../ch/components/DownloadItem.vue'
 import Btn from '../../ch/components/Btn.vue';
 
 <Meta
-  title="Components/DownloadList"
-  component={DownloadList}
+  title="Components/DownloadItem"
+  component={DownloadItem}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { DownloadList },
-  template: '<ul><DownloadList v-for="item in content" :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul>'
+  components: { DownloadItem },
+  template: '<ul><DownloadItem v-for="item in content" :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul>'
 })
 
 export const LargeTemplate = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { DownloadList, Btn },
-  template: '<div><ul><DownloadList v-for="item in content" :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul> <div class="flex justify-end"><button type="button" class="btn btn--base btn--bare"><span class="btn__text">Alle Anzeigen</span><svg viewBox="0 0 24 24" class="btn__icon icon icon--base"><path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path></svg></button></div></div>'
+  components: { DownloadItem, Btn },
+  template: '<div><ul><DownloadItem v-for="item in content" :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul> <div class="flex justify-end"><button type="button" class="btn btn--base btn--bare"><span class="btn__text">Alle Anzeigen</span><svg viewBox="0 0 24 24" class="btn__icon icon icon--base"><path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path></svg></button></div></div>'
 })
 
-# DownloadList
+# DownloadItem
+
+A Downloaditem always has to be place in a list `ul.download-items`
 
 <Canvas>
   <Story
@@ -52,11 +54,11 @@ export const LargeTemplate = (args, { argTypes }) => ({
 
 ## Interaction and accessibility
 
-Each DownloadList item is it's own link, they can also be added within a list and their width is contained by the outer parent element.
-During interactions, the DownloadList items are highlighted and the user can click on them to trigger the download. The DownloadList items are also accessible by tabbing through them.
+Each DownloadItem item is it's own link, they can also be added within a list and their width is contained by the outer parent element.
+During interactions, the DownloadItem items are highlighted and the user can click on them to trigger the download. The DownloadItem items are also accessible by tabbing through them.
 
 
-## Large Downloadlists
+## Large DownloadItems
 
 In case you want to lazyload or have too large lists you can use the element "button-bare" as a clickable component to trigger a list expansion.
 
@@ -90,7 +92,7 @@ In case you want to lazyload or have too large lists you can use the element "bu
 
 ## Download vs navigation
 
-If the DownloadList item points to a document placed on the same server as the application, add the `download` attribute on your link. This will download the document instead of opening it in the browser.
+If the DownloadItem item points to a document placed on the same server as the application, add the `download` attribute on your link. This will download the document instead of opening it in the browser.
 
 ``` html
 <a download class="download-item" href="..url-to-your-document">
@@ -106,17 +108,6 @@ If the DownloadList item points to a document placed on the same server as the a
 </a>
 ```
 
-If the DownloadList item points to an external document, a JavaScript or backend approach has to be applied.
+If the DownloadItem item points to an external document, a JavaScript or backend approach has to be applied.
 
 And if the cross-origin problematic can't be solved, add a `target="_blank"` attribute on the link for a slightly better interaction.
-
-
-<a href="?path=/story/components-downloadlist--example">
-  Go to the Canvas Tab
-</a>
-
----
-
-<a href="?id=components-downloadlist--example&args=&viewMode=story" target="_blank">
-  Open page in full width in a new tab
-</a>
