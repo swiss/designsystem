@@ -6,6 +6,7 @@
     }"
   >
     <div v-if="authorsWithImages.length" class="authors__images">
+      <!-- div needed arount the img to counter a bug with flex and negative margin, making the picture smaller if there is only one picture -->
       <div
         v-for="(author) in authorsWithImages"
         :key="author.name"
