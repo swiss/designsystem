@@ -12,7 +12,7 @@
     <div class="container container--grid gap--responsive">
       <div class="hero__content">
         <MetaInfo
-          v-if="metaInfos"
+          v-if="metaInfos.length"
           :metainfos="metaInfos"
         />
         <h1 v-if="$slots.title" class="hero__title">
@@ -24,6 +24,10 @@
         <div v-if="$slots.cta" class="hero__cta">
           <slot name="cta"></slot>
         </div>
+        <Authors
+          v-if="authors.length"
+          :authors="authors"
+        />
       </div>
       <div v-if="$slots.image" class="hero__image">
         <slot name="image"></slot>
@@ -35,11 +39,14 @@
 <script>
 
 import MetaInfo from '../components/MetaInfo.vue'
+import Authors from '../components/Authors.vue'
+
 
 export default {
   name: 'Hero',
   components: {
     MetaInfo,
+    Authors
   },
   props: {
     type: {
@@ -54,7 +61,11 @@ export default {
     },
     metaInfos: {
       type: Array,
-      required: false
+      default: () => []
+    },
+    authors: {
+      type: Array,
+      default: () => []
     }
   },
 

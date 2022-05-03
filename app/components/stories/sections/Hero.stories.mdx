@@ -21,7 +21,7 @@ export const Template = (args, { argTypes }) => ({
   components: { Hero,Btn },
   template:
     `
-    <Hero :type="type" :meta-infos="metaInfos">
+    <Hero :type="type" :meta-infos="metaInfos" :authors="authors">
       <template
         v-if="${args.type == 'main-image' || args.type == 'default'}"
         v-slot:image
@@ -70,7 +70,13 @@ Use it on the homepage or on landing pages
     name="Main without image"
     args={{
       type: 'main',
-      metaInfos: ['Webartikel', '23. Februar 2022']
+      metaInfos: ['Webartikel', '23. Februar 2022'],
+      authors:[
+        {
+          name: 'Maria Muster',
+          img: 'https://picsum.photos/120/120/?image=29'
+        }
+      ]
     }}
   >
     {Template.bind({})}
@@ -112,7 +118,26 @@ Use it on the homepage or on landing pages
     name="Detail page"
     args={{
       type: 'default',
-      metaInfos: ['Webartikel']
+      metaInfos: ['Webartikel'],
+      authors:[
+        {
+          name: 'Maria Muster',
+          img: 'https://picsum.photos/120/120/?image=29'
+        },
+        {
+          name: 'Jean-Jaques Langerename',
+          img: 'https://picsum.photos/120/120/?image=29',
+          link: '#'
+        },
+        {
+          name: 'Hans Höllman',
+          img: 'https://picsum.photos/120/120/?image=29',
+        },
+        {
+          name: 'Katja Anna-Beerli',
+          img: 'https://picsum.photos/120/120/?image=29',
+        }
+      ]
     }}
   >
     {Template.bind({})}
