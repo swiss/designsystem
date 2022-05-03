@@ -24,6 +24,7 @@
     "@nuxtjs/tailwindcss": "^5.0.0-4",
     "@storybook/addon-a11y": "6.4.22",
     "@storybook/addon-actions": "6.4.22",
+    "@storybook/addon-docs": "^6.4.22",
     "@storybook/addon-essentials": "6.4.22",
     "@storybook/addon-links": "6.4.22",
     "@storybook/theming": "^6.4.22",
@@ -36,6 +37,7 @@
     "prettier": "^2.2.1",
     "storybook-addon-designs": "^6.2.1",
     "svg-inline-loader": "^0.8.2",
-    "vue-loader": "^15.9.7"
+    "vue-loader": "^15.9.7",
+    "webpack": "^4.46.0"
   }
 }
