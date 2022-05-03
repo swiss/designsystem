@@ -91,6 +91,8 @@ Use it on the homepage or on landing pages
     name="Main with image"
     args={{
       type: 'main-image',
+      metaInfos: undefined, // deinition need, if else the deploy build throws an error impeaching the mounting of the element
+      authors: undefined
     }}
   >
     {Template.bind({})}
@@ -104,7 +106,8 @@ Use it on the homepage or on landing pages
     name="Hub page"
     args={{
       type: 'hub',
-      metaInfos: ['Webartikel']
+      metaInfos: ['Webartikel'],
+      authors: undefined
     }}
   >
     {Template.bind({})}
