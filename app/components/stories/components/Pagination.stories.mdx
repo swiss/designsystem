@@ -19,6 +19,10 @@ export const Template = (args, { argTypes }) => ({
 
 # Pagination
 
+Right and left arrows have disabled states:
+- left arrow is disabled when current page is the first one
+- right arrow is disabled when current page is the last one.
+
 ## Default Compact Pagination
 
 <Canvas>
@@ -47,54 +51,3 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Example" />
 
-# Extended pagination
-
-<Canvas>
-  <Story
-    name="Example2"
-    args={{
-      type: 'outline',
-      size: 'base',
-      field: false,
-      paginationItems: [
-        {
-          icon: "ChevronLineLeft",
-          label: "Back to first Page",
-          link: "#1"
-        },
-        {
-          icon: "ChevronLeft",
-          label: "Previous Page",
-          link: "#prev"
-        },
-        {
-          label: "1",
-          link: "#1"
-        },
-        {
-          label: "2",
-          link: "#2"
-        },
-        {
-          label: "3",
-          link: "#3"
-        },
-        {
-          label: "...",
-        },
-        {
-          icon: "ChevronRight",
-          label: "Next Page",
-          link: "#next"
-        },
-        {
-          icon: "ChevronLineRight",
-          label: "Go to last Page",
-          link: "#last"
-        },
-      ]
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>

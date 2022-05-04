@@ -190,6 +190,7 @@ module.exports = {
       },
       white: '#ffffff',
       black: '#000000',
+      transparent: 'transparent'
     },
     fontWeight: {
       normal: 400,
