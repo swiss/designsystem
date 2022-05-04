@@ -1,41 +1,69 @@
 <template>
   <aside
     class="authors"
-    :class="{
-      'authors--single' : authors.length === 1,
-    }"
   >
-    <div v-if="authorsWithImages.length" class="authors__images">
-      <!-- div needed arount the img to counter a bug with flex and negative margin, making the picture smaller if there is only one picture -->
+    <div 
+      v-if="authorsWithImages.length" 
+      class="disc-images"
+      aria-hidden="true"
+    >
       <div
-        v-for="(author) in authorsWithImages"
+        v-for="(author) in authors"
         :key="author.name"
-        class="authors__image"
+        class="disc-image"
       >
         <img
+          v-if="author.img"
           :src="author.img"
           :title="author.name"
         />
+        <div
+          v-else-if="author.initials"
+        >
+          {{ author.initials }}
+        </div>
+        <SvgIcon
+          v-else
+          icon="User"
+          class="btn__icon text-secondary-300"
+        />
+        
+        <div
+          v-else
+        >
+          <SvgIcon
+            icon="User"
+            class="btn__icon text-secondary-300"
+          />
+        </div>
       </div>
     </div>
-    <div class="authors__names">
+    <address class="authors__names">
       Von
-      <span
+
+      <component
         v-for="(author, index) in authors"
+        :is="author.url ? 'a' : 'span'"
+        :class="author.url ? 'link' : ''"
+        :href="author.url"
         :key="author.name"
-      >
-        <a v-if="author.url" :href="author.url" class="link">{{ author.name}}</a><!-- comment avoids empty space before ','
-        --><span v-else>{{ author.name}}</span><!--
-        --><span v-if="index!==authors.length-1">, </span>
-      </span>
-       <span></span>
-    </div>
+        class="author__name"
+      ><!-- 
+      -->{{ author.name }}<!-- removing unneeded white space
+      -->
+      </component>
+    </address>
   </aside>
 </template>
 
 <script>
+import SvgIcon from '../components/SvgIcon.vue';
+
 export default {
   name: 'Authors',
+  components: {
+    SvgIcon
+  },
   props: {
     authors: {
       type: Array,
