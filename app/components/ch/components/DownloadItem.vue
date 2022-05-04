@@ -1,22 +1,20 @@
 <template>
-  <li>
-    <a
-      class="download-item"
-      :href="url"
-      download
-    >
-      <SvgIcon icon="Download" size="xl" class="download-item__icon" />
-      <div>
-        <h5 class="download-item__title">
-          {{ title }}
-        </h5>
-        <p v-if="description" class="download-item__description">
-          {{ description }}
-        </p>
-        <MetaInfo :metainfos="[type, date]" class="download-item__meta-info" />
-      </div>
-    </a>
-  </li>
+  <a
+    class="download-item"
+    :href="url"
+    download
+  >
+    <SvgIcon icon="Download" size="xl" class="download-item__icon" />
+    <div>
+      <h5 class="download-item__title">
+        {{ title }}
+      </h5>
+      <p v-if="description" class="download-item__description">
+        {{ description }}
+      </p>
+      <MetaInfo :metainfos="[type, date]" class="download-item__meta-info" />
+    </div>
+  </a>
 </template>
 
 <script>

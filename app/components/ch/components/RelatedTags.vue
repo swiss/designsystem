@@ -1,23 +1,25 @@
 <template>
-  <div class="related-tags">
-    <div class="related-tags__tags">
-      <Tag
-        v-for="(tag, index) in tags"
-        :key="tag.label+index"
-        :label="tag.label"
-        :to="tag.url"
-      />
-    </div>
+  <div>
+    <hr class="separator separator--xl" />
+    <ul class="flex flex-wrap">
+      <li v-for="tag, index in tags">
+        <TagItem
+          :key="tag.label+index"
+          :label="tag.label"
+          :to="tag.url"
+        />
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import Tag from './Tag.vue'
+import TagItem from './TagItem.vue'
 
 export default {
   name: 'RelatedTags',
   components: {
-    Tag,
+    TagItem,
   },
   props: {
     tags: {

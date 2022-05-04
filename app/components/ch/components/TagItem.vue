@@ -6,9 +6,9 @@
     :class="classes"
     :aria-label="aria"
   >
-    <span class="tag__inner">
+    <span class="tag-item__inner">
       <span
-        class="tag__text"
+        class="tag-item__text"
       >
         {{ label }}
       </span>
@@ -20,7 +20,7 @@
 import SvgIcon from '../components/SvgIcon.vue';
 
 export default {
-  name: 'Tag',
+  name: 'TagItem',
   components: {
     SvgIcon
   },
@@ -60,8 +60,8 @@ export default {
     },
 
     classes () {
-      let base = 'tag '
-      if (this.variant) base += `tag--${this.variant} `
+      let base = 'tag-item '
+      if (this.variant) base += `tag-item--${this.variant} `
       return base
     },
   }

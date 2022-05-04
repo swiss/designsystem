@@ -10,13 +10,37 @@ import Btn from '../../ch/components/Btn.vue';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { DownloadItem },
-  template: '<ul><DownloadItem v-for="item in content" :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul>'
+  template: 
+    `
+    <ul>
+      <li v-for="item in content">
+        <DownloadItem :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  />
+      </li>   
+    </ul>
+    `
 })
 
 export const LargeTemplate = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { DownloadItem, Btn },
-  template: '<div><ul><DownloadItem v-for="item in content" :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  /></ul> <div class="flex justify-end"><button type="button" class="btn btn--base btn--bare"><span class="btn__text">Alle Anzeigen</span><svg viewBox="0 0 24 24" class="btn__icon icon icon--base"><path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path></svg></button></div></div>'
+  template: 
+    `
+    <div>
+      <ul>
+        <li v-for="item in content">
+          <DownloadItem :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  />
+        </li>   
+      </ul>
+      <div class="flex justify-end">
+        <button type="button" class="btn btn--base btn--bare">
+          <span class="btn__text">Alle Anzeigen</span>
+          <svg viewBox="0 0 24 24" class="btn__icon icon icon--base">
+            <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    `
 })
 
 # DownloadItem

@@ -1,26 +1,26 @@
 /*----------------------------------------*\
-  TAG
+  TAG ITEM
 \*----------------------------------------*/
 
 /* TYPES */
 
-.tag {
+.tag-item {
   @apply inline-flex items-center;
   @apply mr-3 md:mb-0.5 lg:mb-1;
   @apply focus:outline-none ring-0;
 
-  &:focus .tag__inner { 
+  &:focus .tag-item__inner { 
     @apply outline-none ring-2 ring-purple-300;
   }
 }
 
-.tag__inner {
+.tag-item__inner {
   @apply px-4 2xl:px-5;
   @apply leading-tight;
   @apply rounded-full;
 }
 
-.tag__text {
+.tag-item__text {
   @apply inline-block;
   @apply py-1.5 xl:py-2;
   @apply text-left;
@@ -29,8 +29,8 @@
 
 /* SIZES */
 
-.tag,
-.tag--base {
+.tag-item,
+.tag-item--base {
   @apply min-h-[44px] xl:min-h-[48px] 3xl:min-h-[52px];
   @apply text--base;
   @apply leading-5 lg:leading-6;
@@ -39,21 +39,21 @@
 
 /* TYPES */
 
-.tag, 
-.tag--default {
-  .tag__inner {
+.tag-item, 
+.tag-item--default {
+  .tag-item__inner {
     @apply bg-gray-100;
   }
 
-  &:hover .tag__inner { 
+  &:hover .tag-item__inner { 
     @apply bg-gray-200;
   }
 }
 
-.tag--active {  
+.tag-item--active {  
   @apply pointer-events-none; 
 
-  .tag__inner {
+  .tag-item__inner {
     @apply text-white bg-gray-800;
   }
 }
