@@ -231,9 +231,26 @@
               veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in
               jedem Fall in die Datenmodellablage eingepflegt.
             </p>
-            <div class="bg-gray-50">
-              <Tabs></Tabs>
-            </div>
+
+            <ul class="download-items">
+              <DownloadItem
+                :filename="'dummy.pdf'"
+                :title="'Information on the usage of websites'"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
+                :url="'../../../static/documents/dummy.pdf'"
+                :type="'PDF'"
+                :date="'22.01.2022'"
+              />
+              <DownloadItem
+                :filename="'image.png'"
+                :title="'Information on the usage of websites'"
+                description=""
+                :url="'../../../static/images/html-structure.png'"
+                :type="'PNG'"
+                :date="'22.01.2022'"
+              />
+            </ul>
+
             <ul>
               <li>
                 Ein neues minimales Geodatenmodell in der Datenmodellablage
@@ -414,8 +431,8 @@ import AudioPlayer from '~/components/ch/components/AudioPlayer'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 import Tabs from '~/components/ch/demo/Tabs.vue'
 import RelatedTags from '~/components/ch/components/RelatedTags.vue'
+import DownloadItem from '~/components/ch/components/DownloadItem.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
-
 export default {
   name: 'detailPageSimple',
   components: {
@@ -436,6 +453,7 @@ export default {
     SlideshowExample,
     Tabs,
     RelatedTags,
+    DownloadItem,
     ShareBar,
   },
   data: function () {

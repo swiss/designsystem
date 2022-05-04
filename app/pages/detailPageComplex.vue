@@ -95,7 +95,7 @@
       </section>
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
-          <div class="container__main">
+          <div class="container__main vertical-spacing">
             <h2 class="h2">
               Ein neues «minimales Geodatenmodell» in der Datenmodellablage
               publizieren
