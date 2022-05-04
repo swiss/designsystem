@@ -11,7 +11,7 @@
       <ShareBar />
     </header>
     <main id="main-content">
-      <Hero type="default">
+      <Hero type="default" :meta-infos="metaInfos" :authors="authors">
         <template v-slot:title>
           Web Mapping Services WMS: Verfügbare Dienste und Daten
         </template>
@@ -377,7 +377,7 @@
 
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
-          <div class="container__center--xs">
+          <div class="container__center--xs vertical-spacing">
             <h2 class="h2">
               Ein neues «minimales Geodatenmodell» in der Datenmodellablage
               publizieren
@@ -399,6 +399,7 @@
               INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
               eingepflegt.
             </p>
+            <RelatedTags :tags="tags"></RelatedTags>
           </div>
         </div>
       </section>
@@ -428,6 +429,8 @@ import Accordion from '~/components/ch/components/Accordion'
 import TextImage from '~/components/ch/components/TextImage'
 import AudioPlayer from '~/components/ch/components/AudioPlayer'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
+import Tabs from '~/components/ch/demo/Tabs.vue'
+import RelatedTags from '~/components/ch/components/RelatedTags.vue'
 import DownloadItem from '~/components/ch/components/DownloadItem.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 export default {
@@ -448,6 +451,8 @@ export default {
     TextImage,
     AudioPlayer,
     SlideshowExample,
+    Tabs,
+    RelatedTags,
     DownloadItem,
     ShareBar,
   },
@@ -510,6 +515,36 @@ export default {
           }
         },
       ],
+      metaInfos: ['Webartikel', '23. Februar 2022'],
+      authors:[
+        {
+          name: 'Maria Muster',
+          img: 'https://picsum.photos/120/120/?image=29',
+        },
+        {
+          name: 'Jean-Jaques Langerename',
+          img: 'https://picsum.photos/120/120/?image=30',
+          url: '#'
+        },
+        {
+          name: 'Hans Höllman',
+          img: 'https://picsum.photos/120/120/?image=31',
+        },
+        {
+          name: 'Katja Anna-Beerli',
+          img: 'https://picsum.photos/120/120/?image=32',
+        }
+      ],
+      tags:[
+        { label: 'Datenmodell', url: '#' },
+        { label: 'Energie', url: '#' },
+        { label: 'INTERLIS', url: '#' },
+        { label: 'GKG/KOGIS', url: '#' },
+        { label: 'Energie', url: '#' },
+        { label: 'INTERLIS', url: '#' },
+        { label: 'GKG/KOGIS', url: '#' },
+        { label: 'Datenmodell', url: '#' },
+      ]
     }
   },
   methods: {

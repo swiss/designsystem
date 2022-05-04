@@ -1,0 +1,52 @@
+/*----------------------------------------*\
+  AUTHORS
+\*----------------------------------------*/
+
+.authors {
+  @apply md:flex items-center;
+  @apply py-4;
+  @apply text--sm;
+  @apply border-y border-secondary-100;
+
+  &.authors--single {
+    @apply flex; 
+  }
+
+  .vertical-spacing & {
+    @apply extra-top-spacing;
+    @apply extra-bottom-spacing;
+  }
+}
+
+.authors__images {
+  @apply flex shrink-0; 
+  @apply mr-3 md:mr-5 ml-1;
+  @apply mb-3 md:mb-0;
+
+  .authors--single & {
+    @apply mb-0;
+  }
+}
+
+.authors__image {
+  @apply relative; 
+  @apply w-10 lg:w-14;
+  @apply h-10 lg:h-14;
+  @apply -ml-2;
+  @apply rounded-full overflow-hidden;
+  @apply border-2 border-white; 
+
+  img {
+    @apply w-full h-full;
+  }
+}
+
+.authors__names {
+  @apply md:py-2;
+
+  .link {
+    @apply text-inherit;
+  }
+}
+
+
