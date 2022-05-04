@@ -18,9 +18,9 @@ export const Template = (args, { argTypes }) => ({
 
 ## Example
 
-Full example with several authors, with pictures.
-
-**Important:** in this case, each author should have a picture. Four authors and less pictures shouldn't happen.
+If most of the authors have a picture, we display their images. 
+When only a few images are missing, they are replaced by the initials of the authors.
+If no initials are provided, the disc contains the `User` svg icon. 
 
 <Canvas>
   <Story
@@ -32,13 +32,16 @@ Full example with several authors, with pictures.
           img: 'https://picsum.photos/120/120/?image=29',
         },
         {
+          name: 'Hans Höllman',
+          initials: 'HH'
+        },
+        {
           name: 'Jean-Jaques Langerename',
           img: 'https://picsum.photos/120/120/?image=30',
           url: '#'
         },
         {
-          name: 'Hans Höllman',
-          img: 'https://picsum.photos/120/120/?image=31',
+          name: 'Sofia de Souza',
         },
         {
           name: 'Katja Anna-Beerli',
@@ -51,10 +54,14 @@ Full example with several authors, with pictures.
   </Story>
 </Canvas>
 
+<ArgsTable story="Example" />
+
 
 ## Example without images
 
-Example with several authors, without pictures.
+Author images are not displayed in two cases
+- When none of the authors or most of them don't have an image
+- When author list is very large (more than 7)
 
 <Canvas>
   <Story
@@ -85,8 +92,6 @@ Example with several authors, without pictures.
 ## Example with one author
 
 Example with only one author, with picture.
-
-**Important:** in this case, add the class `.authors--single` to `.authors` componenent.
 
 <Canvas>
   <Story

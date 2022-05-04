@@ -1,7 +1,7 @@
 <template>
   <div>
     <hr class="separator separator--xl" />
-    <ul class="flex flex-wrap">
+    <ul class="list list--flex list--wrap">
       <li v-for="tag, index in tags">
         <TagItem
           :key="tag.label+index"
