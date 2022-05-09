@@ -8,12 +8,10 @@
   @apply shadow-lg;
   @apply bg-gray-50;
 
-  a {
-    @apply underline underline-offset-2;
-  }
-
+  a, 
   a[target="_blank"] {
     @apply text-current;
+    @apply underline underline-offset-2;
 
     &:hover {
       @apply text-current brightness-50;
@@ -55,15 +53,7 @@
     @apply w-8 h-8;
   }
 }
-.notification__text > *:first-child {
-  @apply mb-1;
-}
 
-.notification .link {
-  @apply block;
-  color: inherit;
-
-  &:hover {
-    @apply opacity-80;
-  }
+.notification__text {
+  @apply mt-2.5;
 }
