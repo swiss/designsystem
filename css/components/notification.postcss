@@ -11,6 +11,14 @@
   a {
     @apply underline underline-offset-2;
   }
+
+  a[target="_blank"] {
+    @apply text-current;
+
+    &:hover {
+      @apply text-current brightness-50;
+    }
+  }
 }
 
 .notification--error {
