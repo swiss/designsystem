@@ -37,7 +37,10 @@ export const Template = (args, { argTypes }) => ({
           >
         </picture>
       </template>
-      <template v-slot:title>
+      <template v-if="${args.type == 'main-image'}" v-slot:title>
+        Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
+      </template>
+      <template v-else v-slot:title>
         Willkommen zu Hause. Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
       </template>
       <template v-slot:description>
@@ -63,20 +66,15 @@ export const Template = (args, { argTypes }) => ({
 
 ## Main hero without image
 
-Use it on the homepage or on landing pages
+**The main hero `.hero.hero--main` should be used only on the [homepage](?path=/docs/pages-homepage--example) or on [landing pages](?path=/docs/pages-detail-page-complex--example).**
+
+This version doesn't contain any article type, date or authors.
 
 <Canvas>
   <Story
     name="Main without image"
     args={{
-      type: 'main',
-      metaInfos: ['Webartikel', '23. Februar 2022'],
-      authors:[
-        {
-          name: 'Maria Muster',
-          img: 'https://picsum.photos/120/120/?image=29',
-        }
-      ]
+      type: 'main'
     }}
   >
     {Template.bind({})}
@@ -85,7 +83,12 @@ Use it on the homepage or on landing pages
 
 ## Main hero with image
 
-Use it on the homepage or on landing pages
+**The main hero with image `.hero.hero--main-image` should be used only on the [homepage](?path=/docs/pages-homepage--example) or on [landing pages](?path=/docs/pages-detail-page-complex--example).**
+
+This version doesn't contain any article type, date or authors.
+
+The image should have a 4:3 ratio and the height of both title and description shouldn't be bigger than the height of the image, on desktop.
+
 <Canvas>
   <Story
     name="Main with image"
@@ -100,6 +103,10 @@ Use it on the homepage or on landing pages
 </Canvas>
 
 ## Hero for hub pages
+
+**The hub hero `.hero.hero--hub ` should be used only on the [hub pages](?path=/docs/pages-hub-page--example), where children pages are listed on a dark background.**
+
+This version doesn't contain any article type, date or authors.
 
 <Canvas>
   <Story
@@ -116,12 +123,16 @@ Use it on the homepage or on landing pages
 
 ## Hero for detail pages
 
+**The detail page hero `.hero.hero--default ` should be used only on the [detail pages](?path=/docs/pages-detail-page-simple--example).**
+
+This version can optionally contain an article type, a date and one ore more authors.
+
 <Canvas>
   <Story
     name="Detail page"
     args={{
       type: 'default',
-      metaInfos: ['Webartikel'],
+      metaInfos: ['Webartikel', '23. Februar 2022'],
       authors:[
         {
           name: 'Maria Muster',
