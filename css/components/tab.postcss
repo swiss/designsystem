@@ -4,50 +4,82 @@
 
 .tabs {
   .container__center--xs & {
-    @apply bg-gray-50 py-8;
+    @apply py-8;
     @apply broader-than-container;
-
-    padding-left:  calc((100vw - 6em ) / 12 );
-    padding-right: calc((100vw - 6em ) / 12 );
   }
+}
 
-  .tab__control {
-     &:hover:not(.tab__control--active) {
-      @apply bg-gray-100;
+.tab__controls-container {
+  @apply relative;
+
+  &::after {
+    content: '';
+    @apply absolute right-0 top-0 bottom-1 w-10;
+    @apply pointer-events-none;
+    @apply bg-gradient-to-l from-white;
+
+    .bg--secondary-50 & {
+      @apply bg-gradient-to-l from-secondary-50;
+    }
+
+    @screen sm {
+      @apply w-20;
     }
   }
-
 }
 
 .tab__controls {
   @apply flex;
-  @apply overflow-x-auto whitespace-nowrap;
+  @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;
+  @apply border-b;
+
+  .bg--secondary-50 & {
+    @apply border-gray-300;
+  }
+
+  /* hide scrollbar with ability to still scroll */ 
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+
+  &::-webkit-scrollbar { 
+    display: none;
+  }
 }
 
 .tab__control {
-  @apply px-4 py-2;
-  &.tab__control--active {
-    @apply bg-white;
-    @apply relative;
-    @apply border-t-4 border-red-600;
-    &:after {
-      content:"";
-      height: 1px;
-      bottom: -1px;
-      left:0px;
-      @apply absolute w-full bg-white;
+  @apply relative;
+  @apply px-4 py-4;
+
+  &::after {
+    content:'';
+    @apply block;
+    @apply h-[3px];
+    @apply absolute right-4 bottom-0 left-4;
+    @apply transition;
+  }
+
+  &.tab__control--active, 
+  &:hover {
+    &::after {
+      @apply bg-primary-500;
     }
   }
   &:hover:not(.tab__control--active) {
-    @apply bg-gray-50;
+    @apply text-primary-600;
   }
+  &:first-child {
+    @apply pl-0;
 
+    &::after {
+      @apply left-0;
+    }
+  }
 }
 
 .tab__container {
-  @apply border border-gray-50 bg-white;
-  @apply md:px-6 px-4 pb-6;
-
+  &.vertical-spacing {
+    @apply extra-top-spacing;
+  }
   &.tab__container--is-hidden {
     @apply hidden
   }

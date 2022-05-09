@@ -1,5 +1,7 @@
 <template>
   <h1 v-if="$slots.title && this.type == 'sr-only'" class="sr-only">
+    <slot name="type"></slot>
+    <slot name="date"></slot>
     <slot name="title"></slot>
     <slot name="description"></slot>
   </h1>
@@ -9,6 +11,10 @@
   >
     <div class="container container--grid gap--responsive">
       <div class="hero__content">
+        <MetaInfo
+          v-if="metaInfos.length"
+          :metainfos="metaInfos"
+        />
         <h1 v-if="$slots.title" class="hero__title">
           <slot name="title"></slot>
         </h1>
@@ -18,6 +24,10 @@
         <div v-if="$slots.cta" class="hero__cta">
           <slot name="cta"></slot>
         </div>
+        <Authors
+          v-if="authors.length"
+          :authors="authors"
+        />
       </div>
       <div v-if="$slots.image" class="hero__image">
         <slot name="image"></slot>
@@ -28,8 +38,15 @@
 
 <script>
 
+import MetaInfo from '../components/MetaInfo.vue'
+import Authors from '../components/Authors.vue'
+
 export default {
   name: 'Hero',
+  components: {
+    MetaInfo,
+    Authors
+  },
   props: {
     type: {
       type: String,
@@ -40,6 +57,14 @@ export default {
         'hub',
         'sr-only'
       ].includes(prop)
+    },
+    metaInfos: {
+      type: Array,
+      default: () => []
+    },
+    authors: {
+      type: Array,
+      default: () => []
     }
   },
 

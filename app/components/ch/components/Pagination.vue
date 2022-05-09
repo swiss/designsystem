@@ -1,16 +1,16 @@
 <template>
-  <div 
+  <div
     class="pagination"
     :class="!field ? 'pagination--extended' : '' "
   >
-    <input 
+    <input
       v-if="field"
       class="pagination__input"
-      :class="computedClasses" 
-      :value="currentPage" 
+      :class="computedClasses"
+      v-model="currentPage"
       aria-label="pagination input"
-    />  
-    <div 
+    />
+    <div
       v-if="field"
       class="pagination__text"
     >
@@ -24,6 +24,7 @@
           :link="item.link"
           :type="type"
           :size="size"
+          :disabled="index===0 && currentPage==='1'"
         />
       </li>
     </ul>
@@ -48,15 +49,6 @@ export default {
         'outline-negative',
       ].includes(prop)
     },
-    size: {
-      type: String,
-      default: 'base',
-      validator: (prop) => [
-        'sm',
-        'base',
-        'lg'
-      ].includes(prop)
-    },
     field: {
       type: Boolean,
       default: true
@@ -71,12 +63,11 @@ export default {
       type: Array
     }
   },
-  
+
   computed: {
     computedClasses () {
-      let base = 'input '
+      let base = 'input input--base '
       if (this.type) base += `input--${this.type} `
-      if (this.size) base += `input--${this.size} `
       return base
     }
   }

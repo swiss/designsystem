@@ -1,4 +1,4 @@
-import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs';
 
 <Meta
   title="Components/Lists"
@@ -87,6 +87,24 @@ Use `.list .list--roman` for roman glyphs:
 
 <Canvas style={{ backgroundColor: '#2f4356' }}>
 <ul class="list list--default list--negative">
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+</Canvas>
+
+## Horizontal Lists
+
+`.list--flex` display list items horizontally, without wrapping
+<Canvas>
+<ul class="list list--flex">
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+</Canvas>
+
+`.list--flex list--wrap` display list items horizontally, with wrapping
+<Canvas>
+<ul class="list list--flex list--wrap">
   <li>List item</li>
   <li>List item</li>
 </ul>

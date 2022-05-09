@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import Hero from '../../ch/sections/Hero.vue';
 import Btn from '../../ch/components/Btn.vue';
 
@@ -6,14 +6,13 @@ import Btn from '../../ch/components/Btn.vue';
   title="Sections/Content/Hero"
   components={Hero}
   argTypes={{
-    type: { 
-      name:'Type', 
-      control: { 
-        type: 'select', 
-        options: ['default', 'main', 'main-image', 'hub', 'hidden'] 
+    type: {
+      name:'Type',
+      control: {
+        type: 'select',
+        options: ['default', 'main', 'main-image', 'hub', 'hidden']
       }
     },
-    
   }}
 />
 
@@ -22,18 +21,18 @@ export const Template = (args, { argTypes }) => ({
   components: { Hero,Btn },
   template:
     `
-    <Hero :type="type">
-      <template 
-        v-if="${args.type == 'main-image' || args.type == 'default'}" 
+    <Hero :type="type" :meta-infos="metaInfos" :authors="authors">
+      <template
+        v-if="${args.type == 'main-image' || args.type == 'default'}"
         v-slot:image
       >
         <picture>
-          <img 
-            v-if="${args.type == 'main-image'}" 
+          <img
+            v-if="${args.type == 'main-image'}"
             src="https://placekitten.com/g/1200/900" alt="ratio is 4/3"
           >
-          <img 
-            v-if="${args.type == 'default'}" 
+          <img
+            v-if="${args.type == 'default'}"
             src="https://placekitten.com/g/1600/900" alt="ratio is 16/9"
           >
         </picture>
@@ -44,8 +43,8 @@ export const Template = (args, { argTypes }) => ({
       <template v-slot:description>
         Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
       </template>
-      <template 
-        v-if="${args.type == 'main-image' || args.type == 'main'}"  
+      <template
+        v-if="${args.type == 'main-image' || args.type == 'main'}"
         v-slot:cta
       >
         <Btn
@@ -55,7 +54,7 @@ export const Template = (args, { argTypes }) => ({
             icon="ArrowRight"
             label="Unsere Dienstleistungen"
           />
-      </template>      
+      </template>
     </Hero>
     `,
 });
@@ -70,7 +69,14 @@ Use it on the homepage or on landing pages
   <Story
     name="Main without image"
     args={{
-      type: 'main',   
+      type: 'main',
+      metaInfos: ['Webartikel', '23. Februar 2022'],
+      authors:[
+        {
+          name: 'Maria Muster',
+          img: 'https://picsum.photos/120/120/?image=29',
+        }
+      ]
     }}
   >
     {Template.bind({})}
@@ -84,7 +90,9 @@ Use it on the homepage or on landing pages
   <Story
     name="Main with image"
     args={{
-      type: 'main-image',   
+      type: 'main-image',
+      metaInfos: undefined, // deinition need, if else the deploy build throws an error impeaching the mounting of the element
+      authors: undefined
     }}
   >
     {Template.bind({})}
@@ -97,7 +105,9 @@ Use it on the homepage or on landing pages
   <Story
     name="Hub page"
     args={{
-      type: 'hub',   
+      type: 'hub',
+      metaInfos: ['Webartikel'],
+      authors: undefined
     }}
   >
     {Template.bind({})}
@@ -110,22 +120,42 @@ Use it on the homepage or on landing pages
   <Story
     name="Detail page"
     args={{
-      type: 'default',   
+      type: 'default',
+      metaInfos: ['Webartikel'],
+      authors:[
+        {
+          name: 'Maria Muster',
+          img: 'https://picsum.photos/120/120/?image=29',
+        },
+        {
+          name: 'Jean-Jaques Langerename',
+          img: 'https://picsum.photos/120/120/?image=30',
+          url: '#'
+        },
+        {
+          name: 'Hans Höllman',
+          img: 'https://picsum.photos/120/120/?image=31',
+        },
+        {
+          name: 'Katja Anna-Beerli',
+          img: 'https://picsum.photos/120/120/?image=32',
+        }
+      ]
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-## Hero for screenreaders only 
+## Hero for screenreaders only
 
-If there isn't any specific content for the hero, we still need to display a `h1` title for screen readers. 
+If there isn't any specific content for the hero, we still need to display a `h1` title for screen readers.
 Set type to `sr-only` to hide the component visually. Check the <a href="?path=/story/sections-content-hero--example">Storybook Canvas Tab</a> to display the HTML markup.
 <Canvas>
   <Story
     name="Screen readers only"
     args={{
-      type: 'sr-only',   
+      type: 'sr-only',
     }}
   >
     {Template.bind({})}

@@ -18,6 +18,7 @@
       :max="max"
       :step="step"
       :pattern="pattern"
+      :autocomplete="autocomplete"
     />
     <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
       {{ message }}
@@ -73,6 +74,9 @@ export default {
       type: Number,
     },
     pattern: {
+      type: String,
+    },
+    autocomplete: {
       type: String,
     },
   },

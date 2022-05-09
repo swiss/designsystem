@@ -1,0 +1,32 @@
+/*----------------------------------------*\
+  AUTHORS
+\*----------------------------------------*/
+
+.authors {
+  @apply md:flex items-center;
+  @apply py-4;
+  @apply text--sm;
+  @apply border-y border-secondary-100;
+
+  .vertical-spacing & {
+    @apply extra-top-spacing;
+    @apply extra-bottom-spacing;
+  }
+}
+
+.authors__names {
+  @apply md:py-2;
+
+  .link {
+    @apply text-inherit;
+  }
+}
+
+.author__name {
+  &:not(:last-child)::after {
+    content: ", ";
+    display: inline-block;
+    width: 1ch;
+  }
+}
+

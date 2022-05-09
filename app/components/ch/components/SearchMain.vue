@@ -2,7 +2,13 @@
   <div class="search search--main">
     <div class="search__group">
       <h2 class="sr-only">Suche</h2>
-      <Input type="text" id="search-main" label="Suche in dieser Website" placeholder="Suche" />
+      <Input
+        type="text"
+        id="search-main"
+        label="Suche in dieser Website"
+        placeholder="Suche"
+        autocomplete="off"
+      />
       <button
         class="search__button"
         title="Toggle search"
