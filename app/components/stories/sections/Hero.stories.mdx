@@ -74,7 +74,9 @@ This version doesn't contain any article type, date or authors.
   <Story
     name="Main without image"
     args={{
-      type: 'main'
+      type: 'main',
+      metaInfos: undefined, // deinition need, if else the deploy build throws an error impeaching the mounting of the element
+      authors: undefined
     }}
   >
     {Template.bind({})}
@@ -94,7 +96,7 @@ The image should have a 4:3 ratio and the height of both title and description s
     name="Main with image"
     args={{
       type: 'main-image',
-      metaInfos: undefined, // deinition need, if else the deploy build throws an error impeaching the mounting of the element
+      metaInfos: undefined,
       authors: undefined
     }}
   >
@@ -113,7 +115,7 @@ This version doesn't contain any article type, date or authors.
     name="Hub page"
     args={{
       type: 'hub',
-      metaInfos: ['Webartikel'],
+      metaInfos: undefined,
       authors: undefined
     }}
   >
