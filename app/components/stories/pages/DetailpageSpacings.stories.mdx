@@ -1,0 +1,32 @@
+
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import store from '@/.storybook/store';
+import detailPageSpacing from '../../../pages/detailPageSpacing.vue';
+
+<Meta
+  title="Pages/Detail Page Spacings"
+  component={detailPageSpacing}
+  argTypes={{
+    isOpen: { name:'Is open', control: { type: 'boolean' } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { detailPageSpacing },
+  store: store,
+  template: '<detailPageSpacing />',
+});
+
+# Simple page example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      isOpen: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
