@@ -32,7 +32,6 @@ export default {
       validator: (prop) => [
         'default',
         'highlight',
-        'image-left',
         'twitter',
         'flat'
       ].includes(prop)
