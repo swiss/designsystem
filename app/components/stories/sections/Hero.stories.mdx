@@ -41,7 +41,7 @@ export const Template = (args, { argTypes }) => ({
         Willkommen zu Hause. Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
       </template>
       <template
-        v-if="${args.type !== 'minimal'}"
+        v-if="${args.type !== 'title-only'}"
         v-slot:description
       >
         Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
@@ -150,17 +150,17 @@ Use it on the homepage or on landing pages
   </Story>
 </Canvas>
 
-## Minimal hero for detail pages
+## Hero for detail pages, with only a title
 
-**The `.hero.hero--minimal` section is used on [detail pages](?path=/docs/pages-test-hero-minimal--example) where the hero only contains a title.**
+**The `.hero.hero--title-only` section is used on [detail pages](?path=/docs/pages-test-hero-title-only--example) where the hero only contains a title.**
 
 This variant can contain only a title.
 
 <Canvas>
   <Story
-    name="Detail page - minimal"
+    name="Detail page - title only"
     args={{
-      type: 'minimal',
+      type: 'title-only',
       metaInfos: undefined,
       authors: undefined
     }}

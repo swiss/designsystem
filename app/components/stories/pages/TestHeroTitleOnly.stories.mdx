@@ -1,11 +1,11 @@
 
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import store from '@/.storybook/store';
-import testHeroMinimal from '../../../pages/testHeroMinimal.vue';
+import testHeroTitleOnly from '../../../pages/testHeroTitleOnly.vue';
 
 <Meta
-  title="Pages/Test - Hero Minimal"
-  component={testHeroMinimal}
+  title="Pages/Test - Hero title only"
+  component={testHeroTitleOnly}
   argTypes={{
     isOpen: { name:'Is open', control: { type: 'boolean' } },
   }}
@@ -13,14 +13,14 @@ import testHeroMinimal from '../../../pages/testHeroMinimal.vue';
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { testHeroMinimal },
+  components: { testHeroTitleOnly },
   store: store,
-  template: '<testHeroMinimal />',
+  template: '<testHeroTitleOnly />',
 });
 
-# Test page for minimal hero
+# Test page for hero with only a title
 
-A detail page with a minimal hero, containing only a title.
+A detail page with a hero containing only a title.
 
 <Canvas>
   <Story
