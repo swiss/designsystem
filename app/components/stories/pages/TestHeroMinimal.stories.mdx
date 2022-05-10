@@ -4,7 +4,7 @@ import store from '@/.storybook/store';
 import testHeroMinimal from '../../../pages/testHeroMinimal.vue';
 
 <Meta
-  title="Pages/Test Hero Minimal"
+  title="Pages/Test - Hero Minimal"
   component={testHeroMinimal}
   argTypes={{
     isOpen: { name:'Is open', control: { type: 'boolean' } },
@@ -18,9 +18,9 @@ export const Template = (args, { argTypes }) => ({
   template: '<testHeroMinimal />',
 });
 
-# Simple page example
+# Test page for minimal hero
 
-A simple detail page with real content to proof and finalize the spacing system
+A detail page with a minimal hero, containing only a title.
 
 <Canvas>
   <Story
