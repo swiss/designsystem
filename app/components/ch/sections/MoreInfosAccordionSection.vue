@@ -85,15 +85,6 @@
 
           <AccordionItem 
             id="11"
-            title="Reden"
-            headingLevel="h3"
-          >
-            AccordionItem Content here<br />
-            2nd line
-          </AccordionItem>
-
-          <AccordionItem 
-            id="11"
             title="Dokumente und Downloads"
             headingLevel="h3"
           >
@@ -115,6 +106,15 @@
                 :date="'22.01.2022'"
               />
             </ul>
+          </AccordionItem>
+
+          <AccordionItem 
+            id="11"
+            title="Reden"
+            headingLevel="h3"
+          >
+            AccordionItem Content here<br />
+            2nd line
           </AccordionItem>
 
           <AccordionItem 
