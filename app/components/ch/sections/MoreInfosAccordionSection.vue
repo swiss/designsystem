@@ -113,8 +113,21 @@
             title="Reden"
             headingLevel="h3"
           >
-            AccordionItem Content here<br />
-            2nd line
+            <figure>
+              <picture>
+                <source
+                  srcset="https://placekitten.com/g/1600/900"
+                  media="(min-width: 800px)"
+                />
+                <img src="https://placekitten.com/g/1600/1200" alt="cat" />
+              </picture>
+              <figcaption>
+                Datenmodelle als http-Ressource nutzbar zu machen. Der Vorteil für
+                einen Benutzer liegt darin, dass die Modelldateien und evtl.
+                weitere importierte Datenmodelle nicht lokal vorhanden sein müssen
+                —&nbsp;©&nbsp;Photograph Name
+              </figcaption>
+            </figure>
           </AccordionItem>
 
           <AccordionItem 
