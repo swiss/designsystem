@@ -35,16 +35,6 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import Hero from '~/components/ch/sections/Hero'
-import QuoteSection from '~/components/ch/sections/QuoteSection'
-import ContactSection from '~/components/ch/sections/ContactSection'
-import Accordion from '~/components/ch/components/Accordion'
-import TextImage from '~/components/ch/components/TextImage'
-import AudioPlayer from '~/components/ch/components/AudioPlayer'
-import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
-import Tabs from '~/components/ch/demo/Tabs.vue'
-import RelatedTags from '~/components/ch/components/RelatedTags.vue'
-import DownloadItem from '~/components/ch/components/DownloadItem.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 export default {
   name: 'detailPageSpacing',
@@ -57,108 +47,7 @@ export default {
     MobileMenu,
     FooterInformation,
     FooterNavigation,
-    Hero,
-    QuoteSection,
-    ContactSection,
-    Accordion,
-    TextImage,
-    AudioPlayer,
-    SlideshowExample,
-    Tabs,
-    RelatedTags,
-    DownloadItem,
     ShareBar,
-  },
-  data: function () {
-    return {
-      slides: [
-        {
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=29',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=29',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: {
-            title: 'Image one title',
-            description: 'Image one description',
-            copyright: 'Photograph name'
-          }
-        },
-        {
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=28',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=28',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: {
-            title: 'Image two, title without description',
-            copyright: 'Photograph name'
-          }
-        },
-        {
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=1045',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=1045',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: {
-            description: 'Image three, description only',
-            copyright: 'Photograph name'
-          }
-        },
-      ],
-      metaInfos: ['Webartikel', '23. Februar 2022'],
-      authors:[
-        {
-          name: 'Maria Muster',
-          img: 'https://picsum.photos/120/120/?image=29',
-        },
-        {
-          name: 'Jean-Jaques Langerename',
-          img: 'https://picsum.photos/120/120/?image=30',
-          url: '#'
-        },
-        {
-          name: 'Hans Höllman',
-          img: 'https://picsum.photos/120/120/?image=31',
-        },
-        {
-          name: 'Katja Anna-Beerli',
-          img: 'https://picsum.photos/120/120/?image=32',
-        }
-      ],
-      tags:[
-        { label: 'Datenmodell', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Datenmodell', url: '#' },
-      ]
-    }
   },
   methods: {
     getMobileMenuIsOpen() {
