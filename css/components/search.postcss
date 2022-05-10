@@ -203,6 +203,7 @@
 \*----------------------------------------*/
 
 .search-result {
+  @apply card--flat;
 
   @apply block space-y-4;
   
@@ -210,11 +211,6 @@
     @apply grid gap-x-6;
     grid-template-columns: 4fr 1fr;
   }
-
-  @apply py-4 lg:py-6 2xl:py-8;
-  @apply px-2;
-  @apply border-b border-secondary-300;
-  @apply transition-colors duration-200 ease-in-out;
 
   &:hover {
     @apply bg-secondary-50;
@@ -232,7 +228,6 @@
 
 .search-result__description {
   grid-column: 1 / 2;
-  /* @apply sm:w-2/3 space-y-2 lg:space-y-3 2xl:space-y-4; */
 }
 
 .search-result__specs,

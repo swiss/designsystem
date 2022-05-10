@@ -65,31 +65,45 @@
   }
 }
 
-.card--flat {
-  @apply search-result;
-
+.card--flat.card--clickable {
   &:hover,
   &:focus-within {
+    @apply bg-secondary-50;
     @apply shadow-none;
   }
-
-  .card__content {
-    @apply bg-transparent;
-  }
-
-  .card__body {
-    @apply p-0;
-    max-height: none;
-  }
-
-  .card__footer {
-    @apply p-0;
-  }
-
-  .accordion .accordion__drawer & {
-    @apply mt-0;
-  }
 }
+
+.card--flat {
+  @apply py-4 lg:py-6 2xl:py-8;
+  @apply px-2;
+  @apply border-b border-secondary-300;
+  
+  @apply transition-colors duration-200 ease-in-out;
+}
+  
+/* card--flat is extended for .search-result items */
+.card--flat .card__content {
+  @apply bg-transparent;
+}
+
+/* therefore, specific definitions for card--flat children are not nested:  */
+.card--flat .card__body {
+  max-height: none;
+  @apply px-0;
+}
+
+.card--flat .card__content:first-of-type .card__body {
+  @apply py-0;
+}
+
+.card--flat .card__footer {
+  @apply p-0;
+}
+
+.accordion .accordion__drawer .card--flat {
+  @apply mt-0;
+}
+
 
 .card__image {
   @apply relative pb-[56.25%]; /* 16/9 ratio */
