@@ -42,7 +42,7 @@
           </figure>
         </template>
       </Hero>
-      <section class="section section--default section--pb-only">
+      <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
             <h2 class="h2">Carousel with few images</h2>
