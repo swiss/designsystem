@@ -37,7 +37,10 @@ export const Template = (args, { argTypes }) => ({
           >
         </picture>
       </template>
-      <template v-slot:title>
+      <template v-if="${args.type == 'main-image'}" v-slot:title>
+        Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
+      </template>
+      <template v-else v-slot:title>
         Willkommen zu Hause. Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
       </template>
       <template v-slot:description>
@@ -63,20 +66,17 @@ export const Template = (args, { argTypes }) => ({
 
 ## Main hero without image
 
-Use it on the homepage or on landing pages
+**The `.hero.hero--main` section is used on the [homepage](?path=/docs/pages-homepage--example) or on [landing pages](?path=/docs/pages-detail-page-complex--example).**
+
+This variant doesn't contain any article type, date or authors.
 
 <Canvas>
   <Story
     name="Main without image"
     args={{
       type: 'main',
-      metaInfos: ['Webartikel', '23. Februar 2022'],
-      authors:[
-        {
-          name: 'Maria Muster',
-          img: 'https://picsum.photos/120/120/?image=29',
-        }
-      ]
+      metaInfos: undefined, // deinition need, if else the deploy build throws an error impeaching the mounting of the element
+      authors: undefined
     }}
   >
     {Template.bind({})}
@@ -85,13 +85,18 @@ Use it on the homepage or on landing pages
 
 ## Main hero with image
 
-Use it on the homepage or on landing pages
+**The `.hero.hero--main-image` section is used on the [homepage](?path=/docs/pages-homepage--example) or on [landing pages](?path=/docs/pages-detail-page-complex--example),** when an image is available.
+
+This variant doesn't contain any article type, date or authors.
+
+The image should have a 4:3 ratio and the height of both title and description shouldn't be bigger than the height of the image on a large desktop.
+
 <Canvas>
   <Story
     name="Main with image"
     args={{
       type: 'main-image',
-      metaInfos: undefined, // deinition need, if else the deploy build throws an error impeaching the mounting of the element
+      metaInfos: undefined,
       authors: undefined
     }}
   >
@@ -101,12 +106,16 @@ Use it on the homepage or on landing pages
 
 ## Hero for hub pages
 
+**The `.hero.hero--hub` section is used on the [hub pages](?path=/docs/pages-hub-page--example), where children pages are listed on a dark background right after the hero section.**
+
+This variant doesn't contain any article type, date or authors.
+
 <Canvas>
   <Story
     name="Hub page"
     args={{
       type: 'hub',
-      metaInfos: ['Webartikel'],
+      metaInfos: undefined,
       authors: undefined
     }}
   >
@@ -116,12 +125,16 @@ Use it on the homepage or on landing pages
 
 ## Hero for detail pages
 
+**The `.hero.hero--default` section is used on the [detail pages](?path=/docs/pages-detail-page-simple--example).**
+
+This variant can optionally contain an article type, a date and one ore more authors.
+
 <Canvas>
   <Story
     name="Detail page"
     args={{
       type: 'default',
-      metaInfos: ['Webartikel'],
+      metaInfos: ['Webartikel', '23. Februar 2022'],
       authors:[
         {
           name: 'Maria Muster',
