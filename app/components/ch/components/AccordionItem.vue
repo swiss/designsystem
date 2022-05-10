@@ -9,7 +9,7 @@
       :id="`accordion-control-${id}`"
     >
       <component
-        :is="headinglevel"
+        :is="tag"
         class="accordion__title"
       >
         {{ title }}
@@ -27,7 +27,6 @@
     >
       <div class="accordion__content">
         <slot />
-      </div>
       </div>
     </div>
   </li>
@@ -51,7 +50,7 @@ export default {
       type: String,
       required: true
     },
-    headinglevel: {
+    headingLevel: {
       type: String,
       default: 'h3',
       validator: (prop) => [
@@ -63,5 +62,10 @@ export default {
       ].includes(prop)
     }
   },
+  computed: {
+    tag () {
+      return this.headingLevel
+    }
+  }
 }
 </script>

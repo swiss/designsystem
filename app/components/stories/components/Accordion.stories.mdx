@@ -16,14 +16,13 @@ export const Template = (args, { argTypes }) => ({
       <AccordionItem 
         id="10"
         title="Accordion item one"
-        headingLevel="h2"
       >
-        AccordionItem Content here
+        <h4 class="h5">My parent title is a h3, therefore, I am a h4</h4>
+        <p>Description here</p>
       </AccordionItem>
       <AccordionItem 
         id="11"
         title="Accordion item two"
-        headingLevel="h2"
       >
         AccordionItem Content here<br />
         2nd line
@@ -115,11 +114,13 @@ More informations about [why heading levels should only increase by one](https:/
 ## Titles inside an accordion
 Following the same logic, the titles inside an accordion content should be considered as subtitles of the accordion title. For example, if the accordion title is a `h3`, the following titles inside the accordion should start with a `h4` 
 
+## Styles for titles inside an accordion
+The recommended style for any heading inside an accordion is the `.h5` CSS class. For example, a fourth level heading will adopt the `<h4 class="h5">` markup.
+
 ## Rules of thumb
 
 1. __Accordion heading level = Parent title level + 1__
 2. __Heading level inside an accordion content = Accordion heading level + 1__
 
 If these rules can't be applied technically, for example in a complex migration process, the best option is to __remove the headings inside the accordions__. With this approach, the semantic of the titles is lost, but the content doesn't bring confusion for people using assistive technologies.  
-
 
