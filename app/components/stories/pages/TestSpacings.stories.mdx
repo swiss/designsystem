@@ -1,11 +1,11 @@
 
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import store from '@/.storybook/store';
-import detailPageSpacing from '../../../pages/testSpacings.vue';
+import testSpacings from '../../../pages/testSpacings.vue';
 
 <Meta
   title="Pages/Test Spacings"
-  component={detailPageSpacing}
+  component={testSpacings}
   argTypes={{
     isOpen: { name:'Is open', control: { type: 'boolean' } },
   }}
@@ -13,9 +13,9 @@ import detailPageSpacing from '../../../pages/testSpacings.vue';
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { detailPageSpacing },
+  components: { testSpacings },
   store: store,
-  template: '<detailPageSpacing />',
+  template: '<testSpacings />',
 });
 
 # Simple page example
