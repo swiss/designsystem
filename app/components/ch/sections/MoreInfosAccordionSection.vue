@@ -84,7 +84,7 @@
           </AccordionItem>
 
           <AccordionItem 
-            id="11"
+            id="12"
             title="Dokumente und Downloads"
             headingLevel="h3"
           >
@@ -109,7 +109,7 @@
           </AccordionItem>
 
           <AccordionItem 
-            id="11"
+            id="13"
             title="Reden"
             headingLevel="h3"
           >
@@ -131,7 +131,7 @@
           </AccordionItem>
 
           <AccordionItem 
-            id="11"
+            id="14"
             title="Parlament"
             headingLevel="h3"
           >
@@ -139,7 +139,7 @@
           </AccordionItem>
 
           <AccordionItem 
-            id="11"
+            id="15"
             title="Gesetze und Verordnungen"
             headingLevel="h3"
           >

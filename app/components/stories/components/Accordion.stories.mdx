@@ -72,7 +72,12 @@ Each accordion item regroup a button `.accordion__button`  and a related `.accor
 </ul>
 ```
 
-During interactions, some ARIA attributes have to be modified for a correct behaviour on assitive technologies. Below an example of a simple script which toggles `aria-expanded` and `aria-hidden` attributes:
+During interactions, some ARIA attributes have to be modified for a correct behaviour on assitive technologies. 
+
+Below an example of a simple script resolving two accessibility topics:
+1. Toggle `aria-expanded` and `aria-hidden` attributes on accordion button. 
+2. Hide the eventual focusable elements inside a closed accordion
+
 
 ```javascript
 const Accordion = {
@@ -80,18 +85,34 @@ const Accordion = {
     let buttons = document.querySelectorAll(target)
     buttons.forEach(button => {
       let content = button.nextElementSibling
+      let focusableElements = getFocusableElements(content)
+      // make focusable content unfocusable
+      focusableElements.forEach(item => {
+        item.tabIndex =  -1
+      })
+
       button.addEventListener("click", (event) => {
-        if (button.classList.contains("active")) {
+        if (button.classList.contains("active")) { 
+          // close drawer
           button.classList.remove("active")
           button.setAttribute("aria-expanded", false)
           content.style.maxHeight = null
           content.setAttribute("aria-hidden", true)
+          // make focusable content unfocusable
+          focusableElements.forEach(item => {
+            item.tabIndex =  -1
+          })
         }
         else {
+          // open drawer
           button.classList.add("active")
           content.style.maxHeight = content.scrollHeight + "px";
           content.setAttribute("aria-hidden", false)
           button.setAttribute("aria-expanded", true)
+          // make focusable content focusable again
+          focusableElements.forEach(item => {
+            item.tabIndex = undefined
+          })
         }
       })
     })
