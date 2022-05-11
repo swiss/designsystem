@@ -68,17 +68,18 @@
 .card--flat.card--clickable {
   &:hover,
   &:focus-within {
-    @apply bg-secondary-50;
+    @apply bg-transparent;
     @apply shadow-none;
+
+    &:hover .card__title {
+      @apply text-red-600;
+    }
   }
 }
 
 .card--flat {
   @apply py-4 lg:py-6 2xl:py-8;
-  @apply px-2;
   @apply border-b border-secondary-200;
-  
-  @apply transition-colors duration-200 ease-in-out;
 }
   
 /* card--flat is extended for .search-result items */
@@ -88,8 +89,8 @@
 
 /* therefore, specific definitions for card--flat children are not nested:  */
 .card--flat .card__body {
-  max-height: none;
   @apply px-0;
+  max-height: none;
 }
 
 .card--flat .card__content:first-of-type .card__body {
@@ -144,6 +145,7 @@
 .card__title {
   @apply text-lg xl:text-xl 3xl:text-2xl;
   @apply font-bold leading-6;
+  @apply transition-colors duration-200 ease-in-out;
 }
 
 .card__footer {

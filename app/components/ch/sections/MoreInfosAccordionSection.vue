@@ -30,7 +30,7 @@
           >
             <Card type="flat">
               <template v-slot:body>
-                <h4 class="h5">Flat Card example</h4>
+                <h4 class="card__title">Flat Card example</h4>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
               <template v-slot:footerInfo>
@@ -48,7 +48,7 @@
             </Card>
             <Card type="flat">
               <template v-slot:body>
-                <h4 class="h5">Flat Card example</h4>
+                <h4 class="card__title">Flat Card example</h4>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
               <template v-slot:footerInfo>

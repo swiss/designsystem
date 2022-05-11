@@ -7,11 +7,9 @@
   @apply pl-0 pb-4 pt-4;
   @apply border-b border-secondary-200;
   @apply text-left;
-  @apply hover:bg-secondary-50;
 
   .bg--secondary-50 & {
     @apply border-secondary-300;
-    @apply hover:bg-white;
   }
 
   .accordion &:last-of-type {
@@ -21,12 +19,18 @@
 }
 
 .download-item__icon {
-  @apply pr-2 md:pr-4 xl:pr-6;
+  @apply -ml-1;
+  @apply pr-1 md:pr-2;
   @apply text-red-600;
 }
 
 .download-item__title {
   @apply font-bold;
+  @apply transition-colors duration-200;
+
+  .download-item:hover & {
+    @apply text-red-600;
+  }
 }
 
 .download-item__meta-info {

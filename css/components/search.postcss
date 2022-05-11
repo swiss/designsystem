@@ -212,10 +212,6 @@
     grid-template-columns: 4fr 1fr;
   }
 
-  &:hover {
-    @apply bg-secondary-50;
-  }
-
   .meta-info {
     grid-column: 1 / 2;
   }
@@ -224,6 +220,12 @@
 .search-result__title {
   grid-column: 1 / 2;
   @apply text--xl text--bold;
+  @apply transition-colors duration-200;
+
+
+  .search-result:hover & {
+    @apply text-primary-600;
+  }
 }
 
 .search-result__description {
