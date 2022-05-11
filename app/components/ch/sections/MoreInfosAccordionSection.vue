@@ -13,7 +13,7 @@
             title="Medienmitteilungen"
             headingLevel="h3"
           >
-            <h3 class="h5">Title h3</h3>
+            <h4 class="h5">Title h4</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
             <ul class="list list--default">
               <li>List example</li>
