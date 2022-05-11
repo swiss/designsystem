@@ -76,7 +76,7 @@
 .card--flat {
   @apply py-4 lg:py-6 2xl:py-8;
   @apply px-2;
-  @apply border-b border-secondary-300;
+  @apply border-b border-secondary-200;
   
   @apply transition-colors duration-200 ease-in-out;
 }
@@ -102,6 +102,11 @@
 
 .accordion .accordion__drawer .card--flat {
   @apply mt-0;
+
+  &:last-of-type {
+    @apply mb-4; 
+    @apply border-b-0;
+  }
 }
 
 

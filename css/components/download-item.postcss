@@ -5,13 +5,18 @@
 .download-item {
   @apply flex w-full;
   @apply pl-0 pb-4 pt-4;
-  @apply border-b border-gray-200;
+  @apply border-b border-secondary-200;
   @apply text-left;
   @apply hover:bg-secondary-50;
 
   .bg--secondary-50 & {
-    @apply border-gray-300;
+    @apply border-secondary-300;
     @apply hover:bg-white;
+  }
+
+  .accordion &:last-of-type {
+    @apply mb-4; 
+    @apply border-b-0;
   }
 }
 
