@@ -42,7 +42,7 @@
           </figure>
         </template>
       </Hero>
-      <section class="section section--default section--pb-only">
+      <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
             <h2 class="h2">Carousel with few images</h2>
@@ -287,26 +287,6 @@
               </li>
             </ol>
 
-            <Accordion
-              id="3456"
-              :content="[
-                {
-                  title: 'Accordion item one',
-                  content: 'Content here <br>second line',
-                },
-                {
-                  title: 'Accordion item two',
-                  content: 'Content here <br>second line<br>third line',
-                },
-                {
-                  title:
-                    'Accordion item three. this one has a long title, like this we can test how it displays on two lines',
-                  content:
-                    '<h4 class=&quot;h3&quot;>Demo list</h4><ul class=&quot;list list--bullet&quot;><li>list item</li><li>list item</li></ul>',
-                },
-              ]"
-            />
-
             <h2 class="h2">Datenmodellablage ansehen</h2>
             <p>
               Der Modellkatalog kann unter
@@ -404,6 +384,8 @@
         </div>
       </section>
 
+      <MoreInfosAccordionSection />
+
       <ContactSection />
     </main>
     <footer class="footer" id="main-footer">
@@ -425,7 +407,7 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import Hero from '~/components/ch/sections/Hero'
 import QuoteSection from '~/components/ch/sections/QuoteSection'
 import ContactSection from '~/components/ch/sections/ContactSection'
-import Accordion from '~/components/ch/components/Accordion'
+import MoreInfosAccordionSection from '~/components/ch/sections/MoreInfosAccordionSection'
 import TextImage from '~/components/ch/components/TextImage'
 import AudioPlayer from '~/components/ch/components/AudioPlayer'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
@@ -447,7 +429,7 @@ export default {
     Hero,
     QuoteSection,
     ContactSection,
-    Accordion,
+    MoreInfosAccordionSection,
     TextImage,
     AudioPlayer,
     SlideshowExample,

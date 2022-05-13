@@ -55,6 +55,7 @@ export default {
         'main',
         'main-image',
         'hub',
+        'title-only',
         'sr-only'
       ].includes(prop)
     },

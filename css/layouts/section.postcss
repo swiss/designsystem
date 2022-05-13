@@ -17,17 +17,11 @@
 }
 
 /*
-  Adding padding bottom only,
-  handy for the first section of consecutive sections:
-*/
-.section--pb-only {
-  @apply container--pb;
-}
-
-/*
   If consecutive sections have same background,
   we remove the padding top of the second section:
 */
+.hero + .section--default,
+.hero + .bg--white,
 .section--default + .section--default,
 .bg--white + .bg--white,
 .bg--secondary-900 + .bg--secondary-900,

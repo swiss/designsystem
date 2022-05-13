@@ -1,11 +1,11 @@
 
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import store from '@/.storybook/store';
-import hubPage from '../../../pages/hubPage.vue';
+import testSpacings from '../../../pages/testSpacings.vue';
 
 <Meta
-  title="Pages/Hub Page"
-  component={hubPage}
+  title="Pages/Test - Spacings"
+  component={testSpacings}
   argTypes={{
     isOpen: { name:'Is open', control: { type: 'boolean' } },
   }}
@@ -13,18 +13,14 @@ import hubPage from '../../../pages/hubPage.vue';
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { hubPage },
+  components: { testSpacings },
   store: store,
-  template: '<hubPage />',
+  template: '<testSpacings />',
 });
 
-# Hub page example
+# Test page for vertical spacings
 
-<a href="?path=/story/pages-hub-page--example">Go to the Canvas Tab</a>
-
----
-
-<a href="?id=pages-hub-page--example" target="_blank">Open page in full width in a new tab</a>
+A simple detail page with real content to proof and finalize the spacing system.
 
 <Canvas>
   <Story
@@ -36,5 +32,3 @@ export const Template = (args, { argTypes }) => ({
     {Template.bind({})}
   </Story>
 </Canvas>
-
-
