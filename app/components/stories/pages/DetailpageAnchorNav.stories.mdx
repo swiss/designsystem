@@ -1,0 +1,40 @@
+
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import store from '@/.storybook/store';
+import detailPageAnchorNav from '../../../pages/detailPageAnchorNav.vue';
+
+<Meta
+  title="Pages/Detail Page Anchor Nav"
+  component={detailPageAnchorNav}
+  argTypes={{
+    isOpen: { name:'Is open', control: { type: 'boolean' } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { detailPageAnchorNav },
+  store: store,
+  template: '<detailPageAnchorNav />',
+});
+
+# Complex page example
+
+<a href="?path=/story/pages-detail-page-anchor-nav--example">Go to the Canvas Tab</a>
+
+---
+
+<a href="?id=pages-detail-page-anchor-nav--example&args=&viewMode=story" target="_blank">Open in full width in a new tab</a>
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      isOpen: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
