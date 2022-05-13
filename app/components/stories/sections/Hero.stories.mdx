@@ -10,9 +10,18 @@ import Btn from '../../ch/components/Btn.vue';
       name:'Type',
       control: {
         type: 'select',
-        options: ['default', 'main', 'main-image', 'hub', 'hidden']
+        options: ['default', 'main', 'main-image', 'hub', 'title-only', 'hidden']
       }
     },
+    metaInfos: {
+      name: 'MetaInfos',
+      value: undefined
+    },
+    authors: {
+      name: 'Authors',
+      value: undefined
+    }
+    
   }}
 />
 
@@ -43,7 +52,10 @@ export const Template = (args, { argTypes }) => ({
       <template v-else v-slot:title>
         Willkommen zu Hause. Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
       </template>
-      <template v-slot:description>
+      <template
+        v-if="${args.type !== 'title-only'}"
+        v-slot:description
+      >
         Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
       </template>
       <template
@@ -74,9 +86,7 @@ This variant doesn't contain any article type, date or authors.
   <Story
     name="Main without image"
     args={{
-      type: 'main',
-      metaInfos: undefined, // deinition need, if else the deploy build throws an error impeaching the mounting of the element
-      authors: undefined
+      type: 'main'
     }}
   >
     {Template.bind({})}
@@ -95,9 +105,7 @@ The image should have a 4:3 ratio and the height of both title and description s
   <Story
     name="Main with image"
     args={{
-      type: 'main-image',
-      metaInfos: undefined,
-      authors: undefined
+      type: 'main-image'
     }}
   >
     {Template.bind({})}
@@ -114,9 +122,7 @@ This variant doesn't contain any article type, date or authors.
   <Story
     name="Hub page"
     args={{
-      type: 'hub',
-      metaInfos: undefined,
-      authors: undefined
+      type: 'hub'
     }}
   >
     {Template.bind({})}
@@ -160,6 +166,23 @@ This variant can optionally contain an article type, a date and one ore more aut
   </Story>
 </Canvas>
 
+## Hero for detail pages, with only a title
+
+**The `.hero.hero--title-only` section is used on [detail pages](?path=/docs/pages-test-hero-title-only--example) where the hero only contains a title.**
+
+This variant can contain only a title.
+
+<Canvas>
+  <Story
+    name="Detail page - title only"
+    args={{
+      type: 'title-only'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ## Hero for screenreaders only
 
 If there isn't any specific content for the hero, we still need to display a `h1` title for screen readers.
@@ -168,7 +191,7 @@ Set type to `sr-only` to hide the component visually. Check the <a href="?path=/
   <Story
     name="Screen readers only"
     args={{
-      type: 'sr-only',
+      type: 'sr-only'
     }}
   >
     {Template.bind({})}

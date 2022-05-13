@@ -17,21 +17,38 @@
   @apply xl:pb-8;
 }
 
-.vertical-spacing > :not(p, h1, h2, h3, h4, h5, blockquote) {
+/* paddings for titles */
+.vertical-spacing > :is(h1, h2, h3, h4, h5) { 
+  @apply extra-top-spacing pb-[0.35em];
+
+  &:first-child {
+    @apply pt-0;
+  }
+}
+
+/* paddings for default lists*/
+.vertical-spacing > :is(ul.list--default, [identifier="list"]) {
+  @apply pb-[0.5em];
+}
+
+/* default padding-vertical for "block" elements */
+.vertical-spacing > :not(p, h1, h2, h3, h4, h5, blockquote, ul.list--default, [identifier="list"]) { 
   @apply extra-top-spacing;
   @apply extra-bottom-spacing;
+
+  /* remove padding-top for "block" elements following "block" elements */
+  & + :not(p, h1, h2, h3, h4, h5, blockquote, ul.list--default, [identifier="list"]) {
+    @apply pt-0;
+  }
+
+  /* remove padding-top for titles following "block" elements */
+  & + :is(h1, h2, h3, h4, h5) {
+    @apply pt-0; 
+  }
 }
 
-.vertical-spacing p + h1,
-.vertical-spacing p + h2,
-.vertical-spacing p + h3,
-.vertical-spacing p + h4,
-.vertical-spacing p + h5 {
-  @apply extra-top-spacing;
-}
-
-.vertical-spacing ul + ul,
-.vertical-spacing ol + ul,
-.vertical-spacing ul + ol {
-  @apply pt-0;
+/* reduce padding-top for "block" elements displayed after titles */
+.vertical-spacing > :is(h1, h2, h3, h4, h5) + :not(p, h1, h2, h3, h4, h5, blockquote, ul.list--default, [identifier="list"]) { 
+  @apply pt-1.5;
+  @apply xl:pt-2; 
 }
