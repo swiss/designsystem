@@ -24,13 +24,15 @@ main ul a[rel*="external"],
 main ul a[target="_blank"] {
   @apply link;
 
-  &::after {
-    content: '';
-    @apply inline-block relative w-[1em] h-[1em];
-    @apply top-[0.2em] mx-[0.125em];
-    @apply bg-current;
-    mask-repeat: no-repeat;
-    mask-image: var(--icon-external-link);
+  &:not(.btn, .btn--link) {
+    &::after {
+      content: '';
+      @apply inline-block relative w-[1em] h-[1em];
+      @apply top-[0.2em] mx-[0.125em];
+      @apply bg-current;
+      mask-repeat: no-repeat;
+      mask-image: var(--icon-external-link);
+    }
   }
 }
 

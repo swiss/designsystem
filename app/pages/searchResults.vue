@@ -89,7 +89,7 @@
                   class="search-results__header"
                 >
                   <div>
-                    <strong>10 von 127</strong>Suchergebnisse
+                    <strong>127</strong>Suchergebnisse
                   </div>
                   <div class="search-results__sort" role="group" aria-labelledby="radio-group-label-1">
                     <div id="radio-group-label-1">Sortierung nach</div>
