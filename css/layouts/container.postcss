@@ -103,11 +103,7 @@
 @layer utilities {
   .broader-than-container, 
   .broader-than-container-centered {
-    --side-margin: 0;
-
-    @media screen(md) {
-      --side-margin: calc((100vw - 6em ) / -12 );
-    }
+    --side-margin: calc((100vw - 6em ) / -12 );
 
     @media screen(xl) {
       --side-margin: calc((theme('screens.xl') - 6em ) / -12 );
@@ -117,12 +113,19 @@
       --side-margin: calc((theme('screens.2xl') - 6em ) / -12 );
     }
 
+    /* make it broader */ 
     margin-left: var(--side-margin);
     margin-right: var(--side-margin);
-  }
 
-  .broader-than-container-centered {
+    /* center the content in the column */
     padding-left: calc(var(--side-margin) * -1);
     padding-right: calc(var(--side-margin) * -1);
+  }
+
+  .broader-than-container {
+    @media screen(md) {
+      padding-left: 0; 
+      padding-right: 0; 
+    }
   }
 }
