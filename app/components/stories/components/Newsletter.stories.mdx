@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Newsletter from '../../ch/components/Newsletter.vue'
+
+<Meta
+  title="Components/Newsletter"
+  component={Newsletter}
+  argTypes={{
+    state: { control: { type: 'select', options: ['default', 'sent'] } },
+  }} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Newsletter },
+  template: '<main><Newsletter :state="state"/></main>',
+})
+
+
+# Newsletter
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      state: 'default'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
