@@ -3,5 +3,42 @@
 \*----------------------------------------*/
 
 .newsletter {
-  
+  @apply !my-7 lg:!my-8;
+}
+
+.newsletter__inner {
+  @apply p-4 xs:p-7 lg:p-14 xl:p-16;
+  @apply bg-secondary-50;
+
+  .container__center--xs & {
+    @apply broader-than-container-centered; 
+  }
+}
+
+.newsletter__title {
+  @apply text-secondary-600; 
+}
+
+.newsletter__text {
+}
+
+.newsletter__form {
+  @apply flex items-end;
+  @apply mt-8;
+}
+
+.newsletter__button {
+  @apply shrink-0 ml-6;
+}
+
+.newsletter__notification {
+  @apply !px-4 xs:!px-7 lg:!px-14 xl:!px-16;
+
+  .container__center--xs & {
+    @apply broader-than-container-centered;
+
+    @media screen(md) { 
+      @apply !px-6 2xl:!p-8;
+    }
+  } 
 }

@@ -11,7 +11,7 @@ import Newsletter from '../../ch/components/Newsletter.vue'
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Newsletter },
-  template: '<main><Newsletter :state="state"/></main>',
+  template: '<main><Newsletter :state="state" :title="title" :text="text" :input-label="inputLabel" :button-label="buttonLabel" :success-text="successText"/></main>',
 })
 
 
@@ -23,7 +23,12 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Example"
     args={{
-      state: 'default'
+      state: 'default',
+      title: 'Abonnieren Sie unseren Newsletter',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo',
+      inputLabel: 'E-Mail',
+      buttonLabel: 'Newsletter abonnieren',
+      successText: 'Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>'
     }}
   >
     {Template.bind({})}

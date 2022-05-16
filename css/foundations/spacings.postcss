@@ -32,12 +32,12 @@
 }
 
 /* default padding-vertical for "block" elements */
-.vertical-spacing > :not(p, h1, h2, h3, h4, h5, blockquote, ul.list--default, [identifier="list"]) { 
+.vertical-spacing > :not(p, h1, h2, h3, h4, h5, blockquote, .newsletter, ul.list--default, [identifier="list"]) { 
   @apply extra-top-spacing;
   @apply extra-bottom-spacing;
 
   /* remove padding-top for "block" elements following "block" elements */
-  & + :not(p, h1, h2, h3, h4, h5, blockquote, ul.list--default, [identifier="list"]) {
+  & + :not(p, h1, h2, h3, h4, h5, blockquote, .newsletter, ul.list--default, [identifier="list"]) {
     @apply pt-0;
   }
 
@@ -48,7 +48,7 @@
 }
 
 /* reduce padding-top for "block" elements displayed after titles */
-.vertical-spacing > :is(h1, h2, h3, h4, h5) + :not(p, h1, h2, h3, h4, h5, blockquote, ul.list--default, [identifier="list"]) { 
+.vertical-spacing > :is(h1, h2, h3, h4, h5) + :not(p, h1, h2, h3, h4, h5, blockquote, .newsletter, ul.list--default, [identifier="list"]) { 
   @apply pt-1.5;
   @apply xl:pt-2; 
 }

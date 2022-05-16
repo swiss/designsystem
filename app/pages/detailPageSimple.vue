@@ -219,6 +219,13 @@
               INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
               eingepflegt.
             </p>
+            <Newsletter
+              :state="'sent'"
+              :title="'Abonnieren Sie unseren Newsletter'"
+              :text="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo'"
+              :input-label="'E-Mail'"
+              :button-label="'Newsletter abonnieren'"
+              :success-text="'Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>'"/>
             <p>
               Der <strong>strong</strong> Modellkatalog kann unter
               <mark>mark</mark> angesehen werden <del>Strike through</del> and
@@ -414,6 +421,7 @@ import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 import Tabs from '~/components/ch/demo/Tabs.vue'
 import RelatedTags from '~/components/ch/components/RelatedTags.vue'
 import DownloadItem from '~/components/ch/components/DownloadItem.vue'
+import Newsletter from '~/components/ch/components/Newsletter.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 export default {
   name: 'detailPageSimple',
@@ -436,6 +444,7 @@ export default {
     Tabs,
     RelatedTags,
     DownloadItem,
+    Newsletter,
     ShareBar,
   },
   data: function () {
