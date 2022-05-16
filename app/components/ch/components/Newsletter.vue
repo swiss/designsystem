@@ -1,6 +1,5 @@
 <template>
 <div :class="classes">
-  <div class="newsletter__inner">
     <h3 v-text="title" class="newsletter__title h3"></h3>
     <p v-html="text" class="newsletter__text"></p>
     <form v-if="state!=='sent'" action="" class="newsletter__form">
@@ -18,16 +17,15 @@
         class="newsletter__button"
       />
     </form>
-  </div>
-  <Notification
-    v-if="state==='sent'"
+    <Notification
+    v-else
     :icon="'CheckmarkCircle'"
     :text="successText"
     :type="'success'"
     :closeBtn="false"
     class="newsletter__notification"
   />
-</div>
+  </div>
 </template>
 
 <script>

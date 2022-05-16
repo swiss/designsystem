@@ -101,6 +101,7 @@
 
 
 @layer utilities {
+  .broader-than-container, 
   .broader-than-container-centered {
     --side-margin: calc(theme('spacing.4') * -1);
 
@@ -108,12 +109,6 @@
       --side-margin: calc(theme('spacing.7') * -1);
     }
 
-    padding-left: calc(var(--side-margin) * -1);
-    padding-right: calc(var(--side-margin) * -1);
-  }
-
-  .broader-than-container, 
-  .broader-than-container-centered {
     @media screen(md) {
       --side-margin: calc((100vw - 6em ) / -12 );
     }
@@ -128,5 +123,15 @@
 
     margin-left: var(--side-margin);
     margin-right: var(--side-margin);
+
+    padding-left: calc(var(--side-margin) * -1);
+    padding-right: calc(var(--side-margin) * -1);
+  }
+
+  .broader-than-container {
+    @media screen(md) {
+      padding-left: 0; 
+      padding-right: 0; 
+    }
   }
 }
