@@ -101,20 +101,28 @@
 
 
 @layer utilities {
-  .broader-than-container {
+  .broader-than-container, 
+  .broader-than-container-centered {
+    --side-margin: 0;
+
     @media screen(md) {
-      margin-left:  calc((100vw - 6em ) / -12 );
-      margin-right: calc((100vw - 6em ) / -12 );
+      --side-margin: calc((100vw - 6em ) / -12 );
     }
 
     @media screen(xl) {
-      margin-left:  calc((theme('screens.xl') - 6em ) / -12 );
-      margin-right: calc((theme('screens.xl') - 6em ) / -12 );
+      --side-margin: calc((theme('screens.xl') - 6em ) / -12 );
     }
 
     @media screen(2xl) {
-      margin-left:  calc((theme('screens.2xl') - 6em ) / -12 );
-      margin-right: calc((theme('screens.2xl') - 6em ) / -12 );
+      --side-margin: calc((theme('screens.2xl') - 6em ) / -12 );
     }
+
+    margin-left: var(--side-margin);
+    margin-right: var(--side-margin);
+  }
+
+  .broader-than-container-centered {
+    padding-left: calc(var(--side-margin) * -1);
+    padding-right: calc(var(--side-margin) * -1);
   }
 }
