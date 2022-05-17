@@ -14,6 +14,20 @@ export const Template = (args, { argTypes }) => ({
   template: '<main><Newsletter :state="state" :title="title" :text="text" :input-label="inputLabel" :button-label="buttonLabel" :success-text="successText"/></main>',
 })
 
+export const TemplateDetail = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Newsletter },
+  template: '<main><div class="container container--grid gap--responsive"><div class="container__center--xs vertical-spacing"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p><Newsletter :state="state" :title="title" :text="text" :input-label="inputLabel" :button-label="buttonLabel" :success-text="successText"/><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p></div></div></main>',
+})
+
+export const defaultArgs = {
+  state: 'default',
+  title: 'Abonnieren Sie unseren Newsletter',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo',
+  inputLabel: 'E-Mail',
+  buttonLabel: 'Newsletter abonnieren',
+  successText: 'Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>'
+}
 
 # Newsletter
 
@@ -22,17 +36,24 @@ export const Template = (args, { argTypes }) => ({
 <Canvas>
   <Story
     name="Example"
-    args={{
-      state: 'default',
-      title: 'Abonnieren Sie unseren Newsletter',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo',
-      inputLabel: 'E-Mail',
-      buttonLabel: 'Newsletter abonnieren',
-      successText: 'Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>'
-    }}
+    args={defaultArgs}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Example" />
+
+
+## Example on simple detail pages
+
+When the newsletter component is placed inside a detail-page in a `.container__center--xs` container, it will go broader than the container.
+
+<Canvas>
+  <Story
+    name="Example Detail Page"
+    args={defaultArgs}
+  >
+    {TemplateDetail.bind({})}
+  </Story>
+</Canvas>
