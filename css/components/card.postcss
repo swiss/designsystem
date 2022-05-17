@@ -126,12 +126,22 @@
 }
 
 .card__icon {
-  @apply flex justify-center;
+  @apply relative flex justify-center;
   @apply py-4;
-  @apply bg-secondary-50 border-2 border-white;
 
   svg {
-    @apply w-1/5 h-1/5;
+    @apply relative z-10;
+    @apply w-1/3 h-1/3;
+    @apply sm:w-1/5 sm:h-1/5;
+  }
+
+  &:before {
+    content: "";
+    @apply absolute z-0; 
+    @apply w-full h-full;
+    @apply inset-0;
+    @apply bg-secondary-50 border-2 border-white;
+    @apply opacity-60;
   }
 }
 
