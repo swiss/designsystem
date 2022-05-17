@@ -1,5 +1,5 @@
 <template>
-<div :class="classes">
+<div class="newsletter">
     <h3 v-text="title" class="newsletter__title h3"></h3>
     <p v-html="text" class="newsletter__text"></p>
     <form v-if="state!=='sent'" action="page.php" class="newsletter__form">
@@ -72,14 +72,6 @@ export default {
       required: true,
     }
   },
-
-  computed: {
-    classes () {
-      let base = 'newsletter '
-      if (this.state) base += `notification--${this.state} `
-      return base
-    },
-  }
 };
 </script>
 

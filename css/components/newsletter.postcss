@@ -3,15 +3,17 @@
 \*----------------------------------------*/
 
 .newsletter {
-  @apply px-4 pt-7 pb-8;
-  @apply xs:p-7 xs:pt-6;
-  @apply lg:p-14 lg:pt-12;
-  @apply xl:p-16 xl:pt-14;
+  @apply p-6;
   @apply !my-7 lg:!my-8;
   @apply bg-secondary-50;
 
   .container__center--xs & {
     @apply broader-than-container-centered; 
+
+    @apply pt-7 pb-8;
+    @apply xs:pt-6 pb-7;
+    @apply lg:pt-12 lg:pb-14;
+    @apply xl:pt-14 xl:pb-16 ; 
   }
 }
 
@@ -24,14 +26,19 @@
 }
 
 .newsletter__form {
-  @apply md:flex md:items-end;
+  .container__center--xs & {
+    @apply md:flex md:items-end;
+  }
 }
 
 .newsletter__button {
-  @apply w-full mt-4;
-  @apply md:w-auto md:shrink-0 md:ml-4;
+  @apply w-full mt-4 xs:mt-6;
 
   .btn__text {
     @apply w-full text-center;
+  }
+
+  .container__center--xs & { 
+    @apply md:w-auto md:shrink-0 md:ml-4;
   }
 }
