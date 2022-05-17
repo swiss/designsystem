@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import Card from '../../ch/components/Card.vue';
-import MetaInfo from '../../ch/components/MetaInfo.vue'
+import MetaInfo from '../../ch/components/MetaInfo.vue';
+import SvgIcon from '../../ch/components/SvgIcon.vue';
 
 
 <Meta
@@ -31,6 +32,12 @@ import MetaInfo from '../../ch/components/MetaInfo.vue'
         options: ['NoMetaInfo', 'WithMetaInfo']
       }
     },
+    specificContent: {
+      control: {
+        type: 'select',
+        options: ['NoSpecificContent', 'WithSpecificContent']
+      }
+    },
     footerInfo: {
       control: {
         type: 'select',
@@ -48,7 +55,7 @@ import MetaInfo from '../../ch/components/MetaInfo.vue'
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Card, MetaInfo },
+  components: { Card, MetaInfo, SvgIcon },
   template:
     `
     <div style="padding: 3em; background-color: rgb(240, 244, 247);">
@@ -80,6 +87,20 @@ export const Template = (args, { argTypes }) => ({
               consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
+            <div
+              v-if="${args.specificContent == 'WithSpecificContent'}"
+              class="card__specific-contents"
+            >
+              <div class="card__specific-content">
+                <SvgIcon icon="Youtube" size="lg"/>
+              </div>
+              <div class="card__specific-content">
+                <SvgIcon icon="EasyLanguage" size="lg"/>
+              </div>
+              <div class="card__specific-content">
+                <SvgIcon icon="SignLanguage" size="lg"/>
+              </div>
+            </div>
           </template>
         </Card>
       </div>
