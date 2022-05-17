@@ -154,7 +154,11 @@
 
 .card__specific-content {
   @apply p-2 mr-2;
-  @apply rounded-full bg-secondary-50;
+  @apply rounded-full border border-secondary-100;
+
+  .bg--secondary-50 .card--flat & {
+    @apply border-secondary-200;
+  }
 }
 
 .card__footer {
