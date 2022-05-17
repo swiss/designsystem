@@ -38,10 +38,10 @@ import SvgIcon from '../../ch/components/SvgIcon.vue';
         options: ['NoMetaInfo', 'WithMetaInfo']
       }
     },
-    specificContent: {
+    contentIcons: {
       control: {
         type: 'select',
-        options: ['NoSpecificContent', 'WithSpecificContent']
+        options: ['NoContentIcons', 'WithContentIcons']
       }
     },
     footerInfo: {
@@ -90,7 +90,7 @@ export const Template = (args, { argTypes }) => ({
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium maximus vestibulum. Maecenas ac interdum est. Nullam mauris diam,
             </p>
             <div
-              v-if="${args.specificContent == 'WithSpecificContent'}"
+              v-if="${args.contentIcons == 'WithContentIcons'}"
               class="card__content-icons"
             >
               <SvgIcon icon="Youtube" size="xl"/>
@@ -130,7 +130,7 @@ Default.args = {
       image: 'WithImage',
       icon: 'NoIcon',
       metaInfo: 'WithMetaInfo',
-      specificContent: 'WithSpecificContent',
+      contentIcons: 'WithContentIcons',
       header: 'NoHeader',
       footerInfo: 'WithFooterInfo',
       footerAction: 'WithFooterAction',
