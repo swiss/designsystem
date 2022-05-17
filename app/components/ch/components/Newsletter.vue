@@ -2,7 +2,7 @@
 <div :class="classes">
     <h3 v-text="title" class="newsletter__title h3"></h3>
     <p v-html="text" class="newsletter__text"></p>
-    <form v-if="state!=='sent'" action="" class="newsletter__form">
+    <form v-if="state!=='sent'" action="page.php" class="newsletter__form">
       <Input
         :type="'email'"
         :id="'newsletter-address'"
@@ -14,6 +14,7 @@
         :variant="'filled'"
         :size="'base'"
         :label="buttonLabel"
+        type="submit"
         class="newsletter__button"
       />
     </form>
