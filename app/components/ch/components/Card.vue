@@ -7,9 +7,6 @@
       <slot name="header"></slot>
     </div>
     <div class="card__content">
-      <div v-if="$slots.metaInfo" class="card__meta-info">
-        <slot name="metaInfo"></slot>
-      </div>
       <div v-if="$slots.body" class="card__body">
         <slot name="body"></slot>
       </div>
