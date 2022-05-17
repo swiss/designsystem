@@ -169,16 +169,12 @@
   @apply transition-colors duration-200 ease-in-out;
 }
 
-.card__specific-contents {
-  @apply flex; 
-}
+.card__content-icons {
+  @apply relative flex; 
+  @apply -ml-1;
 
-.card__specific-content {
-  @apply p-2 mr-2;
-  @apply rounded-full border border-secondary-100;
-
-  .bg--secondary-50 .card--flat & {
-    @apply border-secondary-200;
+  svg {
+    @apply mr-2;
   }
 }
 

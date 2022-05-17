@@ -91,21 +91,15 @@ export const Template = (args, { argTypes }) => ({
             </p>
             <div
               v-if="${args.specificContent == 'WithSpecificContent'}"
-              class="card__specific-contents"
+              class="card__content-icons"
             >
-              <div class="card__specific-content">
-                <SvgIcon icon="Youtube" size="lg"/>
-              </div>
-              <div class="card__specific-content">
-                <SvgIcon icon="EasyLanguage" size="lg"/>
-              </div>
-              <div class="card__specific-content">
-                <SvgIcon icon="SignLanguage" size="lg"/>
-              </div>
+              <SvgIcon icon="Youtube" size="xl"/>
+              <SvgIcon icon="EasyLanguage" size="xl"/>
+              <SvgIcon icon="SignLanguage" size="xl"/>
             </div>
           </template>
           <template v-if="${args.footerInfo == 'WithFooterInfo'}" v-slot:footerInfo>
-            <div>Energie, Datenmodell, Energie</div>
+            <div>Energie, Datenmodell, Nachhaltigkeit</div>
           </template>
           <template v-if="${args.footerAction == 'WithFooterAction'}" v-slot:footerAction>
             <button type="button" aria-label="Weiterlesen" class="btn btn--outline btn--icon-only "><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="btn__icon icon icon--base icon--ArrowRight "><path xmlns="http://www.w3.org/2000/svg" d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path></svg> <span class="btn__text">
