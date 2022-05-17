@@ -17,13 +17,7 @@ import SvgIcon from '../../ch/components/SvgIcon.vue';
     image: {
       control: {
         type: 'select',
-        options: ['NoImage', 'WithImage']
-      }
-    },
-    icon: {
-      control: {
-        type: 'select',
-        options: ['NoIcon', 'WithIcon']
+        options: ['NoImage', 'WithImage', 'WithIcon']
       }
     },
     header: {
@@ -66,12 +60,14 @@ export const Template = (args, { argTypes }) => ({
     `
     <div style="padding: 3em;" class="bg--secondary-50">
       <div style="max-width: 600px; margin: auto">
-        <Card :type="type">
-          <template v-if="${args.image == 'WithImage'}" v-slot:image>
-            <img src="https://placekitten.com/g/775/350" alt="cat">
-          </template>
-          <template v-if="${args.icon == 'WithIcon'}" v-slot:icon>
+        <Card :type="type" :has-icon="${args.image == 'WithIcon'}">
+          <template v-if="${args.image != 'NoImage'}" v-slot:image>
+            <img
+              v-if="${args.image == 'WithImage'}"
+              src="https://placekitten.com/g/775/350"
+              alt="cat">
             <SvgIcon
+              v-if="${args.image == 'WithIcon'}"
               icon="Balance"
               size="xl"
             />
@@ -127,8 +123,7 @@ Default.args = {
     name="Example"
     args={{
       type: 'default',
-      image: 'WithImage',
-      icon: 'NoIcon',
+      image: 'WithIcon',
       metaInfo: 'WithMetaInfo',
       contentIcons: 'WithContentIcons',
       header: 'NoHeader',
