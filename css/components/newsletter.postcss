@@ -3,7 +3,10 @@
 \*----------------------------------------*/
 
 .newsletter {
-  @apply p-4 xs:p-7 lg:p-14 xl:p-16;
+  @apply px-4 pt-7 pb-8;
+  @apply xs:p-7 xs:pt-6;
+  @apply lg:p-14 lg:pt-12;
+  @apply xl:p-16 xl:pt-14;
   @apply !my-7 lg:!my-8;
   @apply bg-secondary-50;
 
@@ -17,14 +20,18 @@
 }
 
 .newsletter__text {
-  @apply mb-8;
+  @apply mb-4 md:mb-8;
 }
 
 .newsletter__form {
-  @apply flex items-end;
-  
+  @apply md:flex md:items-end;
 }
 
 .newsletter__button {
-  @apply shrink-0 ml-6;
+  @apply w-full mt-4;
+  @apply md:w-auto md:shrink-0 md:ml-4;
+
+  .btn__text {
+    @apply w-full text-center;
+  }
 }
