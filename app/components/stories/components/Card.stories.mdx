@@ -20,6 +20,12 @@ import SvgIcon from '../../ch/components/SvgIcon.vue';
         options: ['NoImage', 'WithImage']
       }
     },
+    icon: {
+      control: {
+        type: 'select',
+        options: ['NoIcon', 'WithIcon']
+      }
+    },
     header: {
       control: {
         type: 'select',
@@ -69,6 +75,15 @@ export const Template = (args, { argTypes }) => ({
             <div>Tweets from @swiss_geoportal</div>
           </template>
           <template v-slot:body>
+            <div
+              v-if="${args.icon == 'WithIcon'}"
+              class="card__icon"
+            >
+              <SvgIcon
+                icon="Balance"
+                size="xl"
+              />
+            </div>
             <MetaInfo
               v-if="${args.metaInfo == 'WithMetaInfo'}"
               :metainfos="['Webartikel', '23. Februar 2022']"
@@ -124,6 +139,7 @@ Default.args = {
     args={{
       type: 'default',
       image: 'WithImage',
+      icon: 'NoIcon',
       metaInfo: 'WithMetaInfo',
       specificContent: 'WithSpecificContent',
       header: 'NoHeader',
