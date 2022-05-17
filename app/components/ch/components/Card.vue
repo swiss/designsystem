@@ -3,6 +3,9 @@
     <div v-if="$slots.image && type !== 'highlight'" class="card__image">
       <slot name="image"></slot>
     </div>
+    <div v-if="$slots.icon" class="card__icon">
+      <slot name="icon"></slot>
+    </div>
     <div v-if="$slots.header" class="card__header">
       <slot name="header"></slot>
     </div>
