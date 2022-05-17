@@ -58,7 +58,7 @@ export const Template = (args, { argTypes }) => ({
   components: { Card, MetaInfo, SvgIcon },
   template:
     `
-    <div style="padding: 3em; background-color: rgb(240, 244, 247);">
+    <div style="padding: 3em;" class="bg--secondary-50">
       <div style="max-width: 600px; margin: auto">
         <Card :type="type">
           <template v-if="${args.header == 'WithHeader'}" v-slot:header>
