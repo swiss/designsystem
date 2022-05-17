@@ -1,6 +1,6 @@
 <template>
   <div :class="computedClasses">
-    <div v-if="$slots.image && type !== 'highlight'" class="card__image">
+    <div v-if="$slots.image" class="card__image">
       <slot name="image"></slot>
     </div>
     <div v-if="$slots.icon" class="card__icon">
@@ -34,7 +34,6 @@ export default {
       type: String,
       validator: (prop) => [
         'default',
-        'highlight',
         'twitter',
         'flat'
       ].includes(prop)

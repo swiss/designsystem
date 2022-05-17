@@ -28,30 +28,6 @@
   }
 }
 
-.card--highlight {
-  @apply relative;
-  @apply ml-5 mt-5;
-  @apply lg:ml-7 lg:mt-7;
-  @apply transition-transform duration-300;
-
-  &::before {
-    content: '';
-    @apply absolute top-0 right-0 left-0 bottom-0 z-0;
-    @apply bg-secondary-600;
-    @apply -translate-x-5 -translate-y-5;
-    @apply lg:-translate-x-7 lg:-translate-y-7;
-    @apply transition-transform duration-300;
-  }
-
-  &:hover,
-  &:focus-within {
-
-    &::before {
-      @apply scale-102;
-    }
-  }
-}
-
 .card--twitter {
   @apply shadow-lg;
 
