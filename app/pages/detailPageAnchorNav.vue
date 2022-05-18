@@ -48,8 +48,11 @@
                 <template v-slot:body>
                   <h3 class="card__title">Inhaltverzeichnis</h3>
                   <ul class="menu text--sm">
-                    <li class="menu__item menu__item--border menu__item--condensed">
-                      <a href="#einleitung" class="menu__item__flex">
+                    <li>
+                      <a 
+                        href="#einleitung" 
+                        class="menu__item menu__item--border menu__item--condensed"
+                      >
                         <div>
                           Einleitung
                         </div>
@@ -59,8 +62,11 @@
                         />
                       </a>
                     </li>
-                    <li class="menu__item menu__item--border menu__item--condensed">
-                      <a href="#datenmodell-ablage" class="menu__item__flex">
+                    <li>
+                      <a 
+                        href="#datenmodell-ablage" 
+                        class="menu__item menu__item--border menu__item--condensed"
+                      >
                         <div>
                           Datenmodellablage ansehen
                         </div>
@@ -70,8 +76,11 @@
                         />
                       </a>
                     </li>
-                    <li class="menu__item menu__item--border menu__item--condensed">
-                      <a href="#dokumente" class="menu__item__flex">
+                    <li>
+                      <a 
+                        href="#dokumente" 
+                        class="menu__item menu__item--border menu__item--condensed"
+                      >
                         <div>
                           Weitere Informationen
                         </div>
@@ -204,6 +213,8 @@ import ShareBar from '~/components/ch/demo/ShareBar.vue'
 import Accordion from '~/components/ch/components/Accordion.vue'
 import AccordionItem from '~/components/ch/components/AccordionItem.vue'
 
+import AnchorNav from '~/scripts/AnchorNav.js'
+
 export default {
   name: 'detailPageAnchorNav',
   components: {
@@ -228,25 +239,10 @@ export default {
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
     },
-
-    setCurrentAnchorMenuItem() {
-      const sections = document.querySelectorAll('h2[id]');
-      window.onscroll = () => {
-        const scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
-        for (let s in sections) {
-          if (sections.hasOwnProperty(s) && sections[s].offsetTop <= scrollPos) {
-            const id = sections[s].id;
-            let currentItem =  document.querySelector('.menu__item--active')
-            if (currentItem) currentItem.classList.remove('menu__item--active');
-            document.querySelector(`a[href*=${id}]`).parentNode.classList.add('menu__item--active');
-          }
-        }
-      } 
-    }
   },
 
   mounted () {
-    this.setCurrentAnchorMenuItem();
+    AnchorNav.setCurrentMenuItem()
   }
 }
 </script>
