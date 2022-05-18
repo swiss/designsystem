@@ -11,78 +11,92 @@
       <ShareBar />
     </header>
     <main id="main-content">
-      <Hero type="default" :meta-infos="metaInfos" :authors="authors">
+      <Hero type="default">
         <template v-slot:title>
-          Example Page with anchor navigation
+          Web Mapping Services WMS: Verfügbare Dienste und Daten
         </template>
         <template v-slot:description>
-          Der Vorteil für einen Benutzer liegt darin, dass die Modelldateien und
+          Das Konzept des INTERLIS Model Repository sieht vor, Datenmodelle als
+          http-Ressource nutzbar zu machen. Dabei werden die
+          INTERLIS-Modelldateien auf einem Webserver abgelegt, und können
+          beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden. Der
+          Vorteil für einen Benutzer liegt darin, dass die Modelldateien und
           evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
           müssen.
         </template>
+        <template v-slot:image>
+          <figure>
+            <picture>
+              <source
+                srcset="https://placekitten.com/g/1600/900"
+                media="(min-width: 800px)"
+              />
+              <img src="https://placekitten.com/g/1600/1200" alt="cat" />
+            </picture>
+            <figcaption>
+              Datenmodelle als http-Ressource nutzbar zu machen.
+              —&nbsp;©&nbsp;Photograph Name
+            </figcaption>
+          </figure>
+        </template>
       </Hero>
-      <!--section class="section bg--secondary-50">
-        <div class="container">
-          <div class="grid grid--responsive-cols-4 gap--responsive">
-            <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet.
-                </p>
-              </template>
-            </Card>
-            <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
-                <p>
-                  Sed onsetetur sadipscing elitr ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed
-                </p>
-              </template>
-            </Card>
-            <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
-                <p>
-                  Consetetur sadipscing elitr sadipscing elitr, sed Lorem ipsum
-                  dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
-                  dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
-                  dolor sit amet.
-                </p>
-              </template>
-            </Card>
-            <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
-                <p>
-                  Vonsetetur sadipscing elitr, onsetetur sadipscing elitr sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                </p>
-              </template>
-            </Card>
-          </div>
-        </div>
-      </section-->
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
+          <div class="container__aside">
+            <div class="sticky sticky--top">
+              <Card type="default">
+                <template v-slot:body>
+                  <h3 class="card__title">Inhaltverzeichnis</h3>
+                  <ul class="menu text--sm">
+                    <li class="menu__item menu__item--border menu__item--condensed">
+                      <a href="#einleitung" class="menu__item__flex">
+                        <div>
+                          Einleitung
+                        </div>
+                        <SvgIcon
+                          icon="ArrowAngleBottomLeft"
+                          class="menu__item__icon"
+                        />
+                      </a>
+                    </li>
+                    <li class="menu__item menu__item--border menu__item--condensed">
+                      <a href="#datenmodell-ablage" class="menu__item__flex">
+                        <div>
+                          Datenmodellablage ansehen
+                        </div>
+                        <SvgIcon
+                          icon="ArrowAngleBottomLeft"
+                          class="menu__item__icon"
+                        />
+                      </a>
+                    </li>
+                    <li class="menu__item menu__item--border menu__item--condensed">
+                      <a href="#dokumente" class="menu__item__flex">
+                        <div>
+                          Weitere Informationen
+                        </div>
+                        <SvgIcon
+                          icon="ArrowAngleBottomLeft"
+                          class="menu__item__icon"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </template>
+              </Card>
+            </div>
+          </div>
           <div class="container__main vertical-spacing">
-            <h2 class="h2">
-              Ein neues «minimales Geodatenmodell» in der Datenmodellablage
-              publizieren
+            <h2 class="h2" id="einleitung">
+              Einleitung
             </h2>
             <p>
               Über den Kontakt models@geo.admin.ch können die
-              INTERLIS-Modelldatei und die Modelldokumentation (als PDF
-              Dokument) zur Publikation eingereicht werden.
+              Modelldatei und die Modelldokumentation zur Publikation eingereicht werden.
             </p>
             <p>
               Über den Kontakt models@geo.admin.ch können die
-              INTERLIS-Modelldatei und die Modelldokumentation (als PDF
-              Dokument) zur Publikation eingereicht werden.
+              Modelldatei und die Modelldokumentation eingereicht werden.
             </p>
 
             <figure>
@@ -97,7 +111,7 @@
                 Image label here —&nbsp;©&nbsp;Photograph Name
               </figcaption>
             </figure>
-            <h2 class="h2">Datenmodellablage ansehen</h2>
+            <h2 class="h2" id="datenmodell-ablage">Datenmodellablage ansehen</h2>
             <p>
               Der Modellkatalog kann unter
               <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
@@ -111,16 +125,17 @@
               eingepflegt.
             </p>
             <figure>
-              <div class="ratio ratio--16/9">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
-                  title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
-                  frameborder="0"
+              <picture>
+                <source
+                  srcset="https://placekitten.com/g/1600/900"
+                  media="(min-width: 800px)"
                 />
-              </div>
-              <figcaption>Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal</figcaption>
+                <img src="https://placekitten.com/g/1600/1200" alt="cat" />
+              </picture>
+              <figcaption>
+                Datenmodelle als http-Ressource nutzbar zu machen.
+                —&nbsp;©&nbsp;Photograph Name
+              </figcaption>
             </figure>
             <p>
               Der Modellkatalog kann unter
@@ -134,24 +149,32 @@
               INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
               eingepflegt.
             </p>
-          </div>
-          <div class="container__aside">
-            <div class="sticky sticky--top">
-              <Card type="default">
-                <template v-slot:body>
-                  <h3 class="card__title">Side notes, can be sticky</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  </p>
-                </template>
-                <template v-slot:footerAction>
-                  
-                </template>
-              </Card>
-            </div>
+            <h2 class="h2" id="dokumente">
+              Weitere Informationen
+            </h2>
+            
+            <Accordion id="12345">             
+              <AccordionItem id="10" title="Medienmitteilungen" headingLevel="h3">
+                <h4 class="h5">Title</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
+              </AccordionItem>
+              <AccordionItem id="11" title="Interviews" headingLevel="h3">
+                <h4 class="h5">Title</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
+              </AccordionItem>
+              <AccordionItem id="12" title="Dokumente und Downloads" headingLevel="h3">
+                <h4 class="h5">Title</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
+              </AccordionItem>
+              <AccordionItem id="13" title="Reden" headingLevel="h3">
+                <h4 class="h5">Title</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
+              </AccordionItem>
+              <AccordionItem id="13" title="Gesetze und Verordnungen" headingLevel="h3">
+                <h4 class="h5">Title</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
@@ -178,6 +201,8 @@ import SvgIcon from '~/components/ch/components/SvgIcon'
 import Hero from '~/components/ch/sections/Hero'
 import QuoteSection from '~/components/ch/sections/QuoteSection'
 import ShareBar from '~/components/ch/demo/ShareBar.vue'
+import Accordion from '~/components/ch/components/Accordion.vue'
+import AccordionItem from '~/components/ch/components/AccordionItem.vue'
 
 export default {
   name: 'detailPageAnchorNav',
@@ -196,11 +221,32 @@ export default {
     Hero,
     QuoteSection,
     ShareBar,
+    Accordion,
+    AccordionItem
   },
   methods: {
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
     },
+
+    setCurrentAnchorMenuItem() {
+      const sections = document.querySelectorAll('h2[id]');
+      window.onscroll = () => {
+        const scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+        for (let s in sections) {
+          if (sections.hasOwnProperty(s) && sections[s].offsetTop <= scrollPos) {
+            const id = sections[s].id;
+            let currentItem =  document.querySelector('.menu__item--active')
+            if (currentItem) currentItem.classList.remove('menu__item--active');
+            document.querySelector(`a[href*=${id}]`).parentNode.classList.add('menu__item--active');
+          }
+        }
+      } 
+    }
   },
+
+  mounted () {
+    this.setCurrentAnchorMenuItem();
+  }
 }
 </script>
