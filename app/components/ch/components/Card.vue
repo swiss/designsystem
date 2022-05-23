@@ -39,12 +39,21 @@ export default {
         'flat'
       ].includes(prop)
     },
+    layout: {
+      type: String,
+      validator: (prop) => [
+        'default',
+        'image-left',
+        'image-right'
+      ].includes(prop)
+    },
   },
 
   computed: {
     computedClasses () {
       let base = 'card '
       if (this.type) base += `card--${this.type} `
+      if (this.layout && this.layout !== 'default') base += `card--${this.layout} `
       if (this.$slots.footerAction) base += `card--clickable `
       return base
     },

@@ -184,6 +184,7 @@
 
 .card__footer__info {
   @apply text-secondary-500 text--sm;
+  @apply pr-6;
 }
 
 .card__footer__action {}
@@ -191,4 +192,48 @@
 .card iframe {
   @apply relative !important;
   @apply z-50;
+}
+
+
+.card--image-left {
+  @screen md {
+    @apply grid grid--responsive-cols-2/3-1/3 gap--responsive;
+
+    .card__body, 
+    .card__footer {
+      @apply pl-0; 
+    }
+  }
+}
+
+.card--image-right {
+  @screen md {
+    @apply grid grid--responsive-cols-1/3-2/3 gap--responsive grid--reverse;
+
+    .card__content {
+      grid-area: A; 
+    }
+  
+    .card__image {
+      grid-area: B; 
+    }
+  
+    .card__body, 
+    .card__footer {
+      @apply pr-0; 
+    }
+  }
+}
+
+.card--image-left, 
+.card--image-right {
+  &.card--flat {
+    @screen md {
+      @apply border-none;
+  
+      .card__body {
+        @apply pt-0; 
+      }
+    }
+  }
 }
