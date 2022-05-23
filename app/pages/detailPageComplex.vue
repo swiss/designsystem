@@ -186,6 +186,15 @@
                   />
                 </template>
               </Card>
+              <Newsletter
+                type="default"
+                state="default"
+                title="Abonnieren Sie unseren Newsletter"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo"
+                input-label="E-Mail"
+                button-label="Newsletter abonnieren"
+                success-text="Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>"
+              />
             </div>
           </div>
         </div>
@@ -380,6 +389,7 @@ import Btn from '~/components/ch/components/Btn'
 import SvgIcon from '~/components/ch/components/SvgIcon'
 import Hero from '~/components/ch/sections/Hero'
 import QuoteSection from '~/components/ch/sections/QuoteSection'
+import Newsletter from '~/components/ch/components/Newsletter.vue'
 import ShareBar from '~/components/ch/demo/ShareBar.vue'
 
 export default {
@@ -398,6 +408,7 @@ export default {
     SvgIcon,
     Hero,
     QuoteSection,
+    Newsletter,
     ShareBar,
   },
   methods: {
