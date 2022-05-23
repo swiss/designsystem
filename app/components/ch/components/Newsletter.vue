@@ -2,7 +2,7 @@
 <div class="newsletter">
     <h3 v-text="title" class="newsletter__title h3"></h3>
     <p v-html="text" class="newsletter__text"></p>
-    <form v-if="state!=='sent'" action="page.php" class="newsletter__form">
+    <form v-if="mutableState!=='sent'" @submit="submit" action="page.php" class="newsletter__form">
       <Input
         :type="'email'"
         :id="'newsletter-address'"
@@ -70,6 +70,17 @@ export default {
     successText: {
       type: String,
       required: true,
+    }
+  },
+  data() {
+    return {
+      mutableState: this.state
+    }
+  },
+  methods: {
+    submit(e) {
+      this.mutableState='sent';
+      e.preventDefault();
     }
   },
 };
