@@ -10,7 +10,10 @@
       <div v-if="$slots.body" class="card__body">
         <slot name="body"></slot>
       </div>
-      <div :class="computedClassesFooter">
+      <div
+       v-if="$slots.footerInfo || $slots.footerAction"
+       :class="computedClassesFooter"
+      >
         <div v-if="$slots.footerInfo" class="card__footer__info">
           <slot name="footerInfo"></slot>
         </div>
