@@ -187,12 +187,12 @@
                 </template>
               </Card>
               <Newsletter
-                :state="'default'"
-                :title="'Abonnieren Sie unseren Newsletter'"
-                :text="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo'"
-                :input-label="'E-Mail'"
-                :button-label="'Newsletter abonnieren'"
-                :success-text="'Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>'"
+                state="default"
+                title="Abonnieren Sie unseren Newsletter"
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo"
+                input-label="E-Mail"
+                button-label="Newsletter abonnieren"
+                success-text="Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>"
               />
             </div>
           </div>
