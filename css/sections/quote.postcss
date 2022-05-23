@@ -75,11 +75,7 @@ blockquote {
   @apply !my-7 lg:!my-8;
 
   .container__center--xs & {
-    margin-left:  calc((100vw - 6em ) / -12 );
-    margin-right: calc((100vw - 6em ) / -12 );
-
-    padding-left:  calc((100vw - 6em ) / 12 );
-    padding-right: calc((100vw - 6em ) / 12 );
+    @apply broader-than-container-centered;
   }
 
   &::before {

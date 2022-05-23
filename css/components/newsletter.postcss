@@ -1,0 +1,45 @@
+/*----------------------------------------*\
+  NEWSLETTER
+\*----------------------------------------*/
+
+.newsletter {
+  @apply p-6;
+  @apply !my-7 lg:!my-8;
+  @apply bg-secondary-50;
+
+  .container__center--xs & {
+    @apply broader-than-container-centered; 
+
+    @apply pt-7 pb-8;
+    @apply xs:pt-9 xs:pb-10;
+    @apply sm:pt-10 sm:pb-12;
+    @apply lg:pt-12 lg:pb-14;
+    @apply xl:pt-14 xl:pb-16 ; 
+  }
+}
+
+.newsletter__title {
+  @apply text-secondary-600; 
+}
+
+.newsletter__text {
+  @apply mb-4 md:mb-8;
+}
+
+.newsletter__form {
+  .newsletter--inline & {
+    @apply md:flex md:items-end;
+  }
+}
+
+.newsletter__button {
+  @apply w-full mt-4 xs:mt-6;
+
+  .btn__text {
+    @apply w-full text-center;
+  }
+
+  .newsletter--inline & { 
+    @apply md:w-auto md:shrink-0 md:ml-4;
+  }
+}

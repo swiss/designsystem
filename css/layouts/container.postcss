@@ -100,20 +100,38 @@
 }
 
 
+@layer utilities {
+  .broader-than-container, 
+  .broader-than-container-centered {
+    --side-margin: calc(theme('spacing.4') * -1);
 
-.broader-than-container {
-  @media screen(md) {
-    margin-left:  calc((100vw - 6em ) / -12 );
-    margin-right: calc((100vw - 6em ) / -12 );
+    @media screen(xs) {
+      --side-margin: calc(theme('spacing.7') * -1);
+    }
+
+    @media screen(sm) {
+      --side-margin: calc((100vw - 6em ) / -12 );
+    }
+
+    @media screen(xl) {
+      --side-margin: calc((theme('screens.xl') - 6em ) / -12 );
+    }
+
+    @media screen(2xl) {
+      --side-margin: calc((theme('screens.2xl') - 6em ) / -12 );
+    }
+
+    margin-left: var(--side-margin);
+    margin-right: var(--side-margin);
+
+    padding-left: calc(var(--side-margin) * -1);
+    padding-right: calc(var(--side-margin) * -1);
   }
 
-  @media screen(xl) {
-    margin-left:  calc((theme('screens.xl') - 6em ) / -12 );
-    margin-right: calc((theme('screens.xl') - 6em ) / -12 );
-  }
-
-  @media screen(2xl) {
-    margin-left:  calc((theme('screens.2xl') - 6em ) / -12 );
-    margin-right: calc((theme('screens.2xl') - 6em ) / -12 );
+  .broader-than-container {
+    @media screen(md) {
+      padding-left: 0; 
+      padding-right: 0; 
+    }
   }
 }
