@@ -3,100 +3,100 @@
   CONTAINER
 \* ---------------------------------------- */
 
-@layer utilities {
-  .container {
-    @apply mx-auto;
-    @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 3xl:px-16;
-    @apply w-full 2xl:max-w-[1536px] 3xl:max-w-[1680px];
+.container {
+  @apply mx-auto;
+  @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 3xl:px-16;
+  @apply w-full 2xl:max-w-[1536px] 3xl:max-w-[1680px];
+}
+
+.container--flex {
+  @apply flex justify-between;
+}
+
+/* VERTICAL PADDINGS */
+
+.container--py {
+  @apply py-14 lg:py-20 3xl:py-32;
+}
+
+.container--pt {
+  @apply pt-14 lg:pt-20 3xl:pt-32;
+  @apply pb-0 lg:pb-0 3xl:pb-0;
+}
+
+.container--pb {
+  @apply pt-0 lg:pt-0 3xl:pt-0;
+  @apply pb-14 lg:pb-20 3xl:pb-32;
+}
+
+/* CONTAINER + 12 COLS GRID */
+
+.container--grid {
+  @apply grid grid-cols-12;
+
+  & + & {
+    @apply pt-5 xs:pt-7 sm:pt-9 lg:pt-10 xl:pt-12 3xl:pt-16;
   }
+}
 
-  .container--flex {
-    @apply flex justify-between;
+.container__full {
+  @apply col-span-12;
+}
+
+.container__center--xs {
+  @apply     col-span-12;
+  @apply  md:col-span-10;
+  @apply  lg:col-span-8;
+  @apply  xl:col-span-6;
+
+  @apply  md:col-start-2;
+  @apply  lg:col-start-3;
+  @apply  xl:col-start-4;
+
+  figure img {
+    @apply w-full; 
   }
+}
 
-  /* VERTICAL PADDINGS */
+.container__center--sm {
+  @apply     col-span-12;
+  @apply  md:col-span-10;
+  @apply  xl:col-span-8;
 
-  .container--py {
-    @apply py-14 lg:py-20 3xl:py-32;
-  }
+  @apply  md:col-start-2;
+  @apply xl:col-start-3;
+}
 
-  .container--pt {
-    @apply pt-14 lg:pt-20 3xl:pt-32;
-    @apply pb-0 lg:pb-0 3xl:pb-0;
-  }
+.container__center--md {
+  @apply col-span-12;
+  @apply xl:col-start-2 xl:col-end-12;
+}
 
-  .container--pb {
-    @apply pt-0 lg:pt-0 3xl:pt-0;
-    @apply pb-14 lg:pb-20 3xl:pb-32;
-  }
+.container__main {
+  @apply     col-span-12;
+  @apply  md:col-span-7;
+  @apply  lg:col-span-6;
 
-  /* CONTAINER + 12 COLS GRID */
+  @apply  lg:col-start-2;
+  
+  @apply md:row-start-1;
+}
 
-  .container--grid {
-    @apply grid grid-cols-12;
+.container--reverse .container__main {
+  @apply md:col-start-6 md:order-2;
+}
 
-    & + & {
-      @apply pt-5 xs:pt-7 sm:pt-9 lg:pt-10 xl:pt-12 3xl:pt-16;
-    }
-  }
+.container__aside {
+  @apply     col-span-12;
+  @apply  md:col-span-5;
+  @apply  lg:col-span-4;
 
-  .container__full {
-    @apply col-span-12;
-  }
+  @apply  md:col-start-8;
+}
 
-  .container__center--xs {
-    @apply     col-span-12;
-    @apply  md:col-span-10;
-    @apply  lg:col-span-8;
-    @apply  xl:col-span-6;
-
-    @apply  md:col-start-2;
-    @apply  lg:col-start-3;
-    @apply  xl:col-start-4;
-
-    figure img {
-      @apply w-full; 
-    }
-  }
-
-  .container__center--sm {
-    @apply     col-span-12;
-    @apply  md:col-span-10;
-    @apply  xl:col-span-8;
-
-    @apply  md:col-start-2;
-    @apply xl:col-start-3;
-  }
-
-  .container__center--md {
-    @apply col-span-12;
-    @apply xl:col-start-2 xl:col-end-12;
-  }
-
-  .container__main {
-    @apply     col-span-12;
-    @apply  md:col-span-7;
-    @apply  lg:col-span-6;
-
-    @apply  lg:col-start-2;
-  }
-
-  .container--reverse .container__main {
-    @apply md:col-start-6 md:order-2;
-  }
-
-  .container__aside {
-    @apply     col-span-12;
-    @apply  md:col-span-5;
-    @apply  lg:col-span-4;
-
-    @apply  md:col-start-8;
-  }
-
-  .container--reverse .container__aside {
-    @apply md:col-start-1 md:order-1;
-    @apply  lg:col-start-2;
-  }
+.container--reverse .container__aside {
+  @apply md:col-start-1 md:order-1;
+  @apply  lg:col-start-2;
 }
 
 
