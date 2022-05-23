@@ -187,6 +187,7 @@
                 </template>
               </Card>
               <Newsletter
+                type="default"
                 state="default"
                 title="Abonnieren Sie unseren Newsletter"
                 text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo"

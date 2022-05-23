@@ -5,22 +5,24 @@ import Newsletter from '../../ch/components/Newsletter.vue'
   title="Components/Newsletter"
   component={Newsletter}
   argTypes={{
+    type: { control: { type: 'select', options: ['default', 'inline'] } },
     state: { control: { type: 'select', options: ['default', 'sent'] } },
   }} />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Newsletter },
-  template: '<main><Newsletter :state="state" :title="title" :text="text" :input-label="inputLabel" :button-label="buttonLabel" :success-text="successText"/></main>',
+  template: '<main style="max-width: 600px; margin: auto"><Newsletter :type="type" :state="state" :title="title" :text="text" :input-label="inputLabel" :button-label="buttonLabel" :success-text="successText"/></main>',
 })
 
 export const TemplateDetail = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Newsletter },
-  template: '<main><div class="container container--grid gap--responsive"><div class="container__center--xs vertical-spacing"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p><Newsletter :state="state" :title="title" :text="text" :input-label="inputLabel" :button-label="buttonLabel" :success-text="successText"/><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p></div></div></main>',
+  template: '<main><div class="container container--grid gap--responsive"><div class="container__center--xs vertical-spacing"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p><Newsletter :type="type" :state="state" :title="title" :text="text" :input-label="inputLabel" :button-label="buttonLabel" :success-text="successText"/><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p></div></div></main>',
 })
 
 export const defaultArgs = {
+  type: 'default',
   state: 'default',
   title: 'Abonnieren Sie unseren Newsletter',
   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo',
@@ -33,7 +35,7 @@ export const defaultArgs = {
 
 ## Example
 
-The default newsletter component have small spacings and can for example be placed in a sidebar on a [Detail Page Complex](?path=/docs/pages-detail-page-complex--example).
+The default newsletter component can for example be placed in a sidebar on a [Detail Page Complex](?path=/docs/pages-detail-page-complex--example).
 
 <Canvas>
   <Story
@@ -47,14 +49,33 @@ The default newsletter component have small spacings and can for example be plac
 <ArgsTable story="Example" />
 
 
+## Example with inline form
+
+If the component is placed in a big enough context, you can display the form inline by adding the `.newsletter--inline` class.
+
+<Canvas>
+  <Story
+    name="Example Inline Form"
+    args={{
+      ...defaultArgs,
+      type: 'inline'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
 ## Example on simple detail pages
 
-When the newsletter component is placed on a [Detail Page Simple](?path=/docs/pages-detail-page-simple--example) inside a `.container__center--xs` container, it will have a slightly different layout (broader than container, more spacings, inline form elements).
+When the newsletter component is placed on a [Detail Page Simple](?path=/docs/pages-detail-page-simple--example) inside a `.container__center--xs` container, it will have a slightly different layout (broader than container, more spacings).
 
 <Canvas>
   <Story
     name="Example Detail Page"
-    args={defaultArgs}
+    args={{
+      ...defaultArgs,
+      type: 'inline'
+    }}
   >
     {TemplateDetail.bind({})}
   </Story>

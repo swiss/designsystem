@@ -1,5 +1,5 @@
 <template>
-<div class="newsletter">
+<div :class="computedClasses">
     <h3 v-text="title" class="newsletter__title h3"></h3>
     <p v-html="text" class="newsletter__text"></p>
     <form v-if="mutableState!=='sent'" @submit="submit" action="page.php" class="newsletter__form">
@@ -43,6 +43,13 @@ export default {
     Notification,
   },
   props: {
+    type: {
+      type: String,
+      validator: (prop) => [
+        'default',
+        'inline',
+      ].includes(prop)
+    },
     state: {
       type: String,
       default: undefined,
@@ -71,6 +78,13 @@ export default {
       type: String,
       required: true,
     }
+  },
+  computed: {
+    computedClasses () {
+      let base = 'newsletter '
+      if (this.type) base += `newsletter--${this.type} `
+      return base
+    },
   },
   data() {
     return {
