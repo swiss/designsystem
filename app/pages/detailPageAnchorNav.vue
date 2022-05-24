@@ -46,7 +46,7 @@
             <div class="sticky sticky--top">
               <Card type="default">
                 <template v-slot:body>
-                  <h3 class="card__title">Inhaltverzeichnis</h3>
+                  <h2 class="card__title">Inhaltverzeichnis</h2>
                   <ul class="menu text--sm">
                     <li>
                       <a 
@@ -164,23 +164,23 @@
             
             <Accordion id="12345">             
               <AccordionItem id="10" title="Medienmitteilungen" headingLevel="h3">
-                <h4 class="h5">Title</h4>
+                <h3 class="h5">Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
               </AccordionItem>
               <AccordionItem id="11" title="Interviews" headingLevel="h3">
-                <h4 class="h5">Title</h4>
+                <h3 class="h5">Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
               </AccordionItem>
               <AccordionItem id="12" title="Dokumente und Downloads" headingLevel="h3">
-                <h4 class="h5">Title</h4>
+                <h3 class="h5">Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
               </AccordionItem>
               <AccordionItem id="13" title="Reden" headingLevel="h3">
-                <h4 class="h5">Title</h4>
+                <h3 class="h5">Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
               </AccordionItem>
-              <AccordionItem id="13" title="Gesetze und Verordnungen" headingLevel="h3">
-                <h4 class="h5">Title</h4>
+              <AccordionItem id="14" title="Gesetze und Verordnungen" headingLevel="h3">
+                <h3 class="h5">Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
               </AccordionItem>
             </Accordion>
