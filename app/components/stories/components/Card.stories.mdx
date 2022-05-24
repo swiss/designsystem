@@ -38,6 +38,12 @@ import SvgIcon from '../../ch/components/SvgIcon.vue';
         options: ['NoMetaInfo', 'WithMetaInfo']
       }
     },
+    contentSpecs: {
+      control: {
+        type: 'select',
+        options: ['NoContentSpecs', 'WithContentSpecs']
+      }
+    },
     contentIcons: {
       control: {
         type: 'select',
@@ -91,6 +97,10 @@ export const Template = (args, { argTypes }) => ({
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium maximus vestibulum. Maecenas ac interdum est. Nullam mauris diam,
             </p>
+            <MetaInfo
+              v-if="${args.contentSpecs == 'WithContentSpecs'}"
+              :metainfos="['PDF', '2.34mb']"
+            />
             <div
               v-if="${args.contentIcons == 'WithContentIcons'}"
               class="card__content-icons"
@@ -132,6 +142,7 @@ Default.args = {
       layout: 'default',
       image: 'WithImage',
       metaInfo: 'WithMetaInfo',
+      contentSpecs: 'WithContentSpecs',
       contentIcons: 'WithContentIcons',
       header: 'NoHeader',
       footerInfo: 'WithFooterInfo',
