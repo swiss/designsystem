@@ -52,10 +52,10 @@ Rule of thumb: **Put a maximum of 6 cards per section, displayed on two rows.**
 If you have more content to show, add a link into the `.section__action` slot, and point it out to your additional content.
 
 **Exceptions:** 
-- In a hub page, you have to display the entire list of cards.
-- in a carousel, you could to display around 10 cards.
+- On a hub page, you have to list every sub pages.
+- With a carousel, you can display more than 6 cards.
 
-Below and example of a section with 5 cards and a link going to additional content:
+Below and simplified example of a section with 5 cards and a link pointing to additional content:
 
 <Canvas >
   <section class="section bg--secondary-50">
@@ -106,7 +106,9 @@ Below and example of a section with 5 cards and a link going to additional conte
 
 
 # Dynamic lists
-Dynamic lists are automatically updated. A news list is a classical example of dynamic content: the list is updated everytime a news is published. The items are sorted by date, and the number of them are limited to 6.  
+Dynamic lists are automatically updated. A news list is a classical example of dynamic content: the list is updated everytime a news is published. 
+
+The items are sorted by date, and the number of cards is limited to 6 (3 cards per row, 2 rows max).  
 
 For these dynamic lists, keep the visual aspect of each card identical and use the `.card--default` variant, with or without image:
 
@@ -118,6 +120,10 @@ For these dynamic lists, keep the visual aspect of each card identical and use t
         <div class="card card--default card--clickable ">
           <div class="card__content">
             <div class="card__body">
+              <p class="meta-info">
+                <span class="meta-info__item">Webartikel</span>
+                <span class="meta-info__item">23. Februar 2022</span>
+              </p>
               <h3 class="card__title">Card one</h3> 
               <p>
                 If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
@@ -140,6 +146,10 @@ For these dynamic lists, keep the visual aspect of each card identical and use t
         <div class="card card--default card--clickable ">
           <div class="card__content">
             <div class="card__body">
+              <p class="meta-info">
+                <span class="meta-info__item">Webartikel</span>
+                <span class="meta-info__item">23. Februar 2022</span>
+              </p>
               <h3 class="card__title">Card two</h3> 
               <p>
                 If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
@@ -162,6 +172,10 @@ For these dynamic lists, keep the visual aspect of each card identical and use t
         <div class="card card--default card--clickable ">
           <div class="card__content">
             <div class="card__body">
+              <p class="meta-info">
+                <span class="meta-info__item">Webartikel</span>
+                <span class="meta-info__item">23. Februar 2022</span>
+              </p>
               <h3 class="card__title">Card three</h3> 
               <p>
                 If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
@@ -197,7 +211,7 @@ For these dynamic lists, keep the visual aspect of each card identical and use t
 </Canvas>
 
 # Curated lists
-Curated list is a section where you have full control of the layout and the appeareance of your cards. Content is created manually and you can rythm your section with different columns and card types.
+Curated list is a section where you have full control on the layout and on the appeareance of the cards. Content is created manually and you can rythm your section with different columns and card types. 
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
@@ -222,10 +236,21 @@ export const Template = (args, { argTypes }) => ({
 });
 
 
+<Story
+  name="General"
+  args={{
+    sectionTitle: 'General',
+    row1: {
+      columns:1
+    }
+  }}
+>
+</Story>
+
 ## One column
 <Canvas>
   <Story
-    name="1 column"
+    name="1 col"
     args={{
       sectionTitle: '1 column',
       row1: {
@@ -349,6 +374,24 @@ export const Template = (args, { argTypes }) => ({
       },
       row2: {
         columns:3
+      }
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## 2 cards + 2 cards
+<Canvas>
+  <Story
+    name="2 cards + 2 cards"
+    args={{
+      sectionTitle: '2 cards + 2 cards',
+      row1: {
+        columns:2
+      },
+      row2: {
+        columns:2
       }
     }}
   >
