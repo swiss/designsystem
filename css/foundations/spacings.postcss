@@ -5,7 +5,7 @@
 /* default margin-top for all elements */
 
 .vertical-spacing > * {
-  @apply mt-10 xl:mt-12;
+  @apply mt-10 xl:mt-20;
 
   &:first-child {
     @apply mt-0; 
@@ -14,18 +14,35 @@
 
 /* more specified spacings */ 
 
-.vertical-spacing > :is(h1, h2, h3, h4, h5) {
-  @apply mb-0; 
+.vertical-spacing {
+  /* elements following titles */
+  & > :is(h1, h2, h3, h4, h5) {
+    @apply mb-0; 
+  
+    & + * {
+      @apply mt-[1.75em];
+    }
 
-  & + p {
-    @apply mt-[1.35em];
+    & + p, 
+    & + .list--default, & + [identifier="list"] {
+      @apply mt-[1.35em];
+    }
+  }
+
+  /* elements following paragraphs */
+  & > p {
+    & + p, 
+    & + .list--default, & + [identifier="list"] {
+      @apply mt-[1em]
+    }
+  }
+
+  /* elements following default lists*/ 
+  & > .list--default, [identifier="list"] {
+    & + p {
+      @apply mt-[1em]
+    }
   }
 }
 
-.vertical-spacing > p {
-  & + p, 
-  & + .list--default, 
-  & + [identifier="list"] {
-    @apply mt-[1em]
-  }
-} 
+
