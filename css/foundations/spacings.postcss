@@ -34,14 +34,28 @@
   & > p {
     & + p, 
     & + .list--default, & + [identifier="list"] {
-      @apply mt-[1em]
+      @apply mt-[1em];
+    }
+
+    & + table, 
+    & + .accordion {
+      @apply mt-[2em];
     }
   }
 
   /* elements following default lists*/ 
-  & > .list--default, [identifier="list"] {
+  & > .list--default, 
+  & > [identifier="list"] {
     & + p {
-      @apply mt-[1em]
+      @apply mt-[1em];
+    }
+  }
+
+  /* elements following pictures */
+  & > figure, 
+  & > [identifier="image"] {
+    & + p {
+      @apply mt-[1.5em];
     }
   }
 }
