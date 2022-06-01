@@ -5,8 +5,11 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 />
 
 # Responsive images
+You can improve the performance of your page by loading resized images based on the device viewport. 
 
-You'll find below the definitions for the responsive images set for the generic cases (in cards & content containers).
+Image widths will depend on the containers they are displayed in.
+
+You'll find below the definitions for the responsive images set for the most common containers.
 
 The **minimal declarations** keep the automatic image generation smaller, while the **full declarations** ensure optimal pictures (as small as possible) for each viewports.
 
@@ -15,20 +18,20 @@ The **minimal declarations** keep the automatic image generation smaller, while 
 **Minimal declaration**
 ```html
 <picture>
-    <source srcset="https://picsum.photos/720/405/?image=29" width="720" height="405" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" with="480" height="248" alt="image name">
+  <source srcset="https://picsum.photos/720/405/?image=29" width="720" height="405" media="(min-width: 480px)">
+  <img src="https://picsum.photos/480/xxx/?image=29" with="480" height="248" alt="image name">
 </picture>
 ```
 
 **Full declaration**
 ```html
 <picture>
-    <source srcset="https://picsum.photos/480/270/?image=29" width="480" height="270" media="(min-width: 1536px)">
-    <source srcset="https://picsum.photos/460/259/?image=29" width="460" height="259" media="(min-width: 1280px)">
-    <source srcset="https://picsum.photos/400/225/?image=29" width="400" height="225" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/460/259/?image=29" width="460" height="259" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/720/405/?image=29" width="720" height="405" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" with="480" height="248" alt="image name">
+  <source srcset="https://picsum.photos/480/270/?image=29" width="480" height="270" media="(min-width: 1536px)">
+  <source srcset="https://picsum.photos/460/259/?image=29" width="460" height="259" media="(min-width: 1280px)">
+  <source srcset="https://picsum.photos/400/225/?image=29" width="400" height="225" media="(min-width: 1024px)">
+  <source srcset="https://picsum.photos/460/259/?image=29" width="460" height="259" media="(min-width: 768px)">
+  <source srcset="https://picsum.photos/720/405/?image=29" width="720" height="405" media="(min-width: 480px)">
+  <img src="https://picsum.photos/480/xxx/?image=29" with="480" height="248" alt="image name">
 </picture>
 ```
 
