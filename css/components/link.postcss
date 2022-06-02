@@ -18,10 +18,7 @@ main p a {
 }
 
 .link--external,
-main p a[rel*="external"],
-main p a[target="_blank"],
-main ul a[rel*="external"],
-main ul a[target="_blank"] {
+main a[rel*="external"] {
   @apply link;
 
   &:not(.btn, .btn--link) {
