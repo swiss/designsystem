@@ -7,7 +7,6 @@
       <TopHeader />
       <DesktopMenu />
       <MobileMenu />
-      <Breadcrumb />
     </header>
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
@@ -181,7 +180,6 @@
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
@@ -199,7 +197,6 @@ export default {
     AlterBodyClasses,
     TopBar,
     TopHeader,
-    Breadcrumb,
     DesktopMenu,
     MobileMenu,
     FooterInformation,
