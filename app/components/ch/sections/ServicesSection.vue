@@ -7,7 +7,7 @@
       >
         Dienstleistungen
       </h2>
-      <div class="grid grid--responsive-cols-2 gap--responsive">
+      <div class="grid grid--items-5 gap--responsive">
         <Card type="default">
           <template v-slot:body>
             <h3 class="card__title">Datenmodellablage</h3>
@@ -50,9 +50,6 @@
             />
           </template>
         </Card>
-      </div>
-
-      <div class="grid grid--responsive-cols-3 gap--responsive mt-16">
         <Card type="default">
           <template v-slot:body>
             <h3 class="card__title">Datenbezug</h3>

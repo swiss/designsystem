@@ -25,6 +25,10 @@
   &:hover,
   &:focus-within {
     @apply shadow-2xl;
+
+    .card__title {
+      @apply text-red-600;
+    }
   }
 }
 
@@ -70,15 +74,12 @@
   &:focus-within {
     @apply bg-transparent;
     @apply shadow-none;
-
-    &:hover .card__title {
-      @apply text-red-600;
-    }
   }
 }
 
 .card--flat {
   @apply py-4 lg:py-6 2xl:py-8;
+  @apply bg-transparent;
   @apply border-b border-secondary-200;
 }
   
@@ -119,8 +120,23 @@
     @apply relative pb-[50%]; /* 2/1 ratio */
   }
 
+  &:before {
+    content: "";
+    @apply absolute z-0; 
+    @apply inset-0;
+    @apply bg-secondary-50 border-2 border-white;
+    @apply opacity-70;
+  }
+
   img {
     @apply absolute w-full h-full object-cover;
+  }
+
+  svg {
+    @apply absolute z-10;
+    @apply top-1/2 left-1/2;
+    @apply -translate-x-1/2 -translate-y-1/2;
+    @apply w-1/2 h-1/2;
   }
 }
 
@@ -144,8 +160,17 @@
 
 .card__title {
   @apply text-lg xl:text-xl 3xl:text-2xl;
-  @apply font-bold leading-6;
+  @apply font-bold leading-snug;
   @apply transition-colors duration-200 ease-in-out;
+}
+
+.card__content-icons {
+  @apply relative flex; 
+  @apply -ml-1;
+
+  svg {
+    @apply mr-2;
+  }
 }
 
 .card__footer {
@@ -158,7 +183,8 @@
 }
 
 .card__footer__info {
-  @apply text-secondary-500 text-sm;
+  @apply text-secondary-500 text--sm;
+  @apply pr-6;
 }
 
 .card__footer__action {}
@@ -166,4 +192,48 @@
 .card iframe {
   @apply relative !important;
   @apply z-50;
+}
+
+
+.card--image-left {
+  @screen md {
+    @apply grid grid--responsive-cols-2/3-1/3 gap--responsive;
+
+    .card__body, 
+    .card__footer {
+      @apply pl-0; 
+    }
+  }
+}
+
+.card--image-right {
+  @screen md {
+    @apply grid grid--responsive-cols-1/3-2/3 gap--responsive grid--reverse;
+
+    .card__content {
+      grid-area: A; 
+    }
+  
+    .card__image {
+      grid-area: B; 
+    }
+  
+    .card__body, 
+    .card__footer {
+      @apply pr-0; 
+    }
+  }
+}
+
+.card--image-left, 
+.card--image-right {
+  &.card--flat {
+    @screen md {
+      @apply border-none;
+  
+      .card__body {
+        @apply pt-0; 
+      }
+    }
+  }
 }

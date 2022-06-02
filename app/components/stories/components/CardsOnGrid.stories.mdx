@@ -1,0 +1,330 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import Card from '../../ch/components/Card.vue';
+import Btn from '../../ch/components/Btn.vue';
+import SvgIcon from '../../ch/components/SvgIcon.vue';
+import CardGrid from "../../ch/demo/CardGrid.vue";
+
+<Meta
+  title="Components/Card/Cards and grids"
+  components={Card, Btn, SvgIcon, CardGrid}
+/>
+
+# Cards and Grids
+
+Most of the time, cards are grouped into a section. They are considered as teasers and they point to a specific content deeper in the website. 
+
+
+# Dynamic list of cards
+A news list is a classic example of dynamic list: the content is updated everytime a news is published. The layout is simple and uniform: all columns have the same width.
+
+## Number of cards
+**Put a maximum of 3 cards per dynamic list of cards.**
+
+**Exceptions:** 
+- On a hub page, you have to list every sub pages.
+- If you really need to display more items, use the [carousel pattern](?path=/docs/components-carousel--with-bullets).  
+
+## Grid classes
+For dynamic lists, all columns have the same width. Use one of the following grid variants:
+- `grid grid--responsive-cols-2 gap--responsive` or
+- `grid grid--responsive-cols-3 gap--responsive` or
+- `grid grid--responsive-cols-4 gap--responsive`
+
+Below a simplified example of a section with 3 news picked dynamically, and a link pointing to additional content:
+<Canvas>
+  <section class="section bg--secondary-50">
+    <div class="container">
+      <h2 class="section__title">Dynamic list</h2>
+      <div class="grid grid--responsive-cols-3 gap--responsive">
+        <div class="card">
+          <div class="card__body">News 1</div>
+        </div>
+        <div class="card">
+          <div class="card__body">News 2</div>
+        </div>
+        <div class="card">
+          <div class="card__body">News 3</div>
+        </div>
+      </div>
+      <div class="section__action">
+        <a href="#" class="btn btn--bare btn--icon-right ">
+          <svg viewBox="0 0 24 24" class="btn__icon icon icon--base icon--ArrowRight ">
+            <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
+          </svg> 
+          <span class="btn__text">
+            Alle News sehen
+           </span>
+          </a>
+      </div>
+    </div>
+  </section>
+</Canvas>
+
+# Curated list of cards
+Curated list is a section where the items are picked manually. Depending on the numbers of cards, the layout adapts accordingly. 
+
+## Number of rows
+**Put a maximum of 5 cards per curated list of cards.**
+
+## Grid classes
+For curated lists, columns have different widths depending the numbers of cards. Use one of the following grid variants:
+- `grid grid--items-1 gap--responsive` or
+- `grid grid--items-2 gap--responsive` or
+- `grid grid--items-3 gap--responsive` or
+- `grid grid--items-4 gap--responsive` or
+- `grid grid--items-5 gap--responsive`
+
+Below a simplified example of a section with 5 cards picked manually, and a link pointing to additional content:
+
+<Canvas>
+  <section class="section bg--secondary-50">
+    <div class="container">
+      <h2 class="section__title">Section title</h2>
+      <div class="grid grid--items-5 gap--responsive">
+        <div class="card">
+          <div class="card__body">Card 1</div>
+        </div>
+        <div class="card">
+          <div class="card__body">Card 2</div>
+        </div>
+        <div class="card">
+          <div class="card__body">Card 3</div>
+        </div>
+        <div class="card">
+          <div class="card__body">Card 4</div>
+        </div>
+        <div class="card">
+          <div class="card__body">Card 5</div>
+        </div>
+      </div>
+      <div class="section__action">
+        <a href="#" class="btn btn--bare btn--icon-right ">
+          <svg viewBox="0 0 24 24" class="btn__icon icon icon--base icon--ArrowRight ">
+            <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
+          </svg> 
+          <span class="btn__text">
+            Alle News sehen
+           </span>
+          </a>
+      </div>
+    </div>
+  </section>
+</Canvas>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Card, Btn, SvgIcon, CardGrid },
+  template: 
+  `
+    <section class="section bg--secondary-50">
+      <div class="container">
+        <h2 class="section__title">{{ sectionTitle }}</h2>
+        <CardGrid v-if="nItems" :nItems="nItems">
+          <Card 
+            type="default" 
+            :layout="(nItems === 1 || nItems === 3 || nItems === 4 ) ? 'image-left' : 'default' "
+          >
+            <template v-slot:image>
+              <img src="https://placekitten.com/g/775/350" alt="cat" />
+            </template>
+            <template v-slot:body>
+              <h3 class="card__title">Card 1</h3>
+              <p>
+                Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem
+              </p>
+            </template>
+            <template v-slot:footerAction>
+              <Btn
+                to="#"
+                variant="outline"
+                icon-pos="only"
+                icon="ArrowRight"
+                label="Weiterlesen"
+              />
+            </template>
+          </Card>
+          <Card 
+            v-if="nItems>1"
+            type="default" 
+          >
+            <template v-slot:image>
+              <img src="https://placekitten.com/g/775/350" alt="cat" />
+            </template>
+            <template v-slot:body>
+              <h3 class="card__title">Card 2</h3>
+              <p>
+                Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem
+              </p>
+            </template>
+            <template v-slot:footerAction>
+              <Btn
+                to="#"
+                variant="outline"
+                icon-pos="only"
+                icon="ArrowRight"
+                label="Weiterlesen"
+              />
+            </template>
+          </Card>
+          <Card
+            v-if="nItems>2" 
+            type="default" 
+          >
+            <template v-slot:image>
+              <img src="https://placekitten.com/g/775/350" alt="cat" />
+            </template>
+            <template v-slot:body>
+              <h3 class="card__title">Card 3</h3>
+              <p>
+                Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem
+              </p>
+            </template>
+            <template v-slot:footerAction>
+              <Btn
+                to="#"
+                variant="outline"
+                icon-pos="only"
+                icon="ArrowRight"
+                label="Weiterlesen"
+              />
+            </template>
+          </Card>
+          <Card 
+            v-if="nItems>3"
+            type="default" 
+          >
+            <template v-slot:image>
+              <img src="https://placekitten.com/g/775/350" alt="cat" />
+            </template>
+            <template v-slot:body>
+              <h3 class="card__title">Card 4</h3>
+              <p>
+                Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem
+              </p>
+            </template>
+            <template v-slot:footerAction>
+              <Btn
+                to="#"
+                variant="outline"
+                icon-pos="only"
+                icon="ArrowRight"
+                label="Weiterlesen"
+              />
+            </template>
+          </Card>
+          <Card 
+            v-if="nItems>4"
+            type="default" 
+          >
+            <template v-slot:image>
+              <img src="https://placekitten.com/g/775/350" alt="cat" />
+            </template>
+            <template v-slot:body>
+              <h3 class="card__title">Card 5</h3>
+              <p>
+                Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem
+              </p>
+            </template>
+            <template v-slot:footerAction>
+              <Btn
+                to="#"
+                variant="outline"
+                icon-pos="only"
+                icon="ArrowRight"
+                label="Weiterlesen"
+              />
+            </template>
+          </Card>
+        </CardGrid>
+      </div>
+    </section>
+  `,
+});
+
+
+# Full examples
+
+## One Card
+- Apply the `grid grid--items-1 gap--responsive` variants to the parent grid
+- Apply the `card--image-left` variant to the first card
+
+<Story
+  name="One Card"
+  args={{
+    sectionTitle: 'One Card',
+    nItems: 1,
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+## Two cards
+- Apply the `grid grid--items-2 gap--responsive` variants to the parent grid
+
+<Story
+  name="Two Cards"
+  args={{
+    sectionTitle: 'Two Cards',
+    nItems: 2,
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+## Three cards
+- Apply the `grid grid--items-3 gap--responsive` variants to the parent grid
+- Apply the `card--image-left` variant to the first card
+
+<Story
+  name="Three Cards"
+  args={{
+    sectionTitle: 'Three Cards',
+    nItems: 3,
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+## Four cards
+- Apply the `grid grid--items-4 gap--responsive` variants to the parent grid
+- Apply the `card--image-left` variant to the first card
+
+<Story
+  name="Four Cards"
+  args={{
+    sectionTitle: 'Four Cards',
+    nItems: 4,
+  }}
+>
+  {Template.bind({})}
+</Story>
+
+
+## Five cards
+- Apply the `grid grid--items-5 gap--responsive` variants to the parent grid
+
+<Story
+  name="Five Cards"
+  args={{
+    sectionTitle: 'Five Cards',
+    nItems: 5,
+  }}
+>
+  {Template.bind({})}
+</Story>
+
