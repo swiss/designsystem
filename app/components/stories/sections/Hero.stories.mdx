@@ -21,7 +21,6 @@ import Btn from '../../ch/components/Btn.vue';
       name: 'Authors',
       value: undefined
     }
-    
   }}
 />
 
@@ -47,16 +46,16 @@ export const Template = (args, { argTypes }) => ({
         </picture>
       </template>
       <template v-if="${args.type == 'main-image'}" v-slot:title>
-        Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </template>
       <template v-else v-slot:title>
-        Willkommen zu Hause. Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </template>
       <template
         v-if="${args.type !== 'title-only'}"
         v-slot:description
       >
-        Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
+        Pellentesque dui dui, eleifend ac interdum eget, consectetur in odio. Suspendisse potenti. Integer a mi ullamcorper, fermentum nisi quis, efficitur velit.
       </template>
       <template
         v-if="${args.type == 'main-image' || args.type == 'main'}"
