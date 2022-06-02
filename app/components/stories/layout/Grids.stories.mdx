@@ -142,12 +142,61 @@ An additional `grid grid--reverse` class helps you to flip right and left column
   </div>
 </Canvas>
 
+## Grids with n items.
+
+Specific grid definitions depending on the number of items can be used, typically for displaying cards in a section.
+
+The numbers of items can vary from 1 to 5. For 6 or more items, use the `grid--responsive-cols-3` variant.
+
+Further informations about Cards and grids on the [Card documentation page](?path=/docs/components-card-cards-and-grids--one-card).  
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--items-1 gap--responsive">
+    <div>1</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--items-2 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--items-3 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--items-4 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</Canvas>
+
+<Canvas className="storybook-demo-grid">
+  <div class="grid grid--items-5 gap--responsive">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+</Canvas>
+
+
 
 # Custom Grids
 
 You can use most of [Tailwind grid classes](https://tailwindcss.com/docs/grid-template-columns) to display your elements in a more specific way. You will have create a template in this project with the new classes or safelist the desired Tailwind classes, and to build the css file again.
 
-<a href="?path=/docs/implementation-add-tailwind-classes--page">More informations about adding Tailwind classes</a>
+<a href="?path=/docs/doc-for-developers-add-css-classes--page">More informations about adding Tailwind classes</a>
 
 
 ## Custom responsive grid: one, three and five cols

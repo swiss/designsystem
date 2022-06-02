@@ -167,3 +167,44 @@
 .grid + .grid {
   @apply mt-5 xs:mt-7 sm:mt-9 lg:mt-10 xl:mt-12 3xl:mt-16 ;
 }
+
+
+/* Grid layout depending the number of items */
+
+.grid--items-1 {
+  @apply md:grid-cols-1;
+}
+
+.grid--items-2 {
+  @apply md:grid-cols-2;
+
+}
+
+.grid--items-3 {
+  @apply md:grid-cols-2;
+
+  & > *:nth-child(1) { 
+    @apply col-span-2;
+  }
+}
+
+.grid--items-4 {
+  @apply md:grid-cols-3;
+
+  & > *:nth-child(1) { 
+    @apply col-span-3; 
+  }
+}
+
+.grid--items-5 {
+  @apply md:grid-cols-12;
+
+  & > *:nth-child(1),
+  & > *:nth-child(2) { 
+    @apply col-span-6; 
+  }
+
+  & > * {
+    @apply col-span-6 lg:col-span-4;
+  }
+}
