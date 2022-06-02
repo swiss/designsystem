@@ -97,6 +97,7 @@
               icon-pos="only"
               icon="ArrowUpRight"
               label="Weiterlesen"
+              rel="external"
             />
           </template>
         </Card>
@@ -115,6 +116,7 @@
               icon-pos="only"
               icon="ArrowUpRight"
               label="Weiterlesen"
+              rel="external"
             />
           </template>
         </Card>
@@ -134,6 +136,7 @@
               icon-pos="only"
               icon="ArrowUpRight"
               label="Weiterlesen"
+              rel="external"
             />
           </template>
         </Card>
