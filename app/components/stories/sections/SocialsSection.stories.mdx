@@ -19,10 +19,23 @@ export const Template = (args, { argTypes }) => ({
       sectionDesc: "Hier die aktuellsten Posts. Wenn Sie mehr erfahren möchten, besuchen Sie bitte die jeweiligen Kanäl.",
       feeds: [
         {
+          type: "instagram",
+          title: "Insights on @swiss_geoportal",
+          pofileURL: "https://www.instagram.com/swisstopo/",
+          feedURL: "https://www.instagram.com/p/Cd4x-uTMKJr/"
+        },
+        {
+          type: "youtube",
+          title: "Investigations on @swiss_geoportal",
+          pofileURL: "https://www.youtube.com/c/SwissGeoportal",
+          feedURL: "https://www.youtube.com/embed/BR5zDpPDKFM"
+        },
+        {
           type: "twitter",
-          title: "Tweets from @swiss_geoportal",
-          url: "https://twitter.com/swiss_geoportal"
-        }
+          title: "Press-reslease on @swiss_geoportal",
+          pofileURL: "https://twitter.com/swiss_geoportal",
+          feedURL: "https://twitter.com/swiss_geoportal"
+        },
       ]
     }}
   >
