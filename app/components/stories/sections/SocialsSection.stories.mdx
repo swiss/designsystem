@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import SocialsSection from '../../ch/sections/SocialsSection.vue'
+
+<Meta title="Sections/Content/Socials" component={SocialsSection} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { SocialsSection },
+  template: '<SocialsSection :section-title="sectionTitle" :section-desc="sectionDesc" :feeds="feeds" />',
+})
+
+# Socials Section
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      sectionTitle: 'Geoportal in den sozialen Medien',
+      sectionDesc: "Hier die aktuellsten Posts. Wenn Sie mehr erfahren möchten, besuchen Sie bitte die jeweiligen Kanäl.",
+      feeds: [
+        {
+          type: "twitter",
+          title: "Tweets from @swiss_geoportal",
+          url: "https://twitter.com/swiss_geoportal"
+        }
+      ]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+
+<a href="?path=/story/sections-socials--example">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a href="?id=sections-content-socials--example&viewMode=story" target="_blank">
+  Open page in full width in a new tab
+</a>
