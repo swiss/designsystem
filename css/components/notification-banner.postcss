@@ -1,0 +1,33 @@
+/*----------------------------------------*\
+  NOTIFICATION BANNER
+\*----------------------------------------*/
+
+
+.notification-banner {
+  @apply lg:flex lg:flex-nowrap lg:items-end lg:justify-between;
+  @apply px-0;
+  @apply py-4 sm:py-8 lg:py-10;
+  @apply text--sm;
+  @apply shadow-none;
+}
+
+.notification-banner--fixed {
+  @apply fixed z-50 right-0 bottom-0 left-0;
+  @apply shadow-2xl;
+}
+
+.notification-banner__wrapper {
+  @apply container;
+  @apply lg:flex lg:flex-nowrap lg:items-start lg:justify-between;
+}
+
+.notification-banner .btn {
+  @apply mt-4 sm:mt-8 lg:mt-0;
+  @apply lg:ml-6;
+}
+
+.notification-banner .btn__text {
+  @apply whitespace-nowrap;
+}
+
+
