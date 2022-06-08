@@ -2,7 +2,7 @@
   <section class="section bg--secondary-50">
     <div class="container">
       <div :class="computedClasses">
-        <div class="socials__grid grid grid--responsive-cols-3 gap--responsive">
+        <div class="socials__grid grid grid--responsive-cols-12 gap--responsive">
           <div class="socials__info">
             <h2 class="section__title">{{sectionTitle}}</h2>
 
@@ -123,7 +123,7 @@ export default {
       else if (this.feeds.length ===  3) base += `socials--items-3 `
       else if (this.feeds.length ===  4) base += `socials--items-4 `
       else if (this.feeds.length ===  5) base += `socials--items-5 `
-      else if (this.feeds.length ===  5) base += `socials--items-6 `
+      else if (this.feeds.length ===  6) base += `socials--items-6 `
       return base
     },
   }

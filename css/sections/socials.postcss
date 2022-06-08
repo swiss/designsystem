@@ -2,29 +2,44 @@
   SOCIALS
 \*----------------------------------------*/
 
-.socials__info {
-  .socials--items-3 & {
-    @apply col-span-3; 
+.socials {
+  .section__title {
+    @apply pb-6;
   }
 }
 
 .socials__grid {
-  .socials--items-4 & {
+  & > * {
+    @apply col-span-12 md:col-span-2 xl:col-span-4; 
+  }
 
-    & > *:nth-child(4) {
-      grid-column-end: -2; 
+  .socials--items-1 & {    
+    & > *:nth-child(1) {
+      @apply xl:col-start-3;      
     }
 
-    & > *:nth-child(5) {
-      grid-column-end: -1; 
+    & > *:nth-child(2) {
+      @apply xl:col-start-7;      
+    }
+  }
+
+  .socials--items-4 & {
+    & > *:nth-child(4) {
+      @apply xl:col-start-5; 
     }
   }
 }
 
+.socials__info {
+  @apply pb-6;
 
-/* .socials__grid {
-  & > *:last-child:nth-child(3n - 1) {
-    grid-column-end: -1; 
-    opacity: 0.5; 
+  .socials--items-2 &,
+  .socials--items-4 & {
+    @apply md:col-span-full xl:col-span-4;
   }
-} */
+
+  .socials--items-3 &, 
+  .socials--items-6 & {
+    @apply md:col-span-full;
+  }
+}
