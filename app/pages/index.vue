@@ -50,11 +50,13 @@
       <footer-information />
       <footer-navigation />
     </footer>
+    <CookieBanner />
   </div>
 </template>
 
 <script>
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
+import CookieBanner from '../components/ch/components/CookieBanner.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
@@ -76,6 +78,7 @@ export default {
   name: 'Index',
   components: {
     AlterBodyClasses,
+    CookieBanner,
     TopBar,
     TopHeader,
     Breadcrumb,
