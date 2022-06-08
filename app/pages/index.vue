@@ -1,6 +1,7 @@
 <template>
   <div>
     <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+     <NotificationBanner :isFixed="true" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
@@ -50,7 +51,6 @@
       <footer-information />
       <footer-navigation />
     </footer>
-    <NotificationBanner :isFixed="true" />
   </div>
 </template>
 
