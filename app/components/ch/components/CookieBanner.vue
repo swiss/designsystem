@@ -1,5 +1,8 @@
 <template>
-  <div class="cookie-banner">
+  <div 
+    v-if="!isClosed"
+    class="cookie-banner"
+  >
     <div class="cookie-banner__wrapper">
       <div class="cookie-banner__infos">
         <Notification
@@ -12,20 +15,20 @@
       </div>
       <div class="cookie-banner__actions ">
         <Btn
-          to="#"
           variant="filled"
           size="sm"
           icon-pos="right"
           icon="Checkmark"
           label="Einverstanden"
+          @click.native="isClosed = true"
         />
         <Btn
-          to="#"
           variant="bare"
           size="sm"
           icon-pos="right"
           icon="Cancel"
           label=" Weiter ohne Datenerfassung"
+          @click.native="isClosed = true"
         />
       </div>
     </div>
@@ -46,6 +49,10 @@ export default {
   },
 
   props: {
+    isClosed: {
+      type: Boolean,
+      default: false
+    },
   },
 
   computed: {
