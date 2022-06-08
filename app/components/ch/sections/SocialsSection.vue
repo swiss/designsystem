@@ -2,7 +2,7 @@
   <section class="section bg--secondary-50">
     <div class="container">
       <div :class="computedClasses">
-        <div class="socials__grid grid grid--responsive-cols-12 gap--responsive">
+        <div class="socials__grid grid gap--responsive">
           <div class="socials__info">
             <h2 class="section__title">{{sectionTitle}}</h2>
 
