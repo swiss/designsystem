@@ -33,11 +33,16 @@
             icon="ArrowRight"
             label="Über uns"
           />
-        </template>      
+        </template>
       </Hero>
       <TopNewsSection />
       <ServicesSection isHomePage />
       <NewsSection />
+      <SocialsSection
+        :section-title="socialSection.sectionTitle"
+        :section-desc="socialSection.sectionDesc"
+        :feeds="socialSection.feeds"
+      />
       <MostSeenSection />
       <PortraitSection />
       <MediasSection />
@@ -66,6 +71,7 @@ import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import TopNewsSection from "~/components/ch/sections/TopNewsSection"
 import ServicesSection from "~/components/ch/sections/ServicesSection"
+import SocialsSection from "~/components/ch/sections/SocialsSection"
 import MostSeenSection from "~/components/ch/sections/MostSeenSection"
 import PortraitSection from "~/components/ch/sections/PortraitSection"
 import MediasSection from "~/components/ch/sections/MediasSection"
@@ -89,12 +95,35 @@ export default {
     TopNewsSection,
     ServicesSection,
     NewsSection,
+    SocialsSection,
     MostSeenSection,
     PortraitSection,
     MediasSection,
     Hero,
     BackToTopBtn,
     Btn
+  },
+  data() {
+    return {
+      socialSection: {
+        sectionTitle: 'Geoportal in den sozialen Medien',
+        sectionDesc: "Hier die aktuellsten Posts. Wenn Sie mehr erfahren möchten, besuchen Sie bitte die jeweiligen Kanäl.",
+        feeds: [
+          {
+            type: "facebook",
+            title: "News on Facebook",
+            pofileURL: "https://www.facebook.com/swisstopo",
+            feedURL: "https://www.facebook.com/swisstopo/videos/5455503121148000/",
+          },
+          {
+            type: "instagram",
+            title: "Insights on Instagram",
+            pofileURL: "https://www.instagram.com/swisstopo/",
+            feedURL: "https://www.instagram.com/p/Cd6KkQsOnOh/?utm_source=ig_web_copy_link"
+          }
+        ]
+      }
+    }
   },
   methods: {
     getMobileMenuIsOpen() {

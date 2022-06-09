@@ -1,0 +1,54 @@
+/*----------------------------------------*\
+  SOCIALS
+\*----------------------------------------*/
+
+.socials {
+  .section__title {
+    @apply pb-6;
+  }
+
+  blockquote {
+    &::before, 
+    &::after {
+      @apply hidden; 
+    }
+  }
+}
+
+.socials__grid {
+  @apply sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-12;
+  
+  & > * {
+    @apply col-span-12 md:col-span-2 xl:col-span-4; 
+  }
+
+  .socials--items-1 & {    
+    & > *:nth-child(1) {
+      @apply xl:col-start-3;      
+    }
+
+    & > *:nth-child(2) {
+      @apply xl:col-start-7;      
+    }
+  }
+
+  .socials--items-4 & {
+    & > *:nth-child(4) {
+      @apply xl:col-start-5; 
+    }
+  }
+}
+
+.socials__info {
+  @apply pb-6;
+
+  .socials--items-2 &,
+  .socials--items-4 & {
+    @apply md:col-span-full xl:col-span-4;
+  }
+
+  .socials--items-3 &, 
+  .socials--items-6 & {
+    @apply md:col-span-full;
+  }
+}
