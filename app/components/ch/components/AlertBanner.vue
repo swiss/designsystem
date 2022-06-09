@@ -6,31 +6,31 @@
         :icon="icon"
         class="notification__icon"
       />
-    <div class="alert-banner__grid">
-      <div class="alert-banner__header">
-        <h4 class="font--bold">{{ title }}</h4>
-        <p>{{ type }}</p>
-        <p>{{ lastUpdated }}</p>
+      <div class="alert-banner__grid">
+        <div class="alert-banner__header">
+          <h4 class="font--bold">{{ title }}</h4>
+          <p>{{ type }}</p>
+          <p>{{ lastUpdated }}</p>
+        </div>
+        <div class="alert-banner__content">
+          <p>{{ text }}</p>
+        </div>
+        <ul v-if="link" class="alert-banner__list">
+          <li class="alert-banner__list-item">
+            <p>{{ introLink }}</p>
+            <div class="alert-banner__link">
+              <Btn 
+                :href="link.href"
+                :label="link.label"
+                :icon="link.icon ? link.icon : 'ArrowRight'"
+                icon-pos="right"
+                size="sm"
+                variant="link-negative"
+              />
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="alert-banner__content">
-        <p>{{ text }}</p>
-      </div>
-      <ul v-if="link" class="alert-banner__list">
-        <li class="alert-banner__list-item">
-          <p>{{ introLink }}</p>
-          <div class="alert-banner__link">
-            <Btn 
-              :href="link.href"
-              :label="link.label"
-              :icon="link.icon ? link.icon : 'ArrowRight'"
-              icon-pos="right"
-              size="sm"
-              variant="link-negative"
-            />
-          </div>
-        </li>
-      </ul>
-    </div>
     </div>
   </div>
 </template>

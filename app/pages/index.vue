@@ -1,6 +1,7 @@
 <template>
   <div>
     <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+     <NotificationBanner :isFixed="true" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
@@ -55,6 +56,7 @@
 
 <script>
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
+import NotificationBanner from '../components/ch/components/NotificationBanner.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
@@ -76,6 +78,7 @@ export default {
   name: 'Index',
   components: {
     AlterBodyClasses,
+    NotificationBanner,
     TopBar,
     TopHeader,
     Breadcrumb,
