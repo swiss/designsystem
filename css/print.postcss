@@ -1,14 +1,26 @@
 /*----------------------------------------*\
   Print
 \*----------------------------------------*/
-/* No header, no footer, no logo*/
+
 @media print {
   html {
     font-size: 12px !important;
   }
 
-  #main-header,
-  #main-footer {
+  #main-header {
+    .top-bar, 
+    .top-header__right, 
+    .desktop-menu {
+      display: none !important;
+    }
+
+    .top-header {
+      border: 0px !important; 
+    }
+  }
+
+  #main-footer, 
+  .notification-banner {
     display: none !important;
   }
 
