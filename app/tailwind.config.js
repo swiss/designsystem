@@ -2,10 +2,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    '../safelist.txt',
-    '../app/pages/**/*.vue',
-    '../app/components/ch/**/*.vue',
-    '../app/components/stories/layout/*.stories.mdx',
+    './safelist.txt',
+    './app/pages/**/*.vue',
+    './app/components/ch/**/*.vue',
+    './app/components/stories/layout/*.stories.mdx',
   ],
   corePlugins: {
     container: false,
