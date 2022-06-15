@@ -1,19 +1,89 @@
 /*----------------------------------------*\
   Print
 \*----------------------------------------*/
-/* No header, no footer, no logo*/
+
 @media print {
   html {
     font-size: 12px !important;
   }
 
-  #main-header,
-  #main-footer {
+  #main-header {
+    .top-bar, 
+    .top-header__right, 
+    .desktop-menu {
+      display: none !important;
+    }
+
+    .top-header {
+      border: 0px !important; 
+    }
+
+    .logo {
+      align-items: flex-start !important; 
+    }
+
+    .logo__name {
+      display: block !important; 
+    }
+
+    .logo__title {
+      border-left: 1px solid #D1D5DB; 
+      padding-left: 2em; 
+      padding-bottom: 2em; 
+      margin-left: 1em; 
+    }
+  }
+
+  #main-footer, 
+  .notification-banner,
+  .back-to-top-wrapper,
+  .card__footer__action,
+  .section__action,
+  .socials, 
+  .card--twitter,
+  .carousel__fonctions,
+  .newsletter, 
+  .card__image,
+  .share-bar, 
+  video,
+  audio, 
+  object, 
+  iframe {
     display: none !important;
   }
 
-  div,
-  img {
+  .grid {  
+    display: block; /* needed so that content in grid don't break the break-inside rule */ 
+  }
+
+  .swiper-wrapper {
+    page-break-after: always; 
+    transform: none !important; 
+    height: auto !important; 
+    display: flex; 
+    flex-wrap: wrap; 
+  }
+
+  .swiper-slide  {
+    flex-basis: 50%; 
+    width: auto !important; 
+    margin-right: 0 !important; 
+  }
+
+  .ratio {
+    padding-bottom: 0 !important; 
+  }
+
+  p,
+  img,
+  ul,
+  .card {
+    position: relative; 
+    display: block; 
     break-inside: avoid;
+  }
+
+  .card {
+    margin-bottom: 2em;  
   }
 }
