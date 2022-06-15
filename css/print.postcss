@@ -27,8 +27,16 @@
     display: none !important;
   }
 
-  div,
-  img {
+  .grid {  
+    display: block; /* needed so that content in grid have break-inside working */ 
+  }
+
+  p,
+  img,
+  ul,
+  .card {
+    position: relative; 
+    display: block; 
     break-inside: avoid;
   }
 
