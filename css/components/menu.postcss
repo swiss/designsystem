@@ -5,6 +5,11 @@
 
 .menu {
   @apply list-none;
+
+  a, 
+  a:hover {
+    @apply no-underline text-inherit; /* override general styling for links in main */ 
+  }
 }
 
 .menu__item {

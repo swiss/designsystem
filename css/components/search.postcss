@@ -204,9 +204,13 @@
 
 .search-result {
   @apply card--flat;
-
   @apply block space-y-4;
   
+  &, 
+  &:hover {
+    @apply no-underline text-inherit; /* override general styling for links in main */ 
+  }
+
   @media screen(sm) {
     @apply grid gap-x-6;
     grid-template-columns: 4fr 1fr;
