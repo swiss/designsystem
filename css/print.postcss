@@ -26,18 +26,37 @@
   .section__action,
   .socials, 
   .card--twitter,
-  .carousel, 
+  .carousel__fonctions,
+  .newsletter, 
+  .card__image,
+  .share-bar, 
   video,
   audio, 
   object, 
-  iframe, 
-  .newsletter, 
-  .card__image {
+  iframe {
     display: none !important;
   }
 
   .grid {  
-    display: block; /* needed so that content in grid have break-inside working */ 
+    display: block; /* needed so that content in grid don't break the break-inside rule */ 
+  }
+
+  .swiper-wrapper {
+    page-break-after: always; 
+    transform: none !important; 
+    height: auto !important; 
+    display: flex; 
+    flex-wrap: wrap; 
+  }
+
+  .swiper-slide  {
+    flex-basis: 50%; 
+    width: auto !important; 
+    margin-right: 0 !important; 
+  }
+
+  .ratio {
+    padding-bottom: 0 !important; 
   }
 
   p,
