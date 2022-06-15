@@ -9,6 +9,12 @@
   @apply mr-3 md:mb-0.5 lg:mb-1;
   @apply focus:outline-none ring-0;
 
+  
+  &, 
+  &:hover {
+    @apply text-inherit; /* override general styling for links in main */ 
+  }
+
   &:focus .tag-item__inner { 
     @apply outline-none ring-2 ring-purple-300;
   }
