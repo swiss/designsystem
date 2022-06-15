@@ -5,7 +5,7 @@
 /* default margin-top for all elements */
 
 .vertical-spacing > * {
-  @apply mt-10 xl:mt-20;
+  @apply mt-12 2xl:mt-14;
 
   &:first-child {
     @apply mt-0; 
@@ -21,43 +21,22 @@
     @apply mb-0; 
   
     & + * {
-      @apply mt-[1.75em];
-    }
-
-    & + p, 
-    & + .list--default, & + [identifier="list"] {
-      @apply mt-[1.35em];
-    }
-  }
-
-  /* elements following paragraphs */
-  & > p {
-    & + p, 
-    & + .list--default, & + [identifier="list"] {
-      @apply mt-[1em];
-    }
-
-    & + table, 
-    & + .accordion {
-      @apply mt-[2em];
-    }
-  }
-
-  /* elements following default lists*/ 
-  & > .list--default, 
-  & > [identifier="list"] {
-    & + p {
-      @apply mt-[1em];
-    }
-  }
-
-  /* elements following pictures */
-  & > figure, 
-  & > [identifier="image"] {
-    & + p {
       @apply mt-[1.5em];
     }
+
+    & + p {
+      @apply mt-[1em];
+    }
+  }
+
+  /* consecutive lists or paragraphs */
+  & > p + p,
+  & > p + ul,
+  & > p + ol,
+  & > p + [identifier="list"],
+  & > ul + p,
+  & > ol + p,
+  [identifier="list"] + p {
+    @apply mt-[1em];
   }
 }
-
-
