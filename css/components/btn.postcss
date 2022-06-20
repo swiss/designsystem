@@ -168,3 +168,9 @@
     @apply relative ml-[0.2em] left-[0.1em];
   }
 }
+
+/* remove default tailwind button appearance, causing bugs on iPads with Safari iOS */
+button, [type='button'], [type='reset'], [type='submit'] {
+  -webkit-appearance: none; 
+  appearance: none; 
+}
