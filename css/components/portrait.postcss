@@ -6,7 +6,6 @@
   @apply flex flex-col items-center;
   @apply lg:flex-row lg:items-start;
   @apply lg:py-6;
-  @apply lg:-mr-11 xl:-mr-16;
 }
 
 .portrait__image {
@@ -16,6 +15,15 @@
 
   & img {
     @apply w-full;
+    @apply max-w-none;
+
+    @screen lg {  
+      width: calc(100% + theme('spacing.11'));
+    }    
+
+    @screen xl {  
+      width: calc(100% + theme('spacing.16'));
+    }    
   }
 }
 
@@ -25,7 +33,6 @@
   @apply relative;
   @apply ml-8 md:ml-0;
   @apply -top-8 lg:top-11 xl:top-16;
-  @apply lg:-left-11 xl:-left-16;
 }
 
 .portrait__card__body {
