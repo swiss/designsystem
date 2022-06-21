@@ -396,6 +396,37 @@
 
       <ContactSection />
     </main>
+    <Modal>
+      <template v-slot:header>
+        Demo Modal
+      </template>
+      <template v-slot:body>
+        <Card type="default">
+          <template v-slot:body>
+            <p>
+              Bacon ipsum dolor amet prosciutto spare ribs pork loin leberkas short loin. Ham hock picanha pork chop flank ribeye porchetta cow tri-tip turkey sausage chuck drumstick turducken. Bacon pancetta ham hock tri-tip burgdoggen brisket chicken meatball. Ground round spare ribs ham fatback pastrami tri-tip ham hock, corned beef pork belly ball tip short ribs hamburger meatloaf beef.
+              Prosciutto beef ribs alcatra, hamburger picanha chicken capicola shankle swine bresaola turducken. Brisket bresaola pig leberkas fatback tri-tip chuck pork drumstick turducken ham hock ground round. Shankle bacon pancetta salami. T-bone jowl beef sausage biltong, short loin fatback landjaeger tri-tip shoulder hamburger. Andouille pancetta sirloin, pork chop strip steak boudin hamburger leberkas sausage bacon.
+            </p>
+            <p>
+              Filet mignon cow cupim pig buffalo ham turducken biltong boudin bacon ribeye swine sausage. Hamburger bacon beef meatball pork chop, alcatra jerky tongue ribeye bresaola ball tip kielbasa turkey. Short loin tri-tip picanha andouille alcatra spare ribs kevin landjaeger corned beef tail pancetta pork chop. Pork chop flank hamburger picanha capicola ground round ball tip, chicken andouille porchetta corned beef cupim bacon. Beef ribs leberkas ribeye shankle corned beef rump.
+            </p>
+            <p>
+              Jerky tongue capicola pork belly, cow cupim boudin. Drumstick pork boudin kielbasa pork loin, chuck rump shankle. Frankfurter ham bacon tongue cow. Chicken turducken capicola leberkas, tenderloin tri-tip ball tip. Capicola burgdoggen tenderloin turducken, salami ribeye ham hock porchetta pork sausage.
+            </p>
+            <p>
+              Capicola kielbasa shank ham hock, ground round ham cupim chuck brisket short ribs andouille hamburger turkey. Bacon tongue fatback turducken shankle, beef jowl short loin tail picanha sirloin pig strip steak meatloaf tenderloin. Beef alcatra tongue, buffalo hamburger pancetta prosciutto biltong boudin spare ribs brisket ground round corned beef kevin short ribs. Spare ribs pork belly tenderloin boudin leberkas bresaola brisket strip steak swine meatball tri-tip.
+            </p>
+          </template>
+        </Card>
+      </template>
+      <template v-slot:footer>
+        <Btn
+          variant="outline"
+          size="base"
+          label="Call to action"
+        />
+      </template>
+    </Modal>
     <footer class="footer" id="main-footer">
       <footer-information />
       <footer-navigation />
@@ -424,6 +455,10 @@ import RelatedTags from '~/components/ch/components/RelatedTags.vue'
 import DownloadItem from '~/components/ch/components/DownloadItem.vue'
 import Newsletter from '~/components/ch/components/Newsletter.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
+import Btn from '../components/ch/components/Btn.vue'
+import Card from '../components/ch/components/Card.vue'
+import Modal from '../components/ch/components/Modal.vue'
+
 export default {
   name: 'detailPageSimple',
   components: {
@@ -447,7 +482,10 @@ export default {
     DownloadItem,
     Newsletter,
     ShareBar,
-  },
+    Card,
+    Btn,
+    Modal,
+},
   data: function () {
     return {
       slides: [

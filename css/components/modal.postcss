@@ -2,28 +2,46 @@
   MODAL
 \*----------------------------------------*/
 
+.modal, 
+.modal__backdrop {
+  @apply w-full h-full top-0 left-0;
+}
+
 .modal {
-  @apply flex items-center justify-center w-full h-full;
-  @apply fixed top-0 left-0;
+  @apply fixed z-40;
+  @apply w-full h-full top-0 left-0;
+  @apply px-[5vw] py-[10vh];
 }
 
 .modal__backdrop {
-  @apply absolute left-0 top-0 h-full w-full bg-gray-600 opacity-75;
+  @apply absolute z-30;
+  @apply bg-gray-600/90;
+  @apply cursor-pointer;  
 }
 
-.modal__container {
-  @apply w-11/12 max-w-md;
-  @apply z-50;
-  @apply rounded shadow-lg;
-  @apply overflow-y-auto;
+.modal__content {
+    @apply relative overflow-hidden z-40; 
+    @apply w-[90-vw] max-h-[80vh];
+    @apply flex flex-col items-start;
+    @apply my-0 mx-auto;
 }
 
 .modal__header {
-  @apply flex justify-between items-center;
+  @apply text-white;
+  @apply mb-2 lg:mb-4;
 }
 
-.modal__header,
-.modal__body,
-.modal__footer {
-  @apply p-4;
+.modal__title {
+  @apply inline;
 }
+
+.modal__body {
+  @apply w-full overflow-auto;
+}
+
+.modal__footer {
+  @apply w-full h-auto; 
+  @apply text-right p-4;
+  @apply  bg-white border-t border-secondary-100;
+}
+
