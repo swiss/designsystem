@@ -25,7 +25,7 @@
       aria-hidden="true"
       :id="`content-${id}`"
     >
-      <div class="accordion__content">
+      <div class="accordion__content vertical-spacing">
         <slot />
       </div>
     </div>
