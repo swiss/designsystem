@@ -1,0 +1,183 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import Card from '../../ch/components/Card.vue';
+import Btn from '../../ch/components/Btn.vue';
+import SvgIcon from '../../ch/components/SvgIcon.vue';
+
+<Meta
+  title="Components/Card/Cards variants"
+  components={Card, Btn, SvgIcon}
+/>
+
+# Card Variants
+
+[intro here]
+
+## Article or news item
+This is the default Card variant, built with the following content types:
+- image
+- title
+- short description
+- link 
+- topic (optional)
+
+export const TemplateCardArticle = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Card, Btn, SvgIcon },
+  template: 
+  `
+    <div style="padding: 3em;" class="bg--secondary-50">
+      <div style="max-width: 600px; margin: auto;">
+        <Card type="default" >
+          <template v-slot:image>
+            <img src="https://placekitten.com/g/775/350" alt="cat">
+          </template>
+          <template v-slot:body>
+            <h3 class="card__title">Daten und Dienste online kostenlos als Open Government Data (OGD)</h3>
+            <p>
+              Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+              sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              Lorem
+            </p>
+          </template>
+          <template v-slot:footerInfo>
+            Article
+          </template>
+          <template v-slot:footerAction>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
+          </template>
+        </Card>
+      </div>
+    </div>
+  `,
+});
+
+<Story
+  name="Article or news item"
+  args={{}}
+>
+  {TemplateCardArticle.bind({})}
+</Story>
+
+## Teaser for events
+Card variant for events, built with the following content types:
+- image
+- title
+- short description
+- link 
+- Begin/end date
+- hour
+- place
+- topic (optional)
+
+export const TemplateCardEvent = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Card, Btn, SvgIcon },
+  template: 
+  `
+    <div style="padding: 3em;" class="bg--secondary-50">
+      <div style="max-width: 600px; margin: auto;">
+        <Card type="default" >
+          <template v-slot:image>
+            <img src="https://placekitten.com/g/775/350" alt="cat">
+          </template>
+          <template v-slot:body>
+            <h3 class="card__title">Geo.Hackmin</h3>
+            <p>
+              Hatten Sie schon immer eine Idee, die sie mit Geodaten umsetzen wollten?
+              Wollten Sie schon immer ein Problem mit Hilfe von Karten und Luftbildern lösen?
+            </p>
+            <ul class="flex flex-wrap">
+              <li class="flex items-center mr-6 mb-2">
+                <SvgIcon icon="Calendar" size="xl" class="-ml-1.5 mr-1" />
+                <div>10-12 Mai 2021</div>
+              </li>
+              <li class="flex items-center mr-6 mb-2">
+                <SvgIcon icon="Clock" size="xl" class="-ml-1.5 mr-1" />
+                <div>9 bis 11 Uhr</div>
+              </li>
+              <li class="flex items-center mr-6 mb-2">
+                <SvgIcon icon="MapMarker" size="xl" class="-ml-1.5 mr-1" />
+                <div>Zürich</div>
+              </li>
+            </ul>
+          </template>
+          <template v-slot:footerInfo>
+            Veranstaltung
+          </template>
+          <template v-slot:footerAction>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
+          </template>
+        </Card>
+      </div>
+    </div>
+  `,
+});
+
+<Story
+  name="Event item"
+  args={{}}
+>
+  {TemplateCardEvent.bind({})}
+</Story>
+
+## Teaser for Social medias
+Card variant for social medias, built with the following content:
+- title
+- 
+- link 
+- Begin/end date
+- hour
+- place
+- topic (optional)
+
+export const TemplateCardShare = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Card, Btn, SvgIcon },
+  template: 
+  `
+    <div style="padding: 3em;" class="bg--secondary-50">
+      <div style="max-width: 600px; margin: auto;">
+        <Card>
+          <template v-slot:header>
+            <SvgIcon icon="Twitter" size="xl" class="mr-2" />
+            <div>Feed title</div>
+          </template>
+          <template v-slot:body>
+            script or iframe to load the feed
+          </template>
+          <template v-slot:footerAction>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="only"
+              icon="ArrowRight"
+              label="Weiterlesen"
+            />
+          </template>
+        </Card>
+      </div>
+    </div>
+  `,
+});
+
+<Canvas>
+  <Story
+    name="Sharing item"
+    args={{}}
+  >
+    {TemplateCardShare.bind({})}
+  </Story>
+</Canvas>
