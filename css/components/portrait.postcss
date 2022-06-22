@@ -26,11 +26,11 @@
 
     /* overlapping width of the picture: 100% +  margin-top of the card + responsive gap */
     @screen lg {  
-      width: calc(100% + theme('spacing.11') + theme('spacing.10')); 
+      width: calc(100% + theme('spacing.10') + theme('spacing.10')); 
     }    
 
     @screen xl {  
-      width: calc(100% + theme('spacing.16') + theme('spacing.12'));
+      width: calc(100% + theme('spacing.12') + theme('spacing.12'));
     }  
     
     @screen 3xl {  
@@ -44,7 +44,7 @@
   @apply md:max-w-xl;
   @apply relative;
   @apply ml-8 md:ml-0;
-  @apply -top-8 lg:top-11 xl:top-16;
+  @apply -top-8 lg:top-10 xl:top-12 3xl:top-16;
 }
 
 .portrait__card__body {
