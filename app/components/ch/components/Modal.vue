@@ -1,6 +1,9 @@
 <template>
   <div v-if="isOpen" :class="computedClasses" tabindex="0">
     <div class="modal__content">
+      <button @click="close" class="modal__close" >
+        <SvgIcon icon="Cancel" size="2xl" />
+      </button>
 			<header v-if="$slots.header" class="modal__header">
         <h4 class="h4">
           <slot name="header"></slot>
@@ -15,14 +18,18 @@
         <slot name="footer"></slot>
 			</footer>
 		</div>
-    <div class="modal__backdrop"></div>
+    <div @click="close" class="modal__backdrop"></div>
 	</div>
 </template>
 
 <script>
+import SvgIcon from './SvgIcon.vue';
 
 export default {
   name: 'Modal',
+  components: {
+    SvgIcon
+  },
   props: {
     layout: {
       type: String,
@@ -32,6 +39,10 @@ export default {
         'lg'
       ].includes(prop)
     },
+    triggerElements: {
+      type: String,
+      default: ""
+    }
   },
   data() {
     return {
@@ -44,7 +55,28 @@ export default {
       if (this.layout && this.layout !== 'auto') base += `modal--${this.layout} `
       return base
     }
-  }
+  },
+  mounted () {
+    document.querySelectorAll(this.triggerElements).forEach(item => {
+      console.log(item);
+      item.addEventListener("click", this.open);
+    });
+  },
+  beforeDestroy() {
+    document.querySelectorAll(this.triggerElements).forEach(item => {
+      item.removeEventListener("click", this.open);
+    });
+  },
+  methods: {
+    open(e) {
+      this.isOpen = true;
+      e.preventDefault();
+    },
+    close(e) {
+      this.isOpen = false;
+      e.preventDefault();
+    }
+  },
 }
 </script>
 
