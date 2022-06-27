@@ -13,6 +13,13 @@
   @apply px-[5vw] py-[10vh];
 }
 
+.modal__close {
+  @apply absolute z-50;
+  @apply top-0 right-0 -mr-3 -mt-2;
+  @apply text-white;
+  @apply cursor-pointer;
+}
+
 .modal__backdrop {
   @apply absolute z-30;
   @apply bg-gray-600/90;
@@ -20,7 +27,8 @@
 }
 
 .modal__content {
-    @apply relative overflow-hidden z-40; 
+    @apply relative z-40;
+    /* @apply overflow-hidden; needed? */
     @apply w-[90-vw] max-h-[80vh];
     @apply flex flex-col items-start;
     @apply my-0 mx-auto;
@@ -29,10 +37,6 @@
 .modal__header {
   @apply text-white;
   @apply mb-2 lg:mb-4;
-}
-
-.modal__title {
-  @apply inline;
 }
 
 .modal__body {
