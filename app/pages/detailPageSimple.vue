@@ -22,7 +22,7 @@
           beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden. Der
           Vorteil für einen Benutzer liegt darin, dass die Modelldateien und
           evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
-          müssen.
+          müssen.<a href="#" class="test link">Open lightbox</a>
         </template>
         <template v-slot:image>
           <figure>
@@ -396,7 +396,7 @@
 
       <ContactSection />
     </main>
-    <Modal>
+    <Modal triggerElements=".share-bar__share-button, .test">
       <template v-slot:header>
         Demo Modal
       </template>
@@ -574,7 +574,7 @@ export default {
         { label: 'INTERLIS', url: '#' },
         { label: 'GKG/KOGIS', url: '#' },
         { label: 'Datenmodell', url: '#' },
-      ]
+      ],
     }
   },
   methods: {

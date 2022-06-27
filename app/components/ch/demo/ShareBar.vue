@@ -4,9 +4,9 @@
       <div class="flex share-container">
         <Print />
         <button
+          id=""
           aria-label="Share document"
-          class="btn btn--bare"
-          onClick="void();"
+          class="btn btn--bare share-bar__share-button"
         >
           <SvgIcon aria-hidden="true" icon="Share" size="xl" />
         </button>
