@@ -78,11 +78,26 @@ export default {
   methods: {
     open(e) {
       this.isOpen = true;
-      e.preventDefault();
+
+      document.addEventListener('keyup', this.keyListener);
+
+      if (e) {
+        e.preventDefault();
+      }
     },
     close(e) {
       this.isOpen = false;
-      e.preventDefault();
+
+      document.removeEventListener('keyup', this.keyListener);
+
+      if (e) {
+        e.preventDefault();
+      }
+    },
+    keyListener(e) {
+      if(e.key === 'Escape') {
+        this.close();
+      }
     }
   },
 }
