@@ -2,7 +2,6 @@
   <div :open="isOpen" :class="computedClasses" >
     <div
       class="modal__content"
-      tabindex="0"
       role="dialog"
       :aria-labelledby="'modal-title-'+uuid"
       :aria-describedby="'modal-desc-'+uuid"
@@ -19,6 +18,7 @@
           {{ title }}
         </h4>
         <button
+          ref="close"
           class="modal__close"
           aria-label="close"
           @click="close"
@@ -109,6 +109,8 @@ export default {
       this.isOpen = true;
 
       document.addEventListener('keyup', this.keyListener);
+
+      this.$refs.close.focus()
 
       if (e) {
         e.preventDefault();
