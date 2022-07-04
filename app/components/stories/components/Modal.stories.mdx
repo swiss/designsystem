@@ -52,7 +52,7 @@ export const Template = (args, { argTypes }) => ({
           label="Trigger 2"
           id="trigger-2"
         />
-        <Modal title="${args.title}" triggerElements="${args.triggerElements}" layout="${args.layout}">
+        <Modal uuid="${args.uuid}"  title="${args.title}" triggerElements="${args.triggerElements}" layout="${args.layout}">
           <template v-slot:body>
             <Card type="default">
               <template v-if="${args.body == 'WithDemoText'}" v-slot:body>
@@ -118,6 +118,7 @@ See an example for the `Sharebar` on the [detail page simple](?path=/docs/pages-
     args={{
       triggerElements: '.trigger-1, #trigger-2',
       layout: 'lg',
+      uuid: '5f93d7d4-fba3-11ec',
       title: 'Modal title',
       body: 'WithDemoText',
       footer: 'WithFooter'
@@ -141,6 +142,8 @@ See an example for the `Sharebar` on the [detail page simple](?path=/docs/pages-
 - `lg`: the modal will have a max-width of `1024px`.
 - `xl`: the modal will have a max-width of `1280px`.
 
-**title**: a title placed on top of the modal
+**uuid**: when several modals are present on a page, they should have an uuid, for accessibility purpose.
+
+**title**: a title placed on top of the modal. For accessibility purpose, this title should always be delivred.
 
 **footer**: a slot to place call to actions at the end of the modal, beeing always visible, also when the body is too loog for the viewport.

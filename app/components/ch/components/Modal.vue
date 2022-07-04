@@ -1,27 +1,52 @@
 <template>
-  <div v-if="isOpen" :class="computedClasses" tabindex="0">
-    <div class="modal__content">
+  <div v-if="isOpen" :class="computedClasses" >
+    <div
+      class="modal__content"
+      tabindex="0"
+      role="dialog"
+      :aria-labelledby="'modal-title-'+uuid"
+      :aria-describedby="'modal-desc-'+uuid"
+    >
       <header
         :class="{ 'modal__header--with-title': title }"
         class="modal__header"
       >
-        <h4 v-if="title" class="h4">
+        <h4
+          v-if="title"
+          :id="'modal-title-'+uuid"
+          class="h4"
+        >
           {{ title }}
         </h4>
-        <button @click="close" class="modal__close">
+        <button
+          class="modal__close"
+          aria-label="close"
+          @click="close"
+        >
           <SvgIcon icon="Cancel" size="2xl" />
         </button>
       </header>
 
-			<div v-if="$slots.body" class="modal__body">
+			<div
+        v-if="$slots.body"
+        :id="'modal-desc-'+uuid"
+        class="modal__body"
+      >
         <slot name="body"></slot>
       </div>
 
-			<footer v-if="$slots.footer" class="modal__footer">
+			<footer
+        v-if="$slots.footer"
+        class="modal__footer"
+      >
         <slot name="footer"></slot>
 			</footer>
 		</div>
-    <div @click="close" class="modal__backdrop"></div>
+    <div
+      class="modal__backdrop"
+      aria-label="close"
+      @click="close"
+    ></div>
 	</div>
 </template>
 
@@ -34,6 +59,10 @@ export default {
     SvgIcon
   },
   props: {
+    uuid: {
+      type: String,
+      default: ""
+    },
     title: {
       type: String,
       default: ""
