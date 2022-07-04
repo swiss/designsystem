@@ -144,8 +144,14 @@ See an example for the `Sharebar` on the [detail page simple](?path=/docs/pages-
 - `lg`: the modal will have a max-width of `1024px`.
 - `xl`: the modal will have a max-width of `1280px`.
 
-**uuid**: when several modals are present on a page, they should have an uuid, for accessibility purpose.
-
-**title**: a title placed on top of the modal. For accessibility purpose, this title should always be delivred.
+**title**: a title placed on top of the modal.
 
 **footer**: a slot to place call to actions at the end of the modal, beeing always visible, also when the body is too loog for the viewport.
+
+## Accessibility
+
+- The modal components should always be placed after the `main` tag.
+- When several modals are present on a page, they should have an `uuid`, for accessibility purpose. (unique `aria-labelledby` and `aria-describedby` )
+- The `title`should always be delivred.
+
+Sources: [w3.org](https://www.w3.org/WAI/ARIA/apg/example-index/dialog-modal/dialog) & [harvard.edu](https://accessibility.huit.harvard.edu/technique-accessible-modal-dialogs)
