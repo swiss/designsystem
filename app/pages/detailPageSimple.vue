@@ -396,10 +396,7 @@
 
       <ContactSection />
     </main>
-    <Modal triggerElements=".share-bar__share-button, #share-link" layout="md">
-      <template v-slot:header>
-        Demo Modal
-      </template>
+    <Modal title="Inhalt teilen" triggerElements=".share-bar__share-button, #share-link" layout="auto">
       <template v-slot:body>
         <Card type="default">
           <template v-slot:body>

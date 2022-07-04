@@ -2,11 +2,11 @@
   <div v-if="isOpen" :class="computedClasses" tabindex="0">
     <div class="modal__content">
       <header
-        :class="{ 'modal__header--with-title': $slots.header }"
+        :class="{ 'modal__header--with-title': title }"
         class="modal__header"
       >
-        <h4 v-if="$slots.header" class="h4">
-          <slot name="header"></slot>
+        <h4 v-if="title" class="h4">
+          {{ title }}
         </h4>
         <button @click="close" class="modal__close">
           <SvgIcon icon="Cancel" size="2xl" />
@@ -34,6 +34,10 @@ export default {
     SvgIcon
   },
   props: {
+    title: {
+      type: String,
+      default: ""
+    },
     layout: {
       type: String,
       validator: (prop) => [
