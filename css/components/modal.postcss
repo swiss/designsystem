@@ -8,12 +8,17 @@
 }
 
 .modal {
+  @apply hidden;
   @apply fixed z-40;
   @apply w-full h-full top-0 left-0;
   @apply py-[10vh];
 
   &.modal--auto {
     @apply text-center;
+  }
+
+  &[open] {
+    @apply block; 
   }
 }
 

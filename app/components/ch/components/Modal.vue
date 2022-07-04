@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isOpen" :class="computedClasses" >
+  <div :open="isOpen" :class="computedClasses" >
     <div
       class="modal__content"
       tabindex="0"
