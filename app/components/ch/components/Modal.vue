@@ -19,6 +19,7 @@
         </h4>
         <button
           ref="close"
+          tabindex="0"
           class="modal__close"
           aria-label="close"
           @click="close"
@@ -84,7 +85,8 @@ export default {
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      triggerElement: undefined
     }
   },
   computed: {
@@ -110,9 +112,10 @@ export default {
 
       document.addEventListener('keyup', this.keyListener);
 
-      this.$refs.close.focus()
+      this.$refs.close.focus();
 
       if (e) {
+        this.triggerElement = e.currentTarget;
         e.preventDefault();
       }
     },
@@ -120,6 +123,11 @@ export default {
       this.isOpen = false;
 
       document.removeEventListener('keyup', this.keyListener);
+
+      if (this.triggerElement) {
+        this.triggerElement.focus();
+        this.triggerElement = undefined;
+      }
 
       if (e) {
         e.preventDefault();
