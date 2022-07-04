@@ -1,14 +1,17 @@
 <template>
   <div v-if="isOpen" :class="computedClasses" tabindex="0">
     <div class="modal__content">
-      <button @click="close" class="modal__close" >
-        <SvgIcon icon="Cancel" size="2xl" />
-      </button>
-			<header v-if="$slots.header" class="modal__header">
-        <h4 class="h4">
+      <header
+        :class="{ 'modal__header--with-title': $slots.header }"
+        class="modal__header"
+      >
+        <h4 v-if="$slots.header" class="h4">
           <slot name="header"></slot>
         </h4>
-			</header>
+        <button @click="close" class="modal__close">
+          <SvgIcon icon="Cancel" size="2xl" />
+        </button>
+      </header>
 
 			<div v-if="$slots.body" class="modal__body">
         <slot name="body"></slot>

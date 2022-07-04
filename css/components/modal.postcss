@@ -10,14 +10,7 @@
 .modal {
   @apply fixed z-40;
   @apply w-full h-full top-0 left-0;
-  @apply px-[5vw] py-[10vh];
-}
-
-.modal__close {
-  @apply absolute z-50;
-  @apply top-0 right-0 -mr-3 -mt-2;
-  @apply text-white;
-  @apply cursor-pointer;
+  @apply py-[10vh];
 }
 
 .modal__backdrop {
@@ -29,14 +22,27 @@
 .modal__content {
     @apply relative z-40;
     /* @apply overflow-hidden; needed? */
-    @apply w-[90-vw] max-h-[80vh];
+    @apply max-h-[80vh];
     @apply flex flex-col items-start;
     @apply my-0 mx-auto;
 }
 
 .modal__header {
+  @apply flex justify-end items-start; 
+  @apply w-full;
   @apply text-white;
   @apply mb-2 lg:mb-4;
+}
+
+.modal__header--with-title {
+  @apply justify-between;
+}
+
+.modal__close {
+  @apply relative;
+  @apply -mr-3 -mt-1 lg:-mt-2;
+  @apply pl-10;
+  @apply cursor-pointer;
 }
 
 .modal__body {
