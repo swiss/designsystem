@@ -124,7 +124,9 @@ export default {
         e.preventDefault();
       }
 
-      this.$refs.close.focus();
+      requestAnimationFrame(() => { // because the focus() won't work directly after the change of  display:block
+        this.$refs.close.focus();
+      })
   },
     close(e) {
       this.isOpen = false;
