@@ -1,5 +1,9 @@
 <template>
-  <div :open="isOpen" :class="computedClasses" >
+  <div
+    :open="isOpen"
+    :class="computedClasses"
+    :aria-modal="isOpen"
+  >
     <div
       class="modal__content"
       role="dialog"
