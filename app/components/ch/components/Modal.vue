@@ -48,9 +48,12 @@
 			</footer>
 		</div>
     <div
+      ref="backdrop"
+      tabindex="0"
       class="modal__backdrop"
       aria-label="close"
       @click="close"
+      @focus="backdropFocusListener"
     ></div>
 	</div>
 </template>
@@ -116,13 +119,13 @@ export default {
 
       document.addEventListener('keyup', this.keyListener);
 
-      this.$refs.close.focus();
-
       if (e) {
         this.triggerElement = e.currentTarget;
         e.preventDefault();
       }
-    },
+
+      this.$refs.close.focus();
+  },
     close(e) {
       this.isOpen = false;
 
@@ -141,6 +144,9 @@ export default {
       if(e.key === 'Escape') {
         this.close();
       }
+    },
+    backdropFocusListener(e) {
+      this.$refs.close.focus();
     }
   },
 }
