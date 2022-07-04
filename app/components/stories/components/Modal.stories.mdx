@@ -39,19 +39,21 @@ export const Template = (args, { argTypes }) => ({
   components: { Modal, Card, Btn },
   template:
     `
-      <main>
-        <Btn
-          variant="outline"
-          size="base"
-          label="Trigger 1"
-          class="trigger-1"
-        />
-        <Btn
-          variant="outline"
-          size="base"
-          label="Trigger 2"
-          id="trigger-2"
-        />
+      <div>
+        <main>
+          <Btn
+            variant="outline"
+            size="base"
+            label="Trigger 1"
+            class="trigger-1"
+          />
+          <Btn
+            variant="outline"
+            size="base"
+            label="Trigger 2"
+            id="trigger-2"
+          />
+        </main>
         <Modal uuid="${args.uuid}"  title="${args.title}" triggerElements="${args.triggerElements}" layout="${args.layout}">
           <template v-slot:body>
             <Card type="default">
@@ -99,7 +101,7 @@ export const Template = (args, { argTypes }) => ({
             />
           </template>
         </Modal>
-      </main>
+      </div>
     `,
 })
 
