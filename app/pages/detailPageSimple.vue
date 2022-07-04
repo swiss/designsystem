@@ -400,31 +400,31 @@
       <template v-slot:body>
         <Card type="default">
           <template v-slot:body>
-            <p>
-              Bacon ipsum dolor amet prosciutto spare ribs pork loin leberkas short loin. Ham hock picanha pork chop flank ribeye porchetta cow tri-tip turkey sausage chuck drumstick turducken. Bacon pancetta ham hock tri-tip burgdoggen brisket chicken meatball. Ground round spare ribs ham fatback pastrami tri-tip ham hock, corned beef pork belly ball tip short ribs hamburger meatloaf beef.
-              Prosciutto beef ribs alcatra, hamburger picanha chicken capicola shankle swine bresaola turducken. Brisket bresaola pig leberkas fatback tri-tip chuck pork drumstick turducken ham hock ground round. Shankle bacon pancetta salami. T-bone jowl beef sausage biltong, short loin fatback landjaeger tri-tip shoulder hamburger. Andouille pancetta sirloin, pork chop strip steak boudin hamburger leberkas sausage bacon.
-            </p>
-            <p>
-              Filet mignon cow cupim pig buffalo ham turducken biltong boudin bacon ribeye swine sausage. Hamburger bacon beef meatball pork chop, alcatra jerky tongue ribeye bresaola ball tip kielbasa turkey. Short loin tri-tip picanha andouille alcatra spare ribs kevin landjaeger corned beef tail pancetta pork chop. Pork chop flank hamburger picanha capicola ground round ball tip, chicken andouille porchetta corned beef cupim bacon. Beef ribs leberkas ribeye shankle corned beef rump.
-            </p>
-            <p>
-              Jerky tongue capicola pork belly, cow cupim boudin. Drumstick pork boudin kielbasa pork loin, chuck rump shankle. Frankfurter ham bacon tongue cow. Chicken turducken capicola leberkas, tenderloin tri-tip ball tip. Capicola burgdoggen tenderloin turducken, salami ribeye ham hock porchetta pork sausage.
-            </p>
-            <p>
-              Capicola kielbasa shank ham hock, ground round ham cupim chuck brisket short ribs andouille hamburger turkey. Bacon tongue fatback turducken shankle, beef jowl short loin tail picanha sirloin pig strip steak meatloaf tenderloin. Beef alcatra tongue, buffalo hamburger pancetta prosciutto biltong boudin spare ribs brisket ground round corned beef kevin short ribs. Spare ribs pork belly tenderloin boudin leberkas bresaola brisket strip steak swine meatball tri-tip.
-            </p>
-            <p>
-               Capicola kielbasa shank ham hock, ground
-            </p>
+            <div>
+              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Facebook" label="Facebook" class="mr-2 mb-3"/>
+              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Twitter" label="Twitter" class="mr-2 mb-3"/>
+              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="LinkedIn" label="LinkedIn" class="mr-2 mb-3"/>
+              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Xing" label="Xing" class="mr-2 mb-3"/>
+              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Phone" label="Whatsapp" class="mr-2 mb-3"/>
+            </div>
+            <hr>
+            <div class="pt-3">
+              <Input
+                type="outline"
+                size="base"
+                label="Label"
+                value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"
+                id="my-id"
+              />
+              <Btn
+                variant="outline"
+                size="base"
+                label="URL Kopieren"
+                class="mt-3"
+              />
+            </div>
           </template>
         </Card>
-      </template>
-      <template v-slot:footer>
-        <Btn
-          variant="outline"
-          size="base"
-          label="Call to action"
-        />
       </template>
     </Modal>
     <footer class="footer" id="main-footer">
