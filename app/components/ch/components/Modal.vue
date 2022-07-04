@@ -58,7 +58,6 @@ export default {
   },
   mounted () {
     document.querySelectorAll(this.triggerElements).forEach(item => {
-      console.log(item);
       item.addEventListener("click", this.open);
     });
   },

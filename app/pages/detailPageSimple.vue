@@ -22,7 +22,7 @@
           beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden. Der
           Vorteil für einen Benutzer liegt darin, dass die Modelldateien und
           evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
-          müssen.<a href="#" class="test link">Open lightbox</a>
+          müssen. <a href="#" class="link" id="share-link">Diese Seite teilen</a>
         </template>
         <template v-slot:image>
           <figure>
@@ -396,7 +396,7 @@
 
       <ContactSection />
     </main>
-    <Modal triggerElements=".share-bar__share-button, .test">
+    <Modal triggerElements=".share-bar__share-button, #share-link">
       <template v-slot:header>
         Demo Modal
       </template>
