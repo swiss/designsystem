@@ -39,8 +39,10 @@ export default {
       validator: (prop) => [
         'auto',
         'sm',
-        'lg'
-      ].includes(prop)
+        'md',
+        'lg',
+        'xl'
+      ].includes(prop),
     },
     triggerElements: {
       type: String,
@@ -55,7 +57,7 @@ export default {
   computed: {
     computedClasses () {
       let base = 'modal '
-      if (this.layout && this.layout !== 'auto') base += `modal--${this.layout} `
+      if (this.layout) base += `modal--${this.layout} `
       return base
     }
   },

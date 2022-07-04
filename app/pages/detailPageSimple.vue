@@ -396,7 +396,7 @@
 
       <ContactSection />
     </main>
-    <Modal triggerElements=".share-bar__share-button, #share-link">
+    <Modal triggerElements=".share-bar__share-button, #share-link" layout="md">
       <template v-slot:header>
         Demo Modal
       </template>
@@ -415,6 +415,9 @@
             </p>
             <p>
               Capicola kielbasa shank ham hock, ground round ham cupim chuck brisket short ribs andouille hamburger turkey. Bacon tongue fatback turducken shankle, beef jowl short loin tail picanha sirloin pig strip steak meatloaf tenderloin. Beef alcatra tongue, buffalo hamburger pancetta prosciutto biltong boudin spare ribs brisket ground round corned beef kevin short ribs. Spare ribs pork belly tenderloin boudin leberkas bresaola brisket strip steak swine meatball tri-tip.
+            </p>
+            <p>
+               Capicola kielbasa shank ham hock, ground
             </p>
           </template>
         </Card>

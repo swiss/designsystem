@@ -11,6 +11,10 @@
   @apply fixed z-40;
   @apply w-full h-full top-0 left-0;
   @apply py-[10vh];
+
+  &.modal--auto {
+    @apply text-center;
+  }
 }
 
 .modal__backdrop {
@@ -21,9 +25,37 @@
 
 .modal__content {
     @apply relative z-40;
+    @apply container;
     @apply max-h-[80vh];
-    @apply flex flex-col items-start;
+    @apply flex flex-col items-stretch;
     @apply my-0 mx-auto;
+
+    /* 
+    Sizing: 
+    I didn't use `container container--grid` & `container__center--sm` 
+    as the container then take the full-width and block the interaction 
+    of the backdrop 
+    */
+
+    .modal--sm & {
+      @apply max-w-screen-sm;
+    }
+
+    .modal--md & {
+      @apply max-w-screen-md;
+    }
+
+    .modal--lg & {
+      @apply max-w-screen-lg;
+    }
+
+    .modal--xl & {
+      @apply max-w-screen-xl;
+    }
+
+    .modal--auto & {
+      @apply inline-flex w-auto text-left;
+    }
 }
 
 .modal__header {
