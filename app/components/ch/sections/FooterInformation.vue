@@ -29,6 +29,14 @@
               <SvgIcon icon="Youtube" class="footer-information__icon" />
               Youtube
             </a>
+            <a href="linkedin.com" class="footer__link">
+              <SvgIcon icon="LinkedIn" class="footer-information__icon" />
+              LinkedIn
+            </a>
+            <a href="xing.com" class="footer__link">
+              <SvgIcon icon="Xing" class="footer-information__icon" />
+              Xing
+            </a>
           </div>
 
           <Btn label="News abonnieren" icon="ArrowRight" icon-pos="right" variant="outline-negative" />
