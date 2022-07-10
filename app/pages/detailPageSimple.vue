@@ -400,14 +400,44 @@
       <template v-slot:body>
         <Card type="default">
           <template v-slot:body>
-            <div>
-              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Facebook" label="Facebook" class="mr-2 mb-3"/>
-              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Twitter" label="Twitter" class="mr-2 mb-3"/>
-              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="LinkedIn" label="LinkedIn" class="mr-2 mb-3"/>
-              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Xing" label="Xing" class="mr-2 mb-3"/>
-              <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Phone" label="Whatsapp" class="mr-2 mb-3"/>
+            <div class="flex flex-wrap justify-between">
+              <a href="#" class="link" title="Share on Facebook">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="Facebook" 
+                  label="Facebook" 
+                />
+              </a>
+              <a href="#" class="link" title="Share on Twitter">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="Twitter" 
+                  label="Twitter" 
+                />
+              </a>
+              <a href="#" class="link" title="Share on LinkedIn">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="LinkedIn" 
+                  label="LinkedIn" 
+                />
+              </a>
+              <a href="#" class="link" title="Share on Xing">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="Xing" 
+                  label="Xing" 
+                />
+              </a>
+              <a href="#" class="link" title="Share on Whatsapp">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="Phone" 
+                  label="Whatsapp" 
+                />
+              </a>
             </div>
-            <hr>
+            <hr class="separator">
             <div class="pt-3">
               <Input
                 type="outline"
@@ -456,6 +486,7 @@ import DownloadItem from '~/components/ch/components/DownloadItem.vue'
 import Newsletter from '~/components/ch/components/Newsletter.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 import Btn from '../components/ch/components/Btn.vue'
+import SvgIcon from '../components/ch/components/SvgIcon.vue'
 import Card from '../components/ch/components/Card.vue'
 import Modal from '../components/ch/components/Modal.vue'
 
@@ -484,6 +515,7 @@ export default {
     ShareBar,
     Card,
     Btn,
+    SvgIcon,
     Modal,
 },
   data: function () {
