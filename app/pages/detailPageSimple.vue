@@ -400,7 +400,7 @@
       <template v-slot:body>
         <Card type="default">
           <template v-slot:body>
-            <div class="flex flex-wrap justify-between">
+            <div class="flex flex-wrap gap-6">
               <a href="#" class="link" title="Share on Facebook">
                 <SvgIcon 
                   size="2xl" 
