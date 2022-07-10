@@ -1,10 +1,11 @@
 <template>
-  <component 
-    :is="tag" 
-    :href="link" 
-    :type="type" 
-    :class="classes" 
+  <component
+    :is="tag"
+    :href="link"
+    :type="type"
+    :class="classes"
     :aria-label="aria"
+    :title="label"
   >
     <SvgIcon
       v-if="this.icon"
@@ -87,7 +88,7 @@ export default {
     aria () {
       return this.iconPos === 'only' && this.type === 'button' ? this.label : false
     },
-    
+
     classes () {
       let base = 'btn '
       if (this.variant) base += `btn--${this.variant} `

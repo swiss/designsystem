@@ -1,0 +1,157 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Modal from '../../ch/components/Modal.vue'
+import Card from '../../ch/components/Card.vue'
+import Btn from '../../ch/components/Btn.vue'
+import Input from '../../ch/components/Input.vue'
+
+<Meta
+  title="Components/Modal"
+  component={Modal}
+  argTypes={{
+    triggerElements: {
+      control: {
+        type: 'select',
+        options: ['.trigger-1, #trigger-2', '.trigger-1', '#trigger-2']
+      }
+    },
+    layout: {
+      control: {
+        type: 'select',
+        options: ['auto', 'sm', 'md', 'lg', 'xl', undefined]
+      }
+    },
+    body: {
+      control: {
+        type: 'select',
+        options: ['WithDemoText', 'WithDemoShare']
+      }
+    },
+    footer: {
+      control: {
+        type: 'select',
+        options: ['NoFooter', 'WithFooter']
+      }
+    },
+  }} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Modal, Card, Btn },
+  template:
+    `
+      <div>
+        <main>
+          <Btn
+            variant="outline"
+            size="base"
+            label="Trigger 1"
+            class="trigger-1"
+          />
+          <Btn
+            variant="outline"
+            size="base"
+            label="Trigger 2"
+            id="trigger-2"
+          />
+        </main>
+        <Modal uuid="${args.uuid}"  title="${args.title}" triggerElements="${args.triggerElements}" layout="${args.layout}">
+          <template v-slot:body>
+            <Card type="default">
+              <template v-if="${args.body == 'WithDemoText'}" v-slot:body>
+                <p>
+                  Bacon ipsum dolor amet prosciutto spare ribs pork loin leberkas short loin. Ham hock picanha pork chop flank ribeye porchetta cow tri-tip turkey sausage chuck drumstick turducken. Bacon pancetta ham hock tri-tip burgdoggen brisket chicken meatball. Ground round spare ribs ham fatback pastrami tri-tip ham hock, corned beef pork belly ball tip short ribs hamburger meatloaf beef.
+                  Prosciutto beef ribs alcatra, hamburger picanha chicken capicola shankle swine bresaola turducken. Brisket bresaola pig leberkas fatback tri-tip chuck pork drumstick turducken ham hock ground round. Shankle bacon pancetta salami. T-bone jowl beef sausage biltong, short loin fatback landjaeger tri-tip shoulder hamburger. Andouille pancetta sirloin, pork chop strip steak boudin hamburger leberkas sausage bacon.
+                </p>
+                <p>
+                  Bacon ipsum dolor amet prosciutto spare ribs pork loin leberkas short loin. Ham hock picanha pork chop flank ribeye porchetta cow tri-tip turkey sausage chuck drumstick turducken. Bacon pancetta ham hock tri-tip burgdoggen brisket chicken meatball. Ground round spare ribs ham fatback pastrami tri-tip ham hock, corned beef pork belly ball tip short ribs hamburger meatloaf beef.
+                  Prosciutto beef ribs alcatra, hamburger picanha chicken capicola shankle swine bresaola turducken. Brisket bresaola pig leberkas fatback tri-tip chuck pork drumstick turducken ham hock ground round. Shankle bacon pancetta salami. T-bone jowl beef sausage biltong, short loin fatback landjaeger tri-tip shoulder hamburger. Andouille pancetta sirloin, pork chop strip steak boudin hamburger leberkas sausage bacon.
+                </p>
+                <p>
+                  Bacon ipsum dolor amet prosciutto spare ribs pork loin leberkas short loin. Ham hock picanha pork chop flank ribeye porchetta cow tri-tip turkey sausage chuck drumstick turducken. Bacon pancetta ham hock tri-tip burgdoggen brisket chicken meatball. Ground round spare ribs ham fatback pastrami tri-tip ham hock, corned beef pork belly ball tip short ribs hamburger meatloaf beef.
+                  Prosciutto beef ribs alcatra, hamburger picanha chicken capicola shankle swine bresaola turducken. Brisket bresaola pig leberkas fatback tri-tip chuck pork drumstick turducken ham hock ground round. Shankle bacon pancetta salami. T-bone jowl beef sausage biltong, short loin fatback landjaeger tri-tip shoulder hamburger. Andouille pancetta sirloin, pork chop strip steak boudin hamburger leberkas sausage bacon.
+                </p>
+              </template>
+              <template v-else="${args.body == 'WithDemoShare'}" v-slot:body>
+                <div>
+                  <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Facebook" label="Facebook" class="mr-2 mb-3"/>
+                  <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Twitter" label="Twitter" class="mr-2 mb-3"/>
+                  <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="LinkedIn" label="LinkedIn" class="mr-2 mb-3"/>
+                  <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Xing" label="Xing" class="mr-2 mb-3"/>
+                  <Btn to="#" variant="outline" size="lg" icon-pos="only" icon="Phone" label="Whatsapp" class="mr-2 mb-3"/>
+                </div>
+                <hr>
+                <div class="pt-3">
+                  <Input
+                    type="outline"
+                    size="base"
+                    label="Label"
+                    value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"
+                    id="my-id"
+                  />
+                  <Btn variant="outline" size="base" label="Copy URL" class="mt-3" />
+                </div>
+              </template>
+            </Card>
+          </template>
+          <template v-if="${args.footer == 'WithFooter'}"  v-slot:footer>
+            <Btn
+              variant="outline"
+              size="base"
+              label="Call to action"
+            />
+          </template>
+        </Modal>
+      </div>
+    `,
+})
+
+
+# Modal
+
+The `Modal` component allows to display content on top of the page, in an overlay.
+
+See an example for the `Sharebar` on the [detail page simple](?path=/docs/pages-detail-page-simple--example). **(Please view in full-width tab to have the final behaviour)**
+
+## Example
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      triggerElements: '.trigger-1, #trigger-2',
+      layout: 'lg',
+      uuid: '5f93d7d4-fba3-11ec',
+      title: 'Modal title',
+      body: 'WithDemoText',
+      footer: 'WithFooter'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+## Options
+
+**triggerElements**: a string containing all the selectors (classes and id's) which should trigger an opening of the modal.
+
+**layout**: options to control the width of the modal overlay:
+- `undefined`: the modal will have the same width as the website container.
+- `auto`: the width of the modal depends on the width of the `body` content. Max-width is the website's container width.
+- `sm`: the modal will have a max-width of `640px`.
+- `md`: the modal will have a max-width of `768px`.
+- `lg`: the modal will have a max-width of `1024px`.
+- `xl`: the modal will have a max-width of `1280px`.
+
+**title**: a title placed on top of the modal.
+
+**footer**: a slot to place call to actions at the end of the modal, beeing always visible, also when the body is too loog for the viewport.
+
+## Accessibility
+
+- The modal components should always be placed after the `main` tag.
+- When several modals are present on a page, they should have an `uuid`, for accessibility purpose. (unique `aria-labelledby` and `aria-describedby` )
+- The `title`should always be delivred.
+
+Sources: [w3.org](https://www.w3.org/WAI/ARIA/apg/example-index/dialog-modal/dialog) & [harvard.edu](https://accessibility.huit.harvard.edu/technique-accessible-modal-dialogs)
