@@ -52,20 +52,22 @@
               </li>
               
             </ul>
-            <Accordion id="2"
-              :content='[
-                {
-                  title: "Öffnungszeiten",
-                  content:  "<table class=\"table table--compact\">" +
-                            "<tr> <td>Montag</td>     <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>" + 
-                            "<tr> <td>Dienstag</td>   <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>" +
-                            "<tr> <td>Mittwoch</td>   <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>" +
-                            "<tr> <td>Donnerstag</td> <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>" +
-                            "<tr> <td>Freitag</td>    <td>08:00-12:00</td> <td>Geschlossen</td> </tr>" +
-                            "</table>"
-                }
-              ]'
-            />
+            <Accordion id="opening-time">
+          
+              <AccordionItem 
+                id="10"
+                title="Öffnungszeiten"
+                headingLevel="h3"
+              >
+              <table class="table table--compact">
+                <tr> <td>Montag</td>     <td>08:00-12:00</td> <td>13:00-17:00</td> </tr> 
+                <tr> <td>Dienstag</td>   <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>
+                <tr> <td>Mittwoch</td>   <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>
+                <tr> <td>Donnerstag</td> <td>08:00-12:00</td> <td>13:00-17:00</td> </tr>
+                <tr> <td>Freitag</td>    <td>08:00-12:00</td> <td>Geschlossen</td> </tr>
+              </table>
+              </AccordionItem>
+            </Accordion>
           </div>
           <div class="space-y-6">
             <iframe 
@@ -104,12 +106,14 @@
 <script>
 import Btn from "../components/Btn"
 import Accordion from "~/components/ch/components/Accordion"
+import AccordionItem from "~/components/ch/components/AccordionItem"
 
 export default {
   name: 'ContactSection',
   components: {
     Btn,
-    Accordion
+    Accordion,
+    AccordionItem
   },
 };
 </script>
