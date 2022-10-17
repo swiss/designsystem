@@ -1,32 +1,82 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import CarouselExample from '../../ch/demo/CarouselExample.vue'
 
-<Meta 
-  title="Components/Carousel" 
-  component={CarouselExample} 
+<Meta
+  title="Components/Carousel"
+  component={CarouselExample}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { CarouselExample}, 
+  components: { CarouselExample},
   template:
     `
     <div class="section section--default section--carousel">
-      <div class="container">
-        <CarouselExample 
-          :breakpoints="breakpoints" 
-          :paginationType="paginationType" 
-          :id="id"
-          :slides="slides"
-        />
+        <div class="container">
+          <CarouselExample
+            :breakpoints="breakpoints"
+            :paginationType="paginationType"
+            :id="1"
+            :slides="slides"
+          />
+        </div>
+      </div>
+    `,
+})
+
+export const TemplateBackgrounds = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { CarouselExample},
+  template:
+    `
+    <div>
+      <div class="section bg--secondary-50 section--carousel">
+        <div class="container">
+          <CarouselExample
+            :breakpoints="breakpoints"
+            :paginationType="paginationType"
+            :id="2"
+            :slides="slides"
+          />
+        </div>
+      </div>
+      <div class="section bg--secondary-100 section--carousel">
+        <div class="container">
+          <CarouselExample
+            :breakpoints="breakpoints"
+            :paginationType="paginationType"
+            :id="3"
+            :slides="slides"
+          />
+        </div>
+      </div>
+      <div class="section bg--secondary-500 section--carousel">
+        <div class="container">
+          <CarouselExample
+            :breakpoints="breakpoints"
+            :paginationType="paginationType"
+            :id="4"
+            :slides="slides"
+          />
+        </div>
+      </div>
+      <div class="section bg--secondary-600 section--carousel">
+        <div class="container">
+          <CarouselExample
+            :breakpoints="breakpoints"
+            :paginationType="paginationType"
+            :id="5"
+            :slides="slides"
+          />
+        </div>
       </div>
     </div>
     `,
 })
 
 # Carousel
-They are used to display a collection of complex items (teasers or cards for example). This component is similar to the `Slideshow` component, but with a difference on large screens: several items are visible at same time. 
-Carousels are built with https://swiperjs.com/. 
+They are used to display a collection of complex items (teasers or cards for example). This component is similar to the `Slideshow` component, but with a difference on large screens: several items are visible at same time.
+Carousels are built with https://swiperjs.com/.
 
 <Canvas>
   <Story
@@ -35,7 +85,7 @@ Carousels are built with https://swiperjs.com/.
       id: 1,
       paginationType: 'bullets',
       slides: [
-        { 
+        {
           image: {
             src: 'https://picsum.photos/1024/768/?image=29',
             width: '1024',
@@ -50,7 +100,7 @@ Carousels are built with https://swiperjs.com/.
           },
           caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
         },
-        { 
+        {
           image: {
             src: 'https://picsum.photos/1024/768/?image=28',
             width: '1024',
@@ -65,7 +115,7 @@ Carousels are built with https://swiperjs.com/.
           },
           caption: 'Image two —&nbsp;©&nbsp;Photograph Name',
         },
-        { 
+        {
           image: {
             src: 'https://picsum.photos/1024/768/?image=1045',
             width: '1024',
@@ -87,5 +137,66 @@ Carousels are built with https://swiperjs.com/.
   </Story>
 </Canvas>
 
+# Backgrounds
+The recommended background colors for carousels are the following: `bg--default`, `bg--secondary-50`, `bg--secondary-100`, `bg--secondary-500`, `bg--secondary-600`.
+
+<Canvas>
+  <Story
+    name="Backgrounds"
+    args={{
+      id: 10,
+      paginationType: 'bullets',
+      slides: [
+        {
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=29',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=29',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
+        },
+        {
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=28',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=28',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image two —&nbsp;©&nbsp;Photograph Name',
+        },
+        {
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=1045',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=1045',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: 'Image three caption —&nbsp;©&nbsp;Photograph Name',
+        }
+      ]
+    }}
+  >
+    {TemplateBackgrounds.bind({})}
+  </Story>
+</Canvas>
 
 
