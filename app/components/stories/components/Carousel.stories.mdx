@@ -11,7 +11,7 @@ export const Template = (args, { argTypes }) => ({
   components: { CarouselExample},
   template:
     `
-    <div class="section section--default section--carousel">
+    <div class="section section--default">
         <div class="container">
           <CarouselExample
             :breakpoints="breakpoints"
@@ -19,6 +19,9 @@ export const Template = (args, { argTypes }) => ({
             :id="1"
             :slides="slides"
           />
+          <div>
+            Some random content herheSome random content herheSome random content herheSome random content herheSome random content herheSome random content herheSome random content herheSome random content herheSome random content herhe
+          </div>
         </div>
       </div>
     `,
@@ -30,7 +33,7 @@ export const TemplateBackgrounds = (args, { argTypes }) => ({
   template:
     `
     <div>
-      <div class="section bg--secondary-50 section--carousel">
+      <div class="section bg--secondary-50">
         <div class="container">
           <CarouselExample
             :breakpoints="breakpoints"
@@ -40,7 +43,7 @@ export const TemplateBackgrounds = (args, { argTypes }) => ({
           />
         </div>
       </div>
-      <div class="section bg--secondary-100 section--carousel">
+      <div class="section bg--secondary-100">
         <div class="container">
           <CarouselExample
             :breakpoints="breakpoints"
@@ -50,7 +53,7 @@ export const TemplateBackgrounds = (args, { argTypes }) => ({
           />
         </div>
       </div>
-      <div class="section bg--secondary-500 section--carousel">
+      <div class="section bg--secondary-500">
         <div class="container">
           <CarouselExample
             :breakpoints="breakpoints"
@@ -60,7 +63,7 @@ export const TemplateBackgrounds = (args, { argTypes }) => ({
           />
         </div>
       </div>
-      <div class="section bg--secondary-600 section--carousel">
+      <div class="section bg--secondary-600">
         <div class="container">
           <CarouselExample
             :breakpoints="breakpoints"
