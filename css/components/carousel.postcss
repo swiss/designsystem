@@ -35,13 +35,15 @@
 
 .carousel__bullet {
   @apply block w-4 h-4 rounded-full mx-2;
-  @apply bg-white border border-text-600;
+  @apply bg-transparent border border-text-600;
   @apply hover:border-red-600 hover:bg-red-500;
+  @apply cursor-pointer;
   @apply transition-colors duration-200;
 }
 
 .carousel__bullet--active {
-  @apply bg-text-600;
+  @apply bg-text-500 hover:bg-text-500;
+  @apply cursor-default;
 }
 
 .carousel--fraction {
@@ -82,13 +84,14 @@
 
   .swiper-container {
     @apply p-12 !pt-0;
-    @apply  -mr-12 -ml-12 -mb-12;
+    @apply  -mr-12 -ml-12 -mb-8;
     @apply 2xl:p-14;
-    @apply  2xl:-mr-14 2xl:-ml-14 2xl:-mb-14;
+    @apply  2xl:-mr-14 2xl:-ml-14 2xl:-mb-12;
   } 
 
   .carousel__fonctions {
     @apply py-4 2xl:py-10;
+    @apply relative 2xl:static z-20;
   }
 
   .carousel__prev {
@@ -143,8 +146,11 @@
   .carousel__bullet {
     @apply border-text-400;
   }
-  .carousel__prev svg,
-  .carousel__next svg {
+  .carousel__bullet--active {
+    @apply bg-text-300;
+  }
+  .carousel__prev,
+  .carousel__next {
     @apply text-text-50 hover:text-red-400;
   }
 }
