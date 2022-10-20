@@ -5,18 +5,20 @@ import AlertBanner from '../../ch/components/AlertBanner.vue'
   title="Components/AlertBanner"
   component={AlertBanner}
   argTypes={{
-    type: { control: { type: 'select', options: ['Hochwasser', 'Earthquake', 'Something really bad'] } },
-    icon: { control: { type: 'select', options: ['InfoCircle'] } },
+    type: { control: { type: 'select', options: ['info', 'warning', 'alert', 'error', 'success']} },
+    icon: { control: { type: 'select', options: ['InfoCircle', 'WarningCircle', 'CancelCircle', 'HelpCircle', undefined] } },
   }} />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { AlertBanner },
-  template: '<AlertBanner :title="title" :type="type" :lastUpdated="lastUpdated" :icon="icon" :text="text" :introLink="introLink" :link="link" :closeBtn="closeBtn" :isClosed="isClosed" />',
+  template: '<AlertBanner :title="title" :topic="topic" :type="type" :lastUpdated="lastUpdated" :icon="icon" :text="text" :introLink="introLink" :link="link" :closeBtn="closeBtn" :isClosed="isClosed" />',
 })
 
 
 # AlertBanner
+
+Use this component only for very important notifications, for example when the population is facing a danger: Flooding, landslides, earthquakes, etc. For more common and flexible use cases, use the [Notification component](?path=/docs/components-notification--example).
 
 ## Example
 
@@ -25,7 +27,8 @@ export const Template = (args, { argTypes }) => ({
     name="Example"
     args={{
       title: 'Warnungen des Bundes',
-      type: 'Hochwasser',
+      topic: 'Hochwasser',
+      type: 'alert',
       lastUpdated: 'Aktualisiert am: 11.09.2016, 11:13',
       icon: 'InfoCircle',
       text: 'Die Hochwassergefahr im Kanton Tessin geht ab Mittwoch 12 Uhr wieder zurück. Der Wasserstand sinkt allmählich und mit weiteren Überschwemmungen ist nicht zu rechnen. Beachten Sie jedoch weiterhin die Weisungen der Behörden und Einsatzkräfte vor Ort.',
@@ -35,7 +38,7 @@ export const Template = (args, { argTypes }) => ({
         label: "naturgefahren.ch",
         icon: "External"
       },
-      closeBtn: false,
+      closeBtn: true,
       isClosed: false
     }}
   >
