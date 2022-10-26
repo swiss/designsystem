@@ -35,13 +35,15 @@
 
 .carousel__bullet {
   @apply block w-4 h-4 rounded-full mx-2;
-  @apply bg-white border border-text-600;
+  @apply bg-transparent border border-text-600;
   @apply hover:border-red-600 hover:bg-red-500;
+  @apply cursor-pointer;
   @apply transition-colors duration-200;
 }
 
 .carousel__bullet--active {
-  @apply bg-text-600;
+  @apply bg-text-500 hover:bg-text-500;
+  @apply cursor-default;
 }
 
 .carousel--fraction {
@@ -82,16 +84,16 @@
 
   .swiper-container {
     @apply p-12 !pt-0;
-    @apply  -mr-12 -ml-12 -mb-12;
+    @apply  -mr-12 -ml-12 -mb-8;
     @apply 2xl:p-14;
-    @apply  2xl:-mr-14 2xl:-ml-14 2xl:-mb-14;
+    @apply  2xl:-mr-14 2xl:-ml-14 2xl:-mb-12;
   } 
 
   .carousel__fonctions {
-    @apply pt-10 2xl:pt-14 pb-0 -mb-4;
+    @apply py-4 2xl:py-10;
+    @apply relative 2xl:static z-20;
   }
 
-  
   .carousel__prev {
     @apply order-1;
     @apply 2xl:absolute  2xl:z-10;
@@ -105,7 +107,6 @@
     @apply 2xl:absolute 2xl:top-0 2xl:bottom-0 2xl:right-0 2xl:z-10;
     @apply 2xl:translate-x-full;
     @apply 2xl:bg-gradient-to-l 2xl:via-white 2xl:from-white;
-
   }
 
   .carousel__pagination {
@@ -120,6 +121,37 @@
     @apply lg:w-14 lg:h-14;
     @apply 2xl:w-20 2xl:h-20;
     @apply 3xl:w-24 3xl:h-24;
+  }
+}
+
+.bg--secondary-50 {
+  .carousel__prev { @apply 2xl:via-secondary-50 2xl:from-secondary-50; &[disabled] { @apply bg-secondary-50;}}
+  .carousel__next { @apply 2xl:via-secondary-50 2xl:from-secondary-50; &[disabled] { @apply bg-secondary-50;}}
+}
+.bg--secondary-100 {
+  .carousel__prev { @apply 2xl:via-secondary-100 2xl:from-secondary-100; &[disabled] { @apply bg-secondary-100;}}
+  .carousel__next { @apply 2xl:via-secondary-100 2xl:from-secondary-100; &[disabled] { @apply bg-secondary-100;}}
+}
+.bg--secondary-500 {
+  .carousel__prev { @apply 2xl:via-secondary-500 2xl:from-secondary-500; &[disabled] { @apply bg-secondary-500;}}
+  .carousel__next { @apply 2xl:via-secondary-500 2xl:from-secondary-500; &[disabled] { @apply bg-secondary-500;}}
+}
+.bg--secondary-600 {
+  .carousel__prev { @apply 2xl:via-secondary-600 2xl:from-secondary-600; &[disabled] { @apply bg-secondary-600;}}
+  .carousel__next { @apply 2xl:via-secondary-600 2xl:from-secondary-600; &[disabled] { @apply bg-secondary-600;}}
+}
+
+.bg--secondary-500,
+.bg--secondary-600 {
+  .carousel__bullet {
+    @apply border-text-400;
+  }
+  .carousel__bullet--active {
+    @apply bg-text-300;
+  }
+  .carousel__prev,
+  .carousel__next {
+    @apply text-text-50 hover:text-red-400;
   }
 }
 

@@ -13,7 +13,7 @@
 .section--default,
 .section[class^="bg--"],
 .section[class*=' bg--'] {
-  @apply container--py;
+  @apply container--py overflow-hidden;
 }
 
 /*
@@ -68,10 +68,6 @@
   @apply relative top-6 lg:top-8 3xl:top-12;
 }
 
-.section--carousel {
-  @apply overflow-hidden;
-
-  .section__action {
-    @apply pt-0;
-  }
+.carousel + .section__action {
+  @apply pt-0;
 }
