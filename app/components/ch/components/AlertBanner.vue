@@ -1,5 +1,5 @@
 <template>
-  <div class="alert-banner">
+  <div :class="classes" v-if="!isClosed">
     <div class="alert-banner__wrapper">
       <SvgIcon
         v-if="icon"
@@ -9,7 +9,7 @@
       <div class="alert-banner__grid">
         <div class="alert-banner__header">
           <h4 class="font--bold">{{ title }}</h4>
-          <p>{{ type }}</p>
+          <p>{{ topic }}</p>
           <p>{{ lastUpdated }}</p>
         </div>
         <div class="alert-banner__content">
@@ -19,7 +19,7 @@
           <li class="alert-banner__list-item">
             <p>{{ introLink }}</p>
             <div class="alert-banner__link">
-              <Btn 
+              <Btn
                 :href="link.href"
                 :label="link.label"
                 :icon="link.icon ? link.icon : 'ArrowRight'"
@@ -31,6 +31,16 @@
           </li>
         </ul>
       </div>
+      <button
+        v-if="closeBtn"
+        class="alert-banner__close"
+        @click="isClosed = true"
+        aria-label="Close alert banner"
+      >
+        <SvgIcon
+          icon="Cancel"
+        />
+      </button>
     </div>
   </div>
 </template>
@@ -51,9 +61,20 @@ export default {
       type: String,
       required: true,
     },
-    type: {
+    topic: {
       type: String,
       required: true,
+    },
+    type: {
+      type: String,
+      default: undefined,
+      validator: (prop) => [
+        'info',
+        'alert',
+        'warning',
+        'error',
+        'success'
+      ].includes(prop)
     },
     lastUpdated: {
       type: String,
