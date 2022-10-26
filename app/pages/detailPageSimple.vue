@@ -22,7 +22,7 @@
           beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden. Der
           Vorteil für einen Benutzer liegt darin, dass die Modelldateien und
           evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
-          müssen.
+          müssen. <a href="#" class="link" id="share-link">Diese Seite teilen</a>
         </template>
         <template v-slot:image>
           <figure>
@@ -396,6 +396,67 @@
 
       <ContactSection />
     </main>
+    <Modal title="Inhalt teilen" triggerElements=".share-bar__share-button, #share-link" layout="auto">
+      <template v-slot:body>
+        <Card type="default">
+          <template v-slot:body>
+            <div class="flex flex-wrap gap-6">
+              <a href="#" class="link" title="Share on Facebook">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="Facebook" 
+                  label="Facebook" 
+                />
+              </a>
+              <a href="#" class="link" title="Share on Twitter">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="Twitter" 
+                  label="Twitter" 
+                />
+              </a>
+              <a href="#" class="link" title="Share on LinkedIn">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="LinkedIn" 
+                  label="LinkedIn" 
+                />
+              </a>
+              <a href="#" class="link" title="Share on Xing">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="Xing" 
+                  label="Xing" 
+                />
+              </a>
+              <a href="#" class="link" title="Share on Whatsapp">
+                <SvgIcon 
+                  size="2xl" 
+                  icon="Phone" 
+                  label="Whatsapp" 
+                />
+              </a>
+            </div>
+            <hr class="separator">
+            <div class="pt-3">
+              <Input
+                type="outline"
+                size="base"
+                label="Label"
+                value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"
+                id="my-id"
+              />
+              <Btn
+                variant="outline"
+                size="base"
+                label="URL Kopieren"
+                class="mt-3"
+              />
+            </div>
+          </template>
+        </Card>
+      </template>
+    </Modal>
     <footer class="footer" id="main-footer">
       <footer-information />
       <footer-navigation />
@@ -424,6 +485,11 @@ import RelatedTags from '~/components/ch/components/RelatedTags.vue'
 import DownloadItem from '~/components/ch/components/DownloadItem.vue'
 import Newsletter from '~/components/ch/components/Newsletter.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
+import Btn from '../components/ch/components/Btn.vue'
+import SvgIcon from '../components/ch/components/SvgIcon.vue'
+import Card from '../components/ch/components/Card.vue'
+import Modal from '../components/ch/components/Modal.vue'
+
 export default {
   name: 'detailPageSimple',
   components: {
@@ -447,7 +513,11 @@ export default {
     DownloadItem,
     Newsletter,
     ShareBar,
-  },
+    Card,
+    Btn,
+    SvgIcon,
+    Modal,
+},
   data: function () {
     return {
       slides: [
@@ -536,7 +606,7 @@ export default {
         { label: 'INTERLIS', url: '#' },
         { label: 'GKG/KOGIS', url: '#' },
         { label: 'Datenmodell', url: '#' },
-      ]
+      ],
     }
   },
   methods: {

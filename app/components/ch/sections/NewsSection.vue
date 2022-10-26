@@ -1,9 +1,9 @@
 <template>
-  <section class="section section--default section--carousel">
+  <section class="section section--default">
     <div class="container">
       <h2 class="section__title">Jetzt aktuell</h2>
-      <CarouselExample  
-        paginationType="bullets"  
+      <CarouselExample
+        paginationType="bullets"
         :id="1"
       />
       <div class="section__action">

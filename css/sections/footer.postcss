@@ -72,6 +72,10 @@
   .footer__link {
     @apply mr-5;
   }
+
+  svg {
+    stroke-width: 0.1px;
+  }
 }
 
 .footer-information__links {
@@ -85,17 +89,17 @@
 
   .footer-information__links-column {
     @apply flex-1;
+  }
 
-    .footer__link {
-      @apply w-full;
-      @apply flex justify-between;
-      @apply py-4 px-2;
-      @apply border-b border-secondary-300;
-      @apply hover:bg-secondary-700 hover:text-white;
+  .footer__link {
+    @apply w-full;
+    @apply flex justify-between;
+    @apply py-4 px-2;
+    @apply border-b border-secondary-300;
+    @apply hover:bg-secondary-700 hover:text-white;
 
-      .footer-information__icon {
-        @apply h-6;
-      }
+    .footer-information__icon {
+      @apply h-6;
     }
   }
 }

@@ -2,28 +2,96 @@
   MODAL
 \*----------------------------------------*/
 
+.modal, 
+.modal__backdrop {
+  @apply w-full h-full top-0 left-0;
+}
+
 .modal {
-  @apply flex items-center justify-center w-full h-full;
-  @apply fixed top-0 left-0;
+  @apply hidden;
+  @apply fixed z-40;
+  @apply w-full h-full top-0 left-0;
+  @apply py-[10vh];
+
+  &.modal--auto {
+    @apply text-center;
+  }
+
+  &[open] {
+    @apply block; 
+  }
 }
 
 .modal__backdrop {
-  @apply absolute left-0 top-0 h-full w-full bg-gray-600 opacity-75;
+  @apply absolute z-30;
+  @apply bg-gray-600/90;
+  @apply cursor-pointer;  
 }
 
-.modal__container {
-  @apply w-11/12 max-w-md;
-  @apply z-50;
-  @apply rounded shadow-lg;
-  @apply overflow-y-auto;
+.modal__content {
+    @apply relative z-40;
+    @apply container;
+    @apply max-h-[80vh];
+    @apply flex flex-col items-stretch;
+    @apply my-0 mx-auto;
+
+    /* 
+    Sizing: 
+    I didn't use `container container--grid` & `container__center--sm` 
+    as the container then take the full-width and block the interaction 
+    of the backdrop 
+    */
+
+    .modal--sm & {
+      @apply max-w-screen-sm;
+    }
+
+    .modal--md & {
+      @apply max-w-screen-md;
+    }
+
+    .modal--lg & {
+      @apply max-w-screen-lg;
+    }
+
+    .modal--xl & {
+      @apply max-w-screen-xl;
+    }
+
+    .modal--auto & {
+      @apply inline-flex w-auto text-left;
+    }
 }
 
 .modal__header {
-  @apply flex justify-between items-center;
+  @apply flex justify-end items-start; 
+  @apply w-full;
+  @apply text-white;
+  @apply mb-2 lg:mb-4;
 }
 
-.modal__header,
-.modal__body,
-.modal__footer {
-  @apply p-4;
+.modal__header--with-title {
+  @apply justify-between;
 }
+
+.modal__close {
+  @apply relative;
+  @apply -mr-3 -mt-1 lg:-mt-2;
+  @apply pl-10;
+  @apply cursor-pointer;
+
+  &:hover {
+    @apply opacity-50;
+  }
+}
+
+.modal__body {
+  @apply w-full overflow-auto;
+}
+
+.modal__footer {
+  @apply w-full h-auto; 
+  @apply text-right p-4;
+  @apply  bg-white border-t border-secondary-100;
+}
+

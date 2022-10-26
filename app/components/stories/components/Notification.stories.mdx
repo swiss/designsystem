@@ -5,7 +5,7 @@ import Notification from '../../ch/components/Notification.vue'
   title="Components/Notification"
   component={Notification}
   argTypes={{
-    type: { control: { type: 'select', options: ['info', 'warning', 'error', 'success'] } },
+    type: { control: { type: 'select', options: ['info', 'warning', 'error', 'success', 'alert'] } },
     icon: { control: { type: 'select', options: ['InfoCircle', 'WarningCircle', 'CancelCircle', 'HelpCircle', undefined] } },
   }} />
 
@@ -46,6 +46,8 @@ For type variations, the following css classes are built:
 - `notification--error` for errors
 - `notification--success` for success messages
 
+For really important notifications, for example when the population is facing a danger (flooding, landslides, earthquakes, etc) you can use the `notification--alert` variant.
+For this specific use case, the [Alert Banner component](?path=/docs/components-alertbanner--example) is recommended.
 <Canvas>
   <main>
     <div>
@@ -60,6 +62,10 @@ For type variations, the following css classes are built:
       </div>
       <div class="notification notification--success">
         Success: A new software update is available.
+      </div>
+      <hr class="separator separator--xl" />
+      <div class="notification notification--alert">
+        Alert: An important incident happened.
       </div>
     </div>
   </main>
@@ -103,6 +109,15 @@ With the class `notification__icon` an icon can be placed in the notification
         </svg>
         <div class="notification__content">
           A new software update is available.
+        </div>
+      </div>
+      <hr class="separator separator--xl" />
+      <div class="notification notification--alert">
+        <svg viewBox="0 0 24 24" class="notification__icon">
+          <path d="m12.39812 15.97119a.69225.69225 0 0 0 -.54688.207.74214.74214 0 0 0 -.18457.51172.66617.66617 0 0 0 .73145.70508.72171.72171 0 0 0 .55029-.20117.7061.7061 0 0 0 .1875-.50391.73529.73529 0 0 0 -.1875-.51172.70341.70341 0 0 0 -.55029-.207z"/><path d="m12.922 14.551.093-7.002h-1.301l.087 7.002z"/><path d="m12.37517 4.0835a8.29151 8.29151 0 1 0 8.291 8.292 8.30132 8.30132 0 0 0 -8.291-8.292zm0 15.833a7.54151 7.54151 0 1 1 7.5415-7.541 7.55 7.55 0 0 1 -7.5415 7.54101z"/>
+        </svg>
+        <div class="notification__content">
+          Alert: An important incident happened.
         </div>
       </div>
     </div>

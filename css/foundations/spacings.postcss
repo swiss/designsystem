@@ -2,53 +2,41 @@
   VERTICAL SPACING
 \*----------------------------------------*/
 
-.vertical-spacing {
-  @apply space-y-3;
-  @apply xl:space-y-4;
-}
+/* default margin-top for all elements */
 
-.extra-top-spacing {
-  @apply pt-7;
-  @apply xl:pt-8;
-}
-
-.extra-bottom-spacing {
-  @apply pb-7;
-  @apply xl:pb-8;
-}
-
-/* paddings for titles */
-.vertical-spacing > :is(h1, h2, h3, h4, h5) { 
-  @apply extra-top-spacing pb-[0.35em];
+.vertical-spacing > * {
+  @apply mt-12 2xl:mt-14;
 
   &:first-child {
-    @apply pt-0;
+    @apply mt-0; 
   }
 }
 
-/* paddings for default lists*/
-.vertical-spacing > :is(ul.list--default, [identifier="list"]) {
-  @apply pb-[0.5em];
-}
+/* more specified margins */ 
 
-/* default padding-vertical for "block" elements */
-.vertical-spacing > :not(p, h1, h2, h3, h4, h5, blockquote, .newsletter, ul.list--default, [identifier="list"]) { 
-  @apply extra-top-spacing;
-  @apply extra-bottom-spacing;
+.vertical-spacing {
 
-  /* remove padding-top for "block" elements following "block" elements */
-  & + :not(p, h1, h2, h3, h4, h5, blockquote, .newsletter, ul.list--default, [identifier="list"]) {
-    @apply pt-0;
+  /* elements following titles */
+  & > :is(h1, h2, h3, h4, h5) {
+    @apply mb-0; 
+  
+    & + * {
+      @apply mt-[1.5em];
+    }
+
+    & + p {
+      @apply mt-[1em];
+    }
   }
 
-  /* remove padding-top for titles following "block" elements */
-  & + :is(h1, h2, h3, h4, h5) {
-    @apply pt-0; 
+  /* consecutive lists or paragraphs */
+  & > p + p,
+  & > p + ul,
+  & > p + ol,
+  & > p + [identifier="list"],
+  & > ul + p,
+  & > ol + p,
+  [identifier="list"] + p {
+    @apply mt-[1em];
   }
-}
-
-/* reduce padding-top for "block" elements displayed after titles */
-.vertical-spacing > :is(h1, h2, h3, h4, h5) + :not(p, h1, h2, h3, h4, h5, blockquote, .newsletter, ul.list--default, [identifier="list"]) { 
-  @apply pt-1.5;
-  @apply xl:pt-2; 
 }
