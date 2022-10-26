@@ -1,6 +1,6 @@
 {
   "name": "bund_ds",
-  "version": "0.5.17",
+  "version": "0.5.18",
   "description": "Design System for the Swiss Confederation",
   "main": "index.js",
   "directories": {
