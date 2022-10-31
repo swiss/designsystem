@@ -399,41 +399,41 @@
     <Modal title="Inhalt teilen" triggerElements=".share-bar__share-button, #share-link" layout="auto">
       <template v-slot:body>
         <Card type="default">
-          <template v-slot:body>
+          <template v-slot:description>
             <div class="flex flex-wrap gap-6">
               <a href="#" class="link" title="Share on Facebook">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="Facebook" 
-                  label="Facebook" 
+                <SvgIcon
+                  size="2xl"
+                  icon="Facebook"
+                  label="Facebook"
                 />
               </a>
               <a href="#" class="link" title="Share on Twitter">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="Twitter" 
-                  label="Twitter" 
+                <SvgIcon
+                  size="2xl"
+                  icon="Twitter"
+                  label="Twitter"
                 />
               </a>
               <a href="#" class="link" title="Share on LinkedIn">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="LinkedIn" 
-                  label="LinkedIn" 
+                <SvgIcon
+                  size="2xl"
+                  icon="LinkedIn"
+                  label="LinkedIn"
                 />
               </a>
               <a href="#" class="link" title="Share on Xing">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="Xing" 
-                  label="Xing" 
+                <SvgIcon
+                  size="2xl"
+                  icon="Xing"
+                  label="Xing"
                 />
               </a>
               <a href="#" class="link" title="Share on Whatsapp">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="Phone" 
-                  label="Whatsapp" 
+                <SvgIcon
+                  size="2xl"
+                  icon="Phone"
+                  label="Whatsapp"
                 />
               </a>
             </div>

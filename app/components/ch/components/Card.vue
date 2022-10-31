@@ -7,8 +7,16 @@
       <slot name="header"></slot>
     </div>
     <div class="card__content">
-      <div v-if="$slots.body" class="card__body">
-        <slot name="body"></slot>
+      <div class="card__body">
+        <slot name="metaInfos"></slot>
+        <div class="card__title">
+          <slot name="title"></slot>
+        </div>
+        <slot name="description"></slot>
+        <slot name="author"></slot>
+        <slot name="eventInfos"></slot>
+        <slot name="specifications"></slot>
+        <slot name="contentIcons"></slot>
       </div>
       <div
        v-if="$slots.footerInfo || $slots.footerAction"

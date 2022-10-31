@@ -8,8 +8,10 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <template v-slot:body>
-            <h3 class="card__title">Wandern</h3>
+          <template v-slot:title>
+            <h3>Wandern</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
               consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -33,8 +35,10 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <template v-slot:body>
-            <h3 class="card__title">Historische Karten</h3>
+          <template v-slot:title>
+            <h3>Historische Karten</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -57,8 +61,10 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <template v-slot:body>
-            <h3 class="card__title">PLZ und Ortschaften</h3>
+          <template v-slot:title>
+            <h3>PLZ und Ortschaften</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -83,8 +89,10 @@
       <h3 class="section__subtitle">Top Themen</h3>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
-          <template v-slot:body>
-            <h3 class="card__title">Are</h3>
+          <template v-slot:title>
+            <h3>Are</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -102,8 +110,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:body>
-            <h3 class="card__title">Energie</h3>
+          <template v-slot:title>
+            <h3>Energie</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -121,8 +131,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:body>
-            <h3 class="card__title">Luftfahrt</h3>
+          <template v-slot:title>
+            <h3>Luftfahrt</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,

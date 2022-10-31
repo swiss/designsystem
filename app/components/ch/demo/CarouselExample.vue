@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     :class="computedClasses"
   >
     <swiper
@@ -61,8 +61,10 @@
           <template v-slot:image>
             <img src="https://picsum.photos/1024/768?random=1" alt="cat">
           </template>
-          <template v-slot:body>
+          <template v-slot:title>
             <h3 class="card__title">Covid 19</h3>
+          </template>
+          <template v-slot:description>
             <p>
               If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
@@ -86,8 +88,10 @@
           <template v-slot:image>
             <img src="https://picsum.photos/1024/768?random=2" alt="cat">
           </template>
-          <template v-slot:body>
+          <template v-slot:title>
             <h3 class="card__title">Covid 19</h3>
+          </template>
+          <template v-slot:description>
             <p>
               If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
@@ -111,8 +115,10 @@
           <template v-slot:image>
             <img src="https://picsum.photos/1024/768?random=3" alt="cat">
           </template>
-          <template v-slot:body>
+          <template v-slot:title>
             <h3 class="card__title">Covid 19</h3>
+          </template>
+          <template v-slot:description>
             <p>
               If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
@@ -136,8 +142,10 @@
           <template v-slot:image>
             <img src="https://picsum.photos/1024/768?random=4" alt="cat">
           </template>
-          <template v-slot:body>
+          <template v-slot:title>
             <h3 class="card__title">Covid 19</h3>
+          </template>
+          <template v-slot:description>
             <p>
               If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
@@ -161,8 +169,10 @@
           <template v-slot:image>
             <img src="https://picsum.photos/1024/768?random=5" alt="cat">
           </template>
-          <template v-slot:body>
+          <template v-slot:title>
             <h3 class="card__title">Covid 19</h3>
+          </template>
+          <template v-slot:description>
             <p>
               If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
@@ -186,8 +196,10 @@
           <template v-slot:image>
             <img src="https://picsum.photos/1024/768?random=6" alt="cat">
           </template>
-          <template v-slot:body>
+          <template v-slot:title>
             <h3 class="card__title">Covid 19</h3>
+          </template>
+          <template v-slot:description>
             <p>
               If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
             </p>
@@ -210,24 +222,24 @@
     <div class="carousel__fonctions">
       <div class="carousel__pagination" :id="`carousel-pagination-${id}`"></div>
       <button
-        class="carousel__prev" 
+        class="carousel__prev"
         :id="`carousel-prev-${id}`"
       >
         <div class="sr-only">Previous image</div>
         <SvgIcon
           icon="ChevronLeft"
-          role="presentation" 
+          role="presentation"
           aria-hidden="true"
         />
       </button>
-      <button 
-        class="carousel__next" 
+      <button
+        class="carousel__next"
         :id="`carousel-next-${id}`"
       >
         <div class="sr-only">Next image</div>
         <SvgIcon
           icon="ChevronRight"
-          role="presentation" 
+          role="presentation"
           aria-hidden="true"
         />
       </button>
