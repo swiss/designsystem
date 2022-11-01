@@ -3,7 +3,7 @@
 \*----------------------------------------*/
 
 .card {
-  @apply flex flex-col;
+  @apply flex flex-col h-full;
   @apply bg-white;
 }
 
@@ -110,7 +110,6 @@
     @apply border-b-0;
   }
 }
-
 
 .card__image {
   @apply relative pb-[56.25%]; /* 16/9 ratio */
@@ -234,5 +233,11 @@
         @apply pt-0; 
       }
     }
+  }
+}
+
+.card--universal {
+  .card__image {
+    @apply border-t-[0.5em] border-b-[0.5em] border-transparent;
   }
 }
