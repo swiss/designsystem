@@ -174,3 +174,186 @@ Default.args = {
 </Canvas>
 
 <ArgsTable story="Example" />
+
+# Variations
+
+## Default card
+ Use this card for news, pages or articles teasers. Display them in a grid or carousels. With the `card--default` display, an image is mandatory.
+
+<Canvas style={{backgroundColor: '#f9fafb', padding: '3rem'}}>
+  <div class="grid grid--responsive-cols-1/2-1/2 gap--responsive">
+    <div class="card card--default card--clickable">
+      <div class="card__image">
+        <img src="https://placekitten.com/g/775/350" alt="cat" />
+      </div>
+      <div class="card__content">
+        <div class="card__body">
+          <div class="card__title">
+            <h3>
+              Hochwasser im Juli 2021
+            </h3>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            pretium maximus vestibulum.
+          </p>
+        </div>
+        <div class="card__footer">
+          <div class="card__footer__info">
+            <div>Nachhaltigkeit</div>
+          </div>
+          <div class="card__footer__action">
+            <a
+              href="#"
+              aria-label="Weiterlesen"
+              class="btn btn--outline btn--icon-only"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="btn__icon icon icon--base icon--ArrowRight"
+              >
+                <path
+                  xmlns="http://www.w3.org/2000/svg"
+                  d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+                ></path>
+              </svg>
+              <span class="btn__text">Weiterlesen</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card card--default card--clickable">
+      <div class="card__image">
+        <img src="https://placekitten.com/g/775/350" alt="cat" />
+      </div>
+      <div class="card__content">
+        <div class="card__body">
+          <div class="card__title">
+            <h3>
+              Hochwasser im Juli 2021
+            </h3>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            pretium maximus vestibulum.
+          </p>
+        </div>
+        <div class="card__footer">
+          <div class="card__footer__info">
+            <div>Nachhaltigkeit</div>
+          </div>
+          <div class="card__footer__action">
+            <a
+              href="#"
+              aria-label="Weiterlesen"
+              class="btn btn--outline btn--icon-only"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="btn__icon icon icon--base icon--ArrowRight"
+              >
+                <path
+                  xmlns="http://www.w3.org/2000/svg"
+                  d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+                ></path>
+              </svg>
+              <span class="btn__text">Weiterlesen</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Canvas>
+
+## Univeral card
+With the `card--universal` display, using an image is not mandatory. This layout resolves the problem of having a card without image right after a card with an image.
+
+<Canvas style={{backgroundColor: '#f9fafb', padding: '3rem'}}>
+  <div class="grid grid--responsive-cols-1/2-1/2 gap--responsive">
+    <div class="card card--default card--clickable">
+      <div class="card__content">
+        <div class="card__body">
+          <div class="card__title">
+            <h3>
+              Hochwasser im Juli 2021
+            </h3>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            pretium maximus vestibulum.
+          </p>
+          <div class="card__image">
+            <img src="https://placekitten.com/g/775/350" alt="cat" />
+          </div>
+        </div>
+        <div class="card__footer">
+          <div class="card__footer__info">
+            <div>Nachhaltigkeit</div>
+          </div>
+          <div class="card__footer__action">
+            <a
+              href="#"
+              aria-label="Weiterlesen"
+              class="btn btn--outline btn--icon-only"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="btn__icon icon icon--base icon--ArrowRight"
+              >
+                <path
+                  xmlns="http://www.w3.org/2000/svg"
+                  d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+                ></path>
+              </svg>
+              <span class="btn__text">Weiterlesen</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card card--default card--clickable">
+      <div class="card__content">
+        <div class="card__body">
+          <div class="card__title">
+            <h3>
+              Hochwasser im Juli 2021
+            </h3>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            pretium maximus vestibulum.
+          </p>
+        </div>
+        <div class="card__footer">
+          <div class="card__footer__info">
+            <div>Nachhaltigkeit</div>
+          </div>
+          <div class="card__footer__action">
+            <a
+              href="#"
+              aria-label="Weiterlesen"
+              class="btn btn--outline btn--icon-only"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="btn__icon icon icon--base icon--ArrowRight"
+              >
+                <path
+                  xmlns="http://www.w3.org/2000/svg"
+                  d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+                ></path>
+              </svg>
+              <span class="btn__text">Weiterlesen</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Canvas>
