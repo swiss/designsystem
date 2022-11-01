@@ -1,6 +1,6 @@
 <template>
   <div :class="computedClasses">
-    <div v-if="$slots.image && type !== 'highlight'" class="card__image">
+    <div v-if="$slots.image && type !== 'highlight' && type !== 'universal'" class="card__image">
       <slot name="image"></slot>
     </div>
     <div v-if="$slots.header" class="card__header">
@@ -13,6 +13,9 @@
           <slot name="title"></slot>
         </div>
         <slot name="description"></slot>
+        <div v-if="$slots.image && type === 'universal'" class="card__image">
+          <slot name="image"></slot>
+        </div>
         <slot name="author"></slot>
         <slot name="eventInfos"></slot>
         <slot name="specifications"></slot>
@@ -44,7 +47,8 @@ export default {
         'default',
         'highlight',
         'twitter',
-        'flat'
+        'flat',
+        'universal'
       ].includes(prop)
     },
     layout: {
