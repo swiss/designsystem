@@ -1,71 +1,97 @@
 <template>
-  <ul class="search-results__list">
-  <li
-    v-for="(item, key) in itemList"
-    :key="`${key}`"
+  <ul
+    class="search-results-list"
   >
-    <a
-      :href="item.href"
-      class="search-result"
+    <li
+      v-for="(item, key) in itemList"
+      :key="`${key}`"
     >
-      <MetaInfo :metainfos="[item.type, item.date]" />
-      <h2 class="search-result__title">
-        {{ item.title }}
-      </h2>
-      <div class="search-result__description">
-        {{ item.content }}
-      </div>
-      <div class="search-result__specs">
-        {{ item.specifications }}
-      </div>
-      <figure v-if="item.image" class="search-result__image">
-        <picture>
-          <source v-if="item.image.source" 
-            :srcset="item.image.source.srcset"
-            :media="item.image.source.media"
-          />
-          <img :src="item.image.src" :alt="item.image.alt"  class="shadow-2xl" />
-        </picture>
-      </figure>
-      <div class="search-result__icons">
-        <SvgIcon
-          v-if="item.isVideo"
-          icon="Video"
-          size="xl"
-        />
-        <SvgIcon
-          v-if="item.isEasyLanguage"
-          icon="EasyLanguage"
-          size="xl"
-        />
-        <SvgIcon
-          v-if="item.isSignLanguage"
-          icon="SignLanguage"
-          size="xl"
-        />
-      </div>
-      <MetaInfo v-if="item.topics" :metainfos="item.topics" />
-    </a>
+      <Card :type="displayType === 'grid' ? 'universal' : 'list'">
+        <template v-slot:image v-if="item.image">
+          <figure>
+            <picture>
+              <source v-if="item.image.source"
+                :srcset="item.image.source.srcset"
+                :media="item.image.source.media"
+              />
+              <img :src="item.image.src" :alt="item.image.alt" />
+            </picture>
+          </figure>
+        </template>
 
-  </li>
-</ul>
+        <template v-slot:metaInfos>
+          <MetaInfo
+            :metainfos="[item.type, item.date]"
+          />
+        </template>
+        <template v-slot:title>
+          <h3>{{ item.title }}</h3>
+        </template>
+        <template v-slot:description>
+          <p>
+            {{ item.content }}
+          </p>
+        </template>
+        <template v-slot:author>
+        </template>
+        <template v-slot:specifications>
+          <MetaInfo
+            :metainfos="[item.specifications]"
+          />
+        </template>
+        <template v-slot:contentIcons>
+          <div
+            class="card__content-icons"
+          >
+            <SvgIcon icon="Youtube" size="xl"/>
+            <SvgIcon icon="EasyLanguage" size="xl"/>
+            <SvgIcon icon="SignLanguage" size="xl"/>
+          </div>
+        </template>
+        <template v-slot:footerInfo>
+          <MetaInfo
+            v-if="item.topics" :metainfos="item.topics"
+          />
+        </template>
+        <template v-slot:footerAction>
+          <Btn
+            to="item.href"
+            variant="outline"
+            icon-pos="only"
+            icon="ArrowRight"
+            label="Weiterlesen"
+          />
+        </template>
+      </Card>
+    </li>
+  </ul>
 </template>
 
 <script>
 import SvgIcon from '../components/SvgIcon.vue'
 import MetaInfo from '../components/MetaInfo.vue'
+import Btn from '../components/Btn.vue'
+import Card from '../components/Card.vue'
 
 export default {
   name: 'SearchresultsList',
   components: {
     SvgIcon,
-    MetaInfo
+    MetaInfo,
+    Btn,
+    Card
   },
   props: {
     itemList: {
       type: Array,
       required: true
+    },
+    displayType: {
+      type: String,
+      required: false,
+      default: 'list'
     }
+
   }
 }
 </script>

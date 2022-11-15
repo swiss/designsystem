@@ -1,0 +1,39 @@
+/*----------------------------------------*\
+  FILTERS
+\*----------------------------------------*/
+
+.filters {
+  @apply grid;
+  @apply py-4;
+}
+
+.filters__actions {
+ @apply flex justify-between;
+}
+
+.filters__display {
+  @apply flex;
+}
+
+.filters__drawer {
+  @apply py-4;
+}
+
+.filters__btn {
+  @apply flex items-center text-left;
+  @apply h-full px-4 -ml-4;
+  @apply transition-colors;
+}
+
+.filters__btn__icon {
+  @apply ml-2;
+  @apply transition-transform duration-200;
+
+  .filters--are-open & {
+    @apply rotate-180;
+  }
+}
+
+.filters__action {
+}
+
