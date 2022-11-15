@@ -48,7 +48,8 @@ export default {
         'highlight',
         'twitter',
         'flat',
-        'universal'
+        'universal',
+        'list'
       ].includes(prop)
     },
     layout: {

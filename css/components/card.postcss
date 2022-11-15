@@ -237,7 +237,45 @@
 }
 
 .card--universal {
+  @apply shadow-lg;
+  
   .card__image {
     @apply border-t-[0.5em] border-b-[0.5em] border-transparent;
+  }
+}
+
+.card--list {
+  @apply card--flat;
+  
+  &, 
+  &:hover {
+    @apply no-underline text-inherit; /* override general styling for links in main */ 
+  }
+
+  @media screen(sm) {
+    @apply grid gap-x-6;
+    grid-template-columns: 4fr 1fr;
+  }
+
+  .card__image {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    align-self: start;
+
+    @apply hidden md:block;
+  }
+
+  .card__content {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .card__body {
+    @apply  pt-0 pb-4;
+  }
+
+  .btn  {
+    @apply absolute invisible;
   }
 }
