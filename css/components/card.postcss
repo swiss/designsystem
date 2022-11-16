@@ -241,6 +241,10 @@
   
   .card__image {
     @apply border-t-[0.5em] border-b-[0.5em] border-transparent;
+
+    img {
+      @apply object-contain;
+    }
   }
 }
 
@@ -272,7 +276,8 @@
   }
 
   .card__body {
-    @apply  pt-0 pb-4;
+    @apply pt-0 pb-4;
+    @apply max-w-[800px];
   }
 
   .btn  {
