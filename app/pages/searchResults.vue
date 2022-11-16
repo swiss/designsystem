@@ -41,60 +41,6 @@
                 size="lg"
               />
             </div>
-            <div
-              class="filters"
-              :class="filtersAreOpen ? 'filters--are-open' : '' "
-            >
-              <div class="filters__actions">
-                <button
-                  class="filters__btn"
-                  @click="filtersAreOpen = !filtersAreOpen"
-                  >
-                  <span>Filter</span>
-                  <SvgIcon
-                  icon="ChevronDown"
-                  size="lg"
-                  class="filters__btn__icon"
-                  />
-                </button>
-                <div class="filters__display">
-                  <Select
-                    variant="outline"
-                    bare
-                    size="base"
-                    id="radio-id"
-                    name="radio-name"
-                    >
-                    <option disabled="" selected="">Sortieren</option>
-                    <option>nach Relevanz</option>
-                    <option>by date (increasing)</option>
-                    <option>by date (decreasing)</option>
-                    <option>...</option>
-                  </Select>
-                  <div class="separator separator--vertical"></div>
-                  <Btn
-                    variant="bare"
-                    icon-pos="only"
-                    icon="List"
-                    label="Display as list"
-                    @click.native="displayType = 'list'"
-                  />
-                  <Btn
-                    variant="bare"
-                    icon-pos="only"
-                    icon="Apps"
-                    label="Display as grid"
-                    @click.native="displayType = 'grid'"
-                  />
-                </div>
-              </div>
-              <div v-if="filtersAreOpen" class="filters__drawer">
-                Filter list
-              </div>
-            </div>
-            <div class="filters__active">
-
-            </div>
           </div>
         </div>
       </section>
@@ -102,8 +48,6 @@
         <div class="container gap--responsive">
           <div
             class="search-results"
-            :class="displayType === 'grid' ? 'search-results--grid' : 'search-results--list'"
-
             aria-live="polite"
             :aria-busy="isLoading"
           >
@@ -158,7 +102,6 @@
                 <SearchResultsList
                   v-if="!noResults && !isLoading"
                   :itemList="searchResults"
-                  :displayType="displayType"
                 />
                 <div
                   v-if="isLoading"
@@ -247,7 +190,6 @@ import Radio from '../components/ch/components/Radio.vue'
 import SearchResultsList from '../components/ch/components/SearchResultsList.vue'
 import Pagination from '../components/ch/components/Pagination.vue'
 import Notification from '../components/ch/components/Notification.vue'
-import Select from '../components/ch/components/Select.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -264,8 +206,7 @@ export default {
     Radio,
     SearchResultsList,
     Pagination,
-    Notification,
-    Select
+    Notification
   },
 
   data: function(){
@@ -359,14 +300,6 @@ export default {
     isLoading: {
       type: Boolean,
       default: false,
-    },
-    filtersAreOpen: {
-      type: Boolean,
-      default: false,
-    },
-    displayType: {
-      type: String,
-      default: 'grid',
     },
   },
   methods: {
