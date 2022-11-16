@@ -11,7 +11,7 @@ import SvgIcon from '../../ch/components/SvgIcon.vue';
     type: {
       control: {
         type: 'select',
-        options: ['default', 'highlight', 'twitter', 'flat', 'universal']
+        options: ['default', 'highlight', 'twitter', 'flat', 'universal', 'list']
       }
     },
     layout: {
@@ -71,7 +71,7 @@ export const Template = (args, { argTypes }) => ({
   template:
     `
     <div style="padding: 3em;" class="bg--secondary-50">
-      <div style="${args.layout == 'default' ? 'max-width: 600px; margin: auto' : ''}">
+      <div style="${args.layout !== 'list' ? 'max-width: 600px; margin: auto' : ''}">
         <Card :type="type" :layout="layout" :has-icon="${args.image == 'WithIcon'}">
           <template v-if="${args.image != 'NoImage'}" v-slot:image>
             <img
