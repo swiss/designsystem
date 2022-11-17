@@ -36,14 +36,6 @@
                   name="radio-name"
                   label="Stichwortfilter"
                 />
-                <Btn
-                  label="Search"
-                  icon="Filter"
-                  icon-pos="only"
-                  variant="bare"
-                  size="base"
-                  class="absolute bottom-0 right-0"
-                />
               </div>
 
               <Select
@@ -68,19 +60,24 @@
                 >
                 <option>...</option>
               </Select>
-              <Select
-                variant="outline"
-                size="sm"
-                id="radio-id"
-                name="radio-name"
-                label="Zeitraum"
-                >
-                <option disabled="disabled" selected="">- All -</option>
-                <option>from last week</option>
-                <option>from last month</option>
-                <option>from last three months</option>
-                <option>from last year</option>
-              </Select>
+              <div class="flex gap-1">
+                <Input
+                  type="date"
+                  variant="outline"
+                  size="sm"
+                  id="radio-id"
+                  name="radio-name"
+                  label="Zeitraum: von"
+                />
+                <Input
+                  type="date"
+                  variant="outline"
+                  size="sm"
+                  id="radio-id"
+                  name="radio-name"
+                  label="bis"
+                />
+              </div>
               <Select
                 variant="outline"
                 size="sm"
@@ -88,7 +85,8 @@
                 name="radio-name"
                 label="Veranstaltungs-Typ"
                 >
-                <option>...</option>
+                <option disabled>-- Alle --</option>
+                <option>Future tree selector here</option>
               </Select>
               <Select
                 variant="outline"
@@ -103,14 +101,12 @@
             <div class="search__tags">
               <TagItem
                 label="Filter one"
-                variant="active"
                 variant="primary"
                 size="sm"
                 icon="Cancel"
               />
               <TagItem
                 label="Filter two"
-                variant="active"
                 variant="primary"
                 size="sm"
                 icon="Cancel"
