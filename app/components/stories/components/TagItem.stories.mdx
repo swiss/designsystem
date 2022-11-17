@@ -5,7 +5,8 @@ import TagItem from '../../ch/components/TagItem.vue';
   title="Components/TagItem"
   component={TagItem}
   argTypes={{
-    variant:    { control: { type: 'select', options: ['default', 'active'] } },
+    variant:    { control: { type: 'select', options: ['default', 'primary', 'active'] } },
+    size:    { control: { type: 'select', options: ['sm', 'base'] } },
     icon: { control: { type: 'select', options: ['Cancel', 'Checkmark', undefined] } },
   }}
 />
@@ -13,7 +14,7 @@ import TagItem from '../../ch/components/TagItem.vue';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { TagItem },
-  template: '<TagItem :variant="variant" :label="label" :to="to" :icon="icon" />',
+  template: '<TagItem :variant="variant" :label="label" :to="to" :icon="icon" :size="size" />',
 });
 
 export const TemplateMultiple = (args, { argTypes }) => ({

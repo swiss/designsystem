@@ -38,6 +38,7 @@ export default {
       type: String,
       validator: (prop) => [
         'default',
+        'primary',
         'active'
       ].includes(prop)
     },

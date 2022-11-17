@@ -104,12 +104,14 @@
               <TagItem
                 label="Filter one"
                 variant="active"
+                variant="primary"
                 size="sm"
                 icon="Cancel"
               />
               <TagItem
                 label="Filter two"
                 variant="active"
+                variant="primary"
                 size="sm"
                 icon="Cancel"
               />
