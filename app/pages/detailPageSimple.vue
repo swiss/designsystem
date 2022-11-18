@@ -402,38 +402,38 @@
           <template v-slot:body>
             <div class="flex flex-wrap gap-6">
               <a href="#" class="link" title="Share on Facebook">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="Facebook" 
-                  label="Facebook" 
+                <SvgIcon
+                  size="2xl"
+                  icon="Facebook"
+                  label="Facebook"
                 />
               </a>
               <a href="#" class="link" title="Share on Twitter">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="Twitter" 
-                  label="Twitter" 
+                <SvgIcon
+                  size="2xl"
+                  icon="Twitter"
+                  label="Twitter"
                 />
               </a>
               <a href="#" class="link" title="Share on LinkedIn">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="LinkedIn" 
-                  label="LinkedIn" 
+                <SvgIcon
+                  size="2xl"
+                  icon="LinkedIn"
+                  label="LinkedIn"
                 />
               </a>
               <a href="#" class="link" title="Share on Xing">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="Xing" 
-                  label="Xing" 
+                <SvgIcon
+                  size="2xl"
+                  icon="Xing"
+                  label="Xing"
                 />
               </a>
               <a href="#" class="link" title="Share on Whatsapp">
-                <SvgIcon 
-                  size="2xl" 
-                  icon="Phone" 
-                  label="Whatsapp" 
+                <SvgIcon
+                  size="2xl"
+                  icon="Phone"
+                  label="Whatsapp"
                 />
               </a>
             </div>
@@ -442,9 +442,11 @@
               <Input
                 type="outline"
                 size="base"
-                label="Label"
+                label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"
                 id="my-id"
+                :hideLabel=true
+                :readonly=true
               />
               <Btn
                 variant="outline"
@@ -501,6 +503,7 @@ import SvgIcon from '../components/ch/components/SvgIcon.vue'
 import Card from '../components/ch/components/Card.vue'
 import Modal from '../components/ch/components/Modal.vue'
 import Badge from '../components/ch/components/Badge.vue'
+import Input from '../components/ch/components/Input.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -530,6 +533,7 @@ export default {
     SvgIcon,
     Modal,
     Badge,
+    Input,
 },
   data: function () {
     return {

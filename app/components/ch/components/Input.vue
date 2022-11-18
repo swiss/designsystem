@@ -19,6 +19,7 @@
       :step="step"
       :pattern="pattern"
       :autocomplete="autocomplete"
+      :readonly=readonly
     />
     <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
       {{ message }}
@@ -55,6 +56,10 @@ export default {
     label: {
       type: String,
     },
+    hideLabel: {
+      type: Boolean,
+      default: false,
+    },
     placeholder: {
       type: String,
     },
@@ -79,6 +84,10 @@ export default {
     autocomplete: {
       type: String,
     },
+    readonly: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -93,6 +102,7 @@ export default {
       let base = ''
       if (this.variant === 'negative') base += `text--negative `
       if (this.size) base += `text--${this.size} `
+      if (this.hideLabel) base += `sr-only `
       return base
     },
   },
