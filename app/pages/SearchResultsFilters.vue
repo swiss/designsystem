@@ -222,7 +222,7 @@
 
     </main>
     <footer class="footer" id="main-footer">
-      <footer-information />
+      <FooterInformation />
       <footer-navigation />
     </footer>
   </div>
@@ -245,7 +245,7 @@ import Notification from '../components/ch/components/Notification.vue'
 import Select from '../components/ch/components/Select.vue'
 
 export default {
-  name: 'detailPageSimple',
+  name: 'searchResultsFilters',
   components: {
     AlterBodyClasses,
     TopBar,

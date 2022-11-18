@@ -16,7 +16,7 @@
 </div></div></section></div></main>
 
     <footer class="footer" id="main-footer">
-      <footer-information />
+      <FooterInformation />
       <footer-navigation />
     </footer>
   </div>
