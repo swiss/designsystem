@@ -451,7 +451,18 @@
                 size="base"
                 label="URL Kopieren"
                 class="mt-3"
+                @click.native="URLIsCopied = !URLIsCopied"
               />
+              <div aria-live="polite">
+                <Badge
+                  v-if="URLIsCopied"
+                  label="URL wurde kopiert"
+                  color="green"
+                  size="base"
+                  icon="Checkmark"
+                  class="mt-3"
+                />
+              </div>
             </div>
           </template>
         </Card>
@@ -489,6 +500,7 @@ import Btn from '../components/ch/components/Btn.vue'
 import SvgIcon from '../components/ch/components/SvgIcon.vue'
 import Card from '../components/ch/components/Card.vue'
 import Modal from '../components/ch/components/Modal.vue'
+import Badge from '../components/ch/components/Badge.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -517,9 +529,11 @@ export default {
     Btn,
     SvgIcon,
     Modal,
+    Badge,
 },
   data: function () {
     return {
+      URLIsCopied: false,
       slides: [
         {
           image: {
