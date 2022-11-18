@@ -7,7 +7,7 @@
       <TopHeader />
       <DesktopMenu />
       <MobileMenu />
-      <Breadcrumb class="bg--secondary-50" />
+      <Breadcrumb />
     </header>
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
@@ -17,15 +17,19 @@
             class="search__filters"
             :class="filtersAreOpen ? 'filters--are-open' : '' "
           >
-            <Btn
-              :label="filtersAreOpen ? 'Filter ausblenden' : 'Filter anzeigen'"
-              variant="bare"
-              size="sm"
-              icon-pos="right"
-              icon="ChevronDown"
-              :class="filtersAreOpen ? ' btn--icon-180' : '' "
-              @click.native="filtersAreOpen = !filtersAreOpen"
-            />
+            <div class="search__filters__actions">
+              <Btn
+                :label="filtersAreOpen ? 'Filter ausblenden' : 'Filter anzeigen'"
+                variant="bare"
+                size="sm"
+                icon-pos="right"
+                icon="ChevronDown"
+                iconPos="left"
+                :class="filtersAreOpen ? ' btn--icon-180' : '' "
+                @click.native="filtersAreOpen = !filtersAreOpen"
+              />
+
+            </div>
             <div v-if="filtersAreOpen" class="search__filters__drawer">
               <div class="relative">
                 <Input
@@ -45,11 +49,8 @@
                 name="radio-name"
                 label="Organisation"
                 >
-                <option disabled="" selected="">Sortieren</option>
-                <option>nach Relevanz</option>
-                <option>by date (increasing)</option>
-                <option>by date (decreasing)</option>
-                <option>...</option>
+                <option selected>VBS - Alle</option>
+                <option disabled>(Future tree selector here)</option>
               </Select>
               <Select
                 variant="outline"
@@ -58,26 +59,24 @@
                 name="radio-name"
                 label="Themen"
                 >
+                <option selected>- Alle -</option>
                 <option>...</option>
               </Select>
-              <div class="flex gap-1">
-                <Input
-                  type="date"
-                  variant="outline"
-                  size="sm"
-                  id="radio-id"
-                  name="radio-name"
-                  label="Zeitraum: von"
-                />
-                <Input
-                  type="date"
-                  variant="outline"
-                  size="sm"
-                  id="radio-id"
-                  name="radio-name"
-                  label="bis"
-                />
-              </div>
+              <Select
+                variant="outline"
+                size="sm"
+                id="radio-id"
+                name="radio-name"
+                label="Zeitraum"
+                >
+                <option selected>- Alle -</option>
+                <option>next week</option>
+                <option>next month</option>
+                <option>next three months</option>
+                <option>next year</option>
+                <option disabled>───────</option>
+                <option>past events</option>
+              </Select>
               <Select
                 variant="outline"
                 size="sm"
@@ -85,8 +84,13 @@
                 name="radio-name"
                 label="Veranstaltungs-Typ"
                 >
-                <option disabled>-- Alle --</option>
-                <option>Future tree selector here</option>
+                <option selected>- Alle -</option>
+                <option>Ausstellung</option>
+                <option>Kongress</option>
+                <option selected>Konferenz</option>
+                <option>Teamevent</option>
+                <option>Webinar</option>
+                <option>Workshop</option>
               </Select>
               <Select
                 variant="outline"
@@ -95,21 +99,28 @@
                 name="radio-name"
                 label="Austragungsort"
                 >
+                <option selected>- Alle -</option>
                 <option>...</option>
               </Select>
             </div>
-            <div class="search__tags">
+            <div class="search__filters__tags">
               <TagItem
-                label="Filter one"
+                label="VBS - Alle"
                 variant="primary"
                 size="sm"
                 icon="Cancel"
               />
               <TagItem
-                label="Filter two"
+                label="Konferenz"
                 variant="primary"
                 size="sm"
                 icon="Cancel"
+              />
+              <TagItem
+                label="Filter zurücksetzen"
+                variant="default"
+                size="sm"
+                icon="Repeat"
               />
             </div>
           </div>
@@ -127,10 +138,16 @@
               v-if="!noResults && !isLoading"
               class="search-results__header"
             >
-              <div class="sr-only search-results__n-items">
-                <strong>127</strong>Suchergebnisse
+              <div class="search-results__header__left">
+                <Btn
+                  label="RSS Abo erstellen"
+                  variant="bare"
+                  size="sm"
+                  icon-pos="right"
+                  icon="RSS"
+                />
               </div>
-              <div class="search-results__display">
+              <div class="search-results__header__right">
                   <Select
                     variant="outline"
                     bare
@@ -365,7 +382,7 @@ export default {
     },
     filtersAreOpen: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     displayType: {
       type: String,

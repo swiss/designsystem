@@ -135,10 +135,10 @@
               v-if="!noResults && !isLoading"
               class="search-results__header"
             >
-              <div class="search-results__n-items">
+              <div class="search-results__header__left">
                 <strong>127</strong>Suchergebnisse
               </div>
-              <div class="search-results__display">
+              <div class="search-results__header__right">
                   <Select
                     variant="outline"
                     bare

@@ -177,11 +177,11 @@
   }
 }
 
-.search-results__n-items {
+.search-results__header__left {
   @apply flex;
 }
 
-.search-results__display {
+.search-results__header__right {
   @apply flex ml-auto;
 
   select {
@@ -202,6 +202,10 @@
   }
 }
 
+.search__filters__actions {
+  @apply flex flex-wrap gap-x-2;
+}
+
 .search__filters__drawer {
   @apply grid md:grid-cols-2 lg:grid-cols-3;
   @apply gap-3 lg:gap-4;
@@ -211,8 +215,8 @@
   @apply border-t border-secondary-200;
 }
 
-.search__tags {
-  @apply flex flex-wrap gap-2;
+.search__filters__tags {
+  @apply flex flex-wrap;
   @apply pt-4 sm:pt-6 2xl:pt-8;
 }
 
