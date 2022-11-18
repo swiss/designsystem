@@ -8,6 +8,8 @@ import NewsList from '../../../pages/NewsList.vue';
   component={NewsList}
   argTypes={{
     noResults: { name:'No results', control: { type: 'boolean' } },
+    filtersAreOpen: { name:'Show filters', control: { type: 'boolean' } },
+    displayType:    { control: { type: 'select', options: ['list', 'grid'] } },
   }}
 />
 
@@ -15,10 +17,10 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { NewsList },
   store: store,
-  template: '<NewsList :noResults="noResults" :isLoading="isLoading" />',
+  template: '<NewsList :noResults="noResults" :isLoading="isLoading" :filtersAreOpen="filtersAreOpen" :displayType="displayType" />',
 });
 
-# Search results
+# News List
 
 <a href="?path=/story/pages-news-list--with-results">Go to the Canvas Tab</a>
 
@@ -32,21 +34,23 @@ export const Template = (args, { argTypes }) => ({
     name="With results"
     args={{
       noResults: false,
-      isLoading: false
+      isLoading: false,
+      filtersAreOpen: false,
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-# No results
+# Show filters
 
 <Canvas>
   <Story
     name="Without results"
     args={{
-      noResults: true,
-      isLoading: false
+      noResults: false,
+      isLoading: false,
+      filtersAreOpen: true,
     }}
   >
     {Template.bind({})}

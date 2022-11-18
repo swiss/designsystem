@@ -36,8 +36,8 @@
                   type="text"
                   variant="outline"
                   size="sm"
-                  id="radio-id"
-                  name="radio-name"
+                  id="select-1"
+                  name="select-name"
                   label="Stichwortfilter"
                 />
               </div>
@@ -45,8 +45,8 @@
               <Select
                 variant="outline"
                 size="sm"
-                id="radio-id"
-                name="radio-name"
+                id="select-2"
+                name="select-name"
                 label="Organisation"
                 >
                 <option selected>VBS - Alle</option>
@@ -55,8 +55,8 @@
               <Select
                 variant="outline"
                 size="sm"
-                id="radio-id"
-                name="radio-name"
+                id="select-3"
+                name="select-name"
                 label="Themen"
                 >
                 <option selected>- Alle -</option>
@@ -65,8 +65,8 @@
               <Select
                 variant="outline"
                 size="sm"
-                id="radio-id"
-                name="radio-name"
+                id="select-4"
+                name="select-name"
                 label="Zeitraum"
                 >
                 <option selected>- Alle -</option>
@@ -80,8 +80,8 @@
               <Select
                 variant="outline"
                 size="sm"
-                id="radio-id"
-                name="radio-name"
+                id="select-5"
+                name="select-name"
                 label="Veranstaltungs-Typ"
                 >
                 <option selected>- Alle -</option>
@@ -95,8 +95,8 @@
               <Select
                 variant="outline"
                 size="sm"
-                id="radio-id"
-                name="radio-name"
+                id="select-6"
+                name="select-name"
                 label="Austragungsort"
                 >
                 <option selected>- Alle -</option>
@@ -152,8 +152,10 @@
                     variant="outline"
                     bare
                     size="sm"
-                    id="radio-id"
-                    name="radio-name"
+                    id="select-7"
+                    name="select-name"
+                    label="Sortierung"
+                    :hideLabel=true
                     >
                     <option disabled="" selected="">Sortieren</option>
                     <option>nach Relevanz</option>
@@ -180,7 +182,7 @@
                   />
                 </div>
             </div>
-
+            <h2 class="sr-only">News list</h2>
             <SearchResultsList
               v-if="!noResults && !isLoading"
               :itemList="searchResults"
