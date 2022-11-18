@@ -41,85 +41,75 @@
                 size="lg"
               />
             </div>
-            <div
-              class="search__filters"
-              :class="filtersAreOpen ? 'filters--are-open' : '' "
-            >
-              <Btn
-                label="Filter"
-                variant="bare"
-                size="sm"
-                icon-pos="right"
-                icon="ChevronDown"
-                :class="filtersAreOpen ? ' btn--icon-180' : '' "
-                @click.native="filtersAreOpen = !filtersAreOpen"
-              />
-              <div v-if="filtersAreOpen" class="search__filters__drawer">
+          </div>
+          <div
+            class="search__filters"
+            :class="filtersAreOpen ? 'filters--are-open' : '' "
+          >
+            <Btn
+              :label="filtersAreOpen ? 'Filter ausblenden' : 'Filter anzeigen'"
+              variant="bare"
+              size="sm"
+              icon-pos="right"
+              icon="ChevronDown"
+              :class="filtersAreOpen ? ' btn--icon-180' : '' "
+              @click.native="filtersAreOpen = !filtersAreOpen"
+            />
+            <div v-if="filtersAreOpen" class="search__filters__drawer">
+              <Select
+                  variant="outline"
+                  size="sm"
+                  id="select-1"
+                  name="select-name"
+                  label="Filter name"
+                  >
+                  <option selected="">Option</option>
+                  <option>...</option>
+                </Select>
                 <Select
-                    variant="outline"
-                    size="sm"
-                    id="radio-id"
-                    name="radio-name"
-                    >
-                    <option disabled="" selected="">Sortieren</option>
-                    <option>nach Relevanz</option>
-                    <option>by date (increasing)</option>
-                    <option>by date (decreasing)</option>
-                    <option>...</option>
-                  </Select>
-                  <Select
-                    variant="outline"
-                    size="sm"
-                    id="radio-id"
-                    name="radio-name"
-                    >
-                    <option disabled="" selected="">Sortieren</option>
-                    <option>nach Relevanz</option>
-                    <option>by date (increasing)</option>
-                    <option>by date (decreasing)</option>
-                    <option>...</option>
-                  </Select>
-                  <Select
-                    variant="outline"
-                    size="sm"
-                    id="radio-id"
-                    name="radio-name"
-                    >
-                    <option disabled="" selected="">Sortieren</option>
-                    <option>nach Relevanz</option>
-                    <option>by date (increasing)</option>
-                    <option>by date (decreasing)</option>
-                    <option>...</option>
-                  </Select>
-                  <Select
-                    variant="outline"
-                    size="sm"
-                    id="radio-id"
-                    name="radio-name"
-                    >
-                    <option disabled="" selected="">Sortieren</option>
-                    <option>nach Relevanz</option>
-                    <option>by date (increasing)</option>
-                    <option>by date (decreasing)</option>
-                    <option>...</option>
-                  </Select>
-                  <Select
-                    variant="outline"
-                    size="sm"
-                    id="radio-id"
-                    name="radio-name"
-                    >
-                    <option disabled="" selected="">Sortieren</option>
-                    <option>nach Relevanz</option>
-                    <option>by date (increasing)</option>
-                    <option>by date (decreasing)</option>
-                    <option>...</option>
-                  </Select>
-              </div>
+                  variant="outline"
+                  size="sm"
+                  id="select-2"
+                  name="select-name"
+                  label="Filter name"
+                  >
+                  <option selected="">Option</option>
+                  <option>...</option>
+                </Select>
+                <Select
+                  variant="outline"
+                  size="sm"
+                  id="select-3"
+                  name="select-name"
+                  label="Filter name"
+                  >
+                  <option selected="">Option</option>
+                  <option>...</option>
+                </Select>
+                <Select
+                  variant="outline"
+                  size="sm"
+                  id="select-4"
+                  name="select-name"
+                  label="Filter name"
+                  >
+                  <option selected="">Option</option>
+                  <option>...</option>
+                </Select>
+                <Select
+                  variant="outline"
+                  size="sm"
+                  id="select-5"
+                  name="select-name"
+                  label="Filter name"
+                  >
+                  <option selected="">Option</option>
+                  <option>...</option>
+                </Select>
             </div>
-            <div class="filters__active">
+          </div>
+          <div class="filters__active">
 
-            </div>
           </div>
         </div>
       </section>
@@ -143,8 +133,8 @@
                     variant="outline"
                     bare
                     size="sm"
-                    id="radio-id"
-                    name="radio-name"
+                    id="select-6"
+                    name="select-name"
                     >
                     <option disabled="" selected="">Sortieren</option>
                     <option>nach Relevanz</option>
@@ -171,7 +161,7 @@
                   />
                 </div>
             </div>
-
+            <h2 class="sr-only">Results list</h2>
             <SearchResultsList
               v-if="!noResults && !isLoading"
               :itemList="searchResults"
@@ -367,7 +357,7 @@ export default {
     },
     filtersAreOpen: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     displayType: {
       type: String,
