@@ -171,7 +171,7 @@
     </main>
     <footer class="footer" id="main-footer">
       <FooterInformation />
-      <footer-navigation />
+      <FooterNavigation />
     </footer>
   </div>
 </template>
