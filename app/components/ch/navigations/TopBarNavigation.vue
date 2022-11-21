@@ -1,7 +1,7 @@
 <template>
   <nav
     :class="topBarNavigationClass"
-    aria-label="Top bar navigation"
+    aria-label="Top bar"
   >
     <ul>
       <li>

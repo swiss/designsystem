@@ -1,7 +1,7 @@
 <template>
   <nav
     :class="breadcrumbNavigationClass"
-    aria-label="Breadcrumb navigation"
+    aria-label="Breadcrumb"
   >
     <ul>
       <li>
