@@ -7,8 +7,10 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <template v-slot:body>
-            <h3 class="card__title">Geo.Hackmin</h3>
+          <template v-slot:title>
+            <h3>Geo.Hackmin</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Hatten Sie schon immer eine Idee, die sie mit Geodaten umsetzen wollten?
               Wollten Sie schon immer ein Problem mit Hilfe von Karten und Luftbildern lösen?
@@ -45,8 +47,10 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <template v-slot:body>
-            <h3 class="card__title">Daten und Dienste online kostenlos als Open Government Data (OGD)</h3>
+          <template v-slot:title>
+            <h3>Daten und Dienste online kostenlos als Open Government Data (OGD)</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
               sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
@@ -74,8 +78,10 @@
           <template v-slot:image>
             <img src="https://placekitten.com/g/775/350" alt="cat">
           </template>
-          <template v-slot:body>
-            <h3 class="card__title">Daten und Dienste online kostenlos als Open Government Data (OGD)</h3>
+          <template v-slot:title>
+            <h3>Daten und Dienste online kostenlos als Open Government Data (OGD)</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
               At vero eos et ac-cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
@@ -101,8 +107,10 @@
             <SvgIcon icon="FolderOpen" size="xl" class="mr-2" />
             <div>Dossier</div>
           </template>
-          <template v-slot:body>
-            <h3 class="card__title">Chinastrategie 2025</h3>
+          <template v-slot:title>
+            <h3>Chinastrategie 2025</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Description Dossier China strategy Description Description Dossier China strategy Description
             </p>
@@ -148,7 +156,7 @@
             <SvgIcon icon="Twitter" size="xl" class="mr-2" />
             <div>Tweets from @swiss_geoportal</div>
           </template>
-          <template v-slot:body>
+          <template v-slot:description>
             <a class="twitter-timeline"
               data-theme="light"
               data-tweet-limit="4"

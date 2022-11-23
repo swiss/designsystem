@@ -24,8 +24,8 @@
       <ServicesSection />
     </main>
     <footer class="footer" id="main-footer">
-      <footer-information />
-      <footer-navigation />
+      <FooterInformation />
+      <FooterNavigation />
     </footer>
   </div>
 </template>

@@ -5,8 +5,8 @@
 
       <div class="grid grid--responsive-cols-4 gap--responsive">
         <Card type="default">
-            <template v-slot:body>
-              Verschiedene Adressen, Standorte einfach und schnell auf map.geo.admin.ch darstellen
+          <template v-slot:description>
+            Verschiedene Adressen, Standorte einfach und schnell auf map.geo.admin.ch darstellen
           </template>
           <template v-slot:footerInfo>
             22. März 2012
@@ -22,7 +22,7 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:body>
+          <template v-slot:description>
             Digitale Karten und Geoinformation im Unterricht
           </template>
           <template v-slot:footerInfo>
@@ -39,7 +39,7 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:body>
+          <template v-slot:description>
             Swisstopo Daten sind neu in geo.admin.ch Geo- und Downloaddiensten kostenlos...
           </template>
           <template v-slot:footerInfo>
@@ -56,7 +56,7 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:body>
+          <template v-slot:description>
             IWF würdigt Schweizer Umgang mit der Pandemie
           </template>
           <template v-slot:footerInfo>

@@ -140,6 +140,7 @@
   @apply w-[1.4em] h-full;
   @apply stroke-[0.3px] md:stroke-[0.35px] lg:stroke-[0.4px];
   @apply stroke-current;
+  @apply transition-transform duration-200;
 }
 
 .btn--icon-none {
@@ -167,6 +168,12 @@
 
   .btn__icon {
     @apply relative ml-[0.2em] left-[0.1em];
+  }
+}
+
+.btn--icon-180 {
+  .btn__icon {
+    @apply rotate-180;
   }
 }
 

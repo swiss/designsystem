@@ -45,12 +45,14 @@
           <div class="container__aside">
             <div class="sticky sticky--top">
               <Card type="default">
-                <template v-slot:body>
-                  <h2 class="card__title">Inhaltverzeichnis</h2>
+                <template v-slot:title>
+                  <h2>Inhaltverzeichnis</h2>
+                </template>
+                <template v-slot:description>
                   <ul class="menu text--sm">
                     <li>
-                      <a 
-                        href="#einleitung" 
+                      <a
+                        href="#einleitung"
                         class="menu__item menu__item--border menu__item--condensed"
                       >
                         <div>
@@ -63,8 +65,8 @@
                       </a>
                     </li>
                     <li>
-                      <a 
-                        href="#datenmodell-ablage" 
+                      <a
+                        href="#datenmodell-ablage"
                         class="menu__item menu__item--border menu__item--condensed"
                       >
                         <div>
@@ -77,8 +79,8 @@
                       </a>
                     </li>
                     <li>
-                      <a 
-                        href="#dokumente" 
+                      <a
+                        href="#dokumente"
                         class="menu__item menu__item--border menu__item--condensed"
                       >
                         <div>
@@ -161,8 +163,8 @@
             <h2 class="h2" id="dokumente">
               Weitere Informationen
             </h2>
-            
-            <Accordion id="12345">             
+
+            <Accordion id="12345">
               <AccordionItem id="10" title="Medienmitteilungen" headingLevel="h3">
                 <h3 class="h5">Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
@@ -189,8 +191,8 @@
       </section>
     </main>
     <footer class="footer" id="main-footer">
-      <footer-information />
-      <footer-navigation />
+      <FooterInformation />
+      <FooterNavigation />
     </footer>
   </div>
 </template>

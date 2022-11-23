@@ -51,8 +51,10 @@
         <div class="container">
           <div class="grid grid--responsive-cols-4 gap--responsive">
             <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
+              <template v-slot:title>
+                <h3>Card example</h3>
+              </template>
+              <template v-slot:description>
                 <p>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -61,8 +63,10 @@
               </template>
             </Card>
             <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
+              <template v-slot:title>
+                <h3>Card example</h3>
+              </template>
+              <template v-slot:description>
                 <p>
                   Sed onsetetur sadipscing elitr ipsum dolor sit amet,
                   consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
@@ -71,8 +75,10 @@
               </template>
             </Card>
             <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
+              <template v-slot:title>
+                <h3>Card example</h3>
+              </template>
+              <template v-slot:description>
                 <p>
                   Consetetur sadipscing elitr sadipscing elitr, sed Lorem ipsum
                   dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
@@ -82,8 +88,10 @@
               </template>
             </Card>
             <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
+              <template v-slot:title>
+                <h3>Card example</h3>
+              </template>
+              <template v-slot:description>
                 <p>
                   Vonsetetur sadipscing elitr, onsetetur sadipscing elitr sed
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -167,8 +175,10 @@
                 <!--template v-slot:image>
                   <img src="https://placekitten.com/g/775/350" alt="cat">
                 </template-->
-                <template v-slot:body>
-                  <h3 class="card__title">Side notes, can be sticky</h3>
+                <template v-slot:title>
+                  <h3>Side notes, can be sticky</h3>
+                </template>
+                <template v-slot:description>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -277,8 +287,10 @@
         <div class="container">
           <div class="grid grid--responsive-cols-3 gap--responsive">
             <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
+              <template v-slot:title>
+                <h3>Card example</h3>
+              </template>
+              <template v-slot:description>
                 <p>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -288,8 +300,10 @@
               </template>
             </Card>
             <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
+              <template v-slot:title>
+                <h3>Card example</h3>
+              </template>
+              <template v-slot:description>
                 <p>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -299,8 +313,10 @@
               </template>
             </Card>
             <Card type="default">
-              <template v-slot:body>
-                <h3 class="card__title">Card example</h3>
+              <template v-slot:title>
+                <h3>Card example</h3>
+              </template>
+              <template v-slot:description>
                 <p>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -369,8 +385,8 @@
       </section>
     </main>
     <footer class="footer" id="main-footer">
-      <footer-information />
-      <footer-navigation />
+      <FooterInformation />
+      <FooterNavigation />
     </footer>
   </div>
 </template>
