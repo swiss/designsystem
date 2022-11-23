@@ -293,6 +293,14 @@
   }
 
   .btn  {
-    @apply absolute invisible;
+    @apply h-0 min-h-0 border-0;
+
+    &:focus-visible {
+      @apply ring-0 ring-transparent;
+    }
+
+    &:focus-visible::after {
+      @apply ring-2 ring-purple-300;
+    }
   }
 }
