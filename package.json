@@ -14,7 +14,8 @@
     "dev": "npm run dev:storybook",
     "build-css": "NODE_ENV=css postcss css/main.postcss --ext css --dir dist",
     "build": "concurrently \"NODE_ENV=css postcss css/main.postcss --ext css --dir dist \" \"cd app && npm run build-storybook\"",
-    "postinstall": "concurrently \"npm run build-css\" \"cd app && npm install\""
+    "postinstall": "concurrently \"npm run build-css\" \"cd app && npm install\"",
+    "test": "cd app && npm run chromatic"
   },
   "repository": {
     "type": "git",

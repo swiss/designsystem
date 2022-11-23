@@ -31,13 +31,6 @@ export default {
         'outline-negative',
       ].includes(prop)
     },
-    size: {
-      type: String,
-      validator: (prop) => [
-        'base',
-        'lg'
-      ].includes(prop)
-    },
     icon: {
       type: String,
     },
@@ -54,7 +47,6 @@ export default {
     computedClasses () {
       let base = 'btn '
       if (this.type) base += `btn--${this.type} `
-      if (this.size) base += `btn--${this.size} `
       if (this.icon) base += `btn--icon-only `
       return base
     }

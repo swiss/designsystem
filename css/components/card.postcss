@@ -3,7 +3,7 @@
 \*----------------------------------------*/
 
 .card {
-  @apply flex flex-col;
+  @apply flex flex-col h-full;
   @apply bg-white;
 }
 
@@ -111,7 +111,6 @@
   }
 }
 
-
 .card__image {
   @apply relative pb-[56.25%]; /* 16/9 ratio */
   @apply overflow-hidden;
@@ -203,6 +202,14 @@
       @apply pl-0; 
     }
   }
+
+  .card__content {
+    @apply md:-ml-3 lg:-ml-5 xl:-ml-6 3xl:-ml-8;
+  }
+
+  .card__title {
+    @apply md:text-xl xl:text-2xl 3xl:text-3xl;
+  }
 }
 
 .card--image-right {
@@ -234,5 +241,54 @@
         @apply pt-0; 
       }
     }
+  }
+}
+
+.card--universal {
+  @apply shadow-lg;
+  
+  .card__image {
+    @apply border-t-[0.5em] border-b-[0.5em] border-transparent;
+
+    img {
+      @apply object-contain;
+    }
+  }
+}
+
+.card--list {
+  @apply card--flat;
+  
+  &, 
+  &:hover {
+    @apply no-underline text-inherit; /* override general styling for links in main */ 
+  }
+
+  @media screen(sm) {
+    @apply grid gap-x-6;
+    grid-template-columns: 4fr 1fr;
+  }
+
+  .card__image {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    align-self: start;
+
+    @apply hidden md:block;
+  }
+
+  .card__content {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .card__body {
+    @apply pt-0 pb-4;
+    @apply max-w-[800px];
+  }
+
+  .btn  {
+    @apply absolute invisible;
   }
 }

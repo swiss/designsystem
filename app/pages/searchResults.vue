@@ -170,8 +170,8 @@
 
     </main>
     <footer class="footer" id="main-footer">
-      <footer-information />
-      <footer-navigation />
+      <FooterInformation />
+      <FooterNavigation />
     </footer>
   </div>
 </template>
@@ -192,7 +192,7 @@ import Pagination from '../components/ch/components/Pagination.vue'
 import Notification from '../components/ch/components/Notification.vue'
 
 export default {
-  name: 'detailPageSimple',
+  name: 'searchResults',
   components: {
     AlterBodyClasses,
     TopBar,

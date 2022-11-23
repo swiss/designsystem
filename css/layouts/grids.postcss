@@ -8,6 +8,14 @@
   @apply gap-5 xs:gap-7 sm:gap-9 lg:gap-10 xl:gap-12 3xl:gap-16;
 }
 
+.gap--top {
+  @apply pt-5 xs:pt-7 sm:pt-9 lg:pt-10 xl:pt-12 3xl:pt-16;
+}
+
+.gap--bottom {
+  @apply pb-5 xs:pb-7 sm:pb-9 lg:pb-10 xl:pb-12 3xl:pb-16;
+}
+
 .grid { /* default Tailwind value */ }
 
 .grid--responsive-cols-2 {
@@ -186,6 +194,10 @@
   & > *:nth-child(1) { 
     @apply col-span-2;
   }
+
+  & > * {
+    @apply col-span-2 md:col-span-1;
+  }
 }
 
 .grid--items-4 {
@@ -193,6 +205,10 @@
 
   & > *:nth-child(1) { 
     @apply col-span-3; 
+  }
+
+  & > * {
+    @apply col-span-3 md:col-span-1;
   }
 }
 
