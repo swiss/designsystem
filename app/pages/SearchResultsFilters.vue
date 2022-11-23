@@ -50,7 +50,7 @@
               :label="filtersAreOpen ? 'Filter ausblenden' : 'Filter anzeigen'"
               variant="bare"
               size="sm"
-              icon-pos="right"
+              icon-pos="left"
               icon="ChevronDown"
               :class="filtersAreOpen ? ' btn--icon-180' : '' "
               @click.native="filtersAreOpen = !filtersAreOpen"
