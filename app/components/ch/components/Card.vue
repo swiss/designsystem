@@ -9,7 +9,7 @@
     <div class="card__content">
       <div class="card__body">
         <slot name="metaInfos"></slot>
-        <div class="card__title">
+        <div v-if="$slots.title" class="card__title">
           <slot name="title"></slot>
         </div>
         <slot name="description"></slot>
