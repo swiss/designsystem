@@ -62,7 +62,7 @@
             <img src="https://picsum.photos/1024/768?random=1" alt="cat">
           </template>
           <template v-slot:title>
-            <h3 class="card__title">Covid 19</h3>
+            <h3>Covid 19</h3>
           </template>
           <template v-slot:description>
             <p>
@@ -89,7 +89,7 @@
             <img src="https://picsum.photos/1024/768?random=2" alt="cat">
           </template>
           <template v-slot:title>
-            <h3 class="card__title">Covid 19</h3>
+            <h3>Covid 19</h3>
           </template>
           <template v-slot:description>
             <p>
@@ -116,7 +116,7 @@
             <img src="https://picsum.photos/1024/768?random=3" alt="cat">
           </template>
           <template v-slot:title>
-            <h3 class="card__title">Covid 19</h3>
+            <h3>Covid 19</h3>
           </template>
           <template v-slot:description>
             <p>
@@ -143,7 +143,7 @@
             <img src="https://picsum.photos/1024/768?random=4" alt="cat">
           </template>
           <template v-slot:title>
-            <h3 class="card__title">Covid 19</h3>
+            <h3>Covid 19</h3>
           </template>
           <template v-slot:description>
             <p>
@@ -170,7 +170,7 @@
             <img src="https://picsum.photos/1024/768?random=5" alt="cat">
           </template>
           <template v-slot:title>
-            <h3 class="card__title">Covid 19</h3>
+            <h3>Covid 19</h3>
           </template>
           <template v-slot:description>
             <p>
@@ -197,7 +197,7 @@
             <img src="https://picsum.photos/1024/768?random=6" alt="cat">
           </template>
           <template v-slot:title>
-            <h3 class="card__title">Covid 19</h3>
+            <h3>Covid 19</h3>
           </template>
           <template v-slot:description>
             <p>

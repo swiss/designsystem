@@ -11,7 +11,7 @@
       </template>
 
       <template v-slot:title>
-        <h3 class="card__title">Card 1</h3>
+        <h3>Card 1</h3>
       </template>
       <template v-slot:description>
         <p>
@@ -36,7 +36,7 @@
         <img src="https://placekitten.com/g/775/350" alt="cat" />
       </template>
       <template v-slot:title>
-        <h3 class="card__title">Card 2</h3>
+        <h3>Card 2</h3>
       </template>
       <template v-slot:description>
         <p>
@@ -61,7 +61,7 @@
         <img src="https://placekitten.com/g/775/350" alt="cat" />
       </template>
       <template v-slot:title>
-        <h3 class="card__title">Card 3</h3>
+        <h3>Card 3</h3>
       </template>
       <template v-slot:description>
         <p>
