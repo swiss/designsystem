@@ -250,6 +250,10 @@
   .card__image {
     @apply border-t-[0.5em] border-b-[0.5em] border-transparent;
 
+    &:before {
+      @apply border-0;
+    }
+
     img {
       @apply object-contain;
     }
