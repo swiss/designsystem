@@ -1,31 +1,8 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
-import VideoExample from '../../ch/demo/VideoExample.vue'
-import test from '../../../static/videos/demo.vtt'
 
 <Meta
-  title="Components/Video"
-  component={VideoExample}
+  title="Components/Video/Embed"
 />
-
-export const Template = () => ({
-  props: [],
-  components: { VideoExample},
-  template:'<VideoExample/>',
-})
-
-import videoFile from '../../../static/videos/demo.mp4';
-import vttFile from '../../../static/videos/demo.vtt';
-
-<Canvas>
-  <video controls
-       src={videoFile}>
-    <track default
-           kind="captions"
-           srclang="en"
-           src={vttFile}
-           />
-</video>
-</Canvas>
 
 # Video embed
 
@@ -79,14 +56,4 @@ Wrapped into a `ratio` parent, the `iframe` element becomes responsive and keeps
       </figure>
     </div>
   </div>
-</Canvas>
-
-# Video cues
-
-<Canvas>
-  <Story
-    name="Example"
-  >
-    {Template.bind({})}
-  </Story>
 </Canvas>
