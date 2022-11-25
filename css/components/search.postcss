@@ -68,7 +68,7 @@
 .search {}
 
 .search--negative {
-  @apply bg-secondary-300;
+  @apply bg-secondary-500;
 }
 
 .search__group {
@@ -86,8 +86,12 @@
   }
 
   .search--negative & input {
-    @apply bg-secondary-400;
+    @apply bg-secondary-500;
     @apply relative z-10;
+
+    &::placeholder {
+      @apply text-secondary-100;
+    }
   }
 
   .search--large & {
