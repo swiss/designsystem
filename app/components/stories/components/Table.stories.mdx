@@ -40,7 +40,7 @@ export const Template = (args, { argTypes }) => ({
 
 Add a recommended `<caption>` element right after the `<table>` opening tag for better accessibility. This is used by screen readers to provide a label for the table. It is also used by assistive technologies to help users navigate the table and understand what data is being displayed and how it is organized.
 
-Within `<tbody>`, all `<th>` elements should have a `scope` attribute with a value of `row` or `col`. This is used by screen readers to help users understand the structure of the table data and navigate the table more efficiently.
+Use `<th>` elements to define headers. They should have a `scope` attribute with a value of `row` or `col`. This is used by screen readers to help users understand the structure of the table data and navigate the table more efficiently.
 
 ```html
 <table class="table table--default ">
@@ -49,8 +49,8 @@ Within `<tbody>`, all `<th>` elements should have a `scope` attribute with a val
   </caption>
   <thead>
     <tr>
-      <th>Header col one</th>
-      <th>Header col two</th>
+      <th scope="col">Header col one</th>
+      <th scope="col">Header col two</th>
     </tr>
   </thead>
   <tbody>
