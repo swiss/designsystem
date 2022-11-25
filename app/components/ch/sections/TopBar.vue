@@ -212,22 +212,22 @@
               <h4 class="top-bar__title">Ämter</h4>
               <div class="search search--negative search--large">
                 <div class="search__group">
-                  <input 
+                  <input
                     @focus="isSearchInputFocused = true"
                     @blur="isSearchInputFocused = false"
-                    type="text" 
-                    id="search-input" 
-                    label="Ämter filtern" 
-                    placeholder="Ämter filtern" 
-                    autocomplete="off" 
+                    type="text"
+                    id="search-input"
+                    label="Ämter filtern"
+                    placeholder="Ämter filtern"
+                    autocomplete="off"
                   />
-                <Btn 
+                <Btn
                   @click.native="resetSearchInput"
-                  label="Ämter filtern" 
-                  :icon="isSearchInputFocused ? 'CancelCircle' : 'Filter'" 
-                  icon-pos="only" 
-                  variant="bare-negative" 
-                  size="lg" 
+                  label="Clear search input"
+                  :icon="isSearchInputFocused ? 'CancelCircle' : 'Filter'"
+                  icon-pos="only"
+                  variant="bare-negative"
+                  size="lg"
                 />
                 </div>
                 <div class="search__results search__results--negative">
@@ -411,7 +411,7 @@ export default {
     isOpen: {
       type: Boolean,
       default: false,
-    },  
+    },
   },
   methods: {
     resetSearchInput () {
