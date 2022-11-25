@@ -10,7 +10,11 @@
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)" role="button" class="breadcrumb__has-children active">
+        <a
+          href="javascript:void(0)"
+          class="breadcrumb__has-children active"
+          aria-current="page"
+        >
           <SvgIcon icon="ChevronRight" class="breadcrumb__include-icon" aria-hidden="true" />
           <span>Diensleistungen</span>
           <SvgIcon icon="ChevronDown" class="breadcrumb__dropdown-icon" aria-hidden="true" />

@@ -61,8 +61,8 @@
               <li>
                 <a
                   href="javascript:void(0)"
-                  role="button"
                   class="navy__has-children active"
+                  aria-current="page"
                 >
                   <span>Darstellungsdienste</span>
                   <SvgIcon icon="ArrowRight" size="lg" />

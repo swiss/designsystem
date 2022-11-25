@@ -38,7 +38,10 @@
         </div>
         <div>
           <h3 class="top-bar__main-title">Wo befinde ich mich?</h3>
-          <div class="localization">
+          <nav
+            aria-label="breadcrumb"
+            class="localization"
+          >
             <ul>
               <li>
                 <a href="javascript:void(0)">UVEK</a>
@@ -55,10 +58,16 @@
                 />
               </li>
               <li>
-                <a href="javascript:void(0)" class="active">Das Geoportal des Bundes</a>
+                <a
+                  href="javascript:void(0)"
+                  class="active"
+                  aria-current="page"
+                >
+                  Das Geoportal des Bundes
+                </a>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
 
         <div class="separator separator--negative separator--xl"></div>
