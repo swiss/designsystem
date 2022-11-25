@@ -15,10 +15,12 @@
               Hatten Sie schon immer eine Idee, die sie mit Geodaten umsetzen wollten?
               Wollten Sie schon immer ein Problem mit Hilfe von Karten und Luftbildern lösen?
             </p>
+          </template>
+          <template v-slot:eventInfos>
             <ul class="flex flex-wrap">
               <li class="flex items-center mr-6 mb-2">
                 <SvgIcon icon="Calendar" size="xl" class="-ml-1.5 mr-1" />
-                <div>10-12 Mai 2021</div>
+                <div>10-12 Mai 2022</div>
               </li>
               <li class="flex items-center mr-6 mb-2">
                 <SvgIcon icon="Clock" size="xl" class="-ml-1.5 mr-1" />

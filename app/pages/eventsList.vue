@@ -31,17 +31,14 @@
 
             </div>
             <div v-if="filtersAreOpen" class="search__filters__drawer">
-              <div class="relative">
-                <Input
-                  type="text"
-                  variant="outline"
-                  size="sm"
-                  id="select-1"
-                  name="select-name"
-                  label="Stichwortfilter"
-                />
-              </div>
-
+              <Input
+                type="text"
+                variant="outline"
+                size="sm"
+                id="select-1"
+                name="select-name"
+                label="Stichwortfilter"
+              />
               <Select
                 variant="outline"
                 size="sm"
@@ -62,21 +59,24 @@
                 <option selected>- Alle -</option>
                 <option>...</option>
               </Select>
-              <Select
+              <Input
+                type="date"
                 variant="outline"
                 size="sm"
-                id="select-4"
+                id="date-start"
                 name="select-name"
-                label="Zeitraum"
-                >
-                <option selected>- Alle -</option>
-                <option>next week</option>
-                <option>next month</option>
-                <option>next three months</option>
-                <option>next year</option>
-                <option disabled>───────</option>
-                <option>past events</option>
-              </Select>
+                value="2022-05-01"
+                label="Zeitraum | Startdatum"
+              />
+              <Input
+                type="date"
+                variant="outline"
+                size="sm"
+                id="date-start"
+                name="select-name"
+                value="2022-06-01"
+                label="Zeitraum | Enddatum"
+              />
               <Select
                 variant="outline"
                 size="sm"
@@ -117,6 +117,12 @@
                 icon="Cancel"
               />
               <TagItem
+                label="01.05.2022 - 01.06.2022"
+                variant="primary"
+                size="sm"
+                icon="Cancel"
+              />
+              <TagItem
                 label="Filter zurücksetzen"
                 variant="default"
                 size="sm"
@@ -140,7 +146,7 @@
             >
               <div class="search-results__header__left">
                 <Btn
-                  label="RSS Abo erstellen"
+                  label="Abo erstellen"
                   variant="bare"
                   size="sm"
                   icon-pos="right"
@@ -312,15 +318,13 @@ export default {
       searchResults: [
         {
           title: 'Search result one',
-          content: 'Max 150 chars, then truncate .Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...',
+          content: 'Max 150 chars, then truncate. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...',
           href: '#',
-          type: 'Article',
+          type: 'Konferenz',
           date: '12. April 2022',
-          specifications: 'Specifications related to content type (Author, PDF specs etc)',
           topics: ['Topic one', 'Topic two'],
-          isVideo: 'true',
-          isEasyLanguage: 'true',
-          isSignLanguage: 'true',
+          isEvent: true,
+          hasIcons: false,
           image: {
             src: 'https://picsum.photos/230/130/?image=29',
             width: '230',
@@ -338,10 +342,11 @@ export default {
           title: 'Search result two',
           content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma',
           href: '#',
-          type: 'Blogpost',
+          type: 'Konferenz',
           date: '12. April 2022',
-          specifications: 'Specifications related to content type (Author, PDF specs etc)',
-          topics: ['Topic one', 'Topic two', 'Topic three'],
+          topics: ['Topic one', 'Topic two'],
+          isEvent: true,
+          hasIcons: false,
           image: {
             src: 'https://picsum.photos/130/230/?image=29',
             width: '130',
@@ -359,15 +364,19 @@ export default {
           title: "Search result three",
           content: "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
           href: 'http://admin.ch',
-          type: 'Blogpost',
+          type: 'Konferenz',
           date: '12. April 2022',
+          isEvent: true,
+          hasIcons: false,
         },
         {
           title: "Search result four. Display a minimum of ten items",
           content: "Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ",
           href: 'http://admin.ch',
-          type: 'Blogpost',
+          type: 'Konferenz',
           date: '12. April 2022',
+          isEvent: true,
+          hasIcons: false,
         }
 
       ]

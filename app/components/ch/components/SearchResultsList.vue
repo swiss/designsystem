@@ -34,12 +34,28 @@
         </template>
         <template v-slot:author>
         </template>
+        <template v-slot:eventInfos v-if="item.isEvent">
+          <ul class="flex flex-wrap">
+            <li class="flex items-center mr-6 mb-2">
+              <SvgIcon icon="Calendar" size="xl" class="-ml-1.5 mr-1" />
+              <div>10-12 Mai 2022</div>
+            </li>
+            <li class="flex items-center mr-6 mb-2">
+              <SvgIcon icon="Clock" size="xl" class="-ml-1.5 mr-1" />
+              <div>9 bis 11 Uhr</div>
+            </li>
+            <li class="flex items-center mr-6 mb-2">
+              <SvgIcon icon="MapMarker" size="xl" class="-ml-1.5 mr-1" />
+              <div>Zürich</div>
+            </li>
+          </ul>
+        </template>
         <template v-slot:specifications>
           <MetaInfo
             :metainfos="[item.specifications]"
           />
         </template>
-        <template v-slot:contentIcons>
+        <template v-slot:contentIcons v-if="item.hasIcons!=false">
           <div
             class="card__content-icons"
           >
