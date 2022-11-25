@@ -12,7 +12,7 @@
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
         <div class="container">
-          <h1 class="h1">Aktuell</h1>
+          <h1 class="h1">Veranstaltungen</h1>
           <div
             class="search__filters"
             :class="filtersAreOpen ? 'filters--are-open' : '' "
@@ -82,10 +82,24 @@
                 size="sm"
                 id="select-5"
                 name="select-name"
-                label="Inhalts-Typ"
+                label="Veranstaltungs-Typ"
                 >
                 <option selected>- Alle -</option>
-                <option>Bericht</option>
+                <option>Ausstellung</option>
+                <option>Kongress</option>
+                <option selected>Konferenz</option>
+                <option>Teamevent</option>
+                <option>Webinar</option>
+                <option>Workshop</option>
+              </Select>
+              <Select
+                variant="outline"
+                size="sm"
+                id="select-6"
+                name="select-name"
+                label="Austragungsort"
+                >
+                <option selected>- Alle -</option>
                 <option>...</option>
               </Select>
             </div>
@@ -97,7 +111,7 @@
                 icon="Cancel"
               />
               <TagItem
-                label="Bericht"
+                label="Konferenz"
                 variant="primary"
                 size="sm"
                 icon="Cancel"
@@ -125,10 +139,6 @@
               class="search-results__header"
             >
               <div class="search-results__header__left">
-                <div class="search-results__occurences">
-                  <strong>127</strong> Suchergebnisse
-                </div>
-                <div class="separator separator--vertical"></div>
                 <Btn
                   label="RSS Abo erstellen"
                   variant="bare"
@@ -259,7 +269,7 @@ import TagItem from '../components/ch/components/TagItem.vue'
 import Breadcrumb from '~/components/ch/sections/Breadcrumb.vue'
 
 export default {
-  name: 'detailPageSimple',
+  name: 'eventsList',
   components: {
     AlterBodyClasses,
     TopBar,
