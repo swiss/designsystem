@@ -6,7 +6,6 @@ import Pagination from '../../ch/components/Pagination.vue';
   component={Pagination}
   argTypes={{
     type:    { control: { type: 'select', options: ['outline', 'outline-negative'] } },
-    size:    { control: { type: 'select', options: ['base', 'lg'] } },
     field:   { control: { type: 'boolean' } },
   }}
 />
@@ -14,7 +13,7 @@ import Pagination from '../../ch/components/Pagination.vue';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Pagination },
-  template: '<Pagination :type="type" :size="size" :field="field" :currentPage="currentPage" :totalPages="totalPages" :paginationItems="paginationItems" />',
+  template: '<Pagination :type="type" :field="field" :currentPage="currentPage" :totalPages="totalPages" :paginationItems="paginationItems" />',
 });
 
 # Pagination

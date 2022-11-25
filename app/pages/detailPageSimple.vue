@@ -399,7 +399,7 @@
     <Modal title="Inhalt teilen" triggerElements=".share-bar__share-button, #share-link" layout="auto">
       <template v-slot:body>
         <Card type="default">
-          <template v-slot:body>
+          <template v-slot:description>
             <div class="flex flex-wrap gap-6">
               <a href="#" class="link" title="Share on Facebook">
                 <SvgIcon
@@ -471,8 +471,8 @@
       </template>
     </Modal>
     <footer class="footer" id="main-footer">
-      <footer-information />
-      <footer-navigation />
+      <FooterInformation />
+      <FooterNavigation />
     </footer>
   </div>
 </template>

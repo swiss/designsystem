@@ -18,7 +18,7 @@
               <SvgIcon :icon="capitalize(feed.type)" size="xl" class="mr-2" />
               <div>{{feed.title}}</div>
             </template>
-            <template v-slot:body>
+            <template v-slot:description>
               <div
                 v-if="feed.type=='twitter'"
                 class="socials__twitter"

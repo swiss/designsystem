@@ -141,7 +141,7 @@
 \*----------------------------------------*/
 
 .search--page-result {
-  @apply md:w-4/5 lg:w-1/2;
+  @apply lg:w-4/5 xl:w-2/3;
   @apply pt-4 md:pt-6 2xl:pt-8;
 
   svg { 
@@ -150,8 +150,15 @@
   }
 }
 
-.search-results {
-  @apply md:w-4/5 lg:w-3/4;
+.search-results--list {}
+
+.search-results--grid {
+  
+  .search-results-list {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+    @apply gap--responsive;
+    @apply gap--top;
+  }
 }
 
 .search-results__tabs {
@@ -159,10 +166,10 @@
 }
 
 .search-results__header {
-  @apply flex gap-x-16 items-end justify-between;
+  @apply flex flex-wrap gap-x-2 items-center justify-between;
   @apply text--sm;
-  @apply pt-8 sm:pt-12 2xl:pt-16;
-  @apply pb-4 sm:pb-6 2xl:pb-8;
+  @apply pt-4 sm:pt-6 2xl:pt-8;
+  @apply pb-2 sm:pb-3 2xl:pb-4;
   @apply border-b border-secondary-300;
 
   strong {
@@ -170,15 +177,15 @@
   }
 }
 
-.search-results__sort {
-  @apply flex flex-wrap gap-x-4 justify-end;
+.search-results__header__left {
+  @apply flex items-baseline;
+}
 
-  .form__group {
-    @apply flex gap-x-4;
-  }
+.search-results__header__right {
+  @apply flex ml-auto;
 
-  .form__group__radio {
-    @apply mb-0;
+  select {
+    @apply text-right;
   }
 }
 
@@ -195,11 +202,36 @@
   }
 }
 
+.search__filters {
+  @apply mt-4;
+}
+
+.search__filters__actions {
+  @apply flex flex-wrap gap-x-2;
+}
+
+.search__filters__drawer {
+  @apply grid md:grid-cols-2 lg:grid-cols-3;
+  @apply gap-3 lg:gap-4;
+  @apply pt-4 sm:pt-6 2xl:pt-8;
+  @apply pb-2 sm:pb-3 2xl:pb-4;
+  @apply mt-4 sm:mt-6 2xl:mt-8;
+  @apply border-t border-secondary-200;
+}
+
+.search__filters__tags {
+  @apply flex flex-wrap;
+  @apply pt-4 sm:pt-6 2xl:pt-8;
+}
+
+
 
 
 
 /*----------------------------------------*\
- SEARCH RESULT ITEM
+ DEPRECATED
+ TODO - remove when .search-result has been replaced 
+ by .card.card--list component 
 \*----------------------------------------*/
 
 .search-result {
@@ -266,3 +298,17 @@
     @apply shadow-none;
   }
 }
+
+
+.search-results__sort {
+  @apply flex flex-wrap gap-x-4 justify-end;
+
+  .form__group {
+    @apply flex gap-x-4;
+  }
+}
+
+
+/*----------------------------------------*\
+ END - DEPRECATED
+\*----------------------------------------*/

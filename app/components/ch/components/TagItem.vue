@@ -12,6 +12,11 @@
       >
         {{ label }}
       </span>
+      <SvgIcon
+        v-if="this.icon"
+        :icon="this.icon"
+        class="tag-item__icon"
+      />
     </span>
   </component>
 </template>
@@ -33,13 +38,26 @@ export default {
       type: String,
       validator: (prop) => [
         'default',
+        'primary',
         'active'
       ].includes(prop)
     },
     label: {
       type: String,
       required: true,
-    }
+    },
+    size: {
+      type: String,
+      default: 'base',
+      validator: (prop) => [
+        'base',
+        'sm'
+      ].includes(prop)
+    },
+    icon: {
+      type: String,
+      default: undefined
+    },
   },
 
   computed: {
@@ -62,6 +80,8 @@ export default {
     classes () {
       let base = 'tag-item '
       if (this.variant) base += `tag-item--${this.variant} `
+      if (this.size) base += `tag-item--${this.size} `
+      if (this.icon) base += `tag-item--icon `
       return base
     },
   }

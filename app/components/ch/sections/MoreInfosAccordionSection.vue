@@ -5,10 +5,10 @@
         <h2 class="h2">
           Weitere Informationen
         </h2>
-        
+
         <Accordion id="100">
-          
-          <AccordionItem 
+
+          <AccordionItem
             id="10"
             title="Medienmitteilungen"
             headingLevel="h3"
@@ -23,14 +23,16 @@
             </ul>
           </AccordionItem>
 
-          <AccordionItem 
+          <AccordionItem
             id="11"
             title="Interviews"
             headingLevel="h3"
           >
             <Card type="flat">
-              <template v-slot:body>
-                <h4 class="card__title">Flat Card example</h4>
+              <template v-slot:title>
+                <h4>Flat Card example</h4>
+              </template>
+              <template v-slot:description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
               <template v-slot:footerInfo>
@@ -47,8 +49,10 @@
               </template>
             </Card>
             <Card type="flat">
-              <template v-slot:body>
-                <h4 class="card__title">Flat Card example</h4>
+              <template v-slot:title>
+                <h4>Flat Card example</h4>
+              </template>
+              <template v-slot:description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
               <template v-slot:footerInfo>
@@ -65,7 +69,7 @@
               </template>
             </Card>
             <Card type="flat">
-              <template v-slot:body>
+              <template v-slot:title>
                 Swisstopo Daten sind neu in geo.admin.ch Geo- und Downloaddiensten kostenlos...
               </template>
               <template v-slot:footerInfo>
@@ -83,7 +87,7 @@
             </Card>
           </AccordionItem>
 
-          <AccordionItem 
+          <AccordionItem
             id="12"
             title="Dokumente und Downloads"
             headingLevel="h3"
@@ -108,7 +112,7 @@
             </ul>
           </AccordionItem>
 
-          <AccordionItem 
+          <AccordionItem
             id="13"
             title="Reden"
             headingLevel="h3"
@@ -130,7 +134,7 @@
             </figure>
           </AccordionItem>
 
-          <AccordionItem 
+          <AccordionItem
             id="14"
             title="Parlament"
             headingLevel="h3"
@@ -138,7 +142,7 @@
             AccordionItem Content here
           </AccordionItem>
 
-          <AccordionItem 
+          <AccordionItem
             id="15"
             title="Gesetze und Verordnungen"
             headingLevel="h3"

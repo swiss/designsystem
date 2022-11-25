@@ -14,6 +14,7 @@ import Input from '../../ch/components/Input.vue'
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
     variant: { control: { type: 'select', options: ['outline', 'negative'] } },
     label: {},
+    hideLabel:   { control: { type: 'boolean' } },
     message: {},
     messageType: {
       control: {
@@ -27,7 +28,7 @@ import Input from '../../ch/components/Input.vue'
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Input },
-  template: '<Input :type="type" :variant="variant" :size="size" :label="label" :placeholder="placeholder" :value="value" :id="id" :min="min" :max="max" :step="step" :message="message" :messageType="messageType" />',
+  template: '<Input :type="type" :variant="variant" :size="size" :label="label" :hideLabel="hideLabel" :placeholder="placeholder" :value="value" :id="id" :min="min" :max="max" :step="step" :message="message" :messageType="messageType" />',
 })
 
 # Input
@@ -41,6 +42,7 @@ export const Template = (args, { argTypes }) => ({
       type: 'outline',
       size: 'base',
       label: 'Label',
+      hideLabel: false,
       placeholder: 'Placeholder',
       value: undefined,
       id: 'my-id',

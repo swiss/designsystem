@@ -1,7 +1,7 @@
 <template>
   <section class="section bg--secondary-500">
     <div class="container">
-      <h2 
+      <h2
         v-if="isHomePage"
         class="section__title"
       >
@@ -9,8 +9,10 @@
       </h2>
       <div class="grid grid--items-5 gap--responsive">
         <Card type="default">
-          <template v-slot:body>
-            <h3 class="card__title">Datenmodellablage</h3>
+          <template v-slot:title>
+            <h3>Datenmodellablage</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
@@ -30,8 +32,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:body>
-            <h3 class="card__title">Geodienste</h3>
+          <template v-slot:title>
+            <h3>Geodienste</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
@@ -51,8 +55,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:body>
-            <h3 class="card__title">Datenbezug</h3>
+          <template v-slot:title>
+            <h3>Datenbezug</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
@@ -72,8 +78,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:body>
-            <h3 class="card__title">Beratung und Koordination</h3>
+          <template v-slot:title>
+            <h3>Beratung und Koordination</h3>
+          </template>
+          <template v-slot:description>
             <p>
               At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
@@ -92,8 +100,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:body>
-            <h3 class="card__title">Geodienste</h3>
+          <template v-slot:title>
+            <h3>Geodienste</h3>
+          </template>
+          <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.

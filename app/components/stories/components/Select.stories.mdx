@@ -13,6 +13,8 @@ import Select from '../../ch/components/Select.vue'
     },
     bare: {},
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    label: {},
+    hideLabel:   { control: { type: 'boolean' } },
     message: {},
     messageType: {
       control: {
@@ -32,6 +34,7 @@ export const Template = (args, { argTypes }) => ({
       :bare="bare"
       :size="size"
       :label="label"
+      :hideLabel="hideLabel"
       :id="id"
       :name="name"
       :message="message"
@@ -54,11 +57,12 @@ export const Template = (args, { argTypes }) => ({
     name="Example"
     args={{
       variant: 'outline',
-      bare: true,
+      bare: false,
       size: 'base',
       label: 'Label',
-      name: 'radio-name',
-      id:'radio-id'
+      hideLabel: false,
+      name: 'select-name',
+      id:'select-id'
     }}
   >
     {Template.bind({})}
@@ -76,8 +80,8 @@ TODO: update examples below:
 <Canvas style={{ backgroundColor: '#2f4356' }}>
   <div class="select">
     <select
-      id="radio-id"
-      name="radio-name"
+      id="select-id"
+      name="select-name"
       class="input--outline input--base input--negative"
     >
       <option>Choose your country</option>
@@ -102,8 +106,8 @@ TODO: update examples below:
 <Canvas>
   <div class="select">
     <select
-      id="radio-id"
-      name="radio-name"
+      id="select-id"
+      name="select-name"
       class="input--outline input--base"
       disabled
     >
@@ -134,7 +138,7 @@ For size variations, the following css classes are built:
   <div class="select">
     <select
       id="select-0"
-      name="radio-name"
+      name="select-name"
       class="input--outline input--sm"
     >
       <option>Small</option>
@@ -153,7 +157,7 @@ For size variations, the following css classes are built:
   <div class="select">
     <select
       id="select-0"
-      name="radio-name"
+      name="select-name"
       class="input--outline input--base"
     >
       <option>Default</option>
@@ -172,7 +176,7 @@ For size variations, the following css classes are built:
   <div class="select">
     <select
       id="select-0"
-      name="radio-name"
+      name="select-name"
       class="input--outline input--lg"
     >
       <option>Large</option>

@@ -53,6 +53,10 @@ export default {
     label: {
       type: String,
     },
+    hideLabel: {
+      type: Boolean,
+      default: false,
+    },
     id: {
       type: String,
     },
@@ -86,6 +90,7 @@ export default {
       let base = ''
       if (this.variant === 'negative') base += `text--negative `
       if (this.size) base += `text--${this.size} `
+      if (this.hideLabel) base += `sr-only `
       return base
     },
   },

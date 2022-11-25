@@ -11,7 +11,7 @@ import CardGrid from "../../ch/demo/CardGrid.vue";
 
 # Cards and Grids
 
-Most of the time, cards are grouped into a section. They are considered as teasers and they point to a specific content deeper in the website. 
+Most of the time, cards are grouped into a section. They are considered as teasers and they point to a specific content deeper in the website.
 
 
 # Dynamic list of cards
@@ -20,9 +20,9 @@ A news list is a classic example of dynamic list: the content is updated everyti
 ## Number of cards
 **Put a maximum of 3 cards per dynamic list of cards.**
 
-**Exceptions:** 
+**Exceptions:**
 - On a hub page, you have to list every sub pages.
-- If you really need to display more items, use the [carousel pattern](?path=/docs/components-carousel--with-bullets).  
+- If you really need to display more items, use the [carousel pattern](?path=/docs/components-carousel--with-bullets).
 
 ## Grid classes
 For dynamic lists, all columns have the same width. Use one of the following grid variants:
@@ -50,7 +50,7 @@ Below a simplified example of a section with 3 news picked dynamically, and a li
         <a href="#" class="btn btn--bare btn--icon-right ">
           <svg viewBox="0 0 24 24" class="btn__icon icon icon--base icon--ArrowRight ">
             <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
-          </svg> 
+          </svg>
           <span class="btn__text">
             Alle News sehen
            </span>
@@ -61,7 +61,7 @@ Below a simplified example of a section with 3 news picked dynamically, and a li
 </Canvas>
 
 # Curated list of cards
-Curated list is a section where the items are picked manually. Depending on the numbers of cards, the layout adapts accordingly. 
+Curated list is a section where the items are picked manually. Depending on the numbers of cards, the layout adapts accordingly.
 
 ## Number of rows
 **Put a maximum of 5 cards per curated list of cards.**
@@ -101,7 +101,7 @@ Below a simplified example of a section with 5 cards picked manually, and a link
         <a href="#" class="btn btn--bare btn--icon-right ">
           <svg viewBox="0 0 24 24" class="btn__icon icon icon--base icon--ArrowRight ">
             <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
-          </svg> 
+          </svg>
           <span class="btn__text">
             Alle News sehen
            </span>
@@ -114,47 +114,23 @@ Below a simplified example of a section with 5 cards picked manually, and a link
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Card, Btn, SvgIcon, CardGrid },
-  template: 
+  template:
   `
     <section class="section bg--secondary-50">
       <div class="container">
         <h2 class="section__title">{{ sectionTitle }}</h2>
         <CardGrid v-if="nItems" :nItems="nItems">
-          <Card 
-            type="default" 
+          <Card
+            type="default"
             :layout="(nItems === 1 || nItems === 3 || nItems === 4 ) ? 'image-left' : 'default' "
           >
             <template v-slot:image>
               <img src="https://placekitten.com/g/775/350" alt="cat" />
             </template>
-            <template v-slot:body>
-              <h3 class="card__title">Card 1</h3>
-              <p>
-                Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
-                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                Lorem
-              </p>
+            <template v-slot:title>
+              <h3>Card 1</h3>
             </template>
-            <template v-slot:footerAction>
-              <Btn
-                to="#"
-                variant="outline"
-                icon-pos="only"
-                icon="ArrowRight"
-                label="Weiterlesen"
-              />
-            </template>
-          </Card>
-          <Card 
-            v-if="nItems>1"
-            type="default" 
-          >
-            <template v-slot:image>
-              <img src="https://placekitten.com/g/775/350" alt="cat" />
-            </template>
-            <template v-slot:body>
-              <h3 class="card__title">Card 2</h3>
+            <template v-slot:description>
               <p>
                 Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
@@ -173,14 +149,16 @@ export const Template = (args, { argTypes }) => ({
             </template>
           </Card>
           <Card
-            v-if="nItems>2" 
-            type="default" 
+            v-if="nItems>1"
+            type="default"
           >
             <template v-slot:image>
               <img src="https://placekitten.com/g/775/350" alt="cat" />
             </template>
-            <template v-slot:body>
-              <h3 class="card__title">Card 3</h3>
+            <template v-slot:title>
+              <h3>Card 2</h3>
+            </template>
+            <template v-slot:description>
               <p>
                 Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
@@ -198,15 +176,45 @@ export const Template = (args, { argTypes }) => ({
               />
             </template>
           </Card>
-          <Card 
+          <Card
+            v-if="nItems>2"
+            type="default"
+          >
+            <template v-slot:image>
+              <img src="https://placekitten.com/g/775/350" alt="cat" />
+            </template>
+            <template v-slot:title>
+              <h3>Card 3</h3>
+            </template>
+            <template v-slot:description>
+              <p>
+                Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem
+              </p>
+            </template>
+            <template v-slot:footerAction>
+              <Btn
+                to="#"
+                variant="outline"
+                icon-pos="only"
+                icon="ArrowRight"
+                label="Weiterlesen"
+              />
+            </template>
+          </Card>
+          <Card
             v-if="nItems>3"
-            type="default" 
+            type="default"
           >
             <template v-slot:image>
               <img src="https://placekitten.com/g/775/350" alt="cat" />
             </template>
-            <template v-slot:body>
-              <h3 class="card__title">Card 4</h3>
+            <template v-slot:title>
+              <h3>Card 4</h3>
+            </template>
+            <template v-slot:description>
               <p>
                 Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
@@ -224,15 +232,17 @@ export const Template = (args, { argTypes }) => ({
               />
             </template>
           </Card>
-          <Card 
+          <Card
             v-if="nItems>4"
-            type="default" 
+            type="default"
           >
             <template v-slot:image>
               <img src="https://placekitten.com/g/775/350" alt="cat" />
             </template>
-            <template v-slot:body>
-              <h3 class="card__title">Card 5</h3>
+            <template v-slot:title>
+              <h3>Card 5</h3>
+            </template>
+            <template v-slot:description>
               <p>
                 Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
                 sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.

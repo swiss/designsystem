@@ -2,15 +2,18 @@
   <div
     :class="computedClasses"
   >
-    <Card 
-      type="default" 
-      :layout="columns === 1 ? 'image-left' : 'default'" 
+  <Card
+      type="default"
+      :layout="columns === 1 ? 'image-left' : 'default'"
     >
       <template v-slot:image>
         <img src="https://placekitten.com/g/775/350" alt="cat" />
       </template>
-      <template v-slot:body>
-        <h3 class="card__title">Card 1</h3>
+
+      <template v-slot:title>
+        <h3>Card 1</h3>
+      </template>
+      <template v-slot:description>
         <p>
           Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
@@ -32,8 +35,10 @@
       <template v-slot:image>
         <img src="https://placekitten.com/g/775/350" alt="cat" />
       </template>
-      <template v-slot:body>
-        <h3 class="card__title">Card 2</h3>
+      <template v-slot:title>
+        <h3>Card 2</h3>
+      </template>
+      <template v-slot:description>
         <p>
           Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
@@ -55,8 +60,10 @@
       <template v-slot:image>
         <img src="https://placekitten.com/g/775/350" alt="cat" />
       </template>
-      <template v-slot:body>
-        <h3 class="card__title">Card 3</h3>
+      <template v-slot:title>
+        <h3>Card 3</h3>
+      </template>
+      <template v-slot:description>
         <p>
           Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et ac-cusam et justo duo dolores et ea rebum.
@@ -79,7 +86,7 @@
         <SvgIcon icon="Twitter" size="xl" class="mr-2" />
         <div>Tweets from @swiss_geoportal</div>
       </template>
-      <template v-slot:body>
+      <template v-slot:description>
         <a class="twitter-timeline"
           data-theme="light"
           data-tweet-limit="4"
@@ -133,10 +140,10 @@ export default {
 
   computed: {
     computedClasses () {
-      let base = 'grid gap--responsive '   
-      if (this.columns === 3) base += `grid--responsive-cols-3 `  
+      let base = 'grid gap--responsive '
+      if (this.columns === 3) base += `grid--responsive-cols-3 `
       else if (this.columns === 2 && this.twitter === 0) base += `grid--responsive-cols-2 `
-      else if (this.columns === 2 && this.twitter === 1) base += `grid--responsive-cols-2/3-1/3 ` 
+      else if (this.columns === 2 && this.twitter === 1) base += `grid--responsive-cols-2/3-1/3 `
       return base
     },
   }
