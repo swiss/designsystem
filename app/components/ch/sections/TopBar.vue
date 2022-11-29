@@ -218,14 +218,14 @@
             </div>
 
             <div class="top-bar__grid__box-4">
-              <h4 class="top-bar__title">Ämter</h4>
+              <h4 class="top-bar__title">Weitere Bundes-Websites</h4>
               <div class="search search--negative search--large">
                 <div class="search__group">
                   <input
                     type="text"
                     id="search-input"
                     label="Ämter filtern"
-                    placeholder="Ämter filtern"
+                    placeholder="Filtern"
                     autocomplete="off"
                     v-model="filterString"
                     ref="searchInput"
