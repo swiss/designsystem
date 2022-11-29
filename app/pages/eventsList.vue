@@ -145,6 +145,10 @@
               class="search-results__header"
             >
               <div class="search-results__header__left">
+                <div class="search-results__occurences">
+                  <strong>4</strong> Suchergebnisse
+                </div>
+                <div class="separator separator--vertical"></div>
                 <Btn
                   label="Abo erstellen"
                   variant="bare"
