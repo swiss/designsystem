@@ -164,7 +164,7 @@
         </a>
         <ul>
           <li>
-            <span class="navy__title">Mehr</span>
+            <h2 class="navy__title">Mehr</h2>
           </li>
           <li>
             <ul id="more-container"></ul>
