@@ -222,22 +222,32 @@
               <div class="search search--negative search--large">
                 <div class="search__group">
                   <input
-                    @focus="isSearchInputFocused = true"
-                    @blur="isSearchInputFocused = false"
                     type="text"
                     id="search-input"
                     label="Ämter filtern"
                     placeholder="Ämter filtern"
                     autocomplete="off"
+                    v-model="filterString"
+                    ref="searchInput"
                   />
-                <Btn
-                  @click.native="resetSearchInput"
-                  label="Clear search input"
-                  :icon="isSearchInputFocused ? 'CancelCircle' : 'Filter'"
-                  icon-pos="only"
-                  variant="bare-negative"
-                  size="lg"
-                />
+                  <Btn
+                    v-if="filterString!==''"
+                    @click.native="filterString=''; $refs.searchInput.focus()"
+                    label="Clear search input"
+                    icon="CancelCircle"
+                    icon-pos="only"
+                    variant="bare-negative"
+                    size="lg"
+                  />
+                  <div
+                    v-else
+                    class="btn btn--negative btn--lg btn--icon-only"
+                  >
+                    <SvgIcon
+                      icon="Filter"
+                      class="icon--lg"
+                    />
+                  </div>
                 </div>
                 <div class="search__results search__results--negative">
                   <ul class="menu">
@@ -413,7 +423,8 @@ export default {
   },
   data: function(){
     return {
-      isSearchInputFocused: false
+      isSearchInputFocused: false,
+      filterString: '',
     }
   },
   props: {
@@ -422,12 +433,5 @@ export default {
       default: false,
     },
   },
-  methods: {
-    resetSearchInput () {
-      const searchInput = document.getElementById('search-input')
-      searchInput.value = ''
-      searchInput.focus()
-    }
-  }
 }
 </script>
