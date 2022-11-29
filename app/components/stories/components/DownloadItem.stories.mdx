@@ -12,7 +12,7 @@ export const Template = (args, { argTypes }) => ({
   components: { DownloadItem },
   template:
     `
-    <DownloadItem :filename="filename" :title="title" :description="description" :url="url" :type="type" :date="date" :headingLevel)= />
+    <DownloadItem :filename="filename" :title="title" :description="description" :url="url" :type="type" :date="date" :headingLevel="headingLevel" />
     `
 })
 
@@ -24,7 +24,7 @@ export const LargeTemplate = (args, { argTypes }) => ({
     <div>
       <ul>
         <li v-for="item in content">
-          <DownloadItem :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date"  />
+          <DownloadItem :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date" :headingLevel="headingLevel"  />
         </li>
       </ul>
       <div class="flex justify-end">
