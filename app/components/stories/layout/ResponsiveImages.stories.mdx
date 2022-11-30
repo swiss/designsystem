@@ -5,7 +5,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 />
 
 # Responsive images
-You can improve the performance of your page by loading resized images based on the device viewport. 
+You can improve the performance of your page by loading resized images based on the device viewport.
 
 Image widths will depend on the containers they are displayed in.
 
@@ -67,8 +67,7 @@ The **minimal declarations** keep the automatic image generation smaller, while 
 When cards are placed in other layouts or have the extended layout (`.card--image-left` or `.card--image-right`), please refer to the corresponding container (see definitions below) to get the responsive sizes.
 
 
-
-
+# Images in containers
 
 ## Images in `.container__full`
 
@@ -100,12 +99,11 @@ This represent the biggest image displayable on the website.
 
 ## Images in `.container__center--md`
 
-In `.hero`component, for example.
 
 **Minimal declaration**
 ```html
 <picture>
-    <source srcset="https://picsum.photos/1024/xxx/?image=29" media="(min-width: 480px)">
+    <source srcset="https://picsum.photos/1282/xxx/?image=29" media="(min-width: 480px)">
     <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
 </picture>
 ```
@@ -113,11 +111,23 @@ In `.hero`component, for example.
 **Full declaration**
 ```html
 <picture>
-    <source srcset="https://picsum.photos/1024/xxx/?image=29" media="(min-width: 1536px)">
-    <source srcset="https://picsum.photos/960/xxx/?image=29" media="(min-width: 1280px)">
+    <source srcset="https://picsum.photos/1282/xxx/?image=29" media="(min-width: 1800px)">
+    <source srcset="https://picsum.photos/1192/xxx/?image=29" media="(min-width: 1024px)">
     <source srcset="https://picsum.photos/800/xxx/?image=29" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/720/xxx/?image=29" media="(min-width: 480px)">
+    <source srcset="https://picsum.photos/680/xxx/?image=29" media="(min-width: 480px)">
     <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
+</picture>
+```
+
+Example of an image displayed in `.hero--default` component. The image has a 16:9 ratio here:
+
+```html
+<picture>
+    <source srcset="https://picsum.photos/1282/721/?image=29" media="(min-width: 1800px)">
+    <source srcset="https://picsum.photos/1192/670/?image=28" media="(min-width: 1024px)">
+    <source srcset="https://picsum.photos/800/450/?image=29" media="(min-width: 768px)">
+    <source srcset="https://picsum.photos/680/382/?image=28" media="(min-width: 480px)">
+    <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
 </picture>
 ```
 
@@ -181,7 +191,7 @@ In content of simple detail pages or in content with sidebar, for example.
 
 ## Retina
 - All the current sizes are defined for normal screens.
-- If you want to defined the retina sizes, you should add HD definitions (x1.5 or x2) to each source
+- If you want to define the retina sizes, you should add HD definitions (x1.5 or x2) to each source
 
 ```html
 // normal declaration

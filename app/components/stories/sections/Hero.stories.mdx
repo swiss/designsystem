@@ -34,15 +34,19 @@ export const Template = (args, { argTypes }) => ({
         v-if="${args.type == 'main-image' || args.type == 'default'}"
         v-slot:image
       >
-        <picture>
-          <img
-            v-if="${args.type == 'main-image'}"
-            src="https://placekitten.com/g/1200/900" alt="ratio is 4/3"
-          >
-          <img
-            v-if="${args.type == 'default'}"
-            src="https://placekitten.com/g/1600/900" alt="ratio is 16/9"
-          >
+        <picture  v-if="${args.type == 'main-image'}">
+          <source srcset="https://picsum.photos/1282/961/?image=29" media="(min-width: 1800px)">
+          <source srcset="https://picsum.photos/1192/894/?image=28" media="(min-width: 1024px)">
+          <source srcset="https://picsum.photos/800/600/?image=29" media="(min-width: 768px)">
+          <source srcset="https://picsum.photos/680/510/?image=28" media="(min-width: 480px)">
+          <img src="https://picsum.photos/480/360/?image=29" alt="ratio is 4/3">
+        </picture>
+        <picture v-if="${args.type == 'default'}">
+          <source srcset="https://picsum.photos/1282/721/?image=29" media="(min-width: 1800px)">
+          <source srcset="https://picsum.photos/1192/670/?image=28" media="(min-width: 1024px)">
+          <source srcset="https://picsum.photos/800/450/?image=29" media="(min-width: 768px)">
+          <source srcset="https://picsum.photos/680/382/?image=28" media="(min-width: 480px)">
+          <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
         </picture>
       </template>
       <template v-if="${args.type == 'main-image'}" v-slot:title>
