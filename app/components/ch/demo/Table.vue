@@ -5,10 +5,10 @@
     </caption>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Job</th>
-        <th>E-mail</th>
-        <th>Role</th>
+        <th scope="col">Name</th>
+        <th scope="col">Job</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Role</th>
       </tr>
     </thead>
     <tbody>
