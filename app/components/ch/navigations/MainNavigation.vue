@@ -26,6 +26,7 @@
           href="javascript:void(0)"
           role="button"
           class="navy__has-children active"
+          aria-current="true"
         >
           <span>Dienstleistungen</span>
           <SvgIcon icon="ArrowRight" size="lg" />
@@ -45,6 +46,7 @@
               href="javascript:void(0)"
               role="button"
               class="navy__has-children active"
+              aria-current="true"
             >
               <span>Geodienste</span>
               <SvgIcon icon="ArrowRight" size="lg" />
@@ -62,7 +64,7 @@
                 <a
                   href="javascript:void(0)"
                   class="navy__has-children active"
-                  aria-current="page"
+                  aria-current="true"
                 >
                   <span>Darstellungsdienste</span>
                   <SvgIcon icon="ArrowRight" size="lg" />
@@ -81,9 +83,13 @@
                     <a href="javascript:alert('link')">Überblick</a>
                   </li>
                   <li>
-                    <a href="javascript:alert('link')" class="active"
-                      >Web Map Services</a
+                    <a
+                      href="javascript:alert('link')"
+                      class="active"
+                      aria-current="page"
                     >
+                      Web Map Services
+                    </a>
                   </li>
                   <li>
                     <a href="javascript:alert('link')">Web tiling Services</a>

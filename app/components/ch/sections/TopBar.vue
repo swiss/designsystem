@@ -40,6 +40,7 @@
           <h3 class="top-bar__main-title">Wo befinde ich mich?</h3>
           <nav
             aria-label="breadcrumb"
+            aria-current="location"
             class="localization"
           >
             <ul>
