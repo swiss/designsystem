@@ -9,7 +9,11 @@
 .separator::before {
   content: '';
   @apply w-full block;
-  @apply border-b border-secondary-100;
+  @apply border-b border-secondary-200;
+
+  .bg--secondary-50 & {
+    @apply border-secondary-300;
+  }
 }
 
 .separator--xl {
