@@ -1,8 +1,8 @@
 <template>
   <div class="bg--secondary-600">
     <div class="container">
-      <ul class="footer-information">
-        <li class="footer-information__entry">
+      <div class="footer-information">
+        <div class="footer-information__entry">
           <h3>Über uns</h3>
           <p>
             In vitae risus porttitor, imperdiet urna quis, venenatis mi. Aliquam
@@ -13,8 +13,8 @@
           <p>
             © Geoportal
           </p>
-        </li>
-        <li class="footer-information__entry">
+        </div>
+        <div class="footer-information__entry">
           <h3>Bleiben sie informiert</h3>
           <div class="footer-information__social">
             <a class="footer__link" href="facebook.com">
@@ -41,8 +41,8 @@
 
           <Btn label="News abonnieren" icon="ArrowRight" icon-pos="right" variant="outline-negative" />
 
-        </li>
-        <li class="footer-information__entry footer-information__entry--big">
+        </div>
+        <div class="footer-information__entry footer-information__entry--big">
           <h3>Weitere Informationen</h3>
           <div class="footer-information__links">
             <div class="footer-information__links-column">
@@ -92,8 +92,8 @@
               </a>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
