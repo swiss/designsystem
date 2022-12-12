@@ -16,7 +16,7 @@
           Rückerstattungsaktion der US-amerikanischen Konsumentenschutzbehörde
         </template>
         <template v-slot:description>
-          Die US-amerikanische Konsumentenschutzbehörde Federal Trade Commission FTC hat das SECO im Juli 2022 über eine Rückerstattungsaktion informiert, die in den kommenden Monaten erfolgen wird. Personen in der Schweiz, die von falschen Gewinnversprechen des US-amerikanischen Unternehmens Next-Gen getäuscht worden sind, sollen einen Teil ihres bezahlten Geldes zurückerhalten.
+          Bern, 10.02.2022 — Die US-amerikanische Konsumentenschutzbehörde Federal Trade Commission FTC hat das SECO im Juli 2022 über eine Rückerstattungsaktion informiert, die in den kommenden Monaten erfolgen wird. Personen in der Schweiz, die von falschen Gewinnversprechen des US-amerikanischen Unternehmens Next-Gen getäuscht worden sind, sollen einen Teil ihres bezahlten Geldes zurückerhalten.
         </template>
         <template v-slot:image>
           <figure>
@@ -259,7 +259,7 @@ export default {
           }
         },
       ],
-      metaInfos: ['Medienmitteilung', '10. Februar 2022', 'aktualisiert am 11.02.22'],
+      metaInfos: ['Medienmitteilung', '10. Februar 2022, aktualisiert am 11.02.22'],
       authors:[
         {
           name: 'Maria Muster',
