@@ -168,14 +168,7 @@
           <span>Mehr</span>
           <SvgIcon icon="MoreFilled" size="lg" />
         </a>
-        <ul>
-          <li>
-            <h2 class="navy__title">Mehr</h2>
-          </li>
-          <li>
-            <ul id="more-container"></ul>
-          </li>
-        </ul>
+        <ul id="more-container"></ul>
       </li>
     </ul>
   </nav>
