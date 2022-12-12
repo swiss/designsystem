@@ -53,23 +53,37 @@
 
             <p>Die FTC hat das Staatssekretariat für Wirtschaft (SECO) im Rahmen des internationalen Netzwerks International Consumer Protection and Enforcement Network ICPEN kontaktiert. Die FTC und das SECO sind zwei der 70 Mitglieder dieses Netz-werks, welches die Bekämpfung von grenzüberschreitenden unlauteren Geschäftspraktiken bezweckt. Durch die globale Reichweite und Zusammenarbeit unter den Behörden in diesem Netzwerk soll die Durchsetzung des Konsumentenschutzes über internationale Grenzen hinweg erleichtert werden.</p>
 
-            <h2 class="h2">text</h2>
+            <h2 class="h2">Weiterführende Artikel</h2>
             <ul>
               <li>
-                Ein neues minimales Geodatenmodell in der Datenmodellablage
-                publizieren
+                <a href="http://www.admin.ch" >
+                  Internal link, without target _blank (recommanded)
+                </a>
               </li>
               <li>
-                List item neues
-                <a href="#" target="_blank">external link in list</a>
-                publizieren
+                <a href="http://www.ftc.gov" target="_blank" rel="external">
+                  Informationen zur Rückerstattungsaktion der FTC
+                </a>
               </li>
               <li>
-                Ein neues minimales Geodatenmodell in der Datenmodellablage
-                publizieren
+                <a href="https://www.ftc.gov/news-events/news/press-releases/2022/07/us-federal-trade-commission-returning-almost-25-million-consumers-worldwide-who-were-defrauded-next" target="_blank" rel="external">
+                  Pressemitteilung vom 19.07.2022
+                </a>
               </li>
               <li>
-                List item neues Modell in der Datenmodellablage publizieren
+                <a href="https://www.ftc.gov/enforcement/refunds/next-gen-refunds" target="_blank" rel="external">
+                  Next-Gen Refund page
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ftc.gov/enforcement/recent-ftc-cases-resulting-refunds/refund-programs-frequently-asked-questions" target="_blank" rel="external">
+                  Fragen und Antworten zu den Rückzahlungen
+                </a>
+              </li>
+              <li>
+                <a href="https://icpen.org/" target="_blank" rel="external">
+                  International consumer Protection and Enforcement Network
+                </a>
               </li>
             </ul>
 
@@ -94,16 +108,37 @@
               />
             </ul>
 
+            <h2 class="h2">Kontakt für Rückfragen</h2>
+            <address>
+              <strong>Staatssekretariat für Wirtschaft SECO</strong><br/>
+              Holzikofenweg 36<br/>
+              CH-3003 Bern<br/>
+              Tel. +41 58 462 56 56<br/>
+              <a href="mailto:medien@seco.admin.ch">medien@seco.admin.ch</a>
+            </address>
+
+            <h2 class="h2">Herausgeber</h2>
+
+            <p>
+              Staatssekretariat für Wirtschaft<br>
+              <a href="http://www.seco.admin.ch ">
+                www.seco.admin.ch </a>
+            </p>
+            <p>Name de Amtes <br><a href="www.amtsurl.ch">www.amtsurl.ch</a></p>
+
             <RelatedTags :tags="tags"></RelatedTags>
 
+            <Btn
+              to="/"
+              variant="outline"
+              size="base"
+              icon="ArrowLeft"
+              iconPos="left"
+              label="Zurück zu Übersicht"
+            />
           </div>
         </div>
       </section>
-
-
-
-
-      <ContactSection />
     </main>
     <footer class="footer" id="main-footer">
       <FooterInformation />
@@ -122,9 +157,6 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import Hero from '~/components/ch/sections/Hero'
-import QuoteSection from '~/components/ch/sections/QuoteSection'
-import ContactSection from '~/components/ch/sections/ContactSection'
-import MoreInfosAccordionSection from '~/components/ch/sections/MoreInfosAccordionSection'
 import TextImage from '~/components/ch/components/TextImage'
 import AudioPlayer from '~/components/ch/components/AudioPlayer'
 import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
@@ -152,9 +184,6 @@ export default {
     FooterInformation,
     FooterNavigation,
     Hero,
-    QuoteSection,
-    ContactSection,
-    MoreInfosAccordionSection,
     TextImage,
     AudioPlayer,
     SlideshowExample,
