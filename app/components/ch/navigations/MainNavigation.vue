@@ -29,7 +29,7 @@
           aria-current="true"
         >
           <span>Dienstleistungen</span>
-          <SvgIcon icon="ArrowRight" size="lg" />
+          <SvgIcon v-if="context == 'mobile'" icon="ArrowRight" size="lg" />
         </a>
         <ul>
           <li>
