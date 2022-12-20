@@ -12,7 +12,7 @@
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
         <div class="container">
-          <h1 class="h1">Aktuell</h1>
+          <h1 class="h1">Veranstaltungen</h1>
           <div
             class="search__filters"
             :class="filtersAreOpen ? 'filters--are-open' : '' "
@@ -31,17 +31,14 @@
 
             </div>
             <div v-if="filtersAreOpen" class="search__filters__drawer">
-              <div class="relative">
-                <Input
-                  type="text"
-                  variant="outline"
-                  size="sm"
-                  id="select-1"
-                  name="select-name"
-                  label="Stichwortfilter"
-                />
-              </div>
-
+              <Input
+                type="text"
+                variant="outline"
+                size="sm"
+                id="select-1"
+                name="select-name"
+                label="Stichwortfilter"
+              />
               <Select
                 variant="outline"
                 size="sm"
@@ -85,10 +82,24 @@
                 size="sm"
                 id="select-5"
                 name="select-name"
-                label="Inhalts-Typ"
+                label="Veranstaltungs-Typ"
                 >
                 <option selected>- Alle -</option>
-                <option>Bericht</option>
+                <option>Ausstellung</option>
+                <option>Kongress</option>
+                <option selected>Konferenz</option>
+                <option>Teamevent</option>
+                <option>Webinar</option>
+                <option>Workshop</option>
+              </Select>
+              <Select
+                variant="outline"
+                size="sm"
+                id="select-6"
+                name="select-name"
+                label="Austragungsort"
+                >
+                <option selected>- Alle -</option>
                 <option>...</option>
               </Select>
             </div>
@@ -100,7 +111,7 @@
                 icon="Cancel"
               />
               <TagItem
-                label="Bericht"
+                label="Konferenz"
                 variant="primary"
                 size="sm"
                 icon="Cancel"
@@ -135,7 +146,7 @@
             >
               <div class="search-results__header__left">
                 <div class="search-results__occurences">
-                  <strong>127</strong> Suchergebnisse
+                  <strong>4</strong> Suchergebnisse
                 </div>
                 <div class="separator separator--vertical"></div>
                 <Btn
@@ -268,7 +279,7 @@ import TagItem from '../components/ch/components/TagItem.vue'
 import Breadcrumb from '~/components/ch/sections/Breadcrumb.vue'
 
 export default {
-  name: 'detailPageSimple',
+  name: 'eventsList',
   components: {
     AlterBodyClasses,
     TopBar,
@@ -311,15 +322,13 @@ export default {
       searchResults: [
         {
           title: 'Search result one',
-          content: 'Max 150 chars, then truncate .Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...',
+          content: 'Max 150 chars, then truncate. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...',
           href: '#',
-          type: 'Bericht',
-          date: '12. May 2022',
-          specifications: 'Specifications related to content type (Author, PDF specs etc)',
+          type: 'Konferenz',
+          date: '12. April 2022',
           topics: ['Topic one', 'Topic two'],
-          isVideo: 'true',
-          isEasyLanguage: 'true',
-          isSignLanguage: 'true',
+          isEvent: true,
+          hasIcons: false,
           image: {
             src: 'https://picsum.photos/230/130/?image=29',
             width: '230',
@@ -337,10 +346,11 @@ export default {
           title: 'Search result two',
           content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma',
           href: '#',
-          type: 'Bericht',
-          date: '12. May 2022',
-          specifications: 'Specifications related to content type (Author, PDF specs etc)',
-          topics: ['Topic one', 'Topic two', 'Topic three'],
+          type: 'Konferenz',
+          date: '12. April 2022',
+          topics: ['Topic one', 'Topic two'],
+          isEvent: true,
+          hasIcons: false,
           image: {
             src: 'https://picsum.photos/130/230/?image=29',
             width: '130',
@@ -358,16 +368,21 @@ export default {
           title: "Search result three",
           content: "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
           href: 'http://admin.ch',
-          type: 'Bericht',
-          date: '12. May 2022',
+          type: 'Konferenz',
+          date: '12. April 2022',
+          isEvent: true,
+          hasIcons: false,
         },
         {
           title: "Search result four. Display a minimum of ten items",
           content: "Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ",
           href: 'http://admin.ch',
-          type: 'Bericht',
-          date: '12. May 2022',
+          type: 'Konferenz',
+          date: '12. April 2022',
+          isEvent: true,
+          hasIcons: false,
         }
+
       ]
     }
   },

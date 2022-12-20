@@ -30,4 +30,8 @@
 
 .separator--vertical {
   @apply inline border-b-0 border-r border-secondary-400 mx-4;
+
+  & + .btn--bare {
+    @apply -ml-2;
+  }
 }

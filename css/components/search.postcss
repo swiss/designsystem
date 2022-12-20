@@ -166,19 +166,23 @@
 }
 
 .search-results__header {
-  @apply flex flex-wrap gap-x-2 items-center justify-between;
+  @apply flex flex-wrap gap-4 items-center justify-between;
   @apply text--sm;
   @apply pt-4 sm:pt-6 2xl:pt-8;
   @apply pb-2 sm:pb-3 2xl:pb-4;
   @apply border-b border-secondary-300;
 
   strong {
-    @apply block sm:inline mr-[1ex];
+    @apply block sm:inline mr-[1ex] font-regular;
   }
 }
 
 .search-results__header__left {
-  @apply flex items-baseline;
+  @apply flex items-stretch;
+}
+
+.search-results__occurences {
+  @apply flex items-center;
 }
 
 .search-results__header__right {
