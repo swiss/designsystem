@@ -47,3 +47,19 @@ $ npm run dev:all
 # build Storybook
 $ npm run build
 ```
+
+## Run visual regression testing
+
+```bash
+# run Chromatic
+$ git checkout main
+$ npm run test
+```
+
+This will run the test and provide an URL pointing to the Chromatic app. You can learn more about the Chromatic tool at [Chromatic's website.](https://www.chromatic.com/)
+
+If you want to run the test before merging your branches into the `main` branch, you can first check out `stage`, merge your modifications onto this branch, and then run the regression visual test. 
+
+
+
+
