@@ -1,6 +1,8 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 
-<Meta title="Components/Video" />
+<Meta
+  title="Components/Video/Embed"
+/>
 
 # Video embed
 
@@ -10,10 +12,10 @@ If the video need a label, use the `figure` and `figcaption`combination.
 ```html
 <figure>
   <div class="ratio ratio--16/9">
-    <iframe 
-      width="560" height="315" 
-      src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM" 
-      title="YouTube video player" 
+    <iframe
+      width="560" height="315"
+      src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+      title="YouTube video player"
       frameborder="0" allowfullscreen
     />
   </div>
@@ -29,10 +31,10 @@ Wrapped into a `ratio` parent, the `iframe` element becomes responsive and keeps
       <h3 class="h3">4/3 video in a tight and centered container</h3>
       <figure>
         <div class="ratio ratio--4/3">
-          <iframe 
-            width="1600" height="900" 
-            src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM" 
-            title="YouTube video player" 
+          <iframe
+            width="1600" height="900"
+            src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+            title="YouTube video player"
             frameborder="0" allowfullscreen
           />
         </div>
@@ -43,10 +45,10 @@ Wrapped into a `ratio` parent, the `iframe` element becomes responsive and keeps
       <h3 class="h3">16/9 video in a medium and centered container</h3>
       <figure>
         <div class="ratio ratio--16/9">
-          <iframe 
-            width="560" height="315" 
-            src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM" 
-            title="YouTube video player" 
+          <iframe
+            width="560" height="315"
+            src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+            title="YouTube video player"
             frameborder="0" allowfullscreen
           />
         </div>
@@ -55,5 +57,3 @@ Wrapped into a `ratio` parent, the `iframe` element becomes responsive and keeps
     </div>
   </div>
 </Canvas>
-
-

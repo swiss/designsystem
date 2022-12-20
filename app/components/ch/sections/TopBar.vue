@@ -38,7 +38,11 @@
         </div>
         <div>
           <h3 class="top-bar__main-title">Wo befinde ich mich?</h3>
-          <div class="localization">
+          <nav
+            aria-label="breadcrumb"
+            aria-current="location"
+            class="localization"
+          >
             <ul>
               <li>
                 <a href="javascript:void(0)">UVEK</a>
@@ -55,10 +59,16 @@
                 />
               </li>
               <li>
-                <a href="javascript:void(0)" class="active">Das Geoportal des Bundes</a>
+                <a
+                  href="javascript:void(0)"
+                  class="active"
+                  aria-current="page"
+                >
+                  Das Geoportal des Bundes
+                </a>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
 
         <div class="separator separator--negative separator--xl"></div>
@@ -209,26 +219,36 @@
             </div>
 
             <div class="top-bar__grid__box-4">
-              <h4 class="top-bar__title">Ämter</h4>
+              <h4 class="top-bar__title">Weitere Bundes-Websites</h4>
               <div class="search search--negative search--large">
                 <div class="search__group">
-                  <input 
-                    @focus="isSearchInputFocused = true"
-                    @blur="isSearchInputFocused = false"
-                    type="text" 
-                    id="search-input" 
-                    label="Ämter filtern" 
-                    placeholder="Ämter filtern" 
-                    autocomplete="off" 
+                  <input
+                    type="text"
+                    id="search-input"
+                    label="Ämter filtern"
+                    placeholder="Filtern"
+                    autocomplete="off"
+                    v-model="filterString"
+                    ref="searchInput"
                   />
-                <Btn 
-                  @click.native="resetSearchInput"
-                  label="Ämter filtern" 
-                  :icon="isSearchInputFocused ? 'CancelCircle' : 'Filter'" 
-                  icon-pos="only" 
-                  variant="bare-negative" 
-                  size="lg" 
-                />
+                  <Btn
+                    v-if="filterString!==''"
+                    @click.native="filterString=''; $refs.searchInput.focus()"
+                    label="Clear search input"
+                    icon="CancelCircle"
+                    icon-pos="only"
+                    variant="bare-negative"
+                    size="lg"
+                  />
+                  <div
+                    v-else
+                    class="btn btn--negative btn--lg btn--icon-only"
+                  >
+                    <SvgIcon
+                      icon="Filter"
+                      class="icon--lg"
+                    />
+                  </div>
                 </div>
                 <div class="search__results search__results--negative">
                   <ul class="menu">
@@ -404,21 +424,15 @@ export default {
   },
   data: function(){
     return {
-      isSearchInputFocused: false
+      isSearchInputFocused: false,
+      filterString: '',
     }
   },
   props: {
     isOpen: {
       type: Boolean,
       default: false,
-    },  
+    },
   },
-  methods: {
-    resetSearchInput () {
-      const searchInput = document.getElementById('search-input')
-      searchInput.value = ''
-      searchInput.focus()
-    }
-  }
 }
 </script>

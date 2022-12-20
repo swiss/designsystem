@@ -1,17 +1,17 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import Table from '../../ch/demo/Table.vue'
 
-<Meta 
-  title="Components/Table" 
+<Meta
+  title="Components/Table"
   component={Table}
   argTypes={{
-    variant: { 
-      control: { 
-        type: 'select', 
-        options: ['default', 'compact'] 
-      } 
+    variant: {
+      control: {
+        type: 'select',
+        options: ['default', 'compact']
+      }
     }
-  }} 
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
@@ -23,7 +23,7 @@ export const Template = (args, { argTypes }) => ({
 # Table
 
 <Canvas>
-  <Story 
+  <Story
     name="Example"
     args={{
       variant: 'default',
@@ -34,6 +34,37 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 <ArgsTable story="Example" />
+
+
+## Accessibility
+
+Add a recommended `<caption>` element right after the `<table>` opening tag for better accessibility. This is used by screen readers to provide a label for the table. It is also used by assistive technologies to help users navigate the table and understand what data is being displayed and how it is organized.
+
+Use `<th>` elements to define headers. They should have a `scope` attribute with a value of `row` or `col`. This is used by screen readers to help users understand the structure of the table data and navigate the table more efficiently.
+
+```html
+<table class="table table--default ">
+  <caption class="sr-only">
+    Short description of the table content for better accessibility
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Header col one</th>
+      <th scope="col">Header col two</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Header for row one</th>
+      <td>Row one col two content</td>
+    </tr>
+    <tr>
+      <th scope="row">Header for row two</th>
+      <td>Row two col two content</td>
+    </tr>
+  </tbody>
+</table>
+```
 
 <a href="?path=/story/components-table--example">
   Go to the Canvas Tab

@@ -1,0 +1,13 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.000
+Subtitle, standard place
+
+2
+00:00:02.000 --> 00:00:04.000 line:0
+Subtitle, top position
+
+3
+00:00:04.000 --> 00:00:06.000 line:50%
+Subtitle, centered

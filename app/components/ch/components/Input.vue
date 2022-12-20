@@ -19,6 +19,7 @@
       :step="step"
       :pattern="pattern"
       :autocomplete="autocomplete"
+      :readonly=readonly
     />
     <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
       {{ message }}
@@ -82,6 +83,10 @@ export default {
     },
     autocomplete: {
       type: String,
+    },
+    readonly: {
+      type: Boolean,
+      default: false,
     },
   },
 

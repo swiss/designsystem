@@ -2,12 +2,7 @@
   @apply relative;
 
   & select {
-    @apply pr-20;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    @apply pr-20 box-border appearance-none;
   }
 }
 
@@ -16,11 +11,9 @@
   @apply mt-0 !important;
 
   select {
-    @apply inline-block pr-6;
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: none;
-    @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
+    @apply inline-block pr-6; 
+    @apply shadow-transparent border-transparent bg-transparent;
+    @apply focus:outline-none;
   }
 
   .select__icon {
@@ -28,7 +21,7 @@
   }
 
   .input--negative + .select__icon {
-    background-color: transparent;
+    @apply bg-transparent;
   }
 }
 

@@ -6,9 +6,12 @@
   >
     <SvgIcon icon="Download" size="xl" class="download-item__icon" />
     <div>
-      <h5 class="download-item__title">
+      <component
+        :is="tag"
+        class="download-item__title"
+      >
         {{ title }}
-      </h5>
+      </component>
       <p v-if="description" class="download-item__description">
         {{ description }}
       </p>
@@ -51,6 +54,22 @@ export default {
       type: String,
       required: true,
     },
+    headingLevel: {
+      type: String,
+      default: 'h4',
+      validator: (prop) => [
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        'div'
+      ].includes(prop)
+    }
   },
+  computed: {
+    tag () {
+      return this.headingLevel
+    }
+  }
 }
 </script>

@@ -442,16 +442,29 @@
               <Input
                 type="outline"
                 size="base"
-                label="Label"
+                label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"
                 id="my-id"
+                :hideLabel=true
+                :readonly=true
               />
               <Btn
                 variant="outline"
                 size="base"
                 label="URL Kopieren"
                 class="mt-3"
+                @click.native="URLIsCopied = !URLIsCopied"
               />
+              <div aria-live="polite">
+                <Badge
+                  v-if="URLIsCopied"
+                  label="URL wurde kopiert"
+                  color="green"
+                  size="base"
+                  icon="Checkmark"
+                  class="mt-3"
+                />
+              </div>
             </div>
           </template>
         </Card>
@@ -489,6 +502,8 @@ import Btn from '../components/ch/components/Btn.vue'
 import SvgIcon from '../components/ch/components/SvgIcon.vue'
 import Card from '../components/ch/components/Card.vue'
 import Modal from '../components/ch/components/Modal.vue'
+import Badge from '../components/ch/components/Badge.vue'
+import Input from '../components/ch/components/Input.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -517,9 +532,12 @@ export default {
     Btn,
     SvgIcon,
     Modal,
+    Badge,
+    Input,
 },
   data: function () {
     return {
+      URLIsCopied: false,
       slides: [
         {
           image: {

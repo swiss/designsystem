@@ -1,5 +1,5 @@
 <template>
-  <nav :class="mainnavigationClass" aria-label="Main navigation">
+  <nav :class="mainnavigationClass" aria-label="Main">
     <ul>
       <li>
         <a href="javascript:alert('link')">
@@ -26,9 +26,10 @@
           href="javascript:void(0)"
           role="button"
           class="navy__has-children active"
+          aria-current="true"
         >
           <span>Dienstleistungen</span>
-          <SvgIcon icon="ArrowRight" size="lg" />
+          <SvgIcon v-if="context == 'mobile'" icon="ArrowRight" size="lg" />
         </a>
         <ul>
           <li>
@@ -36,7 +37,7 @@
               <SvgIcon icon="ArrowLeft" size="lg" />
               <span>Back</span>
             </a>
-            <span class="navy__title">Dienstleistungen</span>
+            <h2 class="navy__title">Dienstleistungen</h2>
             <a href="javascript:alert('link')">Überblick</a>
           </li>
           <li><a href="javascript:alert('link')">Datenmodellablage</a></li>
@@ -45,6 +46,7 @@
               href="javascript:void(0)"
               role="button"
               class="navy__has-children active"
+              aria-current="true"
             >
               <span>Geodienste</span>
               <SvgIcon icon="ArrowRight" size="lg" />
@@ -55,14 +57,14 @@
                   <SvgIcon icon="ArrowLeft" size="lg" />
                   <span>Back</span>
                 </a>
-                <span class="navy__title">Geodienste</span>
+                <h2 class="navy__title">Geodienste</h2>
                 <a href="javascript:alert('link')">Überblick</a>
               </li>
               <li>
                 <a
                   href="javascript:void(0)"
-                  role="button"
                   class="navy__has-children active"
+                  aria-current="true"
                 >
                   <span>Darstellungsdienste</span>
                   <SvgIcon icon="ArrowRight" size="lg" />
@@ -77,13 +79,17 @@
                       <SvgIcon icon="ArrowLeft" size="lg" />
                       <span>Back</span>
                     </a>
-                    <span class="navy__title">Darstellungsdienste</span>
+                    <h2 class="navy__title">Darstellungsdienste</h2>
                     <a href="javascript:alert('link')">Überblick</a>
                   </li>
                   <li>
-                    <a href="javascript:alert('link')" class="active"
-                      >Web Map Services</a
+                    <a
+                      href="javascript:alert('link')"
+                      class="active"
+                      aria-current="page"
                     >
+                      Web Map Services
+                    </a>
                   </li>
                   <li>
                     <a href="javascript:alert('link')">Web tiling Services</a>
@@ -162,14 +168,7 @@
           <span>Mehr</span>
           <SvgIcon icon="MoreFilled" size="lg" />
         </a>
-        <ul>
-          <li>
-            <span class="navy__title">Mehr</span>
-          </li>
-          <li>
-            <ul id="more-container"></ul>
-          </li>
-        </ul>
+        <ul id="more-container"></ul>
       </li>
     </ul>
   </nav>

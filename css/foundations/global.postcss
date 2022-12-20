@@ -48,7 +48,16 @@ body {
 }
 
 *:focus-visible {
-  @apply outline-none ring-2 ring-purple-300;
+  @apply outline-none ring-2 ring-purple-500 z-10;
+
+  .top-bar &,
+  .bg--secondary-900 &,
+  .bg--secondary-800 &,
+  .bg--secondary-700 &,
+  .bg--secondary-600 &,
+  .bg--secondary-500 & {
+    @apply ring-purple-300;
+  }
 }
 
 [id] {

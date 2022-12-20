@@ -1,14 +1,19 @@
 <template>
   <table :class="computedClasses">
+    <caption class="sr-only">
+      Short description of the table content for better accessibility
+    </caption>
     <thead>
-      <th>Name</th>
-      <th>Job</th>
-      <th>E-mail</th>
-      <th>Role</th>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Job</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Role</th>
+      </tr>
     </thead>
     <tbody>
       <tr>
-        <th scopre="row">Jane Cooper</th>
+        <th scope="row">Jane Cooper</th>
         <td>Regional Paradigm Technician</td>
         <td>jane.cooper@example.com</td>
         <td>Admin</td>
@@ -55,7 +60,8 @@ export default {
     variant: {
       type: String,
       validator: (prop) => [
-        'compact'
+        'compact',
+        'default',
       ].includes(prop)
     },
   },

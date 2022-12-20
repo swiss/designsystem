@@ -9,7 +9,7 @@
         placeholder="Suche"
         autocomplete="off"
       />
-      <button
+      <div
         class="search__button"
         title="Toggle search"
       >
@@ -18,7 +18,7 @@
           icon="Search" size="full"
           class="search__button__icon"
         />
-      </button>
+    </div>
     </div>
 
   </div>

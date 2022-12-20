@@ -1,7 +1,7 @@
 <template>
   <nav
     :class="metanavigationClass"
-    aria-label="Meta navigation"
+    aria-label="Meta"
   >
     <ul>
       <li>

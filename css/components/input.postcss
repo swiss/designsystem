@@ -7,9 +7,10 @@ select {
   @apply shadow;
   @apply bg-white border border-text-500;
   @apply rounded-xs;
-  @apply focus:outline-none focus:ring-2 focus:ring-purple-300;
   @apply leading-none;
   @apply min-h-[44px] 2xl:min-h-[48px];
+  @apply focus:outline-none;
+  @apply placeholder-secondary-400;
 }
 
 .input--sm {
@@ -40,12 +41,13 @@ select {
 .input--error {
   @apply text-red-800;
   @apply border-red-500;
+  @apply placeholder-red-400;
 }
 
 .input--negative {
   @apply text-white;
-  @apply bg-secondary-400;
-  @apply placeholder-secondary-200;
+  @apply bg-secondary-500;
+  @apply placeholder-secondary-50;
   @apply border-secondary-300;
 
   &:disabled,
