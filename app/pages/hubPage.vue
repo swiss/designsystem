@@ -21,7 +21,7 @@
           Mauris sodales ultrices neque sit amet cogsectetur.
         </template>
       </Hero>
-      <ServicesSection />
+      <SubpagesSection />
     </main>
     <footer class="footer" id="main-footer">
       <FooterInformation />
@@ -40,7 +40,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import Hero from "~/components/ch/sections/Hero";
-import ServicesSection from '../components/ch/sections/ServicesSection.vue'
+import SubpagesSection from '../components/ch/sections/SubpagesSection.vue'
 
 export default {
   name: 'hubPage',
@@ -54,7 +54,7 @@ export default {
     FooterInformation,
     FooterNavigation,
     Hero,
-    ServicesSection
+    SubpagesSection
   },
   methods: {
     getMobileMenuIsOpen() {

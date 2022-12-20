@@ -2,6 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
 import Card from '../../ch/components/Card.vue';
 import Btn from '../../ch/components/Btn.vue';
 import SvgIcon from '../../ch/components/SvgIcon.vue';
+import SubpagesSection from '../../ch/sections/SubpagesSection.vue';
 
 <Meta
   title="Components/Card/Cards variants"
@@ -232,3 +233,25 @@ export const TemplateCardShare = (args, { argTypes }) => ({
     {TemplateCardShare.bind({})}
   </Story>
 </Canvas>
+
+## Teaser for Hub pages
+A Hub page is a collection of teasers, pointing to the subpages. Each teaser is a card with the `highlight` variant. You can check the <a href="?path=/story/pages-hub-page--example">complete example of a Hub Page</a>
+
+export const TemplateCardHub = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { SubpagesSection },
+  template:
+  `
+    <SubpagesSection />
+  `,
+});
+
+<Canvas>
+  <Story
+    name="Hub page item"
+    args={{}}
+  >
+    {TemplateCardHub.bind({})}
+  </Story>
+</Canvas>
+
