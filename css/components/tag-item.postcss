@@ -7,8 +7,7 @@
 .tag-item {
   @apply inline-flex items-center;
   @apply mr-3 md:mb-0.5 lg:mb-1;
-  @apply focus:outline-none ring-0;
-
+  @apply focus:outline-none ring-0 no-underline;
   
   &, 
   &:hover {
@@ -54,11 +53,11 @@
 .tag-item, 
 .tag-item--default {
   .tag-item__inner {
-    @apply bg-gray-100;
+    @apply bg-gray-200;
   }
 
   &:hover .tag-item__inner { 
-    @apply bg-gray-200;
+    @apply bg-gray-300;
   }
 }
 

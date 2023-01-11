@@ -12,6 +12,13 @@
       <Logo
         title="Eidgenössisches Departement für Verteidigung, <br/>Bevölkerungsschutz und Sport"
         accronym="DSS"
+        :class="overrideLogoForPrint ? 'logo--print-hidden' : ''"
+      />
+      <Logo
+        v-if="overrideLogoForPrint"
+        title="Staatssekretariat für Wirtschaft"
+        accronym="SECO"
+        :class="overrideLogoForPrint ? 'logo--print-only' : ''"
       />
       <div class="top-header__right">
         <MetaNavigation context="desktop" />
@@ -33,6 +40,12 @@ import MetaNavigation from '../navigations/MetaNavigation.vue'
 
 export default {
   name: 'topHeader',
+  props: {
+    overrideLogoForPrint: {
+      type: String,
+      default: ''
+    }
+  },
   components: {
     Logo,
     Burger,
