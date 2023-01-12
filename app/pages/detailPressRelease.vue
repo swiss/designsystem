@@ -15,7 +15,7 @@
           size="sm"
           icon="ArrowLeft"
           iconPos="left"
-          label="Zurück zu Übersicht"
+          label="Zurück zur Übersicht"
           class="btn--back"
         />
         <ShareBar />
@@ -155,7 +155,7 @@
             size="sm"
             icon="ArrowLeft"
             iconPos="left"
-            label="Zurück zu Übersicht"
+            label="Zurück zur Übersicht"
           />
         </div>
       </section>

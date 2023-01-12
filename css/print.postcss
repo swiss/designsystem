@@ -4,7 +4,9 @@
 
 @media print {
   html {
-    font-size: 12px !important;
+    font-size: 13px !important;
+    max-width: 80%!important;
+    margin: 2rem auto!important;
   }
 
   #main-header {
@@ -47,6 +49,9 @@
   .newsletter, 
   .card__image,
   .share-bar, 
+  .btn--back,
+  .breadcrumb__dropdown-icon,
+  .logo__separator,
   video,
   audio, 
   object, 
@@ -87,5 +92,18 @@
 
   .card {
     margin-bottom: 2em;  
+  }
+
+  .breadcrumb nav {
+    margin-left: 0 !important;
+  }
+
+  .breadcrumb-navigation a {
+    padding-left: 0.25rem !important; 
+  }
+
+  .breadcrumb__include-icon {
+    margin-left: -0.75rem !important;
+    margin-right: 0.5rem !important;
   }
 }
