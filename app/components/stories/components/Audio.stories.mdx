@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import AudioPlayer from '../../ch/components/AudioPlayer.vue'
 import Accordion from '../../ch/components/Accordion.vue'
 import AccordionItem from '../../ch/components/AccordionItem.vue'
-import TranscriptExample from '~/components/ch/demo/TranscriptExample.vue'
+import TranscriptionExample from '../../ch/demo/TranscriptionExample.vue'
 
 <Meta
   title="Components/AudioPlayer"
@@ -10,7 +10,7 @@ import TranscriptExample from '~/components/ch/demo/TranscriptExample.vue'
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { AudioPlayer, Accordion, AccordionItem, TranscriptExample },
+  components: { AudioPlayer, Accordion, AccordionItem, TranscriptionExample },
   template: `
     <div>
       <AudioPlayer
@@ -25,7 +25,7 @@ export const Template = (args, { argTypes }) => ({
           id="10"
           title="Transcript"
         >
-          <TranscriptExample />
+          <TranscriptionExample />
         </AccordionItem>
       </Accordion>
     </div>

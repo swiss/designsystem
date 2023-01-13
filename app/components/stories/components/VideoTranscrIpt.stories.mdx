@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import videoFile from '../../../static/videos/demo.mp4';
 import Accordion from '../../ch/components/Accordion.vue'
 import AccordionItem from '../../ch/components/AccordionItem.vue'
-import TranscriptExample from '~/components/ch/demo/TranscriptExample.vue'
+import TranscriptionExample from '../../ch/demo/TranscriptionExample.vue'
 
 <Meta
   title="Components/Video/Transcript"
@@ -15,7 +15,7 @@ A transcript is a list of all the words that are spoken in the video. If you hos
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Accordion, AccordionItem, TranscriptExample },
+  components: { Accordion, AccordionItem, TranscriptionExample },
   template: `
     <div>
       <figure>
@@ -32,7 +32,7 @@ export const Template = (args, { argTypes }) => ({
           id="10"
           title="Transcript"
         >
-          <TranscriptExample />
+          <TranscriptionExample />
         </AccordionItem>
       </Accordion>
     </div>
