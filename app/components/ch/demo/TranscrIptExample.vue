@@ -505,13 +505,6 @@
       </div>
     </div>
     <div class="transcript__row">
-      <div class="transcript__timestamp">11:37</div>
-      <div class="transcript__speaker">Interviewer</div>
-      <div class="transcript__text">
-        Okay, thank you.
-      </div>
-    </div>
-    <div class="transcript__row">
       <div class="transcript__timestamp">11:38</div>
       <div class="transcript__speaker">[END OF AUDIO]</div>
       <div class="transcript__text">
