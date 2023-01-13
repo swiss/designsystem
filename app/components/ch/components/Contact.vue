@@ -20,6 +20,7 @@
           icon="Phone"
           icon-pos="left"
           variant="link"
+          aria-label="+41 31 123 4567 Telefonnummer anrufen"
         />
       </li>
       <li v-if="fax">
@@ -29,6 +30,7 @@
           icon="Fax"
           icon-pos="left"
           variant="link"
+          aria-label="+41 31 123 4567 Fax senden"
         />
       </li>
       <li v-if="email">
@@ -38,6 +40,7 @@
           icon="Envelope"
           icon-pos="left"
           variant="link"
+          aria-label="info@geo.admin.ch Open email programm"
         />
       </li>
       <li v-if="contactForm">
