@@ -2,6 +2,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import AudioPlayer from '../../ch/components/AudioPlayer.vue'
 import Accordion from '../../ch/components/Accordion.vue'
 import AccordionItem from '../../ch/components/AccordionItem.vue'
+import TranscriptExample from '../../ch/demo/TranscriptExample.vue'
 
 <Meta
   title="Components/AudioPlayer"
@@ -10,7 +11,7 @@ import AccordionItem from '../../ch/components/AccordionItem.vue'
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { AudioPlayer, Accordion, AccordionItem },
+  components: { AudioPlayer, Accordion, AccordionItem, TranscriptExample },
   template: `
     <div>
       <AudioPlayer
@@ -20,13 +21,12 @@ export const Template = (args, { argTypes }) => ({
         :type="type"
         :copyright="copyright"
       />
-      <Accordion v-if="displayTranscript" id="1">
+      <Accordion v-if="displayTranscript" id="1" spaced>
         <AccordionItem
           id="10"
           title="Transcript"
         >
-          <h4 class="h5">The title of the accordion item is a h3, therefore, as a subtitle, I am a h4 with a .h5 css class</h4>
-          <p>Description here</p>
+          <TranscriptExample />
         </AccordionItem>
       </Accordion>
     </div>
