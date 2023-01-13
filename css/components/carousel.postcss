@@ -114,7 +114,6 @@
     @apply px-4;
   }
 
-
   .carousel__prev svg,
   .carousel__next svg {
     @apply w-12 h-12;
@@ -228,4 +227,11 @@
 }
 
 
-/* swiper pagination */
+/* Hide dot pagination when there's too much dots */
+.carousel__pagination:has(> :nth-child(6)) {
+  @apply hidden sm:flex;
+}
+
+.carousel__pagination:has(> :nth-child(13)) {
+  @apply hidden md:flex;
+}
