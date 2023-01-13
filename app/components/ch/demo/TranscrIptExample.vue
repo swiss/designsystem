@@ -4,7 +4,7 @@
       <div class="transcript__timestamp">00:02</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        Okay, it’s recording. I’m going to ask you a few questions, so answer them briefly or you can add something more if you wish.
+        Okay, it's recording. I'm going to ask you a few questions, so answer them briefly or you can add something more if you wish.
       </div>
     </div>
     <div class="transcript__row">
@@ -25,14 +25,14 @@
       <div class="transcript__timestamp">00:14</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        I’m 26 at the moment.
+        I'm 26 at the moment.
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">00:16</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        What comes to your mind when you hear the term ‘video games’?
+        What comes to your mind when you hear the term 'video games'?
       </div>
     </div>
     <div class="transcript__row">
@@ -53,7 +53,7 @@
       <div class="transcript__timestamp">00:35</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        Yes, yes, I’ve played several in my life.
+        Yes, yes, I've played several in my life.
       </div>
     </div>
     <div class="transcript__row">
@@ -67,7 +67,7 @@
       <div class="transcript__timestamp">00:44</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        That’s actually a pretty difficult one. I’d probably say a basic answer, like Ping-Pong or something like that, but I think that the first game that I ever played was Super Mario Brothers. The first one, yes.
+        That's actually a pretty difficult one. I'd probably say a basic answer, like Ping-Pong or something like that, but I think that the first game that I ever played was Super Mario Brothers. The first one, yes.
       </div>
     </div>
     <div class="transcript__row">
@@ -81,14 +81,14 @@
       <div class="transcript__timestamp">01:11</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        Not the computer, but with the Super Nintendo, the first one. Yes, I think a lot of people had that. We didn’t have it for a very long time and the first time that I ever played it was at a friend’s place who was the first who had a gaming console of any kind. My dad did have a Commodore back in the day, but he used it mostly for his work and not for-- He didn’t have any games on it, except for Ping-Pong, but I never played it, so I would definitely have to go with Super Mario Brothers.
+        Not the computer, but with the Super Nintendo, the first one. Yes, I think a lot of people had that. We didn't have it for a very long time and the first time that I ever played it was at a friend's place who was the first who had a gaming console of any kind. My dad did have a Commodore back in the day, but he used it mostly for his work and not for-- He didn't have any games on it, except for Ping-Pong, but I never played it, so I would definitely have to go with Super Mario Brothers.
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">01:54</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        Yes, that’s a classic. What’s your favourite one?
+        Yes, that's a classic. What's your favourite one?
       </div>
     </div>
     <div class="transcript__row">
@@ -137,7 +137,7 @@
       <div class="transcript__timestamp">02:48</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        [laughs] Well, definitely, definitely, yes. I don’t consider myself either anymore so--
+        [laughs] Well, definitely, definitely, yes. I don't consider myself either anymore so--
       </div>
     </div>
     <div class="transcript__row">
@@ -151,14 +151,14 @@
       <div class="transcript__timestamp">02:58</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        I would definitely say that yes, yes, they do and I don’t think it should be classified like that. I believe that a lot of people could definitely benefit from what video games have to offer and how they can affect your life as in a way of spending your time and, to a certain extent, I believe that video games can lead to social events. Contrary to how people feel about other people who play video games.
+        I would definitely say that yes, yes, they do and I don't think it should be classified like that. I believe that a lot of people could definitely benefit from what video games have to offer and how they can affect your life as in a way of spending your time and, to a certain extent, I believe that video games can lead to social events. Contrary to how people feel about other people who play video games.
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">03:38</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        You mean social events as in, I don’t know like- [crosstalk]
+        You mean social events as in, I don't know like- [crosstalk]
       </div>
     </div>
     <div class="transcript__row">
@@ -207,7 +207,7 @@
       <div class="transcript__timestamp">04:04</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        [laughs] That’s--
+        [laughs] That's--
       </div>
     </div>
     <div class="transcript__row">
@@ -221,7 +221,7 @@
       <div class="transcript__timestamp">04:05</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        That could be debated, but, to a certain extent, yes, yes I do, but very mildly addictive or not at all. To a person that doesn’t have much in their life, definitely a lot of things can be, very simple things can be addictive.
+        That could be debated, but, to a certain extent, yes, yes I do, but very mildly addictive or not at all. To a person that doesn't have much in their life, definitely a lot of things can be, very simple things can be addictive.
       </div>
     </div>
     <div class="transcript__row">
@@ -256,28 +256,28 @@
       <div class="transcript__timestamp">04:45</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        Okay. Do you personally change when you’re gaming?
+        Okay. Do you personally change when you're gaming?
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">04:54</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        I think that gaming makes me more focused when I’m gaming and I tend to immerse myself in the video game that I’m playing. That’s why I like games that are not that simple or are not very straightforward, but-- What was the question again?
+        I think that gaming makes me more focused when I'm gaming and I tend to immerse myself in the video game that I'm playing. That's why I like games that are not that simple or are not very straightforward, but-- What was the question again?
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">05:23</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        Do you think that you personally change when you’re gaming?
+        Do you think that you personally change when you're gaming?
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">05:27</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        Okay, I’ll just answer that. Yes, I do. I might get a tad bit aggressive when gaming and I might get-- Let’s just say that I take my games very seriously sometimes.
+        Okay, I'll just answer that. Yes, I do. I might get a tad bit aggressive when gaming and I might get-- Let's just say that I take my games very seriously sometimes.
       </div>
     </div>
     <div class="transcript__row">
@@ -291,21 +291,21 @@
       <div class="transcript__timestamp">05:53</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        I don’t know, I didn’t mean it like that, that it brings up aggression. I don’t think video games make anyone violent in the sense that people think they do, but--
+        I don't know, I didn't mean it like that, that it brings up aggression. I don't think video games make anyone violent in the sense that people think they do, but--
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">06:03</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        Yes, because there’s a big debate going on about that right now.
+        Yes, because there's a big debate going on about that right now.
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">06:06</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        Yes, but I don’t think that that’s true or [laughs]. If that would be true, we would be very, very, very different people and I don’t think-- Other aspects of life take control much, much more than what video games actually do and what they actually do to people. It’s very minuscule in what other aspects affect life.
+        Yes, but I don't think that that's true or [laughs]. If that would be true, we would be very, very, very different people and I don't think-- Other aspects of life take control much, much more than what video games actually do and what they actually do to people. It's very minuscule in what other aspects affect life.
       </div>
     </div>
     <div class="transcript__row">
@@ -326,7 +326,7 @@
       <div class="transcript__timestamp">06:44</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        You’ve mentioned that you become focused.
+        You've mentioned that you become focused.
       </div>
     </div>
     <div class="transcript__row">
@@ -347,7 +347,7 @@
       <div class="transcript__timestamp">07:02</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        Yes. Definitely that I feel that gaming has given a lot to me and it has given me a lot of peace of mind that I’ve gotten it through stressful times and it has been a way to--
+        Yes. Definitely that I feel that gaming has given a lot to me and it has given me a lot of peace of mind that I've gotten it through stressful times and it has been a way to--
       </div>
     </div>
     <div class="transcript__row">
@@ -382,7 +382,7 @@
       <div class="transcript__timestamp">07:40</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        Well, there’s [sic] been studies about that. That children who play video games, that they get better scores in tests and they, they get focused really quickly and, well, they react to situations a lot faster than those that don’t do that.
+        Well, there's [sic] been studies about that. That children who play video games, that they get better scores in tests and they, they get focused really quickly and, well, they react to situations a lot faster than those that don't do that.
       </div>
     </div>
     <div class="transcript__row">
@@ -396,7 +396,7 @@
       <div class="transcript__timestamp">08:49</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        Okay. Yes, that’s good. Few more questions. Do you think that all gamers are lonely and unsocial?
+        Okay. Yes, that's good. Few more questions. Do you think that all gamers are lonely and unsocial?
       </div>
     </div>
     <div class="transcript__row">
@@ -417,21 +417,21 @@
       <div class="transcript__timestamp">09:03</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        No, no, definitely not. I think that, of course, some are because they feel that they might play a video game online or they might socialise through their video game playing, but I don’t think that’s something that should be “stereotypicised”. That, you shouldn’t stereotype people through that. I know some very, very social people who play video games and through my own experiences I can’t say that out of anyone.
+        No, no, definitely not. I think that, of course, some are because they feel that they might play a video game online or they might socialise through their video game playing, but I don't think that's something that should be “stereotypicised”. That, you shouldn't stereotype people through that. I know some very, very social people who play video games and through my own experiences I can't say that out of anyone.
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">09:40</div>
       <div class="transcript__speaker">Interviewer</div>
       <div class="transcript__text">
-        Yes, it seems like it’s a thing of the past.
+        Yes, it seems like it's a thing of the past.
       </div>
     </div>
     <div class="transcript__row">
       <div class="transcript__timestamp">09:44</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        Definitely, definitely. That’s what I meant earlier that it’s becoming a social event more than something that you do completely on your own. Although that does happen as well.
+        Definitely, definitely. That's what I meant earlier that it's becoming a social event more than something that you do completely on your own. Although that does happen as well.
       </div>
     </div>
     <div class="transcript__row">
@@ -459,7 +459,7 @@
       <div class="transcript__timestamp">10:07</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        [laughs] I’ll have yet to see a good one, so I’ll definitely--
+        [laughs] I'll have yet to see a good one, so I'll definitely--
       </div>
     </div>
     <div class="transcript__row">
@@ -487,7 +487,7 @@
       <div class="transcript__timestamp">11:00</div>
       <div class="transcript__speaker">Interviewee</div>
       <div class="transcript__text">
-        Good question. I think that video games will just be more interactive and more immersing, that you will have to do a lot more in physical and mental senses in all ways. That’s a really diverse topic, but I just believe that they will just definitely take you in a lot more than they have before, which, I believe, is a good thing. As a gamer. Definitely.
+        Good question. I think that video games will just be more interactive and more immersing, that you will have to do a lot more in physical and mental senses in all ways. That's a really diverse topic, but I just believe that they will just definitely take you in a lot more than they have before, which, I believe, is a good thing. As a gamer. Definitely.
       </div>
     </div>
     <div class="transcript__row">
