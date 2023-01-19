@@ -279,7 +279,7 @@ export default {
           }
         },
       ],
-      metaInfos: ['Medienmitteilung', '10. Februar 2022, aktualisiert am 11.02.22'],
+      metaInfos: ['Medienmitteilung', '10. Februar 22, aktualisiert am 16. Februar 22'],
       authors:[{
         "name":"Staatssekretariat für Wirtschaft SECO",
         "url":"#",
