@@ -11,18 +11,9 @@
       <Breadcrumb isHomePage />
     </header>
     <main id="main-content">
-      <Hero type="main-image">
-        <template v-slot:image>
-          <picture>
-            <source srcset="https://picsum.photos/1282/961/?image=29" media="(min-width: 1800px)">
-            <source srcset="https://picsum.photos/1192/894/?image=29" media="(min-width: 1024px)">
-            <source srcset="https://picsum.photos/800/600/?image=29" media="(min-width: 768px)">
-            <source srcset="https://picsum.photos/680/510/?image=29" media="(min-width: 480px)">
-            <img src="https://picsum.photos/480/360/?image=29" alt="ratio is 4/3">
-          </picture>
-        </template>
+      <Hero type="main">
         <template v-slot:title>
-          Was uns als VE ausmacht
+          Willkommen zu Hause. Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport.
         </template>
         <template v-slot:description>
           Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
@@ -33,28 +24,28 @@
             variant="outline"
             icon-pos="right"
             icon="ArrowRight"
-            label="Organisationsprofil"
+            label="Unsere Dienstleistungen"
           />
           <Btn
             to="#"
             variant="outline"
             icon-pos="right"
             icon="ArrowRight"
-            label="Zur top Dienstleistung"
+            label="Über uns"
           />
         </template>
       </Hero>
       <TopNewsSection />
-      <MediasSection />
+      <ServicesSection isHomePage />
+      <TopicsSection />
       <SocialsSection
         :section-title="socialSection.sectionTitle"
         :section-desc="socialSection.sectionDesc"
         :feeds="socialSection.feeds"
       />
-      <ServicesSection isHomePage />
-      <TopicsSection isHomePage />
-
-
+      <MostSeenSection />
+      <PortraitSection />
+      <MediasSection />
       <BackToTopBtn
         fixed
         type="outline"
@@ -115,21 +106,21 @@ export default {
   data() {
     return {
       socialSection: {
-        sectionTitle: 'Das Amt XY in den Sozialen Medien',
-        sectionDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan.",
+        sectionTitle: 'Geoportal in den sozialen Medien',
+        sectionDesc: "Hier die aktuellsten Posts. Wenn Sie mehr erfahren möchten, besuchen Sie bitte die jeweiligen Kanäl.",
         feeds: [
           {
-            type: "twitter",
-            title: "Press-resleases on Twitter",
-            pofileURL: "https://twitter.com/swiss_geoportal",
-            feedURL: "https://twitter.com/swiss_geoportal"
+            type: "facebook",
+            title: "News on Facebook",
+            pofileURL: "https://www.facebook.com/swisstopo",
+            feedURL: "https://www.facebook.com/swisstopo/videos/5455503121148000/",
           },
           {
-            type: "youtube",
-            title: "Investigations on Youtube",
-            pofileURL: "https://www.youtube.com/c/SwissGeoportal",
-            feedURL: "https://www.youtube.com/embed/BR5zDpPDKFM"
-          },
+            type: "instagram",
+            title: "Insights on Instagram",
+            pofileURL: "https://www.instagram.com/swisstopo/",
+            feedURL: "https://www.instagram.com/p/Cd6KkQsOnOh/?utm_source=ig_web_copy_link"
+          }
         ]
       }
     }
