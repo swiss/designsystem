@@ -324,7 +324,7 @@ export default {
           title: 'Search result one',
           content: 'Max 150 chars, then truncate. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...',
           href: '#',
-          type: 'Konferenz test',
+          type: 'Konferenz',
           isEvent: true,
           hasIcons: false,
           image: {
