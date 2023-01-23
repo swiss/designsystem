@@ -6,9 +6,6 @@ import Index from '../../../pages/index.vue';
 <Meta
   title="Pages/Homepage"
   component={Index}
-  argTypes={{
-    isOpen: { name:'Is open', control: { type: 'boolean' } },
-  }}
 />
 
 export const Template = (args, { argTypes }) => ({
@@ -29,9 +26,6 @@ export const Template = (args, { argTypes }) => ({
 <Canvas>
   <Story
     name="Example"
-    args={{
-      isOpen: false,
-    }}
   >
     {Template.bind({})}
   </Story>

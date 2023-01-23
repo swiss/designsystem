@@ -1,25 +1,22 @@
 <template>
-  <section class="section bg--secondary-500">
+  <section class="section bg--secondary-100">
     <div class="container">
       <h2
         v-if="isHomePage"
         class="section__title"
       >
-        Dienstleistungen
+        Unsere top Dienstleistungen
       </h2>
-      <div class="grid grid--items-5 gap--responsive">
+      <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template v-slot:title>
             <h3>Datenmodellablage</h3>
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              At vero eos et ac-cusam et justo duo, sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
             <Btn
@@ -37,12 +34,9 @@
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sadipscing elitr,
+              sed diam. At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
             <Btn
@@ -60,12 +54,9 @@
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              Ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
           </template>
           <template v-slot:footerAction>
             <Btn
@@ -77,59 +68,12 @@
             />
           </template>
         </Card>
-        <Card type="default">
-          <template v-slot:title>
-            <h3>Beratung und Koordination</h3>
-          </template>
-          <template v-slot:description>
-            <p>
-              At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
-            </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
-          <template v-slot:footerAction>
-            <Btn
-              to="#"
-              variant="outline"
-              icon-pos="only"
-              icon="ArrowRight"
-              label="Mehr lesen über Beratung"
-            />
-          </template>
-        </Card>
-        <Card type="default">
-          <template v-slot:title>
-            <h3>Geodienste</h3>
-          </template>
-          <template v-slot:description>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
-            </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
-          <template v-slot:footerAction>
-            <Btn
-              to="#"
-              variant="outline"
-              icon-pos="only"
-              icon="ArrowRight"
-              label="Mehr lesen über Geodienste"
-            />
-          </template>
-        </Card>
       </div>
-
-
       <div
         v-if="isHomePage"
         class="section__action"
       >
-        <Btn to="#" label="Alle Dienstleistungen ansehen" variant="bare-negative" icon-pos="right" icon="ArrowRight"></Btn>
+        <Btn to="#" label="Alle Dienstleistungen ansehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
   </section>
