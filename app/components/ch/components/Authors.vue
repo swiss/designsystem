@@ -2,8 +2,8 @@
   <aside
     class="authors"
   >
-    <div 
-      v-if="authorsWithImages.length" 
+    <div
+      v-if="authorsWithImages.length"
       class="disc-images"
       aria-hidden="true"
     >
@@ -27,7 +27,7 @@
           icon="User"
           class="btn__icon text-secondary-300"
         />
-        
+
         <div
           v-else
         >
@@ -39,7 +39,7 @@
       </div>
     </div>
     <address class="authors__names">
-      Von
+      {{ authors[0].prefix ? authors[0].prefix : 'von' }}
 
       <component
         v-for="(author, index) in authors"
@@ -48,7 +48,7 @@
         :href="author.url"
         :key="author.name"
         class="author__name"
-      ><!-- 
+      ><!--
       -->{{ author.name }}<!-- removing unneeded white space
       -->
       </component>

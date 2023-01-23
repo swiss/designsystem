@@ -4,14 +4,25 @@
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
-      <TopHeader />
+      <TopHeader :overrideLogoForPrint="'Staatssekretariat für Wirtschaft SECO'" />
       <DesktopMenu />
       <MobileMenu />
       <Breadcrumb />
-      <ShareBar />
+      <div class="container">
+        <Btn
+          to="/"
+          variant="outline"
+          size="sm"
+          icon="ArrowLeft"
+          iconPos="left"
+          label="Zurück zur Übersicht"
+          class="btn--back"
+        />
+        <ShareBar />
+      </div>
     </header>
     <main id="main-content">
-      <Hero type="default" :meta-infos="metaInfos">
+      <Hero type="default" :meta-infos="metaInfos" :authors="authors">
         <template v-slot:title>
           Rückerstattungsaktion der US-amerikanischen Konsumentenschutzbehörde
         </template>
@@ -90,22 +101,28 @@
             <h2 class="h2">Dokumente und Dateien</h2>
 
             <ul class="download-items">
-              <DownloadItem
-                :filename="'dummy.pdf'"
-                :title="'Information on the usage of websites'"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
-                :url="'../../../static/documents/dummy.pdf'"
-                :type="'PDF'"
-                :date="'22.01.2022'"
-              />
-              <DownloadItem
-                :filename="'image.png'"
-                :title="'Information on the usage of websites'"
-                description=""
-                :url="'../../../static/images/html-structure.png'"
-                :type="'PNG'"
-                :date="'22.01.2022'"
-              />
+              <li>
+                <DownloadItem
+                  headingLevel="h2"
+                  :filename="'dummy.pdf'"
+                  :title="'Information on the usage of websites'"
+                  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
+                  :url="'../../../static/documents/dummy.pdf'"
+                  :type="'PDF'"
+                  :date="'22.01.2022'"
+                />
+              </li>
+              <li>
+                <DownloadItem
+                  headingLevel="h2"
+                  :filename="'image.png'"
+                  :title="'Information on the usage of websites'"
+                  description=""
+                  :url="'../../../static/images/html-structure.png'"
+                  :type="'PNG'"
+                  :date="'22.01.2022'"
+                />
+              </li>
             </ul>
 
             <h2 class="h2">Kontakt für Rückfragen</h2>
@@ -127,16 +144,19 @@
             <p>Name de Amtes <br><a href="www.amtsurl.ch">www.amtsurl.ch</a></p>
 
             <RelatedTags :tags="tags"></RelatedTags>
-
-            <Btn
-              to="/"
-              variant="outline"
-              size="base"
-              icon="ArrowLeft"
-              iconPos="left"
-              label="Zurück zu Übersicht"
-            />
           </div>
+        </div>
+      </section>
+      <section class="section section--default">
+        <div class="container">
+          <Btn
+            to="/"
+            variant="outline"
+            size="sm"
+            icon="ArrowLeft"
+            iconPos="left"
+            label="Zurück zur Übersicht"
+          />
         </div>
       </section>
     </main>
@@ -259,26 +279,12 @@ export default {
           }
         },
       ],
-      metaInfos: ['Medienmitteilung', '10. Februar 2022, aktualisiert am 11.02.22'],
-      authors:[
-        {
-          name: 'Maria Muster',
-          img: 'https://picsum.photos/120/120/?image=29',
-        },
-        {
-          name: 'Jean-Jaques Langerename',
-          img: 'https://picsum.photos/120/120/?image=30',
-          url: '#'
-        },
-        {
-          name: 'Hans Höllman',
-          img: 'https://picsum.photos/120/120/?image=31',
-        },
-        {
-          name: 'Katja Anna-Beerli',
-          img: 'https://picsum.photos/120/120/?image=32',
-        }
-      ],
+      metaInfos: ['Medienmitteilung', '10. Februar 22, aktualisiert am 16. Februar 22'],
+      authors:[{
+        "name":"Staatssekretariat für Wirtschaft SECO",
+        "url":"#",
+        "prefix": "Herausgegeben vom",
+      }],
       tags:[
         { label: 'Datenmodell', url: '#' },
         { label: 'Energie', url: '#' },

@@ -13,6 +13,14 @@
   }
 }
 
+.logo--print-hidden {
+  @apply flex print:hidden;
+}
+
+.logo--print-only {
+  @apply hidden print:flex;
+}
+
 .logo__flag {
   @apply flex-shrink-0;
   @apply w-[30px] h-[33px];

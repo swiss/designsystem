@@ -8,7 +8,9 @@
       <DesktopMenu />
       <MobileMenu />
       <Breadcrumb />
-      <ShareBar />
+      <div class="container">
+        <ShareBar />
+      </div>
     </header>
     <main id="main-content">
       <Hero type="main-image">

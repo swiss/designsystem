@@ -8,7 +8,9 @@
       <DesktopMenu />
       <MobileMenu />
       <Breadcrumb />
-      <ShareBar />
+      <div class="container">
+        <ShareBar />
+      </div>
     </header>
     <main id="main-content">
       <Hero type="default" :meta-infos="metaInfos" :authors="authors">
@@ -241,22 +243,26 @@
             </p>
 
             <ul class="download-items">
-              <DownloadItem
-                :filename="'dummy.pdf'"
-                :title="'Information on the usage of websites'"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
-                :url="'../../../static/documents/dummy.pdf'"
-                :type="'PDF'"
-                :date="'22.01.2022'"
-              />
-              <DownloadItem
-                :filename="'image.png'"
-                :title="'Information on the usage of websites'"
-                description=""
-                :url="'../../../static/images/html-structure.png'"
-                :type="'PNG'"
-                :date="'22.01.2022'"
-              />
+              <li>
+                <DownloadItem
+                  :filename="'dummy.pdf'"
+                  :title="'Information on the usage of websites'"
+                  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
+                  :url="'../../../static/documents/dummy.pdf'"
+                  :type="'PDF'"
+                  :date="'22.01.2022'"
+                />
+              </li>
+              <li>
+                <DownloadItem
+                  :filename="'image.png'"
+                  :title="'Information on the usage of websites'"
+                  description=""
+                  :url="'../../../static/images/html-structure.png'"
+                  :type="'PNG'"
+                  :date="'22.01.2022'"
+                />
+              </li>
             </ul>
 
             <ul>

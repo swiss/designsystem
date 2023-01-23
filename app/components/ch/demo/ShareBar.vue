@@ -1,25 +1,14 @@
 <template>
-  <div class="container">
-    <div class="share-bar">
-      <div class="flex share-container">
-        <Print />
-        <button
-          id=""
-          aria-label="Share document"
-          class="btn btn--bare share-bar__share-button"
-          >
-          <SvgIcon aria-hidden="true" icon="Share" size="xl" />
-        </button>
-      </div>
-      <Btn
-        to="/"
-        variant="outline"
-        size="sm"
-        icon="ArrowLeft"
-        iconPos="left"
-        label="Zurück zu Übersicht"
-        class="mr-auto"
-      />
+  <div class="share-bar">
+    <div class="flex share-container">
+      <Print />
+      <button
+        id=""
+        aria-label="Share document"
+        class="btn btn--bare share-bar__share-button"
+        >
+        <SvgIcon aria-hidden="true" icon="Share" size="xl" />
+      </button>
     </div>
   </div>
 </template>
