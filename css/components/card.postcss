@@ -276,9 +276,19 @@
   .card__image {
     grid-column: 2 / 3;
     grid-row: 1;
-    align-self: start;
+    align-self: initial;
+    @apply hidden md:block h-0;
+    @apply pb-[80%]; /* visually reduce height of potential vertical images */
+    
+    @apply border-t-[0.5em] border-b-[0.5em] border-transparent;
 
-    @apply hidden md:block;
+    &:before {
+      @apply border-0 bg-transparent;
+    }
+
+    img {
+      @apply object-contain object-right-top;
+    }
   }
 
   .card__content {
