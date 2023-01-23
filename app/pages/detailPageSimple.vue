@@ -448,22 +448,24 @@
                 :hideLabel=true
                 :readonly=true
               />
-              <Btn
-                variant="outline"
-                size="base"
-                label="URL Kopieren"
-                class="mt-3"
-                @click.native="URLIsCopied = !URLIsCopied"
-              />
-              <div aria-live="polite">
-                <Badge
-                  v-if="URLIsCopied"
-                  label="URL wurde kopiert"
-                  color="green"
+              <div class="share-url">
+                <Btn
+                  variant="outline"
                   size="base"
-                  icon="Checkmark"
+                  label="URL Kopieren"
                   class="mt-3"
+                  @click.native="URLIsCopied = !URLIsCopied"
                 />
+                <div aria-live="polite">
+                  <Badge
+                    v-if="URLIsCopied"
+                    label="URL wurde kopiert"
+                    color="green"
+                    size="base"
+                    icon="Checkmark"
+                    class="mt-3"
+                  />
+                </div>
               </div>
             </div>
           </template>

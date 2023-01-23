@@ -6,29 +6,40 @@ const BreadcrumbNav = {
     const nav = document.querySelector(navigationItem);
     const breadcrumbBtns = nav.querySelectorAll(':scope > ul > li > a');
 
-    [].forEach.call(breadcrumbBtns, function (breadcrumbBtn) {
+    function closeBreadcrumbNav() {
+      if (BreadcrumbNav.currentMenuBtn) {
+        BreadcrumbNav.currentMenuBtn.classList.remove('clicked');
+        BreadcrumbNav.currentMenuBtn = undefined;
+      }
+    }
 
-      // TODO add click outside
+    function openBreadcrumbNav(btn) {
+      btn.classList.add('clicked');
+      BreadcrumbNav.currentMenuBtn = btn;
+    }
+
+    [].forEach.call(breadcrumbBtns, function (breadcrumbBtn) {
 
       // add click events
       breadcrumbBtn.addEventListener('click', function (event) {
         event.preventDefault();
         if (BreadcrumbNav.currentMenuBtn === undefined) {
-          breadcrumbBtn.classList.add('clicked');
-          BreadcrumbNav.currentMenuBtn = breadcrumbBtn;
+          openBreadcrumbNav(breadcrumbBtn);
         }
         else if (BreadcrumbNav.currentMenuBtn === breadcrumbBtn) {
-          BreadcrumbNav.currentMenuBtn.classList.remove('clicked');
-          BreadcrumbNav.currentMenuBtn = undefined;
-
+          closeBreadcrumbNav();
         } else {
-          BreadcrumbNav.currentMenuBtn.classList.remove('clicked');
-          BreadcrumbNav.currentMenuBtn = undefined;
-          breadcrumbBtn.classList.add('clicked');
-          BreadcrumbNav.currentMenuBtn = breadcrumbBtn;
+          closeBreadcrumbNav();
+          openBreadcrumbNav(breadcrumbBtn);
         }
       });
     });
+
+    document.addEventListener('click', (event)=> {
+      if(!event.target.closest(navigationItem)){
+        closeBreadcrumbNav();
+      }
+    })
   },
 }
 
