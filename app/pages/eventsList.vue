@@ -324,9 +324,7 @@ export default {
           title: 'Search result one',
           content: 'Max 150 chars, then truncate. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...',
           href: '#',
-          type: 'Konferenz',
-          date: '12. April 2022',
-          topics: ['Topic one', 'Topic two'],
+          type: 'Konferenz test',
           isEvent: true,
           hasIcons: false,
           image: {
@@ -347,8 +345,6 @@ export default {
           content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma',
           href: '#',
           type: 'Konferenz',
-          date: '12. April 2022',
-          topics: ['Topic one', 'Topic two'],
           isEvent: true,
           hasIcons: false,
           image: {
@@ -369,7 +365,6 @@ export default {
           content: "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
           href: 'http://admin.ch',
           type: 'Konferenz',
-          date: '12. April 2022',
           isEvent: true,
           hasIcons: false,
         },
@@ -378,7 +373,6 @@ export default {
           content: "Cum sociis natoque penatibus et ma Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ",
           href: 'http://admin.ch',
           type: 'Konferenz',
-          date: '12. April 2022',
           isEvent: true,
           hasIcons: false,
         }

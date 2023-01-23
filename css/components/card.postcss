@@ -164,7 +164,7 @@
 }
 
 .card__body {
-  @apply px-6 pt-10 pb-12;
+  @apply px-6 py-10;
   @apply space-y-4;
 }
 
@@ -287,9 +287,19 @@
   .card__image {
     grid-column: 2 / 3;
     grid-row: 1;
-    align-self: start;
+    align-self: initial;
+    @apply hidden md:block h-0;
+    @apply pb-[80%]; /* visually reduce height of potential vertical images */
+    
+    @apply border-t-[0.5em] border-b-[0.5em] border-transparent;
 
-    @apply hidden md:block;
+    &:before {
+      @apply border-0 bg-transparent;
+    }
+
+    img {
+      @apply object-contain object-right-top;
+    }
   }
 
   .card__content {
@@ -301,6 +311,10 @@
   .card__body {
     @apply pt-0 pb-4;
     @apply max-w-[800px];
+  }
+
+  .card__footer__action {
+    @apply -mt-8;
   }
 
   .btn  {

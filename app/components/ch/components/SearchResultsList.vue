@@ -21,7 +21,7 @@
 
         <template v-slot:metaInfos>
           <MetaInfo
-            :metainfos="[item.type, item.date]"
+            :metainfos="item.date? [item.type, item.date] : [item.type]"
           />
         </template>
         <template v-slot:title>
@@ -52,6 +52,7 @@
         </template>
         <template v-slot:specifications>
           <MetaInfo
+            v-if="item.specifications"
             :metainfos="[item.specifications]"
           />
         </template>
