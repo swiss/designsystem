@@ -16,28 +16,31 @@
       <li v-if="phone">
         <Btn
           to="tel: +41 31 123 4567"
-          label="Tel. +41 31 123 4567"
+          label="+41 31 123 4567"
           icon="Phone"
           icon-pos="left"
           variant="link"
+          aria-label="Telefonieren"
         />
       </li>
       <li v-if="fax">
         <Btn
           to="tel: +41 31 123 4568"
-          label="Fax +41 31 123 4568"
+          label="+41 31 123 4568 (Fax)"
           icon="Fax"
           icon-pos="left"
           variant="link"
+          aria-label="Fax senden"
         />
       </li>
       <li v-if="email">
         <Btn
           to="mailto:info@geo.admin.ch"
-          label="E-Mail info@geo.admin.ch"
+          label="info@geo.admin.ch"
           icon="Envelope"
           icon-pos="left"
           variant="link"
+          aria-label="E-Mail senden"
         />
       </li>
       <li v-if="contactForm">

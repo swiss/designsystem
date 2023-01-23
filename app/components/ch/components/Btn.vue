@@ -69,7 +69,11 @@ export default {
     label: {
       type: String,
       required: true,
-    }
+    },
+    ariaLabel: {
+      type: String,
+      required: false,
+    },
   },
 
   computed: {
@@ -86,7 +90,13 @@ export default {
     },
 
     aria () {
-      return this.iconPos === 'only' && this.type === 'button' ? this.label : false
+      let base
+      if (this.ariaLabel) {
+        base = this.ariaLabel
+      } else {
+        base = this.iconPos === 'only' && this.type === 'button' || 'a' ? this.label : false
+      }
+      return base
     },
 
     classes () {
