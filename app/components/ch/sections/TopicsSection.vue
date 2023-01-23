@@ -100,7 +100,7 @@
         v-if="isHomePage"
         class="section__action"
       >
-        <Btn to="#" label="Alle Dienstleistungen ansehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
+        <Btn to="#" label="Alle Schwerpunktthemen ansehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
   </section>
