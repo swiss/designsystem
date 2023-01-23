@@ -1,12 +1,12 @@
 <template>
-  <div 
+  <div
     :class="computedClasses"
   >
     <swiper
       :breakpoints="breakpoints"
       :speed="500"
       :autoHeight="true"
-      :loop="true"
+      :loop="loop"
       :keyboard="{
         enabled: true,
         onlyInViewport: false,
@@ -39,9 +39,9 @@
               :width="slide.source.width"
               :media="slide.source.media"
             />
-            <img 
-              :src="slide.image.src" 
-              :alt="slide.image.alt" 
+            <img
+              :src="slide.image.src"
+              :alt="slide.image.alt"
               :height="slide.image.height"
               :width="slide.image.width"
             />
@@ -58,24 +58,24 @@
     <div class="carousel__fonctions">
       <div class="carousel__pagination" :id="`carousel-pagination-${id}`"></div>
       <button
-        class="carousel__prev" 
+        class="carousel__prev"
         :id="`carousel-prev-${id}`"
       >
         <div class="sr-only">Previous image</div>
         <SvgIcon
           icon="ChevronLeft"
-          role="presentation" 
+          role="presentation"
           aria-hidden="true"
         />
       </button>
-      <button 
-        class="carousel__next" 
+      <button
+        class="carousel__next"
         :id="`carousel-next-${id}`"
       >
         <div class="sr-only">Next image</div>
         <SvgIcon
           icon="ChevronRight"
-          role="presentation" 
+          role="presentation"
           aria-hidden="true"
         />
       </button>
@@ -104,7 +104,7 @@ export default {
     },
     loop: {
       type: Boolean,
-      default: false
+      default: true
     },
     breakpoints: {
       type: Object

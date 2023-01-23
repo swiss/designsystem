@@ -29,11 +29,11 @@
         <template v-slot:image>
           <figure>
             <picture>
-                <source srcset="https://picsum.photos/1282/962/?image=29" media="(min-width: 1800px)">
-                <source srcset="https://picsum.photos/1192/670/?image=28" media="(min-width: 1024px)">
-                <source srcset="https://picsum.photos/800/450/?image=29" media="(min-width: 768px)">
-                <source srcset="https://picsum.photos/680/382/?image=28" media="(min-width: 480px)">
-                <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
+              <source srcset="https://picsum.photos/1282/721/?image=29" media="(min-width: 1800px)">
+              <source srcset="https://picsum.photos/1192/670/?image=28" media="(min-width: 1024px)">
+              <source srcset="https://picsum.photos/800/450/?image=29" media="(min-width: 768px)">
+              <source srcset="https://picsum.photos/680/382/?image=28" media="(min-width: 480px)">
+              <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
             </picture>
             <figcaption>
               Datenmodelle als http-Ressource nutzbar zu machen. Der Vorteil für
@@ -454,22 +454,24 @@
                 :hideLabel=true
                 :readonly=true
               />
-              <Btn
-                variant="outline"
-                size="base"
-                label="URL Kopieren"
-                class="mt-3"
-                @click.native="URLIsCopied = !URLIsCopied"
-              />
-              <div aria-live="polite">
-                <Badge
-                  v-if="URLIsCopied"
-                  label="URL wurde kopiert"
-                  color="green"
+              <div class="share-url">
+                <Btn
+                  variant="outline"
                   size="base"
-                  icon="Checkmark"
+                  label="URL Kopieren"
                   class="mt-3"
+                  @click.native="URLIsCopied = !URLIsCopied"
                 />
+                <div aria-live="polite">
+                  <Badge
+                    v-if="URLIsCopied"
+                    label="URL wurde kopiert"
+                    color="green"
+                    size="base"
+                    icon="Checkmark"
+                    class="mt-3"
+                  />
+                </div>
               </div>
             </div>
           </template>

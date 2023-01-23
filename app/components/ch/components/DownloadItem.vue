@@ -15,7 +15,7 @@
       <p v-if="description" class="download-item__description">
         {{ description }}
       </p>
-      <MetaInfo :metainfos="[type, date]" class="download-item__meta-info" />
+      <MetaInfo v-if="type || date" :metainfos="[type, date]" class="download-item__meta-info" />
     </div>
   </a>
 </template>
