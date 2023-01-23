@@ -5,16 +5,19 @@
     <swiper
       :speed="500"
       :autoHeight="false"
-      :loop="false"
+      :loop="loop"
       :slidesPerView="1"
       :spaceBetween="20"
+      :slidesPerGroup="1"
       :breakpoints= "{
         480: {
           slidesPerView: 1,
+          slidesPerGroup: 1,
           spaceBetween: 28
         },
         640: {
           slidesPerView: 1,
+          slidesPerGroup: 1,
           spaceBetween: 36
         },
         768: {
@@ -49,163 +52,44 @@
       :simulateTouch="true"
       :slideToClickedSlide="false"
       :pagination="{
-          type: 'bullets',
+          type: paginationType,
           el: `#carousel-pagination-${id}`,
           clickable: true,
           bulletClass: 'carousel__bullet',
           bulletActiveClass: 'carousel__bullet--active'
       }"
     >
-      <swiper-slide>
+      <swiper-slide
+        v-for="(slide, index) in slides"
+        :key="`slide-${index}`"
+      >
         <Card type="default">
           <template v-slot:image>
-            <img src="https://picsum.photos/1024/768?random=1" alt="cat">
+            <picture>
+              <source
+                :srcset="slide.source.srcset"
+                :height="slide.source.height"
+                :width="slide.source.width"
+                :media="slide.source.media"
+              />
+              <img
+                :src="slide.image.src"
+                :alt="slide.image.alt"
+                :height="slide.image.height"
+                :width="slide.image.width"
+              />
+            </picture>
           </template>
           <template v-slot:title>
-            <h3>Covid 19</h3>
+            <h3>{{slide.title}}</h3>
           </template>
           <template v-slot:description>
             <p>
-              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
+              {{ slide.description  }}
             </p>
           </template>
           <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
-          <template v-slot:footerAction>
-            <Btn
-              to="#"
-              variant="outline"
-              icon-pos="only"
-              icon="ArrowRight"
-              label="Weiterlesen"
-            />
-          </template>
-        </Card>
-      </swiper-slide>
-      <swiper-slide>
-        <Card type="default">
-          <template v-slot:image>
-            <img src="https://picsum.photos/1024/768?random=2" alt="cat">
-          </template>
-          <template v-slot:title>
-            <h3>Covid 19</h3>
-          </template>
-          <template v-slot:description>
-            <p>
-              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
-            </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
-          <template v-slot:footerAction>
-            <Btn
-              to="#"
-              variant="outline"
-              icon-pos="only"
-              icon="ArrowRight"
-              label="Weiterlesen"
-            />
-          </template>
-        </Card>
-      </swiper-slide>
-      <swiper-slide>
-        <Card type="default">
-          <template v-slot:image>
-            <img src="https://picsum.photos/1024/768?random=3" alt="cat">
-          </template>
-          <template v-slot:title>
-            <h3>Covid 19</h3>
-          </template>
-          <template v-slot:description>
-            <p>
-              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
-            </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
-          <template v-slot:footerAction>
-            <Btn
-              to="#"
-              variant="outline"
-              icon-pos="only"
-              icon="ArrowRight"
-              label="Weiterlesen"
-            />
-          </template>
-        </Card>
-      </swiper-slide>
-      <swiper-slide>
-        <Card type="default">
-          <template v-slot:image>
-            <img src="https://picsum.photos/1024/768?random=4" alt="cat">
-          </template>
-          <template v-slot:title>
-            <h3>Covid 19</h3>
-          </template>
-          <template v-slot:description>
-            <p>
-              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
-            </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
-          <template v-slot:footerAction>
-            <Btn
-              to="#"
-              variant="outline"
-              icon-pos="only"
-              icon="ArrowRight"
-              label="Weiterlesen"
-            />
-          </template>
-        </Card>
-      </swiper-slide>
-      <swiper-slide>
-        <Card type="default">
-          <template v-slot:image>
-            <img src="https://picsum.photos/1024/768?random=5" alt="cat">
-          </template>
-          <template v-slot:title>
-            <h3>Covid 19</h3>
-          </template>
-          <template v-slot:description>
-            <p>
-              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
-            </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
-          <template v-slot:footerAction>
-            <Btn
-              to="#"
-              variant="outline"
-              icon-pos="only"
-              icon="ArrowRight"
-              label="Weiterlesen"
-            />
-          </template>
-        </Card>
-      </swiper-slide>
-      <swiper-slide>
-        <Card type="default">
-          <template v-slot:image>
-            <img src="https://picsum.photos/1024/768?random=6" alt="cat">
-          </template>
-          <template v-slot:title>
-            <h3>Covid 19</h3>
-          </template>
-          <template v-slot:description>
-            <p>
-              If possible, less than 150 chars here, sed Lorem ipsum dolor sit amet, consetetur sadipscing elir, sed Lorem ipsum dolor sit amet...
-            </p>
-          </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
+            {{ slide.footerInfo }}
           </template>
           <template v-slot:footerAction>
             <Btn
@@ -273,6 +157,22 @@ export default {
     breakpoints: {
       type: Object
     },
+    paginationType: {
+      type: String,
+      validator: (prop) => [
+        'bullets',
+        'fraction'
+      ].includes(prop),
+      default: 'bullets'
+    },
+    loop: {
+      type: Boolean,
+      default: false
+    },
+    slides: {
+      type: Array,
+      required: true
+    }
   },
 
   computed: {
@@ -280,6 +180,7 @@ export default {
       let base = 'carousel carousel--cards'
       return base
     },
-  }
+  },
+
 }
 </script>
