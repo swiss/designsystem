@@ -27,33 +27,44 @@
     @apply shadow-2xl;
 
     .card__title {
-      @apply text-red-600;
+      @apply text-primary-700;
     }
   }
 }
 
 .card--highlight {
-  @apply relative;
-  @apply ml-5 mt-5;
-  @apply lg:ml-7 lg:mt-7;
+  @apply relative bg-transparent;
+  @apply pl-5 pt-5;
+  @apply lg:pl-7 lg:pt-7;
   @apply transition-transform duration-300;
 
   &::before {
     content: '';
-    @apply absolute top-0 right-0 left-0 bottom-0 z-0;
+    @apply absolute top-0 right-5 left-0 bottom-5 z-0;
+    @apply lg:right-7 lg:bottom-7;
     @apply bg-secondary-300;
-    @apply -translate-x-5 -translate-y-5;
-    @apply lg:-translate-x-7 lg:-translate-y-7;
+
     @apply transition-transform duration-300;
   }
 
   &:hover,
   &:focus-within {
+    @apply bg-transparent;
+    @apply shadow-none;
 
     &::before {
       @apply scale-102;
     }
   }
+
+  .card__content {
+    @apply gap-5;
+  }
+
+  .card__body {
+    @apply pt-8 pb-0;
+  }
+
 }
 
 .card--twitter {

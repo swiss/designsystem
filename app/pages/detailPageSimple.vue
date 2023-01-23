@@ -27,11 +27,11 @@
         <template v-slot:image>
           <figure>
             <picture>
-                <source srcset="https://picsum.photos/1282/962/?image=29" media="(min-width: 1800px)">
-                <source srcset="https://picsum.photos/1192/670/?image=28" media="(min-width: 1024px)">
-                <source srcset="https://picsum.photos/800/450/?image=29" media="(min-width: 768px)">
-                <source srcset="https://picsum.photos/680/382/?image=28" media="(min-width: 480px)">
-                <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
+              <source srcset="https://picsum.photos/1282/721/?image=29" media="(min-width: 1800px)">
+              <source srcset="https://picsum.photos/1192/670/?image=28" media="(min-width: 1024px)">
+              <source srcset="https://picsum.photos/800/450/?image=29" media="(min-width: 768px)">
+              <source srcset="https://picsum.photos/680/382/?image=28" media="(min-width: 480px)">
+              <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
             </picture>
             <figcaption>
               Datenmodelle als http-Ressource nutzbar zu machen. Der Vorteil für
