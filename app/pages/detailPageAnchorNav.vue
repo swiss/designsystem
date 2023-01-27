@@ -42,63 +42,8 @@
           </figure>
         </template>
       </Hero>
-      <section class="section section--default">
+      <section class="section section--py">
         <div class="container container--grid gap--responsive">
-          <div class="container__aside">
-            <div class="sticky sticky--top">
-              <Card type="default">
-                <template v-slot:title>
-                  <h2>Inhaltverzeichnis</h2>
-                </template>
-                <template v-slot:description>
-                  <ul class="menu text--sm">
-                    <li>
-                      <a
-                        href="#einleitung"
-                        class="menu__item menu__item--border menu__item--condensed"
-                      >
-                        <div>
-                          Einleitung
-                        </div>
-                        <SvgIcon
-                          icon="ArrowAngleBottomLeft"
-                          class="menu__item__icon"
-                        />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#datenmodell-ablage"
-                        class="menu__item menu__item--border menu__item--condensed"
-                      >
-                        <div>
-                          Datenmodellablage ansehen
-                        </div>
-                        <SvgIcon
-                          icon="ArrowAngleBottomLeft"
-                          class="menu__item__icon"
-                        />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#dokumente"
-                        class="menu__item menu__item--border menu__item--condensed"
-                      >
-                        <div>
-                          Weitere Informationen
-                        </div>
-                        <SvgIcon
-                          icon="ArrowAngleBottomLeft"
-                          class="menu__item__icon"
-                        />
-                      </a>
-                    </li>
-                  </ul>
-                </template>
-              </Card>
-            </div>
-          </div>
           <div class="container__main vertical-spacing">
             <h2 class="h2" id="einleitung">
               Einleitung
@@ -188,6 +133,61 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor</p>
               </AccordionItem>
             </Accordion>
+          </div>
+          <div class="container__aside">
+            <div class="sticky sticky--top">
+              <Card type="default">
+                <template v-slot:title>
+                  <h2>Inhaltverzeichnis</h2>
+                </template>
+                <template v-slot:description>
+                  <ul class="menu text--sm">
+                    <li>
+                      <a
+                        href="#einleitung"
+                        class="menu__item menu__item--border menu__item--condensed"
+                      >
+                        <div>
+                          Einleitung
+                        </div>
+                        <SvgIcon
+                          icon="ArrowAngleBottomLeft"
+                          class="menu__item__icon"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#datenmodell-ablage"
+                        class="menu__item menu__item--border menu__item--condensed"
+                      >
+                        <div>
+                          Datenmodellablage ansehen
+                        </div>
+                        <SvgIcon
+                          icon="ArrowAngleBottomLeft"
+                          class="menu__item__icon"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#dokumente"
+                        class="menu__item menu__item--border menu__item--condensed"
+                      >
+                        <div>
+                          Weitere Informationen
+                        </div>
+                        <SvgIcon
+                          icon="ArrowAngleBottomLeft"
+                          class="menu__item__icon"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </template>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

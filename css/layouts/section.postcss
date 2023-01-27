@@ -16,11 +16,16 @@
   @apply container--py overflow-hidden;
 }
 
+.section--py {
+  @apply container--py;
+}
+
 /*
   If consecutive sections have same background,
   we remove the padding top of the second section:
 */
 .hero + .section--default,
+.hero + .section--py,
 .hero + .bg--white,
 .section--default + .section--default,
 .bg--white + .bg--white,

@@ -2,12 +2,15 @@
   <div class="space-y-6">
 
     <address>
-      <strong>{{ title }}</strong><br />
-      {{ address1 }}<br />
-      {{ address2 }}<br />
-      {{ address3 }}<br />
+      <strong>{{ title }}</strong><br v-if="title" />
+      {{ address1 }}<br v-if="address1" />
+      {{ address2 }}<br v-if="address2"  />
+      {{ address3 }}<br v-if="address3" />
       {{ street }}<br />
       {{ country }} – {{ zip }} {{ city }}<br />
+      <a v-if="mapLink" :href="mapLink">
+        Standort auf Karte anzeigen
+      </a>
     </address>
     <ul
       v-if="phone || fax || email || contactForm"
@@ -41,6 +44,15 @@
           icon-pos="left"
           variant="link"
           aria-label="E-Mail senden"
+        />
+      </li>
+      <li v-if="website">
+        <Btn
+          :to="website"
+          :label="website"
+          icon="Link"
+          icon-pos="left"
+          variant="link"
         />
       </li>
       <li v-if="contactForm">
@@ -99,6 +111,7 @@ export default {
     fax: String,
     email: String,
     website: String,
+    mapLink: String,
     openingHours: Boolean,
     contactForm: Boolean,
   },
