@@ -22,11 +22,11 @@
       </div>
     </header>
     <main id="main-content">
-      <Hero type="default" :meta-infos="['Veranstaltung', '23. Dezember – 30. Dezember 2023']" :authors="authors">
+      <Hero type="default" :meta-infos="['Veranstaltung']" :authors="authors">
         <template v-slot:title>
           Symposium Extremhochwasser in der Schweiz
         </template>
-        <template v-slot:description>
+        <!-- <template v-slot:description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
         </template>
          <template v-slot:image>
@@ -39,15 +39,15 @@
               <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
             </picture>
           </figure>
-        </template>
+        </template> -->
       </Hero>
       <section class="section section--py">
-        <div class="container container--grid gap--responsive">
+        <div class="container container--reverse-mobile container--grid gap--responsive">
           <!-- <div class="container__center--md">
             <h1 class="h1">Symposium Extremhochwasser in der Schweiz</h1>
           </div> -->
           <div class="container__main vertical-spacing">
-            <!-- <figure>
+            <figure>
               <picture>
                 <source
                   srcset="https://placekitten.com/g/1600/900"
@@ -55,41 +55,10 @@
                 />
                 <img src="https://placekitten.com/g/1600/900" alt="cat" />
               </picture>
-            </figure> -->
+            </figure>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
             </p>
-
-            <!-- <table class="table table--responsive-cols-2 table--flat">
-              <caption class="sr-only">
-                Informationen über die Veranstaltung
-              </caption>
-
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    <div class="flex">
-                      <SvgIcon icon="MapMarker" size="xl" class="-ml-1.5 mr-1 -mt-1" />
-                      <h3 class="font-bold">Wo</h3>
-                    </div>
-                  </th>
-                  <td>
-                    <Contact
-                      address1="Museum Cerny"
-                      street="Stadtbachstrasse 8A"
-                      zip="3012"
-                      city="Bern"
-                      country="CH"
-                      mapLink="https://www.google.com/maps"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Header for row two</th>
-                  <td>Row two col two content</td>
-                </tr>
-              </tbody>
-            </table> -->
 
             <div>
               <InfoBlock
@@ -117,7 +86,80 @@
                   zip="3012"
                   city="Bern"
                   country="CH"
-                  mapLink="https://www.google.com/maps"
+                  mapLink="www.google.com/maps"
+                  website="www.cerny.ch"
+                />
+              </InfoBlock>
+            </div>
+
+            <h2 class="h3">Veranstaltungsdetails</h2>
+
+            <div>
+              <InfoBlock
+                title="Teilnahmebedingungen"
+                headingLevel="h3"
+              >
+                <div>Anmeldung zwingend.</div>
+                <div>Anmeldefrist: 10. Dezember 2023</div>
+              </InfoBlock>
+
+              <InfoBlock
+                title="Veranstaltungs-Sprache"
+                headingLevel="h3"
+              >
+                <div>Deutsch</div>
+              </InfoBlock>
+
+              <InfoBlock
+                title="Referenten/-innen"
+                headingLevel="h3"
+              >
+
+              <ul
+                class="list list--icon list--loose -mt-3"
+              >
+                <li>
+                  <Btn
+                    to="www.muster.ch"
+                    label="Maria Muster"
+                    icon="User"
+                    icon-pos="left"
+                    variant="link"
+                  />
+                </li>
+                <li>
+                  <Btn
+                    to="www.muster.ch"
+                    label="Marius Mater"
+                    icon="User"
+                    icon-pos="left"
+                    variant="link"
+                  />
+                </li>
+
+
+              </ul>
+              </InfoBlock>
+
+              <InfoBlock
+                title="Kontaktadresse"
+                headingLevel="h3"
+              >
+                <Contact
+                  title="Geoportal"
+                  address1="c/o"
+                  address2="Bundesamt für Landestopografie swisstopo"
+                  address3="KOGIS (Koordination, Geoinformation und Services )"
+                  street="Seftigenstrasse 264"
+                  zip="3084"
+                  city="Wabern"
+                  country="CH"
+                  phone="+41 31 123 45 67"
+                  fax="+41 31 123 45 67"
+                  email="info@geo.admin.ch"
+                  website="www.geo.admin.ch"
+                  :openingHours=false
+                  :contactForm=true
                 />
               </InfoBlock>
 
@@ -130,12 +172,6 @@
                   <caption class="sr-only">
                     Prices entries
                   </caption>
-                  <!-- <thead>
-                    <tr>
-                      <th scope="col">Header col one</th>
-                      <th scope="col">Header col two</th>
-                    </tr>
-                  </thead> -->
                   <tbody>
                     <tr>
                       <th scope="row">Children under 12</th>
@@ -167,62 +203,6 @@
                     </tr>
                   </tbody>
                 </table>
-              </InfoBlock>
-
-              <InfoBlock
-                icon="Link"
-                title="Weitere Infos"
-                headingLevel="h3"
-              >
-                <a href="www.cerny.ch" class="link">www.cerny.ch</a>
-              </InfoBlock>
-            </div>
-
-            <h2 class="h3">Veranstaltungsdetails</h2>
-
-            <div>
-              <InfoBlock
-                title="Teilnahmebedingungen"
-                headingLevel="h3"
-              >
-                <div>Anmeldung zwingend.</div>
-                <div>Anmeldefrist: 10. Dezember 2023</div>
-              </InfoBlock>
-
-              <InfoBlock
-                title="Veranstaltungs-Sprache"
-                headingLevel="h3"
-              >
-                <div>Deutsch</div>
-              </InfoBlock>
-
-              <InfoBlock
-                title="Referenten/-innen"
-                headingLevel="h3"
-              >
-                <a href="www.muster.ch" class="link">Maria Muster</a>
-              </InfoBlock>
-
-              <InfoBlock
-                title="Kontaktadresse"
-                headingLevel="h3"
-              >
-                <Contact
-                  title="Geoportal"
-                  address1="c/o"
-                  address2="Bundesamt für Landestopografie swisstopo"
-                  address3="KOGIS (Koordination, Geoinformation und Services )"
-                  street="Seftigenstrasse 264"
-                  zip="3084"
-                  city="Wabern"
-                  country="CH"
-                  phone="+41 31 123 45 67"
-                  fax="+41 31 123 45 67"
-                  email="info@geo.admin.ch"
-                  website="https://www.geo.admin.ch"
-                  :openingHours=false
-                  :contactForm=true
-                />
               </InfoBlock>
 
               <InfoBlock
@@ -286,14 +266,19 @@
           </div>
           <div class="container__aside">
             <div class="sticky sticky--top">
-              <div class="event__main-infos bg--secondary-50 p-8">
-                <h2 class="sr-only">Event Main Infos</h2>
-                <!-- <div class="flex flex-wrap">
-                  <span class="whitespace-nowrap">23. Dezember –&nbsp;</span>
-                  <span class="whitespace-nowrap">30. Dezember 2023</span>
+              <div class="border-t border-secondary-200 pt-8">
+                <h2 class="sr-only">Event Date</h2>
+                <div class="date">
+                  <div class="date__day">11</div>
+                  <div class="date__month">Apr.</div>
+                  <div class="date__separator">–</div>
+                  <div class="date__day">31</div>
+                  <div class="date__month">Mai</div>
+                  <div class="date__year">2023</div>
                 </div>
-                <div>Museum Cerny – Bern</div> -->
-                <div>Symposium Extremhochwasser in der Schweiz</div>
+                <div class="font-bold">Cery Museum, Bern</div>
+              </div>
+              <div class="border-t border-secondary-200 pt-8">
                 <Btn
                   to="#"
                   variant="filled"

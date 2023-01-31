@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-6">
+  <div class="space-y-4">
 
     <address>
       <strong>{{ title }}</strong><br v-if="title" />
@@ -8,14 +8,30 @@
       {{ address3 }}<br v-if="address3" />
       {{ street }}<br />
       {{ country }} – {{ zip }} {{ city }}<br />
-      <a v-if="mapLink" :href="mapLink">
-        Standort auf Karte anzeigen
-      </a>
     </address>
     <ul
-      v-if="phone || fax || email || contactForm"
+      v-if="phone || fax || email || contactForm || website || mapLink"
       class="list list--icon list--loose"
     >
+      <li v-if="mapLink">
+        <Btn
+          :to="mapLink"
+          label="Standort auf Karte anzeigen"
+          icon="MapMarker"
+          icon-pos="left"
+          variant="link"
+        />
+      </li>
+      <li v-if="website">
+        <Btn
+          v-if="website"
+          :to="website"
+          :label="website"
+          icon="Link"
+          icon-pos="left"
+          variant="link"
+        />
+      </li>
       <li v-if="phone">
         <Btn
           to="tel: +41 31 123 4567"
@@ -44,15 +60,6 @@
           icon-pos="left"
           variant="link"
           aria-label="E-Mail senden"
-        />
-      </li>
-      <li v-if="website">
-        <Btn
-          :to="website"
-          :label="website"
-          icon="Link"
-          icon-pos="left"
-          variant="link"
         />
       </li>
       <li v-if="contactForm">
