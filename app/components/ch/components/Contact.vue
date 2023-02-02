@@ -16,7 +16,7 @@
       <li v-if="mapLink">
         <Btn
           :to="mapLink"
-          label="Standort auf Karte anzeigen"
+          label="Karte anzeigen"
           icon="MapMarker"
           icon-pos="left"
           variant="link"

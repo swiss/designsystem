@@ -3,21 +3,25 @@
 \*----------------------------------------*/
 
 .date {
-  @apply flex items-start relative -ml-1 pb-4;
+  @apply flex items-start relative mb-4 -ml-1 pb-4;
 }
 
 .date__day {
-  @apply text--5xl leading-none;
+  @apply text--4xl tracking-tighter leading-none;
 }
 
 .date__month {
-  @apply text--lg font-bold;
+  @apply text--base font-bold pt-[0.15em] lg:pt-[0.3em];
 }
 
 .date__year {
-  @apply text--lg font-bold pl-2;
+  @apply text--base font-bold pt-[0.15em] lg:pt-[0.3em] pl-2;
 }
 
 .date__separator {
-  @apply text--5xl leading-none pr-4 pl-2;
+  @apply text--4xl leading-none pr-4 pl-2;
+}
+
+.hours {
+  @apply -mt-4;
 }

@@ -5,10 +5,9 @@
       <SvgIcon v-if="icon" :icon="icon" size="xl" class="-ml-1.5 mr-1 -mt-1" />
       <component
         :is="tag"
-        class="font--bold"
-      >
-        {{ title }}
-      </component>
+        class="font--bold pr-1 mb-4"
+        v-html="title"
+      />
     </div>
     <div>
       <slot />

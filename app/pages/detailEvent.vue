@@ -47,7 +47,7 @@
           <div class="container__main vertical-spacing">
             <!-- <h1 class="h1">Symposium Extremhochwasser in der Schweiz</h1> -->
 
-            <!-- <figure>
+            <figure>
               <picture>
                 <source
                   srcset="https://placekitten.com/g/1600/900"
@@ -55,13 +55,42 @@
                 />
                 <img src="https://placekitten.com/g/1600/900" alt="cat" />
               </picture>
-            </figure> -->
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-            </p>
+            </figure>
 
-            <div>
-              <InfoBlock
+            <div class="md:hidden">
+              <div class="box">
+                <h2 class="sr-only">Event Date</h2>
+                <div class="date">
+                  <div class="date__day">11</div>
+                  <div class="date__month">Apr.</div>
+                  <div class="date__separator">–</div>
+                  <div class="date__day">31</div>
+                  <div class="date__month">Mai</div>
+                  <div class="date__year">2023</div>
+                </div>
+                <div class="hours">Täglich 09:00 bis 12:00</div>
+              </div>
+              <div class="box">
+                <Contact
+                  address1="Museum Cerny"
+                  street="Stadtbachstrasse 8A"
+                  zip="3012"
+                  city="Bern"
+                  country="CH"
+                  mapLink="www.google.com/maps"
+                  website="www.cerny.ch"
+                />
+              </div>
+              <div class="box">
+                <Btn
+                  to="#"
+                  variant="filled"
+                  icon-pos="right"
+                  icon="ArrowRight"
+                  label="Jetzt anmelden"
+                />
+              </div>
+              <!-- <InfoBlock
                 icon="Clock"
                 title="Wann"
                 headingLevel="h3"
@@ -89,10 +118,10 @@
                   mapLink="www.google.com/maps"
                   website="www.cerny.ch"
                 />
-              </InfoBlock>
+              </InfoBlock> -->
             </div>
 
-            <div class="bg-secondary-50 p-6 mt-0.5 md:hidden">
+            <!-- <div class="bg-secondary-50 p-6 mt-0.5 md:hidden">
               <Btn
                 to="#"
                 variant="filled"
@@ -100,13 +129,20 @@
                 icon="ArrowRight"
                 label="Jetzt anmelden"
               />
-            </div>
+            </div> -->
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+            </p>
+            <p>
+              Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+            </p>
 
             <h2 class="h3">Veranstaltungsdetails</h2>
 
             <div>
               <InfoBlock
-                title="Teilnahmebedingungen"
+                title="Teilnahme&shy;bedingungen"
                 headingLevel="h3"
               >
                 <div>Anmeldung zwingend.</div>
@@ -114,7 +150,7 @@
               </InfoBlock>
 
               <InfoBlock
-                title="Veranstaltungs-Sprache"
+                title="Veranstaltungs&shy;sprache"
                 headingLevel="h3"
               >
                 <div>Deutsch</div>
@@ -267,17 +303,13 @@
               </Accordion>
             </div>
 
-            <div>
-              <h2 class="h3">
-                Themen
-              </h2>
-              <RelatedTags :tags="tags" class="-mt-6"></RelatedTags>
-            </div>
+            <RelatedTags :tags="tags"></RelatedTags>
+
           </div>
           <div class="container__aside">
             <div class="sticky sticky--top">
               <div class="hidden md:block">
-                <div class="bg-secondary-50 p-6">
+                <div class="box">
                   <h2 class="sr-only">Event Date</h2>
                   <div class="date">
                     <div class="date__day">11</div>
@@ -287,9 +319,20 @@
                     <div class="date__month">Mai</div>
                     <div class="date__year">2023</div>
                   </div>
-                  <div class="font-bold">Cery Museum, Bern</div>
+                  <div class="hours">Täglich 09:00 bis 12:00</div>
                 </div>
-                <div class="bg-secondary-50 p-6 mt-0.5">
+                <div class="box">
+                  <Contact
+                    address1="Museum Cerny"
+                    street="Stadtbachstrasse 8A"
+                    zip="3012"
+                    city="Bern"
+                    country="CH"
+                    mapLink="www.google.com/maps"
+                    website="www.cerny.ch"
+                  />
+                </div>
+                <div class="box">
                   <Btn
                     to="#"
                     variant="filled"
