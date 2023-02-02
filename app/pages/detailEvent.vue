@@ -42,12 +42,12 @@
         </template> -->
       </Hero>
       <section class="section section--py">
-        <div class="container container--reverse-mobile container--grid gap--responsive">
-          <!-- <div class="container__center--md">
-            <h1 class="h1">Symposium Extremhochwasser in der Schweiz</h1>
-          </div> -->
+        <div class="container container--grid gap--responsive">
+
           <div class="container__main vertical-spacing">
-            <figure>
+            <!-- <h1 class="h1">Symposium Extremhochwasser in der Schweiz</h1> -->
+
+            <!-- <figure>
               <picture>
                 <source
                   srcset="https://placekitten.com/g/1600/900"
@@ -55,7 +55,7 @@
                 />
                 <img src="https://placekitten.com/g/1600/900" alt="cat" />
               </picture>
-            </figure>
+            </figure> -->
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
             </p>
@@ -90,6 +90,16 @@
                   website="www.cerny.ch"
                 />
               </InfoBlock>
+            </div>
+
+            <div class="bg-secondary-50 p-6 mt-0.5 md:hidden">
+              <Btn
+                to="#"
+                variant="filled"
+                icon-pos="right"
+                icon="ArrowRight"
+                label="Jetzt anmelden"
+              />
             </div>
 
             <h2 class="h3">Veranstaltungsdetails</h2>
@@ -266,27 +276,28 @@
           </div>
           <div class="container__aside">
             <div class="sticky sticky--top">
-              <div class="border-t border-secondary-200 pt-8">
-                <h2 class="sr-only">Event Date</h2>
-                <div class="date">
-                  <div class="date__day">11</div>
-                  <div class="date__month">Apr.</div>
-                  <div class="date__separator">–</div>
-                  <div class="date__day">31</div>
-                  <div class="date__month">Mai</div>
-                  <div class="date__year">2023</div>
+              <div class="hidden md:block">
+                <div class="bg-secondary-50 p-6">
+                  <h2 class="sr-only">Event Date</h2>
+                  <div class="date">
+                    <div class="date__day">11</div>
+                    <div class="date__month">Apr.</div>
+                    <div class="date__separator">–</div>
+                    <div class="date__day">31</div>
+                    <div class="date__month">Mai</div>
+                    <div class="date__year">2023</div>
+                  </div>
+                  <div class="font-bold">Cery Museum, Bern</div>
                 </div>
-                <div class="font-bold">Cery Museum, Bern</div>
-              </div>
-              <div class="border-t border-secondary-200 pt-8">
-                <Btn
-                  to="#"
-                  variant="filled"
-                  icon-pos="right"
-                  icon="ArrowRight"
-                  label="Jetzt anmelden"
-                  class="mt-4"
-                />
+                <div class="bg-secondary-50 p-6 mt-0.5">
+                  <Btn
+                    to="#"
+                    variant="filled"
+                    icon-pos="right"
+                    icon="ArrowRight"
+                    label="Jetzt anmelden"
+                  />
+                </div>
               </div>
             </div>
           </div>
