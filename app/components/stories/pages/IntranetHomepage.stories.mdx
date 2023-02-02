@@ -4,7 +4,7 @@ import store from '@/.storybook/store';
 import Index from '../../../pages/index.vue';
 
 <Meta
-  title="Pages/Homepage"
+  title="Pages/Intranet/Homepage"
   component={Index}
 />
 
@@ -12,16 +12,16 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Index },
   store: store,
-  template: '<Index />',
+  template: '<Index :isIntranet="true" />',
 });
 
-# Homepage example
+# Intranet Homepage example
 
-<a href="?path=/story/pages-homepage--example">Go to the Canvas Tab</a>
+<a href="?path=/story/pages-intranet-homepage--example">Go to the Canvas Tab</a>
 
 ---
 
-<a href="?id=pages-homepage--example" target="_blank">Open in full width in a new tab</a>
+<a href="?id=pages-intranet-homepage--example" target="_blank">Open in full width in a new tab</a>
 
 <Canvas>
   <Story

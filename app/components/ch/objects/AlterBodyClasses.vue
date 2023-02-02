@@ -6,6 +6,10 @@ export default {
 		isMobileMenuOpen: {
 			type: Boolean,
 			default: false,
+		},
+    isIntranet: {
+			type: Boolean,
+			default: false,
 		}
 	},
   methods: {
@@ -27,6 +31,12 @@ export default {
       } else {
         document.body.classList.remove('body--mobile-menu-is-open')
         this.$store.dispatch('layout/closeMobileMenu')
+      }
+
+      if (this.isIntranet) {
+        document.body.classList.add('body--intranet')
+      } else {
+        document.body.classList.remove('body--intranet')
       }
     },
   },
