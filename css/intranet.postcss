@@ -15,15 +15,17 @@
     --color-primary-800: #1e40af;
     --color-primary-900: #1e3a8a;
 
-    --color-secondary-50:  #eff6ff;
-    --color-secondary-100: #dbeafe;
-    --color-secondary-200: #bfdbfe;
-    --color-secondary-300: #60a5fa;
-    --color-secondary-400: #3b82f6;
-    --color-secondary-500: #2563eb;
-    --color-secondary-600: #1d4ed8;
-    --color-secondary-700: #1e40af;
-    --color-secondary-800: #1e3a8a;
+    /* light secondary colors are grey */
+    --color-secondary-50: #f0f4f7;
+    --color-secondary-100: #dfe4e9;
+    --color-secondary-200: #acb4bd;
+    --color-secondary-300: #828e9a;
+    --color-secondary-400: #596978;
+    /* dense secondary colors are blue */
+    --color-secondary-500: #1d4ed8;
+    --color-secondary-600: #1e40af;
+    --color-secondary-700: #1e3a8a;
+    --color-secondary-800: #1c3c7d;
     --color-secondary-900: #1c3c7d;
 
 
@@ -32,6 +34,14 @@
       @apply badge badge--blue mt-1 -ml-[1px];
       @apply block w-fit;
     }
+
+    .logo__accronym::after {
+      @apply content-['Intranet'];
+      @apply badge badge--blue mt-1 -ml-[1px];
+      @apply block w-fit;
+      @apply text-xs;
+    }
   }
 }
+
 
