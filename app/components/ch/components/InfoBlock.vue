@@ -1,14 +1,11 @@
 <template>
 
   <div :class="classes">
-    <div class="flex">
-      <SvgIcon v-if="icon" :icon="icon" size="xl" class="-ml-1.5 mr-1 -mt-1" />
-      <component
-        :is="tag"
-        class="font--bold pr-1 mb-4"
-        v-html="title"
-      />
-    </div>
+    <component
+      :is="tag"
+      class="font--bold pr-1 mb-4"
+      v-html="title"
+    />
     <div>
       <slot />
     </div>
@@ -17,12 +14,8 @@
 </template>
 
 <script>
-import SvgIcon from '../components/SvgIcon.vue'
 export default {
   name: 'InfoBlock',
-  components: {
-    SvgIcon,
-  },
   props: {
     title: {
       type: String,
