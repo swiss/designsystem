@@ -8,6 +8,10 @@
 
 .date__day {
   @apply text--4xl tracking-tighter leading-none;
+
+  [lang="de"] &::after {
+    content: ".";
+  }
 }
 
 .date__month {
