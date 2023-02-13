@@ -358,11 +358,13 @@ export default {
         {
           name: 'Maria Muster',
           img: 'https://picsum.photos/120/120/?image=29',
-          url: '#'
+          url: '#',
+          "prefix": " ",
         },
         {
           name: 'Katja Anna-Beerli',
           img: 'https://picsum.photos/120/120/?image=30',
+          url: '#',
         }
       ]
     }
