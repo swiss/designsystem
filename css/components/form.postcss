@@ -11,7 +11,11 @@
 }
 
 .form__group__radio {
-  @apply mb-2;
+  @apply flex items-baseline gap-2 mb-2;
+
+  label + & {
+    @apply mt-2;
+  }
 }
 
 .form__group__checkbox {

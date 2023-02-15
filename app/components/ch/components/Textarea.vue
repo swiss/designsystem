@@ -14,6 +14,7 @@
       :rows="rows"
       :cols="cols"
       :placeholder="placeholder"
+      :required="required"
     >
     </textarea>
     <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
@@ -62,6 +63,10 @@ export default {
       validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
       default: 'error'
     },
+    required: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -76,6 +81,7 @@ export default {
       let base = ''
       if (this.variant === 'negative') base += `text--negative `
       if (this.size) base += `text--${this.size} `
+      if (this.required) base += `text--asterisk `
       return base
     },
   },

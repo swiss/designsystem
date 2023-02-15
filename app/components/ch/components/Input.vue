@@ -5,7 +5,8 @@
       :for="id"
       :class="labelClasses"
     >
-      {{ label }}
+      {{ label }}<span v-if="required" class="form__group__required" />
+      {{ message }}
     </label>
     <input
       :type="type"
@@ -20,6 +21,7 @@
       :pattern="pattern"
       :autocomplete="autocomplete"
       :readonly=readonly
+      :required="required"
     />
     <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
       {{ message }}
@@ -88,6 +90,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    required: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -103,6 +109,7 @@ export default {
       if (this.variant === 'negative') base += `text--negative `
       if (this.size) base += `text--${this.size} `
       if (this.hideLabel) base += `sr-only `
+      if (this.required) base += `text--asterisk `
       return base
     },
   },

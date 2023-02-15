@@ -89,6 +89,10 @@ body {
   @apply text-text-500;
 }
 
+.text--asterisk::after {
+  @apply content-['\202F*']
+}
+
 .overtitle {
   @apply flex space-x-2;
   @apply text-secondary-100;
