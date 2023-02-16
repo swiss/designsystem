@@ -103,7 +103,7 @@
           </div>
         </div>
       </section>
-      <section class="section section--default">
+      <section class="section section--py">
         <div class="container container--grid gap--responsive">
           <div class="container__main vertical-spacing">
             <h2 class="h2">

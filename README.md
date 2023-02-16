@@ -17,6 +17,8 @@ Delivering HTML structures, CSS assets and design elements to build frontends fo
 $ npm install
 ```
 
+Node version: 16.13.2
+
 ## Run Storybook
 
 ```bash
