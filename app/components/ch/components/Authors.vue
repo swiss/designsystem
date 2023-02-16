@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="authors"
+    :class="computedClasses"
   >
     <div
       v-if="authorsWithImages.length"
@@ -69,12 +69,21 @@ export default {
       type: Array,
       required: true,
     },
+    bare: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {
     authorsWithImages() {
       return this.authors.filter((author, index) => {
         return (author.img)
       })
+    },
+    computedClasses() {
+      let base = 'authors '
+      if (this.bare) base += `authors--bare `
+      return base
     }
   }
 }

@@ -16,7 +16,6 @@
             phone="+41 31 123 45 67"
             fax="+41 31 123 45 67"
             email="info@geo.admin.ch"
-            website="https://www.geo.admin.ch"
             :openingHours=true
             :contactForm=true
           />
