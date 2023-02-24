@@ -94,13 +94,14 @@ For size variations, the following css classes are built:
 ## Required field
 
 If the field is mandatory:
-- a `required` attribute is added to the input element
-- an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element:
+- a `required` attribute is added to the input element.
+- an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element.
+- the word “required“ is added to the label for screen readers. This can be done by adding a sr-only class on the legend element.
 
 <Canvas>
 <div class="form__group__input">
   <label for="my-id" class="text--base text--asterisk">
-    Name
+    Name <span class="sr-only">required</span>
   </label>
   <input
     type="text"
@@ -121,7 +122,7 @@ a `badge badge--sm badge--error` element wraps the error message, right after th
 <Canvas>
 <div class="form__group__input">
   <label for="my-id" class="text--base text--asterisk">
-    Name
+    Name <span class="sr-only">required</span>
   </label>
   <input
     type="text"

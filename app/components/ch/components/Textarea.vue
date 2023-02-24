@@ -61,7 +61,6 @@ export default {
     messageType: {
       type: String,
       validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
-      default: 'error'
     },
     required: {
       type: Boolean,
@@ -74,7 +73,7 @@ export default {
       let base = ''
       if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
-      if (this.message) base += `input--${this.messageType} `
+      if (this.messageType) base += `input--${this.messageType} `
       return base
     },
     labelClasses() {

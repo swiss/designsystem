@@ -5,7 +5,7 @@
       class="form__group__legend"
       :class="legendClasses"
     >
-      {{ legend }}
+      {{ legend }} <span v-if="required" class="sr-only">required</span>
     </legend>
     <slot />
     <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
