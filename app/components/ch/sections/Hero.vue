@@ -56,7 +56,7 @@ export default {
         'main-image',
         'hub',
         'title-only',
-        'sr-only'
+        'sr-only',
       ].includes(prop)
     },
     metaInfos: {

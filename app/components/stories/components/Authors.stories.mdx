@@ -4,12 +4,15 @@ import Authors from '../../ch/components/Authors.vue'
 <Meta
   title="Components/Authors"
   component={Authors}
+  argTypes={{
+    bare:    { control: { type: 'boolean'} },
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Authors },
-  template: '<Authors :authors="authors" />'
+  template: '<Authors :authors="authors" :bare="bare" />'
 })
 
 
@@ -18,9 +21,11 @@ export const Template = (args, { argTypes }) => ({
 
 ## Example
 
-If most of the authors have a picture, we display their images. 
+If most of the authors have a picture, we display their images.
 When only a few images are missing, they are replaced by the initials of the authors.
-If no initials are provided, the disc contains the `User` svg icon. 
+If no initials are provided, the disc contains the `User` svg icon.
+
+The default author component include horizontal lines and padding. Use the `bare` prop to remove these properties.
 
 <Canvas>
   <Story

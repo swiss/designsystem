@@ -1,18 +1,37 @@
 <template>
-  <div class="space-y-6">
+  <div class="space-y-4">
 
     <address>
-      <strong>{{ title }}</strong><br />
-      {{ address1 }}<br />
-      {{ address2 }}<br />
-      {{ address3 }}<br />
+      <strong>{{ title }}</strong><br v-if="title" />
+      {{ address1 }}<br v-if="address1" />
+      {{ address2 }}<br v-if="address2"  />
+      {{ address3 }}<br v-if="address3" />
       {{ street }}<br />
       {{ country }} – {{ zip }} {{ city }}<br />
     </address>
     <ul
-      v-if="phone || fax || email || contactForm"
+      v-if="phone || fax || email || contactForm || website || mapLink"
       class="list list--icon list--loose"
     >
+      <li v-if="mapLink">
+        <Btn
+          :to="mapLink"
+          label="Karte anzeigen"
+          icon="MapMarker"
+          icon-pos="left"
+          variant="link"
+        />
+      </li>
+      <li v-if="website">
+        <Btn
+          v-if="website"
+          :to="website"
+          :label="website"
+          icon="Link"
+          icon-pos="left"
+          variant="link"
+        />
+      </li>
       <li v-if="phone">
         <Btn
           to="tel: +41 31 123 4567"
@@ -99,6 +118,7 @@ export default {
     fax: String,
     email: String,
     website: String,
+    mapLink: String,
     openingHours: Boolean,
     contactForm: Boolean,
   },

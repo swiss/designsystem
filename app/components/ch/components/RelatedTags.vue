@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hr class="separator separator--xl" />
+    <hr v-if="!bare" class="separator separator--xl" />
     <ul class="list list--flex list--wrap">
       <li v-for="tag, index in tags">
         <TagItem
@@ -25,6 +25,10 @@ export default {
     tags: {
       type: Array,
       required: true,
+    },
+    bare: {
+      type: Boolean,
+      default: false,
     },
   }
 }

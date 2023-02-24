@@ -79,15 +79,20 @@
 .container__main {
   @apply     col-span-12;
   @apply  md:col-span-7;
-  @apply  lg:col-span-6;
+  @apply  xl:col-span-6 xl:col-start-2;
+}
 
-  @apply  lg:col-start-2;
-  
-  @apply md:row-start-1;
+.container--reverse-mobile .container__main {
+  @apply order-2 md:order-1;
 }
 
 .container--reverse .container__main {
-  @apply md:col-start-6 md:order-2;
+  @apply md:col-start-6;
+  @apply order-1 md:order-2;
+}
+
+.container--reverse-mobile.container--reverse .container__main {
+  @apply order-2 md:order-2;
 }
 
 .container__aside {
@@ -103,9 +108,17 @@
   }
 }
 
+.container--reverse-mobile .container__aside {
+  @apply order-1 md:order-2;
+}
+
 .container--reverse .container__aside {
   @apply md:col-start-1 md:order-1;
   @apply  lg:col-start-2;
+}
+
+.container--reverse-mobile.container--reverse .container__aside {
+  @apply order-1 md:order-1;
 }
 
 

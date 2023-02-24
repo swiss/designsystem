@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" :isIntranet="isIntranet" />
      <NotificationBanner :isFixed="true" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -132,6 +132,12 @@ export default {
           },
         ]
       }
+    }
+  },
+  props: {
+    isIntranet: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

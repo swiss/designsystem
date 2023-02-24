@@ -13,13 +13,14 @@
 
 .card--clickable {
   @apply relative;
-  @apply transition-shadow duration-300;
+  @apply transition-shadow duration-300 ease-in-out;
   @apply cursor-pointer;
 
   a::after,
   button::after {
     content: '';
     @apply absolute top-0 right-0 left-0 bottom-0;
+    @apply border-2 border-text-50 border-opacity-0 transition-all duration-300 ease-in-out;
   }
 
   &:hover,
@@ -28,6 +29,12 @@
 
     .card__title {
       @apply text-primary-700;
+    }
+
+    a::after,
+    button::after {
+      content: '';
+      @apply  border-opacity-90;
     }
   }
 }
@@ -85,6 +92,11 @@
   &:focus-within {
     @apply bg-transparent;
     @apply shadow-none;
+  }
+
+  a::after,
+  button::after {
+    @apply content-none;
   }
 }
 

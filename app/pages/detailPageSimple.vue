@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" :isIntranet="isIntranet" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
@@ -633,6 +633,12 @@ export default {
         { label: 'GKG/KOGIS', url: '#' },
         { label: 'Datenmodell', url: '#' },
       ],
+    }
+  },
+  props: {
+    isIntranet: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
