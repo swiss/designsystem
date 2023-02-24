@@ -144,7 +144,7 @@ Check the [Fieldset documentation](/docs/components-form-fieldset--example-radio
 If the radio is mandatory:
 - a `required` attribute is added to the input element
 - an asterisk is displayed right after the legend. This can be done by adding a `text--asterisk` class on the legend element.
-- the word “required“ is added to the legend for screen readers. This can be done by adding a `sr-only` class on the legend element.
+- the word “required“ is added to the legend for screen readers. This can be done by wrapping the word into a `.sr-only` element.
 
 <Canvas>
 <fieldset class="form__group">
@@ -183,20 +183,20 @@ a `badge badge--sm badge--error` element wraps the error message, right after th
     Radio group legend <span class="sr-only">required</span>
   </legend>
   <div class="form__group__radio">
-    <input type="radio" id="radio-0" name="radio-group-1" class="input input--outline input--error" value="value-0" />
-    <label for="radio-0" class="">
+    <input type="radio" id="radio-10" name="radio-group-2" class="input input--outline input--error" value="value-0" />
+    <label for="radio-10" class="">
       Label for value one
     </label>
   </div>
   <div class="form__group__radio">
-    <input type="radio" id="radio-1" name="radio-group-1" class="input input--outline input--error" value="value-1" />
-    <label for="radio-1" class="">
+    <input type="radio" id="radio-11" name="radio-group-2" class="input input--outline input--error" value="value-1" />
+    <label for="radio-11" class="">
       Label for value two
     </label>
   </div>
   <div class="form__group__radio">
-    <input type="radio" id="radio-2" name="radio-group-1" class="input input--outline input--error" value="value-2" />
-    <label for="radio-2" class="">
+    <input type="radio" id="radio-12" name="radio-group-2" class="input input--outline input--error" value="value-2" />
+    <label for="radio-12" class="">
       Label for value three
     </label>
   </div>
