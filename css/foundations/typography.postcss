@@ -90,7 +90,11 @@ body {
 }
 
 .text--asterisk::after {
-  @apply content-['\202F*']
+  @apply content-['\202F*'];
+
+  .text--asterisk ~ * & {
+    @apply content-[''];
+  }
 }
 
 .overtitle {

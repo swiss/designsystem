@@ -1,9 +1,10 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Fieldset from '../../ch/components/Fieldset.vue'
 import Checkbox from '../../ch/components/Checkbox.vue'
 
 <Meta
-  title="Components/Form/Checkbox/Simple"
-  component={Checkbox}
+  title="Components/Form/Fieldset"
+  component={Fieldset, Checkbox}
   argTypes={{
     variant: {
       control: {
@@ -11,7 +12,9 @@ import Checkbox from '../../ch/components/Checkbox.vue'
         options: ['outline', 'negative'],
       },
     },
+    required:   { control: { type: 'boolean' } },
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
+    legend: {},
     message: {},
     messageType: {
       control: {
@@ -24,11 +27,16 @@ import Checkbox from '../../ch/components/Checkbox.vue'
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Checkbox },
-  template: '<Checkbox :variant="variant" :size="size" :label="label" :id="id" :name="name" :value="value" :message="message" :messageType="messageType" />',
+  components: { Fieldset, Checkbox },
+  template: `
+    <Fieldset :variant="variant" :size="size" :legend="legend" :message="message" :messageType="messageType" :required="required">
+      <Checkbox id="checkbox-0" name="checkbox-group-1" label="Label for value one" value="value-0" :variant="variant" :size="size" :legend="legend" :messageType="messageType" :required="required"/>
+      <Checkbox id="checkbox-1" name="checkbox-group-1" label="Label for value two" value="value-1" :variant="variant" :size="size" :legend="legend" :messageType="messageType" :required="required" />
+    </Fieldset>
+  `,
 })
 
-# Input Checkbox
+# Input Fieldset
 
 ## Example
 
@@ -36,11 +44,8 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Example"
     args={{
-      variant: 'outline',
-      size: 'base',
-      label: 'Label',
-      name: 'checkbox-name',
-      id:'checkbox-id'
+      required: true,
+      legend: 'Checkbox group legend',
     }}
   >
     {Template.bind({})}
