@@ -393,7 +393,12 @@
               INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
               eingepflegt.
             </p>
-            <RelatedTags :tags="tags"></RelatedTags>
+            <div>
+              <h2 class="h2">
+                Themen
+              </h2>
+              <RelatedTags :tags="tags" bare></RelatedTags>
+            </div>
           </div>
         </div>
       </section>
