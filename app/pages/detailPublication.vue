@@ -235,7 +235,7 @@
                     variant="filled"
                     icon-pos="right"
                     icon="ArrowRight"
-                    label="Jetzt anmelden"
+                    label="Zum Online-Shop"
                   />
                 </div>
               </div>
