@@ -56,35 +56,46 @@
 
             <div class="md:hidden"> <!-- mobile only -->
               <div class="box">
-                <h2 class="sr-only">Event Date</h2>
-                <div class="date" lang="de">
-                  <div class="date__day">11</div>
-                  <div class="date__month">Apr.</div>
-                  <div class="date__separator">–</div>
-                  <div class="date__day">31</div>
-                  <div class="date__month">Mai</div>
-                  <div class="date__year">2023</div>
-                </div>
-                <div class="hours">Täglich 09:00 bis 12:00</div>
-              </div>
-              <div class="box">
-                <Contact
-                  address1="Museum Cerny"
-                  street="Stadtbachstrasse 8A"
-                  zip="3012"
-                  city="Bern"
-                  country="CH"
-                  mapLink="www.google.com/maps"
-                  website="www.cerny.ch"
-                />
-              </div>
-              <div class="box">
+                <h2 class="h5">Download</h2>
+                <ul class="download-items">
+                  <li>
+                    <DownloadItem
+                      headingLevel="h2"
+                      :filename="'dummy.pdf'"
+                      :title="'Deutsch'"
+                      :url="'../../../static/documents/dummy.pdf'"
+                      :type="'PDF'"
+                      :date="'524 kB'"
+                    />
+                  </li>
+                  <li>
+                    <DownloadItem
+                      headingLevel="h2"
+                      :filename="'dummy.pdf'"
+                      :title="'Französisch'"
+                      :url="'../../../static/documents/dummy.pdf'"
+                      :type="'PDF'"
+                      :date="'524 kB'"
+                    />
+                  </li>
+                  <li>
+                    <DownloadItem
+                      headingLevel="h2"
+                      :filename="'dummy.pdf'"
+                      :title="'English'"
+                      :url="'../../../static/documents/dummy.pdf'"
+                      :type="'PDF'"
+                      :date="'524 kB'"
+                    />
+                  </li>
+                </ul>
+                <h2 class="h5 mt-8">Druckexemplar bestellen</h2>
                 <Btn
                   to="#"
                   variant="filled"
                   icon-pos="right"
                   icon="ArrowRight"
-                  label="Jetzt anmelden"
+                  label="Zum Online-Shop"
                 />
               </div>
             </div>
@@ -227,9 +238,7 @@
                       />
                     </li>
                   </ul>
-                </div>
-                <div class="box">
-                  <h2 class="h5">Druckexemplar bestellen</h2>
+                  <h2 class="h5 mt-8">Druckexemplar bestellen</h2>
                   <Btn
                     to="#"
                     variant="filled"
@@ -256,6 +265,9 @@
           />
         </div>
       </section>
+
+      <RelatedPublicationsSection />
+
     </main>
     <footer class="footer" id="main-footer">
       <FooterInformation />
@@ -271,6 +283,7 @@ import TopHeader from '../components/ch/sections/TopHeader.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
+import RelatedPublicationsSection from '../components/ch/sections/RelatedPublicationsSection.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import Card from '~/components/ch/components/Card'
@@ -311,6 +324,7 @@ export default {
     RelatedTags,
     Authors,
     Notification,
+    RelatedPublicationsSection,
   },
   data: function () {
     return {
