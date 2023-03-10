@@ -22,7 +22,7 @@
             </p>
           </template>
           <template v-slot:specifications>
-            <MetaInfo :metainfos="['PDF','3.8Mb', '102 Seiten', 'Fransösich']" />
+            <MetaInfo :metainfos="['PDF','3.8 Mb', '102 Seiten', 'Deutsch']" />
           </template>
           <template v-slot:footerAction>
             <Btn
@@ -51,7 +51,7 @@
             </p>
           </template>
           <template v-slot:specifications>
-            <MetaInfo :metainfos="['PDF','3.8Mb', '102 Seiten', 'Englisch']" />
+            <MetaInfo :metainfos="['PDF','3.8 Mb', '102 Seiten', 'Deutsch']" />
           </template>
           <template v-slot:footerAction>
             <Btn

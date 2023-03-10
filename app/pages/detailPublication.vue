@@ -26,11 +26,8 @@
         <template v-slot:title>
           Auswirkungen von Corona auf die Schweizer Gesellschaft
         </template>
-        <template v-slot:description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-        </template>
       </Hero>
-      <section class="section section--py">
+      <section class="section section--default section--py">
         <div class="container container--grid gap--responsive">
 
           <div class="container__main vertical-spacing">
@@ -56,48 +53,51 @@
 
             <div class="md:hidden"> <!-- mobile only -->
               <div class="box">
-                <h2 class="h5">Download</h2>
-                <ul class="download-items">
-                  <li>
-                    <DownloadItem
-                      headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Deutsch'"
-                      :url="'../../../static/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
-                    />
-                  </li>
-                  <li>
-                    <DownloadItem
-                      headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Französisch'"
-                      :url="'../../../static/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
-                    />
-                  </li>
-                  <li>
-                    <DownloadItem
-                      headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'English'"
-                      :url="'../../../static/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
-                    />
-                  </li>
-                </ul>
-                <h2 class="h5 mt-8">Druckexemplar bestellen</h2>
-                <Btn
-                  to="#"
-                  variant="filled"
-                  icon-pos="right"
-                  icon="ArrowRight"
-                  label="Zum Online-Shop"
-                />
-              </div>
+                  <h2 class="h5">Download</h2>
+                  <ul class="download-items">
+                    <li>
+                      <DownloadItem
+                        headingLevel="h2"
+                        :filename="'dummy.pdf'"
+                        :title="'Deutsch'"
+                        :url="'../../../static/documents/dummy.pdf'"
+                        :type="'PDF'"
+                        :date="'524 kB'"
+                      />
+                    </li>
+                    <li>
+                      <DownloadItem
+                        headingLevel="h2"
+                        :filename="'dummy.pdf'"
+                        :title="'Französisch'"
+                        :url="'../../../static/documents/dummy.pdf'"
+                        :type="'PDF'"
+                        :date="'524 kB'"
+                      />
+                    </li>
+                    <li>
+                      <DownloadItem
+                        headingLevel="h2"
+                        :filename="'dummy.pdf'"
+                        :title="'English'"
+                        :url="'../../../static/documents/dummy.pdf'"
+                        :type="'PDF'"
+                        :date="'524 kB'"
+                        class="border-b-0 pb-0"
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <div class="box">
+                  <h2 class="h5">Druckexemplar bestellen</h2>
+                  <Btn
+                    to="#"
+                    variant="filled"
+                    icon-pos="right"
+                    icon="ArrowRight"
+                    label="Zum Online-Shop"
+                  />
+                </div>
             </div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
@@ -187,7 +187,7 @@
                 headingLevel="h3"
               >
                 <a href="#">2020</a>,
-                <span>2021</span>
+                <span>2021</span>,
                 <a href="#">2022</a>
               </InfoBlock>
             </div>
@@ -235,10 +235,13 @@
                         :url="'../../../static/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
+                        class="border-b-0 pb-0"
                       />
                     </li>
                   </ul>
-                  <h2 class="h5 mt-8">Druckexemplar bestellen</h2>
+                </div>
+                <div class="box">
+                  <h2 class="h5">Druckexemplar bestellen</h2>
                   <Btn
                     to="#"
                     variant="filled"
