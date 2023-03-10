@@ -52,6 +52,22 @@
         <Input type="url" id="url-id" label="Input type url" placeholder="Placeholder" />
         <Input type="week" id="week-id" label="Input type week" placeholder="Placeholder" />
       </div>
+
+      <div class="form">
+        <h2 class="h2 mt-8">required fields example</h2>
+        <div class="form__group">
+          <Input type="text" id="text-id-0" label="Input type text" placeholder="Placeholder" required />
+        </div>
+        <div class="form__group">
+          <Select label="Select" id="select" required>
+            <option disabled selected>Choose your country</option>
+            <option>Switzerland</option>
+            <option>Swaziland</option>
+            <option>Sweden</option>
+          </Select>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
