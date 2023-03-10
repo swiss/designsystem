@@ -59,6 +59,11 @@
     @apply bg-transparent;
     @apply shadow-none;
 
+    a::after,
+    button::after {
+      @apply content-none;
+    }
+
     &::before {
       @apply scale-102;
     }

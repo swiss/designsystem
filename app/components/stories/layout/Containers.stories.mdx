@@ -61,7 +61,6 @@ Additionally, a `gap--responsive` class applies default spacings between grid it
 
 - `container__main` is left aligned per default, use it in combination with `container__aside`
 - `container__aside` is right aligned per default
-- use `container--grid container--reverse` on the parent to swap `container__main` and `container__aside`
 
 <Canvas className="storybook-demo-grid storybook-show-grid">
   <section>
@@ -72,9 +71,23 @@ Additionally, a `gap--responsive` class applies default spacings between grid it
   </section>
 </Canvas>
 
+Use `container--grid container--reverse` on the parent to swap the columns `container__main` and `container__aside` on desktop viewports only.
+
 <Canvas className="storybook-demo-grid storybook-show-grid">
   <section>
     <div class="container container--grid container--reverse gap--responsive">
+      <div class="container__main">container__main</div>
+      <div class="container__aside">container__aside</div>
+    </div>
+  </section>
+</Canvas>
+
+use `container--grid container--reverse-mobile` on the parent to swap `container__main` and `container__aside` on mobile viewports only.
+Use it when the aside content contains anchor links for example. This will display them before the main content on mobile viewports.
+
+<Canvas className="storybook-demo-grid storybook-show-grid">
+  <section>
+    <div class="container container--grid container--reverse-mobile gap--responsive">
       <div class="container__main">container__main</div>
       <div class="container__aside">container__aside</div>
     </div>
