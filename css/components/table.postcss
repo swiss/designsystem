@@ -4,6 +4,16 @@ table,
   @apply border border-text-200;
   @apply shadow-md;
 }
+
+caption {
+  @apply hidden legend;
+  caption-side: bottom;
+
+  .table--caption & {
+    @apply table-caption;
+  }
+}
+
 thead {
   @apply bg-secondary-50;
 
@@ -59,6 +69,14 @@ table.table--bare {
   td,
   th {
     @apply p-0 text--base font-regular;
+  }
+}
+
+table.table--zebra {
+  tbody {
+    tr:nth-child(even) {
+      @apply bg-secondary-50;
+    }
   }
 }
 

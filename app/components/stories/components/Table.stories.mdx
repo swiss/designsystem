@@ -17,7 +17,7 @@ import Table from '../../ch/demo/Table.vue'
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Table },
-  template: '<Table :variant="variant" />',
+  template: '<Table :variant="variant" :caption="caption" :displayCaption="displayCaption" :zebra="zebra" />',
 });
 
 # Table
@@ -27,6 +27,9 @@ export const Template = (args, { argTypes }) => ({
     name="Example"
     args={{
       variant: 'default',
+      caption: 'Short description of the table content for better accessibility',
+      displayCaption: false,
+      zebra: true,
     }}
   >
     {Template.bind({})
@@ -40,11 +43,13 @@ export const Template = (args, { argTypes }) => ({
 
 Add a recommended `<caption>` element right after the `<table>` opening tag for better accessibility. This is used by screen readers to provide a label for the table. It is also used by assistive technologies to help users navigate the table and understand what data is being displayed and how it is organized.
 
+Per default, the `<caption>` element is visually hidden. If you want to display the caption, you can use the `table--caption` modifier class. This will display the caption above the table.
+
 Use `<th>` elements to define headers. They should have a `scope` attribute with a value of `row` or `col`. This is used by screen readers to help users understand the structure of the table data and navigate the table more efficiently.
 
 ```html
 <table class="table table--default ">
-  <caption class="sr-only">
+  <caption>
     Short description of the table content for better accessibility
   </caption>
   <thead>

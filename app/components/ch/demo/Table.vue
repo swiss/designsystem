@@ -1,7 +1,7 @@
 <template>
   <table :class="computedClasses">
-    <caption class="sr-only">
-      Short description of the table content for better accessibility
+    <caption v-if="caption">
+      {{ caption }}
     </caption>
     <thead>
       <tr>
@@ -64,12 +64,26 @@ export default {
         'default',
       ].includes(prop)
     },
+    caption: {
+      type: String,
+      default: ''
+    },
+    displayCaption: {
+      type: Boolean,
+      default: true
+    },
+    zebra: {
+      type: Boolean,
+      default: false
+    },
   },
 
   computed: {
     computedClasses () {
       let base = 'table '
       if (this.variant) base += `table--${this.variant} `
+      if (this.displayCaption) base += `table--caption `
+      if (this.zebra) base += `table--zebra `
       return base
     }
   }
