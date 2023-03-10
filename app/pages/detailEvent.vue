@@ -82,7 +82,7 @@
               Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
             </p>
 
-            <h2 class="h3">Veranstaltungsdetails</h2>
+            <h2 class="h2">Veranstaltungsdetails</h2>
 
             <div>
               <InfoBlock
@@ -204,7 +204,7 @@
             </div>
 
             <div>
-              <h2 class="h3">
+              <h2 class="h2">
                 FAQ
               </h2>
               <Accordion id="100">
@@ -226,7 +226,7 @@
             </div>
 
             <div>
-              <h2 class="h3">
+              <h2 class="h2">
                 Themen
               </h2>
               <RelatedTags :tags="tags" bare></RelatedTags>
