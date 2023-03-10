@@ -5,13 +5,14 @@
       :for="id"
       :class="labelClasses"
     >
-      {{ label }}
+      {{ label }}<span v-if="required" class="form__group__required" />
     </label>
     <div :class="selectWrapperClasses">
       <select
         :class="selectClasses"
         :id="id"
         :name="name"
+        :required="required"
       >
         <slot></slot>
       </select>
@@ -69,7 +70,10 @@ export default {
     messageType: {
       type: String,
       validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
-      default: 'error'
+    },
+    required: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -83,7 +87,7 @@ export default {
       let base = ''
       if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
-      if (this.message) base += `input--${this.messageType} `
+      if (this.messageType) base += `input--${this.messageType} `
       return base
     },
     labelClasses() {
@@ -91,6 +95,7 @@ export default {
       if (this.variant === 'negative') base += `text--negative `
       if (this.size) base += `text--${this.size} `
       if (this.hideLabel) base += `sr-only `
+      if (this.required) base += `text--asterisk `
       return base
     },
   },

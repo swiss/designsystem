@@ -1,29 +1,23 @@
 <template>
-  <div class="form__group__checkbox">
-    <input
-      type="checkbox"
-      :class="classes"
-      :id="id"
-      :name="name"
-      :value="value"
-      :required="required"
-    />
-    <label
-      v-if="label"
-      :for="id"
-      :class="labelClasses"
+  <fieldset class="form__group">
+    <legend
+      v-if="legend"
+      class="form__group__legend"
+      :class="legendClasses"
     >
-      {{ label }} <span v-if="required" class="sr-only">required</span>
-    </label>
+      {{ legend }} <span v-if="required" class="sr-only">required</span>
+    </legend>
+    <slot />
     <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
       {{ message }}
     </div>
-  </div>
+  </fieldset>
 </template>
 
 <script>
+
 export default {
-  name: 'Checkbox',
+  name: 'Fieldset',
   props: {
     variant: {
       type: String,
@@ -34,16 +28,7 @@ export default {
       type: String,
       validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
     },
-    label: {
-      type: String,
-    },
-    value: {
-      type: String,
-    },
-    id: {
-      type: String,
-    },
-    name: {
+    legend: {
       type: String,
     },
     message: {
@@ -52,6 +37,7 @@ export default {
     messageType: {
       type: String,
       validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+      default: 'error'
     },
     required: {
       type: Boolean,
@@ -64,10 +50,10 @@ export default {
       let base = 'input '
       if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
-      if (this.messageType) base += `input--${this.messageType} `
+      if (this.message) base += `input--${this.messageType} `
       return base
     },
-    labelClasses() {
+    legendClasses() {
       let base = ''
       if (this.variant === 'negative') base += `text--negative `
       if (this.size) base += `text--${this.size} `
