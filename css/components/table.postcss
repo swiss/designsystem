@@ -59,7 +59,7 @@ tbody {
   }
 }
 
-table.table--bare {
+.table--bare {
   @apply shadow-none border-0;
 
   tr {
@@ -72,11 +72,32 @@ table.table--bare {
   }
 }
 
-table.table--zebra {
+.table--zebra {
   tbody {
     tr:nth-child(even) {
       @apply bg-secondary-50;
     }
   }
 }
+
+
+
+
+.table--sortable th[aria-sort="descending"] span::after {
+  content: "▼";
+}
+
+.table--sortable th[aria-sort="ascending"] span::after {
+  content: "▲";
+}
+
+.table--sortable th:not([aria-sort]) button span::after {
+  content: "♢";
+}
+
+.table--sortable td.num {
+  text-align: right;
+}
+
+
 
