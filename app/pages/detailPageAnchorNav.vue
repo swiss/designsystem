@@ -43,7 +43,7 @@
         </template>
       </Hero>
       <section class="section section--py">
-        <div class="container container--grid gap--responsive">
+        <div class="container container--grid container--reverse-mobile gap--responsive ">
           <div class="container__main vertical-spacing">
             <h2 class="h2" id="einleitung">
               Einleitung
