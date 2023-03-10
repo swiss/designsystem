@@ -1,25 +1,23 @@
 <template>
   <section class="section bg--secondary-50">
     <div class="container container--grid gap--responsive">
-      <div class="quote">
+      <figure class="quote">
         <div class="quote__text">
-          <h3 class="quote__title">
+          <blockquote class="quote__title">
             {{ quote }}
-          </h3>
-          <div class="quote__author">
+          </blockquote>
+          <figcaption class="quote__author">
             {{ author }}
-          </div>
+          </figcaption>
         </div>
-        <figure v-if="image" class="quote__image">
-          <picture>
-            <source v-if="image.source" 
-              :srcset="image.source.srcset"
-              :media="image.source.media"
-            />
-            <img :src="image.src" :alt="image.alt"  class="shadow-2xl" />
-          </picture>
-        </figure>
-      </div>
+        <picture v-if="image" class="quote__image">
+          <source v-if="image.source"
+            :srcset="image.source.srcset"
+            :media="image.source.media"
+          />
+          <img :src="image.src" :alt="image.alt"  class="shadow-2xl" />
+        </picture>
+      </figure>
     </div>
   </section>
 </template>
