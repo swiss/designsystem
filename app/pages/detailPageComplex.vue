@@ -103,7 +103,7 @@
           </div>
         </div>
       </section>
-      <section class="section section--py">
+      <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__main vertical-spacing">
             <h2 class="h2">
@@ -229,6 +229,18 @@
           },
         }"
       />
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__center--md vertical-spacing">
+            <h2 class="h2">
+              Large table example
+            </h2>
+            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+          </div>
+        </div>
+      </section>
+
 
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
@@ -409,6 +421,7 @@ import Hero from '~/components/ch/sections/Hero'
 import QuoteSection from '~/components/ch/sections/QuoteSection'
 import Newsletter from '~/components/ch/components/Newsletter.vue'
 import ShareBar from '~/components/ch/demo/ShareBar.vue'
+import TableSortable from '~/components/ch/demo/TableSortable.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -428,6 +441,7 @@ export default {
     QuoteSection,
     Newsletter,
     ShareBar,
+    TableSortable,
   },
   methods: {
     getMobileMenuIsOpen() {
