@@ -10,7 +10,7 @@ caption {
   caption-side: bottom;
 
   .table--caption & {
-    @apply table-caption;
+    @apply table-caption text-left;
   }
 }
 
@@ -21,6 +21,7 @@ thead {
     @apply px-6 py-4;
     @apply text-left;
     @apply text-text-700 uppercase text-sm;
+    @apply align-top;
   }
 }
 
@@ -81,23 +82,35 @@ tbody {
 }
 
 
+.table__sorter {
+  @apply inline-flex items-baseline text-left hover:text-red-600;
+  text-transform: inherit;
+  font-weight: inherit;
 
-
-.table--sortable th[aria-sort="descending"] span::after {
-  content: "▼";
+  .text-right & {
+    @apply justify-end;
+    text-align: right;
+  }
 }
 
-.table--sortable th[aria-sort="ascending"] span::after {
-  content: "▲";
+.table__sorter {
+  span::after {
+    content: "↕";
+    @apply block ml-1 min-w-[1.5em];
+    @apply font-normal text--xs;
+  }
+
+  th[aria-sort="descending"] & span::after {
+    content: "▼";
+  }
+
+  th[aria-sort="ascending"] & span::after {
+    content: "▲";
+  }
 }
 
-.table--sortable th:not([aria-sort]) button span::after {
-  content: "♢";
-}
 
-.table--sortable td.num {
-  text-align: right;
-}
+
 
 
 
