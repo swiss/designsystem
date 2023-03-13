@@ -60,6 +60,10 @@ export const TemplateSortable = (args, { argTypes }) => ({
 Add `table--compact` to the table element to use the compact variant. This variant is used for tables with a lot of data.
 Add `table--zebra` to the table element to use the zebra variant. This variant is rencommended for large and wide tables, to distinguish visually rows.
 
+## Alignment
+Text alignment in a table is done cell by cell. Add a `.text-right` or `.text-center` class to the `<td>` or the `<th>` element to align the text correctly. By default, text is aligned to the left. The `align` attribute is another valid way to align content in a table context.
+
+
 ## Accessibility
 
 Add a recommended `<caption>` element right after the `<table>` opening tag for better accessibility. This is used by screen readers to provide a label for the table. It is also used by assistive technologies to help users navigate the table and understand what data is being displayed and how it is organized.

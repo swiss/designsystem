@@ -25,7 +25,8 @@ thead {
   }
 }
 
-tbody {
+tbody, 
+tfoot {
   tr {
     @apply border-t border-text-300;
   }
@@ -42,20 +43,26 @@ tbody {
   }
 }
 
+tfoot {
+  @apply border-y-2 border-text-300;
+}
+
+
 .table--compact {
   @apply border-0;
   @apply shadow-none;
 
   thead {
     th {
-      @apply pr-4 pl-0 py-3;
+      @apply px-2 py-2;
     }
   }
   
-  tbody {
+  tbody,
+  tfoot {
     td,
     th {
-      @apply pr-4 pl-0 py-3;
+      @apply px-2 py-2;
     }
   }
 }
@@ -74,7 +81,8 @@ tbody {
 }
 
 .table--zebra {
-  tbody {
+  tbody,
+  tfoot {
     tr:nth-child(even) {
       @apply bg-secondary-50;
     }
