@@ -1,0 +1,161 @@
+/*----------------------------------------*\
+  POPOVER
+\*----------------------------------------*/
+
+.popover-wrapper {
+  @apply relative inline-block;
+}
+
+/* BUTTON */
+
+.popover-button {
+  @apply relative flex items-baseline;
+}
+
+.popover-button__label {
+  @apply border-b border-dashed border-gray-500;
+}
+
+.popover-button__icon{
+  @apply relative -bottom-1;
+}
+
+/* POPOVER */
+
+.popover {
+  @apply p-4 pr-6 w-min;
+  @apply absolute z-50;
+  @apply rounded shadow-xl text-left;
+  @apply transition-all duration-300;
+  @apply text-gray-800;
+  @apply bg-secondary-50;
+  @apply opacity-20;
+  @apply pointer-events-none;
+}
+
+.popover--active {
+  @apply opacity-100;
+  @apply pointer-events-auto;
+}
+
+.popover__close {
+  @apply absolute top-0 right-0 cursor-pointer;
+}
+
+.popover__arrow {
+  @apply block h-4 w-4;
+  @apply absolute;
+  @apply bg-inherit;
+  @apply transform rotate-45;
+}
+
+/* PLACEMENTS */
+
+.popover--top {
+  @apply bottom-full left-1/2 -translate-x-1/2 mb-1;
+
+  & .popover__arrow {
+    @apply bottom-0 translate-y-1/2;
+    @apply left-1/2 -translate-x-1/2;
+  }
+}
+
+.popover--right {
+  @apply left-full top-1/2 -translate-y-1/2 ml-3;
+
+  & .popover__arrow {
+    @apply left-0 -translate-x-1/2;
+    @apply top-1/2 -translate-y-1/2;
+  }
+}
+
+.popover--bottom {
+  @apply top-full left-1/2 -translate-x-1/2 mt-3;
+
+  & .popover__arrow {
+    @apply top-0 -translate-y-1/2;
+    @apply left-1/2 -translate-x-1/2;
+  }
+}
+
+.popover--left {
+  @apply right-full top-1/2 -translate-y-1/2 mr-3;
+
+  & .popover__arrow {
+    @apply right-0 translate-x-1/2;
+    @apply top-1/2 -translate-y-1/2;
+  }
+}
+
+/* COLORS */
+
+.popover--red,
+.popover--error {
+  @apply text-red-800;
+  @apply bg-red-100;
+}
+
+.popover--yellow {
+  @apply text-yellow-800;
+  @apply bg-yellow-100;
+}
+
+.popover--orange,
+.popover--warning {
+  @apply text-orange-800;
+  @apply bg-orange-100;
+}
+
+.popover--green,
+.popover--success {
+  @apply text-green-800;
+  @apply bg-green-100;
+}
+
+.popover--blue,
+.popover--info {
+  @apply text-blue-800;
+  @apply bg-blue-100;
+}
+
+.popover--indigo {
+  @apply text-indigo-800;
+  @apply bg-indigo-100;
+}
+
+.popover--purple {
+  @apply text-purple-800;
+  @apply bg-purple-100;
+}
+
+.popover--pink {
+  @apply text-pink-800;
+  @apply bg-pink-100;
+}
+
+.popover--white {
+  @apply bg-white;
+}
+
+
+
+/* SIZES */
+.popover,
+.popover--base {
+  @apply text-xs md:text-sm lg:text-base;
+  @apply leading-5 lg:leading-6;
+}
+
+.popover--sm {
+  @apply text-[10px] md:text-xs lg:text-sm;
+  @apply leading-4 md:leading-[1.35rem];
+}
+
+
+/* ICON */
+.popover__icon {
+  @apply h-full w-[1.5em];
+  @apply relative left-[0.4em];
+  @apply stroke-[0.3px] md:stroke-[0.35px] lg:stroke-[0.4px];
+  @apply stroke-current;
+}

@@ -1,0 +1,123 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import Popover from '../../ch/components/Popover.vue';
+
+<Meta
+  title="Components/Popover"
+  component={Popover}
+  argTypes={{
+    color: { control: { type: 'select', options: ['info', 'error', 'warning', 'success', 'gray', 'red', 'yellow', 'orange', 'green', 'blue', 'indigo', 'purple', 'pink'] } },
+    position: { control: { type: 'select', options: ['top', 'right', 'bottom', 'left'] } },
+    icon: { control: { type: 'boolean' } },
+    arrow: { control: { type: 'boolean' } },
+    closeBtn: { control: { type: 'boolean' } },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Popover },
+  template: `
+    <div style="padding: 100px; text-align: center;">
+      <Popover
+        :id="id"
+        :label="label"
+        :color="color"
+        :position="position"
+        :icon="icon"
+        :arrow="arrow"
+        :closeBtn="closeBtn"
+      />
+    </div>
+  `,
+});
+
+# Popover
+
+## Example
+
+popovers are used to attach an extra information to a text, a label or a title. If you need interactive element, use the [tagItem](?path=/docs/components-tagitem--example) instead.
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      id: '1',
+      color: 'blue',
+      position: 'top',
+      label: 'Popover label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Example" />
+
+## Colors
+For color variations, the following css classes are built:
+- `popover--info`
+- `popover--error`
+- `popover--warning`
+- `popover--success`
+
+and
+
+- `popover--gray`
+- `popover--red`
+- `popover--yellow`
+- `popover--orange`
+- `popover--green`
+- `popover--blue`
+- `popover--indigo`
+- `popover--purple`
+- `popover--pink`
+
+<Canvas>
+    <button class="popover popover--info">info</button>
+    <button class="popover popover--warning">warning</button>
+    <button class="popover popover--error">error</button>
+    <button class="popover popover--success">success</button>
+</Canvas>
+
+<Canvas>
+    <button class="popover popover--gray">gray</button>
+    <button class="popover popover--red">red</button>
+    <button class="popover popover--yellow">yellow</button>
+    <button class="popover popover--orange">orange</button>
+    <button class="popover popover--green">green</button>
+    <button class="popover popover--blue">blue</button>
+    <button class="popover popover--indigo">indigo</button>
+    <button class="popover popover--purple">purple</button>
+    <button class="popover popover--pink">pink</button>
+</Canvas>
+
+
+## Sizes
+For size variations, the following css classes are built:
+- `popover--base` default value
+- `popover--sm` for small popovers
+
+<Canvas>
+    <button class="popover popover--base popover--gray">popover--base</button>
+    <button class="popover popover--sm popover--gray">popover--sm</button>
+</Canvas>
+
+## Icons
+For icon variations, the following css classes are built:
+- `popover--icon` for icon
+
+<Canvas>
+  <div class="popover popover--gray popover--icon">
+    <span class="popover__text">popover--icon</span>
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      class="popover__icon icon icon--base"
+    >
+      <path
+        xmlns="http://www.w3.org/2000/svg"
+        d="m17.153 7.066-4.8 4.801-4.779-4.779-.53.531 4.779 4.778-4.757 4.756.531.531 4.756-4.757 4.778 4.779.531-.53-4.779-4.779 4.801-4.8z"
+      ></path>
+    </svg>
+  </div>
+</Canvas>
