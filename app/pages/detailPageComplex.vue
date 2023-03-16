@@ -232,9 +232,42 @@
 
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
+          <div class="container__center--xs vertical-spacing">
+            <h2 class="h2">
+              Large table example, xs container
+            </h2>
+            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__center--sm vertical-spacing">
+            <h2 class="h2">
+              Large table example, sm container
+            </h2>
+            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
           <div class="container__center--md vertical-spacing">
             <h2 class="h2">
-              Large table example
+              Large table example, md container
+            </h2>
+            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__full vertical-spacing">
+            <h2 class="h2">
+              Large table example, full container
             </h2>
             <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
           </div>

@@ -353,7 +353,7 @@
 
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
-          <div class="container__center--md vertical-spacing">
+          <div class="container__center--xs vertical-spacing">
             <h2 class="h2">
               Large table example
             </h2>

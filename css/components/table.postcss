@@ -1,3 +1,11 @@
+/*----------------------------------------*\
+  TABLE
+\*----------------------------------------*/
+
+.table-wrapper {
+  @apply overflow-x-auto ;
+}
+
 table,
 .table {
   @apply w-full;
@@ -20,7 +28,7 @@ thead {
   th {
     @apply px-6 py-4;
     @apply text-left;
-    @apply text-text-700 uppercase text-sm;
+    @apply text-text-700 uppercase text--sm;
     @apply align-top;
   }
 }
@@ -34,7 +42,7 @@ tfoot {
   td,
   th {
     @apply px-6 py-4;
-    @apply text-base;
+    @apply text--base;
     @apply text-gray-600;
   }
 
@@ -63,6 +71,7 @@ tfoot {
     td,
     th {
       @apply px-2 py-2;
+      @apply text--sm;
     }
   }
 }
