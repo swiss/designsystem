@@ -27,7 +27,7 @@
           Auswirkungen von Corona auf die Schweizer Gesellschaft
         </template>
       </Hero>
-      <section class="section section--default section--py">
+      <section class="section section--py">
         <div class="container container--grid gap--responsive">
 
           <div class="container__main vertical-spacing">
