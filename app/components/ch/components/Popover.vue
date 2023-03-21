@@ -22,14 +22,17 @@
         class="popover-button__icon"
       />
     </button>
-    <span class="popover-backdrop"></span>
+    <span
+      class="popover-backdrop"
+      aria-hidden="true"
+    />
     <span
       :id="`popover-${id}`"
       :class="computedClasses"
       aria-hidden="true"
       role="tooltip"
     >
-      <span class="popover__close" v-if="closeBtn" aria-hidden="true">
+      <span class="popover__close" aria-hidden="true">
         <SvgIcon
           icon="Cancel"
           size="lg"
@@ -82,18 +85,12 @@ export default {
       type: Boolean,
       default: true
     },
-    closeBtn: {
-      type: Boolean,
-      default: true
-    },
   },
 
   computed: {
     computedClasses () {
       let base = 'popover '
       if (this.color) base += `popover--${this.color} `
-      if (this.position) base += `popover--${this.position} `
-      if (this.active) base += `popover--${this.active} `
       return base
     },
   },
