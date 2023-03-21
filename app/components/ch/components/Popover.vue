@@ -1,5 +1,5 @@
 <template>
-  <div
+  <span
     :id="`popover-wrapper-${id}`"
     class="popover-wrapper"
   >
@@ -22,22 +22,22 @@
         class="popover-button__icon"
       />
     </button>
-    <div
+    <span class="popover-backdrop"></span>
+    <span
       :id="`popover-${id}`"
       :class="computedClasses"
       aria-hidden="true"
       role="tooltip"
     >
-      <div class="popover__arrow" v-if="arrow"></div>
-      <div class="popover__close" v-if="closeBtn" aria-hidden="true">
+      <span class="popover__close" v-if="closeBtn" aria-hidden="true">
         <SvgIcon
           icon="Cancel"
           size="lg"
         />
-      </div>
-      <div>Popover content</div>
-    </div>
-  </div>
+      </span>
+      <slot />
+    </span>
+  </span>
 </template>
 
 <script>
@@ -60,7 +60,7 @@ export default {
     },
     color: {
       type: String,
-      default: 'blue',
+      default: 'white',
       validator: (prop) => [
         'info',
         'error',
@@ -78,21 +78,7 @@ export default {
         'white',
       ].includes(prop)
     },
-    position: {
-      type: String,
-      default: 'top',
-      validator: (prop) => [
-        'top',
-        'bottom',
-        'left',
-        'right',
-      ].includes(prop)
-    },
     icon: {
-      type: Boolean,
-      default: true
-    },
-    arrow: {
       type: Boolean,
       default: true
     },

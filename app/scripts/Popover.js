@@ -12,6 +12,7 @@ const Popover = {
   init(target) {
     const wrapper = document.querySelector(target)
     const button = wrapper.querySelector('.popover-button')
+    const backdrop = wrapper.querySelector('.popover-backdrop')
     const popover = wrapper.querySelector('.popover')
     const popoverClose = wrapper.querySelector('.popover__close')
     let focusableElements = getFocusableElements(popover)
@@ -32,6 +33,7 @@ const Popover = {
       button.setAttribute("aria-expanded", false)
       popover.classList.remove("popover--active")
       popover.setAttribute("aria-hidden", true)
+      backdrop.classList.remove("popover-backdrop--active")
       // make focusable popover unfocusable
       focusableElements.forEach(item => {
         item.tabIndex =  -1
@@ -43,6 +45,7 @@ const Popover = {
       button.setAttribute("aria-expanded", true)
       popover.classList.add("popover--active")
       popover.setAttribute("aria-hidden", false)
+      backdrop.classList.add("popover-backdrop--active")
       // make focusable popover focusable again
       focusableElements.forEach(item => {
         item.tabIndex = undefined
@@ -54,7 +57,10 @@ const Popover = {
       popover.classList.contains("popover--active") ? closePopover() : openPopover()
     })
 
-    console.log('popoverClose', popoverClose)
+    backdrop.addEventListener("click", (event) => {
+      popover.classList.contains("popover--active") ? closePopover() : openPopover()
+    })
+
     if (popoverClose) {
       popoverClose.addEventListener("click", (event) => { closePopover() })
     }
