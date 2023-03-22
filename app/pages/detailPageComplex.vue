@@ -234,9 +234,9 @@
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
             <h2 class="h2">
-              Large table example, xs container
+              Table within .container__center--xs
             </h2>
-            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+            <TableSortable id="1" caption="This table is larger than its container" :displayCaption="true" />
           </div>
         </div>
       </section>
@@ -245,9 +245,9 @@
         <div class="container container--grid gap--responsive">
           <div class="container__center--sm vertical-spacing">
             <h2 class="h2">
-              Large table example, sm container
+              Table within .container__center--sm
             </h2>
-            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+            <TableSortable id="2" caption="This table is larger than its container" :displayCaption="true" />
           </div>
         </div>
       </section>
@@ -256,9 +256,9 @@
         <div class="container container--grid gap--responsive">
           <div class="container__center--md vertical-spacing">
             <h2 class="h2">
-              Large table example, md container
+              Table within .container__center--md
             </h2>
-            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+            <TableSortable id="3" caption="This table has the width of its container" :displayCaption="true" />
           </div>
         </div>
       </section>
@@ -267,9 +267,9 @@
         <div class="container container--grid gap--responsive">
           <div class="container__full vertical-spacing">
             <h2 class="h2">
-              Large table example, full container
+              Table within .container__full
             </h2>
-            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+            <TableSortable id="4" caption="This table has the width of its container" :displayCaption="true" />
           </div>
         </div>
       </section>
