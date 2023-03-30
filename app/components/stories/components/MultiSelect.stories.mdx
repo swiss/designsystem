@@ -15,6 +15,8 @@ import MultiSelect from '../../ch/components/MultiSelect.vue'
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
     label: {},
     hideLabel:   { control: { type: 'boolean' } },
+    multiple:   { control: { type: 'boolean' } },
+    placeholder: {},
     message: {},
     messageType: {
       control: {
@@ -36,10 +38,12 @@ export const Template = (args, { argTypes }) => ({
         :label="label"
         :hideLabel="hideLabel"
         :id="id"
+        :multiple="multiple"
         :name="name"
         :message="message"
         :messageType="messageType"
         :required="required"
+        :placeholder="placeholder"
       >
         <option disabled Multiselected>Choose your country</option>
         <option>Switzerland</option>
@@ -63,7 +67,10 @@ export const Template = (args, { argTypes }) => ({
       label: 'Label',
       hideLabel: false,
       name: 'select-name',
-      id:'select-id'
+      id:'select-id',
+      multiple: true,
+      placeholder: 'Placeholder',
+      variant: 'outline',
     }}
   >
     {Template.bind({})}
