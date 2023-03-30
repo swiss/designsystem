@@ -8,6 +8,20 @@
   
   grid-template-columns: repeat(2, minmax(min-content, max-content));
   grid-template-areas: "A B";
+  
+  @apply text-text-600;
+
+  .bg--secondary-500 &,
+  .bg--secondary-600 &,
+  .bg--secondary-700 &,
+  .bg--secondary-800 &,
+  .bg--secondary-900 & {
+    @apply text-white;
+  }
+
+  figcaption {
+    @apply text-inherit;
+  }
 }
 
 .quote-font-size {
@@ -22,7 +36,7 @@
 .quote__title {
   @apply pt-0 pb-2 relative;
   @apply quote-font-size;
-  @apply text--bold text-text-600;
+  @apply text--bold;
   @apply lg:-indent-9;
   
   &::before {
@@ -36,7 +50,6 @@
     @apply lg:inline lg:relative;
     @apply lg:text-6xl;
     @apply lg:top-[0.05em];
-    @apply text-text-600;
   }
 
   &::after {
@@ -48,7 +61,7 @@
 }
 
 .quote__author {
-  @apply text--sm text-text-600;
+  @apply text--sm;
 }
 
 .quote__image {
