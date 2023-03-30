@@ -27,7 +27,7 @@ export const Template = (args, { argTypes }) => ({
 
 <Canvas>
   <Story
-    name="Long quote"
+    name="Example"
     args={{
       quote: "Unsere Welt entwickelt sich ohne Rücksicht, und das Ergebnis ist ein Verlust der Artenvielfalt, Energieprobleme, Staus in den Städten. Aber Geografie kann, wenn sie richtig eingesetzt wird, dazu genutzt werden, nachhaltige und lebenswertere Städte neu zu gestalten",
       author: 'Jack Dangermond, geograph',
@@ -51,35 +51,18 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<ArgsTable story="Long quote" />
+<ArgsTable story="Example" />
 
-<Canvas>
-  <Story
-    name="Short quote"
-    args={{
-      quote: "Begin anywhere.",
-      author: 'John Cage',
-      image: {
-        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/576px-John_Cage_%281988%29.jpg',
-        width: '400',
-        height: '400',
-        alt: 'image name',
-        source: {
-          srcset: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/768px-John_Cage_%281988%29.jpg',
-          width: '800',
-          height: '800',
-          media: '(min-width: 1024px)',
-        }
-      }
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+## Background
 
-<!--ArgsTable story="Example" /-->
+The recommended background colors for the section are the following:
+-  white
+-  secondary-50
+-  secondary-100
+-  secondary-500
+-  secondary-600
 
-<a href="?path=/story/sections-quote--example">
+<a href="?path=/story/sections-content-quote--example">
   Go to the Canvas Tab
 </a>
 
