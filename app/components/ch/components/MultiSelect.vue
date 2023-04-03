@@ -12,6 +12,7 @@
         :multiple="multiple"
         :placeholder="placeholder"
         :class="selectClasses"
+        :disabled="disabled"
         :components="{Deselect, OpenIndicator}"
         :options="[
         'foo',
@@ -101,6 +102,10 @@ export default {
       validator: (prop) => ['outline', 'negative'].includes(prop),
       default: 'outline'
     },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
   },
 
   computed: {
@@ -113,6 +118,7 @@ export default {
       let base = ''
       if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
+      if (this.disabled) base += `input--disabled `
       if (this.messageType) base += `input--${this.messageType} `
       return base
     },
@@ -204,6 +210,10 @@ export default {
 
   --vs-search-input-bg: inherit;
 
+  --vs-state-disabled-bg: theme('colors.text.50');
+  --vs-state-disabled-color: theme('colors.text.400');
+  --vs-state-disabled-controls-color: theme('colors.text.400');
+
 }
 
 /* VUE SELECT CUSTOM/OVERRIDEN CLASSES */
@@ -234,6 +244,10 @@ export default {
   --vs-border-color: theme('colors.red.500');
 }
 
+>>> .v-select.input--error.input--negative {
+  --vs-border-color: theme('colors.red.500');
+}
+
 >>> .v-select.input--negative {
 
   --vs-dropdown-bg: theme('colors.secondary.600');
@@ -249,38 +263,18 @@ export default {
   --vs-dropdown-option--active-bg: theme('colors.purple.600');
   --vs-dropdown-option--active-color: theme('colors.white');
 
-  &:disabled,
+  /* &:disabled,
   &.input--disabled {
     @apply bg-secondary-300;
     @apply text-secondary-200;
-  }
+  } */
 }
 
-
+.select:has(.input--disabled)
 
 /*
 
-.input--error {
-  @apply text-red-800;
-  @apply border-red-500;
-  @apply placeholder-red-400;
 
-  & + label {
-    @apply text-red-800 mr-3;
-  }
-}
-
-.input--negative {
-  @apply text-white;
-  @apply bg-secondary-500;
-  @apply placeholder-secondary-50;
-  @apply border-secondary-300;
-
-  &:disabled,
-  &.input--disabled {
-    @apply bg-secondary-300;
-    @apply text-secondary-200;
-  }
 }
 
 .input--error.input--negative {
