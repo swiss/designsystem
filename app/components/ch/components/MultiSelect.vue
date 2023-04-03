@@ -196,19 +196,18 @@ export default {
 
 
   /* VUE SELECT CUSTOM/OVERRIDEN VARS */
-  --vs-search-input-placeholder-color: theme('colors.text.400');
-  --vs-border-color: theme('colors.text.500');
-  --vs-actions-padding: 4px 3em 0 3px;
-  --vs-border-radius: 0px;
-  --vs-selected-bg: theme('colors.text.100');
 
   --vs-font-size: inherit;
   --vs-line-height: 1.375;
+  --vs-search-input-placeholder-color: theme('colors.text.400');
+  --vs-search-input-bg: inherit;
+  --vs-border-color: theme('colors.text.500');
+  --vs-border-radius: 0px;
+  --vs-actions-padding: 4px 3em 0 3px;
+  --vs-selected-bg: theme('colors.text.100');
 
   --vs-dropdown-option--active-bg: theme('colors.purple.500');
   --vs-dropdown-option--active-color: theme('colors.white');
-
-  --vs-search-input-bg: inherit;
 
   --vs-state-disabled-bg: theme('colors.text.50');
   --vs-state-disabled-color: theme('colors.text.400');
@@ -231,7 +230,6 @@ export default {
   --vs-input-min-height-2xl: calc(var(--input-min-height-2xl) - 6px);
 }
 
-
 >>> .v-select .vs__selected-options {
   @apply pl-2;
 }
@@ -241,10 +239,6 @@ export default {
 }
 
 >>> .v-select.input--error {
-  --vs-border-color: theme('colors.red.500');
-}
-
->>> .v-select.input--error.input--negative {
   --vs-border-color: theme('colors.red.500');
 }
 
@@ -262,30 +256,11 @@ export default {
 
   --vs-dropdown-option--active-bg: theme('colors.purple.600');
   --vs-dropdown-option--active-color: theme('colors.white');
-
-  /* &:disabled,
-  &.input--disabled {
-    @apply bg-secondary-300;
-    @apply text-secondary-200;
-  } */
 }
 
-.select:has(.input--disabled)
-
-/*
-
-
+>>> .v-select.input--error.input--negative {
+  --vs-border-color: theme('colors.red.300');
 }
-
-.input--error.input--negative {
-  @apply text-red-200 border-red-300;
-}
-
-*/
-
-/* >>> .v-select input::placeholder {
-  text-indent: 0.3em;
-} */
 
 
 /* VUE SELECT DEFAULT CLASSES */
