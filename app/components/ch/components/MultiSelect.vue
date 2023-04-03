@@ -14,11 +14,8 @@
         :class="selectClasses"
         :disabled="disabled"
         :components="{Deselect, OpenIndicator}"
-        :options="[
-        'foo',
-        'bar',
-        'baz'
-      ]"></vSelect>
+        :options="options"
+      />
       <div class="select__icon">
         <svg
           role="presentation"
@@ -45,17 +42,19 @@ export default {
   components: {
     vSelect,
   },
-  data() {
-    return {
-      Deselect: {
-        render: createElement => createElement('span', '×'),
-      },
-      OpenIndicator: {
-        render: createElement => createElement('span'), // hide the default icon
-      },
-    }
-  },
+  data: () => ({
+    Deselect: {
+      render: createElement => createElement('span', '×'),
+    },
+    OpenIndicator: {
+      render: createElement => createElement('span'), // hide the default icon
+    },
+  }),
   props: {
+    options: {
+      type: Array,
+      default: () => [],
+    },
     variant: {
       type: String,
       validator: (prop) => ['outline', 'negative'].includes(prop),
@@ -204,7 +203,8 @@ export default {
   --vs-border-color: theme('colors.text.500');
   --vs-border-radius: 0px;
   --vs-actions-padding: 4px 3em 0 3px;
-  --vs-selected-bg: theme('colors.text.100');
+  --vs-selected-bg: theme('colors.text.200');
+  --vs-selected-border-color: transparent;
 
   --vs-dropdown-option--active-bg: theme('colors.purple.500');
   --vs-dropdown-option--active-color: theme('colors.white');
@@ -230,12 +230,27 @@ export default {
   --vs-input-min-height-2xl: calc(var(--input-min-height-2xl) - 6px);
 }
 
+>>> .v-select .vs__selected {
+  @apply px-3 py-1 rounded-full;
+}
 >>> .v-select .vs__selected-options {
   @apply pl-2;
 }
 
+>>> .v-select .vs__deselect {
+  @apply block w-5 h-full text-right hover:text-red-600;
+}
+
 >>> .v-select.vs--multiple .vs__selected-options:has(.vs__selected) {
   @apply pl-[2px];
+}
+
+>>> .v-select .vs__dropdown-option {
+  @apply whitespace-normal;
+}
+
+>>> .v-select .vs__dropdown-option--selected::after {
+  @apply content-['✔'] relative ml-2;
 }
 
 >>> .v-select.input--error {

@@ -35,6 +35,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div style="padding: 20px 0 100px 0;">
       <MultiSelect
+        :options="options"
         :variant="variant"
         :size="size"
         :label="label"
@@ -47,12 +48,7 @@ export const Template = (args, { argTypes }) => ({
         :messageType="messageType"
         :required="required"
         :placeholder="placeholder"
-      >
-        <option disabled Multiselected>Choose your country</option>
-        <option>Switzerland</option>
-        <option>Swaziland</option>
-        <option>Sweden</option>
-      </MultiSelect>
+      />
     </div>
   `,
 })
@@ -76,6 +72,13 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Example"
     args={{
+      options: [
+        'Relatively long option',
+        'Really long option that is so long that it will wrap to the next line',
+        'foo',
+        'bar',
+        'baz'
+      ],
       variant: 'outline',
       size: 'base',
       label: 'Label',
@@ -101,6 +104,29 @@ export const Template = (args, { argTypes }) => ({
 npm install vue-select
 ```
 
+## Overwrite Vue Select child components
+
+The `Deselect` button and the `Openindicator` are two child components of the `Vue Select` component. You can overwrite them to match the style guide with the help of the following props:
+
+```html
+<vSelect
+  :components="{Deselect, OpenIndicator}"
+  ...
+/>
+```
+and render directly the child components in the `data` function:
+```js
+export default {
+  data: () => ({
+    Deselect: {
+      render: createElement => createElement('span', '×'),
+    },
+    OpenIndicator: {
+      render: createElement => createElement('span'),
+    },
+  }),
+}
+```
 
 
 ## Define Vue Select CSS Variables
@@ -124,6 +150,7 @@ A couple of existing CSS variables have to be overriden to match the style guide
 --vs-state-disabled-color: theme('colors.text.400');
 --vs-state-disabled-controls-color: theme('colors.text.400');
 ```
+the `theme()` function is a TailwindCSS function to access the theme configuration (see [TailwindCSS documentation](https://tailwindcss.com/docs/functions-and-directives#theme).
 
 ## Override Vue Select CSS Classes
 
