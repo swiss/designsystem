@@ -8,28 +8,6 @@
       {{ label }}<span v-if="required" class="form__group__required" />
     </label>
     <div :class="selectWrapperClasses">
-      <select
-        :class="selectClasses"
-        :id="id"
-        :name="name"
-        :required="required"
-      >
-        <slot></slot>
-      </select>
-      <div class="select__icon">
-        <svg
-          role="presentation"
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-          />
-        </svg>
-      </div>
-    </div>
-
-    <div :class="selectWrapperClasses">
       <vSelect
         :multiple="multiple"
         :placeholder="placeholder"
@@ -152,8 +130,6 @@ export default {
 
 <style scoped>
 >>> .v-select {
-  position: relative;
-  font-family: inherit;
 
   /* VUE SELECT DEFAULT VARS */
 
@@ -219,21 +195,39 @@ export default {
   --vs-actions-padding: 4px 3em 0 3px;
   --vs-border-radius: 0px;
   --vs-selected-bg: theme('colors.text.100');
-  --vs-line-height: 2.1;
+
+  --vs-font-size: inherit;
+  --vs-line-height: 1.375;
+
+  --vs-dropdown-option--active-bg: theme('colors.purple.500');
+  --vs-dropdown-option--active-color: theme('colors.white');
+
+  --vs-search-input-bg: inherit;
+
 }
 
 /* VUE SELECT CUSTOM/OVERRIDEN CLASSES */
 
->>> .v-select input {
-  min-height: auto;
+>>> .v-select input,
+>>> .v-select .vs__selected {
+  --vs-input-min-height: calc(var(--input-min-height) - 10px);
+  --vs-input-min-height-2xl: calc(var(--input-min-height-2xl) - 8px);
+  @apply min-h-[var(--vs-input-min-height)] 2xl:min-h-[var(--vs-input-min-height-2xl)];
 }
 
->>> .v-select.input--sm input{
-  --vs-line-height: 2;
+>>> .v-select.input--lg input,
+>>> .v-select.input--lg .vs__selected {
+  --vs-input-min-height: calc(var(--input-min-height) - 6px);
+  --vs-input-min-height-2xl: calc(var(--input-min-height-2xl) - 6px);
 }
 
->>> .v-select.input--lg input{
-  --vs-line-height: 2.4;
+
+>>> .v-select .vs__selected-options {
+  @apply pl-2;
+}
+
+>>> .v-select.vs--multiple .vs__selected-options:has(.vs__selected) {
+  @apply pl-[2px];
 }
 
 >>> .v-select.input--error {
@@ -241,6 +235,42 @@ export default {
 }
 
 >>> .v-select.input--negative {
+
+  --vs-dropdown-bg: theme('colors.secondary.600');
+  --vs-dropdown-color: theme('colors.secondary.100');
+  --vs-dropdown-option-color: theme('colors.white');
+
+  --vs-selected-bg: theme('colors.secondary.600');
+  --vs-selected-color: theme('colors.white');
+  --vs-selected-border-color: theme('colors.secondary.300');
+
+  --vs-search-input-color: theme('colors.secondary.100');
+
+  --vs-dropdown-option--active-bg: theme('colors.purple.600');
+  --vs-dropdown-option--active-color: theme('colors.white');
+
+  &:disabled,
+  &.input--disabled {
+    @apply bg-secondary-300;
+    @apply text-secondary-200;
+  }
+}
+
+
+
+/*
+
+.input--error {
+  @apply text-red-800;
+  @apply border-red-500;
+  @apply placeholder-red-400;
+
+  & + label {
+    @apply text-red-800 mr-3;
+  }
+}
+
+.input--negative {
   @apply text-white;
   @apply bg-secondary-500;
   @apply placeholder-secondary-50;
@@ -253,9 +283,16 @@ export default {
   }
 }
 
->>> .v-select input::placeholder {
-  text-indent: 0.3em;
+.input--error.input--negative {
+  @apply text-red-200 border-red-300;
 }
+
+*/
+
+/* >>> .v-select input::placeholder {
+  text-indent: 0.3em;
+} */
+
 
 /* VUE SELECT DEFAULT CLASSES */
 
