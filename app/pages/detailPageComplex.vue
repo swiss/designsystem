@@ -103,7 +103,7 @@
           </div>
         </div>
       </section>
-      <section class="section section--py">
+      <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__main vertical-spacing">
             <h2 class="h2">
@@ -229,6 +229,51 @@
           },
         }"
       />
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__center--xs vertical-spacing">
+            <h2 class="h2">
+              Table within .container__center--xs
+            </h2>
+            <TableSortable id="1" caption="This table is larger than its container" :displayCaption="true" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__center--sm vertical-spacing">
+            <h2 class="h2">
+              Table within .container__center--sm
+            </h2>
+            <TableSortable id="2" caption="This table is larger than its container" :displayCaption="true" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__center--md vertical-spacing">
+            <h2 class="h2">
+              Table within .container__center--md
+            </h2>
+            <TableSortable id="3" caption="This table has the width of its container" :displayCaption="true" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__full vertical-spacing">
+            <h2 class="h2">
+              Table within .container__full
+            </h2>
+            <TableSortable id="4" caption="This table has the width of its container" :displayCaption="true" />
+          </div>
+        </div>
+      </section>
+
 
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
@@ -409,6 +454,7 @@ import Hero from '~/components/ch/sections/Hero'
 import QuoteSection from '~/components/ch/sections/QuoteSection'
 import Newsletter from '~/components/ch/components/Newsletter.vue'
 import ShareBar from '~/components/ch/demo/ShareBar.vue'
+import TableSortable from '~/components/ch/demo/TableSortable.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -428,6 +474,7 @@ export default {
     QuoteSection,
     Newsletter,
     ShareBar,
+    TableSortable,
   },
   methods: {
     getMobileMenuIsOpen() {
