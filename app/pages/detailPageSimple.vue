@@ -68,6 +68,24 @@
               «fraction». Über den Kontakt models@geo.admin.ch können die
               INTERLIS-Modelldatei und die Modelldokumentation (als PDF
               Dokument) zur Publikation eingereicht werden.
+              <Popover
+                id="1"
+                label="Extra infos in a popover"
+              >
+                <p>Popover content</p>
+                <a href="#">Link</a>
+              </Popover>
+              Über den Kontakt models@geo.admin.ch können die
+              INTERLIS-Modelldatei und die Modelldokumentation
+              <Popover
+                id="2"
+                color="blue"
+                :icon="true"
+              >
+                <p>Popover content, icon only, blue color</p>
+                <a href="#">Link</a>
+              </Popover>
+               zur Publikation eingereicht werden.
             </p>
 
             <SlideshowExample
@@ -517,6 +535,7 @@ import Card from '../components/ch/components/Card.vue'
 import Modal from '../components/ch/components/Modal.vue'
 import Badge from '../components/ch/components/Badge.vue'
 import Input from '../components/ch/components/Input.vue'
+import Popover from '../components/ch/components/Popover.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -547,6 +566,7 @@ export default {
     Modal,
     Badge,
     Input,
+    Popover,
 },
   data: function () {
     return {

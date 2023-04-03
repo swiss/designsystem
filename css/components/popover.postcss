@@ -1,0 +1,116 @@
+/*----------------------------------------*\
+  POPOVER
+\*----------------------------------------*/
+
+.popover-wrapper {
+  @apply relative inline;
+}
+
+.popover-backdrop {
+  @apply hidden w-full h-full top-0 left-0;
+  @apply fixed z-30;
+  @apply bg-text-900/70;
+  @apply cursor-pointer;  
+}
+
+.popover-backdrop--active {
+  @apply block;
+}
+
+/* BUTTON */
+
+.popover-button {
+  @apply relative inline items-baseline text-left;
+}
+
+.popover-button__label {
+  @apply border-b border-dashed border-gray-500;
+  @apply hover:text-primary-600 hover:border-primary-600;
+}
+
+.popover-button__icon {
+  @apply inline h-[1em] scale-150;
+  @apply relative bottom-[0.1em];
+  @apply text-primary-500;
+  @apply stroke-inherit stroke-primary-500;
+  
+  .popover-wrapper:hover & {
+    @apply text-primary-600;
+  }
+}
+
+/* POPOVER */
+
+.popover {
+  @apply notification; 
+
+  @apply hidden p-4 pr-6;
+  @apply w-[80vw] max-w-[400px];
+  @apply fixed z-50;
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mb-1;
+
+  @apply transition-all duration-300;
+  @apply text-gray-800;
+  @apply bg-secondary-50;
+  @apply pointer-events-none;
+}
+
+.popover--active {
+  @apply block;
+  @apply pointer-events-auto;
+}
+
+.popover__close {
+  @apply absolute top-0 right-0 cursor-pointer;
+}
+
+
+/* COLORS */
+
+.popover--red,
+.popover--error {
+  @apply text-red-800;
+  @apply bg-red-100;
+}
+
+.popover--yellow {
+  @apply text-yellow-800;
+  @apply bg-yellow-100;
+}
+
+.popover--orange,
+.popover--warning {
+  @apply text-orange-800;
+  @apply bg-orange-100;
+}
+
+.popover--green,
+.popover--success {
+  @apply text-green-800;
+  @apply bg-green-100;
+}
+
+.popover--blue,
+.popover--info {
+  @apply text-blue-800;
+  @apply bg-blue-100;
+}
+
+.popover--indigo {
+  @apply text-indigo-800;
+  @apply bg-indigo-100;
+}
+
+.popover--purple {
+  @apply text-purple-800;
+  @apply bg-purple-100;
+}
+
+.popover--pink {
+  @apply text-pink-800;
+  @apply bg-pink-100;
+}
+
+.popover--white {
+  @apply bg-white;
+}
