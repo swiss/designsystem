@@ -1,3 +1,10 @@
+
+
+:root {
+  --input-min-height: 44px;
+  --input-min-height-2xl: 48px;
+}
+
 .input,
 input,
 textarea,
@@ -8,7 +15,7 @@ select {
   @apply bg-white border border-text-500;
   @apply rounded-xs;
   @apply leading-none;
-  @apply min-h-[44px] 2xl:min-h-[48px];
+  @apply min-h-[var(--input-min-height)] 2xl:min-h-[var(--input-min-height-2xl)];
   @apply focus:outline-none;
   @apply placeholder-secondary-400;
 }
