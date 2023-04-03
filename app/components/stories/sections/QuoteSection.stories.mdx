@@ -1,20 +1,24 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import QuoteSection from '../../ch/sections/QuoteSection.vue'
 
-<Meta 
-  title="Sections/Content/Quote" 
+<Meta
+  title="Sections/Content/Quote"
   component={QuoteSection}
+  argTypes={{
+    background:    { control: { type: 'select', options: ['white', 'secondary-50', 'secondary-100', 'secondary-500', 'secondary-600'] } },
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { QuoteSection}, 
-  template: 
+  components: { QuoteSection},
+  template:
   `
-    <QuoteSection 
-      :quote="quote" 
-      :author="author" 
-      :image="image" 
+    <QuoteSection
+      :quote="quote"
+      :author="author"
+      :image="image"
+      :background="background"
     />
   `,
 })
@@ -23,11 +27,11 @@ export const Template = (args, { argTypes }) => ({
 
 <Canvas>
   <Story
-    name="Long quote"
+    name="Example"
     args={{
       quote: "Unsere Welt entwickelt sich ohne Rücksicht, und das Ergebnis ist ein Verlust der Artenvielfalt, Energieprobleme, Staus in den Städten. Aber Geografie kann, wenn sie richtig eingesetzt wird, dazu genutzt werden, nachhaltige und lebenswertere Städte neu zu gestalten",
       author: 'Jack Dangermond, geograph',
-      image: { 
+      image: {
         src: 'https://picsum.photos/1024/768/?image=29',
         width: '1024',
         height: '768',
@@ -39,45 +43,31 @@ export const Template = (args, { argTypes }) => ({
           media: '(min-width: 1024px)',
         },
         caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
-      }
+      },
+      background: 'secondary-50'
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<Canvas>
-  <Story
-    name="Short quote"
-    args={{
-      quote: "Begin anywhere.",
-      author: 'John Cage',
-      image: { 
-        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/576px-John_Cage_%281988%29.jpg',
-        width: '400',
-        height: '400',
-        alt: 'image name',
-        source: {
-          srcset: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/768px-John_Cage_%281988%29.jpg',
-          width: '800',
-          height: '800',
-          media: '(min-width: 1024px)',
-        }
-      }
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<ArgsTable story="Example" />
 
-<!--ArgsTable story="Example" /-->
+## Background
 
-<a href="?path=/story/sections-quote--example">
+The recommended background colors for the section are the following:
+-  white
+-  secondary-50
+-  secondary-100
+-  secondary-500
+-  secondary-600
+
+<a href="?path=/story/sections-content-quote--example">
   Go to the Canvas Tab
 </a>
 
 ---
-    
+
 <a href="?id=sections-content-quote--example&viewMode=story" target="_blank">
   Open page in full width in a new tab
 </a>

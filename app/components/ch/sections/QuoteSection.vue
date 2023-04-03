@@ -1,5 +1,5 @@
 <template>
-  <section class="section bg--secondary-50">
+  <section :class="computedSectionClasses">
     <div class="container container--grid gap--responsive">
       <figure class="quote">
         <div class="quote__text">
@@ -27,6 +27,17 @@
 export default {
   name: 'QuoteSection',
   props: {
+    background: {
+      type: String,
+      validator: (prop) => [
+        'white',
+        'secondary-50',
+        'secondary-100',
+        'secondary-500',
+        'secondary-600',
+      ].includes(prop),
+      default: 'secondary-50',
+    },
     quote: {
       type: String,
     },
@@ -35,8 +46,15 @@ export default {
     },
     image: {
       type: Object
-    }
+    },
   },
-  components: {},
+  computed: {
+    computedSectionClasses () {
+      let base = 'section '
+      if (this.background) base += `bg--${this.background} `
+      return base
+    },
+  },
+
 }
 </script>
