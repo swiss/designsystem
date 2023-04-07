@@ -206,7 +206,7 @@ export default {
   --vs-selected-bg: theme('colors.text.200');
   --vs-selected-border-color: transparent;
 
-  --vs-dropdown-option--active-bg: theme('colors.purple.500');
+  --vs-dropdown-option--active-bg: theme('colors.text.600');
   --vs-dropdown-option--active-color: theme('colors.white');
 
   --vs-state-disabled-bg: theme('colors.text.50');
@@ -263,13 +263,13 @@ export default {
   --vs-dropdown-color: theme('colors.secondary.100');
   --vs-dropdown-option-color: theme('colors.white');
 
-  --vs-selected-bg: theme('colors.secondary.600');
+  --vs-selected-bg: theme('colors.secondary.700');
   --vs-selected-color: theme('colors.white');
   --vs-selected-border-color: theme('colors.secondary.300');
 
   --vs-search-input-color: theme('colors.secondary.100');
 
-  --vs-dropdown-option--active-bg: theme('colors.purple.600');
+  --vs-dropdown-option--active-bg: theme('colors.text.500');
   --vs-dropdown-option--active-color: theme('colors.white');
 }
 

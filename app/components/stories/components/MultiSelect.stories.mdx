@@ -56,7 +56,14 @@ export const Template = (args, { argTypes }) => ({
 # MultiSelect
 
 <div class="notification notification--warning">
-  This is a Vue-only component. Styles are not available in the main CSS file, unless you install the Vue Select library and customize the some styles and CSS variables.
+  <div class="notification__icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+  </div>
+  <div class="notification__content">
+    <div>
+      This is a Vue-only component. Styles are not available in the main CSS file, unless you install the Vue Select library and customize the some styles and CSS variables.
+    </div>
+  </div>
 </div>
 <div>&nbsp;</div>
 
@@ -122,7 +129,7 @@ export default {
       render: createElement => createElement('span', '×'),
     },
     OpenIndicator: {
-      render: createElement => createElement('span'),
+      render: createElement => createElement('span'), // replace the default icon
     },
   }),
 }
@@ -141,16 +148,15 @@ A couple of existing CSS variables have to be overriden to match the style guide
 --vs-border-color: theme('colors.text.500');
 --vs-border-radius: 0px;
 --vs-actions-padding: 4px 3em 0 3px;
---vs-selected-bg: theme('colors.text.100');
-
---vs-dropdown-option--active-bg: theme('colors.purple.500');
+--vs-selected-bg: theme('colors.text.200');
+--vs-selected-border-color: transparent;
+--vs-dropdown-option--active-bg: theme('colors.text.600');
 --vs-dropdown-option--active-color: theme('colors.white');
-
 --vs-state-disabled-bg: theme('colors.text.50');
 --vs-state-disabled-color: theme('colors.text.400');
 --vs-state-disabled-controls-color: theme('colors.text.400');
 ```
-the `theme()` function is a TailwindCSS function to access the theme configuration (see [TailwindCSS documentation](https://tailwindcss.com/docs/functions-and-directives#theme).
+the `theme()` function is a TailwindCSS function to access the theme configuration (see [TailwindCSS documentation](https://tailwindcss.com/docs/functions-and-directives#theme)
 
 ## Override Vue Select CSS Classes
 
@@ -190,11 +196,11 @@ If you use the `negative` variant of the MultiSelect, add the following CSS:
   --vs-dropdown-bg: theme('colors.secondary.600');
   --vs-dropdown-color: theme('colors.secondary.100');
   --vs-dropdown-option-color: theme('colors.white');
-  --vs-selected-bg: theme('colors.secondary.600');
+  --vs-selected-bg: theme('colors.secondary.700');
   --vs-selected-color: theme('colors.white');
   --vs-selected-border-color: theme('colors.secondary.300');
   --vs-search-input-color: theme('colors.secondary.100');
-  --vs-dropdown-option--active-bg: theme('colors.purple.600');
+  --vs-dropdown-option--active-bg: theme('colors.text.500');
   --vs-dropdown-option--active-color: theme('colors.white');
 }
 
