@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/liip/bund_ds#readme",
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "autoprefixer": "^10.2.6",
     "concurrently": "^6.2.0",
     "postcss-cli": "^8.3.1",

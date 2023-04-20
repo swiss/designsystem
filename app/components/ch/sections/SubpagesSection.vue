@@ -10,6 +10,7 @@
           <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
@@ -31,6 +32,7 @@
           <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
@@ -52,6 +54,7 @@
           <template v-slot:description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
