@@ -33,7 +33,7 @@
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.2",
     "swiper-vue2": "^1.0.6",
-    "tailwindcss": "^3.0.23"
+    "tailwindcss": "^3.3.1"
   },
   "devDependencies": {
     "postcss": "^8.3.5",
