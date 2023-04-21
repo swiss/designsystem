@@ -59,7 +59,7 @@ If you define a dark background (`.bg--secondary-[variant]` where `variant ≥ 5
 - `.section.section--default` and
 - `.section.bg--secondary-[color-variant]` add top and bottom paddings to the section.
 - consecutive sections with the same background color removes the double spacing automatically.
-
+- consecutive `.container` elements adds a top padding to the second container.
 <Canvas >
 <main>
   <section class="section section--default">
@@ -85,6 +85,14 @@ If you define a dark background (`.bg--secondary-[variant]` where `variant ≥ 5
   <section class="section bg--secondary-100">
     <div class="container">
       Section with top and padding bottom
+    </div>
+  </section>
+  <section class="section section--default">
+    <div class="container">
+      Section with consecutive containers. Container 1.
+    </div>
+    <div class="container">
+      Section with consecutive containers. Container 2. Padding top is added.
     </div>
   </section>
 </main>
