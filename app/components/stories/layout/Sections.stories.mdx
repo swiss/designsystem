@@ -38,6 +38,8 @@ After section's content, a `.section__action` wraps a potential link, inviting t
   </section>
 </Canvas>
 
+# Dark sections
+
 If you define a dark background (`.bg--secondary-[variant]` where `variant ≥ 500`) the `.section__title` will turn automatically to white. In other contexts, you can force negative color with `.section__title--negative`.
 
 <Canvas >
@@ -50,6 +52,13 @@ If you define a dark background (`.bg--secondary-[variant]` where `variant ≥ 5
             Card example
           </div>
         </div>
+      </div>
+      <div className="section__action">
+        <a href="#" title="alle Infos auf eine Blick" class="btn btn--bare btn--icon-right">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__icon icon--ArrowRight icon icon--base ">
+            <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
+          </svg>
+          <span class="btn__text">Read more</span></a>
       </div>
     </div>
   </section>
