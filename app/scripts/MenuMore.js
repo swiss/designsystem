@@ -9,10 +9,10 @@ const MenuMore = {
     this.threshold = 5;
     this.menuWrapperSize = this.getMenuWrapperSize();
     this.menuSize = this.getMenuSize();
-    
+
     // start once
     this.startTriage();
-    // then recheck after a window resize 
+    // then recheck after a window resize
     window.addEventListener('resize', this.startTriage);
   },
 
