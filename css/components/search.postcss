@@ -30,6 +30,10 @@
   }
 }
 
+.search--main .search__group .form__group__input input {
+  @apply -mt-1 xl:mt-0;
+}
+
 .form__group__input:focus-within + .search__button > .search__button__title {
   @apply hidden;
 }
@@ -81,7 +85,6 @@
   & input {
     @apply h-full lg:py-4;
     @apply pr-12;
-    margin-top: 0 !important; /* TODO improve this */
     @apply bg-white;
   }
 
