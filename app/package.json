@@ -43,6 +43,13 @@
     "vue-loader": "^15.9.7",
     "webpack": "^4.46.0"
   },
+  "overrides": {
+    "webpack": "^4.46.0"
+  },
   "readme": "ERROR: No README data found!",
-  "_id": "bund_ds_app@1.0.0"
+  "_id": "bund_ds_app@1.0.0",
+  "engines" : {
+
+    "node" : ">=16.0.0 <17.0.0"
+  }
 }
