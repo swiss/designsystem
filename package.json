@@ -28,12 +28,13 @@
   },
   "homepage": "https://github.com/liip/bund_ds#readme",
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "autoprefixer": "^10.2.6",
     "concurrently": "^6.2.0",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.2",
     "swiper-vue2": "^1.0.6",
-    "tailwindcss": "^3.0.23"
+    "tailwindcss": "^3.3.1"
   },
   "devDependencies": {
     "postcss": "^8.3.5",

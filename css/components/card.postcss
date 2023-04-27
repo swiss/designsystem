@@ -5,6 +5,7 @@
 .card {
   @apply flex flex-col h-full;
   @apply bg-white;
+  container-type: inline-size;
 }
 
 .card--default {
@@ -189,6 +190,16 @@
   @apply text-lg xl:text-xl 3xl:text-2xl;
   @apply font-bold leading-snug;
   @apply transition-colors duration-200 ease-in-out;
+}
+
+.card__body p {
+  @apply line-clamp-6;
+}
+
+@container (min-width: 500px) {
+  .card__body p {
+    @apply line-clamp-4;
+  }
 }
 
 .card__content-icons {
