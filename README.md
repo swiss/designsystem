@@ -50,7 +50,29 @@ $ npm run dev:all
 $ npm run build
 ```
 
-## Run visual regression testing
+## Build CSS only
+
+```bash
+# build Storybook
+$ npm run build-css
+```
+
+# How to release
+
+- Edit the `package.json` file and increment the `version` of the package, for example `1.0.0`
+- Create and publish a new tag with the same version number as the one in the `package.json` file, with a `v` prefix, for example `v1.0.0`
+- Create a new release on Github, document your changes, and name it for example ` Release 1.0.0`
+
+## CSS files
+When a new `version` is pushed on the `main` branch, this will trigger the generation of a a new CSS file on the CDN.
+
+If the version is `1.0.0`, the CSS file will be delivered at 
+`https://liip-bund-ds.fra1.digitaloceanspaces.com/v1.0.0/main.css`. 
+
+The latest version of the CSS file will be available at 
+`https://liip-bund-ds.fra1.digitaloceanspaces.com/latest/main.css`.
+
+# Run visual regression testing
 
 ```bash
 # run Chromatic
