@@ -45,14 +45,21 @@
               <div class="box">
                 <h2 class="sr-only">Event Date</h2>
                 <div class="date" lang="de">
-                  <div class="date__day">11</div>
-                  <div class="date__month">Apr.</div>
+                  <div class="date__wrapper">
+                    <div class="date__day">10</div>
+                    <div class="date__month">Apr.</div>
+                  </div>
                   <div class="date__separator">–</div>
-                  <div class="date__day">31</div>
-                  <div class="date__month">Mai</div>
-                  <div class="date__year">2023</div>
+                  <div class="date__wrapper">
+                    <div class="date__day">11</div>
+                    <div class="date__month">Apr.</div>
+                    <div class="date__year">2023</div>
+                  </div>
                 </div>
-                <div class="hours">Täglich 09:00 bis 12:00</div>
+                <div class="hours">
+                  Friday 18:00 – 21:00<br>
+                  Saturday 10:00 – 17:00
+                </div>
               </div>
               <div class="box">
                 <Contact
@@ -82,7 +89,7 @@
               Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
             </p>
 
-            <h2 class="h3">Veranstaltungsdetails</h2>
+            <h2 class="h2">Veranstaltungsdetails</h2>
 
             <div>
               <InfoBlock
@@ -204,7 +211,7 @@
             </div>
 
             <div>
-              <h2 class="h3">
+              <h2 class="h2">
                 FAQ
               </h2>
               <Accordion id="100">
@@ -226,7 +233,7 @@
             </div>
 
             <div>
-              <h2 class="h3">
+              <h2 class="h2">
                 Themen
               </h2>
               <RelatedTags :tags="tags" bare></RelatedTags>
@@ -238,18 +245,21 @@
                 <div class="box">
                   <h2 class="sr-only">Event Date</h2>
                   <div class="date" lang="de">
-                    <!--
-                      Demo: a dot is added after date__day if lang="de"
-                      but lang attribute should be put in the html tag.
-                    -->
-                    <div class="date__day">11</div>
-                    <div class="date__month">Apr.</div>
+                    <div class="date__wrapper">
+                      <div class="date__day">10</div>
+                      <div class="date__month">Apr.</div>
+                    </div>
                     <div class="date__separator">–</div>
-                    <div class="date__day">31</div>
-                    <div class="date__month">Mai</div>
-                    <div class="date__year">2023</div>
+                    <div class="date__wrapper">
+                      <div class="date__day">11</div>
+                      <div class="date__month">Apr.</div>
+                      <div class="date__year">2023</div>
+                    </div>
                   </div>
-                  <div class="hours">Täglich 09:00 bis 12:00</div>
+                  <div class="hours">
+                    Friday 18:00 – 21:00<br>
+                    Saturday 10:00 – 17:00
+                  </div>
                 </div>
                 <div class="box">
                   <Contact

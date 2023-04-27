@@ -143,7 +143,12 @@
             </p>
             <p>Name de Amtes <br><a href="www.amtsurl.ch">www.amtsurl.ch</a></p>
 
-            <RelatedTags :tags="tags"></RelatedTags>
+            <div>
+              <h2 class="h2">
+                Themen
+              </h2>
+              <RelatedTags :tags="tags" bare></RelatedTags>
+            </div>
           </div>
         </div>
       </section>

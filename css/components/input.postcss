@@ -1,3 +1,10 @@
+
+
+:root {
+  --input-min-height: 44px;
+  --input-min-height-2xl: 48px;
+}
+
 .input,
 input,
 textarea,
@@ -8,7 +15,7 @@ select {
   @apply bg-white border border-text-500;
   @apply rounded-xs;
   @apply leading-none;
-  @apply min-h-[44px] 2xl:min-h-[48px];
+  @apply min-h-[var(--input-min-height)] 2xl:min-h-[var(--input-min-height-2xl)];
   @apply focus:outline-none;
   @apply placeholder-secondary-400;
 }
@@ -42,6 +49,10 @@ select {
   @apply text-red-800;
   @apply border-red-500;
   @apply placeholder-red-400;
+
+  & + label {
+    @apply text-red-800 mr-3;
+  }
 }
 
 .input--negative {
@@ -65,7 +76,7 @@ select {
 
 input[type="checkbox"],
 input[type="radio"] {
-  @apply h-[0.9rem] w-[0.9rem] min-h-0;
+  @apply h-[0.9rem] w-[0.9rem] min-h-0 shrink-0 mr-2;
   @apply p-0;
   -webkit-appearance: none;
   -moz-appearance: none;

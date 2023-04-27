@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import Table from '../../ch/demo/Table.vue'
+import TableSortable from '../../ch/demo/TableSortable.vue'
 
 <Meta
   title="Components/Table"
@@ -17,16 +18,35 @@ import Table from '../../ch/demo/Table.vue'
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Table },
-  template: '<Table :variant="variant" />',
+  template: '<Table :variant="variant" :caption="caption" :displayCaption="displayCaption" :zebra="zebra" />',
+});
+
+export const TemplateSortable = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { TableSortable },
+  template: '<TableSortable :variant="variant" :caption="caption" :displayCaption="displayCaption" :zebra="zebra"  :id="id" />',
 });
 
 # Table
+
+<a href="?path=/story/components-table--example">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a href="?id=components-table--example" target="_blank">
+  Open page in full width in a new tab
+</a>
 
 <Canvas>
   <Story
     name="Example"
     args={{
       variant: 'default',
+      caption: 'Short description of the table content for better accessibility',
+      displayCaption: true,
+      zebra: false,
     }}
   >
     {Template.bind({})
@@ -35,16 +55,26 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Example" />
 
+## Variants
+
+Add `table--compact` to the table element to use the compact variant. This variant is used for tables with a lot of data.
+Add `table--zebra` to the table element to use the zebra variant. This variant is rencommended for large and wide tables, to distinguish visually rows.
+
+## Alignment
+Text alignment in a table is done cell by cell. Add a `.text-right` or `.text-center` class to the `<td>` or the `<th>` element to align the text correctly. By default, text is aligned to the left. The `align` attribute is another valid way to align content in a table context.
+
 
 ## Accessibility
 
 Add a recommended `<caption>` element right after the `<table>` opening tag for better accessibility. This is used by screen readers to provide a label for the table. It is also used by assistive technologies to help users navigate the table and understand what data is being displayed and how it is organized.
 
+Per default, the `<caption>` element is visually hidden. If you want to display the caption, you can use the `table--caption` modifier class. This will display the caption above the table.
+
 Use `<th>` elements to define headers. They should have a `scope` attribute with a value of `row` or `col`. This is used by screen readers to help users understand the structure of the table data and navigate the table more efficiently.
 
 ```html
-<table class="table table--default ">
-  <caption class="sr-only">
+<table class="table table--default table--caption">
+  <caption>
     Short description of the table content for better accessibility
   </caption>
   <thead>
@@ -56,22 +86,229 @@ Use `<th>` elements to define headers. They should have a `scope` attribute with
   <tbody>
     <tr>
       <th scope="row">Header for row one</th>
-      <td>Row one col two content</td>
+      <td>Row one col two</td>
     </tr>
     <tr>
       <th scope="row">Header for row two</th>
-      <td>Row two col two content</td>
+      <td>Row two col two</td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row">Footer</th>
+      <td>
+        Footer col two
+      </td>
+    </tr>
+  </tfoot>
 </table>
 ```
 
-<a href="?path=/story/components-table--example">
+# Sortable Table
+
+<a href="?path=/story/components-table--example-sortable">
   Go to the Canvas Tab
 </a>
 
 ---
 
-<a href="?id=components-table--example" target="_blank">
+<a href="?id=components-table--example-sortable" target="_blank">
   Open page in full width in a new tab
 </a>
+
+<Canvas>
+  <Story
+    name="Example Sortable"
+    args={{
+      variant: 'default',
+      caption: 'Short description of the table content for better accessibility',
+      displayCaption: false,
+      zebra: true,
+      id: '1',
+    }}
+  >
+    {TemplateSortable.bind({})
+  }</Story>
+</Canvas>
+
+<ArgsTable story="Example Sortable" />
+
+## Markup example
+
+```html
+<table
+  id="table-sortable-1"
+  class="table table--default table--sortable"
+>
+  <caption>
+    Description of the table content here
+    <span class="sr-only">, column headers with buttons are sortable.</span>
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col" aria-sort="ascending">
+        <button class="table__sorter">
+          Header col one
+          <span aria-hidden="true"></span>
+        </button>
+      </th>
+      <th scope="col">
+        <button class="table__sorter">
+          Header col two
+          <span aria-hidden="true"></span>
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Col 1 row 1</td>
+      <td>Col 2 row 1</td>
+    </tr>
+    <tr>
+      <td>Col 1 row 2</td>
+      <td>Col 2 row 2</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Accessibility
+
+To help screen reader users understand the purpose of the buttons in the column headers, an off-screen description of the sort functionality of the buttons is appended to the `<caption>` element. This description is hidden from sighted users with the `.sr-only` class.
+
+The `aria-sort` attribute is added to the column header that is currently sorted. The value of the attribute is set to `ascending` or `descending` depending on the current sort order. If the column is not sorted, the attribute is removed.
+
+The `aria-hidden` attribute is added to the sort icon in the column header. This is done to prevent screen readers from announcing the icon.
+
+
+## JavaScript
+
+Below an example of a basic script to make the table sortable. Complexities like sorting multiple page results, dates, etc. are not included in this example, but the script can be used as a starting point for your own implementation.
+
+```javascript
+module.exports =
+class TableSortable {
+  constructor(id) {
+    this.tableNode = document.getElementById(id);
+    this.columnHeaders = this.tableNode.querySelectorAll('thead th');
+
+    this.sortColumns = [];
+
+    for (var i = 0; i < this.columnHeaders.length; i++) {
+      var ch = this.columnHeaders[i];
+      var buttonNode = ch.querySelector('button');
+      if (buttonNode) {
+        this.sortColumns.push(i);
+        buttonNode.setAttribute('data-column-index', i);
+        buttonNode.addEventListener('click', this.handleClick.bind(this));
+      }
+    }
+  }
+
+  setColumnHeaderSort(columnIndex) {
+    if (typeof columnIndex === 'string') {
+      columnIndex = parseInt(columnIndex);
+    }
+
+    for (var i = 0; i < this.columnHeaders.length; i++) {
+      var ch = this.columnHeaders[i];
+      var buttonNode = ch.querySelector('button');
+      if (i === columnIndex) {
+        var value = ch.getAttribute('aria-sort');
+        if (value === 'descending') {
+          ch.setAttribute('aria-sort', 'ascending');
+          this.sortColumn(
+            columnIndex,
+            'ascending',
+            ch.classList.contains('num')
+          );
+        } else {
+          ch.setAttribute('aria-sort', 'descending');
+          this.sortColumn(
+            columnIndex,
+            'descending',
+            ch.classList.contains('num')
+          );
+        }
+      } else {
+        if (ch.hasAttribute('aria-sort') && buttonNode) {
+          ch.removeAttribute('aria-sort');
+        }
+      }
+    }
+  }
+
+  sortColumn(columnIndex, sortValue, isNumber) {
+    function compareValues(a, b) {
+      if (sortValue === 'ascending') {
+        if (a.value === b.value) {
+          return 0;
+        } else {
+          if (isNumber) {
+            return a.value - b.value;
+          } else {
+            return a.value < b.value ? -1 : 1;
+          }
+        }
+      } else {
+        if (a.value === b.value) {
+          return 0;
+        } else {
+          if (isNumber) {
+            return b.value - a.value;
+          } else {
+            return a.value > b.value ? -1 : 1;
+          }
+        }
+      }
+    }
+
+    if (typeof isNumber !== 'boolean') {
+      isNumber = false;
+    }
+
+    var tbodyNode = this.tableNode.querySelector('tbody');
+    var rowNodes = [];
+    var dataCells = [];
+
+    var rowNode = tbodyNode.firstElementChild;
+
+    var index = 0;
+    while (rowNode) {
+      rowNodes.push(rowNode);
+      var rowCells = rowNode.querySelectorAll('th, td');
+      var dataCell = rowCells[columnIndex];
+
+      var data = {};
+      data.index = index;
+      data.value = dataCell.textContent.toLowerCase().trim();
+      if (isNumber) {
+        data.value = parseFloat(data.value);
+      }
+      dataCells.push(data);
+      rowNode = rowNode.nextElementSibling;
+      index += 1;
+    }
+
+    dataCells.sort(compareValues);
+
+    // remove rows
+    while (tbodyNode.firstChild) {
+      tbodyNode.removeChild(tbodyNode.lastChild);
+    }
+
+    // add sorted rows
+    for (var i = 0; i < dataCells.length; i += 1) {
+      tbodyNode.appendChild(rowNodes[dataCells[i].index]);
+    }
+  }
+
+  /* EVENT HANDLERS */
+
+  handleClick(event) {
+    var tgt = event.currentTarget;
+    this.setColumnHeaderSort(tgt.getAttribute('data-column-index'));
+  }
+}
+```

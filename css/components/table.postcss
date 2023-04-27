@@ -1,20 +1,50 @@
+/*----------------------------------------*\
+  TABLE
+\*----------------------------------------*/
+
+.table-wrapper {
+  @apply overflow-x-auto ;
+
+  .container__center--xs &,
+  .container__center--sm & {
+    @apply broader-than-container; 
+  }
+
+  .container__center--md &,
+  .container__full & {
+    @apply broader-than-container-centered; 
+  }
+}
+
 table,
 .table {
   @apply w-full;
   @apply border border-text-200;
   @apply shadow-md;
 }
+
+caption {
+  @apply hidden legend;
+  caption-side: bottom;
+
+  .table--caption & {
+    @apply table-caption text-left;
+  }
+}
+
 thead {
   @apply bg-secondary-50;
 
   th {
     @apply px-6 py-4;
     @apply text-left;
-    @apply text-text-700 uppercase text-sm;
+    @apply text-text-700 uppercase text--sm;
+    @apply align-top;
   }
 }
 
-tbody {
+tbody, 
+tfoot {
   tr {
     @apply border-t border-text-300;
   }
@@ -22,7 +52,7 @@ tbody {
   td,
   th {
     @apply px-6 py-4;
-    @apply text-base;
+    @apply text--base;
     @apply text-gray-600;
   }
 
@@ -31,25 +61,32 @@ tbody {
   }
 }
 
+tfoot {
+  @apply border-y-2 border-text-300;
+}
+
+
 .table--compact {
   @apply border-0;
   @apply shadow-none;
 
   thead {
     th {
-      @apply pr-4 pl-0 py-3;
+      @apply px-2 py-2;
     }
   }
   
-  tbody {
+  tbody,
+  tfoot {
     td,
     th {
-      @apply pr-4 pl-0 py-3;
+      @apply px-2 py-2;
+      @apply text--sm;
     }
   }
 }
 
-table.table--bare {
+.table--bare {
   @apply shadow-none border-0;
 
   tr {
@@ -61,4 +98,46 @@ table.table--bare {
     @apply p-0 text--base font-regular;
   }
 }
+
+.table--zebra {
+  tbody,
+  tfoot {
+    tr:nth-child(even) {
+      @apply bg-secondary-50;
+    }
+  }
+}
+
+
+.table__sorter {
+  @apply inline-flex items-baseline text-left hover:text-red-600;
+  text-transform: inherit;
+  font-weight: inherit;
+
+  .text-right & {
+    @apply justify-end;
+    text-align: right;
+  }
+}
+
+.table__sorter {
+  span::after {
+    content: "↕";
+    @apply block ml-1 min-w-[1.25em];
+    @apply font-normal text--xs text-center;
+  }
+
+  th[aria-sort="descending"] & span::after {
+    content: "▼";
+  }
+
+  th[aria-sort="ascending"] & span::after {
+    content: "▲";
+  }
+}
+
+
+
+
+
 

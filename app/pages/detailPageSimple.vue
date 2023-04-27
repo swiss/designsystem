@@ -68,6 +68,24 @@
               «fraction». Über den Kontakt models@geo.admin.ch können die
               INTERLIS-Modelldatei und die Modelldokumentation (als PDF
               Dokument) zur Publikation eingereicht werden.
+              <Popover
+                id="1"
+                label="Extra infos in a popover"
+              >
+                <p>Popover content</p>
+                <a href="#">Link</a>
+              </Popover>
+              Über den Kontakt models@geo.admin.ch können die
+              INTERLIS-Modelldatei und die Modelldokumentation
+              <Popover
+                id="2"
+                color="blue"
+                :icon="true"
+              >
+                <p>Popover content, icon only, blue color</p>
+                <a href="#">Link</a>
+              </Popover>
+               zur Publikation eingereicht werden.
             </p>
 
             <SlideshowExample
@@ -351,6 +369,48 @@
         </div>
       </section>
 
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__center--xs vertical-spacing">
+            <h2 class="h2">
+              Large table example
+            </h2>
+            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--default">
+        <div class="container container--grid gap--responsive">
+          <div class="container__center--xs vertical-spacing">
+            <h2 class="h2">Carousel with few images</h2>
+            <p>
+              To display a few images as a carousel, set the pagination type to
+              «bullets». Über den Kontakt models@geo.admin.ch können die
+              INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+              Dokument) zur Publikation eingereicht werden.
+            </p>
+            <p>
+              Über den Kontakt models@geo.admin.ch können die
+              INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+              Dokument) zur Publikation eingereicht werden.
+            </p>
+            <p>
+              Der Modellkatalog kann unter
+              <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
+              «minimales Geodatenmodell» in der Datenmodellablage publizieren.
+              Für die Publikation der «minimalen Geodatenmodelle» besteht kein
+              direkter Online-Zugang. Die Datenmodellablage ist moderiert und
+              die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen.
+              Entsprechend der Empfehlungen zur Modellierung wird die
+              Modelldokumentation veröffentlicht oder verlinkt. Die
+              INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
+              eingepflegt.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <QuoteSection
         quote="Begin anywhere."
         author="John Cage"
@@ -393,7 +453,12 @@
               INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
               eingepflegt.
             </p>
-            <RelatedTags :tags="tags"></RelatedTags>
+            <div>
+              <h2 class="h2">
+                Themen
+              </h2>
+              <RelatedTags :tags="tags" bare></RelatedTags>
+            </div>
           </div>
         </div>
       </section>
@@ -512,6 +577,8 @@ import Card from '../components/ch/components/Card.vue'
 import Modal from '../components/ch/components/Modal.vue'
 import Badge from '../components/ch/components/Badge.vue'
 import Input from '../components/ch/components/Input.vue'
+import Popover from '../components/ch/components/Popover.vue'
+import TableSortable from '~/components/ch/demo/TableSortable.vue'
 
 export default {
   name: 'detailPageSimple',
@@ -542,6 +609,8 @@ export default {
     Modal,
     Badge,
     Input,
+    Popover,
+    TableSortable,
 },
   data: function () {
     return {
