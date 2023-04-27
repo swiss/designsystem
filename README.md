@@ -17,7 +17,12 @@ Delivering HTML structures, CSS assets and design elements to build frontends fo
 $ npm install
 ```
 
-Node version: 16.13.2
+Adapt your Node version to `^16.13.2`, for example using `nvm`:
+
+```bash
+# Choose the right Node version
+$ nvm use 16
+```
 
 ## Run Storybook
 
