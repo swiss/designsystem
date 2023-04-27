@@ -140,6 +140,7 @@ const Navy = {
       Navy.overlay.classList.remove('hidden');
       mainmenuBtn.classList.add('clicked');
       Navy.currentMenuBtn = mainmenuBtn;
+      Navy.displayRelatedSubmenu(mainmenuBtn, relatedMenu, submenus);
     }
     else if (mainmenuBtn === Navy.currentMenuBtn) {
       this.closeSubmenu(mainmenuBtn)
@@ -150,9 +151,9 @@ const Navy = {
       Navy.currentMenuBtn.classList.remove('clicked');
       mainmenuBtn.classList.add('clicked');
       Navy.currentMenuBtn = mainmenuBtn;
+      Navy.displayRelatedSubmenu(mainmenuBtn, relatedMenu, submenus);
     }
 
-    Navy.displayRelatedSubmenu(mainmenuBtn, relatedMenu, submenus); 
     Navy.setDrawerXPosition(mainmenuBtn);
   },
 
@@ -166,7 +167,7 @@ const Navy = {
     Navy.currentMenuBtn = undefined;
     Navy.currentRelatedMenu = undefined;
     Navy.currentLevel = 0;
-    
+
     const closeBtn = document.querySelector(options.closeButton);
     const mainmenuBtns =Navy.nav.querySelectorAll(':scope > ul > li > a');
     const submenus =Navy.nav.querySelectorAll(':scope > ul > li > ul');
