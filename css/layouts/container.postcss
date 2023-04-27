@@ -9,7 +9,7 @@
   @apply w-full 2xl:max-w-[1536px] 3xl:max-w-[1680px];
 }
 
-.container + .container {
+.container:not(.breadcrumb) + .container {
   @apply pt-14 lg:pt-20 3xl:pt-32;
 }
 
