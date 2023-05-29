@@ -29,8 +29,9 @@ module.exports = {
       '3xl': '1920px',
     },
     container: {
-      '2xl': theme('screens.2xl'),
+      '2xl': '1544px',
       '3xl': '1676px',
+
     },
     scale: {
       102: '1.02',
