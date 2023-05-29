@@ -79,6 +79,7 @@ export default {
       type: String,
       validator: (prop) => [
         'auto',
+        'xs',
         'sm',
         'md',
         'lg',

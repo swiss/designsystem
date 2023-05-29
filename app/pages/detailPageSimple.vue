@@ -467,7 +467,7 @@
 
       <ContactSection />
     </main>
-    <Modal title="Inhalt teilen" triggerElements=".share-bar__share-button, #share-link" layout="auto">
+    <Modal title="Inhalt teilen" triggerElements=".share-bar__share-button, #share-link" layout="xs">
       <template v-slot:body>
         <Card type="default">
           <template v-slot:description>
@@ -532,7 +532,7 @@
                     v-if="URLIsCopied"
                     label="URL wurde kopiert"
                     color="green"
-                    size="base"
+                    size="sm"
                     icon="Checkmark"
                     class="mt-3"
                   />

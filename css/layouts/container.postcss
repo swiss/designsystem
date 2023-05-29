@@ -4,9 +4,16 @@
 \* ---------------------------------------- */
 
 .container {
-  @apply mx-auto;
-  @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 3xl:px-16;
-  @apply w-full 2xl:max-w-[1536px] 3xl:max-w-[1680px];
+  @apply w-full mx-auto;
+  @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 3xl:px-0;
+
+  @media (min-width: theme('screens.2xl')) {
+    max-width: theme('container.2xl');
+  }
+
+  @media (min-width: theme('screens.3xl')) {
+    max-width: theme('container.3xl');
+  }
 }
 
 .container:not(.breadcrumb) + .container {
