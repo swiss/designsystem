@@ -10,9 +10,6 @@ module.exports = {
   corePlugins: {
     container: false,
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
   theme: {
     extend: {
       animation: {
