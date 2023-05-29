@@ -187,128 +187,97 @@ The `aria-hidden` attribute is added to the sort icon in the column header. This
 Below an example of a basic script to make the table sortable. Complexities like sorting multiple page results, dates, etc. are not included in this example, but the script can be used as a starting point for your own implementation.
 
 ```javascript
-module.exports =
-class TableSortable {
+module.exports = class TableSortable {
   constructor(id) {
-    this.tableNode = document.getElementById(id);
-    this.columnHeaders = this.tableNode.querySelectorAll('thead th');
+    this.tableNode = document.getElementById(id)
+    this.columnHeaders = Array.from(this.tableNode.querySelectorAll('thead th'))
 
-    this.sortColumns = [];
-
-    for (var i = 0; i < this.columnHeaders.length; i++) {
-      var ch = this.columnHeaders[i];
-      var buttonNode = ch.querySelector('button');
+    this.columnHeaders.forEach((ch, i) => {
+      const buttonNode = ch.querySelector('button')
       if (buttonNode) {
-        this.sortColumns.push(i);
-        buttonNode.setAttribute('data-column-index', i);
-        buttonNode.addEventListener('click', this.handleClick.bind(this));
+        buttonNode.setAttribute('data-column-index', i)
+        buttonNode.addEventListener('click', this.handleClick.bind(this))
       }
-    }
+    })
   }
 
-  setColumnHeaderSort(columnIndex) {
+  setColumnHeaderSort (columnIndex) {
     if (typeof columnIndex === 'string') {
-      columnIndex = parseInt(columnIndex);
+      columnIndex = parseInt(columnIndex)
     }
 
-    for (var i = 0; i < this.columnHeaders.length; i++) {
-      var ch = this.columnHeaders[i];
-      var buttonNode = ch.querySelector('button');
+    this.columnHeaders.forEach((ch, i) => {
+      const buttonNode = ch.querySelector('button')
       if (i === columnIndex) {
-        var value = ch.getAttribute('aria-sort');
-        if (value === 'descending') {
-          ch.setAttribute('aria-sort', 'ascending');
-          this.sortColumn(
-            columnIndex,
-            'ascending',
-            ch.classList.contains('num')
-          );
-        } else {
-          ch.setAttribute('aria-sort', 'descending');
-          this.sortColumn(
-            columnIndex,
-            'descending',
-            ch.classList.contains('num')
-          );
-        }
+        const value = ch.getAttribute('aria-sort')
+        const sortDirection =
+          value === 'descending' || !value ? 'ascending' : 'descending'
+        ch.setAttribute('aria-sort', sortDirection)
+        this.sortColumn(
+          columnIndex,
+          sortDirection,
+          ch.classList.contains('num') ? 'number' : 'text'
+        )
       } else {
         if (ch.hasAttribute('aria-sort') && buttonNode) {
-          ch.removeAttribute('aria-sort');
+          ch.removeAttribute('aria-sort')
         }
       }
-    }
+    })
   }
+  sortColumn (columnIndex, sortValue, type) {
+    const tbodyNode = this.tableNode.querySelector('tbody')
+    const rowNodes = Array.from(tbodyNode.children)
 
-  sortColumn(columnIndex, sortValue, isNumber) {
-    function compareValues(a, b) {
-      if (sortValue === 'ascending') {
-        if (a.value === b.value) {
-          return 0;
+    rowNodes.sort((a, b) => {
+      const aCell = a.querySelectorAll('th, td')[columnIndex]
+      const bCell = b.querySelectorAll('th, td')[columnIndex]
+
+      let aValue = ''
+      let bValue = ''
+
+      if (type === 'number') {
+        aValue = parseFloat(aCell.textContent.toLowerCase().trim())
+        bValue = parseFloat(bCell.textContent.toLowerCase().trim())
+      } else if (type === 'date') {
+        aValue = aCell.getAttribute('value').toLowerCase().trim()
+        bValue = bCell.getAttribute('value').toLowerCase().trim()
+      } else {
+        aValue = aCell.textContent.toLowerCase().trim()
+        bValue = bCell.textContent.toLowerCase().trim()
+      }
+
+      if (type === 'number') {
+        if (sortValue === 'ascending') {
+          return aValue - bValue
         } else {
-          if (isNumber) {
-            return a.value - b.value;
-          } else {
-            return a.value < b.value ? -1 : 1;
-          }
+          return bValue - aValue
         }
       } else {
-        if (a.value === b.value) {
-          return 0;
+        if (sortValue === 'ascending') {
+          return aValue.localeCompare(bValue)
         } else {
-          if (isNumber) {
-            return b.value - a.value;
-          } else {
-            return a.value > b.value ? -1 : 1;
-          }
+          return bValue.localeCompare(aValue)
         }
       }
-    }
+    })
 
-    if (typeof isNumber !== 'boolean') {
-      isNumber = false;
-    }
-
-    var tbodyNode = this.tableNode.querySelector('tbody');
-    var rowNodes = [];
-    var dataCells = [];
-
-    var rowNode = tbodyNode.firstElementChild;
-
-    var index = 0;
-    while (rowNode) {
-      rowNodes.push(rowNode);
-      var rowCells = rowNode.querySelectorAll('th, td');
-      var dataCell = rowCells[columnIndex];
-
-      var data = {};
-      data.index = index;
-      data.value = dataCell.textContent.toLowerCase().trim();
-      if (isNumber) {
-        data.value = parseFloat(data.value);
-      }
-      dataCells.push(data);
-      rowNode = rowNode.nextElementSibling;
-      index += 1;
-    }
-
-    dataCells.sort(compareValues);
-
-    // remove rows
+    // Remove rows
     while (tbodyNode.firstChild) {
-      tbodyNode.removeChild(tbodyNode.lastChild);
+      tbodyNode.removeChild(tbodyNode.firstChild)
     }
 
-    // add sorted rows
-    for (var i = 0; i < dataCells.length; i += 1) {
-      tbodyNode.appendChild(rowNodes[dataCells[i].index]);
+    // Add sorted rows
+    for (const rowNode of rowNodes) {
+      tbodyNode.appendChild(rowNode)
     }
   }
 
   /* EVENT HANDLERS */
 
-  handleClick(event) {
-    var tgt = event.currentTarget;
-    this.setColumnHeaderSort(tgt.getAttribute('data-column-index'));
+  handleClick (event) {
+    const tgt = event.currentTarget
+    this.setColumnHeaderSort(tgt.getAttribute('data-column-index'))
   }
 }
 ```
