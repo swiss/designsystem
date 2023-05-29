@@ -25,8 +25,12 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      '2xl': '1536px',
-      '3xl': '1800px',
+      '2xl': '1544px',
+      '3xl': '1920px',
+    },
+    container: {
+      '2xl': theme('screens.2xl'),
+      '3xl': '1676px',
     },
     scale: {
       102: '1.02',

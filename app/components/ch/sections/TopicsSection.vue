@@ -8,7 +8,7 @@
         <Card type="default">
           <template v-slot:image>
             <picture>
-              <source srcset="https://picsum.photos/760/428/?image=11" width="760" height="428" media="(min-width: 1536px)">
+              <source srcset="https://picsum.photos/760/428/?image=11" width="760" height="428" media="(min-width: 1544px)">
               <source srcset="https://picsum.photos/720/405/?image=11" width="720" height="405" media="(min-width: 1280px)">
               <source srcset="https://picsum.photos/600/338/?image=11" width="600" height="338" media="(min-width: 1024px)">
               <source srcset="https://picsum.photos/460/259/?image=11" width="460" height="259" media="(min-width: 768px)">
@@ -38,7 +38,7 @@
         <Card type="default">
           <template v-slot:image>
             <picture>
-              <source srcset="https://picsum.photos/760/428/?image=18" width="760" height="428" media="(min-width: 1536px)">
+              <source srcset="https://picsum.photos/760/428/?image=18" width="760" height="428" media="(min-width: 1544px)">
               <source srcset="https://picsum.photos/720/405/?image=18" width="720" height="405" media="(min-width: 1280px)">
               <source srcset="https://picsum.photos/600/338/?image=18" width="600" height="338" media="(min-width: 1024px)">
               <source srcset="https://picsum.photos/460/259/?image=18" width="460" height="259" media="(min-width: 768px)">
@@ -68,7 +68,7 @@
         <Card type="default">
           <template v-slot:image>
             <picture>
-              <source srcset="https://picsum.photos/760/428/?image=19" width="760" height="428" media="(min-width: 1536px)">
+              <source srcset="https://picsum.photos/760/428/?image=19" width="760" height="428" media="(min-width: 1544px)">
               <source srcset="https://picsum.photos/720/405/?image=19" width="720" height="405" media="(min-width: 1280px)">
               <source srcset="https://picsum.photos/600/338/?image=19" width="600" height="338" media="(min-width: 1024px)">
               <source srcset="https://picsum.photos/460/259/?image=19" width="460" height="259" media="(min-width: 768px)">
@@ -111,7 +111,7 @@
         <Card type="default">
           <template v-slot:image>
             <picture>
-              <source srcset="https://picsum.photos/760/428/?image=11" width="760" height="428" media="(min-width: 1536px)">
+              <source srcset="https://picsum.photos/760/428/?image=11" width="760" height="428" media="(min-width: 1544px)">
               <source srcset="https://picsum.photos/720/405/?image=11" width="720" height="405" media="(min-width: 1280px)">
               <source srcset="https://picsum.photos/600/338/?image=11" width="600" height="338" media="(min-width: 1024px)">
               <source srcset="https://picsum.photos/460/259/?image=11" width="460" height="259" media="(min-width: 768px)">
@@ -141,7 +141,7 @@
         <Card type="default">
           <template v-slot:image>
             <picture>
-              <source srcset="https://picsum.photos/760/428/?image=18" width="760" height="428" media="(min-width: 1536px)">
+              <source srcset="https://picsum.photos/760/428/?image=18" width="760" height="428" media="(min-width: 1544px)">
               <source srcset="https://picsum.photos/720/405/?image=18" width="720" height="405" media="(min-width: 1280px)">
               <source srcset="https://picsum.photos/600/338/?image=18" width="600" height="338" media="(min-width: 1024px)">
               <source srcset="https://picsum.photos/460/259/?image=18" width="460" height="259" media="(min-width: 768px)">
@@ -171,7 +171,7 @@
         <Card type="default">
           <template v-slot:image>
             <picture>
-              <source srcset="https://picsum.photos/760/428/?image=19" width="760" height="428" media="(min-width: 1536px)">
+              <source srcset="https://picsum.photos/760/428/?image=19" width="760" height="428" media="(min-width: 1544px)">
               <source srcset="https://picsum.photos/720/405/?image=19" width="720" height="405" media="(min-width: 1280px)">
               <source srcset="https://picsum.photos/600/338/?image=19" width="600" height="338" media="(min-width: 1024px)">
               <source srcset="https://picsum.photos/460/259/?image=19" width="460" height="259" media="(min-width: 768px)">
