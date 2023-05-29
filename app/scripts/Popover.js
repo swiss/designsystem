@@ -29,7 +29,6 @@ const Popover = {
     }
 
     function closePopover() {
-      console.log('close')
       button.setAttribute("aria-expanded", false)
       popover.classList.remove("popover--active")
       popover.setAttribute("aria-hidden", true)
