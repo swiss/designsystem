@@ -41,7 +41,6 @@
 }
 
 .hero--default {
-
   .hero__content {
     @apply container__center--sm;
   }
@@ -124,28 +123,3 @@
   }
 }
 
-.hero--2-cols {
-
-  .hero__title {
-    @apply mb-6 md:mb-12 lg:mb-24;
-  }
-
-  .hero--2-cols__container {
-    @apply flex flex-col md:flex-row;
-
-    .hero__description {
-      @apply order-1;
-      @apply md:w-1/3;
-      @apply mr-6;
-      @apply text-base lg:text-lg 3xl:text-xl;
-      @apply font-bold;
-    }
-
-    .hero__image {
-      @apply order-2;
-      @apply md:w-2/3;
-      @apply pb-[40%];
-      @apply mt-6 md:mt-0;
-    }
-  }
-}
