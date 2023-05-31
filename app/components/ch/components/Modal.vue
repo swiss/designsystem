@@ -82,7 +82,8 @@ export default {
         'sm',
         'md',
         'lg',
-        'xl'
+        'xl',
+        'xs'
       ].includes(prop),
     },
     triggerElements: {
