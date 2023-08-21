@@ -37,11 +37,11 @@
     @apply border-gray-300;
   }
 
-  /* hide scrollbar with ability to still scroll */ 
+  /* hide scrollbar with ability to still scroll */
   -ms-overflow-style: none;
-  scrollbar-width: none; 
+  scrollbar-width: none;
 
-  &::-webkit-scrollbar { 
+  &::-webkit-scrollbar {
     display: none;
   }
 }
@@ -51,14 +51,14 @@
   @apply px-4 py-4;
 
   &::after {
-    content:'';
+    content: '';
     @apply block;
     @apply h-[3px];
     @apply absolute right-4 bottom-0 left-4;
     @apply transition;
   }
 
-  &.tab__control--active, 
+  &.tab__control--active,
   &:hover {
     &::after {
       @apply bg-primary-500;
@@ -82,6 +82,6 @@
   }
 
   &.tab__container--is-hidden {
-    @apply hidden
+    @apply hidden;
   }
 }

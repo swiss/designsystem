@@ -42,6 +42,7 @@
   @apply flex items-center;
   @apply lg:p-1 xl:p-2 2xl:py-3;
   @apply relative z-10;
+  height: 100%;
 }
 
 .search__button__title {
@@ -57,19 +58,18 @@
   }
 }
 
-
 .body--search-is-open {
   .logo {
     @apply opacity-0 xs:opacity-100;
   }
 }
 
-
 /*----------------------------------------*\
   TOP BAR SEARCH
 \*----------------------------------------*/
 
-.search {}
+.search {
+}
 
 .search--negative {
   @apply bg-secondary-500;
@@ -110,7 +110,6 @@
   }
 }
 
-
 .search__field {
   @apply font-bold text-2xl;
   @apply p-3;
@@ -142,7 +141,6 @@
   @apply border border-secondary-400;
 }
 
-
 /*----------------------------------------*\
  SEARCH RESULTS PAGE
 \*----------------------------------------*/
@@ -151,16 +149,16 @@
   @apply lg:w-4/5 xl:w-2/3;
   @apply pt-4 md:pt-6 2xl:pt-8;
 
-  svg { 
+  svg {
     @apply w-10 h-10;
     @apply stroke-0;
   }
 }
 
-.search-results--list {}
+.search-results--list {
+}
 
 .search-results--grid {
-  
   .search-results-list {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
     @apply gap--responsive;
@@ -207,7 +205,7 @@
 .search-results__no-results {
   @apply container--py;
 
-  h2, 
+  h2,
   ul {
     @apply mb-6 lg:mb-8 2xl:mb-10;
   }
@@ -235,10 +233,6 @@
   @apply pt-4 sm:pt-6 2xl:pt-8;
 }
 
-
-
-
-
 /*----------------------------------------*\
  DEPRECATED
  TODO - remove when .search-result has been replaced 
@@ -248,10 +242,10 @@
 .search-result {
   @apply card--flat;
   @apply block space-y-4;
-  
-  &, 
+
+  &,
   &:hover {
-    @apply no-underline text-inherit; /* override general styling for links in main */ 
+    @apply no-underline text-inherit; /* override general styling for links in main */
   }
 
   @media screen(sm) {
@@ -268,7 +262,6 @@
   grid-column: 1 / 2;
   @apply text--xl text--bold;
   @apply transition-colors duration-200;
-
 
   .search-result:hover & {
     @apply text-primary-600;
@@ -293,10 +286,10 @@
 .search-result__image {
   grid-column: 2 / 3;
   grid-row: 1 / 10;
-  
+
   @apply block;
   @apply sm:mt-0 !important;
-  
+
   & picture {
     @media (min-width: theme('screens.sm')) {
       @apply block ratio ratio--1/1;
@@ -310,7 +303,6 @@
   }
 }
 
-
 .search-results__sort {
   @apply flex flex-wrap gap-x-4 justify-end;
 
@@ -318,7 +310,6 @@
     @apply flex gap-x-4;
   }
 }
-
 
 /*----------------------------------------*\
  END - DEPRECATED

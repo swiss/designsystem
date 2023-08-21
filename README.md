@@ -69,12 +69,13 @@ $ npm run build-css
 - Create a new release on Github, document your changes, and name it for example ` Release 1.0.0`
 
 ## CSS files
+
 When a new `version` is pushed on the `main` branch, this will trigger the generation of a a new CSS file on the CDN.
 
-If the version is `1.0.0`, the CSS file will be delivered at 
-`https://liip-bund-ds.fra1.digitaloceanspaces.com/v1.0.0/main.css`. 
+If the version is `1.0.0`, the CSS file will be delivered at
+`https://liip-bund-ds.fra1.digitaloceanspaces.com/v1.0.0/main.css`.
 
-The latest version of the CSS file will be available at 
+The latest version of the CSS file will be available at
 `https://liip-bund-ds.fra1.digitaloceanspaces.com/latest/main.css`.
 
 # Run visual regression testing
@@ -87,8 +88,4 @@ $ npm run test
 
 This will run the test and provide an URL pointing to the Chromatic app. You can learn more about the Chromatic tool at [Chromatic's website.](https://www.chromatic.com/)
 
-If you want to run the test before merging your branches into the `main` branch, you can first check out `stage`, merge your modifications onto this branch, and then run the regression visual test. 
-
-
-
-
+If you want to run the test before merging your branches into the `main` branch, you can first check out `stage`, merge your modifications onto this branch, and then run the regression visual test.

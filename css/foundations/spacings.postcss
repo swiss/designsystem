@@ -8,18 +8,17 @@
   @apply mt-12 2xl:mt-14;
 
   &:first-child {
-    @apply mt-0; 
+    @apply mt-0;
   }
 }
 
-/* more specified margins */ 
+/* more specified margins */
 
 .vertical-spacing {
-
   /* elements following titles */
   & > :is(h1, h2, h3, h4, h5) {
-    @apply mb-0; 
-  
+    @apply mb-0;
+
     & + * {
       @apply mt-[1.5em];
     }
@@ -33,10 +32,10 @@
   & > p + p,
   & > p + ul,
   & > p + ol,
-  & > p + [identifier="list"],
+  & > p + [identifier='list'],
   & > ul + p,
   & > ol + p,
-  [identifier="list"] + p {
+  [identifier='list'] + p {
     @apply mt-[1em];
   }
 }

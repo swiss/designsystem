@@ -56,16 +56,16 @@ export default {
     });
 
     // demo only: force to show 2nd level of sub-navigation
-    Navy.showLevel(2); 
+    Navy.showLevel(2);
 
     // demo only: force level-0 to open when more button is clicked
     document.getElementById('more-button').addEventListener('click', function(){
-      Navy.showLevel(0); 
-    }); 
+      Navy.showLevel(0);
+    });
 
     MenuMore.init({
       'navigationItem': '#desktop-menu > .container > nav',
-      'moreButton': '#more-button', 
+      'moreButton': '#more-button',
       'moreContainer': '#more-container'
     });
   }

@@ -18,7 +18,7 @@
         </button>
         <div class="top-bar__right">
           <TopBarNavigation context="desktop" />
-          <LanguageSwitcher />
+          <LanguageSwitcher type="negative" />
         </div>
       </div>
     </div>
@@ -223,7 +223,7 @@
               <div class="search search--negative search--large">
                 <div class="search__group">
                   <input
-                    type="text"
+                    type="search"
                     id="search-input"
                     label="Ämter filtern"
                     placeholder="Filtern"

@@ -22,12 +22,17 @@ body {
   transform: translateY(-3em);
 }
 
+.body--mobile-menu-is-open-top-bar-disabled {
+  @apply overflow-hidden;
+  height: calc(100vh + 3rem);
+}
+
 #main-header {
   @apply relative z-30;
 }
 
 #main-content {
-  @apply min-h-screen lg:min-h-[50vh] 2xl:min-h-[30vh] ;
+  @apply min-h-screen lg:min-h-[50vh] 2xl:min-h-[30vh];
   @apply relative z-10;
 }
 
@@ -63,5 +68,3 @@ body {
 [id] {
   @apply scroll-mt-8;
 }
-
-

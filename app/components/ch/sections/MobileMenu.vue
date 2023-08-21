@@ -37,7 +37,7 @@ export default {
   },
   mounted () {
     Navy.initMobile(
-      '#mobile-menu-id > nav', 
+      '#mobile-menu-id > nav',
       '#mobile-menu-id'
     );
   }

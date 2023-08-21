@@ -17,7 +17,7 @@
 .storybook-icon {
   @apply flex flex-col items-center;
   @apply border border-gray-100;
-  @apply shadow hover:shadow-lg transition-shadow ;
+  @apply shadow hover:shadow-lg transition-shadow;
 }
 
 .storybook-icon__text {
@@ -27,7 +27,7 @@
 /* Color Presentation */
 
 .storybook-color-list {
-  @apply m-0 p-0 min-w-0 flex-1 ;
+  @apply m-0 p-0 min-w-0 flex-1;
   @apply grid grid-cols-2 gap-3;
   @apply sm:grid-cols-4;
   @apply md:grid-cols-5;
@@ -35,7 +35,7 @@
 }
 
 .storybook-color-list__title {
-  @apply col-span-full mt-12 mb-3 text-2xl font-bold capitalize ;
+  @apply col-span-full mt-12 mb-3 text-2xl font-bold capitalize;
 }
 
 .storybook-color {
@@ -74,9 +74,9 @@
 
 .storybook-demo-spacings {
   #main-content {
-    min-height: auto; 
+    min-height: auto;
   }
-} 
+}
 
 .storybook-demo-ratio .grid > div > div > * {
   @apply p-6 text-center text-xl text-purple-900;
@@ -87,96 +87,137 @@
 .storybook-show-container,
 .storybook-show-container section {
   @media (min-width: theme('screens.md')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(0*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(12*100%/12 + 0px) 0/2.25rem 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(0 * 100% / 12 + 0px) 0/2.25rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(12 * 100% / 12 + 0px) 0/2.25rem 100%;
   }
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 
   @media (min-width: theme('screens.lg')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(0*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(12*100%/12 + 0px) 0/2.5rem 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(0 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(12 * 100% / 12 + 0px) 0/2.5rem 100%;
   }
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 
   @media (min-width: theme('screens.xl')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(0*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(12*100%/12 + 0px) 0/3rem 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(0 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(12 * 100% / 12 + 0px) 0/3rem 100%;
   }
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 
   @media (min-width: theme('screens.3xl')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(0*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(12*100%/12 + 0px) 0/4rem 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(0 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(12 * 100% / 12 + 0px) 0/4rem 100%;
   }
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 }
 
 .storybook-show-grid,
 .storybook-show-grid .container--grid {
   @media (min-width: theme('screens.md')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(0*100%/12 + 0px) 0/2.25rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(12*100%/12 + 0px) 0/2.25rem 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(0 * 100% / 12 + 0px) 0/2.25rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(12 * 100% / 12 + 0px) 0/2.25rem 100%;
   }
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 
   @media (min-width: theme('screens.lg')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(0*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(1*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(2*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(3*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(4*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(5*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(6*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(7*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(8*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(9*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(10*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(11*100%/12 + 0px) 0/2.5rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(12*100%/12 + 0px) 0/2.5rem 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(0 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(1 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(2 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(3 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(4 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(5 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(6 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(7 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(8 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(9 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(10 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(11 * 100% / 12 + 0px) 0/2.5rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(12 * 100% / 12 + 0px) 0/2.5rem 100%;
   }
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 
   @media (min-width: theme('screens.xl')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(0*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(1*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(2*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(3*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(4*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(5*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(6*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(7*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(8*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(9*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(10*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(11*100%/12 + 0px) 0/3rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(12*100%/12 + 0px) 0/3rem 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(0 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(1 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(2 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(3 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(4 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(5 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(6 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(7 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(8 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(9 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(10 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(11 * 100% / 12 + 0px) 0/3rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(12 * 100% / 12 + 0px) 0/3rem 100%;
   }
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 
   @media (min-width: theme('screens.3xl')) {
-    background: 
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(0*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(1*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(2*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(3*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(4*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(5*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(6*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(7*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(8*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(9*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(10*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(11*100%/12 + 0px) 0/4rem 100%,
-    linear-gradient(rgba(255,0,0,0.05),rgba(255,0,0,0.05)) calc(12*100%/12 + 0px) 0/4rem 100%;
+    background: linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(0 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(1 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(2 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(3 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(4 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(5 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(6 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(7 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(8 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(9 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(10 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(11 * 100% / 12 + 0px) 0/4rem 100%,
+      linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05))
+        calc(12 * 100% / 12 + 0px) 0/4rem 100%;
   }
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 }
 
 .storybook-bg-negative {

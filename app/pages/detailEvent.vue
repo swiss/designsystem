@@ -47,12 +47,12 @@
                 <div class="date" lang="de">
                   <div class="date__wrapper">
                     <div class="date__day">10</div>
-                    <div class="date__month">Apr.</div>
+                    <div class="date__month">Apr</div>
                   </div>
                   <div class="date__separator">–</div>
                   <div class="date__wrapper">
                     <div class="date__day">11</div>
-                    <div class="date__month">Apr.</div>
+                    <div class="date__month">Apr</div>
                     <div class="date__year">2023</div>
                   </div>
                 </div>
@@ -247,12 +247,12 @@
                   <div class="date" lang="de">
                     <div class="date__wrapper">
                       <div class="date__day">10</div>
-                      <div class="date__month">Apr.</div>
+                      <div class="date__month">Apr</div>
                     </div>
                     <div class="date__separator">–</div>
                     <div class="date__wrapper">
                       <div class="date__day">11</div>
-                      <div class="date__month">Apr.</div>
+                      <div class="date__month">Apr</div>
                       <div class="date__year">2023</div>
                     </div>
                   </div>

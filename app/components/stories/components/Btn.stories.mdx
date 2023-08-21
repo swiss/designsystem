@@ -15,7 +15,7 @@ import Btn from '../../ch/components/Btn.vue';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Btn },
-  template: 
+  template:
     `
     <div style="padding: 3em;" class="${args.variant.endsWith('-negative') ? 'bg--secondary-600' : ''}">
       <Btn :variant="variant" :size="size" :icon="icon" :iconPos="iconPos" :label="label" />

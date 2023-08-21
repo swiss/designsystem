@@ -2,7 +2,7 @@
   MODAL
 \*----------------------------------------*/
 
-.modal, 
+.modal,
 .modal__backdrop {
   @apply w-full h-full top-0 left-0;
 }
@@ -18,57 +18,57 @@
   }
 
   &[open] {
-    @apply block; 
+    @apply block;
   }
 }
 
 .modal__backdrop {
   @apply absolute z-30;
   @apply bg-text-900/70;
-  @apply cursor-pointer;  
+  @apply cursor-pointer;
 }
 
 .modal__content {
-    @apply relative z-40;
-    @apply container;
-    @apply max-h-[80vh];
-    @apply flex flex-col items-stretch;
-    @apply my-0 mx-auto;
+  @apply relative z-40;
+  @apply container;
+  @apply max-h-[80vh];
+  @apply flex flex-col items-stretch;
+  @apply my-0 mx-auto;
 
-    /* 
+  /* 
     Sizing: 
     I didn't use `container container--grid` & `container__center--sm` 
     as the container then take the full-width and block the interaction 
     of the backdrop 
     */
 
-    .modal--xs & {
-      @apply max-w-screen-xs;
-    }
+  .modal--xs & {
+    @apply max-w-screen-xs;
+  }
 
-    .modal--sm & {
-      @apply max-w-screen-sm;
-    }
+  .modal--sm & {
+    @apply max-w-screen-sm;
+  }
 
-    .modal--md & {
-      @apply max-w-screen-md;
-    }
+  .modal--md & {
+    @apply max-w-screen-md;
+  }
 
-    .modal--lg & {
-      @apply max-w-screen-lg;
-    }
+  .modal--lg & {
+    @apply max-w-screen-lg;
+  }
 
-    .modal--xl & {
-      @apply max-w-screen-xl;
-    }
+  .modal--xl & {
+    @apply max-w-screen-xl;
+  }
 
-    .modal--auto & {
-      @apply inline-flex w-auto text-left;
-    }
+  .modal--auto & {
+    @apply inline-flex w-auto text-left;
+  }
 }
 
 .modal__header {
-  @apply flex justify-end items-start; 
+  @apply flex justify-end items-start;
   @apply w-full;
   @apply text-white;
   @apply mb-2 lg:mb-4;
@@ -94,8 +94,7 @@
 }
 
 .modal__footer {
-  @apply w-full h-auto; 
+  @apply w-full h-auto;
   @apply text-right p-4;
-  @apply  bg-white border-t border-secondary-100;
+  @apply bg-white border-t border-secondary-100;
 }
-

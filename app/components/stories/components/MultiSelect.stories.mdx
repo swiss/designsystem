@@ -6,26 +6,28 @@ import Notification from '../../ch/components/Notification.vue'
   title="Components/Form/MultiSelect"
   component={MultiSelect}
   argTypes={{
+    bare: { control: { type: 'boolean' } },
     variant: {
       control: {
         type: 'select',
         options: ['outline', 'negative'],
       },
     },
-    required:   { control: { type: 'boolean' } },
+    required: { control: { type: 'boolean' } },
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
     label: {},
-    disabled:   { control: { type: 'boolean' } },
-    hideLabel:   { control: { type: 'boolean' } },
-    multiple:   { control: { type: 'boolean' } },
+    disabled: { control: { type: 'boolean' } },
+    hideLabel: { control: { type: 'boolean' } },
+    multiple: { control: { type: 'boolean' } },
     placeholder: {},
+    name: {},
     message: {},
     messageType: {
       control: {
         type: 'select',
         options: ['error', 'warning', 'success', 'info'],
       },
-    }
+    },
   }}
 />
 
@@ -41,13 +43,16 @@ export const Template = (args, { argTypes }) => ({
         :label="label"
         :disabled="disabled"
         :hideLabel="hideLabel"
-        :id="id"
         :multiple="multiple"
         :name="name"
         :message="message"
         :messageType="messageType"
         :required="required"
+        :selected="selected"
         :placeholder="placeholder"
+        :excluded="excluded"
+        :selectLimit="selectLimit"
+        :bare="bare"
       />
     </div>
   `,
@@ -55,24 +60,14 @@ export const Template = (args, { argTypes }) => ({
 
 # MultiSelect
 
-<div class="notification notification--warning">
-  <div class="notification__icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
-  </div>
-  <div class="notification__content">
-    <div>
-      This is a Vue-only component. Styles are not available in the main CSS file, unless you install the Vue Select library and customize the some styles and CSS variables.
-    </div>
-  </div>
-</div>
-<div>&nbsp;</div>
-
 ## General
+
 - A multi select component is complex to style and customize without using a library. In this style guide, we use [Vue Select](https://vue-select.org/) to handle the logic and style of the select. Vue 2 and 3 are supported. To avoid a pollution of the CSS with Vue-only styles for other frameworks, all CSS definitions are scoped to the demo Vue component.
 
 - The `MultiSelect` component is a wrapper around the `Vue Select` component.
 
 - If you define the `multiple` prop to false, you can use this component instead of the standard `Select` component.
+
 ## Example
 
 <Canvas>
@@ -84,7 +79,7 @@ export const Template = (args, { argTypes }) => ({
         'Really long option that is so long that it will wrap to the next line',
         'foo',
         'bar',
-        'baz'
+        'baz',
       ],
       variant: 'outline',
       size: 'base',
@@ -92,22 +87,24 @@ export const Template = (args, { argTypes }) => ({
       disabled: false,
       hideLabel: false,
       name: 'select-name',
-      id:'select-id',
       multiple: true,
+      bare: false,
       placeholder: 'Placeholder',
-      variant: 'outline',
+      excluded: ['foo'],
+      selectLimit: 3,
+      selected: ['bar', 'Relatively long option'],
+      required: true
     }}
-  >
+>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Example" />
 
-
 ## Install Vue Select
 
-``` bash
+```bash
 npm install vue-select
 ```
 
@@ -116,97 +113,20 @@ npm install vue-select
 The `Deselect` button and the `Openindicator` are two child components of the `Vue Select` component. You can overwrite them to match the style guide with the help of the following props:
 
 ```html
-<vSelect
-  :components="{Deselect, OpenIndicator}"
-  ...
-/>
+<vSelect :components="{Deselect, OpenIndicator}" ... />
 ```
+
 and render directly the child components in the `data` function:
+
 ```js
 export default {
   data: () => ({
     Deselect: {
-      render: createElement => createElement('span', '×'),
+      render: (createElement) => createElement('span', '×'),
     },
     OpenIndicator: {
-      render: createElement => createElement('span'), // replace the default icon
+      render: (createElement) => createElement('span'), // replace the default icon
     },
   }),
 }
 ```
-
-
-## Define Vue Select CSS Variables
-
-A couple of existing CSS variables have to be overriden to match the style guide:
-
-``` css
---vs-font-size: inherit;
---vs-line-height: 1.375;
---vs-search-input-placeholder-color: theme('colors.text.400');
---vs-search-input-bg: inherit;
---vs-border-color: theme('colors.text.500');
---vs-border-radius: 0px;
---vs-actions-padding: 4px 3em 0 3px;
---vs-selected-bg: theme('colors.text.200');
---vs-selected-border-color: transparent;
---vs-dropdown-option--active-bg: theme('colors.text.600');
---vs-dropdown-option--active-color: theme('colors.white');
---vs-state-disabled-bg: theme('colors.text.50');
---vs-state-disabled-color: theme('colors.text.400');
---vs-state-disabled-controls-color: theme('colors.text.400');
-```
-the `theme()` function is a TailwindCSS function to access the theme configuration (see [TailwindCSS documentation](https://tailwindcss.com/docs/functions-and-directives#theme)
-
-## Override Vue Select CSS Classes
-
-Additionally, some CSS classes have to be overriden to match the style guide:
-
-``` css
-.v-select input,
-.v-select .vs__selected {
-  --vs-input-min-height: calc(var(--input-min-height) - 10px);
-  --vs-input-min-height-2xl: calc(var(--input-min-height-2xl) - 8px);
-  @apply min-h-[var(--vs-input-min-height)] 2xl:min-h-[var(--vs-input-min-height-2xl)];
-}
-
-.v-select.input--lg input,
-.v-select.input--lg .vs__selected {
-  --vs-input-min-height: calc(var(--input-min-height) - 6px);
-  --vs-input-min-height-2xl: calc(var(--input-min-height-2xl) - 6px);
-}
-
-.v-select .vs__selected-options {
-  @apply pl-2;
-}
-
-.v-select.vs--multiple .vs__selected-options:has(.vs__selected) {
-  @apply pl-[2px];
-}
-
-.v-select.input--error {
-  --vs-border-color: theme('colors.red.500');
-}
-```
-
-If you use the `negative` variant of the MultiSelect, add the following CSS:
-
-``` css
-.v-select.input--negative {
-  --vs-dropdown-bg: theme('colors.secondary.600');
-  --vs-dropdown-color: theme('colors.secondary.100');
-  --vs-dropdown-option-color: theme('colors.white');
-  --vs-selected-bg: theme('colors.secondary.700');
-  --vs-selected-color: theme('colors.white');
-  --vs-selected-border-color: theme('colors.secondary.300');
-  --vs-search-input-color: theme('colors.secondary.100');
-  --vs-dropdown-option--active-bg: theme('colors.text.500');
-  --vs-dropdown-option--active-color: theme('colors.white');
-}
-
-.v-select.input--error.input--negative {
-  --vs-border-color: theme('colors.red.300');
-}
-```
-
-

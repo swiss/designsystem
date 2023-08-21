@@ -1,19 +1,19 @@
 const BreadcrumbNav = {
 
-  init(navigationItem) {
+  init (navigationItem) {
     BreadcrumbNav.currentMenuBtn = undefined;
 
     const nav = document.querySelector(navigationItem);
     const breadcrumbBtns = nav.querySelectorAll(':scope > ul > li > a');
 
-    function closeBreadcrumbNav() {
+    function closeBreadcrumbNav () {
       if (BreadcrumbNav.currentMenuBtn) {
         BreadcrumbNav.currentMenuBtn.classList.remove('clicked');
         BreadcrumbNav.currentMenuBtn = undefined;
       }
     }
 
-    function openBreadcrumbNav(btn) {
+    function openBreadcrumbNav (btn) {
       btn.classList.add('clicked');
       BreadcrumbNav.currentMenuBtn = btn;
     }
@@ -35,8 +35,8 @@ const BreadcrumbNav = {
       });
     });
 
-    document.addEventListener('click', (event)=> {
-      if(!event.target.closest(navigationItem)){
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest(navigationItem)) {
         closeBreadcrumbNav();
       }
     })

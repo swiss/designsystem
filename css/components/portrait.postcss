@@ -5,14 +5,14 @@
 .portrait {
   @apply flex flex-col items-center;
   @apply lg:py-6;
-  
-  @screen lg {  
+
+  @screen lg {
     @apply grid grid--responsive-cols-2 gap--responsive items-start;
-  }  
-  
-  @screen xl {  
+  }
+
+  @screen xl {
     @apply grid--responsive-cols-3;
-  }   
+  }
 }
 
 .portrait__image {
@@ -25,17 +25,17 @@
     @apply max-w-none;
 
     /* overlapping width of the picture: 100% +  margin-top of the card + responsive gap */
-    @screen lg {  
-      width: calc(100% + theme('spacing.10') + theme('spacing.10')); 
-    }    
+    @screen lg {
+      width: calc(100% + theme('spacing.10') + theme('spacing.10'));
+    }
 
-    @screen xl {  
+    @screen xl {
       width: calc(100% + theme('spacing.12') + theme('spacing.12'));
-    }  
-    
-    @screen 3xl {  
-      width: calc(100% + theme('spacing.16') + theme('spacing.16')); 
-    }  
+    }
+
+    @screen 3xl {
+      width: calc(100% + theme('spacing.16') + theme('spacing.16'));
+    }
   }
 }
 

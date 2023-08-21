@@ -1,5 +1,5 @@
 const AnchorNav = {
-  setCurrentMenuItem() {
+  setCurrentMenuItem () {
     // select all titles with an id in the main element.
     // this selection could be narrowed depending on the way the anchoring is implemented:
     const sections = document.querySelectorAll('main h2[id]');
@@ -12,7 +12,7 @@ const AnchorNav = {
         // and applied to this new appearing section:
         if (sections.hasOwnProperty(s) && sections[s].offsetTop <= scrollPos - scrollOffset) {
           const id = sections[s].id;
-          let currentItem =  document.querySelector('main .menu__item--active')
+          let currentItem = document.querySelector('main .menu__item--active')
           if (currentItem) currentItem.classList.remove('menu__item--active');
           document.querySelector(`a[href*=${id}]`).classList.add('menu__item--active');
         }

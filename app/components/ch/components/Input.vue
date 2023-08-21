@@ -35,7 +35,7 @@ export default {
   props: {
     type: {
       type: String,
-      validator: (prop) => ['color', 'date', 'datetime-local', 'email', 'file', 'month', 'number', 'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week'].includes(prop),
+      validator: (prop) => ['color', 'date', 'datetime-local', 'email', 'file', 'month', 'number', 'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week', 'submit'].includes(prop),
       default: 'text'
     },
     variant: {
@@ -102,6 +102,7 @@ export default {
       if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
       if (this.message) base += `input--${this.messageType} `
+      if (this.type === 'submit') base += 'input--submit'
       return base
     },
     labelClasses() {

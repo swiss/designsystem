@@ -38,7 +38,7 @@ module.exports = {
       current: 'currentColor',
       inherit: 'inherit',
       primary: {
-        50:  'var(--color-primary-50)',
+        50: 'var(--color-primary-50)',
         100: 'var(--color-primary-100)',
         200: 'var(--color-primary-200)',
         300: 'var(--color-primary-300)',
@@ -50,7 +50,7 @@ module.exports = {
         900: 'var(--color-primary-900)',
       },
       secondary: {
-        50:  'var(--color-secondary-50)',
+        50: 'var(--color-secondary-50)',
         100: 'var(--color-secondary-100)',
         200: 'var(--color-secondary-200)',
         300: 'var(--color-secondary-300)',
@@ -218,14 +218,14 @@ module.exports = {
     },
     fontFamily: {
       regular: [
-        'FrutigerNeueLTPro-Regular',
+        'Font-Regular',
         'Hind',
         'Fallback-font',
         'Sans-Serif',
       ],
-      italic: ['FrutigerNeueLTPro-Italic', 'Hind', 'Fallback-font'],
-      bold: ['FrutigerNeueLTPro-Bold', 'Hind', 'Fallback-font'],
-      'bold-italic': ['FrutigerNeueLTPro-BoldIt', 'Hind', 'Fallback-font'],
+      italic: ['Font-Italic', 'Hind', 'Fallback-font'],
+      bold: ['Font-Bold', 'Hind', 'Fallback-font'],
+      'bold-italic': ['Font-Bold-Italic', 'Hind', 'Fallback-font'],
     },
     boxShadow: {
       sm: '0px 1px 2px 0px rgba(0,0,0,0.05)',

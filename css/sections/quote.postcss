@@ -5,10 +5,10 @@
 .quote {
   @apply container__center--md gap--responsive;
   @apply grid justify-center;
-  
+
   grid-template-columns: repeat(2, minmax(min-content, max-content));
-  grid-template-areas: "A B";
-  
+  grid-template-areas: 'A B';
+
   @apply text-text-600;
 
   .bg--secondary-500 &,
@@ -38,7 +38,7 @@
   @apply quote-font-size;
   @apply text--bold;
   @apply lg:-indent-9;
-  
+
   &::before {
     content: '\00ab';
     @apply leading-[0];
@@ -77,11 +77,10 @@
   }
 }
 
-
-blockquote { 
+blockquote {
   @apply quote__title;
   @apply quote-font-size;
-  
+
   @apply pt-12 pb-10;
   @apply lg:py-14;
 
@@ -93,5 +92,3 @@ blockquote {
     @apply top-8 lg:top-0;
   }
 }
-
-
