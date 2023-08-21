@@ -2,13 +2,12 @@
   MENU
 \*----------------------------------------*/
 
-
 .menu {
   @apply list-none;
 
-  a, 
+  a,
   a:hover {
-    @apply no-underline text-inherit; /* override general styling for links in main */ 
+    @apply no-underline text-inherit; /* override general styling for links in main */
   }
 }
 
@@ -17,11 +16,10 @@
   @apply px-4 py-3 relative;
   @apply cursor-pointer;
   @apply transition-colors;
-  
+
   @apply hover:bg-secondary-50;
   @apply focus:text-primary-600;
 }
-
 
 .menu__item--small {
   @apply text-sm 3xl:text-base;
@@ -74,9 +72,8 @@
 
 /* NON RESPONSIVE UTILITIES */
 
-
 .menu__item--active::after {
-  content:'';
+  content: '';
   @apply block bg-primary-500;
   @apply w-[3px];
   @apply absolute top-0 bottom-0 left-0;
@@ -123,6 +120,3 @@
   @apply bg-secondary-50;
   @apply text-text-600;
 }
-
-
-

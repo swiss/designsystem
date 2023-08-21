@@ -38,7 +38,7 @@ module.exports = {
       current: 'currentColor',
       inherit: 'inherit',
       primary: {
-        50:  'var(--color-primary-50)',
+        50: 'var(--color-primary-50)',
         100: 'var(--color-primary-100)',
         200: 'var(--color-primary-200)',
         300: 'var(--color-primary-300)',
@@ -50,7 +50,7 @@ module.exports = {
         900: 'var(--color-primary-900)',
       },
       secondary: {
-        50:  'var(--color-secondary-50)',
+        50: 'var(--color-secondary-50)',
         100: 'var(--color-secondary-100)',
         200: 'var(--color-secondary-200)',
         300: 'var(--color-secondary-300)',

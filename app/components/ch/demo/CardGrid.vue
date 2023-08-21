@@ -23,8 +23,8 @@ export default {
 
   computed: {
     computedClasses () {
-      let base = 'grid gap--responsive '   
-      if (this.nItems ===  1) base += `grid--items-1 `  
+      let base = 'grid gap--responsive '
+      if (this.nItems ===  1) base += `grid--items-1 `
       else if (this.nItems ===  2) base += `grid--items-2 `
       else if (this.nItems ===  3) base += `grid--items-3 `
       else if (this.nItems ===  4) base += `grid--items-4 `

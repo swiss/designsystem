@@ -8,13 +8,13 @@
   @apply inline-flex items-center;
   @apply mr-3 md:mb-0.5 lg:mb-1;
   @apply focus:outline-none ring-0 no-underline;
-  
-  &, 
+
+  &,
   &:hover {
-    @apply text-inherit; /* override general styling for links in main */ 
+    @apply text-inherit; /* override general styling for links in main */
   }
 
-  &:focus .tag-item__inner { 
+  &:focus .tag-item__inner {
     @apply outline-none ring-2 ring-purple-500;
   }
 }
@@ -32,8 +32,6 @@
   @apply text-left;
 }
 
-
-
 /* SIZES */
 
 .tag-item,
@@ -47,35 +45,33 @@
   @apply text--sm;
 }
 
-
 /* TYPES */
 
-.tag-item, 
+.tag-item,
 .tag-item--default {
   .tag-item__inner {
     @apply bg-gray-200;
   }
 
-  &:hover .tag-item__inner { 
+  &:hover .tag-item__inner {
     @apply bg-gray-300;
   }
 }
 
-.tag-item--active {  
-  @apply pointer-events-none; 
+.tag-item--active {
+  @apply pointer-events-none;
 
   .tag-item__inner {
     @apply text-white bg-gray-800;
   }
 }
 
-.tag-item--primary {  
-
+.tag-item--primary {
   .tag-item__inner {
     @apply text-white bg-gray-800;
   }
 
-  &:hover .tag-item__inner { 
+  &:hover .tag-item__inner {
     @apply bg-black;
   }
 }

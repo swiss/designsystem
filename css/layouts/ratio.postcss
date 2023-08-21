@@ -35,18 +35,11 @@
 video::cue {
   @apply text--base;
   @apply text-yellow-200 bg-transparent;
-  text-shadow:
-  -0.5px -0.5px 0 #000,
-  0     -0.5px 0 #000,
-  0.5px -0.5px 0 #000,
-  0.5px  0     0 #000,
-  0.5px  0.5px 0 #000,
-  0      0.5px 0 #000,
-  -0.5px  0.5px 0 #000,
-  -0.5px  0     0 #000,
-  0      0   3px #000;
-  
-  @media all and (display-mode: fullscreen) { 
+  text-shadow: -0.5px -0.5px 0 #000, 0 -0.5px 0 #000, 0.5px -0.5px 0 #000,
+    0.5px 0 0 #000, 0.5px 0.5px 0 #000, 0 0.5px 0 #000, -0.5px 0.5px 0 #000,
+    -0.5px 0 0 #000, 0 0 3px #000;
+
+  @media all and (display-mode: fullscreen) {
     font-family: 'FrutigerNeueLTPro-Bold';
     font-size: calc(13px + 2vw);
   }

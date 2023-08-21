@@ -53,7 +53,7 @@ export default {
         base += `grid--responsive-cols-3/4-1/4 grid--reverse`
       } else {
         base += `grid--responsive-cols-3/4-1/4 `
-      } 
+      }
       return base
     }
 

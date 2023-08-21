@@ -8,28 +8,46 @@ import Input from '../../ch/components/Input.vue'
     type: {
       control: {
         type: 'select',
-        options: ['color', 'date', 'datetime-local', 'email', 'file', 'month', 'number', 'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week', 'submit'],
+        options: [
+          'color',
+          'date',
+          'datetime-local',
+          'email',
+          'file',
+          'month',
+          'number',
+          'password',
+          'range',
+          'search',
+          'tel',
+          'text',
+          'time',
+          'url',
+          'week',
+          'submit',
+        ],
       },
     },
-    required:   { control: { type: 'boolean' } },
+    required: { control: { type: 'boolean' } },
     size: { control: { type: 'select', options: ['sm', 'base', 'lg'] } },
     variant: { control: { type: 'select', options: ['outline', 'negative'] } },
     label: {},
-    hideLabel:   { control: { type: 'boolean' } },
+    hideLabel: { control: { type: 'boolean' } },
     message: {},
     messageType: {
       control: {
         type: 'select',
         options: ['error', 'warning', 'success', 'info'],
       },
-    }
+    },
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Input },
-  template: '<Input :type="type" :required="required" :variant="variant" :size="size" :label="label" :hideLabel="hideLabel" :placeholder="placeholder" :value="value" :id="id" :min="min" :max="max" :step="step" :message="message" :messageType="messageType" />',
+  template:
+    '<Input :type="type" :required="required" :variant="variant" :size="size" :label="label" :hideLabel="hideLabel" :placeholder="placeholder" :value="value" :id="id" :min="min" :max="max" :step="step" :message="message" :messageType="messageType" />',
 })
 
 # Input
@@ -51,7 +69,7 @@ export const Template = (args, { argTypes }) => ({
       max: undefined,
       step: undefined,
       message: undefined,
-      messageType: 'error'
+      messageType: 'error',
     }}
   >
     {Template.bind({})}
@@ -94,24 +112,25 @@ For size variations, the following css classes are built:
 ## Required field
 
 If the field is mandatory:
+
 - a `required` attribute is added to the input element.
 - an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element.
 - the word “required“ is added to the label for screen readers. This can be done by adding a sr-only class on the legend element.
 
 <Canvas>
-<div class="form__group__input">
-  <label for="my-id" class="text--base text--asterisk">
-    Name <span class="sr-only">required</span>
-  </label>
-  <input
-    type="text"
-    id="my-id"
-    name="my-id"
-    placeholder="Placeholder"
-    class="input--outline input--base"
-    required
-  />
-</div>
+  <div class="form__group__input">
+    <label for="my-id" class="text--base text--asterisk">
+      Name <span class="sr-only">required</span>
+    </label>
+    <input
+      type="text"
+      id="my-id"
+      name="my-id"
+      placeholder="Placeholder"
+      class="input--outline input--base"
+      required
+    />
+  </div>
 </Canvas>
 
 ## Messages
@@ -120,21 +139,18 @@ If the field has error, an `input--error` class is added to the input element. A
 a `badge badge--sm badge--error` element wraps the error message, right after the input element:
 
 <Canvas>
-<div class="form__group__input">
-  <label for="my-id" class="text--base text--asterisk">
-    Name <span class="sr-only">required</span>
-  </label>
-  <input
-    type="text"
-    id="my-id"
-    name="my-id"
-    placeholder="Placeholder"
-    class="input--outline input--base input--error"
-    required
-  />
-  <div class="badge badge--sm badge--error">
-    This field is required
+  <div class="form__group__input">
+    <label for="my-id" class="text--base text--asterisk">
+      Name <span class="sr-only">required</span>
+    </label>
+    <input
+      type="text"
+      id="my-id"
+      name="my-id"
+      placeholder="Placeholder"
+      class="input--outline input--base input--error"
+      required
+    />
+    <div class="badge badge--sm badge--error">This field is required</div>
   </div>
-</div>
 </Canvas>
-

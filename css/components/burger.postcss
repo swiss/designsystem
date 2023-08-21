@@ -4,7 +4,7 @@
 
 .burger {
   @apply h-full flex items-center lg:hidden;
-  @apply px-4 -mr-4
+  @apply px-4 -mr-4;
 }
 
 .burger__icon {
@@ -15,7 +15,6 @@
     @apply text-primary-600;
   }
 }
-
 
 .burger__bar {
   @apply block w-full h-full;
@@ -43,7 +42,7 @@
     transform: translateY(50%);
 
     &::after {
-      transform: rotate(45deg)
+      transform: rotate(45deg);
     }
   }
 }
@@ -56,10 +55,9 @@
 
   .body--mobile-menu-is-open &,
   .burger--is-open & {
-    transform: scaleX(0)
+    transform: scaleX(0);
   }
 }
-
 
 .burger__bar:nth-of-type(3) {
   &::after {
@@ -72,9 +70,7 @@
     transform: translateY(-50%);
 
     &::after {
-      transform: rotate(-45deg)
+      transform: rotate(-45deg);
     }
   }
 }
-
-

@@ -1,4 +1,3 @@
-
 /* ----------------------------------------*\
   CONTAINER
 \* ---------------------------------------- */
@@ -59,26 +58,26 @@
 }
 
 .container__center--xs {
-  @apply     col-span-12;
-  @apply  md:col-span-10;
-  @apply  lg:col-span-8;
-  @apply  xl:col-span-6;
+  @apply col-span-12;
+  @apply md:col-span-10;
+  @apply lg:col-span-8;
+  @apply xl:col-span-6;
 
-  @apply  md:col-start-2;
-  @apply  lg:col-start-3;
-  @apply  xl:col-start-4;
+  @apply md:col-start-2;
+  @apply lg:col-start-3;
+  @apply xl:col-start-4;
 
   figure img {
-    @apply w-full; 
+    @apply w-full;
   }
 }
 
 .container__center--sm {
-  @apply     col-span-12;
-  @apply  md:col-span-10;
-  @apply  xl:col-span-8;
+  @apply col-span-12;
+  @apply md:col-span-10;
+  @apply xl:col-span-8;
 
-  @apply  md:col-start-2;
+  @apply md:col-start-2;
   @apply xl:col-start-3;
 }
 
@@ -88,9 +87,9 @@
 }
 
 .container__main {
-  @apply     col-span-12;
-  @apply  md:col-span-7;
-  @apply  xl:col-span-6 xl:col-start-2;
+  @apply col-span-12;
+  @apply md:col-span-7;
+  @apply xl:col-span-6 xl:col-start-2;
 }
 
 .container--reverse-mobile .container__main {
@@ -107,11 +106,11 @@
 }
 
 .container__aside {
-  @apply     col-span-12;
-  @apply  md:col-span-5;
-  @apply  lg:col-span-4;
+  @apply col-span-12;
+  @apply md:col-span-5;
+  @apply lg:col-span-4;
 
-  @apply  md:col-start-8;
+  @apply md:col-start-8;
 
   & > *,
   & .sticky > * {
@@ -125,16 +124,15 @@
 
 .container--reverse .container__aside {
   @apply md:col-start-1 md:order-1;
-  @apply  lg:col-start-2;
+  @apply lg:col-start-2;
 }
 
 .container--reverse-mobile.container--reverse .container__aside {
   @apply order-1 md:order-1;
 }
 
-
 @layer utilities {
-  .broader-than-container, 
+  .broader-than-container,
   .broader-than-container-centered {
     --side-margin: calc(theme('spacing.4') * -1);
 
@@ -143,15 +141,15 @@
     }
 
     @media screen(sm) {
-      --side-margin: calc((100vw - 6em ) / -12 );
+      --side-margin: calc((100vw - 6em) / -12);
     }
 
     @media screen(xl) {
-      --side-margin: calc((theme('screens.xl') - 6em ) / -12 );
+      --side-margin: calc((theme('screens.xl') - 6em) / -12);
     }
 
     @media screen(2xl) {
-      --side-margin: calc((theme('screens.2xl') - 6em ) / -12 );
+      --side-margin: calc((theme('screens.2xl') - 6em) / -12);
     }
 
     margin-left: var(--side-margin);
@@ -163,8 +161,8 @@
 
   .broader-than-container {
     @media screen(md) {
-      padding-left: 0; 
-      padding-right: 0; 
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }

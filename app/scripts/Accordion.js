@@ -9,18 +9,18 @@ function getFocusableElements (element = document) {
 }
 
 const Accordion = {
-  init(target) {
+  init (target) {
     let buttons = document.querySelectorAll(target)
     buttons.forEach(button => {
       let content = button.nextElementSibling
       let focusableElements = getFocusableElements(content)
       // make focusable content unfocusable
       focusableElements.forEach(item => {
-        item.tabIndex =  -1
+        item.tabIndex = -1
       })
 
       button.addEventListener("click", (event) => {
-        if (button.classList.contains("active")) { 
+        if (button.classList.contains("active")) {
           // close drawer
           button.classList.remove("active")
           button.setAttribute("aria-expanded", false)
@@ -28,7 +28,7 @@ const Accordion = {
           content.setAttribute("aria-hidden", true)
           // make focusable content unfocusable
           focusableElements.forEach(item => {
-            item.tabIndex =  -1
+            item.tabIndex = -1
           })
         }
         else {

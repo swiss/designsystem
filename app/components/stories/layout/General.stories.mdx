@@ -6,12 +6,12 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs';
 
 # Sections and containers
 
-Schematically, a `section` contains a `container`. 
+Schematically, a `section` contains a `container`.
 - `.section` manage the vertical spacing
 - `.container` manage the horizontal spacing
 
 ```html
-<main id="main-content">     
+<main id="main-content">
   <section class="section">
     <div class="container">
       <!-- Content -->
@@ -23,7 +23,7 @@ Schematically, a `section` contains a `container`.
  Apply the `container--grid` variant to create a 12 cols grid container.
 
 ```html
-<main id="main-content">     
+<main id="main-content">
   <section class="section">
     <div class="container container--grid">
       <div class="container__[variant]">
@@ -37,7 +37,7 @@ Schematically, a `section` contains a `container`.
 On the basis explained above, additional classes adjust the global layout of a section:
 
 ```html
-<main id="main-content">     
+<main id="main-content">
   <section class="section section--default">
     <div class="container container--grid gap--responsive">
       <div class="container__center--xs">
@@ -60,7 +60,7 @@ Check the complete example of a <a href="?path=/docs/pages-detail-page-simple--e
 # Example for a main + aside section
 
 ```html
-<main id="main-content">     
+<main id="main-content">
   <section class="section section--default">
     <div class="container container--grid gap--responsive">
       <div class="container__main">
@@ -68,7 +68,7 @@ Check the complete example of a <a href="?path=/docs/pages-detail-page-simple--e
       </div>
       <div class="container__aside">
         <!-- Aside content, displayed in a right aligned container--grid -->
-      </div> 
+      </div>
     </div>
   </section>
 </main>

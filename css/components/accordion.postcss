@@ -13,7 +13,7 @@ main .accordion {
 
 .accordion__item {
   @apply border-t border-secondary-200;
-  @apply list-none; 
+  @apply list-none;
   @apply mt-0 !important;
 
   &:last-of-type {
@@ -29,7 +29,9 @@ main .accordion {
   @apply transition-colors duration-200;
 
   @media (hover: none) {
-    &:hover { color: inherit; }
+    &:hover {
+      color: inherit;
+    }
   }
 }
 

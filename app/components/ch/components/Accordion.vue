@@ -26,7 +26,7 @@ export default {
       default: false
     }
   },
-  
+
   mounted () {
     Accordion.init (
       `#accordion-${this.id} button`

@@ -1,9 +1,9 @@
 <template>
   <div class="audio-player">
-    <audio 
+    <audio
       controls
       :src="url"
-      :type="type" 
+      :type="type"
       :aria-label="title"
     >
       Your browser cannot play this audio document directly<br>

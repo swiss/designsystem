@@ -2,7 +2,8 @@
   MAIN NAVIGATION
 \*----------------------------------------*/
 
-.main-navigation {}
+.main-navigation {
+}
 
 .mobile-menu .main-navigation,
 .main-navigation--mobile {
@@ -33,7 +34,7 @@
     @apply transition-all;
 
     &::after {
-      content:'';
+      content: '';
       @apply block;
       @apply h-[3px];
       @apply absolute right-4 bottom-0 left-4;
@@ -44,7 +45,7 @@
       @apply ring-inset;
     }
 
-    &.active::after, 
+    &.active::after,
     &:hover::after {
       @apply bg-primary-500;
     }
@@ -64,4 +65,3 @@
     @apply block;
   }
 }
-

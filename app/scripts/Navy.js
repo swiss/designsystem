@@ -1,12 +1,12 @@
 const Navy = {
 
-  showLevel(level) {
+  showLevel (level) {
     document.body.classList.remove('show-level-0', 'show-level-1', 'show-level-2', 'show-level-3', 'show-level-4', 'show-level-5', 'show-level-6', 'show-level-7');
     document.body.classList.add(`show-level-${level}`);
     Navy.currentLevel = level;
   },
 
-  resizeDrawerHeight(target) {
+  resizeDrawerHeight (target) {
 
     let paddingTop = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-top'));
     let paddingBottom = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-bottom'));
@@ -26,7 +26,7 @@ const Navy = {
     Navy.resizeDrawerHeight(relatedMenu);
 
     // focus handling
-    function passFocus(){
+    function passFocus () {
       // get first link of the current slide, set focus on it:
       let firstLink = Navy.drawer.querySelector(`.navy__level-${Navy.currentLevel} ul > li a`)
       firstLink == document.activeElement ? firstLink.blur() : firstLink.focus();
@@ -42,9 +42,9 @@ const Navy = {
     }
   },
 
-  parseTree(ul, level) {
+  parseTree (ul, level) {
     let nextButtons = ul.querySelectorAll(':scope > li > .navy__has-children');
-    if ( nextButtons.length === 0 ) return
+    if (nextButtons.length === 0) return
 
     let backButtons = ul.querySelectorAll(':scope > li > ul > li > .navy__back');
     let submenus = ul.querySelectorAll(":scope > li > ul");
@@ -53,17 +53,17 @@ const Navy = {
       btn.relatedMenu = btn.nextElementSibling
 
       // inject menu in it's respective slide:
-      Navy.level[level+1].appendChild(btn.relatedMenu);
+      Navy.level[level + 1].appendChild(btn.relatedMenu);
 
       btn.addEventListener('click', function () {
-        Navy.showLevel(level+1);
+        Navy.showLevel(level + 1);
 
         Navy.displayRelatedSubmenu(btn, btn.relatedMenu, submenus);
         Navy.currentMenuLink = btn
       });
 
       // recursion for next navigation levels
-      Navy.parseTree(btn.relatedMenu, level+1);
+      Navy.parseTree(btn.relatedMenu, level + 1);
     });
 
     [].forEach.call(backButtons, function (backBtn) {
@@ -75,7 +75,7 @@ const Navy = {
     });
   },
 
-  buildSlides (target){
+  buildSlides (target) {
     const targetElement = document.querySelector(target);
 
     Navy.currentMenuLink = undefined
@@ -126,7 +126,7 @@ const Navy = {
     Navy.currentBtn = btn;
   },
 
-  closeSubmenu(mainmenuBtn) {
+  closeSubmenu (mainmenuBtn) {
     Navy.drawer.classList.add('hidden');
     Navy.overlay.classList.add('hidden');
     mainmenuBtn.classList.remove('clicked');
@@ -134,7 +134,7 @@ const Navy = {
     Navy.currentRelatedMenu = undefined;
   },
 
-  toggleSubmenu(mainmenuBtn, relatedMenu, submenus) {
+  toggleSubmenu (mainmenuBtn, relatedMenu, submenus) {
     if (Navy.currentMenuBtn === undefined) {
       Navy.drawer.classList.remove('hidden');
       Navy.overlay.classList.remove('hidden');
@@ -157,7 +157,7 @@ const Navy = {
     Navy.setDrawerXPosition(mainmenuBtn);
   },
 
-  initDesktop(options) {
+  initDesktop (options) {
 
     // build navy structure and inject it in the drawer:
     Navy.buildSlides(options.drawer);
@@ -169,11 +169,11 @@ const Navy = {
     Navy.currentLevel = 0;
 
     const closeBtn = document.querySelector(options.closeButton);
-    const mainmenuBtns =Navy.nav.querySelectorAll(':scope > ul > li > a');
-    const submenus =Navy.nav.querySelectorAll(':scope > ul > li > ul');
+    const mainmenuBtns = Navy.nav.querySelectorAll(':scope > ul > li > a');
+    const submenus = Navy.nav.querySelectorAll(':scope > ul > li > ul');
     const slide0 = Navy.drawer.querySelector(':scope > .navy > .navy__level-0');
 
-    window.addEventListener('resize', function (){
+    window.addEventListener('resize', function () {
       Navy.setDrawerXPosition(Navy.currentMenuBtn);
       Navy.resizeDrawerHeight(Navy.currentRelatedMenu);
     });

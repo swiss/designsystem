@@ -47,14 +47,12 @@
 }
 
 .carousel--fraction {
-
   .carousel__fonctions {
     @apply justify-end;
   }
 }
 
 .carousel--bullets {
-
   .carousel__prev {
     @apply lg:absolute lg:top-0 lg:bottom-[60px] lg:-left-14 lg:z-10;
     @apply 2xl:-left-20;
@@ -64,7 +62,7 @@
   .carousel__pagination {
     @apply order-2;
   }
-  
+
   .carousel__next {
     @apply lg:absolute lg:top-0 lg:bottom-[60px] lg:-right-14 lg:z-10;
     @apply 2xl:-right-20;
@@ -79,16 +77,14 @@
   }
 }
 
-
 .carousel--cards {
-
   .swiper-container,
   .swiper {
     @apply p-12 !pt-0;
-    @apply  -mr-12 -ml-12 -mb-8;
+    @apply -mr-12 -ml-12 -mb-8;
     @apply 2xl:p-14;
-    @apply  2xl:-mr-14 2xl:-ml-14 2xl:-mb-12;
-  } 
+    @apply 2xl:-mr-14 2xl:-ml-14 2xl:-mb-12;
+  }
 
   .carousel__fonctions {
     @apply py-4 2xl:py-10;
@@ -102,7 +98,7 @@
     @apply 2xl:-translate-x-full;
     @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white;
   }
-  
+
   .carousel__next {
     @apply order-3;
     @apply 2xl:absolute 2xl:top-0 2xl:bottom-0 2xl:right-0 2xl:z-10;
@@ -125,20 +121,60 @@
 }
 
 .bg--secondary-50 {
-  .carousel__prev { @apply 2xl:via-secondary-50 2xl:from-secondary-50; &[disabled] { @apply bg-secondary-50;}}
-  .carousel__next { @apply 2xl:via-secondary-50 2xl:from-secondary-50; &[disabled] { @apply bg-secondary-50;}}
+  .carousel__prev {
+    @apply 2xl:via-secondary-50 2xl:from-secondary-50;
+    &[disabled] {
+      @apply bg-secondary-50;
+    }
+  }
+  .carousel__next {
+    @apply 2xl:via-secondary-50 2xl:from-secondary-50;
+    &[disabled] {
+      @apply bg-secondary-50;
+    }
+  }
 }
 .bg--secondary-100 {
-  .carousel__prev { @apply 2xl:via-secondary-100 2xl:from-secondary-100; &[disabled] { @apply bg-secondary-100;}}
-  .carousel__next { @apply 2xl:via-secondary-100 2xl:from-secondary-100; &[disabled] { @apply bg-secondary-100;}}
+  .carousel__prev {
+    @apply 2xl:via-secondary-100 2xl:from-secondary-100;
+    &[disabled] {
+      @apply bg-secondary-100;
+    }
+  }
+  .carousel__next {
+    @apply 2xl:via-secondary-100 2xl:from-secondary-100;
+    &[disabled] {
+      @apply bg-secondary-100;
+    }
+  }
 }
 .bg--secondary-500 {
-  .carousel__prev { @apply 2xl:via-secondary-500 2xl:from-secondary-500; &[disabled] { @apply bg-secondary-500;}}
-  .carousel__next { @apply 2xl:via-secondary-500 2xl:from-secondary-500; &[disabled] { @apply bg-secondary-500;}}
+  .carousel__prev {
+    @apply 2xl:via-secondary-500 2xl:from-secondary-500;
+    &[disabled] {
+      @apply bg-secondary-500;
+    }
+  }
+  .carousel__next {
+    @apply 2xl:via-secondary-500 2xl:from-secondary-500;
+    &[disabled] {
+      @apply bg-secondary-500;
+    }
+  }
 }
 .bg--secondary-600 {
-  .carousel__prev { @apply 2xl:via-secondary-600 2xl:from-secondary-600; &[disabled] { @apply bg-secondary-600;}}
-  .carousel__next { @apply 2xl:via-secondary-600 2xl:from-secondary-600; &[disabled] { @apply bg-secondary-600;}}
+  .carousel__prev {
+    @apply 2xl:via-secondary-600 2xl:from-secondary-600;
+    &[disabled] {
+      @apply bg-secondary-600;
+    }
+  }
+  .carousel__next {
+    @apply 2xl:via-secondary-600 2xl:from-secondary-600;
+    &[disabled] {
+      @apply bg-secondary-600;
+    }
+  }
 }
 
 .bg--secondary-500,
@@ -154,7 +190,6 @@
     @apply text-text-50 hover:text-primary-400;
   }
 }
-
 
 /* swiper container */
 
@@ -222,17 +257,15 @@
 }
 /* Auto Height */
 .swiper-container-autoheight,
-.swiper-autoheight
-.swiper-container-autoheight .swiper-slide,
+.swiper-autoheight .swiper-container-autoheight .swiper-slide,
 .swiper-autoheight .swiper-slide {
   height: auto;
 }
 .swiper-container-autoheight .swiper-wrapper,
-.swiper-autoheight .swiper-wrapper  {
+.swiper-autoheight .swiper-wrapper {
   align-items: flex-start;
   transition-property: transform, height;
 }
-
 
 /* Hide dot pagination when there's too much dots */
 .carousel__pagination:has(> :nth-child(6)) {

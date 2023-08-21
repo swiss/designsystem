@@ -3,31 +3,31 @@ export const state = () => ({
 })
 
 export const mutations = {
-  toggleMobileMenu(state) {
+  toggleMobileMenu (state) {
     state.mobileMenuIsOpen = !state.mobileMenuIsOpen
   },
-  closeMobileMenu(state) {
+  closeMobileMenu (state) {
     state.mobileMenuIsOpen = false
   },
-  openMobileMenu(state) {
+  openMobileMenu (state) {
     state.mobileMenuIsOpen = true
   }
 }
 
 export const actions = {
-  toggleMobileMenu({ commit }) {
+  toggleMobileMenu ({ commit }) {
     commit('toggleMobileMenu')
   },
-  closeMobileMenu({ commit }) {
+  closeMobileMenu ({ commit }) {
     commit('closeMobileMenu')
   },
-  openMobileMenu({ commit }) {
+  openMobileMenu ({ commit }) {
     commit('openMobileMenu')
   }
 }
 
 export const getters = {
-  getMobileMenuIsOpen(state) {
+  getMobileMenuIsOpen (state) {
     return state.mobileMenuIsOpen
   }
 }

@@ -1,6 +1,6 @@
 const MenuMore = {
 
-  init(options) {
+  init (options) {
     this.wrapper = document.querySelector(options.navigationItem);
     this.menu = this.wrapper.querySelector('ul');
     this.menuItems = this.menu.querySelectorAll('li');
@@ -23,21 +23,21 @@ const MenuMore = {
     MenuMore.menuItems.forEach(item => {
       // move item back to the menu
       if (item.parentElement.id === MenuMore.moreContainer.id) {
-        MenuMore.MoveContent(item, {target: MenuMore.menu, insertBefore: MenuMore.moreBtn})
+        MenuMore.MoveContent(item, { target: MenuMore.menu, insertBefore: MenuMore.moreBtn })
       }
-      item.style.display='block';
+      item.style.display = 'block';
     });
-    if ( MenuMore.menuSize <= MenuMore.getMenuWrapperSize() ) return;
+    if (MenuMore.menuSize <= MenuMore.getMenuWrapperSize()) return;
 
-    MenuMore.menuItems.forEach(function(item, index, array){
+    MenuMore.menuItems.forEach(function (item, index, array) {
       // exclude the «more» button, displayed at the end of mainmenu
-      if (index < array.length - 1){
+      if (index < array.length - 1) {
         cumulatedSize += item.clientWidth;
 
         if (cumulatedSize > MenuMore.getRemainingSpace()) {
           // item.style.display='none';
           MenuMore.setButtonVisibility(MenuMore.moreBtn, true);
-          MenuMore.MoveContent(item, {target: MenuMore.moreContainer})
+          MenuMore.MoveContent(item, { target: MenuMore.moreContainer })
           // MenuMore.createClone(item, {target: MenuMore.moreContainer})
         } else {
           MenuMore.setButtonVisibility(MenuMore.moreBtn, false);
@@ -47,12 +47,12 @@ const MenuMore = {
     });
   },
 
-  setButtonVisibility(btn, isVisible) {
+  setButtonVisibility (btn, isVisible) {
     btn && isVisible ? btn.classList.remove('hidden') : btn.classList.add('hidden');
   },
 
-  setButtonClickEvent(target, leftValue) {
-    target.addEventListener('click', function(e) {
+  setButtonClickEvent (target, leftValue) {
+    target.addEventListener('click', function (e) {
       MenuMore.menu.scrollTo({
         top: 0,
         left: leftValue,
@@ -62,7 +62,7 @@ const MenuMore = {
   },
 
   MoveContent (item, option) {
-    if (option.insertBefore){
+    if (option.insertBefore) {
       option.target.insertBefore(item, option.insertBefore);
     } else {
       option.target.appendChild(item);
