@@ -1,7 +1,7 @@
 <template>
   <div :class="computedClass">
     <label for="lang-switcher" class="sr-only"> Select language </label>
-    <Select id="lang-switcher" bare variant="negative">
+    <Select id="lang-switcher" size="sm" bare :variant="type">
       <option>DE</option>
       <option>FR</option>
       <option>IT</option>
@@ -19,9 +19,15 @@ export default {
   components: {
     Select,
   },
+  props: {
+    type: {
+      type: String,
+      default: 'negative',
+    },
+  },
   computed: {
     computedClass() {
-      let base = `language-switcher `
+      let base = 'language-switcher'
       return base
     },
   },

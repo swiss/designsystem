@@ -82,7 +82,8 @@
 
 .carousel--cards {
 
-  .swiper-container {
+  .swiper-container,
+  .swiper {
     @apply p-12 !pt-0;
     @apply  -mr-12 -ml-12 -mb-8;
     @apply 2xl:p-14;
@@ -157,7 +158,8 @@
 
 /* swiper container */
 
-.swiper-container {
+.swiper-container,
+.swiper {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -167,7 +169,8 @@
   /* Fix of Webkit flickering */
   z-index: 1;
 }
-.swiper-container-vertical > .swiper-wrapper {
+.swiper-container-vertical > .swiper-wrapper,
+.swiper-vertical > .swiper-wrapper {
   flex-direction: column;
 }
 .swiper-wrapper {
@@ -181,24 +184,30 @@
   box-sizing: content-box;
 }
 .swiper-container-android .swiper-slide,
+.swiper-android .swiper-slide,
 .swiper-wrapper {
   transform: translate3d(0px, 0, 0);
 }
-.swiper-container-multirow > .swiper-wrapper {
+.swiper-container-multirow > .swiper-wrapper,
+.swiper-multirow > .swiper-wrapper {
   flex-wrap: wrap;
 }
-.swiper-container-multirow-column > .swiper-wrapper {
+.swiper-container-multirow-column > .swiper-wrapper,
+.swiper-multirow-column > .swiper-wrapper {
   flex-wrap: wrap;
   flex-direction: column;
 }
-.swiper-container-free-mode > .swiper-wrapper {
+.swiper-container-free-mode > .swiper-wrapper,
+.swiper-free-mode > .swiper-wrapper {
   transition-timing-function: ease-out;
   margin: 0 auto;
 }
-.swiper-container-pointer-events {
+.swiper-container-pointer-events,
+.swiper-pointer-events {
   touch-action: pan-y;
 }
-.swiper-container-pointer-events.swiper-container-vertical {
+.swiper-container-pointer-events.swiper-container-vertical,
+.swiper-pointer-events.swiper-vertical {
   touch-action: pan-x;
 }
 .swiper-slide {
@@ -213,10 +222,13 @@
 }
 /* Auto Height */
 .swiper-container-autoheight,
-.swiper-container-autoheight .swiper-slide {
+.swiper-autoheight
+.swiper-container-autoheight .swiper-slide,
+.swiper-autoheight .swiper-slide {
   height: auto;
 }
-.swiper-container-autoheight .swiper-wrapper {
+.swiper-container-autoheight .swiper-wrapper,
+.swiper-autoheight .swiper-wrapper  {
   align-items: flex-start;
   transition-property: transform, height;
 }

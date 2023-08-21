@@ -218,14 +218,14 @@ module.exports = {
     },
     fontFamily: {
       regular: [
-        'FrutigerNeueLTPro-Regular',
+        'Font-Regular',
         'Hind',
         'Fallback-font',
         'Sans-Serif',
       ],
-      italic: ['FrutigerNeueLTPro-Italic', 'Hind', 'Fallback-font'],
-      bold: ['FrutigerNeueLTPro-Bold', 'Hind', 'Fallback-font'],
-      'bold-italic': ['FrutigerNeueLTPro-BoldIt', 'Hind', 'Fallback-font'],
+      italic: ['Font-Italic', 'Hind', 'Fallback-font'],
+      bold: ['Font-Bold', 'Hind', 'Fallback-font'],
+      'bold-italic': ['Font-Bold-Italic', 'Hind', 'Fallback-font'],
     },
     boxShadow: {
       sm: '0px 1px 2px 0px rgba(0,0,0,0.05)',

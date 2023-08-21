@@ -59,10 +59,16 @@
                 class="socials__facebook"
               >
                 <!-- Facebook default embedding -->
-                <div id="fb-root"></div>
-                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v14.0" nonce="lq6wOj4r"></script>
-
-                <div class="fb-post" :data-href="feed.feedURL" data-width="auto" data-show-text="true"></div>
+                <!-- Important! Remove width attribute from iframe in order to have correct styling -->
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fswisstopo%2Fvideos%2F5455503121148000%2F&show_text=false&width=560&t=0" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+              </div>
+              <div
+                v-else-if="feed.type=='linkedIn'"
+                class="socials__linkedin"
+              >
+                <!-- Linkedin default embedding -->
+                <!-- Important! Remove width attribute from iframe in order to have correct styling -->
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7080107855969705984" height="632" frameborder="0" allowfullscreen="" title="Eingebetteter Beitrag"></iframe>
               </div>
             </template>
             <template v-slot:footerAction>

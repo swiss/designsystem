@@ -3,7 +3,7 @@
     <div class="search__group">
       <h2 class="sr-only">Suche</h2>
       <Input
-        type="text"
+        type="search"
         id="search-main"
         label="Suche in dieser Website"
         placeholder="Suche"

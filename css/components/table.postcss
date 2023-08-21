@@ -3,16 +3,20 @@
 \*----------------------------------------*/
 
 .table-wrapper {
-  @apply overflow-x-auto ;
+  @apply overflow-x-auto;
 
   .container__center--xs &,
   .container__center--sm & {
-    @apply broader-than-container; 
+    @apply broader-than-container;
   }
 
   .container__center--md &,
   .container__full & {
-    @apply broader-than-container-centered; 
+    @apply broader-than-container-centered;
+  }
+
+  caption {
+    white-space: pre-line;
   }
 }
 
@@ -43,7 +47,7 @@ thead {
   }
 }
 
-tbody, 
+tbody,
 tfoot {
   tr {
     @apply border-t border-text-300;
@@ -65,7 +69,6 @@ tfoot {
   @apply border-y-2 border-text-300;
 }
 
-
 .table--compact {
   @apply border-0;
   @apply shadow-none;
@@ -75,7 +78,7 @@ tfoot {
       @apply px-2 py-2;
     }
   }
-  
+
   tbody,
   tfoot {
     td,
@@ -108,7 +111,6 @@ tfoot {
   }
 }
 
-
 .table__sorter {
   @apply inline-flex items-baseline text-left hover:text-red-600;
   text-transform: inherit;
@@ -122,22 +124,16 @@ tfoot {
 
 .table__sorter {
   span::after {
-    content: "↕";
+    content: '↕';
     @apply block ml-1 min-w-[1.25em];
     @apply font-normal text--xs text-center;
   }
 
-  th[aria-sort="descending"] & span::after {
-    content: "▼";
+  th[aria-sort='descending'] & span::after {
+    content: '▼';
   }
 
-  th[aria-sort="ascending"] & span::after {
-    content: "▲";
+  th[aria-sort='ascending'] & span::after {
+    content: '▲';
   }
 }
-
-
-
-
-
-

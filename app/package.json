@@ -16,6 +16,7 @@
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
     "swiper-vue2": "^1.0.6",
+    "uuid": "^9.0.0",
     "vue-inline-svg": "^2.0.0",
     "vue-select": "^3.20.2"
   },
@@ -48,8 +49,7 @@
   },
   "readme": "ERROR: No README data found!",
   "_id": "bund_ds_app@1.0.0",
-  "engines" : {
-
-    "node" : ">=16.0.0 <17.0.0"
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
   }
 }

@@ -10,6 +10,10 @@ export default {
     isIntranet: {
 			type: Boolean,
 			default: false,
+		},
+    isFreebrand: {
+			type: Boolean,
+			default: false,
 		}
 	},
   methods: {
@@ -26,10 +30,18 @@ export default {
       }
 
       if (context === 'mobile' && this.isMobileMenuOpen) {
-        document.body.classList.add('body--mobile-menu-is-open')
+        if(this.isFreebrand){
+          document.body.classList.add('body--mobile-menu-is-open-top-bar-disabled')
+        } else {
+          document.body.classList.add('body--mobile-menu-is-open')
+        }
         this.$store.dispatch('layout/openMobileMenu')
       } else {
-        document.body.classList.remove('body--mobile-menu-is-open')
+        if(this.isFreebrand){
+          document.body.classList.remove('body--mobile-menu-is-open-top-bar-disabled')
+         } else {
+          document.body.classList.remove('body--mobile-menu-is-open')
+        }
         this.$store.dispatch('layout/closeMobileMenu')
       }
 
@@ -37,6 +49,12 @@ export default {
         document.body.classList.add('body--intranet')
       } else {
         document.body.classList.remove('body--intranet')
+      }
+
+      if (this.isFreebrand) {
+        document.body.classList.add('body--freebrand')
+      } else {
+        document.body.classList.remove('body--freebrand')
       }
     },
   },

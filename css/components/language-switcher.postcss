@@ -3,15 +3,10 @@
 \*----------------------------------------*/
 
 .language-switcher {
-  @apply flex h-full cursor-pointer;
-
-  .form__group__select, 
-  .select {
-    @apply h-full;
-  }
+  @apply flex cursor-pointer;
 
   select {
-    @apply w-[5em] 2xl:w-[4.5em] h-full;
+    @apply w-[5em] 2xl:w-[4.5em];
     @apply cursor-pointer;
     @apply hover:text-text-300 focus:text-text-300;
     @apply transition-colors;
@@ -34,3 +29,28 @@
   }
 }
 
+.top-header__right,
+.language-switcher {
+  .form__group__select,
+  .select {
+    @apply h-full;
+  }
+
+  select {
+    @apply h-full;
+  }
+}
+
+.top-bar {
+  .language-switcher {
+    @apply h-full;
+    .form__group__select,
+    .select {
+      @apply h-full;
+    }
+
+    select {
+      @apply h-full;
+    }
+  }
+}

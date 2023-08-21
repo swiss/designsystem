@@ -15,7 +15,7 @@
           <div class="search search--large search--page-result">
             <div class="search__group">
               <input
-                type="text"
+                type="search"
                 id="search-input"
                 label="Ämter filtern"
                 placeholder="Search"
