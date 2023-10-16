@@ -12,6 +12,13 @@
 
 .date__day {
   @apply text--4xl tracking-tighter leading-none;
+
+  &::after {
+    content: '\00a0';
+  }
+  .date[lang='de'] &::after {
+    content: '.';
+  }
 }
 
 .date__month {
