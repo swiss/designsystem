@@ -12,6 +12,19 @@
   @apply shadow-lg;
 }
 
+.card__information {
+  @apply inline-flex items-center;
+
+  .card__information-icon {
+    @apply text-primary-600;
+  }
+
+  .card__information-text {
+    @apply text-secondary-500;
+    @apply ml-2;
+  }
+}
+
 .card--clickable {
   @apply relative;
   @apply transition-shadow duration-300 ease-in-out;

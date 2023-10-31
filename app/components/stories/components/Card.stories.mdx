@@ -1,8 +1,7 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
-import Card from '../../ch/components/Card.vue';
-import MetaInfo from '../../ch/components/MetaInfo.vue';
-import SvgIcon from '../../ch/components/SvgIcon.vue';
-
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Card from '../../ch/components/Card.vue'
+import MetaInfo from '../../ch/components/MetaInfo.vue'
+import SvgIcon from '../../ch/components/SvgIcon.vue'
 
 <Meta
   title="Components/Card"
@@ -11,56 +10,63 @@ import SvgIcon from '../../ch/components/SvgIcon.vue';
     type: {
       control: {
         type: 'select',
-        options: ['default', 'highlight', 'twitter', 'flat', 'universal', 'list']
-      }
+        options: [
+          'default',
+          'highlight',
+          'twitter',
+          'flat',
+          'universal',
+          'list',
+        ],
+      },
     },
     layout: {
       control: {
         type: 'select',
-        options: ['default', 'image-left', 'image-right']
-      }
+        options: ['default', 'image-left', 'image-right'],
+      },
     },
     image: {
       control: {
         type: 'select',
-        options: ['NoImage', 'WithImage', 'WithIcon']
-      }
+        options: ['NoImage', 'WithImage', 'WithIcon'],
+      },
     },
     header: {
       control: {
         type: 'select',
-        options: ['NoHeader', 'WithHeader']
-      }
+        options: ['NoHeader', 'WithHeader'],
+      },
     },
     metaInfo: {
       control: {
         type: 'select',
-        options: ['NoMetaInfo', 'WithMetaInfo']
-      }
+        options: ['NoMetaInfo', 'WithMetaInfo'],
+      },
     },
     contentSpecs: {
       control: {
         type: 'select',
-        options: ['NoContentSpecs', 'WithContentSpecs']
-      }
+        options: ['NoContentSpecs', 'WithContentSpecs'],
+      },
     },
     contentIcons: {
       control: {
         type: 'select',
-        options: ['NoContentIcons', 'WithContentIcons']
-      }
+        options: ['NoContentIcons', 'WithContentIcons'],
+      },
     },
     footerInfo: {
       control: {
         type: 'select',
-        options: ['NoFooterInfo', 'WithFooterInfo']
-      }
+        options: ['NoFooterInfo', 'WithFooterInfo'],
+      },
     },
     footerAction: {
       control: {
         type: 'select',
-        options: ['NoLink', 'InternalLink', 'ExternalLink']
-      }
+        options: ['NoLink', 'InternalLink', 'ExternalLink'],
+      },
     },
   }}
 />
@@ -68,11 +74,14 @@ import SvgIcon from '../../ch/components/SvgIcon.vue';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Card, MetaInfo, SvgIcon },
-  template:
-    `
+  template: `
     <div style="padding: 3em;" class="bg--secondary-50">
-      <div style="${args.layout !== 'list' ? 'max-width: 600px; margin: auto' : ''}">
-        <Card :type="type" :layout="layout" :has-icon="${args.image == 'WithIcon'}">
+      <div style="${
+        args.layout !== 'list' ? 'max-width: 600px; margin: auto' : ''
+      }">
+        <Card :type="type" :layout="layout" :has-icon="${
+          args.image == 'WithIcon'
+        }">
           <template v-if="${args.image != 'NoImage'}" v-slot:image>
             <img
               v-if="${args.image == 'WithImage'}"
@@ -102,6 +111,23 @@ export const Template = (args, { argTypes }) => ({
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium maximus vestibulum. Maecenas ac interdum est. Nullam mauris diam, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium maximus vestibulum. Maecenas ac interdum est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium maximus vestibulum. Maecenas ac interdum est. Nullam mauris diam, Vivamus pretium maximus vestibulum.
             </p>
           </template>
+          <template v-slot:information>
+            <div
+              class="card__information"
+            >
+              <svg-icon
+                class="card__information-icon"
+                icon="History"
+                size="xl"
+                :spin="false"
+              />
+              <p
+                class="card__information-text"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pretium maximus vestibulum.
+              </p>
+            </div>
+          </template>
           <template v-slot:author>
           </template>
           <template v-slot:author>
@@ -126,14 +152,23 @@ export const Template = (args, { argTypes }) => ({
               <SvgIcon icon="SignLanguage" size="xl"/>
             </div>
           </template>
-          <template v-if="${args.footerInfo == 'WithFooterInfo'}" v-slot:footerInfo>
+          <template v-if="${
+            args.footerInfo == 'WithFooterInfo'
+          }" v-slot:footerInfo>
             <div>Energie, Datenmodell, Nachhaltigkeit</div>
           </template>
-          <template v-if="${args.footerAction == 'InternalLink' || args.footerAction == 'ExternalLink' }" v-slot:footerAction>
-            <a href="#" v-if="${args.footerAction == 'InternalLink'}" aria-label="Weiterlesen" class="btn btn--outline btn--icon-only "><svg viewBox="0 0 24 24" class="btn__icon icon icon--base icon--ArrowRight "><path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path></svg> <span class="btn__text">
+          <template v-if="${
+            args.footerAction == 'InternalLink' ||
+            args.footerAction == 'ExternalLink'
+          }" v-slot:footerAction>
+            <a href="#" v-if="${
+              args.footerAction == 'InternalLink'
+            }" aria-label="Weiterlesen" class="btn btn--outline btn--icon-only "><svg viewBox="0 0 24 24" class="btn__icon icon icon--base icon--ArrowRight "><path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path></svg> <span class="btn__text">
               Weiterlesen
             </span></a>
-            <a href="#" v-if="${args.footerAction == 'ExternalLink'}" rel="external" aria-label="Weiterlesen" class="btn btn--outline btn--icon-only "><svg viewBox="0 0 24 24" class="btn__icon icon icon--base icon--ArrowUpRight "><path d="m20.2 14.3-2.1-7.9-7.9-2.1-.1.7 7 1.9-10.7 10.7.5.5 10.7-10.7 1.9 7z"></path></svg> <span class="btn__text">
+            <a href="#" v-if="${
+              args.footerAction == 'ExternalLink'
+            }" rel="external" aria-label="Weiterlesen" class="btn btn--outline btn--icon-only "><svg viewBox="0 0 24 24" class="btn__icon icon icon--base icon--ArrowUpRight "><path d="m20.2 14.3-2.1-7.9-7.9-2.1-.1.7 7 1.9-10.7 10.7.5.5 10.7-10.7 1.9 7z"></path></svg> <span class="btn__text">
               Weiterlesen
             </span></a>
           </template>
@@ -141,13 +176,12 @@ export const Template = (args, { argTypes }) => ({
       </div>
     </div>
     `,
-});
+})
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   body: 'Design System for <br/>the Swiss Confederation',
 }
-
 
 # Card
 
@@ -166,7 +200,7 @@ Default.args = {
       header: 'NoHeader',
       footerInfo: 'WithFooterInfo',
       footerAction: 'InternalLink',
-      body: 'Lorem '
+      body: 'Lorem ',
     }}
   >
     {Template.bind({})}
@@ -178,13 +212,14 @@ Default.args = {
 # Variations
 
 ## Default card
- Use this card for news, pages or articles teasers. Display them in a grid or carousels. With the `card--default` display, an image is mandatory.
 
- More infos about card layouts can be found in the [Cards and Grids](?path=/docs/components-card-cards-and-grids--one-card) section.
+Use this card for news, pages or articles teasers. Display them in a grid or carousels. With the `card--default` display, an image is mandatory.
 
- Additional information can be included, like meta informations above the title, content specifications after the description, or categories at the bottom of the card.
+More infos about card layouts can be found in the [Cards and Grids](?path=/docs/components-card-cards-and-grids--one-card) section.
 
-<Canvas style={{backgroundColor: '#f9fafb', padding: '3rem'}}>
+Additional information can be included, like meta informations above the title, content specifications after the description, or categories at the bottom of the card.
+
+<Canvas style={{ backgroundColor: '#f9fafb', padding: '3rem' }}>
   <div class="grid grid--responsive-cols-1/2-1/2 gap--responsive">
     <div class="card card--default card--clickable">
       <div class="card__image">
@@ -193,9 +228,7 @@ Default.args = {
       <div class="card__content">
         <div class="card__body">
           <div class="card__title">
-            <h3>
-              Hochwasser im Juli 2021
-            </h3>
+            <h3>Hochwasser im Juli 2021</h3>
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -216,9 +249,7 @@ Default.args = {
                 viewBox="0 0 24 24"
                 class="btn__icon icon icon--base icon--ArrowRight"
               >
-                <path
-                  d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                ></path>
+                <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
               </svg>
               <span class="btn__text">Weiterlesen</span>
             </a>
@@ -233,9 +264,7 @@ Default.args = {
       <div class="card__content">
         <div class="card__body">
           <div class="card__title">
-            <h3>
-              Hochwasser im Juli 2021
-            </h3>
+            <h3>Hochwasser im Juli 2021</h3>
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -256,9 +285,7 @@ Default.args = {
                 viewBox="0 0 24 24"
                 class="btn__icon icon icon--base icon--ArrowRight"
               >
-                <path
-                  d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                ></path>
+                <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
               </svg>
               <span class="btn__text">Weiterlesen</span>
             </a>
@@ -270,17 +297,16 @@ Default.args = {
 </Canvas>
 
 ## Univeral card
+
 With the `card--universal` display, using an image is not mandatory. This layout resolves the problem of having a card without image right after a card with an image.
 
-<Canvas style={{backgroundColor: '#f9fafb', padding: '3rem'}}>
+<Canvas style={{ backgroundColor: '#f9fafb', padding: '3rem' }}>
   <div class="grid grid--responsive-cols-3 gap--responsive">
     <div class="card card--default card--clickable">
       <div class="card__content">
         <div class="card__body">
           <div class="card__title">
-            <h3>
-              Hochwasser im Juli 2021
-            </h3>
+            <h3>Hochwasser im Juli 2021</h3>
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -304,9 +330,7 @@ With the `card--universal` display, using an image is not mandatory. This layout
                 viewBox="0 0 24 24"
                 class="btn__icon icon icon--base icon--ArrowRight"
               >
-                <path
-                  d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                ></path>
+                <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
               </svg>
               <span class="btn__text">Weiterlesen</span>
             </a>
@@ -318,9 +342,7 @@ With the `card--universal` display, using an image is not mandatory. This layout
       <div class="card__content">
         <div class="card__body">
           <div class="card__title">
-            <h3>
-              Hochwasser im Juli 2021
-            </h3>
+            <h3>Hochwasser im Juli 2021</h3>
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -341,9 +363,7 @@ With the `card--universal` display, using an image is not mandatory. This layout
                 viewBox="0 0 24 24"
                 class="btn__icon icon icon--base icon--ArrowRight"
               >
-                <path
-                  d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                ></path>
+                <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
               </svg>
               <span class="btn__text">Weiterlesen</span>
             </a>
@@ -355,9 +375,7 @@ With the `card--universal` display, using an image is not mandatory. This layout
       <div class="card__content">
         <div class="card__body">
           <div class="card__title">
-            <h3>
-              Hochwasser im Juli 2021
-            </h3>
+            <h3>Hochwasser im Juli 2021</h3>
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -378,9 +396,7 @@ With the `card--universal` display, using an image is not mandatory. This layout
                 viewBox="0 0 24 24"
                 class="btn__icon icon icon--base icon--ArrowRight"
               >
-                <path
-                  d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                ></path>
+                <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"></path>
               </svg>
               <span class="btn__text">Weiterlesen</span>
             </a>
@@ -392,9 +408,10 @@ With the `card--universal` display, using an image is not mandatory. This layout
 </Canvas>
 
 ## Social card
-Social Cards are used to display social media posts. They have a distinct header where the logo of the social media platform is displayed. More information can be found in the  [Socials section](?path=/docs/sections-content-socials--example-with-1-card) component.
 
-<Canvas style={{backgroundColor: '#f9fafb', padding: '3rem'}}>
+Social Cards are used to display social media posts. They have a distinct header where the logo of the social media platform is displayed. More information can be found in the [Socials section](?path=/docs/sections-content-socials--example-with-1-card) component.
+
+<Canvas style={{ backgroundColor: '#f9fafb', padding: '3rem' }}>
   <div class="socials socials--items-1">
     <div class="socials__grid grid gap--responsive">
       <div class="socials__info">
@@ -409,19 +426,22 @@ Social Cards are used to display social media posts. They have a distinct header
           <div>Press-resleases on Twitter</div>
         </div>
         <div class="card__content">
-          <div class="card__body">
-            Last twitter feed here
-          </div>
+          <div class="card__body">Last twitter feed here</div>
           <div class="card__footer card__footer--icon-only">
             <div class="card__footer__action">
-              <a href="#" title="Weiterlesen" class="btn btn--outline btn--icon-only ">
-                <svg viewBox="0 0 24 24" enable-background="new 0 0 24 24" class="btn__icon icon icon--base icon--ArrowUpRight ">
-                  <path d="m20.2 14.3-2.1-7.9-7.9-2.1-.1.7 7 1.9-10.7 10.7.5.5 10.7-10.7 1.9 7z">
-                  </path>
+              <a
+                href="#"
+                title="Weiterlesen"
+                class="btn btn--outline btn--icon-only "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  enable-background="new 0 0 24 24"
+                  class="btn__icon icon icon--base icon--ArrowUpRight "
+                >
+                  <path d="m20.2 14.3-2.1-7.9-7.9-2.1-.1.7 7 1.9-10.7 10.7.5.5 10.7-10.7 1.9 7z"></path>
                 </svg>
-                <span class="btn__text">
-                  Weiterlesen
-                </span>
+                <span class="btn__text">Weiterlesen</span>
               </a>
             </div>
           </div>
