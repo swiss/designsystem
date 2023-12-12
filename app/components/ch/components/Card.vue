@@ -1,6 +1,9 @@
 <template>
   <div :class="computedClasses">
-    <div v-if="$slots.image && type !== 'highlight' && type !== 'universal'" class="card__image">
+    <div
+      v-if="$slots.image && type !== 'highlight' && type !== 'universal'"
+      class="card__image"
+    >
       <slot name="image"></slot>
     </div>
     <div v-if="$slots.header" class="card__header">
@@ -13,6 +16,7 @@
           <slot name="title"></slot>
         </div>
         <slot name="description"></slot>
+        <slot name="information"></slot>
         <div v-if="$slots.image && type === 'universal'" class="card__image">
           <slot name="image"></slot>
         </div>
@@ -22,8 +26,8 @@
         <slot name="contentIcons"></slot>
       </div>
       <div
-       v-if="$slots.footerInfo || $slots.footerAction"
-       :class="computedClassesFooter"
+        v-if="$slots.footerInfo || $slots.footerAction"
+        :class="computedClassesFooter"
       >
         <div v-if="$slots.footerInfo" class="card__footer__info">
           <slot name="footerInfo"></slot>
@@ -37,44 +41,42 @@
 </template>
 
 <script>
-
 export default {
   name: 'Card',
   props: {
     type: {
       type: String,
-      validator: (prop) => [
-        'default',
-        'highlight',
-        'twitter',
-        'flat',
-        'universal',
-        'list'
-      ].includes(prop)
+      validator: (prop) =>
+        [
+          'default',
+          'highlight',
+          'twitter',
+          'flat',
+          'universal',
+          'list',
+        ].includes(prop),
     },
     layout: {
       type: String,
-      validator: (prop) => [
-        'default',
-        'image-left',
-        'image-right'
-      ].includes(prop)
+      validator: (prop) =>
+        ['default', 'image-left', 'image-right'].includes(prop),
     },
   },
 
   computed: {
-    computedClasses () {
+    computedClasses() {
       let base = 'card '
       if (this.type) base += `card--${this.type} `
-      if (this.layout && this.layout !== 'default') base += `card--${this.layout} `
+      if (this.layout && this.layout !== 'default')
+        base += `card--${this.layout} `
       if (this.$slots.footerAction) base += `card--clickable `
       return base
     },
-    computedClassesFooter () {
+    computedClassesFooter() {
       let base = 'card__footer '
       if (!this.$slots.footerInfo) base += `card__footer--icon-only `
       return base
-    }
-  }
+    },
+  },
 }
 </script>
