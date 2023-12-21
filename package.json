@@ -1,5 +1,5 @@
 {
-  "name": "bund_ds",
+  "name": "designsystem",
   "version": "1.0.1",
   "description": "Design System for the Swiss Confederation",
   "main": "index.js",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liip/bund_ds.git"
+    "url": "git+https://github.com/swiss/designsystem.git"
   },
   "author": "Liip AG",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/liip/bund_ds/issues"
+    "url": "https://github.com/swiss/designsystem/issues"
   },
-  "homepage": "https://github.com/liip/bund_ds#readme",
+  "homepage": "https://github.com/swiss/designsystem#readme",
   "dependencies": {
     "autoprefixer": "^10.2.6",
     "concurrently": "^6.2.0",
