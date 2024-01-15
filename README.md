@@ -70,13 +70,7 @@ $ npm run build-css
 
 ## CSS files
 
-When a new `version` is pushed on the `main` branch, this will trigger the generation of a a new CSS file on the CDN.
-
-If the version is `1.0.0`, the CSS file will be delivered at
-`https://liip-bund-ds.fra1.digitaloceanspaces.com/v1.0.0/main.css`.
-
-The latest version of the CSS file will be available at
-`https://liip-bund-ds.fra1.digitaloceanspaces.com/latest/main.css`.
+When a new `version` is pushed on the `main` branch, there is no automatic release of the CSS files at the moment. You need to release them manually on the github repository.
 
 # Run visual regression testing
 
