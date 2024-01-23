@@ -1,6 +1,6 @@
 {
   "name": "designsystem",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Design System for the Swiss Confederation",
   "main": "index.js",
   "directories": {
