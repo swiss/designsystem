@@ -5,10 +5,10 @@
       <div class="portrait">
         <picture class="portrait__image">
           <source
-            srcset="https://placekitten.com/g/1100/600"
+            srcset="https://picsum.photos/1100/600"
             media="(min-width: 800px)"
           />
-          <img src="https://placekitten.com/g/550/300" alt="cat" />
+          <img src="https://picsum.photos/550/300" alt="cat" />
         </picture>
         <div class="portrait__card card card--default">
           <div class="portrait__card__body">
@@ -94,8 +94,8 @@
 </template>
 
 <script>
-import Card from '~/components/ch/components/Card.vue';
 import Btn from "~/components/ch/components/Btn";
+import Card from '~/components/ch/components/Card.vue';
 import SvgIcon from '../components/SvgIcon.vue';
 
 export default {

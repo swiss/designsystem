@@ -103,10 +103,10 @@
             <figure>
               <picture>
                 <source
-                  srcset="https://placekitten.com/g/1600/900"
+                  srcset="https://picsum.photos/1600/900"
                   media="(min-width: 800px)"
                 />
-                <img src="https://placekitten.com/g/1600/900" alt="cat" />
+                <img src="https://picsum.photos/1600/900" alt="cat" />
               </picture>
               <figcaption>
                 Image label here —&nbsp;©&nbsp;Photograph Name
@@ -184,10 +184,10 @@
                 <figure>
                   <picture>
                     <source
-                      srcset="https://placekitten.com/g/1600/1200"
+                      srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
                     />
-                    <img src="https://placekitten.com/g/800/600" alt="cat" />
+                    <img src="https://picsum.photos/800/600" alt="cat" />
                   </picture>
                 </figure>
               </template>
@@ -345,10 +345,10 @@
                 <figure>
                   <picture>
                     <source
-                      srcset="https://placekitten.com/g/1600/1200"
+                      srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
                     />
-                    <img src="https://placekitten.com/g/800/600" alt="cat" />
+                    <img src="https://picsum.photos/800/600" alt="cat" />
                   </picture>
                 </figure>
               </template>
@@ -551,34 +551,34 @@
 </template>
 
 <script>
-import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
-import TopBar from '../components/ch/sections/TopBar.vue'
-import TopHeader from '../components/ch/sections/TopHeader.vue'
-import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
-import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
-import MobileMenu from '../components/ch/sections/MobileMenu.vue'
-import FooterInformation from '../components/ch/sections/FooterInformation.vue'
-import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import Hero from '~/components/ch/sections/Hero'
-import QuoteSection from '~/components/ch/sections/QuoteSection'
-import ContactSection from '~/components/ch/sections/ContactSection'
-import MoreInfosAccordionSection from '~/components/ch/sections/MoreInfosAccordionSection'
-import TextImage from '~/components/ch/components/TextImage'
 import AudioPlayer from '~/components/ch/components/AudioPlayer'
-import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
-import Tabs from '~/components/ch/demo/Tabs.vue'
-import RelatedTags from '~/components/ch/components/RelatedTags.vue'
 import DownloadItem from '~/components/ch/components/DownloadItem.vue'
 import Newsletter from '~/components/ch/components/Newsletter.vue'
-import ShareBar from '../components/ch/demo/ShareBar.vue'
-import Btn from '../components/ch/components/Btn.vue'
-import SvgIcon from '../components/ch/components/SvgIcon.vue'
-import Card from '../components/ch/components/Card.vue'
-import Modal from '../components/ch/components/Modal.vue'
-import Badge from '../components/ch/components/Badge.vue'
-import Input from '../components/ch/components/Input.vue'
-import Popover from '../components/ch/components/Popover.vue'
+import RelatedTags from '~/components/ch/components/RelatedTags.vue'
+import TextImage from '~/components/ch/components/TextImage'
+import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
 import TableSortable from '~/components/ch/demo/TableSortable.vue'
+import Tabs from '~/components/ch/demo/Tabs.vue'
+import ContactSection from '~/components/ch/sections/ContactSection'
+import Hero from '~/components/ch/sections/Hero'
+import MoreInfosAccordionSection from '~/components/ch/sections/MoreInfosAccordionSection'
+import QuoteSection from '~/components/ch/sections/QuoteSection'
+import Badge from '../components/ch/components/Badge.vue'
+import Btn from '../components/ch/components/Btn.vue'
+import Card from '../components/ch/components/Card.vue'
+import Input from '../components/ch/components/Input.vue'
+import Modal from '../components/ch/components/Modal.vue'
+import Popover from '../components/ch/components/Popover.vue'
+import SvgIcon from '../components/ch/components/SvgIcon.vue'
+import ShareBar from '../components/ch/demo/ShareBar.vue'
+import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
+import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
+import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
+import FooterInformation from '../components/ch/sections/FooterInformation.vue'
+import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
+import MobileMenu from '../components/ch/sections/MobileMenu.vue'
+import TopBar from '../components/ch/sections/TopBar.vue'
+import TopHeader from '../components/ch/sections/TopHeader.vue'
 
 export default {
   name: 'detailPageSimple',

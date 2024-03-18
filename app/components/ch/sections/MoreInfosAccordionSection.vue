@@ -124,10 +124,10 @@
             <figure>
               <picture>
                 <source
-                  srcset="https://placekitten.com/g/1600/900"
+                  srcset="https://picsum.photos/1600/900"
                   media="(min-width: 800px)"
                 />
-                <img src="https://placekitten.com/g/1600/1200" alt="cat" />
+                <img src="https://picsum.photos/1600/1200" alt="cat" />
               </picture>
               <figcaption>
                 Datenmodelle als http-Ressource nutzbar zu machen. Der Vorteil für
@@ -161,11 +161,11 @@
 </template>
 
 <script>
-import Card from '../components/Card.vue';
+import Accordion from '../components/Accordion.vue';
+import AccordionItem from '../components/AccordionItem.vue';
 import Btn from '../components/Btn';
-import Accordion from '../components/Accordion.vue'
-import AccordionItem from '../components/AccordionItem.vue'
-import DownloadItem from '../components/DownloadItem.vue'
+import Card from '../components/Card.vue';
+import DownloadItem from '../components/DownloadItem.vue';
 import SvgIcon from '../components/SvgIcon.vue';
 
 export default {

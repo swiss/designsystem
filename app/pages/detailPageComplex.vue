@@ -17,10 +17,10 @@
         <template v-slot:image>
           <picture>
             <source
-              srcset="https://placekitten.com/g/1200/900"
+              srcset="https://picsum.photos/1200/900"
               media="(min-width: 800px)"
             />
-            <img src="https://placekitten.com/g/900/600" alt="cat" />
+            <img src="https://picsum.photos/900/600" alt="cat" />
           </picture>
         </template>
         <template v-slot:title>
@@ -124,10 +124,10 @@
             <figure>
               <picture>
                 <source
-                  srcset="https://placekitten.com/g/1600/900"
+                  srcset="https://picsum.photos/1600/900"
                   media="(min-width: 800px)"
                 />
-                <img src="https://placekitten.com/g/1600/900" alt="cat" />
+                <img src="https://picsum.photos/1600/900" alt="cat" />
               </picture>
               <figcaption>
                 Image label here —&nbsp;©&nbsp;Photograph Name
@@ -175,7 +175,7 @@
             <div class="sticky sticky--top">
               <Card type="default">
                 <!--template v-slot:image>
-                  <img src="https://placekitten.com/g/775/350" alt="cat">
+                  <img src="https://picsum.photos/775/350" alt="cat">
                 </template-->
                 <template v-slot:title>
                   <h3>Side notes, can be sticky</h3>
@@ -282,10 +282,10 @@
               <figure>
                 <picture>
                   <source
-                    srcset="https://placekitten.com/g/1600/1200"
+                    srcset="https://picsum.photos/1600/1200"
                     media="(min-width: 1024px)"
                   />
-                  <img src="https://placekitten.com/g/800/600" alt="cat" />
+                  <img src="https://picsum.photos/800/600" alt="cat" />
                 </picture>
               </figure>
               <div>
@@ -307,10 +307,10 @@
               <figure>
                 <picture>
                   <source
-                    srcset="https://placekitten.com/g/1600/1200"
+                    srcset="https://picsum.photos/1600/1200"
                     media="(min-width: 1024px)"
                   />
-                  <img src="https://placekitten.com/g/1600/900" alt="cat" />
+                  <img src="https://picsum.photos/1600/900" alt="cat" />
                 </picture>
               </figure>
               <div>
@@ -383,10 +383,10 @@
               <figure>
                 <picture>
                   <source
-                    srcset="https://placekitten.com/g/1600/1200"
+                    srcset="https://picsum.photos/1600/1200"
                     media="(min-width: 1024px)"
                   />
-                  <img src="https://placekitten.com/g/800/600" alt="cat" />
+                  <img src="https://picsum.photos/800/600" alt="cat" />
                 </picture>
               </figure>
               <div>
@@ -408,10 +408,10 @@
               <figure>
                 <picture>
                   <source
-                    srcset="https://placekitten.com/g/1600/1200"
+                    srcset="https://picsum.photos/1600/1200"
                     media="(min-width: 1024px)"
                   />
-                  <img src="https://placekitten.com/g/1600/900" alt="cat" />
+                  <img src="https://picsum.photos/1600/900" alt="cat" />
                 </picture>
               </figure>
               <div>
@@ -439,22 +439,22 @@
 </template>
 
 <script>
-import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
-import TopBar from '../components/ch/sections/TopBar.vue'
-import TopHeader from '../components/ch/sections/TopHeader.vue'
-import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
-import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
-import MobileMenu from '../components/ch/sections/MobileMenu.vue'
-import FooterInformation from '../components/ch/sections/FooterInformation.vue'
-import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import Card from '~/components/ch/components/Card'
 import Btn from '~/components/ch/components/Btn'
-import SvgIcon from '~/components/ch/components/SvgIcon'
-import Hero from '~/components/ch/sections/Hero'
-import QuoteSection from '~/components/ch/sections/QuoteSection'
+import Card from '~/components/ch/components/Card'
 import Newsletter from '~/components/ch/components/Newsletter.vue'
+import SvgIcon from '~/components/ch/components/SvgIcon'
 import ShareBar from '~/components/ch/demo/ShareBar.vue'
 import TableSortable from '~/components/ch/demo/TableSortable.vue'
+import Hero from '~/components/ch/sections/Hero'
+import QuoteSection from '~/components/ch/sections/QuoteSection'
+import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
+import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
+import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
+import FooterInformation from '../components/ch/sections/FooterInformation.vue'
+import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
+import MobileMenu from '../components/ch/sections/MobileMenu.vue'
+import TopBar from '../components/ch/sections/TopBar.vue'
+import TopHeader from '../components/ch/sections/TopHeader.vue'
 
 export default {
   name: 'detailPageSimple',

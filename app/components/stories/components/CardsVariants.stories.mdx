@@ -1,24 +1,23 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
-import Card from '../../ch/components/Card.vue';
-import Btn from '../../ch/components/Btn.vue';
-import SvgIcon from '../../ch/components/SvgIcon.vue';
-import SubpagesSection from '../../ch/sections/SubpagesSection.vue';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Card from '../../ch/components/Card.vue'
+import Btn from '../../ch/components/Btn.vue'
+import SvgIcon from '../../ch/components/SvgIcon.vue'
+import SubpagesSection from '../../ch/sections/SubpagesSection.vue'
 
 <Meta
   title="Components/Card/Cards variants"
-  components={Card, Btn, SvgIcon}
+  components={(Card, Btn, SvgIcon)}
 />
 
 export const TemplateCardArticle = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Card, Btn, SvgIcon },
-  template:
-  `
+  template: `
     <div style="padding: 3em;" class="bg--secondary-50">
       <div style="max-width: 600px; margin: auto;">
         <Card :type="type" >
           <template v-slot:image>
-            <img src="https://placekitten.com/g/775/435" alt="cat">
+            <img src="https://picsum.photos/775/435" alt="cat">
           </template>
           <template v-slot:metaInfos>
             <p class="meta-info">
@@ -56,12 +55,14 @@ export const TemplateCardArticle = (args, { argTypes }) => ({
       </div>
     </div>
   `,
-});
+})
 
 # Card Variants
 
 ## Article or news card, with mandatory image
+
 This is the default Card variant, built with the following content types:
+
 - article type (optional)
 - date (optional)
 - image
@@ -75,14 +76,16 @@ Use this `default` card variant when you don't have an image for every article o
 <Story
   name="Article or news item"
   args={{
-    type: "default",
+    type: 'default',
   }}
 >
   {TemplateCardArticle.bind({})}
 </Story>
 
 ## Article or news card, with optional image
+
 This is the default Card variant, built with the following content types:
+
 - article type (optional)
 - date (optional)
 - image (optional)
@@ -96,14 +99,16 @@ Use this `universal` card variant when you have an image for every article or ne
 <Story
   name="News item, optional image"
   args={{
-    type: "universal",
+    type: 'universal',
   }}
 >
   {TemplateCardArticle.bind({})}
 </Story>
 
 ## Teaser for events
+
 Card variant for events, built with the following content types:
+
 - article type (optional)
 - date (optional)
 - image (optional)
@@ -118,13 +123,12 @@ Card variant for events, built with the following content types:
 export const TemplateCardEvent = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Card, Btn, SvgIcon },
-  template:
-  `
+  template: `
     <div style="padding: 3em;" class="bg--secondary-50">
       <div style="max-width: 600px; margin: auto;">
         <Card type="default" >
           <template v-slot:image>
-            <img src="https://placekitten.com/g/775/350" alt="cat">
+            <img src="https://picsum.photos/775/350" alt="cat">
           </template>
           <template v-slot:metaInfos>
             <p class="meta-info">
@@ -176,17 +180,16 @@ export const TemplateCardEvent = (args, { argTypes }) => ({
       </div>
     </div>
   `,
-});
+})
 
-<Story
-  name="Event item"
-  args={{}}
->
+<Story name="Event item" args={{}}>
   {TemplateCardEvent.bind({})}
 </Story>
 
 ## Teaser for Social medias
+
 Card variant for social medias, built with the following content:
+
 - header (gray background)
 - the feed or iframe and its link
 - a link to the social media
@@ -194,8 +197,7 @@ Card variant for social medias, built with the following content:
 export const TemplateCardShare = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Card, Btn, SvgIcon },
-  template:
-  `
+  template: `
     <div style="padding: 3em;" class="bg--secondary-50">
       <div style="max-width: 600px; margin: auto;">
         <Card>
@@ -223,35 +225,30 @@ export const TemplateCardShare = (args, { argTypes }) => ({
       </div>
     </div>
   `,
-});
+})
 
 <Canvas>
-  <Story
-    name="Sharing item"
-    args={{}}
-  >
+  <Story name="Sharing item" args={{}}>
     {TemplateCardShare.bind({})}
   </Story>
 </Canvas>
 
 ## Teaser for Hub pages
+
 A Hub page is a collection of teasers, pointing to the subpages. Each teaser is a card with the `highlight` variant. You can check the <a href="?path=/story/pages-hub-page--example">complete example of a Hub Page</a>
 
 export const TemplateCardHub = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SubpagesSection },
-  template:
-  `
+  template: `
     <SubpagesSection />
   `,
-});
+})
 
 <Canvas>
-  <Story
-    name="Hub page item"
-    args={{}}
-  >
+  <Story name="Hub page item" args={{}}>
     {TemplateCardHub.bind({})}
   </Story>
 </Canvas>
+
 
