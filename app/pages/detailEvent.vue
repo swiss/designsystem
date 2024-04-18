@@ -329,7 +329,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 export default {
-  name: 'detailPageSimple',
+  name: 'detailPageEvent',
   components: {
     AlterBodyClasses,
     TopBar,

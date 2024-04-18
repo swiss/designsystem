@@ -457,7 +457,7 @@ import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 
 export default {
-  name: 'detailPageSimple',
+  name: 'detailPageComplex',
   components: {
     AlterBodyClasses,
     TopBar,

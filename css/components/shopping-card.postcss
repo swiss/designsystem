@@ -1,0 +1,94 @@
+/*----------------------------------------*\
+  SHOPPING CARD
+\*----------------------------------------*/
+
+.shopping__card {
+  @apply flex h-[200px];
+  @apply bg-white;
+  container-type: inline-size;
+
+  /* Flat */
+  @apply py-4;
+  @apply bg-transparent;
+  @apply border-b border-secondary-200;
+}
+
+/* TODO: Figure out some better spacings for medium screens */
+.shopping__card--view {
+  .shopping__card-details-container {
+    @apply col-span-6;
+  }
+
+  .shopping__card-action-container {
+    @apply col-span-3;
+  }
+
+  .shopping__card__image {
+    @apply col-span-3;
+  }
+}
+
+.shopping__card--edit {
+  .shopping__card-details-container {
+    @apply col-span-6;
+  }
+
+  .shopping__card-ammount-container {
+    @apply col-span-2;
+  }
+
+  .shopping__card-action-container {
+    @apply col-span-2;
+  }
+
+  .shopping__card__image {
+    @apply col-span-2;
+  }
+}
+
+.shopping__card__header {
+}
+
+.shopping__card__image {
+  @apply relative;
+  @apply h-[168px];
+  @apply w-[168px];
+
+  @apply flex items-center justify-center;
+
+  .shopping__card__image-background {
+    @apply h-full w-full;
+    @apply absolute z-30;
+    @apply bg-secondary-50 border-2 border-white;
+    @apply opacity-70;
+  }
+
+  img {
+    @apply z-40;
+    @apply max-w-[90%] max-h-[90%];
+  }
+
+  .image-not-available {
+    @apply z-40;
+  }
+}
+
+.shopping__card-details-container {
+  @apply pl-5 pr-5;
+}
+
+.shopping__card-action-container {
+  @apply flex flex-col justify-between;
+}
+
+.shopping__card__price {
+  @apply text-right;
+}
+
+.shopping__card__action {
+  @apply self-end;
+
+  button {
+    @apply !p-0;
+  }
+}

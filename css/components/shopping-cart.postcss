@@ -1,0 +1,87 @@
+/*----------------------------------------*\
+  SHOPPING CART
+\*----------------------------------------*/
+
+.shopping-cart-ammount-indicator {
+  @apply bg-red-600;
+  width: 20px;
+  height: 20px;
+  @apply rounded-full;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  color: white;
+  font-size: 0.7rem;
+  @apply absolute;
+  top: -5px;
+  left: 15px;
+}
+
+.shopping-cart-button {
+  @apply relative;
+  @apply cursor-pointer;
+}
+
+.shopping__card-temporary-description {
+  @apply mt-[10px];
+  @apply max-w-[600px];
+}
+
+.shopping__cart-temporary-button {
+  @apply mt-[15px];
+}
+
+.shopping__cart-accordion-content {
+  @apply w-full px-2 pt-4 pb-6;
+}
+
+.shopping__cart-card-list {
+  @apply list-none;
+}
+
+.shopping__cart__action-container {
+  @apply mt-4;
+}
+
+.shopping__cart-container {
+  @apply p-16;
+}
+
+.shopping__cart-confirmation-badge {
+  @apply text-green-600 border-green-600;
+  & svg {
+    @apply fill-current;
+  }
+}
+
+.shopping__cart-confirmation-checkmark {
+  @apply absolute;
+  @apply text-white border-white;
+
+  & svg {
+    @apply fill-current;
+  }
+}
+
+.shopping__cart-confirmation {
+  @apply flex items-center justify-center;
+  @apply relative;
+  @apply w-[48px] h-[48px];
+}
+
+.shopping__cart-confirmation-container {
+}
+
+.shopping__cart-confirmation-title {
+  @apply mt-[25px];
+}
+
+.shopping__cart-confirmation-action {
+  @apply mt-[30px];
+}
+
+/* Price and order box */
+
+.shopping__cart-order-agreement {
+  @apply mt-[20px];
+}

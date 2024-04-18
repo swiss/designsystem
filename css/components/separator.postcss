@@ -28,6 +28,18 @@
   }
 }
 
+.separator--md {
+  &::before {
+    @apply w-full block;
+    @apply h-2 md:h-3 lg:h-4;
+  }
+  &::after {
+    content: '';
+    @apply w-full block;
+    @apply h-2 md:h-3 lg:h-4;
+  }
+}
+
 .separator--negative::before {
   @apply border-secondary-400;
 }

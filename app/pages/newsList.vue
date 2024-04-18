@@ -268,7 +268,7 @@ import TagItem from '../components/ch/components/TagItem.vue'
 import Breadcrumb from '~/components/ch/sections/Breadcrumb.vue'
 
 export default {
-  name: 'detailPageSimple',
+  name: 'detailPageNewsList',
   components: {
     AlterBodyClasses,
     TopBar,
