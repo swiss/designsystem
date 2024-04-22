@@ -1,11 +1,14 @@
 <template>
   <div class="box">
-    <h2 class="h5">{{ title }}</h2>
+    <h2 class="h5 order__box-title">{{ title }}</h2>
+    <div class="order__box-information-price-piece">
+      <p>{{ pricePiece }}</p>
+    </div>
     <span class="text--base font--bold order-description">{{
       description
     }}</span>
-    <div class="order-input-container">
-      <div class="form__group__input order-input-ammount-container">
+    <div class="order__box-input-container">
+      <div class="form__group__input order__box-input-ammount-container">
         <label :for="getUniqueId('input')" class="text--base">
           {{ ammountInputLabel }}
         </label>
@@ -17,39 +20,30 @@
           @keypress="restrictChars($event)"
           v-on:input="inputValue = $event.target.value"
           v-model="inputValue"
-          class="order-ammount-input input--outline input--base"
+          class="order__box-ammount-input input--outline input--base"
           :min="0"
         />
       </div>
-      <div class="form__group__select order-input-language-container">
-        <div class="select order-language-selector">
-          <select
-            variant="outline"
-            :bare="false"
-            size="sm"
-            class="input--outline input--sm"
-            @change="selectedValue = $event.target.value"
-          >
-            <option
-              v-for="(option, index) in options"
-              :key="`option-${index}`"
-              :value="option.value"
-              :selected="option.selected"
-            >
-              {{ option.label }}
-            </option>
-          </select>
-          <div class="select__icon">
-            <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-              <path
-                d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
+      <Select
+        class="order__box-input-language-container"
+        variant="outline"
+        :bare="false"
+        size="sm"
+        :label="languageLabel"
+        :id="getUniqueId('select')"
+      >
+        <option
+          v-for="(option, index) in options"
+          :key="`option-${index}`"
+          :value="option.value"
+          :selected="option.selected"
+        >
+          {{ option.label }}
+        </option></Select
+      >
     </div>
     <Btn
+      class="order__box-order-button"
       variant="filled"
       :fullWidth="true"
       :label="buttonLabel"
@@ -62,6 +56,7 @@
 
 <script>
 import Btn from '~/components/ch/components/Btn'
+import Select from '~/components/ch/components/Select.vue'
 import ToastMessage from '~/components/ch/components/ToastMessage'
 const { v4: uuidv4 } = require('uuid')
 
@@ -70,6 +65,7 @@ export default {
   components: {
     Btn,
     ToastMessage,
+    Select,
   },
   data() {
     return {
@@ -110,6 +106,14 @@ export default {
     addToCart: {
       type: Function,
       default: () => ({}),
+    },
+    pricePiece: {
+      type: String,
+      required: true,
+    },
+    languageLabel: {
+      type: String,
+      required: true,
     },
   },
   methods: {

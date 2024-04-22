@@ -1,42 +1,49 @@
 <template>
-  <div class="shopping__card grid grid-columns-12" :class="computedClasses">
+  <div class="shopping__card" :class="computedClasses">
     <div class="shopping__card__image">
-      <div class="shopping__card__image-background" />
+      <div class="shopping__card-image-background" />
       <img
         v-if="image && image.src && image.alt"
         :src="image.src"
         :alt="image.alt"
       />
-      <ImageNotAvailable class="mb-4" v-else text="Kein Bild verfügbar" />
+      <ImageNotAvailable
+        class="shopping__card-image-not-available"
+        v-else
+        text="Kein Bild verfügbar"
+      />
     </div>
-
     <div class="shopping__card-details-container">
       <div class="card__title">
         <h3>{{ title }}</h3>
       </div>
-      <div class="shopping__card__description">
+      <div class="shopping__card-description">
         <p>{{ description }}</p>
       </div>
-      <div v-if="type === 'view'">
+      <div v-if="type === 'view'" class="shopping__card-ammount">
         <p>Anzahl: {{ ammount }}</p>
       </div>
     </div>
 
+    <!-- Price mobile only -->
+    <div class="shopping__card-price-mobile">
+      <p>{{ price }}</p>
+    </div>
+
     <div v-if="type === 'edit'" class="shopping__card-ammount-container">
-      <!-- TODO: Change triggers also change of cart in localstorage -->
       <input
         type="number"
-        @input="ammountChanged"
         v-model="inputValue"
         class="input--outline text--base"
       />
     </div>
 
     <div class="shopping__card-action-container">
-      <div class="shopping__card__price">
+      <!-- Price desktop only -->
+      <div class="shopping__card-price">
         <p>{{ price }}</p>
       </div>
-      <div class="shopping__card__action">
+      <div class="shopping__card-action">
         <button
           v-if="type === 'view'"
           :aria-label="editLabel"
@@ -127,11 +134,6 @@ export default {
       type: Number,
       default: 1,
     },
-    context: {
-      type: String,
-      required: true,
-      validator: (prop) => ['desktop', 'mobile'].includes(prop),
-    },
   },
   data() {
     return {
@@ -146,9 +148,6 @@ export default {
   },
   created() {
     this.inputValue = this.ammount
-  },
-  methods: {
-    ammountChanged() {},
   },
   computed: {
     computedClasses() {

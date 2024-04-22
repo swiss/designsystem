@@ -98,24 +98,27 @@
                 </ul>
               </div>
               <OrderBox
-                title="Bestellung gedruckte Version in DE, IT, FR"
-                description="Preis exkl. MwSt: CHF 31.50"
-                :options="[
-                  { label: 'Deutsch', value: 'de', selected: true },
-                  { label: 'Französisch', value: 'fr', selected: false },
-                  { label: 'Italienisch', value: 'it', selected: false },
-                ]"
-                :defaultAmmount="1"
-                ammountInputLabel="Anzahl"
-                buttonLabel="In den Warenkorb"
-                :toastMessage="{
-                  text: 'Produkt wurde in den Warenkorb gelegt',
-                  type: 'success',
-                  icon: 'CheckmarkCircle',
-                }"
-                :onChange="addToCart"
-              />
-              <div class="box">
+                class="sidecard-spacing"
+                  title="Bestellung gedruckte Version in DE, IT, FR"
+                  description="Preis exkl. MwSt: CHF 31.50"
+                  :options="[
+                    { label: 'Deutsch', value: 'de', selected: true },
+                    { label: 'Französisch', value: 'fr', selected: false },
+                    { label: 'Italienisch', value: 'it', selected: false },
+                  ]"
+                  :defaultAmmount="2"
+                  pricePiece="Preis pro Stück: CHF 15.75"
+                  ammountInputLabel="Anzahl"
+                  buttonLabel="In den Warenkorb"
+                  :toastMessage="{
+                    text: 'Produkt wurde in den Warenkorb gelegt',
+                    type: 'success',
+                    icon: 'CheckmarkCircle',
+                  }"
+                  :addToCart="addToCart"
+                  languageLabel="Sprache"
+                />
+              <div class="box sidecard-spacing">
                 <h2 class="h5">Webviewer</h2>
                 <btn
                   variant="link"
@@ -241,6 +244,7 @@
                   </ul>
                 </div>
                 <OrderBox
+                class="sidecard-spacing"
                   title="Bestellung gedruckte Version in DE, IT, FR"
                   description="Preis exkl. MwSt: CHF 31.50"
                   :options="[
@@ -248,7 +252,8 @@
                     { label: 'Französisch', value: 'fr', selected: false },
                     { label: 'Italienisch', value: 'it', selected: false },
                   ]"
-                  :defaultAmmount="1"
+                  :defaultAmmount="2"
+                  pricePiece="Preis pro Stück: CHF 15.75"
                   ammountInputLabel="Anzahl"
                   buttonLabel="In den Warenkorb"
                   :toastMessage="{
@@ -257,8 +262,9 @@
                     icon: 'CheckmarkCircle',
                   }"
                   :addToCart="addToCart"
+                  languageLabel="Sprache"
                 />
-                <div class="box">
+                <div class="box sidecard-spacing">
                   <h2 class="h5">Webviewer</h2>
                   <btn
                     variant="link"
@@ -379,8 +385,8 @@ export default {
         },
       ],
       shoppingCartAriaLabel: 'There are <ammount> items in your shopping cart.',
-      shoppingCartAmmount: 0, // TODO: add logic which adds up that number
-      shoppingCartLink: '/shopping-cart', // TODO: replace with actual link
+      shoppingCartAmmount: 0,
+      shoppingCartLink: '/shopping-cart',
       shoppingCartTarget: '_self',
       selectionAmmount: 1,
       selectionLanguage: 'de',

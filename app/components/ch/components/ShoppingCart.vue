@@ -38,10 +38,6 @@
                   <ShoppingCard
                     id="1"
                     type="edit"
-                    :image="{
-                      src: 'images/publication-cover.png',
-                      alt: 'publication-cover',
-                    }"
                     title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
                     description="Preis pro Stück: CHF 12.00"
                     price="CHF 1’200.00"
@@ -66,27 +62,16 @@
                 </li>
               </ul>
             </div>
-            <div>
-              <div class="container--flex font--bold mt-7">
-                <h4>Provisorischer Bestellwert exkl. MWSt:</h4>
-                <p>CHF 3’600.00</p>
-              </div>
-              <p class="shopping__card-temporary-description">
-                Ermässigungen werden gemäss Gebührenverordnung für statistische
+            <ShoppingCartTotal
+              title="Provisorischer Bestellwert exkl. MWSt:"
+              total="CHF 3’600.00"
+              description="Ermässigungen werden gemäss Gebührenverordnung für statistische
                 Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im
-                Bestellformular unter „Nachricht“ angebracht werden.
-              </p>
-              <div class="shopping__cart__action-container">
-                <btn
-                  class="shopping__cart-temporary-button"
-                  variant="outline-negative"
-                  size="base"
-                  label="Nächster Schritt"
-                  ariaLabel="Nächster Schritt"
-                  @emitClick="activeIndex = 2"
-                />
-              </div>
-            </div>
+                Bestellformular unter „Nachricht“ angebracht werden."
+              nextStepLabel="Nächster Schritt"
+              nextStepAriaLabel="Nächster Schritt"
+              @nextStep="activeIndex = 2"
+            />
           </div>
         </div>
       </li>
@@ -111,7 +96,7 @@
               :closeBtn="false"
               text="Bitte füllen Sie alle Pflichtfelder aus. (Diese sind mit mit einem “*” markiert)"
             />
-            <Form class="mt-7">
+            <Form class="shopping__cart-order-form">
               <div>
                 <Fieldset
                   variant="outline"
@@ -138,30 +123,30 @@
                 </Fieldset>
               </div>
 
-              <div class="grid grid-columns-2 gap--responsive mt-4">
+              <div class="shopping__cart-order-form-container">
                 <!-- First cells -->
                 <div>
                   <Input :required="true" label="Name" placeholder="Nachname" />
                   <Input
-                    class="mt-4"
+                    class="shopping__cart-order-form-input-spacing"
                     :required="false"
                     label="Organisation"
                     placeholder="Organisation"
                   />
                   <Input
-                    class="mt-4"
+                    class="shopping__cart-order-form-input-spacing"
                     :required="false"
                     label="Postfach"
                     placeholder="Posteach"
                   />
                   <Input
-                    class="mt-4"
+                    class="shopping__cart-order-form-input-spacing"
                     :required="true"
                     label="Ort"
                     placeholder="Ort"
                   />
                   <Input
-                    class="mt-4"
+                    class="shopping__cart-order-form-input-spacing"
                     :required="false"
                     label="Telefon"
                     placeholder="Telefon nummer (+41...)"
@@ -175,39 +160,38 @@
                     placeholder="Vorname"
                   />
                   <Input
-                    class="mt-4"
+                    class="shopping__cart-order-form-input-spacing"
                     :required="true"
                     label="Strasse / Nr."
                     placeholder="Strasse  & Hausnummer"
                   />
                   <Input
-                    class="mt-4"
+                    class="shopping__cart-order-form-input-spacing"
                     :required="true"
                     label="Postleitzahl"
                     placeholder="Postleitzahl"
                   />
                   <Input
-                    class="mt-4"
+                    class="shopping__cart-order-form-input-spacing"
                     :required="true"
                     label="Land"
                     placeholder="Land"
                   />
                   <Input
-                    class="mt-4"
+                    class="shopping__cart-order-form-input-spacing"
                     :required="true"
                     label="E-Mail"
                     placeholder="E-mail Addresse"
                   />
                 </div>
               </div>
-              <div class="mt-4">
-                <Textarea
-                  label="Nachricht (Bitte Ermässigungsansprüche hier anbringen)"
-                  name="order-message"
-                  placeholder="Erweiterte Details hier angeben"
-                />
-              </div>
-              <div class="mt-6">
+              <Textarea
+                class="shopping__cart-order-form-input-spacing"
+                label="Nachricht (Bitte Ermässigungsansprüche hier anbringen)"
+                name="order-message"
+                placeholder="Erweiterte Details hier angeben"
+              />
+              <div class="shopping__cart-order-form-fieldset-spacing">
                 <Fieldset
                   variant="outline"
                   size="base"
@@ -233,8 +217,8 @@
               </div>
 
               <div v-if="showDeliveryAddress">
-                <h3 class="mt-4">Lieferadresse</h3>
-                <div class="grid grid-columns-2 gap--responsive mt-4">
+                <h3 class="shopping__cart-order-form-title">Lieferadresse</h3>
+                <div class="shopping__cart-order-form-container">
                   <!-- First cells -->
                   <div>
                     <Input
@@ -243,19 +227,19 @@
                       placeholder="Nachname"
                     />
                     <Input
-                      class="mt-4"
+                      class="shopping__cart-order-form-input-spacing"
                       :required="false"
                       label="Organisation"
                       placeholder="Organisation"
                     />
                     <Input
-                      class="mt-4"
+                      class="shopping__cart-order-form-input-spacing"
                       :required="false"
                       label="Postfach"
                       placeholder="Posteach"
                     />
                     <Input
-                      class="mt-4"
+                      class="shopping__cart-order-form-input-spacing"
                       :required="true"
                       label="Ort"
                       placeholder="Ort"
@@ -269,19 +253,19 @@
                       placeholder="Vorname"
                     />
                     <Input
-                      class="mt-4"
+                      class="shopping__cart-order-form-input-spacing"
                       :required="true"
                       label="Strasse / Nr."
                       placeholder="Strasse  & Hausnummer"
                     />
                     <Input
-                      class="mt-4"
+                      class="shopping__cart-order-form-input-spacing"
                       :required="true"
                       label="Postleitzahl"
                       placeholder="Postleitzahl"
                     />
                     <Input
-                      class="mt-4"
+                      class="shopping__cart-order-form-input-spacing"
                       :required="true"
                       label="Land"
                       placeholder="Land"
@@ -290,7 +274,7 @@
                 </div>
               </div>
 
-              <div class="mt-6">
+              <div class="shopping__cart-order-form-fieldset-spacing">
                 <Fieldset
                   :required="true"
                   variant="outline"
@@ -338,8 +322,8 @@
           :style="{ maxHeight: activeIndex === 3 ? getContentHeigth : null }"
         >
           <div class="shopping__cart-accordion-content">
-            <div class="grid grid-columns-5 gap--responsive">
-              <ul class="shopping__cart-card-list grid-span-3">
+            <div class="shopping__cart-order-overview-container">
+              <ul class="shopping__cart-card-list">
                 <li>
                   <ShoppingCard
                     id="1"
@@ -359,10 +343,6 @@
                   <ShoppingCard
                     id="1"
                     type="view"
-                    :image="{
-                      src: 'images/publication-cover.png',
-                      alt: 'publication-cover',
-                    }"
                     title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
                     description="Preis pro Stück: CHF 12.00"
                     price="CHF 1’200.00"
@@ -386,9 +366,11 @@
                   />
                 </li>
               </ul>
-              <div class="grid-span-2">
+              <div class="shopping__cart-delivery-summary">
                 <div class="box">
-                  <h3 class="h3">Lieferadresse</h3>
+                  <h3 class="h3 shopping__cart-summary-box-title">
+                    Lieferadresse
+                  </h3>
                   <Contact
                     address1="Max Mustermann"
                     street="Enikonstrasse 3"
@@ -397,40 +379,23 @@
                     country="Schweiz"
                   />
                 </div>
-                <div class="box !mt-5">
-                  <h3 class="h3">Rechnungsadresse</h3>
+                <div class="box shopping__cart-bill-address-container">
+                  <h3 class="h3 shopping__cart-summary-box-title">
+                    Rechnungsadresse
+                  </h3>
                   <p>Entspricht der Lieferadresse</p>
                 </div>
-                <div class="box !mt-5">
-                  <h3 class="h3">Gesamtsumme</h3>
-                  <div>
-                    <div class="container--flex">
-                      <p>Zwischensumme</p>
-                      <p class="font--bold">CHF 3’600.00</p>
-                    </div>
-                    <hr class="separator separator--md" />
-                    <div class="container--flex">
-                      <p>Gesamtsumme (exkl. MwSt.)</p>
-                      <p class="font--bold">CHF 3’600.00</p>
-                    </div>
-                  </div>
-                  <btn
-                    class="shopping__cart-temporary-button"
-                    variant="outline-negative"
-                    size="base"
-                    label="Jetzt bestellen"
-                    ariaLabel="Jetzt bestellen"
-                    :fullWidth="true"
-                  />
-
-                  <div class="text--xs shopping__cart-order-agreement">
-                    <p>
-                      Mit deiner Bestellung erklärst du dich mit unseren
-                      <a>Datenschutzbestimmungen</a> und
-                      <a>AGB</a> einverstanden.
-                    </p>
-                  </div>
-                </div>
+                <ShoppingCartTotalSummary
+                  title="Gesamtsumme"
+                  subTotalTitle="Zwischensumme"
+                  subTotal="CHF 3’600.00"
+                  totalTitle="Gesamtsumme (exkl. MwSt.)"
+                  total="CHF 3’600.00"
+                  orderButtonText="Jetzt bestellen"
+                  orderButtonAriaLabel="Jetzt bestellen"
+                  agreementText="Mit deiner Bestellung erklärst du dich mit unseren <a>Datenschutzbestimmungen</a> und <a>AGB</a> einverstanden."
+                  @nextStep="showConfirmation = true"
+                />
               </div>
             </div>
           </div>
@@ -486,6 +451,8 @@ import Form from './Form.vue'
 import Input from './Input.vue'
 import Notification from './Notification.vue'
 import Radio from './Radio.vue'
+import ShoppingCartTotal from './ShoppingCartTotal.vue'
+import ShoppingCartTotalSummary from './ShoppingCartTotalSummary.vue'
 import StepIndicator from './StepIndicator.vue'
 import Textarea from './Textarea'
 const { v4: uuidv4 } = require('uuid')
@@ -505,6 +472,8 @@ export default {
     Textarea,
     Checkbox,
     Contact,
+    ShoppingCartTotal,
+    ShoppingCartTotalSummary,
   },
   props: {
     cartOverviewTitle: {

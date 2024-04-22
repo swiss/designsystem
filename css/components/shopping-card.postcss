@@ -3,7 +3,6 @@
 \*----------------------------------------*/
 
 .shopping__card {
-  @apply flex h-[200px];
   @apply bg-white;
   container-type: inline-size;
 
@@ -11,52 +10,33 @@
   @apply py-4;
   @apply bg-transparent;
   @apply border-b border-secondary-200;
-}
 
-/* TODO: Figure out some better spacings for medium screens */
-.shopping__card--view {
-  .shopping__card-details-container {
-    @apply col-span-6;
-  }
-
-  .shopping__card-action-container {
-    @apply col-span-3;
-  }
-
-  .shopping__card__image {
-    @apply col-span-3;
+  @screen lg {
+    @apply h-[200px];
+    @apply flex;
   }
 }
 
 .shopping__card--edit {
-  .shopping__card-details-container {
-    @apply col-span-6;
-  }
-
   .shopping__card-ammount-container {
-    @apply col-span-2;
+    @apply mt-[20px];
   }
-
-  .shopping__card-action-container {
-    @apply col-span-2;
+  @screen lg {
+    .shopping__card-ammount-container {
+      @apply mt-0;
+      @apply mr-[10px];
+      @apply min-w-[150px] max-w-[150px];
+    }
   }
-
-  .shopping__card__image {
-    @apply col-span-2;
-  }
-}
-
-.shopping__card__header {
 }
 
 .shopping__card__image {
   @apply relative;
-  @apply h-[168px];
-  @apply w-[168px];
+  @apply h-[250px] w-full;
 
   @apply flex items-center justify-center;
 
-  .shopping__card__image-background {
+  .shopping__card-image-background {
     @apply h-full w-full;
     @apply absolute z-30;
     @apply bg-secondary-50 border-2 border-white;
@@ -71,24 +51,73 @@
   .image-not-available {
     @apply z-40;
   }
+
+  @screen lg {
+    @apply max-h-[168px] max-w-[168px];
+  }
 }
 
 .shopping__card-details-container {
-  @apply pl-5 pr-5;
+  @apply mt-[10px] mr-[10px];
+  @apply w-full;
+  @screen lg {
+    @apply pl-5 pr-5;
+    @apply mt-0 mr-0;
+  }
+}
+
+.shopping__card-description {
+  @apply mt-[10px];
+  @screen lg {
+    @apply mt-0;
+  }
 }
 
 .shopping__card-action-container {
+  .shopping__card-price {
+    @apply hidden;
+    @screen lg {
+      @apply block;
+    }
+  }
   @apply flex flex-col justify-between;
+  @screen lg {
+    @apply min-w-[120px] max-w-[120px];
+  }
 }
 
-.shopping__card__price {
+.shopping__card-price-mobile {
+  @apply mt-[20px];
+  @apply font-bold;
+  @apply block;
+  @screen lg {
+    @apply hidden;
+  }
+}
+
+.shopping__card-price {
   @apply text-right;
+  @apply font-bold;
 }
 
-.shopping__card__action {
+.shopping__card-action {
   @apply self-end;
+  @apply mt-[20px];
+
+  @screen lg {
+    @apply mt-0;
+  }
 
   button {
     @apply !p-0;
   }
+}
+
+.shopping__card-ammount {
+  @apply mt-[10px];
+}
+
+.shopping__card-image-not-available {
+  @apply mb-4;
+  @apply z-40;
 }
