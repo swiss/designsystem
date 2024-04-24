@@ -434,7 +434,7 @@ export default {
 
       this.emitter.emit('trigger-toast-message', {
         text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${this.shoppingCartAmmount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
-        icon: 'triggerName',
+        icon: 'CheckmarkCircle',
         type: 'success',
       })
     },
