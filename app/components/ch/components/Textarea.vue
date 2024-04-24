@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'Input',
+  name: 'Textarea',
   props: {
     variant: {
       type: String,

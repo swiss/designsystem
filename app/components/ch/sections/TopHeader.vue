@@ -20,7 +20,14 @@
         :class="overrideLogoForPrint ? 'logo--print-only' : ''"
       />
       <div class="top-header__right">
-        <MetaNavigation context="desktop" :isFreebrand="isFreebrand" />
+        <MetaNavigation
+          context="desktop"
+          :isFreebrand="isFreebrand"
+          :shoppingCartAriaLabel="shoppingCartAriaLabel"
+          :shoppingCartAmmount="shoppingCartAmmount"
+          :shoppingCartLink="shoppingCartLink"
+          :shoppingCartTarget="shoppingCartTarget"
+        />
         <SearchMain />
         <LanguageSwitcher
           v-if="isFreebrand && screenSize <= 1023"
@@ -36,11 +43,11 @@
 </template>
 
 <script>
-import Logo from '~/components/ch/components/Logo.vue'
 import Burger from '~/components/ch/components/Burger.vue'
+import Logo from '~/components/ch/components/Logo.vue'
 import SearchMain from '~/components/ch/components/SearchMain.vue'
-import MetaNavigation from '../navigations/MetaNavigation.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher'
+import MetaNavigation from '../navigations/MetaNavigation.vue'
 
 export default {
   name: 'topHeader',
@@ -52,6 +59,24 @@ export default {
     isFreebrand: {
       type: Boolean,
       default: false,
+    },
+    shoppingCartAriaLabel: {
+      type: String,
+      default: 'There are <ammount> items in your shopping cart.',
+    },
+    shoppingCartAmmount: {
+      type: Number,
+      default: 0,
+    },
+    shoppingCartLink: {
+      type: String,
+      required: true
+    },
+    shoppingCartTarget: {
+      type: String,
+      validator: (prop) =>
+        ['_blank', '_parent', '_self', '_top'].includes(prop),
+      default: '_self',
     },
   },
   data() {

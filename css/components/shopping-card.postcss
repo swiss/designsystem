@@ -1,0 +1,123 @@
+/*----------------------------------------*\
+  SHOPPING CARD
+\*----------------------------------------*/
+
+.shopping__card {
+  @apply bg-white;
+  container-type: inline-size;
+
+  /* Flat */
+  @apply py-4;
+  @apply bg-transparent;
+  @apply border-b border-secondary-200;
+
+  @screen lg {
+    @apply h-[200px];
+    @apply flex;
+  }
+}
+
+.shopping__card--edit {
+  .shopping__card-ammount-container {
+    @apply mt-[20px];
+  }
+  @screen lg {
+    .shopping__card-ammount-container {
+      @apply mt-0;
+      @apply mr-[10px];
+      @apply min-w-[150px] max-w-[150px];
+    }
+  }
+}
+
+.shopping__card__image {
+  @apply relative;
+  @apply h-[250px] w-full;
+
+  @apply flex items-center justify-center;
+
+  .shopping__card-image-background {
+    @apply h-full w-full;
+    @apply absolute z-30;
+    @apply bg-secondary-50 border-2 border-white;
+    @apply opacity-70;
+  }
+
+  img {
+    @apply z-40;
+    @apply max-w-[90%] max-h-[90%];
+  }
+
+  .image-not-available {
+    @apply z-40;
+  }
+
+  @screen lg {
+    @apply max-h-[168px] max-w-[168px];
+  }
+}
+
+.shopping__card-details-container {
+  @apply mt-[10px] mr-[10px];
+  @apply w-full;
+  @screen lg {
+    @apply pl-5 pr-5;
+    @apply mt-0 mr-0;
+  }
+}
+
+.shopping__card-description {
+  @apply mt-[10px];
+  @screen lg {
+    @apply mt-0;
+  }
+}
+
+.shopping__card-action-container {
+  .shopping__card-price {
+    @apply hidden;
+    @screen lg {
+      @apply block;
+    }
+  }
+  @apply flex flex-col justify-between;
+  @screen lg {
+    @apply min-w-[120px] max-w-[120px];
+  }
+}
+
+.shopping__card-price-mobile {
+  @apply mt-[20px];
+  @apply font-bold;
+  @apply block;
+  @screen lg {
+    @apply hidden;
+  }
+}
+
+.shopping__card-price {
+  @apply text-right;
+  @apply font-bold;
+}
+
+.shopping__card-action {
+  @apply self-end;
+  @apply mt-[20px];
+
+  @screen lg {
+    @apply mt-0;
+  }
+
+  button {
+    @apply !p-0;
+  }
+}
+
+.shopping__card-ammount {
+  @apply mt-[10px];
+}
+
+.shopping__card-image-not-available {
+  @apply mb-4;
+  @apply z-40;
+}

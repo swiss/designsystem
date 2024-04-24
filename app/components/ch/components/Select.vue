@@ -1,10 +1,6 @@
 <template>
   <div class="form__group__select">
-    <label
-      v-if="label"
-      :for="id"
-      :class="labelClasses"
-    >
+    <label v-if="label" :for="id" :class="labelClasses">
       {{ label }}<span v-if="required" class="form__group__required" />
     </label>
     <div :class="selectWrapperClasses">
@@ -13,22 +9,23 @@
         :id="id"
         :name="name"
         :required="required"
+        @change="handleChange($event)"
       >
         <slot></slot>
       </select>
       <div class="select__icon">
-        <svg
-          role="presentation"
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-        >
+        <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
           <path
             d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
           />
         </svg>
       </div>
     </div>
-    <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
+    <div
+      v-if="message"
+      class="badge badge--sm"
+      :class="`badge--${messageType}`"
+    >
       {{ message }}
     </div>
   </div>
@@ -41,7 +38,7 @@ export default {
     variant: {
       type: String,
       validator: (prop) => ['outline', 'negative'].includes(prop),
-      default: 'outline'
+      default: 'outline',
     },
     bare: {
       type: Boolean,
@@ -69,14 +66,19 @@ export default {
     },
     messageType: {
       type: String,
-      validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+      validator: (prop) =>
+        ['error', 'warning', 'success', 'info'].includes(prop),
     },
     required: {
       type: Boolean,
       default: false,
     },
   },
-
+  methods: {
+    handleChange(e) {
+      this.$emit('select', e.target.value)
+    },
+  },
   computed: {
     selectWrapperClasses() {
       let base = 'select '

@@ -199,7 +199,7 @@ import Badge from '../components/ch/components/Badge.vue'
 import Input from '../components/ch/components/Input.vue'
 
 export default {
-  name: 'detailPageSimple',
+  name: 'detailPagePressRelease',
   components: {
     AlterBodyClasses,
     TopBar,

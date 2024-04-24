@@ -1,0 +1,20 @@
+/*----------------------------------------*\
+  STEP INDICATOR
+\*----------------------------------------*/
+
+.step-indicator {
+  .step-indicator__step {
+    @apply rounded-full;
+    @apply bg-gray-400;
+    @apply w-[36px] h-[36px];
+    @apply flex items-center justify-center;
+    @apply text-white;
+
+    .step-indicator__step--confirmed {
+      @apply bg-green-500;
+    }
+  }
+  .step-indicator__step.step-indicator__step--confirmed {
+    @apply bg-green-500;
+  }
+}

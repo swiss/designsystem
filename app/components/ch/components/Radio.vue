@@ -9,14 +9,15 @@
       :checked="checked"
       :required="required"
     />
-    <label
-      v-if="label"
-      :for="id"
-      :class="labelClasses"
-    >
-      {{ label }} <span v-if="required" class="sr-only">required</span>
+    <label v-if="label" :for="id" :class="labelClasses">
+      <span v-html="label"></span
+      ><span v-if="required" class="sr-only">required</span>
     </label>
-    <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
+    <div
+      v-if="message"
+      class="badge badge--sm"
+      :class="`badge--${messageType}`"
+    >
       {{ message }}
     </div>
   </div>
@@ -29,7 +30,7 @@ export default {
     variant: {
       type: String,
       validator: (prop) => ['outline', 'negative'].includes(prop),
-      default: 'outline'
+      default: 'outline',
     },
     size: {
       type: String,
@@ -55,7 +56,8 @@ export default {
     },
     messageType: {
       type: String,
-      validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+      validator: (prop) =>
+        ['error', 'warning', 'success', 'info'].includes(prop),
     },
     required: {
       type: Boolean,

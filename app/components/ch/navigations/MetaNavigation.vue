@@ -24,6 +24,9 @@
           <a href="#" class="meta-navigation__item"> Medien </a>
         </li>
         <li>
+          <ShoppingCardButton :ammount="shoppingCartAmmount" :ariaLabel="shoppingCartAriaLabel" :target="shoppingCartTarget" :href="shoppingCartLink" />
+        </li>
+        <li>
           <a href="#" class="meta-navigation__more">
             <span> Mehr </span>
             <SvgIcon icon="MoreFilled" size="md" />
@@ -36,14 +39,16 @@
 </template>
 
 <script>
-import SvgIcon from '../components/SvgIcon.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
+import ShoppingCardButton from '../components/ShoppingCardButton.vue'
+import SvgIcon from '../components/SvgIcon.vue'
 
 export default {
   name: 'MetaNavigation',
   components: {
     SvgIcon,
     LanguageSwitcher,
+    ShoppingCardButton,
   },
   props: {
     context: {
@@ -54,6 +59,24 @@ export default {
     isFreebrand: {
       type: Boolean,
       default: false,
+    },
+    shoppingCartAriaLabel: {
+      type: String,
+      default: 'There are <ammount> items in your shopping cart.',
+    },
+    shoppingCartAmmount: {
+      type: Number,
+      default: 0,
+    },
+    shoppingCartLink: {
+      type: String,
+      required: true
+    },
+    shoppingCartTarget: {
+      type: String,
+      validator: (prop) =>
+        ['_blank', '_parent', '_self', '_top'].includes(prop),
+      default: '_self',
     },
   },
   data() {
