@@ -29,6 +29,18 @@
           :shoppingCartTarget="shoppingCartTarget"
         />
         <SearchMain />
+        <div
+          v-if="screenSize < 1024"
+          class="top-header__shopping-cart-button"
+          :class="isFreebrand ? 'freebrand' : ''"
+        >
+          <ShoppingCardButton
+            :ammount="shoppingCartAmmount"
+            :ariaLabel="shoppingCartAriaLabel"
+            :target="shoppingCartTarget"
+            :href="shoppingCartLink"
+          />
+        </div>
         <LanguageSwitcher
           v-if="isFreebrand && screenSize <= 1023"
           type="outline"
@@ -47,6 +59,7 @@ import Burger from '~/components/ch/components/Burger.vue'
 import Logo from '~/components/ch/components/Logo.vue'
 import SearchMain from '~/components/ch/components/SearchMain.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher'
+import ShoppingCardButton from '../components/ShoppingCardButton.vue'
 import MetaNavigation from '../navigations/MetaNavigation.vue'
 
 export default {
@@ -70,7 +83,7 @@ export default {
     },
     shoppingCartLink: {
       type: String,
-      required: true
+      required: true,
     },
     shoppingCartTarget: {
       type: String,
@@ -90,6 +103,7 @@ export default {
     SearchMain,
     MetaNavigation,
     LanguageSwitcher,
+    ShoppingCardButton,
   },
   created() {
     this.resizeWindow()
