@@ -1,16 +1,18 @@
 <template>
-  <notification
-    class="toast-message"
-    :closeBtn="false"
-    :isClosed="false"
-    :icon="icon"
-    :type="type"
-    :text="text"
-  />
+  <div class="toast__message" :class="showMessage ? 'active' : ''">
+    <notification
+      class="toast__message-notification"
+      :closeBtn="false"
+      :isClosed="false"
+      :icon="icon"
+      :type="type"
+      :text="text"
+    />
+  </div>
 </template>
 
 <script>
-import notification from '~/components/ch/components/Notification.vue';
+import notification from '~/components/ch/components/Notification.vue'
 
 export default {
   name: 'ToastMessage',
@@ -18,20 +20,33 @@ export default {
     notification,
   },
   props: {
-    text: {
+    triggerName: {
       type: String,
-      required: true,
+      default: 'trigger-toast-message',
     },
-    icon: {
-      type: String,
-      required: true,
-    },
-    type: {
-      type: String,
-      validator: (prop) =>
-        ['info', 'warning', 'error', 'success', 'alert'].includes(prop),
-      default: 'success',
-    },
+  },
+  data() {
+    return {
+      showMessage: false,
+      text: '',
+      icon: 'CheckmarkCircle',
+      type: 'success',
+      showTimeout: null,
+    }
+  },
+  async mounted() {
+    await this.$nextTick()
+    this.emitter.on(this.triggerName, (e) => {
+      this.text = e.text
+      this.icon = e.icon
+      this.type = e.type
+
+      this.showMessage = true
+      if (this.showTimeout) clearTimeout(this.showTimeout)
+      this.showTimeout = setTimeout(() => {
+        this.showMessage = false
+      }, 5000)
+    })
   },
 }
 </script>

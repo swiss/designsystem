@@ -15,6 +15,7 @@
         :label="nextStepLabel"
         :ariaLabel="nextStepAriaLabel"
         @emitClick="nextStep"
+        :fullWidth="screenSize < 1024"
       />
     </div>
   </div>
@@ -47,9 +48,21 @@ export default {
       default: 'Go to next step',
     },
   },
+  data() {
+    return {
+      screenSize: 0,
+    }
+  },
+  mounted() {
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
+  },
   methods: {
     nextStep() {
       this.$emit('nextStep')
+    },
+    resizeWindow() {
+      this.screenSize = document.body.clientWidth
     },
   },
 }

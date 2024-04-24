@@ -99,25 +99,36 @@
               </div>
               <OrderBox
                 class="sidecard-spacing"
-                  title="Bestellung gedruckte Version in DE, IT, FR"
-                  description="Preis exkl. MwSt: CHF 31.50"
-                  :options="[
-                    { label: 'Deutsch', value: 'de', selected: true },
-                    { label: 'Französisch', value: 'fr', selected: false },
-                    { label: 'Italienisch', value: 'it', selected: false },
-                  ]"
-                  :defaultAmmount="2"
-                  pricePiece="Preis pro Stück: CHF 15.75"
-                  ammountInputLabel="Anzahl"
-                  buttonLabel="In den Warenkorb"
-                  :toastMessage="{
-                    text: 'Produkt wurde in den Warenkorb gelegt',
-                    type: 'success',
-                    icon: 'CheckmarkCircle',
-                  }"
-                  :addToCart="addToCart"
-                  languageLabel="Sprache"
-                />
+                title="Bestellung gedruckte Version in DE, IT, FR"
+                totalPriceTitle="Totaler Preis:"
+                pricePieceTitle="Preis pro Stück:"
+                curencyPrefix="CHF"
+                :options="[
+                  {
+                    label: 'Deutsch',
+                    value: 'de',
+                    pricePiece: 15.75,
+                    selected: true,
+                  },
+                  {
+                    label: 'Französisch',
+                    value: 'fr',
+                    pricePiece: 17.75,
+                    selected: false,
+                  },
+                  {
+                    label: 'Italienisch',
+                    value: 'it',
+                    pricePiece: 12.75,
+                    selected: false,
+                  },
+                ]"
+                :defaultAmmount="2"
+                ammountInputLabel="Anzahl"
+                buttonLabel="In den Warenkorb"
+                :addToCart="addToCart"
+                languageLabel="Sprache"
+              />
               <div class="box sidecard-spacing">
                 <h2 class="h5">Webviewer</h2>
                 <btn
@@ -244,23 +255,34 @@
                   </ul>
                 </div>
                 <OrderBox
-                class="sidecard-spacing"
+                  class="sidecard-spacing"
                   title="Bestellung gedruckte Version in DE, IT, FR"
-                  description="Preis exkl. MwSt: CHF 31.50"
+                  totalPriceTitle="Totaler Preis:"
+                  pricePieceTitle="Preis pro Stück:"
+                  curencyPrefix="CHF"
                   :options="[
-                    { label: 'Deutsch', value: 'de', selected: true },
-                    { label: 'Französisch', value: 'fr', selected: false },
-                    { label: 'Italienisch', value: 'it', selected: false },
+                    {
+                      label: 'Deutsch',
+                      value: 'de',
+                      pricePiece: 15.75,
+                      selected: true,
+                    },
+                    {
+                      label: 'Französisch',
+                      value: 'fr',
+                      pricePiece: 17.75,
+                      selected: false,
+                    },
+                    {
+                      label: 'Italienisch',
+                      value: 'it',
+                      pricePiece: 12.75,
+                      selected: false,
+                    },
                   ]"
                   :defaultAmmount="2"
-                  pricePiece="Preis pro Stück: CHF 15.75"
                   ammountInputLabel="Anzahl"
                   buttonLabel="In den Warenkorb"
-                  :toastMessage="{
-                    text: 'Produkt wurde in den Warenkorb gelegt',
-                    type: 'success',
-                    icon: 'CheckmarkCircle',
-                  }"
                   :addToCart="addToCart"
                   languageLabel="Sprache"
                 />
@@ -296,6 +318,7 @@
 
       <RelatedPublicationsSection />
     </main>
+    <ToastMessage triggerName="trigger-toast-message" />
     <footer class="footer" id="main-footer">
       <FooterInformation />
       <FooterNavigation />
@@ -315,6 +338,7 @@ import InfoBlock from '~/components/ch/components/InfoBlock.vue'
 import Notification from '~/components/ch/components/Notification.vue'
 import RelatedTags from '~/components/ch/components/RelatedTags.vue'
 import SvgIcon from '~/components/ch/components/SvgIcon'
+import ToastMessage from '~/components/ch/components/ToastMessage'
 import ShareBar from '~/components/ch/demo/ShareBar.vue'
 import Hero from '~/components/ch/sections/Hero'
 import Input from '../components/ch/components/Input.vue'
@@ -333,6 +357,7 @@ import TopHeader from '../components/ch/sections/TopHeader.vue'
 export default {
   name: 'detailPagePublication',
   components: {
+    ToastMessage,
     AlterBodyClasses,
     TopBar,
     TopHeader,
@@ -390,6 +415,11 @@ export default {
       shoppingCartTarget: '_self',
       selectionAmmount: 1,
       selectionLanguage: 'de',
+      languageMap: {
+        de: 'deutsch',
+        fr: 'französisch',
+        it: 'italienisch',
+      },
     }
   },
   methods: {
@@ -398,12 +428,15 @@ export default {
     },
     addToCart(selectedLanguage, ammount) {
       // Selected language not used yet in this example
-      console.log(
-        '🚀 ~ file: detailPublication.vue:394 ~ addToCart ~ selectedLanguage:',
-        selectedLanguage
-      )
       // Add ammount to shopping cart
       this.shoppingCartAmmount += ammount
+      const translatedLanguage = this.languageMap[selectedLanguage]
+
+      this.emitter.emit('trigger-toast-message', {
+        text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${this.shoppingCartAmmount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
+        icon: 'triggerName',
+        type: 'success',
+      })
     },
   },
 }

@@ -2,11 +2,9 @@
   <div class="box">
     <h2 class="h5 order__box-title">{{ title }}</h2>
     <div class="order__box-information-price-piece">
-      <p>{{ pricePiece }}</p>
+      <p>{{ pricePieceTitle }}</p>
+      <p>{{ `${curencyPrefix}: ${pricePiece}` }}</p>
     </div>
-    <span class="text--base font--bold order-description">{{
-      description
-    }}</span>
     <div class="order__box-input-container">
       <div class="form__group__input order__box-input-ammount-container">
         <label :for="getUniqueId('input')" class="text--base">
@@ -28,9 +26,10 @@
         class="order__box-input-language-container"
         variant="outline"
         :bare="false"
-        size="sm"
+        size="base"
         :label="languageLabel"
         :id="getUniqueId('select')"
+        @select="setSelectedValue"
       >
         <option
           v-for="(option, index) in options"
@@ -42,29 +41,29 @@
         </option></Select
       >
     </div>
+    <div class="order__box-total-price">
+      <p>{{ totalPriceTitle }}</p>
+      <p>{{ totalPrice }}</p>
+    </div>
     <Btn
       class="order__box-order-button"
       variant="filled"
       :fullWidth="true"
       :label="buttonLabel"
-      @emitClick="addToCart(selectedValue, inputValue)"
+      @emitClick="addToCart(selectedValue, parseInt(inputValue))"
     />
-    <!-- TODO: Add toast message overlay -->
-    <!-- <ToastMessage v-bind="toastMessage" /> -->
   </div>
 </template>
 
 <script>
 import Btn from '~/components/ch/components/Btn'
 import Select from '~/components/ch/components/Select.vue'
-import ToastMessage from '~/components/ch/components/ToastMessage'
 const { v4: uuidv4 } = require('uuid')
 
 export default {
   name: 'OrderBox',
   components: {
     Btn,
-    ToastMessage,
     Select,
   },
   data() {
@@ -72,13 +71,10 @@ export default {
       orderBoxId: uuidv4(),
       inputValue: this.defaultAmmount,
       selectedValue: this.options.find((option) => option.selected).value,
+      pricePiece: 0,
     }
   },
   props: {
-    toastMessage: {
-      type: Object,
-      required: true,
-    },
     defaultAmmount: {
       type: Number,
       default: 1,
@@ -91,7 +87,11 @@ export default {
       type: String,
       required: true,
     },
-    description: {
+    totalPriceTitle: {
+      type: String,
+      required: true,
+    },
+    pricePieceTitle: {
       type: String,
       required: true,
     },
@@ -107,14 +107,17 @@ export default {
       type: Function,
       default: () => ({}),
     },
-    pricePiece: {
-      type: String,
-      required: true,
-    },
     languageLabel: {
       type: String,
       required: true,
     },
+    curencyPrefix: {
+      type: String,
+      required: true,
+    },
+  },
+  created() {
+    this.pricePiece = this.options.find((option) => option.selected).pricePiece
   },
   methods: {
     restrictChars($event) {
@@ -129,6 +132,19 @@ export default {
     },
     getUniqueId(text = '') {
       return `${text}-${this.orderBoxId}`
+    },
+    setSelectedValue(value) {
+      this.selectedValue = value
+      this.pricePiece = this.options.find(
+        (option) => option.value === value
+      ).pricePiece
+    },
+  },
+  computed: {
+    totalPrice() {
+      return `${this.curencyPrefix}: ${(
+        this.pricePiece * this.inputValue
+      ).toFixed(2)}`
     },
   },
 }

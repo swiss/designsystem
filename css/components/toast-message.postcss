@@ -2,7 +2,16 @@
   Toast message
 \*----------------------------------------*/
 
-.toast-message {
-  /*     @apply hidden; */
-/*   @apply fixed z-500 right-0 bottom-0 left-0; */
+.toast__message {
+  @apply !hidden;
+  @apply fixed z-50 bottom-[10%] w-full;
+}
+
+.toast__message.active {
+  @apply !block;
+  @apply !flex !justify-center;
+}
+
+.toast__message-notification {
+  @apply w-[500px];
 }

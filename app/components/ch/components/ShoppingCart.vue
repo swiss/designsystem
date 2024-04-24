@@ -300,6 +300,7 @@
                   label="Nächster Schritt"
                   ariaLabel="Nächster Schritt"
                   @emitClick="activeIndex = 3"
+                  :fullWidth="screenSize < 1024"
                 />
               </div>
             </Form>
@@ -433,6 +434,7 @@
             size="base"
             label="Zurück zur Übersicht"
             ariaLabel="Zurück zur Übersicht"
+            :fullWidth="screenSize < 1024"
           />
         </div>
       </div>
@@ -495,14 +497,20 @@ export default {
       shoppingCartId: uuidv4(),
       showDeliveryAddress: true,
       showConfirmation: false,
+      screenSize: 0,
     }
   },
   mounted() {
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
     this.activeIndex = 1
   },
   methods: {
     getUniqueId(text = '') {
       return `${text}-${this.shoppingCartId}`
+    },
+    resizeWindow() {
+      this.screenSize = document.body.clientWidth
     },
   },
   computed: {
