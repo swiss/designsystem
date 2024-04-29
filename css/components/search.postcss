@@ -51,10 +51,9 @@
 }
 
 .search__button__icon {
-  @apply w-10 lg:w-7;
-
-  svg {
-    stroke-width: 0.5px;
+  @apply !h-9;
+  @screen lg {
+    @apply !h-7;
   }
 }
 

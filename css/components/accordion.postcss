@@ -22,7 +22,7 @@ main .accordion {
 }
 
 .accordion__button {
-  @apply flex;
+  @apply flex items-center;
   @apply w-full px-2 py-3 2xl:px-3 2xl:py-5;
   @apply font-bold;
   @apply hover:text-primary-500;
@@ -35,7 +35,7 @@ main .accordion {
   }
 
   .step-indicator {
-    @apply mr-2;
+    @apply mr-3;
   }
 }
 
@@ -58,12 +58,17 @@ main .accordion {
   transition: max-height 0.3s ease-out;
 }
 
+/* Dynamically adjust to content */
+.accordion__drawer.active {
+  @apply max-h-fit;
+}
+
 .accordion__content {
   @apply w-full px-2 pt-4 pb-10 2xl:px-3;
   @apply vertical-spacing;
 }
 
 .accordion__title {
-  @apply text-left py-1 pr-4;
+  @apply text-base text-left py-1 pr-4;
   @apply lg:pr-6 2xl:pr-8;
 }

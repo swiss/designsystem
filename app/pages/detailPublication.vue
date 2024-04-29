@@ -9,6 +9,7 @@
         :shoppingCartAmmount="shoppingCartAmmount"
         :shoppingCartLink="shoppingCartLink"
         :shoppingCartTarget="shoppingCartTarget"
+        :shoppingCartLabel="shoppingCartLabel"
       />
       <DesktopMenu />
       <MobileMenu />
@@ -100,8 +101,8 @@
               <OrderBox
                 class="sidecard-spacing"
                 title="Bestellung gedruckte Version in DE, IT, FR"
-                totalPriceTitle="Totaler Preis:"
-                pricePieceTitle="Preis pro Stück:"
+                totalPriceTitle="Total (exklusiv MwSt.)"
+                pricePieceTitle="Pro Stück"
                 curencyPrefix="CHF"
                 :options="[
                   {
@@ -123,7 +124,7 @@
                     selected: false,
                   },
                 ]"
-                :defaultAmmount="2"
+                :defaultAmmount="1"
                 ammountInputLabel="Anzahl"
                 buttonLabel="In den Warenkorb"
                 :addToCart="addToCart"
@@ -257,8 +258,8 @@
                 <OrderBox
                   class="sidecard-spacing"
                   title="Bestellung gedruckte Version in DE, IT, FR"
-                  totalPriceTitle="Totaler Preis:"
-                  pricePieceTitle="Preis pro Stück:"
+                  totalPriceTitle="Total (exklusiv MwSt.)"
+                pricePieceTitle="Pro Stück"
                   curencyPrefix="CHF"
                   :options="[
                     {
@@ -280,7 +281,7 @@
                       selected: false,
                     },
                   ]"
-                  :defaultAmmount="2"
+                  :defaultAmmount="1"
                   ammountInputLabel="Anzahl"
                   buttonLabel="In den Warenkorb"
                   :addToCart="addToCart"
@@ -409,10 +410,11 @@ export default {
           url: '#',
         },
       ],
-      shoppingCartAriaLabel: 'There are <ammount> items in your shopping cart.',
+      shoppingCartAriaLabel: 'Shopping cart: There are <ammount> items in your shopping cart.',
       shoppingCartAmmount: 0,
       shoppingCartLink: '/shopping-cart',
       shoppingCartTarget: '_self',
+      shoppingCartLabel: 'Shopping cart',
       selectionAmmount: 1,
       selectionLanguage: 'de',
       languageMap: {

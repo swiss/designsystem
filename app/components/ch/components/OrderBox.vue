@@ -1,10 +1,6 @@
 <template>
   <div class="box">
     <h2 class="h5 order__box-title">{{ title }}</h2>
-    <div class="order__box-information-price-piece">
-      <p>{{ pricePieceTitle }}</p>
-      <p>{{ `${curencyPrefix}: ${pricePiece}` }}</p>
-    </div>
     <div class="order__box-input-container">
       <div class="form__group__input order__box-input-ammount-container">
         <label :for="getUniqueId('input')" class="text--base">
@@ -40,6 +36,10 @@
           {{ option.label }}
         </option></Select
       >
+    </div>
+    <div class="order__box-information-price-piece">
+      <p>{{ pricePieceTitle }}</p>
+      <p>{{ `${curencyPrefix} ${pricePiece}` }}</p>
     </div>
     <div class="order__box-total-price">
       <p>{{ totalPriceTitle }}</p>
@@ -142,7 +142,7 @@ export default {
   },
   computed: {
     totalPrice() {
-      return `${this.curencyPrefix}: ${(
+      return `${this.curencyPrefix} ${(
         this.pricePiece * this.inputValue
       ).toFixed(2)}`
     },

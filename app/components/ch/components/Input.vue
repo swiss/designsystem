@@ -1,12 +1,7 @@
 <template>
   <div class="form__group__input">
-    <label
-      v-if="label"
-      :for="id"
-      :class="labelClasses"
-    >
+    <label v-if="label" :for="id" :class="labelClasses">
       {{ label }}<span v-if="required" class="form__group__required" />
-      {{ message }}
     </label>
     <input
       :type="type"
@@ -20,10 +15,15 @@
       :step="step"
       :pattern="pattern"
       :autocomplete="autocomplete"
-      :readonly=readonly
+      :readonly="readonly"
       :required="required"
+      @change.stop="onInput"
     />
-    <div v-if="message" class="badge badge--sm" :class="`badge--${messageType}`">
+    <div
+      v-if="message"
+      class="badge badge--sm"
+      :class="`badge--${messageType}`"
+    >
       {{ message }}
     </div>
   </div>
@@ -35,21 +35,44 @@ export default {
   props: {
     type: {
       type: String,
-      validator: (prop) => ['color', 'date', 'datetime-local', 'email', 'file', 'month', 'number', 'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week', 'submit'].includes(prop),
-      default: 'text'
+      validator: (prop) =>
+        [
+          'color',
+          'date',
+          'datetime-local',
+          'email',
+          'file',
+          'month',
+          'number',
+          'password',
+          'range',
+          'search',
+          'tel',
+          'text',
+          'time',
+          'url',
+          'week',
+          'submit',
+        ].includes(prop),
+      default: 'text',
     },
     variant: {
       type: String,
       validator: (prop) => ['outline', 'negative'].includes(prop),
-      default: 'outline'
+      default: 'outline',
     },
     message: {
       type: String,
     },
+    onInput: {
+      type: Function,
+      default: () => ({}),
+    },
     messageType: {
       type: String,
-      validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
-      default: 'error'
+      validator: (prop) =>
+        ['error', 'warning', 'success', 'info'].includes(prop),
+      default: 'error',
     },
     size: {
       type: String,
