@@ -361,7 +361,7 @@ import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 
 export default {
-  name: 'detailPagePublication',
+  name: 'detailPagePublicationShop',
   components: {
     ToastMessage,
     AlterBodyClasses,

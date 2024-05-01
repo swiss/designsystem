@@ -20,6 +20,7 @@
           cartOverviewTitle="Ihr Warenkorb"
           cartAddressTitle="Rechnungsadresse & Lieferadresse"
           cartCheckoutTitle="Bestellung übermitteln"
+          cartTitle="Ihre Bestellübersicht"
         />
       </div>
     </main>
