@@ -1,224 +1,68 @@
 <template>
-  <div>
-    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
-    <header id="main-header">
-      <a href="#main-content" class="skip-to-content">Skip to main content</a>
-      <TopBar :isOpen="false" />
-      <TopHeader
-        :shoppingCartAriaLabel="shoppingCartAriaLabel"
-        :shoppingCartAmmount="shoppingCartAmmount"
-        :shoppingCartLink="shoppingCartLink"
-        :shoppingCartTarget="shoppingCartTarget"
-        :shoppingCartLabel="shoppingCartLabel"
-      />
-      <DesktopMenu />
-      <MobileMenu />
-      <Breadcrumb />
-      <div class="container">
-        <Btn
-          to="/"
-          variant="outline"
-          size="sm"
-          icon="ArrowLeft"
-          iconPos="left"
-          label="Zurück zur Übersicht"
-          class="btn--back"
+  <client-only>
+    <div>
+      <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+      <header id="main-header">
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+        <TopBar :isOpen="false" />
+        <TopHeader
+          :shoppingCartAriaLabel="shoppingCartAriaLabel"
+          :shoppingCartAmmount="shoppingCartAmmount"
+          :shoppingCartLink="shoppingCartLink"
+          :shoppingCartTarget="shoppingCartTarget"
+          :shoppingCartLabel="shoppingCartLabel"
         />
-        <ShareBar />
-      </div>
-    </header>
-    <main id="main-content">
-      <Hero
-        type="default"
-        :meta-infos="['Studie', 'publiziert am 03. März 2000']"
-        :authors="authors"
-      >
-        <template v-slot:title>
-          Auswirkungen von Corona auf die Schweizer Gesellschaft
-        </template>
-      </Hero>
-      <section class="section section--py">
-        <div class="container container--grid gap--responsive">
-          <div class="container__main vertical-spacing">
-            <Notification
-              text='<p>Aus dieser Reihe gibt es eine aktuellere Version: <a href="#" target="_blank">Ausgabe 2022</a>.</p>'
-              type="warning"
-              icon="InfoCircle"
-              :closeBtn="false"
-            />
-            <figure class="ratio ratio--1/1 bg--secondary-50">
-              <picture class="p-8">
-                <source
-                  srcset="images/publication-cover.png"
-                  media="(min-width: 800px)"
-                />
-                <img
-                  src="images/publication-cover.png"
-                  alt="publication cover"
-                  class="h-full m-auto shadow-xl"
-                />
-              </picture>
-            </figure>
-
-            <div class="md:hidden">
-              <!-- mobile only -->
-              <div class="box">
-                <h2 class="h5">Download</h2>
-                <ul class="download-items">
-                  <li>
-                    <DownloadItem
-                      headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Deutsch'"
-                      :url="'../../../static/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
-                    />
-                  </li>
-                  <li>
-                    <DownloadItem
-                      headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Französisch'"
-                      :url="'../../../static/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
-                    />
-                  </li>
-                  <li>
-                    <DownloadItem
-                      headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'English'"
-                      :url="'../../../static/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
-                      class="border-b-0 pb-0"
-                    />
-                  </li>
-                </ul>
-              </div>
-              <OrderBox
-                class="sidecard-spacing"
-                title="Bestellung gedruckte Version in DE, IT, FR"
-                totalPriceTitle="Total (exklusiv MwSt.)"
-                pricePieceTitle="Pro Stück"
-                curencyPrefix="CHF"
-                :options="[
-                  {
-                    label: 'Deutsch',
-                    value: 'de',
-                    pricePiece: 15.75,
-                    selected: true,
-                  },
-                  {
-                    label: 'Französisch',
-                    value: 'fr',
-                    pricePiece: 17.75,
-                    selected: false,
-                  },
-                  {
-                    label: 'Italienisch',
-                    value: 'it',
-                    pricePiece: 12.75,
-                    selected: false,
-                  },
-                ]"
-                :defaultAmmount="1"
-                ammountInputLabel="Anzahl"
-                buttonLabel="In den Warenkorb"
-                :addToCart="addToCart"
-                languageLabel="Sprache"
+        <DesktopMenu />
+        <MobileMenu />
+        <Breadcrumb />
+        <div class="container">
+          <Btn
+            to="/"
+            variant="outline"
+            size="sm"
+            icon="ArrowLeft"
+            iconPos="left"
+            label="Zurück zur Übersicht"
+            class="btn--back"
+          />
+          <ShareBar />
+        </div>
+      </header>
+      <main id="main-content">
+        <Hero
+          type="default"
+          :meta-infos="['Studie', 'publiziert am 03. März 2000']"
+          :authors="authors"
+        >
+          <template v-slot:title>
+            Auswirkungen von Corona auf die Schweizer Gesellschaft
+          </template>
+        </Hero>
+        <section class="section section--py">
+          <div class="container container--grid gap--responsive">
+            <div class="container__main vertical-spacing">
+              <Notification
+                text='<p>Aus dieser Reihe gibt es eine aktuellere Version: <a href="#" target="_blank">Ausgabe 2022</a>.</p>'
+                type="warning"
+                icon="InfoCircle"
+                :closeBtn="false"
               />
-              <div class="box sidecard-spacing">
-                <h2 class="h5">Webviewer</h2>
-                <btn
-                  variant="link"
-                  to="https://www.google.ch"
-                  label="Publikation im Browser betrachten"
-                  ariaLabel="Publikation im Browser betrachten"
-                  iconPos="left"
-                  icon="Link"
-                />
-              </div>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              euismod bibendum laoreet. Proin gravida dolor sit amet lacus
-              accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
-            </p>
-            <p>
-              Aenean euismod bibendum laoreet. Proin gravida dolor sit amet
-              lacus accumsan et viverra justo commodo. Proin sodales pulvinar
-              tempor.
-            </p>
+              <figure class="ratio ratio--1/1 bg--secondary-50">
+                <picture class="p-8">
+                  <source
+                    srcset="images/publication-cover.png"
+                    media="(min-width: 800px)"
+                  />
+                  <img
+                    src="images/publication-cover.png"
+                    alt="publication cover"
+                    class="h-full m-auto shadow-xl"
+                  />
+                </picture>
+              </figure>
 
-            <h2 class="h2">Details</h2>
-
-            <div>
-              <InfoBlock title="Sprache" headingLevel="h3">
-                <span>Deutsch</span>, <a href="#">Französisch</a>,
-                <a href="#">Englisch</a>
-              </InfoBlock>
-
-              <InfoBlock title="Erscheinungsdatum" headingLevel="h3">
-                <div>03. März 2000</div>
-              </InfoBlock>
-
-              <InfoBlock title="Typ" headingLevel="h3">
-                <div>Publikation/ Studien & Statistiken</div>
-              </InfoBlock>
-
-              <InfoBlock title="Herausgeber" headingLevel="h3">
-                <div>Bundesamt für Statistik, Herausgeber 2, Herausgeber 3</div>
-              </InfoBlock>
-
-              <InfoBlock title="Copyright" headingLevel="h3">
-                <a href="#">Bundesamt für Statistik</a>
-              </InfoBlock>
-
-              <InfoBlock title="Nutzungbedigungen" headingLevel="h3">
-                <div>Nutzungsbestimmung VE</div>
-              </InfoBlock>
-
-              <InfoBlock title="Format" headingLevel="h3">
-                <div>PDF</div>
-              </InfoBlock>
-
-              <InfoBlock title="BFS-Nummer" headingLevel="h3">
-                <div>502-2100</div>
-              </InfoBlock>
-
-              <InfoBlock title="Bibliographische Angaben" headingLevel="h3">
-                <a href="#">BIBTeX</a>,
-                <a href="#">RIS</a>
-              </InfoBlock>
-
-              <InfoBlock title="Erhebung, Statistik" headingLevel="h3">
-                <a href="#"
-                  >Reiseverhalten der Wohnbevölkerung (Modul der
-                  Haushaltsbudgeterhebung HABE)</a
-                >
-              </InfoBlock>
-
-              <InfoBlock
-                title="Ausgaben dieser Publikationsreihe"
-                headingLevel="h3"
-              >
-                <a href="#">2020</a>, <span>2021</span>,
-                <a href="#">2022</a>
-              </InfoBlock>
-            </div>
-
-            <div>
-              <h2 class="h2">Themen</h2>
-              <RelatedTags :tags="tags" bare></RelatedTags>
-            </div>
-          </div>
-          <div class="container__aside">
-            <div class="sticky sticky--top">
-              <div class="hidden md:block">
-                <!-- desktop only -->
+              <div class="md:hidden">
+                <!-- mobile only -->
                 <div class="box">
                   <h2 class="h5">Download</h2>
                   <ul class="download-items">
@@ -259,7 +103,7 @@
                   class="sidecard-spacing"
                   title="Bestellung gedruckte Version in DE, IT, FR"
                   totalPriceTitle="Total (exklusiv MwSt.)"
-                pricePieceTitle="Pro Stück"
+                  pricePieceTitle="Pro Stück"
                   curencyPrefix="CHF"
                   :options="[
                     {
@@ -299,32 +143,193 @@
                   />
                 </div>
               </div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                euismod bibendum laoreet. Proin gravida dolor sit amet lacus
+                accumsan et viverra justo commodo. Proin sodales pulvinar
+                tempor.
+              </p>
+              <p>
+                Aenean euismod bibendum laoreet. Proin gravida dolor sit amet
+                lacus accumsan et viverra justo commodo. Proin sodales pulvinar
+                tempor.
+              </p>
+
+              <h2 class="h2">Details</h2>
+
+              <div>
+                <InfoBlock title="Sprache" headingLevel="h3">
+                  <span>Deutsch</span>, <a href="#">Französisch</a>,
+                  <a href="#">Englisch</a>
+                </InfoBlock>
+
+                <InfoBlock title="Erscheinungsdatum" headingLevel="h3">
+                  <div>03. März 2000</div>
+                </InfoBlock>
+
+                <InfoBlock title="Typ" headingLevel="h3">
+                  <div>Publikation/ Studien & Statistiken</div>
+                </InfoBlock>
+
+                <InfoBlock title="Herausgeber" headingLevel="h3">
+                  <div>
+                    Bundesamt für Statistik, Herausgeber 2, Herausgeber 3
+                  </div>
+                </InfoBlock>
+
+                <InfoBlock title="Copyright" headingLevel="h3">
+                  <a href="#">Bundesamt für Statistik</a>
+                </InfoBlock>
+
+                <InfoBlock title="Nutzungbedigungen" headingLevel="h3">
+                  <div>Nutzungsbestimmung VE</div>
+                </InfoBlock>
+
+                <InfoBlock title="Format" headingLevel="h3">
+                  <div>PDF</div>
+                </InfoBlock>
+
+                <InfoBlock title="BFS-Nummer" headingLevel="h3">
+                  <div>502-2100</div>
+                </InfoBlock>
+
+                <InfoBlock title="Bibliographische Angaben" headingLevel="h3">
+                  <a href="#">BIBTeX</a>,
+                  <a href="#">RIS</a>
+                </InfoBlock>
+
+                <InfoBlock title="Erhebung, Statistik" headingLevel="h3">
+                  <a href="#"
+                    >Reiseverhalten der Wohnbevölkerung (Modul der
+                    Haushaltsbudgeterhebung HABE)</a
+                  >
+                </InfoBlock>
+
+                <InfoBlock
+                  title="Ausgaben dieser Publikationsreihe"
+                  headingLevel="h3"
+                >
+                  <a href="#">2020</a>, <span>2021</span>,
+                  <a href="#">2022</a>
+                </InfoBlock>
+              </div>
+
+              <div>
+                <h2 class="h2">Themen</h2>
+                <RelatedTags :tags="tags" bare></RelatedTags>
+              </div>
+            </div>
+            <div class="container__aside">
+              <div id="aside-content" :class="computedAsideContainerClass">
+                <div class="hidden md:block">
+                  <!-- desktop only -->
+                  <div class="box">
+                    <h2 class="h5">Download</h2>
+                    <ul class="download-items">
+                      <li>
+                        <DownloadItem
+                          headingLevel="h2"
+                          :filename="'dummy.pdf'"
+                          :title="'Deutsch'"
+                          :url="'../../../static/documents/dummy.pdf'"
+                          :type="'PDF'"
+                          :date="'524 kB'"
+                        />
+                      </li>
+                      <li>
+                        <DownloadItem
+                          headingLevel="h2"
+                          :filename="'dummy.pdf'"
+                          :title="'Französisch'"
+                          :url="'../../../static/documents/dummy.pdf'"
+                          :type="'PDF'"
+                          :date="'524 kB'"
+                        />
+                      </li>
+                      <li>
+                        <DownloadItem
+                          headingLevel="h2"
+                          :filename="'dummy.pdf'"
+                          :title="'English'"
+                          :url="'../../../static/documents/dummy.pdf'"
+                          :type="'PDF'"
+                          :date="'524 kB'"
+                          class="border-b-0 pb-0"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                  <OrderBox
+                    class="sidecard-spacing"
+                    title="Bestellung gedruckte Version in DE, IT, FR"
+                    totalPriceTitle="Total (exklusiv MwSt.)"
+                    pricePieceTitle="Pro Stück"
+                    curencyPrefix="CHF"
+                    :options="[
+                      {
+                        label: 'Deutsch',
+                        value: 'de',
+                        pricePiece: 15.75,
+                        selected: true,
+                      },
+                      {
+                        label: 'Französisch',
+                        value: 'fr',
+                        pricePiece: 17.75,
+                        selected: false,
+                      },
+                      {
+                        label: 'Italienisch',
+                        value: 'it',
+                        pricePiece: 12.75,
+                        selected: false,
+                      },
+                    ]"
+                    :defaultAmmount="1"
+                    ammountInputLabel="Anzahl"
+                    buttonLabel="In den Warenkorb"
+                    :addToCart="addToCart"
+                    languageLabel="Sprache"
+                  />
+                  <div class="box sidecard-spacing">
+                    <h2 class="h5">Webviewer</h2>
+                    <btn
+                      variant="link"
+                      to="https://www.google.ch"
+                      label="Publikation im Browser betrachten"
+                      ariaLabel="Publikation im Browser betrachten"
+                      iconPos="left"
+                      icon="Link"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="section section--default">
-        <div class="container">
-          <Btn
-            to="/"
-            variant="outline"
-            size="sm"
-            icon="ArrowLeft"
-            iconPos="left"
-            label="Zurück zur Übersicht"
-            class="btn--back"
-          />
-        </div>
-      </section>
+        </section>
+        <section class="section section--default">
+          <div class="container">
+            <Btn
+              to="/"
+              variant="outline"
+              size="sm"
+              icon="ArrowLeft"
+              iconPos="left"
+              label="Zurück zur Übersicht"
+              class="btn--back"
+            />
+          </div>
+        </section>
 
-      <RelatedPublicationsSection />
-    </main>
-    <ToastMessage triggerName="trigger-toast-message" />
-    <footer class="footer" id="main-footer">
-      <FooterInformation />
-      <FooterNavigation />
-    </footer>
-  </div>
+        <RelatedPublicationsSection />
+      </main>
+      <ToastMessage triggerName="trigger-toast-message" />
+      <footer class="footer" id="main-footer">
+        <FooterInformation />
+        <FooterNavigation />
+      </footer>
+    </div>
+  </client-only>
 </template>
 
 <script>
@@ -410,7 +415,8 @@ export default {
           url: '#',
         },
       ],
-      shoppingCartAriaLabel: 'Shopping cart: There are <ammount> items in your shopping cart.',
+      shoppingCartAriaLabel:
+        'Shopping cart: There are <ammount> items in your shopping cart.',
       shoppingCartAmmount: 0,
       shoppingCartLink: '/shopping-cart',
       shoppingCartTarget: '_self',
@@ -422,9 +428,23 @@ export default {
         fr: 'französisch',
         it: 'italienisch',
       },
+      screenHeight: 0,
+      asideContainerHeight: 0,
     }
   },
+  mounted() {
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
+  },
   methods: {
+    resizeWindow() {
+      this.screenHeight = document.body.clientHeight
+
+      const asideContainer = document.getElementById('aside-content')
+      if (asideContainer) {
+        this.asideContainerHeight = asideContainer.clientHeight
+      }
+    },
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
     },
@@ -439,6 +459,15 @@ export default {
         icon: 'CheckmarkCircle',
         type: 'success',
       })
+    },
+  },
+  computed: {
+    computedAsideContainerClass() {
+      if (this.screenHeight > this.asideContainerHeight) {
+        return 'sticky sticky--top'
+      } else {
+        return ''
+      }
     },
   },
 }

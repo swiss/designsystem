@@ -1,184 +1,353 @@
 <template>
-  <div>
-    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
-    <header id="main-header">
-      <a href="#main-content" class="skip-to-content">Skip to main content</a>
-      <TopBar :isOpen="false" />
-      <TopHeader />
-      <DesktopMenu />
-      <MobileMenu />
-      <Breadcrumb />
-      <div class="container">
-        <ShareBar />
-      </div>
-    </header>
-    <main id="main-content">
-      <Hero type="main-image">
-        <template v-slot:image>
-          <picture>
-            <source
-              srcset="https://picsum.photos/1200/900"
-              media="(min-width: 800px)"
-            />
-            <img src="https://picsum.photos/900/600" alt="cat" />
-          </picture>
-        </template>
-        <template v-slot:title>
-          Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und
-          Sport
-        </template>
-        <template v-slot:description>
-          Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz
-          und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen
-          Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
-        </template>
-        <template v-slot:cta>
-          <Btn
-            to="#"
-            variant="outline"
-            icon-pos="right"
-            icon="ArrowRight"
-            label="Unsere Dienstleistungen"
-          />
-          <Btn
-            to="#"
-            variant="outline"
-            icon-pos="right"
-            icon="ArrowRight"
-            label="Über uns"
-          />
-        </template>
-      </Hero>
-      <section class="section bg--secondary-50">
+  <client-only>
+    <div>
+      <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+      <header id="main-header">
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+        <TopBar :isOpen="false" />
+        <TopHeader />
+        <DesktopMenu />
+        <MobileMenu />
+        <Breadcrumb />
         <div class="container">
-          <div class="grid grid--responsive-cols-4 gap--responsive">
-            <Card type="default">
-              <template v-slot:title>
-                <h3>Card example</h3>
-              </template>
-              <template v-slot:description>
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet.
-                </p>
-              </template>
-            </Card>
-            <Card type="default">
-              <template v-slot:title>
-                <h3>Card example</h3>
-              </template>
-              <template v-slot:description>
-                <p>
-                  Sed onsetetur sadipscing elitr ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-                  consetetur sadipscing elitr, sed
-                </p>
-              </template>
-            </Card>
-            <Card type="default">
-              <template v-slot:title>
-                <h3>Card example</h3>
-              </template>
-              <template v-slot:description>
-                <p>
-                  Consetetur sadipscing elitr sadipscing elitr, sed Lorem ipsum
-                  dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
-                  dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
-                  dolor sit amet.
-                </p>
-              </template>
-            </Card>
-            <Card type="default">
-              <template v-slot:title>
-                <h3>Card example</h3>
-              </template>
-              <template v-slot:description>
-                <p>
-                  Vonsetetur sadipscing elitr, onsetetur sadipscing elitr sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                </p>
-              </template>
-            </Card>
-          </div>
+          <ShareBar />
         </div>
-      </section>
-      <section class="section section--default">
-        <div class="container container--grid gap--responsive">
-          <div class="container__main vertical-spacing">
-            <h2 class="h2">
-              Ein neues «minimales Geodatenmodell» in der Datenmodellablage
-              publizieren
-            </h2>
-            <p>
-              Über den Kontakt models@geo.admin.ch können die
-              INTERLIS-Modelldatei und die Modelldokumentation (als PDF
-              Dokument) zur Publikation eingereicht werden.
-            </p>
-            <p>
-              Über den Kontakt models@geo.admin.ch können die
-              INTERLIS-Modelldatei und die Modelldokumentation (als PDF
-              Dokument) zur Publikation eingereicht werden.
-            </p>
-
-            <figure>
-              <picture>
-                <source
-                  srcset="https://picsum.photos/1600/900"
-                  media="(min-width: 800px)"
-                />
-                <img src="https://picsum.photos/1600/900" alt="cat" />
-              </picture>
-              <figcaption>
-                Image label here —&nbsp;©&nbsp;Photograph Name
-              </figcaption>
-            </figure>
-            <h2 class="h2">Datenmodellablage ansehen</h2>
-            <p>
-              Der Modellkatalog kann unter
-              <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
-              «minimales Geodatenmodell» in der Datenmodellablage publizieren.
-              Für die Publikation der «minimalen Geodatenmodelle» besteht kein
-              direkter Online-Zugang. Die Datenmodellablage ist moderiert und
-              die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen.
-              Entsprechend der Empfehlungen zur Modellierung wird die
-              Modelldokumentation veröffentlicht oder verlinkt. Die
-              INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
-              eingepflegt.
-            </p>
-            <figure>
-              <div class="ratio ratio--16/9">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
-                  title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
-                  frameborder="0"
-                />
-              </div>
-              <figcaption>Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal</figcaption>
-            </figure>
-            <p>
-              Der Modellkatalog kann unter
-              <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
-              «minimales Geodatenmodell» in der Datenmodellablage publizieren.
-              Für die Publikation der «minimalen Geodatenmodelle» besteht kein
-              direkter Online-Zugang. Die Datenmodellablage ist moderiert und
-              die Erfassung neuer Datenmodelle wird durch GKG/KOGIS vorgenommen.
-              Entsprechend der Empfehlungen zur Modellierung wird die
-              Modelldokumentation veröffentlicht oder verlinkt. Die
-              INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
-              eingepflegt.
-            </p>
-          </div>
-          <div class="container__aside">
-            <div class="sticky sticky--top">
+      </header>
+      <main id="main-content">
+        <Hero type="main-image">
+          <template v-slot:image>
+            <picture>
+              <source
+                srcset="https://picsum.photos/1200/900"
+                media="(min-width: 800px)"
+              />
+              <img src="https://picsum.photos/900/600" alt="cat" />
+            </picture>
+          </template>
+          <template v-slot:title>
+            Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und
+            Sport
+          </template>
+          <template v-slot:description>
+            Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz
+            und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen
+            Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
+          </template>
+          <template v-slot:cta>
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="right"
+              icon="ArrowRight"
+              label="Unsere Dienstleistungen"
+            />
+            <Btn
+              to="#"
+              variant="outline"
+              icon-pos="right"
+              icon="ArrowRight"
+              label="Über uns"
+            />
+          </template>
+        </Hero>
+        <section class="section bg--secondary-50">
+          <div class="container">
+            <div class="grid grid--responsive-cols-4 gap--responsive">
               <Card type="default">
-                <!--template v-slot:image>
+                <template v-slot:title>
+                  <h3>Card example</h3>
+                </template>
+                <template v-slot:description>
+                  <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet.
+                  </p>
+                </template>
+              </Card>
+              <Card type="default">
+                <template v-slot:title>
+                  <h3>Card example</h3>
+                </template>
+                <template v-slot:description>
+                  <p>
+                    Sed onsetetur sadipscing elitr ipsum dolor sit amet,
+                    consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                    consetetur sadipscing elitr, sed
+                  </p>
+                </template>
+              </Card>
+              <Card type="default">
+                <template v-slot:title>
+                  <h3>Card example</h3>
+                </template>
+                <template v-slot:description>
+                  <p>
+                    Consetetur sadipscing elitr sadipscing elitr, sed Lorem
+                    ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
+                    ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
+                    ipsum dolor sit amet.
+                  </p>
+                </template>
+              </Card>
+              <Card type="default">
+                <template v-slot:title>
+                  <h3>Card example</h3>
+                </template>
+                <template v-slot:description>
+                  <p>
+                    Vonsetetur sadipscing elitr, onsetetur sadipscing elitr sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  </p>
+                </template>
+              </Card>
+            </div>
+          </div>
+        </section>
+        <section class="section section--default">
+          <div class="container container--grid gap--responsive">
+            <div class="container__main vertical-spacing">
+              <h2 class="h2">
+                Ein neues «minimales Geodatenmodell» in der Datenmodellablage
+                publizieren
+              </h2>
+              <p>
+                Über den Kontakt models@geo.admin.ch können die
+                INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+                Dokument) zur Publikation eingereicht werden.
+              </p>
+              <p>
+                Über den Kontakt models@geo.admin.ch können die
+                INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+                Dokument) zur Publikation eingereicht werden.
+              </p>
+
+              <figure>
+                <picture>
+                  <source
+                    srcset="https://picsum.photos/1600/900"
+                    media="(min-width: 800px)"
+                  />
+                  <img src="https://picsum.photos/1600/900" alt="cat" />
+                </picture>
+                <figcaption>
+                  Image label here —&nbsp;©&nbsp;Photograph Name
+                </figcaption>
+              </figure>
+              <h2 class="h2">Datenmodellablage ansehen</h2>
+              <p>
+                Der Modellkatalog kann unter
+                <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
+                «minimales Geodatenmodell» in der Datenmodellablage publizieren.
+                Für die Publikation der «minimalen Geodatenmodelle» besteht kein
+                direkter Online-Zugang. Die Datenmodellablage ist moderiert und
+                die Erfassung neuer Datenmodelle wird durch GKG/KOGIS
+                vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird
+                die Modelldokumentation veröffentlicht oder verlinkt. Die
+                INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
+                eingepflegt.
+              </p>
+              <figure>
+                <div class="ratio ratio--16/9">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+                    title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
+                    frameborder="0"
+                  />
+                </div>
+                <figcaption>
+                  Geoinformation - Alles findet irgendwo statt — © Swiss
+                  Geoportal
+                </figcaption>
+              </figure>
+              <p>
+                Der Modellkatalog kann unter
+                <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
+                «minimales Geodatenmodell» in der Datenmodellablage publizieren.
+                Für die Publikation der «minimalen Geodatenmodelle» besteht kein
+                direkter Online-Zugang. Die Datenmodellablage ist moderiert und
+                die Erfassung neuer Datenmodelle wird durch GKG/KOGIS
+                vorgenommen. Entsprechend der Empfehlungen zur Modellierung wird
+                die Modelldokumentation veröffentlicht oder verlinkt. Die
+                INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
+                eingepflegt.
+              </p>
+            </div>
+            <div class="container__aside">
+              <div id="aside-content" :class="computedAsideContainerClass">
+                <Card type="default">
+                  <!--template v-slot:image>
                   <img src="https://picsum.photos/775/350" alt="cat">
                 </template-->
+                  <template v-slot:title>
+                    <h3>Side notes, can be sticky</h3>
+                  </template>
+                  <template v-slot:description>
+                    <p>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed Lorem ipsum dolor sit amet, consetetur sadipscing
+                      elitr, sed Lorem ipsum dolor sit amet, consetetur
+                      sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed
+                    </p>
+                  </template>
+                  <template v-slot:footerAction>
+                    <Btn
+                      to="#"
+                      variant="outline"
+                      icon-pos="only"
+                      icon="ArrowRight"
+                      label="Weiterlesen"
+                    />
+                  </template>
+                </Card>
+                <Newsletter
+                  type="default"
+                  state="default"
+                  title="Abonnieren Sie unseren Newsletter"
+                  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo"
+                  input-label="E-Mail"
+                  button-label="Newsletter abonnieren"
+                  success-text="Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <QuoteSection
+          quote="Begin anywhere."
+          author="John Cage"
+          :image="{
+            src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/576px-John_Cage_%281988%29.jpg',
+            width: '400',
+            height: '400',
+            alt: 'image name',
+            source: {
+              srcset:
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/768px-John_Cage_%281988%29.jpg',
+              width: '800',
+              height: '800',
+              media: '(min-width: 1024px)',
+            },
+          }"
+        />
+
+        <section class="section section--default">
+          <div class="container container--grid gap--responsive">
+            <div class="container__center--xs vertical-spacing">
+              <h2 class="h2">Table within .container__center--xs</h2>
+              <TableSortable
+                id="1"
+                caption="This table is larger than its container"
+                :displayCaption="true"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--default">
+          <div class="container container--grid gap--responsive">
+            <div class="container__center--sm vertical-spacing">
+              <h2 class="h2">Table within .container__center--sm</h2>
+              <TableSortable
+                id="2"
+                caption="This table is larger than its container"
+                :displayCaption="true"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--default">
+          <div class="container container--grid gap--responsive">
+            <div class="container__center--md vertical-spacing">
+              <h2 class="h2">Table within .container__center--md</h2>
+              <TableSortable
+                id="3"
+                caption="This table has the width of its container"
+                :displayCaption="true"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--default">
+          <div class="container container--grid gap--responsive">
+            <div class="container__full vertical-spacing">
+              <h2 class="h2">Table within .container__full</h2>
+              <TableSortable
+                id="4"
+                caption="This table has the width of its container"
+                :displayCaption="true"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--default">
+          <div class="container container--grid gap--responsive">
+            <div class="container__center--md">
+              <div class="grid grid--responsive-cols-2 gap--responsive">
+                <figure>
+                  <picture>
+                    <source
+                      srcset="https://picsum.photos/1600/1200"
+                      media="(min-width: 1024px)"
+                    />
+                    <img src="https://picsum.photos/800/600" alt="cat" />
+                  </picture>
+                </figure>
+                <div>
+                  <h2 class="h2">
+                    Ein neues «minimales Geodatenmodell» in der
+                    Datenmodellablage publizieren
+                  </h2>
+                  <p>
+                    Über den Kontakt models@geo.admin.ch können die
+                    INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+                    Dokument) zur Publikation eingereicht werden.
+                    Modelldokumentation zur Publikation eingereicht werden.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="grid grid--responsive-cols-2 grid--reverse gap--responsive"
+              >
+                <figure>
+                  <picture>
+                    <source
+                      srcset="https://picsum.photos/1600/1200"
+                      media="(min-width: 1024px)"
+                    />
+                    <img src="https://picsum.photos/1600/900" alt="cat" />
+                  </picture>
+                </figure>
+                <div>
+                  <h2 class="h2">
+                    Ein neues «minimales Geodatenmodell» in der
+                    Datenmodellablage publizieren
+                  </h2>
+                  <p>
+                    Über den Kontakt models@geo.admin.ch können und die
+                    Modelldokumentation zur Publikation eingereicht
+                    models@geo.admin.ch können und die Modelldokumentation (als
+                    PDF Dokument) zur Publikation eingereicht werden.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section bg--secondary-50">
+          <div class="container">
+            <div class="grid grid--responsive-cols-3 gap--responsive">
+              <Card type="default">
                 <template v-slot:title>
-                  <h3>Side notes, can be sticky</h3>
+                  <h3>Card example</h3>
                 </template>
                 <template v-slot:description>
                   <p>
@@ -188,254 +357,98 @@
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                   </p>
                 </template>
-                <template v-slot:footerAction>
-                  <Btn
-                    to="#"
-                    variant="outline"
-                    icon-pos="only"
-                    icon="ArrowRight"
-                    label="Weiterlesen"
-                  />
+              </Card>
+              <Card type="default">
+                <template v-slot:title>
+                  <h3>Card example</h3>
+                </template>
+                <template v-slot:description>
+                  <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  </p>
                 </template>
               </Card>
-              <Newsletter
-                type="default"
-                state="default"
-                title="Abonnieren Sie unseren Newsletter"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo"
-                input-label="E-Mail"
-                button-label="Newsletter abonnieren"
-                success-text="Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>"
-              />
+              <Card type="default">
+                <template v-slot:title>
+                  <h3>Card example</h3>
+                </template>
+                <template v-slot:description>
+                  <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  </p>
+                </template>
+              </Card>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <QuoteSection
-        quote="Begin anywhere."
-        author="John Cage"
-        :image="{
-          src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/576px-John_Cage_%281988%29.jpg',
-          width: '400',
-          height: '400',
-          alt: 'image name',
-          source: {
-            srcset:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/John_Cage_%281988%29.jpg/768px-John_Cage_%281988%29.jpg',
-            width: '800',
-            height: '800',
-            media: '(min-width: 1024px)',
-          },
-        }"
-      />
-
-      <section class="section section--default">
-        <div class="container container--grid gap--responsive">
-          <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              Table within .container__center--xs
-            </h2>
-            <TableSortable id="1" caption="This table is larger than its container" :displayCaption="true" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--default">
-        <div class="container container--grid gap--responsive">
-          <div class="container__center--sm vertical-spacing">
-            <h2 class="h2">
-              Table within .container__center--sm
-            </h2>
-            <TableSortable id="2" caption="This table is larger than its container" :displayCaption="true" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--default">
-        <div class="container container--grid gap--responsive">
-          <div class="container__center--md vertical-spacing">
-            <h2 class="h2">
-              Table within .container__center--md
-            </h2>
-            <TableSortable id="3" caption="This table has the width of its container" :displayCaption="true" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--default">
-        <div class="container container--grid gap--responsive">
-          <div class="container__full vertical-spacing">
-            <h2 class="h2">
-              Table within .container__full
-            </h2>
-            <TableSortable id="4" caption="This table has the width of its container" :displayCaption="true" />
-          </div>
-        </div>
-      </section>
-
-
-      <section class="section section--default">
-        <div class="container container--grid gap--responsive">
-          <div class="container__center--md">
-            <div class="grid grid--responsive-cols-2 gap--responsive">
-              <figure>
-                <picture>
-                  <source
-                    srcset="https://picsum.photos/1600/1200"
-                    media="(min-width: 1024px)"
-                  />
-                  <img src="https://picsum.photos/800/600" alt="cat" />
-                </picture>
-              </figure>
-              <div>
-                <h2 class="h2">
-                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage
-                  publizieren
-                </h2>
-                <p>
-                  Über den Kontakt models@geo.admin.ch können die
-                  INTERLIS-Modelldatei und die Modelldokumentation (als PDF
-                  Dokument) zur Publikation eingereicht werden.
-                  Modelldokumentation zur Publikation eingereicht werden.
-                </p>
+        <section class="section section--default">
+          <div class="container container--grid gap--responsive">
+            <div class="container__full">
+              <div class="grid grid--responsive-cols-2/3-1/3 gap--responsive">
+                <figure>
+                  <picture>
+                    <source
+                      srcset="https://picsum.photos/1600/1200"
+                      media="(min-width: 1024px)"
+                    />
+                    <img src="https://picsum.photos/800/600" alt="cat" />
+                  </picture>
+                </figure>
+                <div>
+                  <h2 class="h2">
+                    Ein neues «minimales Geodatenmodell» in der
+                    Datenmodellablage publizieren
+                  </h2>
+                  <p>
+                    Über den Kontakt models@geo.admin.ch können die
+                    INTERLIS-Modelldatei und die Modelldokumentation (als PDF
+                    Dokument) zur Publikation eingereicht werden.
+                    Modelldokumentation zur Publikation eingereicht werden.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div
-              class="grid grid--responsive-cols-2 grid--reverse gap--responsive"
-            >
-              <figure>
-                <picture>
-                  <source
-                    srcset="https://picsum.photos/1600/1200"
-                    media="(min-width: 1024px)"
-                  />
-                  <img src="https://picsum.photos/1600/900" alt="cat" />
-                </picture>
-              </figure>
-              <div>
-                <h2 class="h2">
-                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage
-                  publizieren
-                </h2>
-                <p>
-                  Über den Kontakt models@geo.admin.ch können und die
-                  Modelldokumentation zur Publikation eingereicht
-                  models@geo.admin.ch können und die Modelldokumentation (als
-                  PDF Dokument) zur Publikation eingereicht werden.
-                </p>
+              <div
+                class="grid grid--responsive-cols-1/3-2/3 grid--reverse gap--responsive"
+              >
+                <figure>
+                  <picture>
+                    <source
+                      srcset="https://picsum.photos/1600/1200"
+                      media="(min-width: 1024px)"
+                    />
+                    <img src="https://picsum.photos/1600/900" alt="cat" />
+                  </picture>
+                </figure>
+                <div>
+                  <h2 class="h2">
+                    Ein neues «minimales Geodatenmodell» in der
+                    Datenmodellablage publizieren
+                  </h2>
+                  <p>
+                    Über den Kontakt models@geo.admin.ch können und die
+                    Modelldokumentation zur Publikation eingereicht
+                    models@geo.admin.ch können und die Modelldokumentation (als
+                    PDF Dokument) zur Publikation eingereicht werden.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="section bg--secondary-50">
-        <div class="container">
-          <div class="grid grid--responsive-cols-3 gap--responsive">
-            <Card type="default">
-              <template v-slot:title>
-                <h3>Card example</h3>
-              </template>
-              <template v-slot:description>
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                </p>
-              </template>
-            </Card>
-            <Card type="default">
-              <template v-slot:title>
-                <h3>Card example</h3>
-              </template>
-              <template v-slot:description>
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                </p>
-              </template>
-            </Card>
-            <Card type="default">
-              <template v-slot:title>
-                <h3>Card example</h3>
-              </template>
-              <template v-slot:description>
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                </p>
-              </template>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--default">
-        <div class="container container--grid gap--responsive">
-          <div class="container__full">
-            <div class="grid grid--responsive-cols-2/3-1/3 gap--responsive">
-              <figure>
-                <picture>
-                  <source
-                    srcset="https://picsum.photos/1600/1200"
-                    media="(min-width: 1024px)"
-                  />
-                  <img src="https://picsum.photos/800/600" alt="cat" />
-                </picture>
-              </figure>
-              <div>
-                <h2 class="h2">
-                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage
-                  publizieren
-                </h2>
-                <p>
-                  Über den Kontakt models@geo.admin.ch können die
-                  INTERLIS-Modelldatei und die Modelldokumentation (als PDF
-                  Dokument) zur Publikation eingereicht werden.
-                  Modelldokumentation zur Publikation eingereicht werden.
-                </p>
-              </div>
-            </div>
-            <div
-              class="grid  grid--responsive-cols-1/3-2/3 grid--reverse gap--responsive"
-            >
-              <figure>
-                <picture>
-                  <source
-                    srcset="https://picsum.photos/1600/1200"
-                    media="(min-width: 1024px)"
-                  />
-                  <img src="https://picsum.photos/1600/900" alt="cat" />
-                </picture>
-              </figure>
-              <div>
-                <h2 class="h2">
-                  Ein neues «minimales Geodatenmodell» in der Datenmodellablage
-                  publizieren
-                </h2>
-                <p>
-                  Über den Kontakt models@geo.admin.ch können und die
-                  Modelldokumentation zur Publikation eingereicht
-                  models@geo.admin.ch können und die Modelldokumentation (als
-                  PDF Dokument) zur Publikation eingereicht werden.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer" id="main-footer">
-      <FooterInformation />
-      <FooterNavigation />
-    </footer>
-  </div>
+        </section>
+      </main>
+      <footer class="footer" id="main-footer">
+        <FooterInformation />
+        <FooterNavigation />
+      </footer>
+    </div>
+  </client-only>
 </template>
 
 <script>
@@ -476,9 +489,36 @@ export default {
     ShareBar,
     TableSortable,
   },
+  data() {
+    return {
+      screenHeight: 0,
+      asideContainerHeight: 0,
+    }
+  },
+  mounted() {
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
+  },
   methods: {
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
+    },
+    resizeWindow() {
+      this.screenHeight = document.body.clientHeight
+
+      const asideContainer = document.getElementById('aside-content')
+      if (asideContainer) {
+        this.asideContainerHeight = asideContainer.clientHeight
+      }
+    },
+  },
+  computed: {
+    computedAsideContainerClass() {
+      if (this.screenHeight > this.asideContainerHeight) {
+        return 'sticky sticky--top'
+      } else {
+        return ''
+      }
     },
   },
 }
