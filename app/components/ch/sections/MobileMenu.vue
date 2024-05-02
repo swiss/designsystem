@@ -33,7 +33,12 @@ export default {
     isHomePage: {
       type: Boolean,
       default: false
-    }
+    },
+    // Allow disabling active navigation item highlighting for pages like shopping cart
+    showActiveNavigation: {
+      type: Boolean,
+      default: true,
+    },
   },
   mounted () {
     Navy.initMobile(

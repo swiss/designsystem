@@ -2,8 +2,12 @@
   SHOPPING CART
 \*----------------------------------------*/
 
-.shopping__cart-temporary-button {
-  @apply mt-[15px];
+.shopping__cart-title {
+  @apply !mb-[35px];
+}
+
+.shopping__cart-button {
+  @apply mt-4;
 }
 
 .shopping__cart-accordion-content {
@@ -91,12 +95,6 @@
   @apply mt-6;
 }
 
-.shopping__cart-order-form-container {
-  @apply mt-4;
-  @apply grid grid-cols-2;
-  @apply gap--responsive;
-}
-
 .shopping__cart-order-form-title {
   @apply mt-4;
 }
@@ -105,10 +103,19 @@
   @apply mt-7;
 }
 
-.shopping__cart-bill-address-container {
+.shopping__cart-delivery-address-container {
   @apply !mt-5;
 }
 
 .shopping__cart-summary-box-title {
   @apply break-all;
+}
+
+.shopping__cart-order-form-input-group {
+  .form__group__input {
+    @apply mt-4;
+  }
+  @screen md {
+    @apply grid grid-cols-2 gap--responsive;
+  }
 }

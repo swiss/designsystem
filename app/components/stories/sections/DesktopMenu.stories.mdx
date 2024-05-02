@@ -12,7 +12,7 @@ import DesktopMenu from '../../ch/sections/DesktopMenu.vue';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { DesktopMenu },
-  template: '<DesktopMenu :isOpen="isOpen" />',
+  template: '<DesktopMenu :isOpen="isOpen" :showActiveNavigation="true" />',
 });
 
 # Desktop Menu

@@ -12,27 +12,42 @@
         <p class="font--bold total__summary-inline-text">{{ total }}</p>
       </div>
     </div>
+    <div class="total__summary-agb">
+      <Checkbox
+        :required="true"
+        size="base"
+        type="outline"
+        name="radio-delivery-address"
+        value="agb accepted"
+        :label="agreementText"
+        :onChange="
+          (e) => {
+            agbAccepted = e.target.checked
+          }
+        "
+      />
+    </div>
     <btn
-      class="shopping__cart-temporary-button"
+      class="shopping__cart-button"
       variant="outline-negative"
       size="base"
       :label="orderButtonText"
       :ariaLabel="orderButtonAriaLabel"
       :fullWidth="true"
       @emitClick="orderClicked"
-
+      :disabled="!agbAccepted"
     />
-    <div class="text--xs shopping__cart-order-agreement">
-      <p v-html="agreementText" />
-    </div>
   </div>
 </template>
 <script>
-import Btn from './Btn.vue';
+import Btn from './Btn.vue'
+import Checkbox from './Checkbox.vue'
+
 export default {
   name: 'ShoppingCartTotalSummary',
   components: {
     Btn,
+    Checkbox,
   },
   props: {
     title: {
@@ -68,8 +83,14 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      agbAccepted: false,
+    }
+  },
   methods: {
     orderClicked() {
+      if (!this.agbAccepted) return
       this.$emit('nextStep')
     },
   },

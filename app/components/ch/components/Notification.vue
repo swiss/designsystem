@@ -40,7 +40,8 @@ export default {
         'warning',
         'error',
         'success',
-        'alert'
+        'alert',
+        'hint'
       ].includes(prop)
     },
     icon: {

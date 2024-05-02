@@ -5,8 +5,8 @@
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
       <TopHeader />
-      <DesktopMenu />
-      <MobileMenu />
+      <DesktopMenu :showActiveNavigation="true" />
+      <MobileMenu :showActiveNavigation="true" />
     </header>
     <main id="main-content">
       <section class="section section--default bg--secondary-50">

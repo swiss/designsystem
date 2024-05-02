@@ -12,8 +12,8 @@
           :shoppingCartTarget="shoppingCartTarget"
           :shoppingCartLabel="shoppingCartLabel"
         />
-        <DesktopMenu />
-        <MobileMenu />
+        <DesktopMenu :showActiveNavigation="true" />
+        <MobileMenu :showActiveNavigation="true" />
         <Breadcrumb />
         <div class="container">
           <Btn
@@ -38,7 +38,7 @@
             Auswirkungen von Corona auf die Schweizer Gesellschaft
           </template>
         </Hero>
-        <section class="section section--py">
+        <section class="section">
           <div class="container container--grid gap--responsive">
             <div class="container__main vertical-spacing">
               <Notification
@@ -307,7 +307,7 @@
             </div>
           </div>
         </section>
-        <section class="section section--default">
+        <section class="section publication-back-button-section">
           <div class="container">
             <Btn
               to="/"

@@ -5,8 +5,8 @@
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar v-if="!isFreebrand" :isOpen="false" />
       <TopHeader :isFreebrand="isFreebrand" />
-      <DesktopMenu />
-      <MobileMenu />
+      <DesktopMenu :showActiveNavigation="true" />
+      <MobileMenu :showActiveNavigation="true" />
       <Breadcrumb />
       <div class="container">
         <ShareBar />

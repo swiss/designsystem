@@ -11,8 +11,8 @@
         shoppingCartTarget="_blank"
         shoppingCartLabel="Warenkorb"
       />
-      <DesktopMenu />
-      <MobileMenu />
+      <DesktopMenu :showActiveNavigation="false" />
+      <MobileMenu :showActiveNavigation="false" />
     </header>
     <main id="main-content">
       <div class="shopping__cart-wrapper">

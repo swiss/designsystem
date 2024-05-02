@@ -9,7 +9,7 @@
     </p>
     <div class="shopping__cart__action-container">
       <btn
-        class="shopping__cart-temporary-button"
+        class="shopping__cart-button"
         variant="outline-negative"
         size="base"
         :label="nextStepLabel"

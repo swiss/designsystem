@@ -48,7 +48,7 @@
           v-if="type === 'view'"
           :aria-label="editLabel"
           class="btn btn--bare btn--icon-left"
-          @click="deleteTriggered"
+          @click="editTriggered"
         >
           <SvgIcon icon="Pen" class="btn__icon" />
           <span class="btn__text">
