@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="shopping__cart-total-container">
-      <h4>{{ title }}</h4>
+      <h3>{{ title }}</h3>
       <p class="shopping__cart-total">{{ total }}</p>
     </div>
     <p class="shopping__cart-total-description">

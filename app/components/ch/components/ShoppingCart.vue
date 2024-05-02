@@ -351,12 +351,7 @@
                   placeholder="Erweiterte Details hier angeben"
                 />
                 <div class="shopping__cart-order-form-fieldset-spacing">
-                  <Fieldset
-                    variant="outline"
-                    size="base"
-                    :required="false"
-                    legend="Lieferadresse"
-                  >
+                  <Fieldset variant="outline" size="base" :required="false">
                     <Checkbox
                       :required="false"
                       size="base"
@@ -935,7 +930,9 @@ export default {
         ? (this.activeIndex = null)
         : (this.activeIndex = index)
 
-      this.scroolContentIntoView(index)
+      if (this.activeIndex) {
+        this.scroolContentIntoView(index)
+      }
     },
     scroolContentIntoView(index) {
       const accordionIdMap = {
