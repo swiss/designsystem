@@ -8,7 +8,7 @@ import Notification from '../../ch/components/Notification.vue'
     type: {
       control: {
         type: 'select',
-        options: ['info', 'warning', 'error', 'success', 'alert'],
+        options: ['info', 'warning', 'error', 'success', 'alert', 'hint'],
       },
     },
     icon: {
@@ -69,6 +69,9 @@ For this specific use case, the [Alert Banner component](?path=/docs/components-
 <Canvas>
   <main>
     <div>
+      <div class="notification notification--hint">
+        Hint: A new software update is available.
+      </div>
       <div class="notification notification--info">
         Info: A new software update is available.
       </div>
