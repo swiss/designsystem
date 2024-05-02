@@ -73,9 +73,7 @@
               <ShoppingCartTotal
                 title="Provisorischer Bestellwert exkl. MWSt:"
                 total="CHF 36.00"
-                description="Ermässigungen werden gemäss Gebührenverordnung für statistische
-                Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im
-                Bestellformular unter „Nachricht“ angebracht werden."
+                description="Ermässigungen werden gemäss Gebührenverordnung für statistische Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im nächsten Schritt unter „Nachricht“ angebracht werden."
                 nextStepLabel="Nächster Schritt"
                 nextStepAriaLabel="Nächster Schritt"
                 @nextStep="goToStep(2)"
