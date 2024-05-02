@@ -285,13 +285,21 @@
                           : ''
                       "
                     />
-                    <Input
+                    <!-- Works also with input -->
+                    <Select
                       class="shopping__cart-order-form-input-spacing"
                       :required="formInputFields.invoice.country.mandatory"
+                      variant="outline"
+                      size="base"
                       label="Land"
-                      placeholder="Land"
                       messageType="error"
-                      :onInput="
+                      :message="
+                        formInputFields.invoice.country.touched &&
+                        !formInputFields.invoice.country.valid
+                          ? 'Bitte geben Sie ein Land an.'
+                          : ''
+                      "
+                      :onSelect="
                         (e) =>
                           setFormFieldValue(
                             'invoice',
@@ -299,13 +307,14 @@
                             e.target.value
                           )
                       "
-                      :message="
-                        formInputFields.invoice.country.touched &&
-                        !formInputFields.invoice.country.valid
-                          ? 'Bitte geben Sie ein Land an.'
-                          : ''
-                      "
-                    />
+                    >
+                      <option selected disabled>Land auswählen</option>
+                      <option value="CH">Schweiz</option>
+                      <option value="DE">Deutschland</option>
+                      <option value="AT">Österreich</option>
+                      <option value="FR">Frankreich</option>
+                      <option value="IT">Italien</option>
+                    </Select>
                   </div>
                   <div class="shopping__cart-order-form-input-group">
                     <Input
@@ -520,13 +529,21 @@
                             : ''
                         "
                       />
-                      <Input
+                      <!-- Works also with input -->
+                      <Select
                         class="shopping__cart-order-form-input-spacing"
                         :required="formInputFields.delivery.country.mandatory"
+                        variant="outline"
+                        size="base"
                         label="Land"
-                        placeholder="Land"
                         messageType="error"
-                        :onInput="
+                        :message="
+                          formInputFields.delivery.country.touched &&
+                          !formInputFields.delivery.country.valid
+                            ? 'Bitte geben Sie ein Land an.'
+                            : ''
+                        "
+                        :onSelect="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
@@ -534,13 +551,14 @@
                               e.target.value
                             )
                         "
-                        :message="
-                          formInputFields.delivery.country.touched &&
-                          !formInputFields.delivery.country.valid
-                            ? 'Bitte geben Sie ein Land an.'
-                            : ''
-                        "
-                      />
+                      >
+                        <option selected disabled>Land auswählen</option>
+                        <option value="CH">Schweiz</option>
+                        <option value="DE">Deutschland</option>
+                        <option value="AT">Österreich</option>
+                        <option value="FR">Frankreich</option>
+                        <option value="IT">Italien</option>
+                      </Select>
                     </div>
                   </div>
                 </div>
@@ -653,7 +671,7 @@
                     orderButtonText="Jetzt bestellen"
                     orderButtonAriaLabel="Jetzt bestellen"
                     agreementText=" Mit Ihrer Bestellung erklären Sie sich mit unseren <a class='link' href='https://www.google.ch'>Datenschutzbestimmungen und AGB </a> einverstanden"
-                    @nextStep="showConfirmation = true"
+                    @nextStep="triggerConfirmation()"
                   />
                 </div>
               </div>
@@ -663,7 +681,10 @@
       </ul>
     </div>
     <div v-else class="container__center--sm my-60">
-      <div class="shopping__cart-confirmation-container">
+      <div
+        :id="getUniqueId('confirmation-container')"
+        class="shopping__cart-confirmation-container"
+      >
         <div>
           <div class="shopping__cart-confirmation">
             <SvgIcon
@@ -712,6 +733,7 @@ import Form from './Form.vue'
 import Input from './Input.vue'
 import Notification from './Notification.vue'
 import Radio from './Radio.vue'
+import Select from './Select'
 import ShoppingCartTotal from './ShoppingCartTotal.vue'
 import ShoppingCartTotalSummary from './ShoppingCartTotalSummary.vue'
 import StepIndicator from './StepIndicator.vue'
@@ -735,6 +757,7 @@ export default {
     Contact,
     ShoppingCartTotal,
     ShoppingCartTotalSummary,
+    Select,
   },
   props: {
     cartTitle: {
@@ -891,6 +914,22 @@ export default {
     this.activeIndex = 1
   },
   methods: {
+    async triggerConfirmation() {
+      this.showConfirmation = true
+      await this.$nextTick()
+      const scroolTarget = document.getElementById(
+        this.getUniqueId('confirmation-container')
+      )
+
+      if (scroolTarget) {
+        if (this.switchTimeOut) {
+          clearTimeout(this.switchTimeOut)
+        }
+        this.switchTimeOut = setTimeout(() => {
+          scroolTarget.scrollIntoView({ behavior: 'smooth' })
+        }, 200)
+      }
+    },
     onChange(e) {
       this.setFormFieldValue('invoice', 'gender', e.target.value)
     },
