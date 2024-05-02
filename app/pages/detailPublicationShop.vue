@@ -449,13 +449,12 @@ export default {
       return this.$store.getters['layout/getMobileMenuIsOpen']
     },
     addToCart(selectedLanguage, ammount) {
-      // Selected language not used yet in this example
       // Add ammount to shopping cart
       this.shoppingCartAmmount += ammount
       const translatedLanguage = this.languageMap[selectedLanguage]
 
       this.emitter.emit('trigger-toast-message', {
-        text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${this.shoppingCartAmmount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
+        text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${ammount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
         icon: 'CheckmarkCircle',
         type: 'success',
       })
