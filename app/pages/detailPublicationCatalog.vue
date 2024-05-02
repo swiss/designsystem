@@ -4,14 +4,9 @@
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
-      <TopHeader
-        :shoppingCartAriaLabel="shoppingCartAriaLabel"
-        :shoppingCartAmmount="shoppingCartAmmount"
-        :shoppingCartLink="shoppingCartLink"
-        :shoppingCartTarget="shoppingCartTarget"
-      />
-      <DesktopMenu />
-      <MobileMenu />
+      <TopHeader />
+      <DesktopMenu :showActiveNavigation="true"/>
+      <MobileMenu :showActiveNavigation="true"/>
       <Breadcrumb />
       <div class="container">
         <Btn
@@ -36,7 +31,7 @@
           Auswirkungen von Corona auf die Schweizer Gesellschaft
         </template>
       </Hero>
-      <section class="section section--py">
+      <section class="section">
         <div class="container container--grid gap--responsive">
           <div class="container__main vertical-spacing">
             <Notification
@@ -97,47 +92,14 @@
                   </li>
                 </ul>
               </div>
-              <OrderBox
-                class="sidecard-spacing"
-                title="Bestellung gedruckte Version in DE, IT, FR"
-                totalPriceTitle="Totaler Preis:"
-                pricePieceTitle="Preis pro Stück:"
-                curencyPrefix="CHF"
-                :options="[
-                  {
-                    label: 'Deutsch',
-                    value: 'de',
-                    pricePiece: 15.75,
-                    selected: true,
-                  },
-                  {
-                    label: 'Französisch',
-                    value: 'fr',
-                    pricePiece: 17.75,
-                    selected: false,
-                  },
-                  {
-                    label: 'Italienisch',
-                    value: 'it',
-                    pricePiece: 12.75,
-                    selected: false,
-                  },
-                ]"
-                :defaultAmmount="2"
-                ammountInputLabel="Anzahl"
-                buttonLabel="In den Warenkorb"
-                :addToCart="addToCart"
-                languageLabel="Sprache"
-              />
-              <div class="box sidecard-spacing">
-                <h2 class="h5">Webviewer</h2>
-                <btn
-                  variant="link"
-                  to="https://www.google.ch"
-                  label="Publikation im Browser betrachten"
-                  ariaLabel="Publikation im Browser betrachten"
-                  iconPos="left"
-                  icon="Link"
+              <div class="box">
+                <h2 class="h5">Druckexemplar bestellen</h2>
+                <Btn
+                  to="#"
+                  variant="filled"
+                  icon-pos="right"
+                  icon="ArrowRight"
+                  label="Zum Online-Shop"
                 />
               </div>
             </div>
@@ -215,7 +177,7 @@
             </div>
           </div>
           <div class="container__aside">
-            <div class="sticky sticky--top">
+            <div id="aside-content" :class="computedAsideContainerClass">
               <div class="hidden md:block">
                 <!-- desktop only -->
                 <div class="box">
@@ -254,47 +216,14 @@
                     </li>
                   </ul>
                 </div>
-                <OrderBox
-                  class="sidecard-spacing"
-                  title="Bestellung gedruckte Version in DE, IT, FR"
-                  totalPriceTitle="Totaler Preis:"
-                  pricePieceTitle="Preis pro Stück:"
-                  curencyPrefix="CHF"
-                  :options="[
-                    {
-                      label: 'Deutsch',
-                      value: 'de',
-                      pricePiece: 15.75,
-                      selected: true,
-                    },
-                    {
-                      label: 'Französisch',
-                      value: 'fr',
-                      pricePiece: 17.75,
-                      selected: false,
-                    },
-                    {
-                      label: 'Italienisch',
-                      value: 'it',
-                      pricePiece: 12.75,
-                      selected: false,
-                    },
-                  ]"
-                  :defaultAmmount="2"
-                  ammountInputLabel="Anzahl"
-                  buttonLabel="In den Warenkorb"
-                  :addToCart="addToCart"
-                  languageLabel="Sprache"
-                />
-                <div class="box sidecard-spacing">
-                  <h2 class="h5">Webviewer</h2>
-                  <btn
-                    variant="link"
-                    to="https://www.google.ch"
-                    label="Publikation im Browser betrachten"
-                    ariaLabel="Publikation im Browser betrachten"
-                    iconPos="left"
-                    icon="Link"
+                <div class="box">
+                  <h2 class="h5">Druckexemplar bestellen</h2>
+                  <Btn
+                    to="#"
+                    variant="filled"
+                    icon-pos="right"
+                    icon="ArrowRight"
+                    label="Zum Online-Shop"
                   />
                 </div>
               </div>
@@ -302,7 +231,7 @@
           </div>
         </div>
       </section>
-      <section class="section section--default">
+      <section class="section publication-back-button-section">
         <div class="container">
           <Btn
             to="/"
@@ -318,7 +247,6 @@
 
       <RelatedPublicationsSection />
     </main>
-    <ToastMessage triggerName="trigger-toast-message" />
     <footer class="footer" id="main-footer">
       <FooterInformation />
       <FooterNavigation />
@@ -338,12 +266,8 @@ import InfoBlock from '~/components/ch/components/InfoBlock.vue'
 import Notification from '~/components/ch/components/Notification.vue'
 import RelatedTags from '~/components/ch/components/RelatedTags.vue'
 import SvgIcon from '~/components/ch/components/SvgIcon'
-import ToastMessage from '~/components/ch/components/ToastMessage'
 import ShareBar from '~/components/ch/demo/ShareBar.vue'
 import Hero from '~/components/ch/sections/Hero'
-import Input from '../components/ch/components/Input.vue'
-import OrderBox from '../components/ch/components/OrderBox.vue'
-import Select from '../components/ch/components/Select'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -355,9 +279,8 @@ import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 
 export default {
-  name: 'detailPagePublication',
+  name: 'detailPageSimple',
   components: {
-    ToastMessage,
     AlterBodyClasses,
     TopBar,
     TopHeader,
@@ -380,9 +303,6 @@ export default {
     Authors,
     Notification,
     RelatedPublicationsSection,
-    Input,
-    Select,
-    OrderBox,
   },
   data: function () {
     return {
@@ -409,34 +329,34 @@ export default {
           url: '#',
         },
       ],
-      shoppingCartAriaLabel: 'There are <ammount> items in your shopping cart.',
-      shoppingCartAmmount: 0,
-      shoppingCartLink: '/shopping-cart',
-      shoppingCartTarget: '_self',
-      selectionAmmount: 1,
-      selectionLanguage: 'de',
-      languageMap: {
-        de: 'deutsch',
-        fr: 'französisch',
-        it: 'italienisch',
-      },
+      screenHeight: 0,
+      asideContainerHeight: 0,
     }
+  },
+  mounted() {
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
   },
   methods: {
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
     },
-    addToCart(selectedLanguage, ammount) {
-      // Selected language not used yet in this example
-      // Add ammount to shopping cart
-      this.shoppingCartAmmount += ammount
-      const translatedLanguage = this.languageMap[selectedLanguage]
+    resizeWindow() {
+      this.screenHeight = document.body.clientHeight
 
-      this.emitter.emit('trigger-toast-message', {
-        text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${this.shoppingCartAmmount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
-        icon: 'CheckmarkCircle',
-        type: 'success',
-      })
+      const asideContainer = document.getElementById('aside-content')
+      if (asideContainer) {
+        this.asideContainerHeight = asideContainer.clientHeight
+      }
+    },
+  },
+  computed: {
+    computedAsideContainerClass() {
+      if (this.screenHeight > this.asideContainerHeight) {
+        return 'sticky sticky--top'
+      } else {
+        return ''
+      }
     },
   },
 }

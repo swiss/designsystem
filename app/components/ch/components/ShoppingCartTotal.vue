@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="shopping__cart-total-container">
-      <h4>{{ title }}</h4>
+      <h3>{{ title }}</h3>
       <p class="shopping__cart-total">{{ total }}</p>
     </div>
     <p class="shopping__cart-total-description">
@@ -9,7 +9,7 @@
     </p>
     <div class="shopping__cart__action-container">
       <btn
-        class="shopping__cart-temporary-button"
+        class="shopping__cart-button"
         variant="outline-negative"
         size="base"
         :label="nextStepLabel"

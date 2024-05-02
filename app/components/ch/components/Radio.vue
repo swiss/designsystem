@@ -8,6 +8,7 @@
       :value="value"
       :checked="checked"
       :required="required"
+      @change="onChange($event)"
     />
     <label v-if="label" :for="id" :class="labelClasses">
       <span v-html="label"></span
@@ -62,6 +63,10 @@ export default {
     required: {
       type: Boolean,
       default: false,
+    },
+    onChange: {
+      type: Function,
+      default: () => ({}),
     },
   },
 

@@ -6,8 +6,11 @@
     :target="target"
     :href="href"
   >
-    <SvgIcon icon="ShoppingCart" size="lg" />
-    <ShoppingCartAmmountIndicator v-if="ammount > 0" :ammount="ammount" />
+    <p class="shopping-cart-button-label">{{ label }}</p>
+    <div class="shopping-cart-icon-group">
+      <SvgIcon class="shopping-cart-icon" icon="ShoppingCart" size="base" />
+      <ShoppingCartAmmountIndicator v-if="ammount > 0" :ammount="ammount" />
+    </div>
   </a>
 </template>
 
@@ -19,7 +22,7 @@ export default {
     ShoppingCartAmmountIndicator,
     SvgIcon,
   },
-  name: 'ShoppingCardButton',
+  name: 'ShoppingCartButton',
   props: {
     ammount: {
       type: Number,
@@ -27,7 +30,8 @@ export default {
     },
     ariaLabel: {
       type: String,
-      default: 'There are <ammount> items in your shopping cart.',
+      default:
+        'Shopping cart: There are <ammount> items in your shopping cart.',
     },
     href: {
       type: String,
@@ -37,6 +41,10 @@ export default {
       validator: (prop) =>
         ['_blank', '_parent', '_self', '_top'].includes(prop),
       default: '_self',
+    },
+    label: {
+      type: String,
+      required: true,
     },
   },
   computed: {

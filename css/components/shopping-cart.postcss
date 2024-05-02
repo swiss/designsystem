@@ -2,28 +2,12 @@
   SHOPPING CART
 \*----------------------------------------*/
 
-.shopping-cart-ammount-indicator {
-  @apply bg-red-600;
-  width: 20px;
-  height: 20px;
-  @apply rounded-full;
-  @apply flex;
-  @apply items-center;
-  @apply justify-center;
-  color: white;
-  font-size: 0.7rem;
-  @apply absolute;
-  top: -5px;
-  left: 15px;
+.shopping__cart-title {
+  @apply !mb-[35px];
 }
 
-.shopping-cart-button {
-  @apply relative;
-  @apply cursor-pointer;
-}
-
-.shopping__cart-temporary-button {
-  @apply mt-[15px];
+.shopping__cart-button {
+  @apply mt-4;
 }
 
 .shopping__cart-accordion-content {
@@ -100,7 +84,7 @@
 }
 
 .shopping__cart-order-form {
-  @apply mt-7;
+  @apply mt-4;
 }
 
 .shopping__cart-order-form-input-spacing {
@@ -111,20 +95,27 @@
   @apply mt-6;
 }
 
-.shopping__cart-order-form-container {
-  @apply mt-4;
-  @apply grid grid-cols-2;
-  @apply gap--responsive;
-}
-
 .shopping__cart-order-form-title {
   @apply mt-4;
 }
 
-.shopping__cart-bill-address-container {
+.shopping__cart-order-form-invoice-title {
+  @apply mt-[38px];
+}
+
+.shopping__cart-delivery-address-container {
   @apply !mt-5;
 }
 
 .shopping__cart-summary-box-title {
   @apply break-all;
+}
+
+.shopping__cart-order-form-input-group {
+  .form__group__input {
+    @apply mt-4;
+  }
+  @screen md {
+    @apply grid grid-cols-2 gap--responsive;
+  }
 }

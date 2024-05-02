@@ -82,11 +82,15 @@
   }
   @apply flex flex-col justify-between;
   @screen lg {
-    @apply min-w-[120px] max-w-[120px];
+    @apply min-w-[130px] max-w-[130px];
+  }
+  @screen 3xl{
+    @apply min-w-[150px] max-w-[150px];
   }
 }
 
 .shopping__card-price-mobile {
+  @apply text--base;
   @apply mt-[20px];
   @apply font-bold;
   @apply block;
@@ -96,6 +100,7 @@
 }
 
 .shopping__card-price {
+  @apply text--base;
   @apply text-right;
   @apply font-bold;
 }
@@ -103,6 +108,7 @@
 .shopping__card-action {
   @apply self-end;
   @apply mt-[20px];
+  @apply text--base;
 
   @screen lg {
     @apply mt-0;

@@ -5,8 +5,8 @@
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
       <TopHeader :overrideLogoForPrint="'Staatssekretariat für Wirtschaft SECO'" />
-      <DesktopMenu />
-      <MobileMenu />
+      <DesktopMenu :showActiveNavigation="true"/>
+      <MobileMenu :showActiveNavigation="true"/>
       <Breadcrumb />
       <div class="container">
         <Btn

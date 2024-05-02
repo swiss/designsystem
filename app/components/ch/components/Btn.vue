@@ -6,6 +6,7 @@
     :class="classes"
     :aria-label="aria"
     @click="eventHandler"
+    :disabled="disabled"
   >
     <SvgIcon v-if="this.icon" :icon="this.icon" class="btn__icon" />
     <span :class="buttonClasses">

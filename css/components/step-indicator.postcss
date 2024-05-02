@@ -5,16 +5,19 @@
 .step-indicator {
   .step-indicator__step {
     @apply rounded-full;
-    @apply bg-gray-400;
     @apply w-[36px] h-[36px];
     @apply flex items-center justify-center;
-    @apply text-white;
-
-    .step-indicator__step--confirmed {
-      @apply bg-green-500;
-    }
+    @apply text-gray-400;
+    @apply border-solid border-2 border-gray-400;
   }
   .step-indicator__step.step-indicator__step--confirmed {
     @apply bg-green-500;
+    @apply text-white;
+    @apply border-none;
+  }
+  .step-indicator__step.step-indicator__step--active {
+    @apply bg-gray-400;
+    @apply text-white;
+    @apply border-none;
   }
 }

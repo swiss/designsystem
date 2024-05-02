@@ -15,7 +15,7 @@
       >
         <span class="search__button__title">Suche</span>
         <SvgIcon
-          icon="Search" size="full"
+          icon="Search" size="lg"
           class="search__button__icon"
         />
     </div>

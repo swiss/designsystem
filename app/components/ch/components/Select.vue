@@ -73,10 +73,15 @@ export default {
       type: Boolean,
       default: false,
     },
+    onSelect: {
+      type: Function,
+      default: () => ({}),
+    },
   },
   methods: {
     handleChange(e) {
       this.$emit('select', e.target.value)
+      this.onSelect(e)
     },
   },
   computed: {
@@ -89,7 +94,7 @@ export default {
       let base = ''
       if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
-      if (this.messageType) base += `input--${this.messageType} `
+      if (this.message) base += `input--${this.messageType} `
       return base
     },
     labelClasses() {

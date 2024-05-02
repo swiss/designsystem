@@ -20,21 +20,24 @@
         :class="overrideLogoForPrint ? 'logo--print-only' : ''"
       />
       <div class="top-header__right">
-        <MetaNavigation
-          context="desktop"
-          :isFreebrand="isFreebrand"
-          :shoppingCartAriaLabel="shoppingCartAriaLabel"
-          :shoppingCartAmmount="shoppingCartAmmount"
-          :shoppingCartLink="shoppingCartLink"
-          :shoppingCartTarget="shoppingCartTarget"
-        />
-        <SearchMain />
+        <MetaNavigation context="desktop" :isFreebrand="isFreebrand" />
+        <div class="top-header__container-flex">
+          <SearchMain />
+          <div class="top-header__shopping-cart-button-desktop">
+            <ShoppingCartButton
+              :ammount="shoppingCartAmmount"
+              :ariaLabel="shoppingCartAriaLabel"
+              :target="shoppingCartTarget"
+              :href="shoppingCartLink"
+              :label="shoppingCartLabel"
+            />
+          </div>
+        </div>
         <div
-          v-if="screenSize < 1024"
-          class="top-header__shopping-cart-button"
+          class="top-header__shopping-cart-button-mobile"
           :class="isFreebrand ? 'freebrand' : ''"
         >
-          <ShoppingCardButton
+          <ShoppingCartButton
             :ammount="shoppingCartAmmount"
             :ariaLabel="shoppingCartAriaLabel"
             :target="shoppingCartTarget"
@@ -59,7 +62,7 @@ import Burger from '~/components/ch/components/Burger.vue'
 import Logo from '~/components/ch/components/Logo.vue'
 import SearchMain from '~/components/ch/components/SearchMain.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher'
-import ShoppingCardButton from '../components/ShoppingCardButton.vue'
+import ShoppingCartButton from '../components/ShoppingCartButton.vue'
 import MetaNavigation from '../navigations/MetaNavigation.vue'
 
 export default {
@@ -75,7 +78,7 @@ export default {
     },
     shoppingCartAriaLabel: {
       type: String,
-      default: 'There are <ammount> items in your shopping cart.',
+      default: 'Shopping cart: There are <ammount> items in your shopping cart.',
     },
     shoppingCartAmmount: {
       type: Number,
@@ -83,7 +86,10 @@ export default {
     },
     shoppingCartLink: {
       type: String,
-      required: true,
+    },
+    shoppingCartLabel: {
+      type: String,
+      default: 'Shopping cart',
     },
     shoppingCartTarget: {
       type: String,
@@ -103,7 +109,7 @@ export default {
     SearchMain,
     MetaNavigation,
     LanguageSwitcher,
-    ShoppingCardButton,
+    ShoppingCartButton,
   },
   created() {
     this.resizeWindow()

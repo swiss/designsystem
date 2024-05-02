@@ -24,6 +24,10 @@
   }
 }
 
+.notification__content-container {
+  @apply flex items-center;
+}
+
 .notification--error,
 .notification--alert {
   @apply bg-red-50;
@@ -38,6 +42,11 @@
 .notification--info {
   @apply bg-blue-50;
   @apply text-blue-700;
+}
+
+.notification--hint {
+  @apply bg-secondary-50;
+  @apply text-text-700;
 }
 
 .notification--warning {
@@ -67,6 +76,10 @@
 
 .notification__content {
   @apply mt-2.5 xl:mt-2;
+  @apply mb-2.5 xl:mb-2;
+  p {
+    @apply !m-0;
+  }
 }
 
 .notification__content > *:first-child {

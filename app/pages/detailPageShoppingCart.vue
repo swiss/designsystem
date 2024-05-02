@@ -5,13 +5,14 @@
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
       <TopHeader
-        shoppingCartAriaLabel="Es hat <ammount> Artikel in Ihrem Warenkorb."
+        shoppingCartAriaLabel="Warenkorb: Es hat <ammount> Artikel in Ihrem Warenkorb."
         :shoppingCartAmmount="3"
         shoppingCartLink="/?path=/docs/pages-detail-shopping-cart--example"
         shoppingCartTarget="_blank"
+        shoppingCartLabel="Warenkorb"
       />
-      <DesktopMenu />
-      <MobileMenu />
+      <DesktopMenu :showActiveNavigation="false" />
+      <MobileMenu :showActiveNavigation="false" />
     </header>
     <main id="main-content">
       <div class="shopping__cart-wrapper">
@@ -19,6 +20,7 @@
           cartOverviewTitle="Ihr Warenkorb"
           cartAddressTitle="Rechnungsadresse & Lieferadresse"
           cartCheckoutTitle="Bestellung übermitteln"
+          cartTitle="Ihre Bestellübersicht"
         />
       </div>
     </main>
