@@ -681,10 +681,7 @@
       </ul>
     </div>
     <div v-else class="container__center--sm my-60">
-      <div
-        :id="getUniqueId('confirmation-container')"
-        class="shopping__cart-confirmation-container"
-      >
+      <div class="shopping__cart-confirmation-container">
         <div>
           <div class="shopping__cart-confirmation">
             <SvgIcon
@@ -917,9 +914,7 @@ export default {
     async triggerConfirmation() {
       this.showConfirmation = true
       await this.$nextTick()
-      const scroolTarget = document.getElementById(
-        this.getUniqueId('confirmation-container')
-      )
+      const scroolTarget = document.getElementById('main-header')
 
       if (scroolTarget) {
         if (this.switchTimeOut) {
