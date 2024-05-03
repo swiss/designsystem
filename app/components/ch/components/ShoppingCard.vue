@@ -17,25 +17,25 @@
       <div class="card__title">
         <h3>{{ title }}</h3>
       </div>
-      <div class="shopping__card-description">
-        <p>{{ description }}</p>
+      <div class="shopping__card-item-price">
+        <p>{{ itemPrice }}</p>
       </div>
       <div v-if="type === 'view'" class="shopping__card-ammount">
         <p>Anzahl: {{ ammount }}</p>
       </div>
     </div>
 
-    <!-- Price mobile only -->
-    <div class="shopping__card-price-mobile">
-      <p>{{ price }}</p>
-    </div>
-
-    <div v-if="type === 'edit'" class="shopping__card-ammount-container">
+    <div v-if="type === 'edit'" class="shopping__card-ammount-input">
       <input
         type="number"
         v-model="inputValue"
         class="input--outline text--base"
       />
+    </div>
+
+    <!-- Price mobile only -->
+    <div class="shopping__card-price-mobile">
+      <p>{{ price }}</p>
     </div>
 
     <div class="shopping__card-action-container">
@@ -102,7 +102,7 @@ export default {
       type: String,
       required: true,
     },
-    description: {
+    itemPrice: {
       type: String,
       required: true,
     },

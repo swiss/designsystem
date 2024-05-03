@@ -36,7 +36,7 @@
                       }"
                       context="mobile"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
-                      description="Preis pro Stück: CHF 12.00"
+                      itemPrice="Preis pro Stück: CHF 12.00"
                       price="CHF 12.00"
                       removeLabel="Entfernen"
                       editLabel="Editieren"
@@ -47,7 +47,7 @@
                       id="1"
                       type="edit"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
-                      description="Preis pro Stück: CHF 12.00"
+                      itemPrice="Preis pro Stück: CHF 12.00"
                       price="CHF 12.00"
                       removeLabel="Entfernen"
                       editLabel="Editieren"
@@ -62,7 +62,7 @@
                         alt: 'publication-cover',
                       }"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
-                      description="Preis pro Stück: CHF 12.00"
+                      itemPrice="Preis pro Stück: CHF 12.00"
                       price="CHF 12.00"
                       removeLabel="Entfernen"
                       editLabel="Editieren"
@@ -104,14 +104,15 @@
           >
             <div class="shopping__cart-accordion-content">
               <Notification
+                class="shopping__cart-order-form-notification"
                 type="hint"
                 :closeBtn="false"
                 text="Bitte füllen Sie alle Pflichtfelder aus. Diese sind mit mit einem “*” markiert."
               />
-              <h3 class="shopping__cart-order-form-invoice-title">
-                Rechnungsaddresse
-              </h3>
               <Form class="shopping__cart-order-form">
+                <h3 class="shopping__cart-order-form-invoice-title">
+                  Rechnungsaddresse
+                </h3>
                 <Fieldset
                   variant="outline"
                   size="base"
@@ -150,7 +151,7 @@
                     <Input
                       :required="formInputFields.invoice.lastName.mandatory"
                       label="Name"
-                      placeholder="Nachname"
+                      placeholder="Name"
                       messageType="error"
                       :onInput="
                         (e) =>
@@ -163,7 +164,7 @@
                       :message="
                         formInputFields.invoice.lastName.touched &&
                         !formInputFields.invoice.lastName.valid
-                          ? 'Bitte geben Sie einen Nachnamen an.'
+                          ? 'Bitte geben Sie einen Namen an.'
                           : ''
                       "
                     />
@@ -203,7 +204,7 @@
                       :message="
                         formInputFields.invoice.org.touched &&
                         !formInputFields.invoice.org.valid
-                          ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe'
+                          ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe.'
                           : ''
                       "
                     />
@@ -230,7 +231,7 @@
                       class="shopping__cart-order-form-input-spacing"
                       :required="formInputFields.invoice.postOffice.mandatory"
                       label="Postfach"
-                      placeholder="Posteach"
+                      placeholder="Postfach"
                       messageType="error"
                       :onInput="
                         (e) =>
@@ -243,7 +244,7 @@
                       :message="
                         formInputFields.invoice.postOffice.touched &&
                         !formInputFields.invoice.postOffice.valid
-                          ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe'
+                          ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe.'
                           : ''
                       "
                     />
@@ -319,7 +320,7 @@
                       class="shopping__cart-order-form-input-spacing"
                       :required="formInputFields.invoice.phone.mandatory"
                       label="Telefon"
-                      placeholder="Telefon nummer (+41 (0)58 555 55 44)"
+                      placeholder="+41 (0)58 555 55 44"
                       messageType="error"
                       :onInput="
                         (e) =>
@@ -336,7 +337,7 @@
                       class="shopping__cart-order-form-input-spacing"
                       :required="formInputFields.invoice.email.mandatory"
                       label="E-Mail"
-                      placeholder="E-mail Addresse"
+                      placeholder="E-Mail Addresse"
                       messageType="error"
                       :onInput="
                         (e) =>
@@ -379,13 +380,15 @@
                 </div>
 
                 <div v-if="showDeliveryAddress">
-                  <h3 class="shopping__cart-order-form-title">Lieferadresse</h3>
+                  <h3 class="shopping__cart-order-form-delivery-address-title">
+                    Lieferadresse
+                  </h3>
                   <div class="shopping__cart-order-form-container">
                     <div class="shopping__cart-order-form-input-group">
                       <Input
                         :required="formInputFields.delivery.lastName.mandatory"
                         label="Name"
-                        placeholder="Nachname"
+                        placeholder="Name"
                         messageType="error"
                         :onInput="
                           (e) =>
@@ -398,7 +401,7 @@
                         :message="
                           formInputFields.delivery.lastName.touched &&
                           !formInputFields.delivery.lastName.valid
-                            ? 'Bitte geben Sie einen Nachnamen an.'
+                            ? 'Bitte geben Sie einen Namen an.'
                             : ''
                         "
                       />
@@ -437,7 +440,7 @@
                         :message="
                           formInputFields.delivery.org.touched &&
                           !formInputFields.delivery.org.valid
-                            ? 'Bitte überprüfen Sie Ihre Eingabe.'
+                            ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe.'
                             : ''
                         "
                       />
@@ -483,7 +486,7 @@
                         :message="
                           formInputFields.delivery.postOffice.touched &&
                           !formInputFields.delivery.postOffice.valid
-                            ? 'Bitte überprüfen Sie Ihre Eingabe.'
+                            ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe.'
                             : ''
                         "
                       />
@@ -569,7 +572,7 @@
                     label="Nächster Schritt"
                     ariaLabel="Nächster Schritt"
                     @emitClick="checkFormAndSetNextActiveStep"
-                    :fullWidth="screenSize < 1024"
+                    :fullWidth="isMobile"
                   />
                 </div>
               </Form>
@@ -605,7 +608,7 @@
                         alt: 'publication-cover',
                       }"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
-                      description="Preis pro Stück: CHF 12.00"
+                      itemPrice="Preis pro Stück: CHF 12.00"
                       price="CHF 12.00"
                       removeLabel="Entfernen"
                       editLabel="Editieren"
@@ -617,7 +620,7 @@
                       id="1"
                       type="view"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
-                      description="Preis pro Stück: CHF 12.00"
+                      itemPrice="Preis pro Stück: CHF 12.00"
                       price="CHF 12.00"
                       removeLabel="Entfernen"
                       editLabel="Editieren"
@@ -633,7 +636,7 @@
                         alt: 'publication-cover',
                       }"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
-                      description="Preis pro Stück: CHF 12.00"
+                      itemPrice="Preis pro Stück: CHF 12.00"
                       price="CHF 12.00"
                       removeLabel="Entfernen"
                       editLabel="Editieren"
@@ -646,12 +649,6 @@
                     <h3 class="h3 shopping__cart-summary-box-title">
                       Rechnungsadresse
                     </h3>
-                    <p>Entspricht der Lieferadresse</p>
-                  </div>
-                  <div class="box shopping__cart-delivery-address-container">
-                    <h3 class="h3 shopping__cart-summary-box-title">
-                      Lieferadresse
-                    </h3>
                     <Contact
                       address1="Max Mustermann"
                       street="Enikonstrasse 3"
@@ -659,6 +656,12 @@
                       city="Hünenberg"
                       country="Schweiz"
                     />
+                  </div>
+                  <div class="box shopping__cart-delivery-address-container">
+                    <h3 class="h3 shopping__cart-summary-box-title">
+                      Lieferadresse
+                    </h3>
+                    <p>Entspricht der Rechnungsaddresse</p>
                   </div>
                   <ShoppingCartTotalSummary
                     title="Gesamtsumme"
@@ -709,7 +712,7 @@
             size="base"
             label="Zurück zur Übersicht"
             ariaLabel="Zurück zur Übersicht"
-            :fullWidth="screenSize < 1024"
+            :fullWidth="isMobile"
           />
         </div>
       </div>
@@ -1053,6 +1056,9 @@ export default {
     },
   },
   computed: {
+    isMobile() {
+      return this.screenSize < 1024
+    },
     canContinue() {
       const keysToValidate = ['invoice']
       if (this.showDeliveryAddress) {

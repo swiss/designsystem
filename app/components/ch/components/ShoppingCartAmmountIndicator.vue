@@ -1,5 +1,5 @@
 <template>
-  <div class="shopping-cart-ammount-indicator">
+  <div class="shopping__cart-ammount-indicator">
     {{ limittedAmmount }}
   </div>
 </template>

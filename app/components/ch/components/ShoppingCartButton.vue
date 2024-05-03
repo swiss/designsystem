@@ -1,14 +1,14 @@
 <template>
   <a
-    class="shopping-cart-button"
+    class="shopping-cart__button"
     tabindex="0"
     :aria-label="parsedLabel"
     :target="target"
     :href="href"
   >
-    <p class="shopping-cart-button-label">{{ label }}</p>
-    <div class="shopping-cart-icon-group">
-      <SvgIcon class="shopping-cart-icon" icon="ShoppingCart" size="base" />
+    <p class="shopping-cart__button-label">{{ label }}</p>
+    <div class="shopping-cart__icon-group">
+      <SvgIcon class="shopping-cart__icon" icon="ShoppingCart" size="base" />
       <ShoppingCartAmmountIndicator v-if="ammount > 0" :ammount="ammount" />
     </div>
   </a>
