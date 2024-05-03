@@ -38,22 +38,23 @@
 
 .top-header__shopping-cart-button-mobile {
   @apply flex items-center;
-  @apply ml-[10px];
-  @apply mr-[13px];
+  @apply ml-2.5;
+  @apply mr-3;
   @screen lg {
     @apply hidden;
   }
 }
 
 .top-header__shopping-cart-button-mobile.freebrand {
-  @apply !mr-[6px];
-  @apply !ml-[6px];
+  @apply !mx-1.5;
 }
 
 .top-header__shopping-cart-button-desktop {
   @apply hidden;
   @screen lg {
     @apply block;
+    @apply mr-[0.7rem];
+    @apply ml-4;
   }
 }
 

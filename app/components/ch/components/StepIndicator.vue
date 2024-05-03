@@ -1,9 +1,6 @@
 <template>
-  <div class="step-indicator">
-    <div
-      class="step-indicator__step"
-      :class="colorClasses"
-    >
+  <div class="step__indicator">
+    <div class="step__indicator-step" :class="colorClasses">
       <span v-if="isConfirmed">
         <SvgIcon icon="CheckmarkBold" size="lg" />
       </span>
@@ -36,13 +33,14 @@ export default {
   },
   computed: {
     colorClasses() {
-      let base = 'step-indicator__step--'
-      if (this.isConfirmed) {base += 'confirmed' }
-      else if (this.isActive)  {
-      base += 'active'
-    }
+      let base = 'step__indicator-step--'
+      if (this.isConfirmed) {
+        base += 'confirmed'
+      } else if (this.isActive) {
+        base += 'active'
+      }
       return base
-    }
-  }
+    },
+  },
 }
 </script>
