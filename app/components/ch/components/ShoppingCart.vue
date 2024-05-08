@@ -681,41 +681,39 @@
         </li>
       </ul>
     </div>
-    <div v-else class="container__center--sm my-60">
-      <div class="shopping__cart-confirmation-container">
-        <div>
-          <div class="shopping__cart-confirmation">
-            <SvgIcon
-              class="shopping__cart-confirmation-badge"
-              icon="ConfirmationBadge"
-              size="2xl"
-            ></SvgIcon>
-            <SvgIcon
-              class="shopping__cart-confirmation-checkmark"
-              icon="CheckmarkBold"
-              size="xl"
-            ></SvgIcon>
-          </div>
-          <h1 class="h1 shopping__cart-confirmation-title">
-            Ihre Bestellung ist bei uns eingetroffen
-          </h1>
-          <div class="font--bold shopping__cart-confirmation-text">
-            <p>Die Bestellung wurde erfolgreich aufgegeben.</p>
-            <p>
-              Wir werden dir eine E-Mail mit der Bestellbestätigung zukommen
-              lassen.
-            </p>
-          </div>
-          <btn
-            class="shopping__cart-confirmation-action"
-            variant="outline-negative"
-            size="base"
-            label="Zurück zur Übersicht"
-            ariaLabel="Zurück zur Übersicht"
-            :fullWidth="isMobile"
-          />
-        </div>
+    <div
+      v-else
+      class="container__center--sm shopping__cart-confirmation-container"
+    >
+      <div class="shopping__cart-confirmation">
+        <SvgIcon
+          class="shopping__cart-confirmation-badge"
+          icon="ConfirmationBadge"
+          size="2xl"
+        ></SvgIcon>
+        <SvgIcon
+          class="shopping__cart-confirmation-checkmark"
+          icon="CheckmarkBold"
+          size="xl"
+        ></SvgIcon>
       </div>
+      <h1 class="h1 shopping__cart-confirmation-title">
+        Ihre Bestellung ist bei uns eingetroffen
+      </h1>
+      <div class="font--bold shopping__cart-confirmation-text">
+        <p>Die Bestellung wurde erfolgreich aufgegeben.</p>
+        <p>
+          Wir werden dir eine E-Mail mit der Bestellbestätigung zukommen lassen.
+        </p>
+      </div>
+      <btn
+        class="shopping__cart-confirmation-action"
+        variant="outline-negative"
+        size="base"
+        label="Zurück zur Übersicht"
+        ariaLabel="Zurück zur Übersicht"
+        :fullWidth="isMobile"
+      />
     </div>
   </div>
 </template>
