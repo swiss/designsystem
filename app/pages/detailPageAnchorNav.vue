@@ -281,7 +281,8 @@ export default {
       }
     },
   },
-  mounted() {
+  async mounted() {
+    await this.$nextTick()
     AnchorNav.setCurrentMenuItem()
     this.resizeWindow()
     window.addEventListener('resize', this.resizeWindow)

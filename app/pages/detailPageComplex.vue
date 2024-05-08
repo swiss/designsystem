@@ -495,7 +495,8 @@ export default {
       asideContainerHeight: 0,
     }
   },
-  mounted() {
+  async mounted() {
+    await this.$nextTick()
     this.resizeWindow()
     window.addEventListener('resize', this.resizeWindow)
   },

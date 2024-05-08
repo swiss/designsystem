@@ -5,8 +5,8 @@
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
       <TopHeader />
-      <DesktopMenu :showActiveNavigation="true"/>
-      <MobileMenu :showActiveNavigation="true"/>
+      <DesktopMenu :showActiveNavigation="true" />
+      <MobileMenu :showActiveNavigation="true" />
       <Breadcrumb />
       <div class="container">
         <Btn
@@ -54,7 +54,7 @@
               </picture>
             </figure>
 
-            <div class="md:hidden">
+            <div class="container__mobile">
               <!-- mobile only -->
               <div class="box">
                 <h2 class="h5">Download</h2>
@@ -176,56 +176,54 @@
               <RelatedTags :tags="tags" bare></RelatedTags>
             </div>
           </div>
-          <div class="container__aside">
+          <div class="container__aside hidden md:block">
             <div id="aside-content" :class="computedAsideContainerClass">
-              <div class="hidden md:block">
-                <!-- desktop only -->
-                <div class="box">
-                  <h2 class="h5">Download</h2>
-                  <ul class="download-items">
-                    <li>
-                      <DownloadItem
-                        headingLevel="h2"
-                        :filename="'dummy.pdf'"
-                        :title="'Deutsch'"
-                        :url="'../../../static/documents/dummy.pdf'"
-                        :type="'PDF'"
-                        :date="'524 kB'"
-                      />
-                    </li>
-                    <li>
-                      <DownloadItem
-                        headingLevel="h2"
-                        :filename="'dummy.pdf'"
-                        :title="'Französisch'"
-                        :url="'../../../static/documents/dummy.pdf'"
-                        :type="'PDF'"
-                        :date="'524 kB'"
-                      />
-                    </li>
-                    <li>
-                      <DownloadItem
-                        headingLevel="h2"
-                        :filename="'dummy.pdf'"
-                        :title="'English'"
-                        :url="'../../../static/documents/dummy.pdf'"
-                        :type="'PDF'"
-                        :date="'524 kB'"
-                        class="border-b-0 pb-0"
-                      />
-                    </li>
-                  </ul>
-                </div>
-                <div class="box">
-                  <h2 class="h5">Druckexemplar bestellen</h2>
-                  <Btn
-                    to="#"
-                    variant="filled"
-                    icon-pos="right"
-                    icon="ArrowRight"
-                    label="Zum Online-Shop"
-                  />
-                </div>
+              <!-- desktop only -->
+              <div class="box">
+                <h2 class="h5">Download</h2>
+                <ul class="download-items">
+                  <li>
+                    <DownloadItem
+                      headingLevel="h2"
+                      :filename="'dummy.pdf'"
+                      :title="'Deutsch'"
+                      :url="'../../../static/documents/dummy.pdf'"
+                      :type="'PDF'"
+                      :date="'524 kB'"
+                    />
+                  </li>
+                  <li>
+                    <DownloadItem
+                      headingLevel="h2"
+                      :filename="'dummy.pdf'"
+                      :title="'Französisch'"
+                      :url="'../../../static/documents/dummy.pdf'"
+                      :type="'PDF'"
+                      :date="'524 kB'"
+                    />
+                  </li>
+                  <li>
+                    <DownloadItem
+                      headingLevel="h2"
+                      :filename="'dummy.pdf'"
+                      :title="'English'"
+                      :url="'../../../static/documents/dummy.pdf'"
+                      :type="'PDF'"
+                      :date="'524 kB'"
+                      class="border-b-0 pb-0"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="box">
+                <h2 class="h5">Druckexemplar bestellen</h2>
+                <Btn
+                  to="#"
+                  variant="filled"
+                  icon-pos="right"
+                  icon="ArrowRight"
+                  label="Zum Online-Shop"
+                />
               </div>
             </div>
           </div>
@@ -333,7 +331,8 @@ export default {
       asideContainerHeight: 0,
     }
   },
-  mounted() {
+  async mounted() {
+    await this.$nextTick()
     this.resizeWindow()
     window.addEventListener('resize', this.resizeWindow)
   },
