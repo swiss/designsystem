@@ -118,6 +118,15 @@
   }
 }
 
+.container__mobile {
+  @apply md:hidden;
+
+  & > *,
+  & .sticky > * {
+    @apply mb-7;
+  }
+}
+
 .container--reverse-mobile .container__aside {
   @apply order-1 md:order-2;
 }

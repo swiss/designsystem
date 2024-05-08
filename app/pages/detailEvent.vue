@@ -7,7 +7,7 @@
         <TopBar :isOpen="false" />
         <TopHeader />
         <DesktopMenu :showActiveNavigation="true" />
-        <MobileMenu :showActiveNavigation="true"/>
+        <MobileMenu :showActiveNavigation="true" />
         <Breadcrumb />
         <div class="container">
           <Btn
@@ -41,7 +41,7 @@
                 </picture>
               </figure>
 
-              <div class="md:hidden">
+              <div class="container__mobile">
                 <!-- mobile only -->
                 <div class="box">
                   <h2 class="sr-only">Event Date</h2>
@@ -226,49 +226,47 @@
                 <RelatedTags :tags="tags" bare></RelatedTags>
               </div>
             </div>
-            <div class="container__aside">
+            <div class="container__aside hidden md:block">
               <div id="aside-content" :class="computedAsideContainerClass">
-                <div class="hidden md:block">
-                  <!-- desktop only -->
-                  <div class="box">
-                    <h2 class="sr-only">Event Date</h2>
-                    <div class="date" lang="de">
-                      <div class="date__wrapper">
-                        <div class="date__day">10</div>
-                        <div class="date__month">Apr</div>
-                      </div>
-                      <div class="date__separator">–</div>
-                      <div class="date__wrapper">
-                        <div class="date__day">11</div>
-                        <div class="date__month">Apr</div>
-                        <div class="date__year">2023</div>
-                      </div>
+                <!-- desktop only -->
+                <div class="box">
+                  <h2 class="sr-only">Event Date</h2>
+                  <div class="date" lang="de">
+                    <div class="date__wrapper">
+                      <div class="date__day">10</div>
+                      <div class="date__month">Apr</div>
                     </div>
-                    <div class="hours">
-                      Friday 18:00 – 21:00<br />
-                      Saturday 10:00 – 17:00
+                    <div class="date__separator">–</div>
+                    <div class="date__wrapper">
+                      <div class="date__day">11</div>
+                      <div class="date__month">Apr</div>
+                      <div class="date__year">2023</div>
                     </div>
                   </div>
-                  <div class="box">
-                    <Contact
-                      address1="Museum Cerny"
-                      street="Stadtbachstrasse 8A"
-                      zip="3012"
-                      city="Bern"
-                      country="CH"
-                      mapLink="www.google.com/maps"
-                      website="www.cerny.ch"
-                    />
+                  <div class="hours">
+                    Friday 18:00 – 21:00<br />
+                    Saturday 10:00 – 17:00
                   </div>
-                  <div class="box">
-                    <Btn
-                      to="#"
-                      variant="filled"
-                      icon-pos="right"
-                      icon="ArrowRight"
-                      label="Jetzt anmelden"
-                    />
-                  </div>
+                </div>
+                <div class="box">
+                  <Contact
+                    address1="Museum Cerny"
+                    street="Stadtbachstrasse 8A"
+                    zip="3012"
+                    city="Bern"
+                    country="CH"
+                    mapLink="www.google.com/maps"
+                    website="www.cerny.ch"
+                  />
+                </div>
+                <div class="box">
+                  <Btn
+                    to="#"
+                    variant="filled"
+                    icon-pos="right"
+                    icon="ArrowRight"
+                    label="Jetzt anmelden"
+                  />
                 </div>
               </div>
             </div>
@@ -370,7 +368,8 @@ export default {
       asideContainerHeight: 0,
     }
   },
-  mounted() {
+  async mounted() {
+    await this.$nextTick()
     this.resizeWindow()
     window.addEventListener('resize', this.resizeWindow)
   },

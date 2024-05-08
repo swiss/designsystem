@@ -61,7 +61,7 @@
                 </picture>
               </figure>
 
-              <div class="md:hidden">
+              <div class="container__mobile">
                 <!-- mobile only -->
                 <div class="box">
                   <h2 class="h5">Download</h2>
@@ -100,7 +100,6 @@
                   </ul>
                 </div>
                 <OrderBox
-                  class="sidecard-spacing"
                   title="Bestellung gedruckte Version in DE, IT, FR"
                   totalPriceTitle="Total (exklusiv MwSt.)"
                   pricePieceTitle="Pro Stück"
@@ -131,7 +130,7 @@
                   :addToCart="addToCart"
                   languageLabel="Sprache"
                 />
-                <div class="box sidecard-spacing">
+                <div class="box">
                   <h2 class="h5">Webviewer</h2>
                   <btn
                     variant="link"
@@ -219,89 +218,86 @@
                 <RelatedTags :tags="tags" bare></RelatedTags>
               </div>
             </div>
-            <div class="container__aside">
+            <div class="container__aside hidden md:block">
               <div id="aside-content" :class="computedAsideContainerClass">
-                <div class="hidden md:block">
-                  <!-- desktop only -->
-                  <div class="box">
-                    <h2 class="h5">Download</h2>
-                    <ul class="download-items">
-                      <li>
-                        <DownloadItem
-                          headingLevel="h2"
-                          :filename="'dummy.pdf'"
-                          :title="'Deutsch'"
-                          :url="'../../../static/documents/dummy.pdf'"
-                          :type="'PDF'"
-                          :date="'524 kB'"
-                        />
-                      </li>
-                      <li>
-                        <DownloadItem
-                          headingLevel="h2"
-                          :filename="'dummy.pdf'"
-                          :title="'Französisch'"
-                          :url="'../../../static/documents/dummy.pdf'"
-                          :type="'PDF'"
-                          :date="'524 kB'"
-                        />
-                      </li>
-                      <li>
-                        <DownloadItem
-                          headingLevel="h2"
-                          :filename="'dummy.pdf'"
-                          :title="'English'"
-                          :url="'../../../static/documents/dummy.pdf'"
-                          :type="'PDF'"
-                          :date="'524 kB'"
-                          class="border-b-0 pb-0"
-                        />
-                      </li>
-                    </ul>
-                  </div>
-                  <OrderBox
-                    class="sidecard-spacing"
-                    title="Bestellung gedruckte Version in DE, IT, FR"
-                    totalPriceTitle="Total (exklusiv MwSt.)"
-                    pricePieceTitle="Pro Stück"
-                    curencyPrefix="CHF"
-                    :options="[
-                      {
-                        label: 'Deutsch',
-                        value: 'de',
-                        pricePiece: 15.75,
-                        selected: true,
-                      },
-                      {
-                        label: 'Französisch',
-                        value: 'fr',
-                        pricePiece: 17.75,
-                        selected: false,
-                      },
-                      {
-                        label: 'Italienisch',
-                        value: 'it',
-                        pricePiece: 12.75,
-                        selected: false,
-                      },
-                    ]"
-                    :defaultAmmount="1"
-                    ammountInputLabel="Anzahl"
-                    buttonLabel="In den Warenkorb"
-                    :addToCart="addToCart"
-                    languageLabel="Sprache"
+                <!-- desktop only -->
+                <div class="box">
+                  <h2 class="h5">Download</h2>
+                  <ul class="download-items">
+                    <li>
+                      <DownloadItem
+                        headingLevel="h2"
+                        :filename="'dummy.pdf'"
+                        :title="'Deutsch'"
+                        :url="'../../../static/documents/dummy.pdf'"
+                        :type="'PDF'"
+                        :date="'524 kB'"
+                      />
+                    </li>
+                    <li>
+                      <DownloadItem
+                        headingLevel="h2"
+                        :filename="'dummy.pdf'"
+                        :title="'Französisch'"
+                        :url="'../../../static/documents/dummy.pdf'"
+                        :type="'PDF'"
+                        :date="'524 kB'"
+                      />
+                    </li>
+                    <li>
+                      <DownloadItem
+                        headingLevel="h2"
+                        :filename="'dummy.pdf'"
+                        :title="'English'"
+                        :url="'../../../static/documents/dummy.pdf'"
+                        :type="'PDF'"
+                        :date="'524 kB'"
+                        class="border-b-0 pb-0"
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <OrderBox
+                  title="Bestellung gedruckte Version in DE, IT, FR"
+                  totalPriceTitle="Total (exklusiv MwSt.)"
+                  pricePieceTitle="Pro Stück"
+                  curencyPrefix="CHF"
+                  :options="[
+                    {
+                      label: 'Deutsch',
+                      value: 'de',
+                      pricePiece: 15.75,
+                      selected: true,
+                    },
+                    {
+                      label: 'Französisch',
+                      value: 'fr',
+                      pricePiece: 17.75,
+                      selected: false,
+                    },
+                    {
+                      label: 'Italienisch',
+                      value: 'it',
+                      pricePiece: 12.75,
+                      selected: false,
+                    },
+                  ]"
+                  :defaultAmmount="1"
+                  ammountInputLabel="Anzahl"
+                  buttonLabel="In den Warenkorb"
+                  :addToCart="addToCart"
+                  languageLabel="Sprache"
+                />
+                <div class="box">
+                  <h2 class="h5">Webviewer</h2>
+                  <btn
+                    variant="link"
+                    to="https://www.google.ch"
+                    label="Publikation im Browser betrachten"
+                    ariaLabel="Publikation im Browser betrachten"
+                    iconPos="left"
+                    icon="Link"
                   />
-                  <div class="box sidecard-spacing">
-                    <h2 class="h5">Webviewer</h2>
-                    <btn
-                      variant="link"
-                      to="https://www.google.ch"
-                      label="Publikation im Browser betrachten"
-                      ariaLabel="Publikation im Browser betrachten"
-                      iconPos="left"
-                      icon="Link"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
@@ -432,7 +428,8 @@ export default {
       asideContainerHeight: 0,
     }
   },
-  mounted() {
+  async mounted() {
+    await this.$nextTick()
     this.resizeWindow()
     window.addEventListener('resize', this.resizeWindow)
   },
