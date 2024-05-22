@@ -118,10 +118,6 @@ export default {
       type: Function,
       default: () => ({}),
     },
-    onChange: {
-      type: Function,
-      default: () => ({}),
-    },
     removeLabel: {
       type: String,
       default: 'Remove',
