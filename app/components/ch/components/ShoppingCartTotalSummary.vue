@@ -17,7 +17,7 @@
         :required="true"
         size="base"
         type="outline"
-        name="radio-delivery-address"
+        name="checkbox-agb"
         value="agb accepted"
         :label="agreementText"
         :onChange="

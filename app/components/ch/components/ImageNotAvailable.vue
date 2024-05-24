@@ -9,7 +9,7 @@
       />
     </svg>
 
-    <p class="image__not-abailable-text">{{ text }}</p>
+    <p class="image__not-available-text">{{ text }}</p>
   </div>
 </template>
 

@@ -24,60 +24,79 @@
             :class="{ active: activeIndex === 1 }"
           >
             <div class="shopping__cart-accordion-content">
-              <div>
-                <ul class="shopping__cart-card-list">
-                  <li>
-                    <ShoppingCard
-                      id="1"
-                      type="edit"
-                      :image="{
-                        src: 'images/publication-cover.png',
-                        alt: 'publication-cover',
-                      }"
-                      context="mobile"
-                      title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
-                      itemPrice="Preis pro Stück: CHF 12.00"
-                      price="CHF 12.00"
-                      removeLabel="Entfernen"
-                      editLabel="Editieren"
-                    />
-                  </li>
-                  <li>
-                    <ShoppingCard
-                      id="1"
-                      type="edit"
-                      title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
-                      itemPrice="Preis pro Stück: CHF 12.00"
-                      price="CHF 12.00"
-                      removeLabel="Entfernen"
-                      editLabel="Editieren"
-                    />
-                  </li>
-                  <li>
-                    <ShoppingCard
-                      id="1"
-                      type="edit"
-                      :image="{
-                        src: 'images/publication-cover.png',
-                        alt: 'publication-cover',
-                      }"
-                      title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
-                      itemPrice="Preis pro Stück: CHF 12.00"
-                      price="CHF 12.00"
-                      removeLabel="Entfernen"
-                      editLabel="Editieren"
-                    />
-                  </li>
-                </ul>
-              </div>
-              <ShoppingCartTotal
-                title="Provisorischer Bestellwert exkl. MWSt:"
-                total="CHF 36.00"
-                description="Ermässigungen werden gemäss Gebührenverordnung für statistische Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im nächsten Schritt unter „Nachricht“ angebracht werden."
-                nextStepLabel="Nächster Schritt"
-                nextStepAriaLabel="Nächster Schritt"
-                @nextStep="goToStep(2)"
-              />
+              <template v-if="card1Shown || card2Shown || card3Shown">
+                <div>
+                  <ul class="shopping__cart-card-list">
+                    <li v-if="card1Shown">
+                      <ShoppingCard
+                        type="edit"
+                        :image="{
+                          src: 'images/publication-cover.png',
+                          alt: 'publication-cover',
+                        }"
+                        context="mobile"
+                        title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
+                        itemPrice="Preis pro Stück: CHF 12.00"
+                        price="CHF 12.00"
+                        removeLabel="Entfernen"
+                        editLabel="Editieren"
+                        :deleteTriggered="
+                          () => {
+                            card1Shown = false
+                          }
+                        "
+                      />
+                    </li>
+                    <li v-if="card2Shown">
+                      <ShoppingCard
+                        type="edit"
+                        title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
+                        itemPrice="Preis pro Stück: CHF 12.00"
+                        price="CHF 12.00"
+                        removeLabel="Entfernen"
+                        editLabel="Editieren"
+                        :deleteTriggered="
+                          () => {
+                            card2Shown = false
+                          }
+                        "
+                      />
+                    </li>
+                    <li v-if="card3Shown">
+                      <ShoppingCard
+                        type="edit"
+                        :image="{
+                          src: 'images/publication-cover.png',
+                          alt: 'publication-cover',
+                        }"
+                        title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
+                        itemPrice="Preis pro Stück: CHF 12.00"
+                        price="CHF 12.00"
+                        removeLabel="Entfernen"
+                        editLabel="Editieren"
+                        :deleteTriggered="
+                          () => {
+                            card3Shown = false
+                          }
+                        "
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <ShoppingCartTotal
+                  title="Provisorischer Bestellwert exkl. MWSt:"
+                  total="CHF 36.00"
+                  description="Ermässigungen werden gemäss Gebührenverordnung für statistische Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im nächsten Schritt unter „Nachricht“ angebracht werden."
+                  nextStepLabel="Nächster Schritt"
+                  nextStepAriaLabel="Nächster Schritt"
+                  @nextStep="goToStep(2)"
+                />
+              </template>
+              <template v-else
+                ><p class="shopping__cart-empty-text">
+                  Es befinden sich noch keine Produkte im Warenkorb
+                </p></template
+              >
             </div>
           </div>
         </li>
@@ -601,7 +620,6 @@
                 <ul class="shopping__cart-card-list">
                   <li>
                     <ShoppingCard
-                      id="1"
                       type="view"
                       :image="{
                         src: 'images/publication-cover.png',
@@ -617,7 +635,6 @@
                   </li>
                   <li>
                     <ShoppingCard
-                      id="1"
                       type="view"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
                       itemPrice="Preis pro Stück: CHF 12.00"
@@ -629,7 +646,6 @@
                   </li>
                   <li>
                     <ShoppingCard
-                      id="1"
                       type="view"
                       :image="{
                         src: 'images/publication-cover.png',
@@ -775,6 +791,9 @@ export default {
   },
   data() {
     return {
+      card1Shown: true,
+      card2Shown: true,
+      card3Shown: true,
       contentHeight: 0,
       activeIndex: null,
       switchTimeOut: null,
@@ -959,12 +978,19 @@ export default {
       if (index === 3 && !this.canContinue) {
         return
       }
-      this.activeIndex === index
-        ? (this.activeIndex = null)
-        : (this.activeIndex = index)
+      if (
+        this.card1Shown ||
+        this.card2Shown ||
+        this.card3Shown ||
+        index === 1
+      ) {
+        this.activeIndex === index
+          ? (this.activeIndex = null)
+          : (this.activeIndex = index)
 
-      if (this.activeIndex) {
-        this.scroolContentIntoView(index)
+        if (this.activeIndex) {
+          this.scroolContentIntoView(index)
+        }
       }
     },
     scroolContentIntoView(index) {
