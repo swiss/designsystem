@@ -82,11 +82,6 @@ export default {
     ImageNotAvailable,
   },
   props: {
-    id: {
-      // For card identification when editing / deleting
-      type: String,
-      required: true,
-    },
     type: {
       type: String,
       validator: (prop) => ['view', 'edit'].includes(prop),

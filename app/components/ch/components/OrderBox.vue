@@ -4,18 +4,17 @@
     <div class="order__box-input-container">
       <!-- Add full-width class for single ammount input -->
       <div class="form__group__input order__box-input-ammount-container">
-        <label :for="getUniqueId('input')" class="text--base">
-          {{ ammountInputLabel }}
-        </label>
         <Input
+          :label="ammountInputLabel"
           :id="getUniqueId('input')"
           type="number"
-          varian="outline"
+          variant="outline"
+          size="base"
           :value="defaultAmmount"
           @keypress="restrictChars($event)"
           v-on:input="inputValue = $event.target.value"
           v-model="inputValue"
-          class="order__box-ammount-input input--outline input--base"
+          class="order__box-ammount-input"
           :min="0"
         />
       </div>
@@ -40,7 +39,9 @@
     </div>
     <div class="order__box-piece-price-container">
       <p class="order__box-piece-price-title">{{ pricePieceTitle }}</p>
-      <p class="order__box-piece-price">{{ `${curencyPrefix} ${pricePiece}` }}</p>
+      <p class="order__box-piece-price">
+        {{ `${curencyPrefix} ${pricePiece}` }}
+      </p>
     </div>
     <div class="order__box-total-price-container">
       <p class="order__box-total-price-title">{{ totalPriceTitle }}</p>
@@ -58,6 +59,7 @@
 
 <script>
 import Btn from '~/components/ch/components/Btn'
+import Input from '~/components/ch/components/Input.vue'
 import Select from '~/components/ch/components/Select.vue'
 const { v4: uuidv4 } = require('uuid')
 
@@ -66,6 +68,7 @@ export default {
   components: {
     Btn,
     Select,
+    Input,
   },
   data() {
     return {

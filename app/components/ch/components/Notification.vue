@@ -1,9 +1,7 @@
 <template>
   <div :class="classes" v-if="!isClosed">
-    <div class="notification__content-container">
-      <SvgIcon v-if="icon" :icon="icon" class="notification__icon" />
-      <div class="notification__content" v-html="text" />
-    </div>
+    <SvgIcon v-if="icon" :icon="icon" class="notification__icon" />
+    <div class="notification__content" v-html="text" />
     <button
       v-if="closeBtn"
       class="notification__close"
