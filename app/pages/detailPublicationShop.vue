@@ -7,7 +7,7 @@
         <TopBar :isOpen="false" />
         <TopHeader
           :shoppingCartAriaLabel="shoppingCartAriaLabel"
-          :shoppingCartAmmount="shoppingCartAmmount"
+          :shoppingCartAmount="shoppingCartAmount"
           :shoppingCartLink="shoppingCartLink"
           :shoppingCartTarget="shoppingCartTarget"
           :shoppingCartLabel="shoppingCartLabel"
@@ -124,8 +124,8 @@
                       selected: false,
                     },
                   ]"
-                  :defaultAmmount="1"
-                  ammountInputLabel="Anzahl"
+                  :defaultAmount="1"
+                  amountInputLabel="Anzahl"
                   buttonLabel="In den Warenkorb"
                   :addToCart="addToCart"
                   languageLabel="Sprache"
@@ -282,8 +282,8 @@
                       selected: false,
                     },
                   ]"
-                  :defaultAmmount="1"
-                  ammountInputLabel="Anzahl"
+                  :defaultAmount="1"
+                  amountInputLabel="Anzahl"
                   buttonLabel="In den Warenkorb"
                   :addToCart="addToCart"
                   languageLabel="Sprache"
@@ -412,12 +412,12 @@ export default {
         },
       ],
       shoppingCartAriaLabel:
-        'Shopping cart: There are <ammount> items in your shopping cart.',
-      shoppingCartAmmount: 0,
+        'Shopping cart: There are <amount> items in your shopping cart.',
+      shoppingCartAmount: 0,
       shoppingCartLink: '/shopping-cart',
       shoppingCartTarget: '_self',
       shoppingCartLabel: 'Shopping cart',
-      selectionAmmount: 1,
+      selectionAmount: 1,
       selectionLanguage: 'de',
       languageMap: {
         de: 'deutsch',
@@ -445,13 +445,13 @@ export default {
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
     },
-    addToCart(selectedLanguage, ammount) {
-      // Add ammount to shopping cart
-      this.shoppingCartAmmount += ammount
+    addToCart(selectedLanguage, amount) {
+      // Add amount to shopping cart
+      this.shoppingCartAmount += amount
       const translatedLanguage = this.languageMap[selectedLanguage]
 
       this.emitter.emit('trigger-toast-message', {
-        text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${ammount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
+        text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${amount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
         icon: 'CheckmarkCircle',
         type: 'success',
       })

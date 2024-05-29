@@ -25,7 +25,7 @@
           <SearchMain />
           <div class="top-header__shopping-cart-button-desktop">
             <ShoppingCartButton
-              :ammount="shoppingCartAmmount"
+              :amount="shoppingCartAmount"
               :ariaLabel="shoppingCartAriaLabel"
               :target="shoppingCartTarget"
               :href="shoppingCartLink"
@@ -38,7 +38,7 @@
           :class="isFreebrand ? 'freebrand' : ''"
         >
           <ShoppingCartButton
-            :ammount="shoppingCartAmmount"
+            :amount="shoppingCartAmount"
             :ariaLabel="shoppingCartAriaLabel"
             :target="shoppingCartTarget"
             :href="shoppingCartLink"
@@ -78,9 +78,9 @@ export default {
     },
     shoppingCartAriaLabel: {
       type: String,
-      default: 'Shopping cart: There are <ammount> items in your shopping cart.',
+      default: 'Shopping cart: There are <amount> items in your shopping cart.',
     },
-    shoppingCartAmmount: {
+    shoppingCartAmount: {
       type: Number,
       default: 0,
     },

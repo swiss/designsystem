@@ -2,19 +2,19 @@
   <div class="box">
     <h2 class="h5 order__box-title">{{ title }}</h2>
     <div class="order__box-input-container">
-      <!-- Add full-width class for single ammount input -->
-      <div class="form__group__input order__box-input-ammount-container">
+      <!-- Add full-width class for single amount input -->
+      <div class="form__group__input order__box-input-amount-container">
         <Input
-          :label="ammountInputLabel"
+          :label="amountInputLabel"
           :id="getUniqueId('input')"
           type="number"
           variant="outline"
           size="base"
-          :value="defaultAmmount"
+          :value="defaultAmount"
           @keypress="restrictChars($event)"
           v-on:input="inputValue = $event.target.value"
           v-model="inputValue"
-          class="order__box-ammount-input"
+          class="order__box-amount-input"
           :min="0"
         />
       </div>
@@ -73,17 +73,17 @@ export default {
   data() {
     return {
       orderBoxId: uuidv4(),
-      inputValue: this.defaultAmmount,
+      inputValue: this.defaultAmount,
       selectedValue: this.options.find((option) => option.selected).value,
       pricePiece: 0,
     }
   },
   props: {
-    defaultAmmount: {
+    defaultAmount: {
       type: Number,
       default: 1,
     },
-    ammountInputLabel: {
+    amountInputLabel: {
       type: String,
       required: true,
     },

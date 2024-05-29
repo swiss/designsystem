@@ -84,7 +84,7 @@
                   </ul>
                 </div>
                 <ShoppingCartTotal
-                  title="Provisorischer Bestellwert exkl. MWSt:"
+                  title="Provisorischer Bestellwert exkl. MwSt:"
                   total="CHF 36.00"
                   description="Ermässigungen werden gemäss Gebührenverordnung für statistische Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im nächsten Schritt unter „Nachricht“ angebracht werden."
                   nextStepLabel="Nächster Schritt"
@@ -94,7 +94,7 @@
               </template>
               <template v-else
                 ><p class="shopping__cart-empty-text">
-                  Es befinden sich noch keine Produkte im Warenkorb
+                  Es befinden sich keine Produkte im Warenkorb
                 </p></template
               >
             </div>

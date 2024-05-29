@@ -5,8 +5,8 @@
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
       <TopHeader
-        shoppingCartAriaLabel="Warenkorb: Es hat <ammount> Artikel in Ihrem Warenkorb."
-        :shoppingCartAmmount="3"
+        shoppingCartAriaLabel="Warenkorb: Es hat <amount> Artikel in Ihrem Warenkorb."
+        :shoppingCartAmount="3"
         shoppingCartLink="/?path=/docs/pages-detail-shopping-cart--example"
         shoppingCartTarget="_blank"
         shoppingCartLabel="Warenkorb"
