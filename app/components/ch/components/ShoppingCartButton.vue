@@ -9,29 +9,29 @@
     <p class="shopping-cart__button-label">{{ label }}</p>
     <div class="shopping-cart__icon-group">
       <SvgIcon class="shopping-cart__icon" icon="ShoppingCart" size="base" />
-      <ShoppingCartAmmountIndicator v-if="ammount > 0" :ammount="ammount" />
+      <ShoppingCartAmountIndicator v-if="amount > 0" :amount="amount" />
     </div>
   </a>
 </template>
 
 <script>
-import ShoppingCartAmmountIndicator from './ShoppingCartAmmountIndicator.vue'
+import ShoppingCartAmountIndicator from './ShoppingCartAmountIndicator.vue'
 import SvgIcon from './SvgIcon.vue'
 export default {
   components: {
-    ShoppingCartAmmountIndicator,
+    ShoppingCartAmountIndicator,
     SvgIcon,
   },
   name: 'ShoppingCartButton',
   props: {
-    ammount: {
+    amount: {
       type: Number,
       required: true,
     },
     ariaLabel: {
       type: String,
       default:
-        'Shopping cart: There are <ammount> items in your shopping cart.',
+        'Shopping cart: There are <amount> items in your shopping cart.',
     },
     href: {
       type: String,
@@ -48,11 +48,11 @@ export default {
     },
   },
   computed: {
-    limittedAmmount() {
-      return this.ammount > 9 ? '9+' : this.ammount
+    limittedAmount() {
+      return this.amount > 9 ? '9+' : this.amount
     },
     parsedLabel() {
-      return this.ariaLabel.replace('<ammount>', this.ammount)
+      return this.ariaLabel.replace('<amount>', this.amount)
     },
   },
 }

@@ -20,12 +20,12 @@
       <div class="shopping__card-item-price">
         <p>{{ itemPrice }}</p>
       </div>
-      <div v-if="type === 'view'" class="shopping__card-ammount">
-        <p>Anzahl: {{ ammount }}</p>
+      <div v-if="type === 'view'" class="shopping__card-amount">
+        <p>Anzahl: {{ amount }}</p>
       </div>
     </div>
 
-    <div v-if="type === 'edit'" class="shopping__card-ammount-input">
+    <div v-if="type === 'edit'" class="shopping__card-amount-input">
       <input
         type="number"
         v-model="inputValue"
@@ -121,7 +121,7 @@ export default {
       type: String,
       default: 'Edit',
     },
-    ammount: {
+    amount: {
       type: Number,
       default: 1,
     },
@@ -132,13 +132,13 @@ export default {
     }
   },
   watch: {
-    // Keep ammount synced / "computed"
+    // Keep amount synced / "computed"
     value() {
-      this.inputValue = this.ammount
+      this.inputValue = this.amount
     },
   },
   created() {
-    this.inputValue = this.ammount
+    this.inputValue = this.amount
   },
   computed: {
     computedClasses() {
