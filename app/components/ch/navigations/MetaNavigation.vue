@@ -1,6 +1,6 @@
 <template>
   <div class="meta-navigation-container">
-    <nav :class="metanavigationClass" aria-label="Meta">
+    <nav class="meta-navigation meta-navigation--desktop" aria-label="Meta">
       <ul>
         <li>
           <a href="#" class="meta-navigation__item">
@@ -46,11 +46,6 @@ export default {
     LanguageSwitcher,
   },
   props: {
-    context: {
-      type: String,
-      required: true,
-      validator: (prop) => ['desktop', 'mobile'].includes(prop),
-    },
     isFreebrand: {
       type: Boolean,
       default: false,
@@ -64,13 +59,6 @@ export default {
   created() {
     this.resizeWindow()
     window.addEventListener('resize', this.resizeWindow)
-  },
-  computed: {
-    metanavigationClass() {
-      let base = `meta-navigation `
-      if (this.context) base += `meta-navigation--${this.context} `
-      return base
-    },
   },
   methods: {
     resizeWindow() {
