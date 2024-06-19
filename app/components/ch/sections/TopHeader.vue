@@ -20,7 +20,7 @@
         :class="overrideLogoForPrint ? 'logo--print-only' : ''"
       />
       <div class="top-header__right">
-        <MetaNavigation context="desktop" :isFreebrand="isFreebrand" />
+        <MetaNavigation :isFreebrand="isFreebrand" />
         <div class="top-header__container-flex">
           <SearchMain />
           <div class="top-header__shopping-cart-button-desktop">

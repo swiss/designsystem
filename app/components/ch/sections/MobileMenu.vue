@@ -2,28 +2,28 @@
   <div
     id="mobile-menu-id"
     class="mobile-menu"
-    :class="isOpen ? 'mobile-menu--is-open' : '' "
+    :class="isOpen ? 'mobile-menu--is-open' : ''"
   >
     <MainNavigation context="mobile" :isHomePage="isHomePage" />
-    <MetaNavigation context="mobile" />
+    <MetaNavigationMobile />
     <TopBarNavigation context="mobile" />
   </div>
 </template>
 
 <script>
-import MainNavigation from '../navigations/MainNavigation.vue'
-import MetaNavigation from '../navigations/MetaNavigation.vue'
-import TopBarNavigation from '../navigations/TopBarNavigation.vue'
-import SvgIcon from '../components/SvgIcon.vue'
 import Navy from '../../../scripts/Navy.js'
+import SvgIcon from '../components/SvgIcon.vue'
+import MainNavigation from '../navigations/MainNavigation.vue'
+import MetaNavigationMobile from '../navigations/MobileMetaNavigation.vue'
+import TopBarNavigation from '../navigations/TopBarNavigation.vue'
 
 export default {
   name: 'MobileMenu',
   components: {
     MainNavigation,
-    MetaNavigation,
+    MetaNavigationMobile,
     TopBarNavigation,
-    SvgIcon
+    SvgIcon,
   },
   props: {
     isOpen: {
@@ -32,19 +32,11 @@ export default {
     },
     isHomePage: {
       type: Boolean,
-      default: false
-    },
-    // Allow disabling active navigation item highlighting for pages like shopping cart
-    showActiveNavigation: {
-      type: Boolean,
-      default: true,
+      default: false,
     },
   },
-  mounted () {
-    Navy.initMobile(
-      '#mobile-menu-id > nav',
-      '#mobile-menu-id'
-    );
-  }
+  mounted() {
+    Navy.initMobile('#mobile-menu-id > nav', '#mobile-menu-id')
+  },
 }
 </script>
