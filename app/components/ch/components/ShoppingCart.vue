@@ -6,14 +6,14 @@
         <li class="accordion__item">
           <button
             class="accordion__button"
-            :class="{ active: activeIndex === 1 }"
+            :class="{ active: activeAccordionIndex === 1 }"
             @click="handleAccordionClick(1)"
             :id="getUniqueId('shopping-cart-drawer-overview-button')"
           >
             <StepIndicator
               :step="1"
-              :isConfirmed="activeIndex > 1"
-              :isActive="activeIndex === 1"
+              :isConfirmed="step1Confirmed"
+              :isActive="activeStepIndex === 1"
             />
             <h2 class="accordion__title">{{ cartOverviewTitle }}</h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
@@ -21,7 +21,7 @@
           <div
             class="accordion__drawer"
             :id="getUniqueId('shopping-cart-drawer-overview')"
-            :class="{ active: activeIndex === 1 }"
+            :class="{ active: activeAccordionIndex === 1 }"
           >
             <div class="shopping__cart-accordion-content">
               <template v-if="card1Shown || card2Shown || card3Shown">
@@ -43,6 +43,11 @@
                         :deleteTriggered="
                           () => {
                             card1Shown = false
+
+                            if (!card2Shown && !card3Shown) {
+                              step1Confirmed = false
+                              step2Confirmed = false
+                            }
                           }
                         "
                       />
@@ -58,6 +63,11 @@
                         :deleteTriggered="
                           () => {
                             card2Shown = false
+
+                            if (!card1Shown && !card3Shown) {
+                              step1Confirmed = false
+                              step2Confirmed = false
+                            }
                           }
                         "
                       />
@@ -77,6 +87,11 @@
                         :deleteTriggered="
                           () => {
                             card3Shown = false
+
+                            if (!card1Shown && !card2Shown) {
+                              step1Confirmed = false
+                              step2Confirmed = false
+                            }
                           }
                         "
                       />
@@ -89,7 +104,7 @@
                   description="Ermässigungen werden gemäss Gebührenverordnung für statistische Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im nächsten Schritt unter „Nachricht“ angebracht werden."
                   nextStepLabel="Nächster Schritt"
                   nextStepAriaLabel="Nächster Schritt"
-                  @nextStep="goToStep(2)"
+                  @nextStep="overviewNextStepClicked"
                 />
               </template>
               <template v-else
@@ -104,14 +119,14 @@
         <li class="accordion__item">
           <button
             class="accordion__button"
-            :class="{ active: activeIndex === 2 }"
+            :class="{ active: activeAccordionIndex === 2 }"
             @click="handleAccordionClick(2)"
             :id="getUniqueId('shopping-cart-drawer-address-button')"
           >
             <StepIndicator
               :step="2"
-              :isConfirmed="activeIndex > 2"
-              :isActive="activeIndex === 2"
+              :isConfirmed="step2Confirmed"
+              :isActive="activeStepIndex === 2"
             />
             <h2 class="accordion__title">{{ cartAddressTitle }}</h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
@@ -119,7 +134,7 @@
           <div
             class="accordion__drawer"
             :id="getUniqueId('shopping-cart-drawer-address')"
-            :class="{ active: activeIndex === 2 }"
+            :class="{ active: activeAccordionIndex === 2 }"
           >
             <div class="shopping__cart-accordion-content">
               <Notification
@@ -602,18 +617,18 @@
         <li class="accordion__item">
           <button
             class="accordion__button"
-            :class="{ active: activeIndex === 3 }"
+            :class="{ active: activeAccordionIndex === 3 }"
             @click="handleAccordionClick(3)"
             :id="getUniqueId('shopping-cart-drawer-checkout-button')"
           >
-            <StepIndicator :step="3" :isActive="activeIndex === 3" />
+            <StepIndicator :step="3" :isActive="activeStepIndex === 3" />
             <h2 class="accordion__title">{{ cartCheckoutTitle }}</h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
             class="accordion__drawer"
             :id="getUniqueId('shopping-cart-drawer-checkout')"
-            :class="{ active: activeIndex === 3 }"
+            :class="{ active: activeAccordionIndex === 3 }"
           >
             <div class="shopping__cart-accordion-content">
               <div class="shopping__cart-order-overview-container">
@@ -791,11 +806,14 @@ export default {
   },
   data() {
     return {
+      activeAccordionIndex: 1,
+      activeStepIndex: 1,
+      step1Confirmed: false,
+      step2Confirmed: false,
       card1Shown: true,
       card2Shown: true,
       card3Shown: true,
       contentHeight: 0,
-      activeIndex: null,
       switchTimeOut: null,
       shoppingCartId: uuidv4(),
       showDeliveryAddress: false,
@@ -926,9 +944,41 @@ export default {
   mounted() {
     this.resizeWindow()
     window.addEventListener('resize', this.resizeWindow)
-    this.activeIndex = 1
+  },
+  watch: {
+    activeAccordionIndex() {
+      this.scrollContentIntoView(this.activeAccordionIndex)
+    },
   },
   methods: {
+    handleAccordionClick(index) {
+      if (!this.card1Shown && !this.card2Shown && !this.card3Shown) {
+        return
+      }
+      if (this.activeAccordionIndex === index) {
+        this.activeAccordionIndex = null
+      } else if (
+        index === 1 ||
+        index === 2 ||
+        (index === 3 && this.canContinue)
+      ) {
+        this.activeAccordionIndex = index
+        this.activeStepIndex = index
+        if (index === 2) {
+          this.step1Confirmed = true
+        }
+        if (index === 3) {
+          this.step2Confirmed = true
+        }
+      } else if (index === 3 && !this.canContinue) {
+        this.step2Confirmed = false
+      }
+    },
+    overviewNextStepClicked() {
+      this.activeAccordionIndex = 2
+      this.activeStepIndex = 2
+      this.step1Confirmed = true
+    },
     async triggerConfirmation() {
       this.showConfirmation = true
       await this.$nextTick()
@@ -947,8 +997,8 @@ export default {
       this.setFormFieldValue('invoice', 'gender', e.target.value)
     },
     editTriggered() {
-      this.activeIndex = 1
-      this.scroolContentIntoView(1)
+      this.activeAccordionIndex = 1
+      this.activeStepIndex = 1
     },
     setContentHeight() {
       if (this.activeIndex === 1) {
@@ -974,26 +1024,7 @@ export default {
     resizeWindow() {
       this.screenSize = document.body.clientWidth
     },
-    handleAccordionClick(index) {
-      if (index === 3 && !this.canContinue) {
-        return
-      }
-      if (
-        this.card1Shown ||
-        this.card2Shown ||
-        this.card3Shown ||
-        index === 1
-      ) {
-        this.activeIndex === index
-          ? (this.activeIndex = null)
-          : (this.activeIndex = index)
-
-        if (this.activeIndex) {
-          this.scroolContentIntoView(index)
-        }
-      }
-    },
-    scroolContentIntoView(index) {
+    scrollContentIntoView(index) {
       const accordionIdMap = {
         1: 'shopping-cart-drawer-overview-button',
         2: 'shopping-cart-drawer-address-button',
@@ -1012,10 +1043,6 @@ export default {
           scroolTarget.scrollIntoView({ behavior: 'smooth' })
         }, 200)
       }
-    },
-    goToStep(index) {
-      this.activeIndex = index
-      this.scroolContentIntoView(index)
     },
     setFormFieldValue(type, field, value) {
       this.formInputFields[type][field]['value'] = value
@@ -1075,7 +1102,9 @@ export default {
         })
       })
       if (allFieldsValid) {
-        this.goToStep(3)
+        this.activeAccordionIndex = 3
+        this.activeStepIndex = 3
+        this.step2Confirmed = true
       }
     },
   },
@@ -1095,27 +1124,6 @@ export default {
           return this.formInputFields[key][field]['valid']
         })
       })
-    },
-    getContentHeigth() {
-      if (this.activeIndex === 1) {
-        return (
-          document.getElementById(
-            this.getUniqueId('shopping-cart-drawer-overview')
-          ).scrollHeight + 'px'
-        )
-      } else if (this.activeIndex === 2) {
-        return (
-          document.getElementById(
-            this.getUniqueId('shopping-cart-drawer-address')
-          ).scrollHeight + 'px'
-        )
-      } else if (this.activeIndex === 3) {
-        return (
-          document.getElementById(
-            this.getUniqueId('shopping-cart-drawer-checkout')
-          ).scrollHeight + 'px'
-        )
-      }
     },
   },
 }
