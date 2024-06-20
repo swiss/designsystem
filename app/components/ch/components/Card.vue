@@ -65,7 +65,9 @@ export default {
   computed: {
     computedClasses() {
       let base = 'card '
-      if (this.type) base += `card--${this.type} `
+      if (this.type)
+        base +=
+          this.type === 'list' ? this.$slots.image ? 'card--list ' : 'card--list-without-image ' : `card--${this.type} `
       if (this.layout && this.layout !== 'default')
         base += `card--${this.layout} `
       if (this.$slots.footerAction) base += `card--clickable `

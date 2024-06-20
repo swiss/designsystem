@@ -338,7 +338,39 @@
 
   .card__body {
     @apply pt-0 pb-4;
-    @apply max-w-[800px];
+  }
+
+  .card__footer__action {
+    @apply -mt-8;
+  }
+
+  .btn {
+    @apply h-0 min-h-0 border-0;
+
+    &:focus-visible {
+      @apply ring-0 ring-transparent;
+    }
+
+    &:focus-visible::after {
+      @apply ring-2 ring-purple-500;
+    }
+  }
+}
+
+.card--list-without-image {
+  @apply card--flat;
+
+  &,
+  &:hover {
+    @apply no-underline text-inherit; /* override general styling for links in main */
+  }
+
+  .card__content {
+    @apply flex;
+  }
+
+  .card__body {
+    @apply pt-0 pb-4;
   }
 
   .card__footer__action {
