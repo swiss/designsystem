@@ -3,7 +3,7 @@
   <div :class="classes">
     <component
       :is="tag"
-      class="font--bold pr-1 mb-4"
+      class="info-block__title"
       v-html="title"
     />
     <div>

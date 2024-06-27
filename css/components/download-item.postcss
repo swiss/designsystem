@@ -27,6 +27,7 @@
 }
 
 .download-item__title {
+  @apply break-words;
   @apply font-bold;
   @apply transition-colors duration-200;
 
@@ -35,7 +36,12 @@
   }
 }
 
+.download-item > .div {
+  @apply min-w-0;
+}
+
 .download-item__description {
+  @apply break-words;
   @apply text-text-800; /* override general styling for links in main */
 }
 

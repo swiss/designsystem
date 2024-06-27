@@ -9,6 +9,10 @@
   @apply border-y border-secondary-100;
 }
 
+.authors > address {
+  @apply min-w-0;
+}
+
 .authors__names {
   @apply py-2;
 
@@ -18,6 +22,7 @@
 }
 
 .author__name {
+  @apply break-words;
   &:not(:last-child)::after {
     content: ', ';
     display: inline-block;

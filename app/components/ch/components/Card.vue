@@ -15,7 +15,7 @@
         <div v-if="$slots.title" class="card__title">
           <slot name="title"></slot>
         </div>
-        <slot name="description"></slot>
+        <slot name="description" class="card__description"></slot>
         <div v-if="$slots.image && type === 'universal'" class="card__image">
           <slot name="image"></slot>
         </div>
