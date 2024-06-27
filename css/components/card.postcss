@@ -186,9 +186,14 @@
 }
 
 .card__title {
+  @apply break-words;
   @apply text-lg xl:text-xl 3xl:text-2xl;
   @apply font-bold leading-snug;
   @apply transition-colors duration-200 ease-in-out;
+}
+
+.card__description {
+  @apply break-words;
 }
 
 .card__body p {
