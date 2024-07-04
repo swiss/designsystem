@@ -63,9 +63,72 @@
   --dp-loader: 5px solid #1976d2;
 }
 
-.dp__input::placeholder {
-  opacity: 0.7;
-  color: var(--dp-text-color);
+:root {
+  --dp-common-transition: all 0.1s ease-in;
+  --dp-menu-padding: 6px 8px;
+  --dp-animation-duration: 0.1s;
+  --dp-menu-appear-transition-timing: cubic-bezier(0.4, 0, 1, 1);
+  --dp-transition-timing: ease-out;
+  --dp-action-row-transtion: all 0.2s ease-in;
+  --dp-font-family: font-regular;
+  --dp-border-radius: 0px;
+  --dp-cell-border-radius: 4px;
+  --dp-transition-length: 22px;
+  --dp-transition-timing-general: 0.1s;
+  --dp-button-height: 35px;
+  --dp-month-year-row-height: 35px;
+  --dp-month-year-row-button-size: 25px;
+  --dp-button-icon-height: 20px;
+  --dp-calendar-wrap-padding: 0 5px;
+  --dp-cell-size: 35px;
+  --dp-cell-padding: 5px;
+  --dp-common-padding: 10px;
+  --dp-input-icon-padding: 35px;
+  --dp-input-padding: 6px 30px 6px 12px;
+  --dp-menu-min-width: 260px;
+  --dp-action-buttons-padding: 1px 6px;
+  --dp-row-margin: 5px 0;
+  --dp-calendar-header-cell-padding: 0.5rem;
+  --dp-multi-calendars-spacing: 10px;
+  --dp-overlay-col-padding: 3px;
+  --dp-time-inc-dec-button-size: 32px;
+  --dp-font-size: 1rem;
+  --dp-preview-font-size: 0.8rem;
+  --dp-time-font-size: 2rem;
+  --dp-action-button-height: 22px;
+  --dp-action-row-padding: 8px;
+}
+
+.date-input--sm {
+  input {
+    @apply text--sm leading-5;
+  }
+}
+
+.date-input--lg {
+  input {
+    @apply text--lg leading-7;
+  }
+}
+
+.date-input--base {
+  input {
+    @apply leading-6 text--base;
+  }
+}
+
+.date-input--error {
+  input {
+    @apply text-red-800;
+    @apply border-red-500;
+    @apply placeholder-red-400;
+  }
+}
+
+.date-input--error.date-input--negative {
+  input {
+    @apply text-red-200 border-red-300;
+  }
 }
 
 /* End cusomized CSS */
@@ -984,42 +1047,7 @@
   justify-content: space-between;
   height: var(--dp-cell-size);
 }
-:root {
-  --dp-common-transition: all 0.1s ease-in;
-  --dp-menu-padding: 6px 8px;
-  --dp-animation-duration: 0.1s;
-  --dp-menu-appear-transition-timing: cubic-bezier(0.4, 0, 1, 1);
-  --dp-transition-timing: ease-out;
-  --dp-action-row-transtion: all 0.2s ease-in;
-  --dp-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
-  --dp-border-radius: 4px;
-  --dp-cell-border-radius: 4px;
-  --dp-transition-length: 22px;
-  --dp-transition-timing-general: 0.1s;
-  --dp-button-height: 35px;
-  --dp-month-year-row-height: 35px;
-  --dp-month-year-row-button-size: 25px;
-  --dp-button-icon-height: 20px;
-  --dp-calendar-wrap-padding: 0 5px;
-  --dp-cell-size: 35px;
-  --dp-cell-padding: 5px;
-  --dp-common-padding: 10px;
-  --dp-input-icon-padding: 35px;
-  --dp-input-padding: 6px 30px 6px 12px;
-  --dp-menu-min-width: 260px;
-  --dp-action-buttons-padding: 1px 6px;
-  --dp-row-margin: 5px 0;
-  --dp-calendar-header-cell-padding: 0.5rem;
-  --dp-multi-calendars-spacing: 10px;
-  --dp-overlay-col-padding: 3px;
-  --dp-time-inc-dec-button-size: 32px;
-  --dp-font-size: 1rem;
-  --dp-preview-font-size: 0.8rem;
-  --dp-time-font-size: 2rem;
-  --dp-action-button-height: 22px;
-  --dp-action-row-padding: 8px;
-}
+
 .dp__flex {
   display: flex;
   align-items: center;
