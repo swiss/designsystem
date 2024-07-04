@@ -18,6 +18,9 @@
         <h1 v-if="$slots.title" class="hero__title">
           <slot name="title"></slot>
         </h1>
+        <h2 v-if="$slots.title" class="hero__subtitle">
+          <slot name="subtitle"></slot>
+        </h2>
         <div v-if="$slots.description" class="hero__description">
           <slot name="description"></slot>
         </div>
