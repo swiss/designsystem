@@ -1,34 +1,40 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
-import Hero from '../../ch/sections/Hero.vue';
-import Btn from '../../ch/components/Btn.vue';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Hero from '../../ch/sections/Hero.vue'
+import Btn from '../../ch/components/Btn.vue'
 
 <Meta
   title="Sections/Content/Hero"
   components={Hero}
   argTypes={{
     type: {
-      name:'Type',
+      name: 'Type',
       control: {
         type: 'select',
-        options: ['default', 'main', 'main-image', 'hub', 'title-only', 'hidden']
-      }
+        options: [
+          'default',
+          'main',
+          'main-image',
+          'hub',
+          'title-only',
+          'hidden',
+        ],
+      },
     },
     metaInfos: {
       name: 'MetaInfos',
-      value: undefined
+      value: undefined,
     },
     authors: {
       name: 'Authors',
-      value: undefined
-    }
+      value: undefined,
+    },
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Hero,Btn },
-  template:
-    `
+  components: { Hero, Btn },
+  template: `
     <Hero :type="type" :meta-infos="metaInfos" :authors="authors">
       <template
         v-if="${args.type == 'main-image' || args.type == 'default'}"
@@ -49,10 +55,13 @@ export const Template = (args, { argTypes }) => ({
           <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
         </picture>
       </template>
-      <template v-if="${args.type == 'main-image'}" v-slot:title>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </template>
-      <template v-else v-slot:title>
+        <template v-slot:title>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </template>
+        <template v-slot:subtitle>
+          Pellentesque dui dui, eleifend ac interdum eget, consectetur in odio.
+        </template>
+      <template v-if="${args.type !== 'main-image'} v-slot:title>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </template>
       <template
@@ -75,7 +84,7 @@ export const Template = (args, { argTypes }) => ({
       </template>
     </Hero>
     `,
-});
+})
 
 # Hero
 
@@ -89,7 +98,7 @@ This variant doesn't contain any article type, date or authors.
   <Story
     name="Main without image"
     args={{
-      type: 'main'
+      type: 'main',
     }}
   >
     {Template.bind({})}
@@ -108,7 +117,7 @@ The image should have a 4:3 ratio and the height of both title and description s
   <Story
     name="Main with image"
     args={{
-      type: 'main-image'
+      type: 'main-image',
     }}
   >
     {Template.bind({})}
@@ -125,7 +134,7 @@ This variant doesn't contain any article type, date or authors.
   <Story
     name="Hub page"
     args={{
-      type: 'hub'
+      type: 'hub',
     }}
   >
     {Template.bind({})}
@@ -144,7 +153,7 @@ This variant can optionally contain an article type, a date and one ore more aut
     args={{
       type: 'default',
       metaInfos: ['Webartikel', '23. Februar 2022'],
-      authors:[
+      authors: [
         {
           name: 'Maria Muster',
           img: 'https://picsum.photos/120/120/?image=29',
@@ -152,7 +161,7 @@ This variant can optionally contain an article type, a date and one ore more aut
         {
           name: 'Jean-Jaques Langerename',
           img: 'https://picsum.photos/120/120/?image=30',
-          url: '#'
+          url: '#',
         },
         {
           name: 'Hans Höllman',
@@ -161,25 +170,25 @@ This variant can optionally contain an article type, a date and one ore more aut
         {
           name: 'Katja Anna-Beerli',
           img: 'https://picsum.photos/120/120/?image=32',
-        }
-      ]
+        },
+      ],
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-## Hero for detail pages, with only a title
+## Hero for detail pages, with only a title and subtitle
 
-**The `.hero.hero--title-only` section is used on [detail pages](?path=/docs/pages-test-hero-title-only--example) where the hero only contains a title.**
+**The `.hero.hero--title-only` section is used on [detail pages](?path=/docs/pages-test-hero-title-only--example) where the hero only contains a title and subtitle.**
 
-This variant can contain only a title.
+This variant can contain only a title and subtitle.
 
 <Canvas>
   <Story
     name="Detail page - title only"
     args={{
-      type: 'title-only'
+      type: 'title-only',
     }}
   >
     {Template.bind({})}
@@ -190,20 +199,19 @@ This variant can contain only a title.
 
 If there isn't any specific content for the hero, we still need to display a `h1` title for screen readers.
 Set type to `sr-only` to hide the component visually. Check the <a href="?path=/story/sections-content-hero--example">Storybook Canvas Tab</a> to display the HTML markup.
+
 <Canvas>
   <Story
     name="Screen readers only"
     args={{
-      type: 'sr-only'
+      type: 'sr-only',
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-
-
-<a href="?path=/story/sections-content-hero--example">Go to the Canvas Tab</a>
-
-
+<a href="?path=/story/sections-content-hero--example">Go to the Canvas Tab</a>import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+import Btn from '../../ch/components/Btn.vue'
+import Hero from '../../ch/sections/Hero.vue'
 

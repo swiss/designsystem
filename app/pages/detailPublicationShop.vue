@@ -35,7 +35,11 @@
           :authors="authors"
         >
           <template v-slot:title>
-            Auswirkungen von Corona auf die Schweizer Gesellschaft
+            Benachteiligungserfahrungen bei der Gesundheitsversorgung in der
+            Schweiz
+          </template>
+          <template v-slot:subtitle>
+            Erkenntnisse aus dem International Health Policy Survey 2020
           </template>
         </Hero>
         <section class="section">
