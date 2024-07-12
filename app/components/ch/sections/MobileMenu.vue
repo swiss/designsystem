@@ -4,9 +4,9 @@
     class="mobile-menu"
     :class="isOpen ? 'mobile-menu--is-open' : ''"
   >
-    <MainNavigation context="mobile" :isHomePage="isHomePage" />
+    <MainNavigation context="mobile" :isHomePage="isHomePage" :showActiveNavigation="showActiveNavigation" />
     <MetaNavigationMobile />
-    <TopBarNavigation context="mobile" />
+    <TopBarNavigation context="mobile" :isMobileMenu="true" />
   </div>
 </template>
 
@@ -33,6 +33,11 @@ export default {
     isHomePage: {
       type: Boolean,
       default: false,
+    },
+    // Allow disabling active navigation item highlighting for pages like shopping cart
+    showActiveNavigation: {
+      type: Boolean,
+      default: true,
     },
   },
   mounted() {

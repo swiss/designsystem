@@ -3,12 +3,18 @@
 \*----------------------------------------*/
 
 .top-bar-navigation {
-  @apply flex;
+  @apply flex h-full;
+  span {
+    @apply hidden lg:block;
+  }
 
+  ul {
+    @apply flex;
+  }
   a {
     @apply flex items-center;
     @apply hover:text-text-300 focus:text-text-300;
-    @apply h-full px-4;
+    @apply h-full px-2 lg:px-4;
     @apply transition-colors;
   }
 }
@@ -16,12 +22,11 @@
 .top-bar-navigation--mobile {
   @apply flex flex-col pb-12;
   @apply bg-secondary-500;
-}
 
-.top-bar-navigation--desktop {
-  @apply hidden lg:flex h-full;
-
-  ul {
-    @apply flex;
+  a {
+    @apply flex items-center;
+    @apply hover:text-text-300 focus:text-text-300;
+    @apply h-full px-4;
+    @apply transition-colors;
   }
 }

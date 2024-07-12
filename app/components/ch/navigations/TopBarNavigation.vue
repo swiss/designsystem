@@ -1,12 +1,32 @@
 <template>
-  <nav
-    :class="topBarNavigationClass"
-    aria-label="Top bar"
-  >
+  <!-- Use different menu items for mobile menu demo -->
+  <nav v-if="isMobileMenu" class="top-bar-navigation--mobile" aria-label="Top bar">
     <ul>
       <li>
         <a href="#">
-          Anmelden
+          <span>Informationsportal der Schweizer Behörden</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <nav v-else class="top-bar-navigation" aria-label="Top bar">
+    <ul>
+      <li>
+        <a href="#">
+          <span>Leichte Sprache</span>
+          <svg-icon size="lg" icon="EasyLanguage" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>Gebärdensprache</span>
+          <svg-icon size="lg" icon="SignLanguage" />
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span>Anmelden </span>
+          <svg-icon icon="User" size="lg" />
         </a>
       </li>
     </ul>
@@ -14,24 +34,17 @@
 </template>
 
 <script>
+import SvgIcon from '../components/SvgIcon.vue'
 export default {
   name: 'TopbarNavigation',
-  props: {
-    context: {
-      type: String,
-      required: true,
-      validator: (prop) => [
-        'desktop',
-        'mobile'
-      ].includes(prop)
-    }
+  components: {
+    SvgIcon,
   },
-  computed: {
-    topBarNavigationClass () {
-      let base = `top-bar-navigation `
-      if (this.context) base += `top-bar-navigation--${this.context} `
-      return base
-    }
-  }
+  props: {
+    isMobileMenu: {
+      type: Boolean,
+      default: false,
+    },
+  },
 }
 </script>
