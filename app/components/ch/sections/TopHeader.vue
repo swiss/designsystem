@@ -12,6 +12,7 @@
         accronym="DSS"
         :class="overrideLogoForPrint ? 'logo--print-hidden' : ''"
         :isFreebrand="isFreebrand"
+        :isEasyLanguage="isEasyLanguage"
       />
       <Logo
         v-if="overrideLogoForPrint"
@@ -19,7 +20,7 @@
         accronym="SECO"
         :class="overrideLogoForPrint ? 'logo--print-only' : ''"
       />
-      <div class="top-header__right">
+      <div v-if="!isEasyLanguage" class="top-header__right">
         <MetaNavigation :isFreebrand="isFreebrand" />
         <div class="top-header__container-flex">
           <SearchMain />
@@ -71,6 +72,10 @@ export default {
     overrideLogoForPrint: {
       type: String,
       default: '',
+    },
+    isEasyLanguage: {
+      type: Boolean,
+      default: false,
     },
     isFreebrand: {
       type: Boolean,

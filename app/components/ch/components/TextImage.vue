@@ -1,7 +1,5 @@
 <template>
-  <div
-    :class="computedClasses"
-  >
+  <div :class="computedClasses">
     <div :class="computedGridClasses">
       <div class="text-image__text">
         <h2 v-if="$slots.title" class="h2">
@@ -19,44 +17,37 @@
 </template>
 
 <script>
-
 export default {
   name: 'TextImage',
   props: {
     imagePos: {
       type: String,
       default: 'right',
-      validator: (prop) => [
-        'left',
-        'right'
-      ].includes(prop)
+      validator: (prop) => ['left', 'right'].includes(prop),
     },
     imageWidth: {
       type: String,
-      validator: (prop) => [
-        'half',
-        'fourth'
-      ].includes(prop)
-    }
+      validator: (prop) => ['half', 'fourth'].includes(prop),
+    },
+    textProportion: { type: String, default: '3/4-1/4 ' },
   },
 
   computed: {
-    computedClasses () {
+    computedClasses() {
       let base = 'text-image '
       if (this.type) base += `text-image--${this.type} `
       return base
     },
 
-    computedGridClasses () {
+    computedGridClasses() {
       let base = 'grid gap--responsive '
-      if (this.imagePos ==='left') {
-        base += `grid--responsive-cols-3/4-1/4 grid--reverse`
+      if (this.imagePos === 'left') {
+        base += `grid--responsive-cols-${this.textProportion} grid--reverse`
       } else {
-        base += `grid--responsive-cols-3/4-1/4 `
+        base += `grid--responsive-cols-${this.textProportion} `
       }
       return base
-    }
-
-  }
+    },
+  },
 }
 </script>
