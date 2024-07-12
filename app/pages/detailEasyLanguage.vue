@@ -1,6 +1,5 @@
 <template>
   <div>
-    <AlterBodyClasses :isEasyLanguage="isEasyLanguage" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" :isEasyLanguage="isEasyLanguage" />
@@ -108,7 +107,6 @@ import Hero from '~/components/ch/sections/Hero'
 import Btn from '../components/ch/components/Btn.vue'
 import TextImage from '../components/ch/components/TextImage'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
-import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
@@ -116,7 +114,6 @@ import TopHeader from '../components/ch/sections/TopHeader.vue'
 export default {
   name: 'Index',
   components: {
-    AlterBodyClasses,
     TopBar,
     TopHeader,
     Breadcrumb,

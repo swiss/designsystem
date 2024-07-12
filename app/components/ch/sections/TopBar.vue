@@ -1,6 +1,6 @@
 <template>
   <div class="top-bar" :class="isOpen ? 'top-bar--is-open' : ''">
-    <div class="top-bar__bar">
+    <div :class="computedTopBarClass">
       <div class="container container--flex">
         <button
           class="top-bar__btn"
@@ -387,6 +387,11 @@ export default {
     },
   },
   computed: {
+    computedTopBarClass () {
+      let base = `top-bar__bar`
+      if(this.isEasyLanguage) base += `--easy-language `
+      return base
+    },
     computedAccessibilityIcon() {
       if (this.isEasyLanguage) {
         return 'EasyLanguage'
