@@ -4,6 +4,7 @@
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" :isEasyLanguage="isEasyLanguage" />
       <TopHeader :isEasyLanguage="isEasyLanguage" />
+      <CarouselNavigation />
       <Breadcrumb :isEasyLanguage="isEasyLanguage" />
       <div class="container">
         <Btn
@@ -107,6 +108,7 @@ import Hero from '~/components/ch/sections/Hero'
 import Btn from '../components/ch/components/Btn.vue'
 import TextImage from '../components/ch/components/TextImage'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
+import CarouselNavigation from '../components/ch/navigations/CarouselNavigation.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
@@ -121,6 +123,7 @@ export default {
     Btn,
     ShareBar,
     TextImage,
+    CarouselNavigation,
   },
   data() {
     return {}
