@@ -280,12 +280,12 @@
     <div class="logo-title__container">
       <div class="logo__accronym" v-html="accronym" />
       <div class="logo__title" v-html="title" />
-      <badge
-        v-if="isEasyLanguage"
-        label="Inhalte in Leichter Sprache"
-        color="success"
-        size="base"
-      />
+      <div class="badge-easy-language" v-if="isEasyLanguage">
+        Inhalte in Leichter Sprache
+      </div>
+      <div class="badge-sign-language" v-if="isSignLanguage">
+        Inhalte in Gebärdensprache
+      </div>
     </div>
   </a>
 </template>
@@ -319,6 +319,10 @@ export default {
       default: false,
     },
     isEasyLanguage: {
+      type: Boolean,
+      default: false,
+    },
+    isSignLanguage: {
       type: Boolean,
       default: false,
     },

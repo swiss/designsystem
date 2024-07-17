@@ -4,6 +4,9 @@
     <ul>
       <li>
         <a href="#">
+          <span>Anmelden</span>
+        </a>
+        <a href="#">
           <span>Informationsportal der Schweizer Behörden</span>
         </a>
       </li>
@@ -24,7 +27,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" class="desktop-only">
           <span>Anmelden </span>
           <svg-icon icon="User" size="lg" />
         </a>
@@ -34,7 +37,7 @@
 </template>
 
 <script>
-import SvgIcon from '../components/SvgIcon.vue'
+import SvgIcon from '../components/SvgIcon.vue';
 export default {
   name: 'TopbarNavigation',
   components: {
@@ -44,6 +47,9 @@ export default {
     isMobileMenu: {
       type: Boolean,
       default: false,
+    },
+    context: {
+      type: String,
     },
   },
 }

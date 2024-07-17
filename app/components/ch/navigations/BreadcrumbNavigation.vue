@@ -1,5 +1,5 @@
 <template>
-  <nav v-if="isEasyLanguage">
+  <nav v-if="isSimplePage">
     <ul>
       <li>
         <a href="javascript:alert('homepage')">
@@ -275,7 +275,7 @@ export default {
     SvgIcon,
   },
   props: {
-    isEasyLanguage: {
+    isSimplePage: {
       type: Boolean,
       default: false,
     },

@@ -13,6 +13,7 @@
         :class="overrideLogoForPrint ? 'logo--print-hidden' : ''"
         :isFreebrand="isFreebrand"
         :isEasyLanguage="isEasyLanguage"
+        :isSignLanguage="isSignLanguage"
       />
       <Logo
         v-if="overrideLogoForPrint"
@@ -20,7 +21,13 @@
         accronym="SECO"
         :class="overrideLogoForPrint ? 'logo--print-only' : ''"
       />
-      <div v-if="!isEasyLanguage" class="top-header__right">
+      <div v-if="isEasyLanguage" class="icon-header-mobile icon-easy-language">
+        <SvgIcon icon="EasyLanguage" size="2xl" />
+      </div>
+      <div v-if="isSignLanguage" class="icon-header-mobile icon-sign-language">
+        <SvgIcon icon="SignLanguage" size="2xl" />
+      </div>
+      <div v-if="!isEasyLanguage && !isSignLanguage" class="top-header__right">
         <MetaNavigation :isFreebrand="isFreebrand" />
         <div class="top-header__container-flex">
           <SearchMain />
@@ -64,6 +71,7 @@ import Logo from '~/components/ch/components/Logo.vue'
 import SearchMain from '~/components/ch/components/SearchMain.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher'
 import ShoppingCartButton from '../components/ShoppingCartButton.vue'
+import SvgIcon from '../components/SvgIcon.vue'
 import MetaNavigation from '../navigations/MetaNavigation.vue'
 
 export default {
@@ -74,6 +82,10 @@ export default {
       default: '',
     },
     isEasyLanguage: {
+      type: Boolean,
+      default: false,
+    },
+    isSignLanguage: {
       type: Boolean,
       default: false,
     },
@@ -115,6 +127,7 @@ export default {
     MetaNavigation,
     LanguageSwitcher,
     ShoppingCartButton,
+    SvgIcon,
   },
   created() {
     this.resizeWindow()

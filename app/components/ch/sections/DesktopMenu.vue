@@ -2,7 +2,9 @@
   <div id="desktop-menu" class="desktop-menu">
     <div class="desktop-menu__overlay hidden" id="desktop-menu__overlay" />
     <div class="container container--flex">
+      <MainNavigationSimple v-if="isSimplePage" />
       <MainNavigation
+        v-else
         :showActiveNavigation="showActiveNavigation"
         context="desktop"
       />
@@ -21,6 +23,7 @@ import MenuMore from '../../../scripts/MenuMore.js'
 import Navy from '../../../scripts/Navy.js'
 import SvgIcon from '../components/SvgIcon.vue'
 import MainNavigation from '../navigations/MainNavigation.vue'
+import MainNavigationSimple from '../navigations/MainNavigationSimple.vue'
 
 export default {
   name: 'DesktopMenu',
@@ -28,14 +31,22 @@ export default {
     SvgIcon,
     MainNavigation,
     Navy,
+    MainNavigationSimple,
   },
   props: {
     // Allow disabling active navigation item highlighting for pages like shopping cart
     showActiveNavigation: {
       type: Boolean,
     },
+    isSimplePage: {
+      type: Boolean,
+      default: false,
+    },
   },
   mounted() {
+    if (this.isSimplePage) {
+      return
+    }
     Navy.initDesktop({
       navigationNav: '#desktop-menu > .container > nav',
       drawer: '#desktop-menu__drawer',

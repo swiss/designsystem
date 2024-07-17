@@ -4,7 +4,7 @@ import store from '@/.storybook/store';
 import detailSimpleLanguage from '../../../pages/detailSimpleLanguage.vue';
 
 <Meta
-  title="Pages/Easy Language/Detail Easy Language"
+  title="Pages/Easy Language/Detail Sign Language"
   component={detailSimpleLanguage}
 />
 
@@ -12,16 +12,16 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailSimpleLanguage },
   store: store,
-  template: '<detailSimpleLanguage :isEasyLanguage="true" />',
+  template: '<detailSimpleLanguage :isSignLanguage="true" />',
 });
 
-# Detailpage easy language example
+# Detailpage sign language example
 
-<a href="?path=/story/pages-easy-language-detail-easy-language--example">Go to the Canvas Tab</a>
+<a href="?path=/story/pages-sing-language-detail-easy-language--example">Go to the Canvas Tab</a>
 
 ---
 
-<a href="?id=pages-easy-language-detail-easy-language--example" target="_blank">Open in full width in a new tab</a>
+<a href="?id=pages-easy-language-detail-sign-language--example" target="_blank">Open in full width in a new tab</a>
 
 <Canvas>
   <Story

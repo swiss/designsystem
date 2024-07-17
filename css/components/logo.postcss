@@ -16,9 +16,24 @@
   @apply flex;
   @apply flex-col;
 
-  .badge {
-    @apply mt-1 -ml-[1px];
+  .badge-easy-language {
+    @apply badge badge--green mt-1 -ml-[1px];
     @apply block w-fit;
+    @apply text-sm;
+    @apply hidden;
+    @screen md {
+      @apply block;
+    }
+  }
+
+  .badge-sign-language {
+    @apply badge badge--indigo mt-1 -ml-[1px];
+    @apply block w-fit;
+    @apply text-sm;
+    @apply hidden;
+    @screen md {
+      @apply block;
+    }
   }
 }
 

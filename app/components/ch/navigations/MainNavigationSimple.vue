@@ -22,25 +22,16 @@
         </a>
       </li>
     </ul>
-    <CarouselNavigation />
   </nav>
 </template>
 
 <script>
 import SvgIcon from '../components/SvgIcon.vue';
-import CarouselNavigation from '../navigations/CarouselNavigation.vue';
 export default {
   name: 'MainNavigationSimple',
   components: {
     SvgIcon,
-    CarouselNavigation,
   },
-  props: {
-    context: {
-      type: String,
-      required: true,
-      validator: (prop) => ['desktop', 'mobile'].includes(prop),
-    },
-  },
+  props: {},
 }
 </script>

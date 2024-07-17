@@ -4,7 +4,7 @@
     id="breadcrumb"
     class="breadcrumb container container--flex"
   >
-    <BreadcrumbNavigation :isEasyLanguage="isEasyLanguage" />
+    <BreadcrumbNavigation :isSimplePage="isSimplePage" />
     <div
       id="breadcrumb__drawer"
       class="breadcrumb__drawer hidden"
@@ -23,7 +23,7 @@ export default {
       type: Boolean,
       default: false
     },
-    isEasyLanguage: {
+    isSimplePage: {
       type: Boolean,
       default: false,
     },

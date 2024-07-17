@@ -22,7 +22,6 @@
           />
           <TopBarNavigation
             v-if="!isEasyLanguage && !isSignLanguage"
-            context="desktop"
           />
           <LanguageSwitcher type="negative" />
         </div>
@@ -390,6 +389,7 @@ export default {
     computedTopBarClass () {
       let base = `top-bar__bar`
       if(this.isEasyLanguage) base += `--easy-language `
+      if(this.isSignLanguage) base += `--sign-language `
       return base
     },
     computedAccessibilityIcon() {

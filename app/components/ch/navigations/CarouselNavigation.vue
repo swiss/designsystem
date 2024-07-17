@@ -46,27 +46,6 @@
             </a>
           </li>
         </swiper-slide>
-        <swiper-slide>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Topic 1</span>
-            </a>
-          </li>
-        </swiper-slide>
-        <swiper-slide>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Topic 2</span>
-            </a>
-          </li>
-        </swiper-slide>
-        <swiper-slide>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Topic 3</span>
-            </a>
-          </li>
-        </swiper-slide>
       </swiper>
       <div class="carousel__fonctions">
         <button class="carousel__prev" :id="`carousel-prev-${id}`">
@@ -94,8 +73,13 @@ export default {
   components: { SvgIcon, Swiper, SwiperSlide },
   data() {
     return {
-      id: 1,
     }
+  },
+  props: {
+    id: {
+      type: String,
+      default: 1,
+    },
   },
   methods: {},
 }
