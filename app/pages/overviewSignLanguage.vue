@@ -9,7 +9,7 @@
     </header>
     <main id="main-content">
       <section
-        class="section section--default bg--secondary-100 section-full-height"
+        class="section section--default bg--secondary-100 section-full-height mb-48"
       >
         <div class="container">
           <hero type="hub">
