@@ -8,7 +8,9 @@
       <MobileMenu :isSimplePage="true" />
     </header>
     <main id="main-content">
-      <section class="section section--default">
+      <section
+        class="section section--default bg--secondary-100 section-full-height"
+      >
         <div class="container">
           <hero type="hub">
             <template v-slot:title>
@@ -118,10 +120,10 @@
 
 <script>
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-import Hero from '../components/ch/sections/Hero.vue'
 
 export default {
   name: 'OverviewEasyLanguage',

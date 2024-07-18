@@ -9,6 +9,21 @@ html {
   @apply font-regular;
 }
 
+#root,
+#__nuxt,
+#__layout,
+#vue-app,
+#app {
+  @apply h-full;
+  @apply flex;
+  @apply flex-col;
+  > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 body {
   @apply h-full;
   min-height: 100vh;
@@ -33,6 +48,7 @@ body {
 
 #main-content {
   @apply min-h-screen lg:min-h-[50vh] 2xl:min-h-[30vh];
+  @apply flex-grow;
   @apply relative z-10;
 }
 
