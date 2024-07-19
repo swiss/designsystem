@@ -1,5 +1,5 @@
 <template>
-  <nav class="carousel-navigation">
+  <nav class="carousel-navigation" :id="id">
     <ul class="carousel">
       <swiper
         :speed="500"

@@ -8,8 +8,8 @@
         :isSignLanguage="isSignLanguage"
       />
       <TopHeader :isEasyLanguage="isEasyLanguage" :isSignLanguage="isSignLanguage" />
-      <DesktopMenu :isSimplePage="true" />
-      <MobileMenu :isSimplePage="true" />
+      <DesktopMenu :isSimplePage="true" :isSticky="true" />
+      <MobileMenu :isSimplePage="true" :isSticky="true"/>
       <Breadcrumb :isSimplePage="true" />
       <div class="container">
         <Btn

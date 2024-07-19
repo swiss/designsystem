@@ -1,19 +1,28 @@
 <template>
   <div id="desktop-menu" class="desktop-menu">
     <div class="desktop-menu__overlay hidden" id="desktop-menu__overlay" />
-    <div class="container container--flex">
-      <MainNavigationSimple v-if="isSimplePage" />
-      <MainNavigation
-        v-else
-        :showActiveNavigation="showActiveNavigation"
-        context="desktop"
-      />
-      <div class="desktop-menu__drawer hidden" id="desktop-menu__drawer">
-        <button class="desktop-menu__close" id="desktop-menu-closer">
-          <span>Schliessen</span>
-          <SvgIcon icon="Cancel" />
-        </button>
+    <div>
+      <div id="desktop-navigation-id">
+        <div class="container container--flex">
+          <MainNavigationSimple v-if="isSimplePage" />
+          <MainNavigation
+            v-else
+            :showActiveNavigation="showActiveNavigation"
+            context="desktop"
+          />
+          <div class="desktop-menu__drawer hidden" id="desktop-menu__drawer">
+            <button class="desktop-menu__close" id="desktop-menu-closer">
+              <span>Schliessen</span>
+              <SvgIcon icon="Cancel" />
+            </button>
+          </div>
+        </div>
       </div>
+      <!-- invisible Placeholder to avoid jump when navigation is set to sticky -->
+      <div
+        v-if="useStickyPlaceholder"
+        id="sticky-desktop-navigation-placeholder"
+      />
     </div>
   </div>
 </template>
@@ -42,13 +51,19 @@ export default {
       type: Boolean,
       default: false,
     },
+    isSticky: {
+      type: Boolean,
+      default: false,
+    },
   },
   mounted() {
-    if (this.isSimplePage) {
-      return
+    if (this.isSticky) {
+      window.addEventListener('scroll', this.handleScroll)
+      this.resizeWindow()
+      window.addEventListener('resize', this.resizeWindow)
     }
     Navy.initDesktop({
-      navigationNav: '#desktop-menu > .container > nav',
+      navigationNav: '#desktop-menu > div > div > .container > nav',
       drawer: '#desktop-menu__drawer',
       overlay: '#desktop-menu__overlay',
       closeButton: '#desktop-menu-closer',
@@ -64,10 +79,40 @@ export default {
       })
 
     MenuMore.init({
-      navigationItem: '#desktop-menu > .container > nav',
+      navigationItem: '#desktop-menu > div > div > .container > nav',
       moreButton: '#more-button',
       moreContainer: '#more-container',
     })
+  },
+  data() {
+    return {
+      useStickyPlaceholder: false,
+      initialNavBarOffset: 0,
+    }
+  },
+  methods: {
+    resizeWindow() {
+      const topHeader = document.getElementById('top-header-id')
+      this.initialNavBarOffset = topHeader.offsetTop + topHeader.clientHeight
+      this.handleScroll()
+    },
+    handleScroll() {
+      const navBar = document.getElementById('desktop-navigation-id')
+      const navigation = document.getElementById('main-navigation')
+      if (this.initialNavBarOffset < window.scrollY) {
+        this.useStickyPlaceholder = true
+        // Set height on placeholder to avoid jump when navigation is set to sticky
+        const stickyPlaceholder = document.getElementById(
+          'sticky-desktop-navigation-placeholder'
+        )
+        stickyPlaceholder.style.height = `${navigation.clientHeight}px`
+
+        navBar.classList.add('sticky-navigation')
+      } else {
+        this.useStickyPlaceholder = false
+        navBar.classList.remove('sticky-navigation')
+      }
+    },
   },
 }
 </script>

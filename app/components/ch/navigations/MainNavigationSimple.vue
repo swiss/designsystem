@@ -1,5 +1,9 @@
 <template>
-  <nav class="main-navigation main-navigation--desktop" aria-label="Main">
+  <nav
+    class="main-navigation main-navigation--desktop"
+    aria-label="Main"
+    id="main-navigation"
+  >
     <ul class="menu-desktop">
       <li>
         <a href="javascript:alert('link')">
@@ -20,6 +24,18 @@
         <a href="javascript:alert('link')">
           <span>Ukraine</span>
         </a>
+      </li>
+      <!-- more button -->
+      <li id="more-button">
+        <a
+          href="javascript:void(0)"
+          role="button"
+          class="navy__has-children desktop-menu__more"
+        >
+          <span>Mehr</span>
+          <SvgIcon icon="MoreFilled" size="lg" />
+        </a>
+        <ul id="more-container"></ul>
       </li>
     </ul>
   </nav>

@@ -4,7 +4,7 @@
       <div class="container container--flex">
         <button
           class="top-bar__btn"
-          @click="isOpen = !isOpen"
+          @click="triggerTopBar()"
           v-if="!isEasyLanguage && !isSignLanguage"
         >
           <span>Alle Schweizer Bundesbehörden</span>
@@ -20,9 +20,7 @@
             size="base"
             :highlighCancel="true"
           />
-          <TopBarNavigation
-            v-if="!isEasyLanguage && !isSignLanguage"
-          />
+          <TopBarNavigation v-if="!isEasyLanguage && !isSignLanguage" />
           <LanguageSwitcher type="negative" />
         </div>
       </div>
@@ -381,15 +379,19 @@ export default {
     },
   },
   methods: {
-    resizeWindow () {
+    resizeWindow() {
       this.screenSize = document.body.clientWidth
+    },
+    triggerTopBar() {
+      this.isOpen = !this.isOpen
+      this.emitter.emit('top-bar-drawer-change')
     },
   },
   computed: {
-    computedTopBarClass () {
+    computedTopBarClass() {
       let base = `top-bar__bar`
-      if(this.isEasyLanguage) base += `--easy-language `
-      if(this.isSignLanguage) base += `--sign-language `
+      if (this.isEasyLanguage) base += `--easy-language `
+      if (this.isSignLanguage) base += `--sign-language `
       return base
     },
     computedAccessibilityIcon() {

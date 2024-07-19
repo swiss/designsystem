@@ -4,8 +4,8 @@
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" :isSignLanguage="true" />
       <TopHeader :isSignLanguage="true" />
-      <DesktopMenu :isSimplePage="true" />
-      <MobileMenu :isSimplePage="true" />
+      <DesktopMenu :isSimplePage="true" :isSticky="true" />
+      <MobileMenu :isSimplePage="true" :isSticky="true" />
     </header>
     <main id="main-content">
       <section
