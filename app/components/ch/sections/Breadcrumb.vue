@@ -4,7 +4,7 @@
     id="breadcrumb"
     class="breadcrumb container container--flex"
   >
-    <BreadcrumbNavigation />
+    <BreadcrumbNavigation :isSimplePage="isSimplePage" />
     <div
       id="breadcrumb__drawer"
       class="breadcrumb__drawer hidden"
@@ -22,7 +22,11 @@ export default {
     isHomePage: {
       type: Boolean,
       default: false
-    }
+    },
+    isSimplePage: {
+      type: Boolean,
+      default: false,
+    },
   },
   components: {
    BreadcrumbNavigation

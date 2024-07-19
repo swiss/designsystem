@@ -60,3 +60,29 @@
 .top-header__container-flex {
   @apply flex items-center;
 }
+
+.icon-header-mobile {
+  @apply w-12 h-12;
+  @apply rounded-full;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+
+  @screen md {
+    @apply hidden;
+  }
+}
+
+.icon-easy-language {
+  @apply bg-green-100;
+  svg {
+    @apply text-green-800;
+  }
+}
+
+.icon-sign-language {
+  @apply bg-indigo-100;
+  svg {
+    @apply text-indigo-800;
+  }
+}

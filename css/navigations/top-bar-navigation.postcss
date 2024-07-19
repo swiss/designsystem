@@ -3,25 +3,44 @@
 \*----------------------------------------*/
 
 .top-bar-navigation {
-  @apply flex;
+  @apply flex h-full;
+  span {
+    @apply hidden lg:block;
+    @apply pl-2 lg:pl-4;
+    @apply pr-1 lg:pr-2;
+  }
 
+  svg {
+    @apply pr-1 lg:pr-2;
+  }
+
+  ul {
+    @apply flex;
+  }
   a {
     @apply flex items-center;
     @apply hover:text-text-300 focus:text-text-300;
-    @apply h-full px-4;
+    @apply h-full px-1 lg:px-2;
     @apply transition-colors;
+  }
+
+  .desktop-only {
+    @apply hidden lg:flex;
+  }
+
+  .mobile-only {
+    @apply lg:hidden;
   }
 }
 
 .top-bar-navigation--mobile {
   @apply flex flex-col pb-12;
   @apply bg-secondary-500;
-}
 
-.top-bar-navigation--desktop {
-  @apply hidden lg:flex h-full;
-
-  ul {
-    @apply flex;
+  a {
+    @apply flex items-center;
+    @apply hover:text-text-300 focus:text-text-300;
+    @apply h-full px-4;
+    @apply transition-colors;
   }
 }
