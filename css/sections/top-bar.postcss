@@ -133,6 +133,9 @@
   min-height: 2.75rem;
   @apply bg-secondary-600;
   @apply transition-colors;
+  span {
+    @apply w-min sm:w-full;
+  }
 }
 
 .top-bar__btn__icon {
@@ -150,4 +153,13 @@
 
 .top-bar__right {
   @apply flex items-center;
+  /* Overwrite badge close icon color */
+  .badge__icon{
+    @apply text-gray-800;
+    @apply bg-inherit;
+  }
+  .badge {
+    @apply cursor-pointer;
+    @apply mr-2 lg:mr-0;
+  }
 }

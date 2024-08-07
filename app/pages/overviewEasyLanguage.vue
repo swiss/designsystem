@@ -8,15 +8,13 @@
       <MobileMenu :isSimplePage="true" :isSticky="true" />
     </header>
     <main id="main-content">
-      <section
-        class="section section--default bg--secondary-100 section-full-height mb-48"
-      >
+      <section class="section-overview">
+        <hero type="overview">
+          <template v-slot:title>
+            <h1 class="h1 hero__title">Corona</h1>
+          </template>
+        </hero>
         <div class="container">
-          <hero type="hub">
-            <template v-slot:title>
-              <h1 class="h1 hero__title">Corona</h1>
-            </template>
-          </hero>
           <div class="grid grid--responsive-cols-3 gap--responsive">
             <div class="card card--default card--clickable">
               <div class="card__image">
@@ -57,6 +55,11 @@
                 <div class="card__body">
                   <div class="card__title">
                     <h3>Covid-Zertifikate</h3>
+                  </div>
+                  <div class="card__description">
+                    <span>
+                      Hier finden Sie Informationen zu Covid-Zertifikaten.
+                    </span>
                   </div>
                 </div>
                 <div class="card__footer card__footer--icon-only">

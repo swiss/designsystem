@@ -4,12 +4,11 @@
 
 .carousel-navigation {
     @apply h-full;
-    @apply my-2;
     @apply px-3.5;
 
   .carousel {
     @apply relative;
-    @apply h-10;
+    @apply h-14;
 
     li {
       width: 100%;
@@ -26,7 +25,7 @@
         content: '';
         @apply block;
         @apply h-[3px];
-        @apply absolute right-1 bottom-0 left-1;
+        @apply absolute right-0 bottom-0 left-0;
         @apply transition;
       }
 
@@ -61,7 +60,7 @@
 
   .swiper-container,
   .swiper {
-    @apply h-10;
+    @apply h-14;
   }
 
   .carousel__prev {
@@ -69,7 +68,7 @@
     @apply absolute z-10;
     @apply -translate-x-full;
     @apply bg-gradient-to-r via-white from-white;
-    @apply top-0 bottom-0 left-10;
+    @apply top-2 bottom-0 left-10;
     @apply w-10 h-10;
   }
 
@@ -78,7 +77,7 @@
     @apply absolute z-10;
     @apply translate-x-full;
     @apply bg-gradient-to-l via-white from-white;
-    @apply top-0 bottom-0 right-10;
+    @apply top-2 bottom-0 right-10;
     @apply w-10 h-10;
   }
 

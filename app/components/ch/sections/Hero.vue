@@ -18,7 +18,7 @@
         <h1 v-if="$slots.title" class="hero__title">
           <slot name="title"></slot>
         </h1>
-        <h2 v-if="$slots.title" class="hero__subtitle">
+        <h2 v-if="$slots.subtitle" class="hero__subtitle">
           <slot name="subtitle"></slot>
         </h2>
         <div v-if="$slots.description" class="hero__description">
@@ -60,6 +60,7 @@ export default {
         'hub',
         'title-only',
         'sr-only',
+        'overview',
       ].includes(prop)
     },
     metaInfos: {

@@ -8,11 +8,9 @@
       <MobileMenu :isSimplePage="true" :isSticky="true" />
     </header>
     <main id="main-content">
-      <section
-        class="section section--default bg--secondary-100 section-full-height mb-48"
-      >
+      <section class="section-overview">
         <div class="container">
-          <hero type="hub">
+          <hero type="overview">
             <template v-slot:title>
               <h1 class="h1 hero__title">Corona</h1>
             </template>
@@ -26,6 +24,12 @@
                 <div class="card__body">
                   <div class="card__title">
                     <h3>Regeln und Verbote</h3>
+                  </div>
+                  <div class="card__description">
+                    <span>
+                      Hier finden Sie Informationen zu den aktuellen Regeln und
+                      Verboten.
+                    </span>
                   </div>
                 </div>
                 <div class="card__footer card__footer--icon-only">

@@ -5,7 +5,7 @@
         :speed="500"
         :autoHeight="false"
         :loop="false"
-        :spaceBetween="36"
+        :spaceBetween="24"
         slidesPerView="auto"
         :keyboard="{
           enabled: true,
