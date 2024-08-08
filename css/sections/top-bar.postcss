@@ -19,6 +19,14 @@
   }
 }
 
+.top-bar__bar--easy-language {
+  @apply !bg-[#466975];
+}
+
+.top-bar__bar--sign-language {
+  @apply !bg-indigo-800;
+}
+
 .top-bar__drawer {
   @apply pt-6 md:pt-8;
   @apply bg-secondary-600 text-white;
@@ -120,10 +128,14 @@
 .top-bar__btn {
   @apply flex items-center text-left;
   @apply hover:text-text-300 focus:text-text-300;
-  @apply px-4 -ml-4;
+  @apply pl-4 -ml-4;
+  @apply py-1;
   min-height: 2.75rem;
   @apply bg-secondary-600;
   @apply transition-colors;
+  span {
+    @apply w-min sm:w-full;
+  }
 }
 
 .top-bar__btn__icon {
@@ -141,4 +153,21 @@
 
 .top-bar__right {
   @apply flex items-center;
+  /* Overwrite badge close icon color */
+  .badge__icon{
+    @apply text-gray-800;
+    @apply bg-inherit;
+  }
+  .badge {
+    @apply cursor-pointer;
+    @apply mr-2 lg:mr-0;
+  }
+}
+
+.sticky-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }

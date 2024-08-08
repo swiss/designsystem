@@ -2,18 +2,6 @@
   <nav class="meta-navigation meta-navigation--mobile" aria-label="Meta">
     <ul>
       <li>
-        <a href="#" class="meta-navigation__item">
-          <span> Leichte Sprache </span>
-          <SvgIcon icon="EasyLanguage" size="lg" />
-        </a>
-      </li>
-      <li>
-        <a href="#" class="meta-navigation__item">
-          <span> Gebärden Sprache </span>
-          <SvgIcon icon="SignLanguage" size="lg" />
-        </a>
-      </li>
-      <li>
         <a href="#" class="meta-navigation__item"> Jobs </a>
       </li>
       <li>

@@ -6,9 +6,13 @@
   @apply flex cursor-pointer;
 
   select {
-    @apply w-[5em] 2xl:w-[4.5em];
+    @apply w-[3.5em] lg:w-[4.5em];
     @apply cursor-pointer;
     @apply transition-colors;
+    svg {
+      @apply h-6;
+    }
+    @apply pl-1 lg:pl-4;
   }
 
   option {
@@ -18,7 +22,7 @@
   }
 
   .select__icon {
-    @apply w-7;
+    @apply w-6;
     @apply transition-colors;
   }
 

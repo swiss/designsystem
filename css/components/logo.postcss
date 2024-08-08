@@ -12,6 +12,31 @@
   }
 }
 
+.logo-title__container {
+  @apply flex;
+  @apply flex-col;
+
+  .badge-easy-language {
+    @apply badge badge--green mt-1 -ml-[1px];
+    @apply w-fit;
+    @apply font-bold;
+    @apply hidden;
+    @screen md {
+      @apply block;
+    }
+  }
+
+  .badge-sign-language {
+    @apply badge badge--indigo mt-1 -ml-[1px];
+    @apply w-fit;
+    @apply font-bold;
+    @apply hidden;
+    @screen md {
+      @apply block;
+    }
+  }
+}
+
 .logo--print-hidden {
   @apply flex print:hidden;
 }

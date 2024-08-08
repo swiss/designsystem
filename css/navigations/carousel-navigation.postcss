@@ -1,0 +1,163 @@
+/*----------------------------------------*\
+  CAROUSEL Navigation
+\*----------------------------------------*/
+
+.carousel-navigation {
+    @apply h-full;
+    @apply px-3.5;
+
+  .carousel {
+    @apply relative;
+    @apply h-14;
+
+    li {
+      width: 100%;
+      height: 100%;
+      @apply flex items-center;
+    }
+
+    li > a {
+      @apply hover:text-primary-600 leading-tight;
+      @apply whitespace-nowrap;
+      @apply transition-all;
+
+      &::after {
+        content: '';
+        @apply block;
+        @apply h-[3px];
+        @apply absolute right-0 bottom-0 left-0;
+        @apply transition;
+      }
+
+      &.active::after,
+      &:hover::after {
+        @apply bg-primary-500;
+      }
+      
+      &:focus-visible {
+        @apply ring-inset;
+      }
+    }
+  }
+
+  .carousel__fonctions {
+    @apply flex justify-center items-center py-2;
+    @apply static z-20;
+  }
+
+  .carousel__prev,
+  .carousel__next {
+    @apply text-primary-600;
+
+    &[disabled] {
+      @apply hidden;
+    }
+
+    & svg {
+      @apply w-10 h-10;
+    }
+  }
+
+  .swiper-container,
+  .swiper {
+    @apply h-14;
+  }
+
+  .carousel__prev {
+    @apply order-1;
+    @apply absolute z-10;
+    @apply -translate-x-full;
+    @apply bg-gradient-to-r via-white from-white;
+    @apply top-2 bottom-0 left-10;
+    @apply w-10 h-10;
+  }
+
+  .carousel__next {
+    @apply order-3;
+    @apply absolute z-10;
+    @apply translate-x-full;
+    @apply bg-gradient-to-l via-white from-white;
+    @apply top-2 bottom-0 right-10;
+    @apply w-10 h-10;
+  }
+
+  .carousel__pagination {
+    @apply flex justify-center px-6;
+  }
+
+  /* swiper container */
+
+  .swiper-container,
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    /* Fix of Webkit flickering */
+    z-index: 1;
+  }
+  .swiper-container-vertical > .swiper-wrapper,
+  .swiper-vertical > .swiper-wrapper {
+    flex-direction: column;
+  }
+  .swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: stretch;
+    transition-property: transform;
+    box-sizing: content-box;
+  }
+  .swiper-container-android .swiper-slide,
+  .swiper-android .swiper-slide,
+  .swiper-wrapper {
+    transform: translate3d(0px, 0, 0);
+  }
+  .swiper-container-multirow > .swiper-wrapper,
+  .swiper-multirow > .swiper-wrapper {
+    flex-wrap: wrap;
+  }
+  .swiper-container-multirow-column > .swiper-wrapper,
+  .swiper-multirow-column > .swiper-wrapper {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .swiper-container-free-mode > .swiper-wrapper,
+  .swiper-free-mode > .swiper-wrapper {
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+  }
+  .swiper-container-pointer-events,
+  .swiper-pointer-events {
+    touch-action: pan-y;
+  }
+  .swiper-container-pointer-events.swiper-container-vertical,
+  .swiper-pointer-events.swiper-vertical {
+    touch-action: pan-x;
+  }
+  .swiper-slide {
+    flex-shrink: 0;
+    width: fit-content;
+    height: auto;
+    position: relative;
+    transition-property: transform;
+  }
+  .swiper-slide-invisible-blank {
+    visibility: hidden;
+  }
+  /* Auto Height */
+  .swiper-container-autoheight,
+  .swiper-autoheight .swiper-container-autoheight .swiper-slide,
+  .swiper-autoheight .swiper-slide {
+    height: auto;
+  }
+  .swiper-container-autoheight .swiper-wrapper,
+  .swiper-autoheight .swiper-wrapper {
+    align-items: flex-start;
+    transition-property: transform, height;
+  }
+}

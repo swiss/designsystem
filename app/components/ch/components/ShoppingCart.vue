@@ -741,8 +741,8 @@
         class="shopping__cart-confirmation-action"
         variant="outline-negative"
         size="base"
-        label="Zurück zur Übersicht"
-        ariaLabel="Zurück zur Übersicht"
+        label="Zurück"
+        ariaLabel="Zurück"
         :fullWidth="isMobile"
       />
     </div>

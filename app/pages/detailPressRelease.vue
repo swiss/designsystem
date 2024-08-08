@@ -15,7 +15,7 @@
           size="sm"
           icon="ArrowLeft"
           iconPos="left"
-          label="Zurück zur Übersicht"
+          label="Zurück"
           class="btn--back"
         />
         <ShareBar />
@@ -160,7 +160,7 @@
             size="sm"
             icon="ArrowLeft"
             iconPos="left"
-            label="Zurück zur Übersicht"
+            label="Zurück"
             class="btn--back"
           />
         </div>
@@ -174,29 +174,29 @@
 </template>
 
 <script>
-import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
-import TopBar from '../components/ch/sections/TopBar.vue'
-import TopHeader from '../components/ch/sections/TopHeader.vue'
-import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
-import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
-import MobileMenu from '../components/ch/sections/MobileMenu.vue'
-import FooterInformation from '../components/ch/sections/FooterInformation.vue'
-import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import Hero from '~/components/ch/sections/Hero'
-import TextImage from '~/components/ch/components/TextImage'
 import AudioPlayer from '~/components/ch/components/AudioPlayer'
-import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
-import Tabs from '~/components/ch/demo/Tabs.vue'
-import RelatedTags from '~/components/ch/components/RelatedTags.vue'
 import DownloadItem from '~/components/ch/components/DownloadItem.vue'
 import Newsletter from '~/components/ch/components/Newsletter.vue'
-import ShareBar from '../components/ch/demo/ShareBar.vue'
-import Btn from '../components/ch/components/Btn.vue'
-import SvgIcon from '../components/ch/components/SvgIcon.vue'
-import Card from '../components/ch/components/Card.vue'
-import Modal from '../components/ch/components/Modal.vue'
+import RelatedTags from '~/components/ch/components/RelatedTags.vue'
+import TextImage from '~/components/ch/components/TextImage'
+import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
+import Tabs from '~/components/ch/demo/Tabs.vue'
+import Hero from '~/components/ch/sections/Hero'
 import Badge from '../components/ch/components/Badge.vue'
+import Btn from '../components/ch/components/Btn.vue'
+import Card from '../components/ch/components/Card.vue'
 import Input from '../components/ch/components/Input.vue'
+import Modal from '../components/ch/components/Modal.vue'
+import SvgIcon from '../components/ch/components/SvgIcon.vue'
+import ShareBar from '../components/ch/demo/ShareBar.vue'
+import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
+import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
+import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
+import FooterInformation from '../components/ch/sections/FooterInformation.vue'
+import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
+import MobileMenu from '../components/ch/sections/MobileMenu.vue'
+import TopBar from '../components/ch/sections/TopBar.vue'
+import TopHeader from '../components/ch/sections/TopHeader.vue'
 
 export default {
   name: 'detailPagePressRelease',

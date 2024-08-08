@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import store from '@/.storybook/store'
+import OverviewSignLanguage from '../../../pages/overviewSignLanguage.vue'
+
+<Meta
+  title="Pages/Easy Language/Overview Sign Language"
+  component={OverviewSignLanguage}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { OverviewSignLanguage },
+  store: store,
+  template: '<OverviewSignLanguage />',
+})
+
+# Overview sign language example
+
+<a href="?path=/story/pages-easy-language-overview-sign-language--example">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a
+  href="?id=pages-easy-language-overview-sign-language--example"
+  target="_blank"
+>
+  Open in full width in a new tab
+</a>
+
+<Canvas>
+  <Story name="Example">{Template.bind({})}</Story>
+</Canvas>

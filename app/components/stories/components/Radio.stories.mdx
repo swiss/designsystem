@@ -27,6 +27,7 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Radio },
   template: `
+  <div>
     <Radio
       :variant="variant"
       :size="size"
@@ -38,6 +39,7 @@ export const Template = (args, { argTypes }) => ({
       :messageType="messageType"
       :required="required"
     />
+    </div>
   `,
 })
 

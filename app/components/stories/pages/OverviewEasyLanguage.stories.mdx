@@ -1,0 +1,33 @@
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import store from '@/.storybook/store';
+import OverviewEasyLanguage from '../../../pages/overviewEasyLanguage.vue';
+
+<Meta
+  title="Pages/Easy Language/Overview Easy Language"
+  component={OverviewEasyLanguage}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { OverviewEasyLanguage },
+  store: store,
+  template: '<OverviewEasyLanguage />',
+});
+
+# Overview easy language example
+
+<a href="?path=/story/pages-easy-language-overview-easy-language--example">Go to the Canvas Tab</a>
+
+---
+
+<a href="?id=pages-easy-language-overview-easy-language--example" target="_blank">Open in full width in a new tab</a>
+
+<Canvas>
+  <Story
+    name="Example"
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+

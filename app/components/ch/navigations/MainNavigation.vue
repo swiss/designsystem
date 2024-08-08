@@ -1,5 +1,5 @@
 <template>
-    <nav :class="mainNavigationClass" aria-label="Main">
+    <nav :class="mainNavigationClass" aria-label="Main" id="main-navigation">
       <ul>
         <li>
           <a href="javascript:alert('link')">
