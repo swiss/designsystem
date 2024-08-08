@@ -2,11 +2,10 @@
   <nav v-if="isSimplePage">
     <ul>
       <li>
-        <a href="javascript:alert('homepage')">
+        <a href="javascript:void(0)">
           <span>Startseite</span>
         </a>
       </li>
-
       <li>
         <a
           href="javascript:void(0)"
@@ -19,33 +18,7 @@
             aria-hidden="true"
           />
           <span>Corona</span>
-          <SvgIcon
-            icon="ChevronDown"
-            class="breadcrumb__dropdown-icon"
-            aria-hidden="true"
-          />
         </a>
-        <ul>
-          <li>
-            <a
-              href="javascript:alert('link')"
-              class="active"
-              aria-current="true"
-            >
-              <span>Regeln und Verbote</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Covid-Zertifikate</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:alert('link')">
-              <span>Corona Impfungen</span>
-            </a>
-          </li>
-        </ul>
       </li>
       <li>
         <a
@@ -59,23 +32,7 @@
             aria-hidden="true"
           />
           <span>Regeln und Verbote</span>
-          <SvgIcon
-            icon="ChevronDown"
-            class="breadcrumb__dropdown-icon"
-            aria-hidden="true"
-          />
         </a>
-        <ul>
-          <li>
-            <a
-              href="javascript:alert('link')"
-              class="active"
-              aria-current="true"
-            >
-              <span>Regeln und Verbote</span>
-            </a>
-          </li>
-        </ul>
       </li>
     </ul>
   </nav>

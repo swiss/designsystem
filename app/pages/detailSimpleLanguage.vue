@@ -6,10 +6,14 @@
         :isOpen="false"
         :isEasyLanguage="isEasyLanguage"
         :isSignLanguage="isSignLanguage"
+        :isSticky="true"
       />
-      <TopHeader :isEasyLanguage="isEasyLanguage" :isSignLanguage="isSignLanguage" />
+      <TopHeader
+        :isEasyLanguage="isEasyLanguage"
+        :isSignLanguage="isSignLanguage"
+      />
       <DesktopMenu :isSimplePage="true" :isSticky="true" />
-      <MobileMenu :isSimplePage="true" :isSticky="true"/>
+      <MobileMenu :isSimplePage="true" :isSticky="true" />
       <Breadcrumb :isSimplePage="true" />
       <div class="container">
         <Btn
@@ -38,8 +42,8 @@
       </Hero>
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
-          <div class="container__center--md vertical-spacing">
-            <TextImage type="default" textProportion="2">
+          <div class="container__center--sm vertical-spacing">
+            <TextImage type="default" textProportion="2" :isInlineImage="false">
               <template v-slot:title> Image and text example </template>
               <template v-slot:description>
                 Der Modellkatalog kann unter models.geo.admin.ch angesehen
@@ -64,7 +68,7 @@
               </template>
             </TextImage>
 
-            <TextImage type="default" textProportion="2">
+            <TextImage type="default" textProportion="2" :isInlineImage="false">
               <template v-slot:title> Image and text example </template>
               <template v-slot:description>
                 Der Modellkatalog kann unter models.geo.admin.ch angesehen
