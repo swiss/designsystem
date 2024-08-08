@@ -6,6 +6,7 @@
         :isOpen="false"
         :isEasyLanguage="isEasyLanguage"
         :isSignLanguage="isSignLanguage"
+        :isSticky="true"
       />
       <TopHeader
         :isEasyLanguage="isEasyLanguage"

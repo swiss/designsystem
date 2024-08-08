@@ -85,21 +85,25 @@ export default {
   methods: {
     resizeWindow() {
       const topHeader = document.getElementById('top-header-id')
-      this.initialNavBarOffset = topHeader.offsetTop + topHeader.clientHeight
+      const topBar = document.getElementById('top-bar')
+      this.initialNavBarOffset =
+        topHeader.offsetTop + topHeader.clientHeight - topBar?.clientHeight
       this.handleScroll()
     },
     handleScroll() {
+      const topBar = document.getElementById('top-bar')
       const navBar = document.getElementById('mobile-menu-id')
-      const navigation = document.getElementById(this.carouselNavId)
       if (this.initialNavBarOffset < window.scrollY) {
         this.useStickyPlaceholder = true
         // Set height on placeholder to avoid jump when navigation is set to sticky
         const stickyPlaceholder = document.getElementById('stickyPlaceholder')
         stickyPlaceholder.style.height = `${navBar.clientHeight}px`
 
+        navBar.style.top = `${topBar.clientHeight}px`
         navBar.classList.add('mobile-menu-sticky-navigation')
         navBar.classList.remove('mobile-menu-navigation-bar')
       } else {
+        navBar.style.top = ''
         this.useStickyPlaceholder = false
         navBar.classList.remove('mobile-menu-sticky-navigation')
         navBar.classList.add('mobile-menu-navigation-bar')

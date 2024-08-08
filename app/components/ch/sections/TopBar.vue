@@ -1,6 +1,6 @@
 <template>
-  <div class="top-bar" :class="isOpen ? 'top-bar--is-open' : ''">
-    <div :class="computedTopBarClass">
+  <div class="top-bar" id="top-bar-container" :class="isOpen ? 'top-bar--is-open' : ''">
+    <div :class="computedTopBarClass" id="top-bar">
       <div class="container container--flex">
         <button
           class="top-bar__btn"
@@ -25,6 +25,7 @@
         </div>
       </div>
     </div>
+    <div v-if="useStickyPlaceholder" id="stickyTopBarPlaceholder" />
     <div v-if="isOpen" class="top-bar__drawer">
       <div class="container">
         <div class="flex justify-end">
@@ -362,6 +363,8 @@ export default {
     return {
       isSearchInputFocused: false,
       filterString: '',
+      useStickyPlaceholder: false,
+      initialTopBarOffset: 0,
     }
   },
   props: {
@@ -377,10 +380,37 @@ export default {
       type: Boolean,
       default: false,
     },
+    isSticky: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  mounted() {
+    if (this.isSticky) {
+      window.addEventListener('scroll', this.handleScroll)
+      this.resizeWindow()
+      window.addEventListener('resize', this.resizeWindow)
+    }
   },
   methods: {
     resizeWindow() {
-      this.screenSize = document.body.clientWidth
+      const topBar = document.getElementById('top-bar-container')
+      this.initialTopBarOffset = topBar.offsetTop
+      this.handleScroll()
+    },
+    handleScroll() {
+      const topBar = document.getElementById('top-bar')
+      if (window.scrollY > this.initialTopBarOffset) {
+        this.useStickyPlaceholder = true
+        // Set height on placeholder to avoid jump when top bar is set to sticky
+        const stickyPlaceholder = document.getElementById('stickyTopBarPlaceholder')
+        stickyPlaceholder.style.height = `${topBar.clientHeight}px`
+
+        topBar.classList.add('sticky-top-bar')
+      } else {
+        this.useStickyPlaceholder = false
+        topBar.classList.remove('sticky-top-bar')
+      }
     },
     triggerTopBar() {
       this.isOpen = !this.isOpen

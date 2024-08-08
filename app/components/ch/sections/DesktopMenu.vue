@@ -93,10 +93,12 @@ export default {
   methods: {
     resizeWindow() {
       const topHeader = document.getElementById('top-header-id')
-      this.initialNavBarOffset = topHeader.offsetTop + topHeader.clientHeight
+      const topBar = document.getElementById('top-bar')
+      this.initialNavBarOffset = topHeader.offsetTop + topHeader.clientHeight - topBar?.clientHeight
       this.handleScroll()
     },
     handleScroll() {
+      const topBar = document.getElementById('top-bar')
       const navBar = document.getElementById('desktop-navigation-id')
       const navigation = document.getElementById('main-navigation')
       if (this.initialNavBarOffset < window.scrollY) {
@@ -107,8 +109,10 @@ export default {
         )
         stickyPlaceholder.style.height = `${navigation.clientHeight}px`
 
+        navBar.style.top = `${topBar.clientHeight}px`
         navBar.classList.add('sticky-navigation')
       } else {
+        navBar.style.top = ''
         this.useStickyPlaceholder = false
         navBar.classList.remove('sticky-navigation')
       }
