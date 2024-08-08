@@ -1,0 +1,964 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="" />
+    <meta name="robots" content="NOODP,index,follow" />
+    <style>
+      html {
+        margin: 0 auto;
+        min-width: 100%;
+      }
+      body {
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+      @media only screen and (max-width: 640px) {
+        table[class='responsive-table'] {
+          width: 100% !important;
+        }
+      }
+
+      @media only screen and (min-width: 640px) {
+        table[class='responsive-table'] {
+          min-width: 640px !important;
+          max-width: 768px !important;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        table[class='responsive-table'] {
+          min-width: 768px !important;
+          max-width: 1024px !important;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        .logo-flag {
+          display: block;
+          width: auto !important;
+          height: 2.5rem !important;
+        }
+        .logo-full {
+          display: none;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .logo-flag {
+          display: none;
+        }
+        .logo-full {
+          display: block;
+          width: auto !important;
+          height: 3.5rem !important;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .logo-full {
+          height: 4.125rem !important;
+        }
+      }
+
+      .header-logo-container {
+        display: flex;
+        @media only screen and (max-width: 767px) {
+          padding-left: 10px;
+          padding-top: 10px;
+          padding-bottom: 20px;
+        }
+
+        @media only screen and (min-width: 768px) {
+          padding-left: 20px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          padding-left: 28px;
+          padding-top: 28px;
+          padding-bottom: 28px;
+        }
+      }
+
+      .logo-separator {
+        height: 2.5rem;
+        margin-left: 1rem;
+
+        @media only screen and (max-width: 767px) {
+          margin-left: 0.5rem;
+        }
+
+        @media only screen and (min-width: 768px) {
+          margin-left: 1rem;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          margin-left: 1rem;
+        }
+      }
+
+      .form-separator {
+        height: 1px;
+        background-color: #d1d5db;
+        overflow: visible;
+
+        @media only screen and (max-width: 767px) {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        @media only screen and (min-width: 768px) {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          margin-left: 28px;
+          margin-right: 28px;
+        }
+      }
+
+      .description-container {
+        background-color: #f0f4f7;
+      }
+
+      @media only screen and (max-width: 767px) {
+        .form-title-container {
+          padding-left: 10px;
+          padding-top: 5px;
+          padding-bottom: 15px;
+          .form-title {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .form-title-container {
+          padding-left: 20px;
+          padding-top: 10px;
+          padding-bottom: 20px;
+          .form-title {
+            font-size: 1.75rem;
+            margin: 0;
+            font-weight: 600;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .form-title-container {
+          padding-left: 28px;
+          padding-top: 15px;
+          padding-bottom: 32px;
+          .form-title {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .description-section {
+        @media only screen and (max-width: 767px) {
+          padding: 10px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+
+        @media only screen and (min-width: 768px) {
+          padding: 20px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          padding: 28px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+
+        .description-section-title {
+          margin: 0px;
+          line-height: 1.5;
+
+          @media only screen and (max-width: 767px) {
+            font-size: 0.875rem;
+          }
+
+          @media only screen and (min-width: 768px) {
+            font-size: 1rem;
+          }
+
+          @media only screen and (min-width: 1024px) {
+            font-size: 1.125rem;
+          }
+        }
+
+        .description-section-link {
+          line-height: 1.5;
+          word-break: break-all;
+
+          @media only screen and (max-width: 767px) {
+            font-size: 0.875rem;
+          }
+
+          @media only screen and (min-width: 768px) {
+            font-size: 1rem;
+          }
+
+          @media only screen and (min-width: 1024px) {
+            font-size: 1.125rem;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .logo-separator {
+          height: 3.5rem;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .logo-separator {
+          height: 4.125rem;
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        .logo-text {
+          padding-left: 0.5rem;
+          font-size: 0.875rem;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .logo-text {
+          padding-left: 1rem;
+          font-size: 1rem;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .logo-text {
+          padding-left: 1rem;
+          font-size: 1.125rem;
+        }
+      }
+
+      .link {
+        color: #d8232a;
+        text-decoration-line: underline;
+        text-underline-offset: 2px;
+        cursor: pointer;
+        overflow-wrap: break-word;
+      }
+      .link:hover {
+        color: #99191e;
+      }
+
+      @media only screen and (max-width: 767px) {
+        .row-title-container {
+          padding-left: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+
+          .row-title {
+            font-size: 1.125rem;
+            margin: 0;
+            font-weight: 600;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .row-title-container {
+          padding-left: 20px;
+          padding-top: 15px;
+          padding-bottom: 10px;
+
+          .row-title {
+            font-size: 1.25rem;
+            margin: 0;
+            font-weight: 600;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .row-title-container {
+          padding-left: 28px;
+          padding-top: 20px;
+          padding-bottom: 10px;
+
+          .row-title {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
+          }
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        .form-row {
+          margin-left: 10px;
+          display: flex;
+          flex-direction: column;
+        }
+        .form-row-title {
+          padding-top: 10px;
+          padding-bottom: 5px;
+          padding-left: 0px;
+          font-weight: 700;
+          p {
+            font-size: 0.875rem;
+            margin: 0px;
+          }
+        }
+        .form-row-description {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-left: 0px;
+
+          p {
+            font-size: 0.875rem;
+            margin: 0px;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .form-row {
+          margin-left: 20px;
+          display: flex;
+          flex-direction: row;
+        }
+        .form-row-title {
+          padding: 15px;
+          width: 180px;
+          padding-left: 0px;
+          font-weight: 700;
+          p {
+            font-size: 1rem;
+            margin: 0px;
+          }
+        }
+        .form-row-description {
+          padding: 15px;
+          padding-left: 0px;
+          p {
+            font-size: 1rem;
+            margin: 0px;
+          }
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        .form-row {
+          margin-left: 28px;
+          display: flex;
+          flex-direction: row;
+        }
+        .form-row-title {
+          padding: 15px;
+          width: 180px;
+          padding-left: 0px;
+          font-weight: 700;
+          p {
+            font-size: 1.125rem;
+            margin: 0px;
+          }
+        }
+        .form-row-description {
+          padding: 15px;
+          padding-left: 0px;
+          p {
+            font-size: 1.125rem;
+            margin: 0px;
+          }
+        }
+      }
+
+      .footer-container {
+        background-color: #263645;
+      }
+
+      .footer-section {
+        @media only screen and (max-width: 767px) {
+          padding-left: 10px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+
+        @media only screen and (min-width: 768px) {
+          padding-left: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          padding-left: 28px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+
+        .footer-section-text {
+          font-size: 18px;
+          line-height: 1.5;
+          color: #fff;
+          margin: 0px;
+
+          @media only screen and (max-width: 767px) {
+            font-size: 0.875rem;
+          }
+
+          @media only screen and (min-width: 768px) {
+            font-size: 1rem;
+          }
+
+          @media only screen and (min-width: 1024px) {
+            font-size: 1.125rem;
+          }
+        }
+      }
+
+      .bottom-spacing {
+        @media only screen and (max-width: 767px) {
+          padding-bottom: 10px;
+        }
+
+        @media only screen and (min-width: 768px) {
+          padding-bottom: 15px;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          padding-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; background-color: #f4f4f4">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td align="center" style="padding: 10px">
+          <table
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            class="responsive-table"
+            style="background-color: #ffffff"
+          >
+            <tr>
+              <td colspan="2" class="header-logo-container">
+                <img
+                  src="/images/logo-mail.png"
+                  alt="Logo"
+                  class="logo-full"
+                  style="width: 150px; height: auto"
+                />
+                <img
+                  src="/images/logo-flag-mail.png"
+                  alt="Logo"
+                  class="logo-flag"
+                  style="width: 150px; height: auto"
+                />
+                <div
+                  class="logo-separator"
+                  style="
+                    width: 1px;
+                    background-color: #d1d5db;
+                    overflow: visible;
+                  "
+                ></div>
+                <div class="logo-text">
+                  Eidgenössisches Departement für <br />
+                  Verteidigung, Bevölkerungsschutz und Sport
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="form-title-container">
+                <h1 class="form-title">Bestellformular</h1>
+              </td>
+            </tr>
+            <tr class="description-container">
+              <td colspan="2" class="description-section">
+                <p class="description-section-title">
+                  Danke für Ihre Bestellung.
+                </p>
+                <p class="description-section-title">
+                  Sie wurde wie folgt notiert:
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr>
+                    <td class="row-title-container">
+                      <h2 class="row-title">Bestellformular</h2>
+                    </td>
+                  </tr>
+                </table>
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Publikation:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Pensionskassenstatistik - Kennzahlen 2018-2022</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Anzahl:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>1</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>BFS-Nr:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>554-2200</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Publikation:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Harmonisierung amtlicher Personenregister</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr>
+                    <td class="row-title-container">
+                      <h2 class="row-title">Rechnungsadresse</h2>
+                    </td>
+                  </tr>
+                </table>
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Anrede:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Herr</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Name:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Muster</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Vorname:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Max</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Organisation:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Musterfirma</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Strasse / Nr.:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Musterstrasse 5</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Ort:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Musterhausen</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Land:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Schweiz</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Telefon:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>+41 79 123 45 67</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>E-Mail:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Max.Muster@muster.com</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Nachricht:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Wichtiger Hinweis...</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr>
+                    <td class="row-title-container">
+                      <h2 class="row-title">Lieferadresse</h2>
+                    </td>
+                  </tr>
+                </table>
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Anrede:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Herr</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Name:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Muster</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Vorname:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Max</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Organisation:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Musterfirma</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Strasse / Nr.:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Musterstrasse 5</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Ort:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Musterhausen</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Land:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Schweiz</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>Telefon:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>+41 79 123 45 67</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-separator" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="bottom-spacing">
+                      <div class="form-row">
+                        <div class="form-row-title">
+                          <p>E-Mail:</p>
+                        </div>
+                        <div class="form-row-description">
+                          <p>Max.Muster@muster.com</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr class="footer-container">
+                    <td class="footer-section">
+                      <p class="footer-section-text">Bundesamt für Statistik</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
