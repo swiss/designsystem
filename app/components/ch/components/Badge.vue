@@ -1,5 +1,9 @@
 <template>
-  <div :class="classes">
+  <component
+    :is="clickable ? 'button' : 'div'"
+    :class="classes"
+    @click="badgeClicked"
+  >
     <SvgIcon
       v-if="this.iconLeft"
       :icon="this.iconLeft"
@@ -12,7 +16,7 @@
       :class="`icon--${this.icon}`"
       class="badge__icon"
     />
-  </div>
+  </component>
 </template>
 
 <script>
@@ -47,6 +51,7 @@ export default {
           'purple',
           'pink',
           'indigo',
+          'negative',
         ].includes(prop),
     },
     size: {
@@ -66,6 +71,13 @@ export default {
       type: String,
       default: undefined,
     },
+    badgeClicked: {
+      type: Function,
+    },
+    clickable: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -74,6 +86,7 @@ export default {
       if (this.color) base += `badge--${this.color} `
       if (this.size) base += `badge--${this.size} `
       if (this.icon) base += `badge--icon `
+      if (this.clickable) base += `badge--clickable`
       return base
     },
   },
