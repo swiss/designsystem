@@ -25,18 +25,6 @@
           <span>Ukraine</span>
         </a>
       </li>
-      <!-- more button -->
-      <li id="more-button">
-        <a
-          href="javascript:void(0)"
-          role="button"
-          class="navy__has-children desktop-menu__more"
-        >
-          <span>Mehr</span>
-          <SvgIcon icon="MoreFilled" size="lg" />
-        </a>
-        <ul id="more-container"></ul>
-      </li>
     </ul>
   </nav>
 </template>
