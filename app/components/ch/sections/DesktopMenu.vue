@@ -72,17 +72,19 @@ export default {
     Navy.showLevel(this.showActiveNavigation ? 2 : 0)
 
     // demo only: force level-0 to open when more button is clicked
+    if (!this.isSimplePage) {
     document
       .getElementById('more-button')
       .addEventListener('click', function () {
         Navy.showLevel(0)
       })
 
-    MenuMore.init({
-      navigationItem: '#desktop-menu > div > div > .container > nav',
-      moreButton: '#more-button',
-      moreContainer: '#more-container',
-    })
+      MenuMore.init({
+        navigationItem: '#desktop-menu > div > div > .container > nav',
+        moreButton: '#more-button',
+        moreContainer: '#more-container',
+      })
+    }
   },
   data() {
     return {
@@ -94,7 +96,8 @@ export default {
     resizeWindow() {
       const topHeader = document.getElementById('top-header-id')
       const topBar = document.getElementById('top-bar')
-      this.initialNavBarOffset = topHeader.offsetTop + topHeader.clientHeight - topBar?.clientHeight
+      this.initialNavBarOffset =
+        topHeader.offsetTop + topHeader.clientHeight - topBar?.clientHeight
       this.handleScroll()
     },
     handleScroll() {
