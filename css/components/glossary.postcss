@@ -14,13 +14,17 @@
   @apply bg-blue-100;
 }
 
+.load-more-container {
+  @apply pt-4 md:pt-14;
+  @apply mb-4 md:mb-6;
+}
+
 .sticky-search-container {
   position: fixed !important;
   left: 0;
   right: 0;
   top: 0;
   z-index: 1000;
-  @apply px-4 xs:px-7 sm:px-9 lg:px-10 xl:px-12 3xl:px-16;
   @apply py-4;
   @apply bg-secondary-50;
 }
@@ -34,9 +38,6 @@
   font-weight: 600;
   @apply text-text-600;
   @apply mt-5 mb-2.5 md:mt-10 md:mb-5;
-}
-
-.glossary-results {
 }
 
 .glossary-results__header {
@@ -64,7 +65,7 @@
 }
 
 .glossary__filters {
-  @apply pt-5;
+  @apply pt-5 md:pt-6;
 }
 
 .carousel-glossary-filter {

@@ -13,48 +13,60 @@
         <div class="container">
           <h1 class="h1">Glossar</h1>
           <div id="search-container">
-            <div class="search search--large search--page-result">
-              <div class="search__group">
-                <input
-                  type="search"
-                  id="search-input"
-                  label="GLossar filtern"
-                  placeholder="Suchbegriff eingeben"
-                  value=""
-                  autocomplete="off"
-                  v-model="searchTerm"
-                />
-                <div class="btn" v-if="isLoading">
-                  <SvgIcon
-                    icon="Spinner"
+            <div id="inner-search-container">
+              <div class="search search--large search--page-result">
+                <div class="search__group">
+                  <input
+                    type="search"
+                    id="search-input"
+                    label="GLossar filtern"
+                    placeholder="Suchbegriff eingeben"
+                    value=""
+                    autocomplete="off"
+                    v-model="searchTerm"
+                  />
+                  <div class="btn" v-if="isLoading">
+                    <SvgIcon
+                      icon="Spinner"
+                      size="lg"
+                      class="btn__icon icon--spin"
+                    />
+                  </div>
+                  <Btn
+                    v-else-if="!searchTerm"
+                    label="GLossar filtern"
+                    icon="Filter"
+                    icon-pos="only"
+                    variant="bare"
                     size="lg"
-                    class="btn__icon icon--spin"
+                  />
+                  <Btn
+                    v-else-if="searchTerm"
+                    label="Eingabe löschen"
+                    icon="CancelCircle"
+                    icon-pos="only"
+                    variant="bare"
+                    size="lg"
+                    @emitClick="searchTerm = ''"
                   />
                 </div>
-                <Btn
-                  v-else
-                  label="GLossar filtern"
-                  icon="Filter"
-                  icon-pos="only"
-                  variant="bare"
-                  size="lg"
+              </div>
+              <div class="glossary__filters">
+                <CarouselGlossaryFilter
+                  :badgeClicked="setActiveFilter"
+                  :activeFilter="activeFilter"
+                  :id="carouselId"
+                />
+                <GlossaryFilter
+                  :badgeClicked="setActiveFilter"
+                  :activeFilter="activeFilter"
                 />
               </div>
             </div>
-            <div class="glossary__filters">
-              <CarouselGlossaryFilter
-                :badgeClicked="setActiveFilter"
-                :activeFilter="activeFilter"
-                :id="carouselId"
-              />
-              <GlossaryFilter
-                :badgeClicked="setActiveFilter"
-                :activeFilter="activeFilter"
-              />
-            </div>
           </div>
           <!-- invisible Placeholder to avoid jump when navigation is set to sticky -->
-          <div v-if="useStickyPlaceholder"
+          <div
+            v-if="useStickyPlaceholder"
             id="sticky-search-container-placeholder"
           />
         </div>
@@ -74,29 +86,31 @@
                   size="sm"
                   id="select-6"
                   name="select-name"
+                  @select="setSorting"
                 >
                   <option disabled="" selected="">Sortieren</option>
-                  <option selected>Alphabetisch (A-Z)</option>
-                  <option>Alphabetisch (Z-A)</option>
+                  <option selected value="a-z">Alphabetisch (A-Z)</option>
+                  <option value="z-a">Alphabetisch (Z-A)</option>
                 </Select>
               </div>
             </div>
             <GlossarResultList
-              :resultItems="limitedResultItems"
+              :resultItems="loadLimitedResults"
               :searchTerm="searchTerm"
             />
           </div>
-        </div>
-      </section>
-      <section class="section section--default">
-        <div class="container">
-          <Btn
-            variant="outline"
-            size="sm"
-            iconPos="left"
-            label="Mehr laden"
-            class="btn--back"
-          />
+          <div class="load-more-container">
+            <Btn
+              variant="outline"
+              size="sm"
+              iconPos="left"
+              label="Mehr laden"
+              class="btn--back"
+              :disabled="!canLoadMore"
+              :fullWidth="screenSize < 1024"
+              @emitClick="handleLoadMore()"
+            />
+          </div>
         </div>
       </section>
     </main>
@@ -149,6 +163,10 @@ export default {
     return {
       useStickyPlaceholder: false,
       initialSearchContainerOffset: 0,
+      containerHeight: 0,
+      sorting: 'a-z',
+      screenSize: 0,
+      loadedResults: 15,
       isSticky: true,
       carouselId: uuidv4(),
       activeFilter: 'all',
@@ -455,25 +473,33 @@ export default {
   },
   methods: {
     resizeWindow() {
+      this.screenSize = document.body.clientWidth
       const searchContainer = document.getElementById('search-container')
       const mainHeader = document.getElementById('main-header')
-      this.initialSearchContainerOffset = searchContainer.offsetTop + mainHeader?.clientHeight
-      this.initialSearchOffset = this.handleScroll()
+      this.initialSearchContainerOffset =
+        searchContainer.offsetTop + mainHeader?.clientHeight - 16
+      this.containerHeight = searchContainer.clientHeight
+      this.handleScroll()
     },
     handleScroll() {
       const searchContainer = document.getElementById('search-container')
+      const innerSearchContainer = document.getElementById(
+        'inner-search-container'
+      )
       if (this.initialSearchContainerOffset < window.scrollY) {
         this.useStickyPlaceholder = true
         // Set height on placeholder to avoid jump when navigation is set to sticky
         const stickyPlaceholder = document.getElementById(
           'sticky-search-container-placeholder'
         )
-        stickyPlaceholder.style.height = `${searchContainer.clientHeight}px`
+        stickyPlaceholder.style.height = `${this.containerHeight}px`
 
         searchContainer.classList.add('sticky-search-container')
+        innerSearchContainer.classList.add('container')
       } else {
         this.useStickyPlaceholder = false
         searchContainer.classList.remove('sticky-search-container')
+        innerSearchContainer.classList.remove('container')
       }
     },
     getMobileMenuIsOpen() {
@@ -482,12 +508,81 @@ export default {
     setActiveFilter(value) {
       this.activeFilter = value
     },
+    setSorting(value) {
+      this.sorting = value
+    },
+    handleLoadMore() {
+      if (this.loadedResults >= this.foundEntries) {
+        return
+      }
+      this.loadedResults + 15 < this.foundEntries
+        ? (this.loadedResults += 15)
+        : (this.loadedResults = this.foundEntries)
+    },
   },
   computed: {
+    canLoadMore() {
+      return (
+        this.loadLimitedResults?.reduce((acc, elm) => {
+          return acc + elm.results.length
+        }, 0) != this.foundEntries
+      )
+    },
     foundEntries() {
       return this.limitedResultItems?.reduce((acc, elm) => {
         return acc + elm.results.length
       }, 0)
+    },
+
+    loadLimitedResults() {
+      let result = []
+      let count = 0
+      const values = Object.values(this.sortedResultItems)
+      for (let i = 0; i < values.length; i++) {
+        if (count + values[i].results.length <= this.loadedResults) {
+          result.push(values[i])
+          count += values[i].results.length
+        } else {
+          let newResults = Object.values(values)[i].results.slice(
+            0,
+            this.loadedResults - count
+          )
+          if (newResults.length > 0) {
+            result.push({
+              filter: values[i].filter,
+              results: newResults,
+            })
+          }
+          break
+        }
+      }
+      return result
+    },
+
+    sortedResultItems() {
+      return {
+        ...this.limitedResultItems.sort((a, b) => {
+          const elementA = a.filter
+          const elementB = b.filter
+
+          if (this.sorting === 'a-z') {
+            if (elementA < elementB) {
+              return -1
+            }
+            if (elementA > elementB) {
+              return 1
+            }
+          } else {
+            if (elementA > elementB) {
+              return -1
+            }
+            if (elementA < elementB) {
+              return 1
+            }
+          }
+          return 0
+        }),
+      }
     },
     limitedResultItems() {
       let filteredResults = this.resultItems.filter((elm) => {
