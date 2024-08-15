@@ -11,56 +11,58 @@
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
         <div class="container">
-          <h1 class="h1">Glossar</h1>
-          <div id="search-container">
-            <div id="inner-search-container">
-              <div class="search search--large search--page-result">
-                <div class="search__group">
-                  <input
-                    type="search"
-                    id="search-input"
-                    label="GLossar filtern"
-                    placeholder="Suchbegriff eingeben"
-                    value=""
-                    autocomplete="off"
-                    v-model="searchTerm"
-                  />
-                  <div class="btn" v-if="isLoading">
-                    <SvgIcon
-                      icon="Spinner"
+          <h1 if="search-title" class="h1">Glossar</h1>
+          <div id="outer-search-container">
+            <div id="search-container">
+              <div id="inner-search-container">
+                <div class="search search--large search--page-result">
+                  <div class="search__group">
+                    <input
+                      type="search"
+                      id="search-input"
+                      label="GLossar filtern"
+                      placeholder="Suchbegriff eingeben"
+                      value=""
+                      autocomplete="off"
+                      v-model="searchTerm"
+                    />
+                    <div class="btn" v-if="isLoading">
+                      <SvgIcon
+                        icon="Spinner"
+                        size="lg"
+                        class="btn__icon icon--spin"
+                      />
+                    </div>
+                    <Btn
+                      v-else-if="!searchTerm"
+                      label="GLossar filtern"
+                      icon="Filter"
+                      icon-pos="only"
+                      variant="bare"
                       size="lg"
-                      class="btn__icon icon--spin"
+                    />
+                    <Btn
+                      v-else-if="searchTerm"
+                      label="Eingabe löschen"
+                      icon="CancelCircle"
+                      icon-pos="only"
+                      variant="bare"
+                      size="lg"
+                      @emitClick="searchTerm = ''"
                     />
                   </div>
-                  <Btn
-                    v-else-if="!searchTerm"
-                    label="GLossar filtern"
-                    icon="Filter"
-                    icon-pos="only"
-                    variant="bare"
-                    size="lg"
+                </div>
+                <div class="glossary__filters">
+                  <CarouselGlossaryFilter
+                    :badgeClicked="setActiveFilter"
+                    :activeFilter="activeFilter"
+                    :id="carouselId"
                   />
-                  <Btn
-                    v-else-if="searchTerm"
-                    label="Eingabe löschen"
-                    icon="CancelCircle"
-                    icon-pos="only"
-                    variant="bare"
-                    size="lg"
-                    @emitClick="searchTerm = ''"
+                  <GlossaryFilter
+                    :badgeClicked="setActiveFilter"
+                    :activeFilter="activeFilter"
                   />
                 </div>
-              </div>
-              <div class="glossary__filters">
-                <CarouselGlossaryFilter
-                  :badgeClicked="setActiveFilter"
-                  :activeFilter="activeFilter"
-                  :id="carouselId"
-                />
-                <GlossaryFilter
-                  :badgeClicked="setActiveFilter"
-                  :activeFilter="activeFilter"
-                />
               </div>
             </div>
           </div>
@@ -474,10 +476,13 @@ export default {
   methods: {
     resizeWindow() {
       this.screenSize = document.body.clientWidth
-      const searchContainer = document.getElementById('search-container')
+      const searchContainer = document.getElementById('inner-search-container')
+      const outerSearchContainer = document.getElementById(
+        'outer-search-container'
+      )
       const mainHeader = document.getElementById('main-header')
       this.initialSearchContainerOffset =
-        searchContainer.offsetTop + mainHeader?.clientHeight - 16
+        outerSearchContainer.offsetTop + mainHeader?.clientHeight - 16
       this.containerHeight = searchContainer.clientHeight
       this.handleScroll()
     },
@@ -488,7 +493,6 @@ export default {
       )
       if (this.initialSearchContainerOffset < window.scrollY) {
         this.useStickyPlaceholder = true
-        // Set height on placeholder to avoid jump when navigation is set to sticky
         const stickyPlaceholder = document.getElementById(
           'sticky-search-container-placeholder'
         )
