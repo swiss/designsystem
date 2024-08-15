@@ -279,12 +279,14 @@
     <div class="logo__separator" role="separator" aria-hidden="true" />
     <div class="logo-title__container">
       <div class="logo__accronym" v-html="accronym" />
-      <div class="logo__title" v-html="title" />
-      <div class="badge-easy-language" v-if="isEasyLanguage">
+      <div class="logo__title">
+        <div v-html="title"/>
+        <div class="badge-easy-language" v-if="isEasyLanguage">
         Inhalte in Leichter Sprache
       </div>
       <div class="badge-sign-language" v-if="isSignLanguage">
         Inhalte in Gebärdensprache
+      </div>
       </div>
     </div>
   </a>

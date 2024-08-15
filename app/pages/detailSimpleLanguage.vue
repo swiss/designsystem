@@ -42,56 +42,70 @@
       </Hero>
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
+          <div class="container__center--xs vertical-spacing">
+            <figure v-if="isEasyLanguage">
+              <picture>
+                <img src="https://picsum.photos/1600/1200" alt="placeholder" />
+              </picture>
+            </figure>
+            <figure v-if="isSignLanguage">
+                <div class="ratio ratio--16/9">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+                    title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
+                    frameborder="0"
+                  />
+                </div>
+                <figcaption>
+                  Geoinformation - Alles findet irgendwo statt — © Swiss
+                  Geoportal
+                </figcaption>
+              </figure>
+          </div>
+          <div class="container__center--xs vertical-spacing">
+            <h2 class="h2">
+              At vero eos et accusam et justo duo dolores et ea rebum
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+              dolor sit amet.
+            </p>
+          </div>
+        </div>
+        <div class="container container--grid gap--responsive">
           <div class="container__center--sm vertical-spacing">
-            <TextImage type="default" textProportion="2" :isInlineImage="false">
-              <template v-slot:title> Image and text example </template>
-              <template v-slot:description>
-                Der Modellkatalog kann unter models.geo.admin.ch angesehen
-                werden. Ein neues «minimales Geodatenmodell» in der
-                Datenmodellablage publizieren. Für die Publikation der
-                «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang.
-                Die Datenmodellablage ist moderiert und die Erfassung neuer
-                Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der
-                Empfehlungen zur Modellierung wird die Modelldokumentation
-                veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in
-                jedem Fall in die Datenmodellablage eingepflegt.
-              </template>
-              <template v-slot:image>
-                <figure>
-                  <picture>
-                    <img
-                      src="https://picsum.photos/1600/1200"
-                      alt="placeholder"
-                    />
-                  </picture>
-                </figure>
-              </template>
-            </TextImage>
-
-            <TextImage type="default" textProportion="2" :isInlineImage="false">
-              <template v-slot:title> Image and text example </template>
-              <template v-slot:description>
-                Der Modellkatalog kann unter models.geo.admin.ch angesehen
-                werden. Ein neues «minimales Geodatenmodell» in der
-                Datenmodellablage publizieren. Für die Publikation der
-                «minimalen Geodatenmodelle» besteht kein direkter Online-Zugang.
-                Die Datenmodellablage ist moderiert und die Erfassung neuer
-                Datenmodelle wird durch GKG/KOGIS vorgenommen. Entsprechend der
-                Empfehlungen zur Modellierung wird die Modelldokumentation
-                veröffentlicht oder verlinkt. Die INTERLIS-Modelldatei wird in
-                jedem Fall in die Datenmodellablage eingepflegt.
-              </template>
-              <template v-slot:image>
-                <figure>
-                  <picture>
-                    <img
-                      src="https://picsum.photos/1600/1200"
-                      alt="placeholder"
-                    />
-                  </picture>
-                </figure>
-              </template>
-            </TextImage>
+            <figure>
+              <picture>
+                <img src="https://picsum.photos/1600/1200" alt="placeholder" />
+              </picture>
+            </figure>
+          </div>
+          <div class="container__center--xs vertical-spacing">
+            <h2 class="h2">
+              At vero eos et accusam et justo duo dolores et ea rebum
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+              dolor sit amet.
+            </p>
           </div>
         </div>
       </section>
@@ -115,7 +129,7 @@
 <script>
 import Hero from '~/components/ch/sections/Hero'
 import Btn from '../components/ch/components/Btn.vue'
-import TextImage from '../components/ch/components/TextImage'
+import TextImage from '../components/ch/components/TextImage.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
