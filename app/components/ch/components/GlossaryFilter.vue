@@ -210,8 +210,8 @@ export default {
       default: () => {},
     },
     activeFilter: {
-      type: Array,
-      default: [],
+      type: String,
+      default: 'all',
     },
   },
 }

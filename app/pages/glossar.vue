@@ -12,43 +12,51 @@
       <section class="section section--default bg--secondary-50">
         <div class="container">
           <h1 class="h1">Glossar</h1>
-          <div class="search search--large search--page-result">
-            <div class="search__group">
-              <input
-                type="search"
-                id="search-input"
-                label="GLossar filtern"
-                placeholder="Suchbegriff eingeben"
-                value=""
-                autocomplete="off"
-              />
-              <div class="btn" v-if="isLoading">
-                <SvgIcon
-                  icon="Spinner"
+          <div id="search-container">
+            <div class="search search--large search--page-result">
+              <div class="search__group">
+                <input
+                  type="search"
+                  id="search-input"
+                  label="GLossar filtern"
+                  placeholder="Suchbegriff eingeben"
+                  value=""
+                  autocomplete="off"
+                  v-model="searchTerm"
+                />
+                <div class="btn" v-if="isLoading">
+                  <SvgIcon
+                    icon="Spinner"
+                    size="lg"
+                    class="btn__icon icon--spin"
+                  />
+                </div>
+                <Btn
+                  v-else
+                  label="GLossar filtern"
+                  icon="Filter"
+                  icon-pos="only"
+                  variant="bare"
                   size="lg"
-                  class="btn__icon icon--spin"
                 />
               </div>
-              <Btn
-                v-else
-                label="GLossar filtern"
-                icon="Filter"
-                icon-pos="only"
-                variant="bare"
-                size="lg"
+            </div>
+            <div class="glossary__filters">
+              <CarouselGlossaryFilter
+                :badgeClicked="setActiveFilter"
+                :activeFilter="activeFilter"
+                :id="carouselId"
+              />
+              <GlossaryFilter
+                :badgeClicked="setActiveFilter"
+                :activeFilter="activeFilter"
               />
             </div>
           </div>
-          <div class="glossary__filters">
-            <CarouselGlossaryFilter
-              :badgeClicked="setActiveFilter"
-              :activeFilter="activeFilter"
-            />
-            <GlossaryFilter
-              :badgeClicked="setActiveFilter"
-              :activeFilter="activeFilter"
-            />
-          </div>
+          <!-- invisible Placeholder to avoid jump when navigation is set to sticky -->
+          <div v-if="useStickyPlaceholder"
+            id="sticky-search-container-placeholder"
+          />
         </div>
       </section>
       <section class="section section--default">
@@ -73,21 +81,24 @@
                 </Select>
               </div>
             </div>
-            <GlossarResultList :resultItems="limitedResultItems" />
+            <GlossarResultList
+              :resultItems="limitedResultItems"
+              :searchTerm="searchTerm"
+            />
           </div>
         </div>
       </section>
       <section class="section section--default">
-          <div class="container">
-            <Btn
-              variant="outline"
-              size="sm"
-              iconPos="left"
-              label="Mehr laden"
-              class="btn--back"
-            />
-          </div>
-        </section>
+        <div class="container">
+          <Btn
+            variant="outline"
+            size="sm"
+            iconPos="left"
+            label="Mehr laden"
+            class="btn--back"
+          />
+        </div>
+      </section>
     </main>
     <footer class="footer" id="main-footer">
       <FooterInformation />
@@ -109,6 +120,7 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
+const { v4: uuidv4 } = require('uuid')
 
 export default {
   name: 'Glossar',
@@ -135,12 +147,21 @@ export default {
   },
   data() {
     return {
+      useStickyPlaceholder: false,
+      initialSearchContainerOffset: 0,
+      isSticky: true,
+      carouselId: uuidv4(),
       activeFilter: 'all',
-      searchKey: '',
+      searchTerm: '',
       resultItems: [
         {
+          title: '1. Platziert',
+          description: 'Der 1. Platziert ist der Gewinner eines Wettbewerbs.',
+        },
+        {
           title: 'Ahorn',
-          description: 'Der Ahorn ist ein Laubbaum.',
+          description:
+            'Der Ahorn ist ein Laubbaum. Siehe Wikipedia. <a href="https://de.wikipedia.org/wiki/Ahorne">Ahorn</a>',
         },
         {
           title: 'Birne',
@@ -318,11 +339,6 @@ export default {
           description: 'Der Tukan ist ein bunter Vogel mit großem Schnabel.',
         },
         {
-          title: 'Unicorn',
-          description:
-            'Das Einhorn ist ein mythologisches Tier mit einem Horn auf der Stirn.',
-        },
-        {
           title: 'Vulkan',
           description: 'Der Vulkan ist ein Berg, der Lava und Asche ausstößt.',
         },
@@ -423,42 +439,43 @@ export default {
           description: 'Die Schnecke ist ein langsam kriechendes Weichtier.',
         },
         {
-          title: 'Tukan',
-          description: 'Der Tukan ist ein bunter Vogel mit großem Schnabel.',
-        },
-        {
-          title: 'Unicorn',
+          title: 'Einhorn',
           description:
             'Das Einhorn ist ein mythologisches Tier mit einem Horn auf der Stirn.',
-        },
-        {
-          title: 'Vulkan',
-          description: 'Der Vulkan ist ein Berg, der Lava und Asche ausstößt.',
-        },
-        {
-          title: 'Walross',
-          description:
-            'Das Walross ist ein großes Meeressäugetier mit Stoßzähnen.',
-        },
-        {
-          title: 'Xerophyte',
-          description:
-            'Die Xerophyte sind Pflanzen, die an trockene Bedingungen angepasst sind.',
-        },
-        {
-          title: 'Yeti',
-          description:
-            'Der Yeti ist ein legendäres Wesen, das in den Bergen lebt.',
-        },
-        {
-          title: 'Zitrone',
-          description: 'Die Zitrone ist eine saure Zitrusfrucht.',
         },
       ],
     }
   },
-  mounted() {},
+  mounted() {
+    if (this.isSticky) {
+      window.addEventListener('scroll', this.handleScroll)
+      this.resizeWindow()
+      window.addEventListener('resize', this.resizeWindow)
+    }
+  },
   methods: {
+    resizeWindow() {
+      const searchContainer = document.getElementById('search-container')
+      const mainHeader = document.getElementById('main-header')
+      this.initialSearchContainerOffset = searchContainer.offsetTop + mainHeader?.clientHeight
+      this.initialSearchOffset = this.handleScroll()
+    },
+    handleScroll() {
+      const searchContainer = document.getElementById('search-container')
+      if (this.initialSearchContainerOffset < window.scrollY) {
+        this.useStickyPlaceholder = true
+        // Set height on placeholder to avoid jump when navigation is set to sticky
+        const stickyPlaceholder = document.getElementById(
+          'sticky-search-container-placeholder'
+        )
+        stickyPlaceholder.style.height = `${searchContainer.clientHeight}px`
+
+        searchContainer.classList.add('sticky-search-container')
+      } else {
+        this.useStickyPlaceholder = false
+        searchContainer.classList.remove('sticky-search-container')
+      }
+    },
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
     },
@@ -467,8 +484,8 @@ export default {
     },
   },
   computed: {
-    foundEntries () {
-      return this.limitedResultItems.reduce((acc, elm) => {
+    foundEntries() {
+      return this.limitedResultItems?.reduce((acc, elm) => {
         return acc + elm.results.length
       }, 0)
     },
@@ -484,16 +501,7 @@ export default {
         }
       })
 
-      if (this.searchKey) {
-        filteredResults = filteredResults.filter((elm) => {
-          return elm.description
-            .toLowerCase()
-            .includes(this.searchKey.toLowerCase())
-        })
-      }
-
-
-      const result = []
+      let result = []
 
       filteredResults.forEach((res) => {
         if (
@@ -508,7 +516,7 @@ export default {
         } else {
           if (!isNaN(res.title.charAt(0))) {
             result.push({
-              filter: 'numbric',
+              filter: '0-9',
               results: [res],
             })
           } else {
@@ -520,14 +528,19 @@ export default {
         }
       })
 
-      if (this.searchKey) {
-        return result.forEach(elm => {
-          elm.results = elm.results.filter(res => {
-            return res.description.toLowerCase().includes(this.searchKey.toLowerCase())
+      if (this.searchTerm) {
+        result.forEach((elm) => {
+          elm.results = elm.results.filter((res) => {
+            return (
+              res.description
+                .toLowerCase()
+                .includes(this.searchTerm.toLowerCase()) ||
+              res.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+            )
           })
         })
       }
-      else return result
+      return result.filter((elm) => elm.results.length > 0)
     },
   },
 }

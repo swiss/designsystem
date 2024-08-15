@@ -5,6 +5,7 @@
       :key="`listItem-${itemIndex}`"
       :title="listItem.title"
       :description="listItem.description"
+      :searchTerm="searchTerm"
     />
   </ul>
 </template>
@@ -24,6 +25,10 @@ export default {
     id: {
       type: String,
       required: true,
+    },
+    searchTerm: {
+      type: String,
+      required: false,
     },
   },
   mounted() {
