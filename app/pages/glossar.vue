@@ -22,7 +22,6 @@
                       id="search-input"
                       label="GLossar filtern"
                       placeholder="Suchbegriff eingeben"
-                      value=""
                       autocomplete="off"
                       v-model="searchTerm"
                     />
@@ -76,7 +75,10 @@
       <section class="section section--default">
         <div class="container gap--responsive">
           <div class="glossary-results">
-            <div class="glossary-results__header">
+            <div
+              class="glossary-results__header"
+              v-if="loadLimitedResults.length !== 0 && !isLoading"
+            >
               <div class="glossary-results__header__left">
                 <strong>{{ foundEntries }}</strong
                 >Einträge
@@ -97,11 +99,35 @@
               </div>
             </div>
             <GlossarResultList
+              v-if="!isLoading && loadLimitedResults.length > 0"
               :resultItems="loadLimitedResults"
               :searchTerm="searchTerm"
             />
+            <div v-if="isLoading" class="my-16">
+              <h2 class="sr-only">Resultate werden geladen</h2>
+              <SvgIcon icon="Spinner" size="2xl" class="icon--spin" />
+            </div>
+            <div
+              v-if="loadLimitedResults.length === 0 && !isLoading"
+              class="search-results__no-results"
+            >
+              <h2 class="text--xl">
+                Die Suche nach
+                <span class="text--bold">{{ searchTerm }}</span> ergab keine
+                Treffer.
+              </h2>
+              <h3 class="h4">Tipps zur Suche</h3>
+              <ul class="list list--default">
+                <li>Überprüfen Sie die Schreibweise Ihres Suchbegriffes</li>
+                <li>Verwenden Sie einen anderen bzw. allgemeineren Begriff</li>
+                <li>Verwenden Sie ggf. weniger Suchbegriffe</li>
+              </ul>
+            </div>
           </div>
-          <div class="load-more-container">
+          <div
+            class="load-more-container"
+            v-if="loadLimitedResults.length !== 0 && !isLoading"
+          >
             <Btn
               variant="outline"
               size="sm"
