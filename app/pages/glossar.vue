@@ -473,7 +473,21 @@ export default {
       window.addEventListener('resize', this.resizeWindow)
     }
   },
+  watch: {
+    searchTerm() {
+      this.scroolToTop()
+    },
+  },
   methods: {
+    scroolToTop() {
+      if (this.useStickyPlaceholder) {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        })
+      }
+    },
     resizeWindow() {
       this.screenSize = document.body.clientWidth
       const searchContainer = document.getElementById('inner-search-container')
@@ -486,13 +500,14 @@ export default {
       this.containerHeight = searchContainer.clientHeight
       this.handleScroll()
     },
-    handleScroll() {
+    async handleScroll() {
       const searchContainer = document.getElementById('search-container')
       const innerSearchContainer = document.getElementById(
         'inner-search-container'
       )
       if (this.initialSearchContainerOffset < window.scrollY) {
         this.useStickyPlaceholder = true
+        await this.$nextTick()
         const stickyPlaceholder = document.getElementById(
           'sticky-search-container-placeholder'
         )
@@ -511,6 +526,7 @@ export default {
     },
     setActiveFilter(value) {
       this.activeFilter = value
+      this.scroolToTop()
     },
     setSorting(value) {
       this.sorting = value
