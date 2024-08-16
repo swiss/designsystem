@@ -1,5 +1,5 @@
 <template>
-  <div class="glossary-filter">
+  <div class="badge-filter">
     <badge
       label="Alle"
       size="base"

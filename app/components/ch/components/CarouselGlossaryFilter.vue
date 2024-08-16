@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel-glossary-filter" :id="id">
+  <div class="carousel-badge-filter" :id="id">
     <div class="carousel">
       <swiper
         :speed="500"
@@ -297,7 +297,9 @@ export default {
   name: 'CarouselGlossaryFilter',
   components: { SvgIcon, Swiper, SwiperSlide, badge },
   data() {
-    return {}
+    return {
+      carouselId: uuidv4(),
+    }
   },
   props: {
     id: {
