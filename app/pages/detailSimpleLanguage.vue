@@ -29,17 +29,16 @@
       </div>
     </header>
     <main id="main-content">
-      <Hero type="default">
-        <template v-slot:title>
-          Datenmodellablage: Model Repository für Geobasisdaten des Bundesrechts
-        </template>
-        <template v-slot:description>
-          Der Modellkatalog kann unter models.geo.admin.ch angesehen werden. Ein
-          neues «minimales Geodatenmodell» in der Datenmodellablage publizieren.
-          Für die Publikation der «minimalen Geodatenmodelle» besteht kein
-          direkter Online-Zugang.
-        </template>
-      </Hero>
+      <section class="section section--py-half">
+        <div class="container container--grid gap--responsive">
+          <div class="container__center--xs vertical-spacing">
+            <h1 class="h1">
+              Datenmodellablage: Model Repository für Geobasisdaten des
+              Bundesrechts
+            </h1>
+          </div>
+        </div>
+      </section>
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
@@ -49,20 +48,19 @@
               </picture>
             </figure>
             <figure v-if="isSignLanguage">
-                <div class="ratio ratio--16/9">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
-                    title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
-                    frameborder="0"
-                  />
-                </div>
-                <figcaption>
-                  Geoinformation - Alles findet irgendwo statt — © Swiss
-                  Geoportal
-                </figcaption>
-              </figure>
+              <div class="ratio ratio--16/9">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+                  title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
+                  frameborder="0"
+                />
+              </div>
+              <figcaption>
+                Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal
+              </figcaption>
+            </figure>
           </div>
           <div class="container__center--xs vertical-spacing">
             <h2 class="h2">
@@ -127,7 +125,6 @@
 </template>
 
 <script>
-import Hero from '~/components/ch/sections/Hero'
 import Btn from '../components/ch/components/Btn.vue'
 import TextImage from '../components/ch/components/TextImage.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
@@ -143,7 +140,6 @@ export default {
     TopBar,
     TopHeader,
     Breadcrumb,
-    Hero,
     Btn,
     ShareBar,
     TextImage,
