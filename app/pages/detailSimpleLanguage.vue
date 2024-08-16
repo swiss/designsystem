@@ -40,74 +40,83 @@
         </div>
       </section>
       <section class="section section--default">
-        <div class="container container--grid gap--responsive">
-          <div class="container__center--xs vertical-spacing">
-            <figure v-if="isEasyLanguage">
-              <picture>
-                <img src="https://picsum.photos/1600/1200" alt="placeholder" />
-              </picture>
-            </figure>
-            <figure v-if="isSignLanguage">
-              <div class="ratio ratio--16/9">
-                <iframe
-                  width="560"
-                  height="315"
-                  src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
-                  title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
-                  frameborder="0"
-                />
-              </div>
-              <figcaption>
-                Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal
-              </figcaption>
-            </figure>
+        <div class="container">
+          <div class="container container--grid gap--responsive">
+            <div class="container__center--xs vertical-spacing">
+              <figure v-if="isEasyLanguage">
+                <picture>
+                  <img
+                    src="https://picsum.photos/1600/1200"
+                    alt="placeholder"
+                  />
+                </picture>
+              </figure>
+              <figure v-if="isSignLanguage">
+                <div class="ratio ratio--16/9">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+                    title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
+                    frameborder="0"
+                  />
+                </div>
+                <figcaption>
+                  Geoinformation - Alles findet irgendwo statt — © Swiss
+                  Geoportal
+                </figcaption>
+              </figure>
+            </div>
+            <div class="container__center--xs vertical-spacing">
+              <h2 class="h2">
+                At vero eos et accusam et justo duo dolores et ea rebum
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
           </div>
-          <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              At vero eos et accusam et justo duo dolores et ea rebum
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
-          </div>
-        </div>
-        <div class="container container--grid gap--responsive">
-          <div class="container__center--sm vertical-spacing">
-            <figure>
-              <picture>
-                <img src="https://picsum.photos/1600/1200" alt="placeholder" />
-              </picture>
-            </figure>
-          </div>
-          <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              At vero eos et accusam et justo duo dolores et ea rebum
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
+          <div class="container container--grid gap--responsive">
+            <div class="container__center--sm vertical-spacing">
+              <figure>
+                <picture>
+                  <img
+                    src="https://picsum.photos/1600/1200"
+                    alt="placeholder"
+                  />
+                </picture>
+              </figure>
+            </div>
+            <div class="container__center--xs vertical-spacing">
+              <h2 class="h2">
+                At vero eos et accusam et justo duo dolores et ea rebum
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
           </div>
         </div>
       </section>
-      <section class="section section--default">
+      <section class="section section--py-half">
         <div class="container">
           <Btn
             to="/"

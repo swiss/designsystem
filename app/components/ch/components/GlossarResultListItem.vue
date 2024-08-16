@@ -39,11 +39,13 @@ export default {
         const span = document.createElement('span')
         span.innerHTML = node.textContent.replace(
           regex,
-          (match) => `<span class='highlight'>${match}</span>`
+          (match) => `<span class='highlight-blue'>${match}</span>`
         )
         node.replaceWith(...span.childNodes)
       } else if (node.nodeType === Node.ELEMENT_NODE) {
-        node.childNodes.forEach(elm => this.highlightTextNodes(elm, searchterm))
+        node.childNodes.forEach((elm) =>
+          this.highlightTextNodes(elm, searchterm)
+        )
       }
     },
     marker(text, searchterm) {
