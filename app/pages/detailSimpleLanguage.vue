@@ -30,12 +30,14 @@
     </header>
     <main id="main-content">
       <section class="section section--py-half">
-        <div class="container container--grid gap--responsive">
-          <div class="container__center--xs vertical-spacing">
-            <h1 class="h1">
-              Datenmodellablage: Model Repository für Geobasisdaten des
-              Bundesrechts
-            </h1>
+        <div class="container">
+          <div class="container container--grid gap--responsive">
+            <div class="container__center--xs vertical-spacing">
+              <h1 class="h1">
+                Datenmodellablage: Model Repository für Geobasisdaten des
+                Bundesrechts
+              </h1>
+            </div>
           </div>
         </div>
       </section>
