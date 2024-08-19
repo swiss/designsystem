@@ -290,6 +290,7 @@ import { Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperCore, SwiperSlide } from 'swiper-vue2'
 import badge from '../components/Badge.vue'
 import SvgIcon from '../components/SvgIcon.vue'
+const { v4: uuidv4 } = require('uuid')
 
 SwiperCore.use([Navigation, Pagination])
 
