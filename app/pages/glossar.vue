@@ -60,6 +60,7 @@
                   <GlossaryFilter
                     :badgeClicked="setActiveFilter"
                     :activeFilter="activeFilter"
+                    :disabledFilters="disabledFilters"
                   />
                 </div>
               </div>
@@ -202,6 +203,35 @@ export default {
       carouselId: uuidv4(),
       activeFilter: 'all',
       searchTerm: '',
+      filters: [
+        'numbric',
+        'a',
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        'g',
+        'h',
+        'i',
+        'j',
+        'k',
+        'l',
+        'm',
+        'n',
+        'o',
+        'p',
+        'q',
+        'r',
+        's',
+        't',
+        'u',
+        'v',
+        'w',
+        'x',
+        'y',
+        'z',
+      ],
       resultItems: [
         {
           title: '1. Platziert',
@@ -221,20 +251,12 @@ export default {
           description: 'Die Eiche ist ein Laubbaum.',
         },
         {
-          title: 'Fuchs',
-          description: 'Der Fuchs ist ein Säugetier.',
-        },
-        {
           title: 'Garten',
           description: 'Der Garten ist ein Ort zum Anpflanzen von Pflanzen.',
         },
         {
           title: 'Hund',
           description: 'Der Hund ist ein Haustier.',
-        },
-        {
-          title: 'Igel',
-          description: 'Der Igel ist ein kleines Säugetier mit Stacheln.',
         },
         {
           title: 'Jagd',
@@ -315,20 +337,8 @@ export default {
           description: 'Die Banane ist eine tropische Frucht.',
         },
         {
-          title: 'Cherry',
-          description: 'Die Kirsche ist eine kleine rote Frucht.',
-        },
-        {
-          title: 'Delfin',
-          description: 'Der Delfin ist ein intelligentes Meeressäugetier.',
-        },
-        {
           title: 'Elefant',
           description: 'Der Elefant ist ein großes Säugetier mit Rüssel.',
-        },
-        {
-          title: 'Frosch',
-          description: 'Der Frosch ist ein Amphib.',
         },
         {
           title: 'Giraffe',
@@ -338,10 +348,6 @@ export default {
         {
           title: 'Hai',
           description: 'Der Hai ist ein großer Raubfisch.',
-        },
-        {
-          title: 'Ibis',
-          description: 'Der Ibis ist ein Vogel mit langem Schnabel.',
         },
         {
           title: 'Jaguar',
@@ -419,20 +425,8 @@ export default {
           description: 'Der Bambus ist eine schnell wachsende Pflanze.',
         },
         {
-          title: 'Cobra',
-          description: 'Die Cobra ist eine giftige Schlange.',
-        },
-        {
-          title: 'Dattel',
-          description: 'Die Dattel ist eine süße Frucht.',
-        },
-        {
           title: 'Esel',
           description: 'Der Esel ist ein Haustier und Arbeitstier.',
-        },
-        {
-          title: 'Flamingo',
-          description: 'Der Flamingo ist ein rosa Vogel mit langen Beinen.',
         },
         {
           title: 'Gazelle',
@@ -441,10 +435,6 @@ export default {
         {
           title: 'Hibiskus',
           description: 'Der Hibiskus ist eine bunte Blume.',
-        },
-        {
-          title: 'Igitt',
-          description: 'Igitt ist ein Ausdruck des Ekels.',
         },
         {
           title: 'Jagdhund',
@@ -578,6 +568,21 @@ export default {
     },
   },
   computed: {
+    disabledFilters() {
+      const startingLetters = []
+      this.resultItems.forEach((elm) => {
+        const start = elm.title.charAt(0)
+        if (!startingLetters.includes(start)) {
+          if (!isNaN(elm.title.charAt(0))) {
+            startingLetters.push('numbric')
+          } else {
+            startingLetters.push(start.toLowerCase())
+          }
+        }
+      })
+
+      return this.filters.filter((elm) => !startingLetters.includes(elm))
+    },
     canLoadMore() {
       return (
         this.loadLimitedResults?.reduce((acc, elm) => {
