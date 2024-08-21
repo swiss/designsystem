@@ -11,7 +11,7 @@
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
         <div class="container">
-          <h1 if="search-title" class="h1">Glossar</h1>
+          <h1 id="glossary-title" class="h1">Glossar</h1>
           <div id="outer-search-container">
             <div id="search-container">
               <div id="inner-search-container">
@@ -186,6 +186,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    useStickySearch: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -195,7 +199,6 @@ export default {
       sorting: 'a-z',
       screenSize: 0,
       loadedResults: 15,
-      isSticky: true,
       carouselId: uuidv4(),
       activeFilter: 'all',
       searchTerm: '',
@@ -493,10 +496,13 @@ export default {
     }
   },
   mounted() {
-    if (this.isSticky) {
+    if (this.useStickySearch) {
       window.addEventListener('scroll', this.handleScroll)
       this.resizeWindow()
       window.addEventListener('resize', this.resizeWindow)
+    } else {
+      this.setScreenSize()
+      window.addEventListener('resize', this.setScreenSize)
     }
   },
   watch: {
@@ -507,11 +513,11 @@ export default {
   methods: {
     scroolToTop() {
       if (this.useStickyPlaceholder) {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth',
-        })
+        const scrollTarget = document.getElementById('glossary-title')
+
+        if (scrollTarget) {
+          scrollTarget.scrollIntoView({ behavior: 'smooth' })
+        }
       }
     },
     resizeWindow() {
@@ -525,6 +531,9 @@ export default {
         outerSearchContainer.offsetTop + mainHeader?.clientHeight - 16
       this.containerHeight = searchContainer.clientHeight
       this.handleScroll()
+    },
+    setScreenSize() {
+      this.screenSize = document.body.clientWidth
     },
     async handleScroll() {
       const searchContainer = document.getElementById('search-container')
@@ -552,7 +561,9 @@ export default {
     },
     setActiveFilter(value) {
       this.activeFilter = value
-      this.scroolToTop()
+      if (this.useStickySearch) {
+        this.scroolToTop()
+      }
     },
     setSorting(value) {
       this.sorting = value
