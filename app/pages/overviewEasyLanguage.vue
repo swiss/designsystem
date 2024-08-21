@@ -2,10 +2,10 @@
   <div>
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
-      <TopBar :isOpen="false" :isEasyLanguage="true" :isSticky="true" />
+      <TopBar :isOpen="false" :isEasyLanguage="true" :isSticky="useStickyNavigation" />
       <TopHeader :isEasyLanguage="true" />
-      <DesktopMenu :isSimplePage="true" :isSticky="true" />
-      <MobileMenu :isSimplePage="true" :isSticky="true" />
+      <DesktopMenu :isSimplePage="true" :isSticky="useStickyNavigation" />
+      <MobileMenu :isSimplePage="true" :isSticky="useStickyNavigation" />
     </header>
     <main id="main-content">
       <section class="section-overview">
@@ -140,7 +140,12 @@ export default {
   data() {
     return {}
   },
-  props: {},
+  props: {
+    useStickyNavigation: {
+      type: Boolean,
+      default: false,
+    },
+  },
   methods: {},
 }
 </script>

@@ -5,16 +5,33 @@ import OverviewSignLanguage from '../../../pages/overviewSignLanguage.vue'
 <Meta
   title="Pages/Easy & Sign Language/Overview Sign Language"
   component={OverviewSignLanguage}
+  argTypes={{
+    useStickyNavigation: { control: { type: 'boolean' } },
+  }}
 />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { OverviewSignLanguage },
-  store: store,
-  template: '<OverviewSignLanguage />',
-})
+export const Template = (args, { argTypes, viewMode }) => {
+  if (viewMode === 'docs') {
+    return {
+      props: Object.keys(argTypes),
+      components: { OverviewSignLanguage },
+      store: store,
+      template: '<OverviewSignLanguage />',
+    }
+  } else {
+    return {
+      props: Object.keys(argTypes),
+      components: { OverviewSignLanguage },
+      store: store,
+      template:
+        '<OverviewSignLanguage useStickyNavigation="useStickyNavigation" />',
+    }
+  }
+}
 
 # Overview sign language example
+
+Please use full width view in order to see the sticky navigation working correctly.
 
 <a href="?path=/story/pages-easy-sign-language-overview-sign-language--example">
   Go to the Canvas Tab
@@ -30,5 +47,12 @@ export const Template = (args, { argTypes }) => ({
 </a>
 
 <Canvas>
-  <Story name="Example">{Template.bind({})}</Story>
+  <Story
+    name="Example"
+    args={{
+      useStickyNavigation: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
