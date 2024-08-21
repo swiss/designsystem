@@ -6,7 +6,10 @@ import Glossar from '../../../pages/glossar.vue'
   title="Pages/Glossar"
   component={Glossar}
   argTypes={{
-    isLoading: { control: { type: 'boolean' } },
+    isLoading: {
+      control: { type: 'boolean' },
+      useStickySearch: { control: { type: 'boolean' } },
+    },
   }}
 />
 
@@ -14,8 +17,38 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Glossar },
   store: store,
-  template: '<Glossar :isLoading="isLoading" />',
+  template:
+    '<Glossar :isLoading="isLoading" :useStickySearch="useStickySearch" />',
 })
+
+# Glossar results with sticky search
+
+Please use full width view in order to see the sticky navigation working correctly.
+
+<a href="?path=/story/pages-glossar--with-results-sticky">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a
+  href="?id=pages-glossar--with-results-sticky&args=&viewMode=story"
+  target="_blank"
+>
+  Open page in full width in a new tab
+</a>
+
+<Canvas>
+  <Story
+    name="With results sticky"
+    args={{
+      isLoading: false,
+      useStickySearch: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 # Glossar results
 
