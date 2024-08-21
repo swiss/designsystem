@@ -2,7 +2,11 @@
   <component
     :is="clickable ? 'button' : 'div'"
     :class="classes"
-    @click="badgeClicked"
+    @click="
+      () => {
+        if (clickable && !disabled) badgeClicked()
+      }
+    "
   >
     <SvgIcon
       v-if="this.iconLeft"
@@ -78,6 +82,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -86,7 +94,8 @@ export default {
       if (this.color) base += `badge--${this.color} `
       if (this.size) base += `badge--${this.size} `
       if (this.icon) base += `badge--icon `
-      if (this.clickable) base += `badge--clickable`
+      if (this.clickable && !this.disabled) base += `badge--clickable`
+      if (this.disabled) base += ` badge--disabled`
       return base
     },
   },

@@ -25,6 +25,7 @@
             :color="activeFilter === 'all' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('all')"
+            :disabled="disabledFilters.includes('all')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -34,6 +35,7 @@
             :color="activeFilter === 'numbric' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('numbric')"
+            :disabled="disabledFilters.includes('numbric')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -43,6 +45,7 @@
             :color="activeFilter === 'a' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('a')"
+            :disabled="disabledFilters.includes('a')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -52,6 +55,7 @@
             :color="activeFilter === 'b' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('b')"
+            :disabled="disabledFilters.includes('b')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -61,6 +65,7 @@
             :color="activeFilter === 'c' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('c')"
+            :disabled="disabledFilters.includes('c')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -70,6 +75,7 @@
             :color="activeFilter === 'd' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('d')"
+            :disabled="disabledFilters.includes('d')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -79,6 +85,7 @@
             :color="activeFilter === 'e' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('e')"
+            :disabled="disabledFilters.includes('e')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -88,6 +95,7 @@
             :color="activeFilter === 'f' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('f')"
+            :disabled="disabledFilters.includes('f')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -97,6 +105,7 @@
             :color="activeFilter === 'g' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('g')"
+            :disabled="disabledFilters.includes('g')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -106,6 +115,7 @@
             :color="activeFilter === 'h' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('h')"
+            :disabled="disabledFilters.includes('h')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -115,6 +125,7 @@
             :color="activeFilter === 'i' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('i')"
+            :disabled="disabledFilters.includes('i')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -124,6 +135,7 @@
             :color="activeFilter === 'j' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('j')"
+            :disabled="disabledFilters.includes('j')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -133,6 +145,7 @@
             :color="activeFilter === 'k' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('k')"
+            :disabled="disabledFilters.includes('k')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -142,6 +155,7 @@
             :color="activeFilter === 'l' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('l')"
+            :disabled="disabledFilters.includes('l')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -151,6 +165,7 @@
             :color="activeFilter === 'm' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('m')"
+            :disabled="disabledFilters.includes('m')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -160,6 +175,7 @@
             :color="activeFilter === 'n' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('n')"
+            :disabled="disabledFilters.includes('n')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -169,6 +185,7 @@
             :color="activeFilter === 'o' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('o')"
+            :disabled="disabledFilters.includes('o')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -178,6 +195,7 @@
             :color="activeFilter === 'p' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('p')"
+            :disabled="disabledFilters.includes('p')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -187,6 +205,7 @@
             :color="activeFilter === 'q' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('q')"
+            :disabled="disabledFilters.includes('q')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -196,6 +215,7 @@
             :color="activeFilter === 'r' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('r')"
+            :disabled="disabledFilters.includes('r')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -205,6 +225,7 @@
             :color="activeFilter === 's' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('s')"
+            :disabled="disabledFilters.includes('s')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -214,6 +235,7 @@
             :color="activeFilter === 't' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('t')"
+            :disabled="disabledFilters.includes('t')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -223,6 +245,7 @@
             :color="activeFilter === 'u' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('u')"
+            :disabled="disabledFilters.includes('u')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -232,6 +255,7 @@
             :color="activeFilter === 'v' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('v')"
+            :disabled="disabledFilters.includes('v')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -241,6 +265,7 @@
             :color="activeFilter === 'w' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('w')"
+            :disabled="disabledFilters.includes('w')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -250,6 +275,7 @@
             :color="activeFilter === 'x' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('x')"
+            :disabled="disabledFilters.includes('x')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -259,6 +285,7 @@
             :color="activeFilter === 'y' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('y')"
+            :disabled="disabledFilters.includes('y')"
           />
         </swiper-slide>
         <swiper-slide>
@@ -268,6 +295,7 @@
             :color="activeFilter === 'z' ? 'negative' : 'gray'"
             clickable
             :badgeClicked="() => badgeClicked('z')"
+            :disabled="disabledFilters.includes('z')"
           />
         </swiper-slide>
       </swiper>
@@ -314,6 +342,10 @@ export default {
     activeFilter: {
       type: String,
       default: 'all',
+    },
+    disabledFilters: {
+      type: Array,
+      default: () => [],
     },
   },
   methods: {},
