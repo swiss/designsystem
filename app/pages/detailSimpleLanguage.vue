@@ -6,14 +6,14 @@
         :isOpen="false"
         :isEasyLanguage="isEasyLanguage"
         :isSignLanguage="isSignLanguage"
-        :isSticky="true"
+        :isSticky="useStickyNavigation"
       />
       <TopHeader
         :isEasyLanguage="isEasyLanguage"
         :isSignLanguage="isSignLanguage"
       />
-      <DesktopMenu :isSimplePage="true" :isSticky="true" />
-      <MobileMenu :isSimplePage="true" :isSticky="true" />
+      <DesktopMenu :isSimplePage="true" :isSticky="useStickyNavigation" />
+      <MobileMenu :isSimplePage="true" :isSticky="useStickyNavigation" />
       <Breadcrumb :isSimplePage="true" />
       <div class="container">
         <Btn
@@ -169,6 +169,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    useStickyNavigation: {
+      type: Boolean,
+      default: false,
+    }
   },
   methods: {},
 }
