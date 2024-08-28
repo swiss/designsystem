@@ -1,6 +1,10 @@
 <template>
   <div>
-    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" :isIntranet="isIntranet" :isFreebrand="isFreebrand"/>
+    <AlterBodyClasses
+      :isMobileMenuOpen="getMobileMenuIsOpen()"
+      :isIntranet="isIntranet"
+      :isFreebrand="isFreebrand"
+    />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar v-if="!isFreebrand" :isOpen="false" />
@@ -24,16 +28,32 @@
           beispielsweise vom FME-Plugin «ili2fme» direkt benutzt werden. Der
           Vorteil für einen Benutzer liegt darin, dass die Modelldateien und
           evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
-          müssen. <a href="#" class="link" id="share-link">Diese Seite teilen</a>
+          müssen.
+          <a href="#" class="link" id="share-link">Diese Seite teilen</a>
         </template>
         <template v-slot:image>
           <figure>
             <picture>
-              <source srcset="https://picsum.photos/1282/721/?image=29" media="(min-width: 1800px)">
-              <source srcset="https://picsum.photos/1192/670/?image=28" media="(min-width: 1024px)">
-              <source srcset="https://picsum.photos/800/450/?image=29" media="(min-width: 768px)">
-              <source srcset="https://picsum.photos/680/382/?image=28" media="(min-width: 480px)">
-              <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
+              <source
+                srcset="https://picsum.photos/1282/721/?image=29"
+                media="(min-width: 1800px)"
+              />
+              <source
+                srcset="https://picsum.photos/1192/670/?image=28"
+                media="(min-width: 1024px)"
+              />
+              <source
+                srcset="https://picsum.photos/800/450/?image=29"
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="https://picsum.photos/680/382/?image=28"
+                media="(min-width: 480px)"
+              />
+              <img
+                src="https://picsum.photos/480/270/?image=29"
+                alt="ratio is 16/9"
+              />
             </picture>
             <figcaption>
               Datenmodelle als http-Ressource nutzbar zu machen. Der Vorteil für
@@ -68,24 +88,17 @@
               «fraction». Über den Kontakt models@geo.admin.ch können die
               INTERLIS-Modelldatei und die Modelldokumentation (als PDF
               Dokument) zur Publikation eingereicht werden.
-              <Popover
-                id="1"
-                label="Extra infos in a popover"
-              >
+              <Popover id="1" label="Extra infos in a popover">
                 <p>Popover content</p>
                 <a href="#">Link</a>
               </Popover>
               Über den Kontakt models@geo.admin.ch können die
               INTERLIS-Modelldatei und die Modelldokumentation
-              <Popover
-                id="2"
-                color="blue"
-                :icon="true"
-              >
+              <Popover id="2" color="blue" :icon="true">
                 <p>Popover content, icon only, blue color</p>
                 <a href="#">Link</a>
               </Popover>
-               zur Publikation eingereicht werden.
+              zur Publikation eingereicht werden.
             </p>
 
             <SlideshowExample
@@ -115,8 +128,9 @@
 
             <h2 class="h2">Audio player</h2>
             <p>
-              Use a default audio element wrapped into an audio player class. Die Datenmodellablage ist moderiert und
-              die Erfassung neuer Datenmodelle wird durch Modellierung vorgenommen.
+              Use a default audio element wrapped into an audio player class.
+              Die Datenmodellablage ist moderiert und die Erfassung neuer
+              Datenmodelle wird durch Modellierung vorgenommen.
             </p>
 
             <AudioPlayer
@@ -151,7 +165,9 @@
                   frameborder="0"
                 />
               </div>
-              <figcaption>Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal</figcaption>
+              <figcaption>
+                Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal
+              </figcaption>
             </figure>
 
             <p>
@@ -246,7 +262,8 @@
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo"
               input-label="E-Mail"
               button-label="Newsletter abonnieren"
-              success-text="Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>"/>
+              success-text="Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>"
+            />
             <p>
               Der <strong>strong</strong> Modellkatalog kann unter
               <mark>mark</mark> angesehen werden <del>Strike through</del> and
@@ -319,6 +336,77 @@
               </li>
             </ol>
 
+            <h2 class="h2">Link Liste mit Beschreibung</h2>
+            <ul class="list list--bare list--loose">
+              <li>
+                <a
+                  class="link"
+                  href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-01.html"
+                  >(Haager-) Übereinkommen vom 5. Oktober 1961 über die
+                  Zuständigkeit der Behörden und das anzuwendende Recht auf dem
+                  Gebiet des Schutzes von Minderjährigen</a
+                >
+
+                <p>(SR 0.211.231.01)</p>
+              </li>
+              <li>
+                <a
+                  class="link"
+                  href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-011.html"
+                  >(Haager) Übereinkommen vom 19. Oktober 1996 über die
+                  Zuständigkeit, das anzuwendende Recht, die Anerkennung,
+                  Vollstreckung und Zusammenarbeit auf dem Gebiet der
+                  elterlichen Verantwortung und der Massnahmen zum Schutz von
+                  Kindern</a
+                >
+
+                <p>(SR 0.211.231.011)</p>
+              </li>
+              <li class="">
+                <a
+                  class="link"
+                  href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-01.html"
+                  >Europäisches Übereinkommen vom 20. Mai 1980 über die
+                  Anerkennung und Vollstreckung von Entscheidungen über das
+                  Sorgerecht für Kinder und die Wiederherstellung des
+                  Sorgerechts</a
+                >
+
+                <p>(SR 0.211.230.01)</p>
+              </li>
+              <li>
+                <a
+                  class="link"
+                  href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-02.html"
+                  >(Haager-) Übereinkommen vom 25. Oktober 1980 über die
+                  zivilrechtlichen Aspekte internationaler Kindesentführung</a
+                >
+
+                <p>(SR 0.211.230.02)</p>
+              </li>
+              <li>
+                <a
+                  class="link"
+                  href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-221-311.html"
+                  >(Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz von
+                  Kindern und die Zusammenarbeit auf dem Gebiet der
+                  internationalen Adoption</a
+                >
+
+                <p>(SR 0.211.221.311)</p>
+              </li>
+              <li>
+                <a
+                  class="link"
+                  href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-232-1.html"
+                  >(Haager) Übereinkommen vom 13. Januar 2000 über den
+                  internationalen Schutz von Erwachsenen</a
+                >
+
+                <p>(SR 0.211.232.1)</p>
+              </li>
+            </ul>
+
             <h2 class="h2">Datenmodellablage ansehen</h2>
             <p>
               Der Modellkatalog kann unter
@@ -372,10 +460,11 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              Large table example
-            </h2>
-            <TableSortable caption="This table could be even larger with a .container__full class on the parent." :displayCaption="true" />
+            <h2 class="h2">Large table example</h2>
+            <TableSortable
+              caption="This table could be even larger with a .container__full class on the parent."
+              :displayCaption="true"
+            />
           </div>
         </div>
       </section>
@@ -454,9 +543,7 @@
               eingepflegt.
             </p>
             <div>
-              <h2 class="h2">
-                Themen
-              </h2>
+              <h2 class="h2">Themen</h2>
               <RelatedTags :tags="tags" bare></RelatedTags>
             </div>
           </div>
@@ -467,48 +554,32 @@
 
       <ContactSection />
     </main>
-    <Modal title="Inhalt teilen" triggerElements=".share-bar__share-button, #share-link" layout="xs">
+    <Modal
+      title="Inhalt teilen"
+      triggerElements=".share-bar__share-button, #share-link"
+      layout="xs"
+    >
       <template v-slot:body>
         <Card type="default">
           <template v-slot:description>
             <div class="flex flex-wrap gap-6">
               <a href="#" class="link" title="Share on Facebook">
-                <SvgIcon
-                  size="2xl"
-                  icon="Facebook"
-                  label="Facebook"
-                />
+                <SvgIcon size="2xl" icon="Facebook" label="Facebook" />
               </a>
               <a href="#" class="link" title="Share on Twitter">
-                <SvgIcon
-                  size="2xl"
-                  icon="Twitter"
-                  label="Twitter"
-                />
+                <SvgIcon size="2xl" icon="Twitter" label="Twitter" />
               </a>
               <a href="#" class="link" title="Share on LinkedIn">
-                <SvgIcon
-                  size="2xl"
-                  icon="LinkedIn"
-                  label="LinkedIn"
-                />
+                <SvgIcon size="2xl" icon="LinkedIn" label="LinkedIn" />
               </a>
               <a href="#" class="link" title="Share on Xing">
-                <SvgIcon
-                  size="2xl"
-                  icon="Xing"
-                  label="Xing"
-                />
+                <SvgIcon size="2xl" icon="Xing" label="Xing" />
               </a>
               <a href="#" class="link" title="Share on Whatsapp">
-                <SvgIcon
-                  size="2xl"
-                  icon="Phone"
-                  label="Whatsapp"
-                />
+                <SvgIcon size="2xl" icon="Phone" label="Whatsapp" />
               </a>
             </div>
-            <hr class="separator">
+            <hr class="separator" />
             <div class="pt-3">
               <Input
                 type="outline"
@@ -516,8 +587,8 @@
                 label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"
                 id="my-id"
-                :hideLabel=true
-                :readonly=true
+                :hideLabel="true"
+                :readonly="true"
               />
               <div class="share-url">
                 <Btn
@@ -611,7 +682,7 @@ export default {
     Input,
     Popover,
     TableSortable,
-},
+  },
   data: function () {
     return {
       URLIsCopied: false,
@@ -632,8 +703,8 @@ export default {
           caption: {
             title: 'Image one title',
             description: 'Image one description',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -650,8 +721,8 @@ export default {
           },
           caption: {
             title: 'Image two, title without description',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -668,12 +739,12 @@ export default {
           },
           caption: {
             description: 'Image three, description only',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
       ],
       metaInfos: ['Webartikel', '23. Februar 2022'],
-      authors:[
+      authors: [
         {
           name: 'Maria Muster',
           img: 'https://picsum.photos/120/120/?image=29',
@@ -681,7 +752,7 @@ export default {
         {
           name: 'Jean-Jaques Langerename',
           img: 'https://picsum.photos/120/120/?image=30',
-          url: '#'
+          url: '#',
         },
         {
           name: 'Hans Höllman',
@@ -690,9 +761,9 @@ export default {
         {
           name: 'Katja Anna-Beerli',
           img: 'https://picsum.photos/120/120/?image=32',
-        }
+        },
       ],
-      tags:[
+      tags: [
         { label: 'Datenmodell', url: '#' },
         { label: 'Energie', url: '#' },
         { label: 'INTERLIS', url: '#' },
@@ -707,12 +778,12 @@ export default {
   props: {
     isIntranet: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isFreebrand: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   methods: {
     getMobileMenuIsOpen() {
