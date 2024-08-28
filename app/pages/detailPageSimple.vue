@@ -337,9 +337,8 @@
             </ol>
 
             <h2 class="h2">Link Liste mit Beschreibung</h2>
-
             <ul class="list list--bare list--loose">
-              <li class="">
+              <li>
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-01.html"
@@ -350,8 +349,7 @@
 
                 <p>(SR 0.211.231.01)</p>
               </li>
-
-              <li class="">
+              <li>
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-011.html"
@@ -364,7 +362,6 @@
 
                 <p>(SR 0.211.231.011)</p>
               </li>
-
               <li class="">
                 <a
                   class="link"
@@ -377,8 +374,7 @@
 
                 <p>(SR 0.211.230.01)</p>
               </li>
-
-              <li class="">
+              <li>
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-02.html"
@@ -388,8 +384,7 @@
 
                 <p>(SR 0.211.230.02)</p>
               </li>
-
-              <li class="">
+              <li>
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-221-311.html"
@@ -400,8 +395,7 @@
 
                 <p>(SR 0.211.221.311)</p>
               </li>
-
-              <li class="line">
+              <li>
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-232-1.html"
