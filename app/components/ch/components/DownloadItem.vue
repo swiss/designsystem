@@ -1,21 +1,18 @@
 <template>
-  <a
-    class="download-item"
-    :href="url"
-    download
-  >
+  <a class="download-item" :href="url" download>
     <SvgIcon icon="Download" size="xl" class="download-item__icon" />
     <div>
-      <component
-        :is="tag"
-        class="download-item__title"
-      >
+      <component :is="tag" class="download-item__title">
         {{ title }}
       </component>
       <p v-if="description" class="download-item__description">
         {{ description }}
       </p>
-      <MetaInfo v-if="type || date" :metainfos="[type, date]" class="download-item__meta-info" />
+      <MetaInfo
+        v-if="type || date || size"
+        :metainfos="metaInfos"
+        class="download-item__meta-info"
+      />
     </div>
   </a>
 </template>
@@ -50,6 +47,10 @@ export default {
       type: String,
       required: true,
     },
+    size: {
+      type: String,
+      required: false,
+    },
     date: {
       type: String,
       required: true,
@@ -57,19 +58,26 @@ export default {
     headingLevel: {
       type: String,
       default: 'h4',
-      validator: (prop) => [
-        'h2',
-        'h3',
-        'h4',
-        'h5',
-        'div'
-      ].includes(prop)
-    }
+      validator: (prop) => ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop),
+    },
   },
   computed: {
-    tag () {
+    tag() {
       return this.headingLevel
-    }
-  }
+    },
+    metaInfos() {
+      const infos = []
+      if (this.type) {
+        infos.push(this.type)
+      }
+      if (this.date) {
+        infos.push(this.date)
+      }
+      if (this.size) {
+        infos.push(this.size)
+      }
+      return infos
+    },
+  },
 }
 </script>

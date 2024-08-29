@@ -477,6 +477,168 @@
               </li>
             </ul>
 
+            <h2 class="h2">Studien</h2>
+            <div>
+              <ul class="list">
+                <li>
+                  <DownloadItem
+                    filename="dummy.pdf"
+                    title="Schlussbericht: Langzeitbeziehende in der Nothilfe"
+                    url="../static/documents/dummy.pdf"
+                    type="PDF"
+                    date="13.01.2022"
+                    headingLevel="h3"
+                    size="684 kB"
+                  />
+                </li>
+                <li>
+                  <DownloadItem
+                    filename="dummy.pdf"
+                    title="Schlussbericht: Langzeitbezug von Nothilfe durch weggewiesene Asylsuchende"
+                    url="../static/documents/dummy.pdf"
+                    type="PDF"
+                    date="13.01.2022"
+                    headingLevel="h3"
+                    size="529kB"
+                  />
+                </li>
+              </ul>
+            </div>
+
+            <h2 class="h2">Card link list</h2>
+            <div>
+              <ul class="list">
+                <li>
+                  <Card type="flat">
+                    <template v-slot:title>
+                      <h3>
+                        (Haager-) Übereinkommen vom 5. Oktober 1961 über die
+                        Zuständigkeit der Behörden und das anzuwendende Recht
+                        auf dem Gebiet des Schutzes von Minderjährigen
+                      </h3>
+                    </template>
+                    <template v-slot:footerInfo> (SR 0.211.231.01) </template>
+                    <template v-slot:footerAction>
+                      <Btn
+                        to="#"
+                        variant="outline"
+                        icon-pos="only"
+                        icon="ArrowRight"
+                        label="Mehr anschauen"
+                      />
+                    </template>
+                  </Card>
+                </li>
+                <li>
+                  <Card type="flat">
+                    <template v-slot:title>
+                      <h3>
+                        (Haager) Übereinkommen vom 19. Oktober 1996 über die
+                        Zuständigkeit, das anzuwendende Recht, die Anerkennung,
+                        Vollstreckung und Zusammenarbeit auf dem Gebiet der
+                        elterlichen Verantwortung und der Massnahmen zum Schutz
+                        von Kindern
+                      </h3>
+                    </template>
+                    <template v-slot:footerInfo> (SR 0.211.231.011) </template>
+                    <template v-slot:footerAction>
+                      <Btn
+                        to="#"
+                        variant="outline"
+                        icon-pos="only"
+                        icon="ArrowRight"
+                        label="Mehr anschauen"
+                      />
+                    </template>
+                  </Card>
+                </li>
+                <li>
+                  <Card type="flat">
+                    <template v-slot:title>
+                      <h3>
+                        Europäisches Übereinkommen vom 20. Mai 1980 über die
+                        Anerkennung und Vollstreckung von Entscheidungen über
+                        das Sorgerecht für Kinder und die Wiederherstellung des
+                        Sorgerechts
+                      </h3>
+                    </template>
+                    <template v-slot:footerInfo> (SR 0.211.230.01) </template>
+                    <template v-slot:footerAction>
+                      <Btn
+                        to="#"
+                        variant="outline"
+                        icon-pos="only"
+                        icon="ArrowRight"
+                        label="Mehr anschauen"
+                      />
+                    </template>
+                  </Card>
+                </li>
+                <li>
+                  <Card type="flat">
+                    <template v-slot:title>
+                      <h3>
+                        (Haager-) Übereinkommen vom 25. Oktober 1980 über die
+                        zivilrechtlichen Aspekte internationaler
+                        Kindesentführung
+                      </h3>
+                    </template>
+                    <template v-slot:footerInfo> (SR 0.211.230.02) </template>
+                    <template v-slot:footerAction>
+                      <Btn
+                        to="#"
+                        variant="outline"
+                        icon-pos="only"
+                        icon="ArrowRight"
+                        label="Mehr anschauen"
+                      />
+                    </template>
+                  </Card>
+                </li>
+                <li>
+                  <Card type="flat">
+                    <template v-slot:title>
+                      <h3>
+                        (Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz
+                        von Kindern und die Zusammenarbeit auf dem Gebiet der
+                        internationalen Adoption
+                      </h3>
+                    </template>
+                    <template v-slot:footerInfo> (SR 0.211.221.311) </template>
+                    <template v-slot:footerAction>
+                      <Btn
+                        to="#"
+                        variant="outline"
+                        icon-pos="only"
+                        icon="ArrowRight"
+                        label="Mehr anschauen"
+                      />
+                    </template>
+                  </Card>
+                </li>
+                <li>
+                  <Card type="flat">
+                    <template v-slot:title>
+                      <h3>
+                        (Haager) Übereinkommen vom 13. Januar 2000 über den
+                        internationalen Schutz von Erwachsenen
+                      </h3>
+                    </template>
+                    <template v-slot:footerInfo> (SR 0.211.232.1) </template>
+                    <template v-slot:footerAction>
+                      <Btn
+                        to="#"
+                        variant="outline"
+                        icon-pos="only"
+                        icon="ArrowRight"
+                        label="Mehr anschauen"
+                      />
+                    </template>
+                  </Card>
+                </li>
+              </ul>
+            </div>
+
             <h2 class="h2">Datenmodellablage ansehen</h2>
             <p>
               Der Modellkatalog kann unter
