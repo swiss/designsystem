@@ -132,9 +132,7 @@
             <Btn
               variant="outline"
               size="sm"
-              iconPos="left"
               label="Mehr laden"
-              class="btn--back"
               :disabled="!canLoadMore"
               :fullWidth="screenSize < 1024"
               @emitClick="handleLoadMore()"
