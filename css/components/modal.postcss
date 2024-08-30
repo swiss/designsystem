@@ -30,10 +30,17 @@
 
 .modal__content {
   @apply relative z-40;
-  @apply container;
   @apply max-h-[80vh];
   @apply flex flex-col items-stretch;
-  @apply my-0 mx-auto;
+  @apply my-0 mx-auto w-full px-7;
+
+  @media (min-width: theme('screens.2xl')) {
+    max-width: theme('container.2xl');
+  }
+
+  @media (min-width: theme('screens.3xl')) {
+    max-width: theme('container.3xl');
+  }
 
   /* 
     Sizing: 
