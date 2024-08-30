@@ -107,8 +107,12 @@
 
 .card--flat {
   @apply py-4 lg:py-6 2xl:py-8;
+  @apply px-1;
   @apply bg-transparent;
   @apply border-b border-secondary-200;
+  .card__footer__action {
+    @apply mt-4;
+  }
 }
 
 /* card--flat is extended for .search-result items */
@@ -227,9 +231,6 @@
 .card__footer__info {
   @apply text-secondary-500 text--sm;
   @apply pr-6;
-}
-
-.card__footer__action {
 }
 
 .card--twitter iframe {
