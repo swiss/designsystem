@@ -24,6 +24,19 @@ main ol:not([class]) {
   @apply space-y-2;
 }
 
+.list--default.list--indented {
+  li {
+    @apply ml-1.5;
+    @apply pl-3.5;
+  }
+}
+
+.list--bare.list--indented {
+  li {
+    @apply ml-10;
+  }
+}
+
 .list--roman {
   @apply list-roman;
   @apply list-outside pl-5;

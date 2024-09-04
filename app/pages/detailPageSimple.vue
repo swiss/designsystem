@@ -389,8 +389,8 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">Doted Link Liste mit Beschreibung</h2>
-            <ul class="list list--default list--loose">
+            <h2 class="h2">Bare Link Liste mit Beschreibung</h2>
+            <ul class="list list--bare list--loose list--indented">
               <li>
                 <a
                   class="link"
@@ -466,8 +466,8 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">Bare Link Liste mit Beschreibung</h2>
-            <ul class="list list--bare list--loose">
+            <h2 class="h2">Doted Link Liste mit Beschreibung</h2>
+            <ul class="list list--default list--loose list--indented">
               <li>
                 <a
                   class="link"
