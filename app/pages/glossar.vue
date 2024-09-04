@@ -55,6 +55,7 @@
                   <CarouselGlossaryFilter
                     :badgeClicked="setActiveFilter"
                     :activeFilter="activeFilter"
+                    :disabledFilters="disabledFilters"
                     :id="carouselId"
                   />
                   <GlossaryFilter
