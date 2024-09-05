@@ -22,18 +22,8 @@
               <div
                 v-if="feed.type=='twitter'"
                 class="socials__twitter"
-              >
-                <!-- Twitter default embedding -->
-                <a class="twitter-timeline"
-                  data-theme="light"
-                  data-tweet-limit="1"
-                  data-chrome="noheader, nofooter, noborders, transparent"
-                  :href="feed.feedURL"
-                >
-                  {{feed.title}}
-                </a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-              </div>
+                v-html="feed.feedURL"
+              />
               <div
                 v-else-if="feed.type=='youtube'"
                 class="socials__youtube ratio ratio--16/9"
@@ -121,6 +111,11 @@ export default {
     capitalize (s) {
       if (typeof s !== 'string') return ''
       return s.charAt(0).toUpperCase() + s.slice(1)
+    }
+  },
+  mounted() {
+    if (window.twttr) {
+      window.twttr.widgets.load();
     }
   },
   computed: {
