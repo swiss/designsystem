@@ -30,7 +30,7 @@
       <div v-if="!isEasyLanguage && !isSignLanguage" class="top-header__right">
         <MetaNavigation :isFreebrand="isFreebrand" />
         <div class="top-header__container-flex">
-          <SearchMain />
+          <SearchMain :isMenuV2="isMenuV2" @toggleSearch="toggleSearch" />
           <div class="top-header__shopping-cart-button-desktop">
             <ShoppingCartButton
               :amount="shoppingCartAmount"
@@ -69,6 +69,7 @@
 import Burger from '~/components/ch/components/Burger.vue'
 import Logo from '~/components/ch/components/Logo.vue'
 import SearchMain from '~/components/ch/components/SearchMain.vue'
+import Input from '../components/Input.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher'
 import ShoppingCartButton from '../components/ShoppingCartButton.vue'
 import SvgIcon from '../components/SvgIcon.vue'
@@ -114,10 +115,15 @@ export default {
         ['_blank', '_parent', '_self', '_top'].includes(prop),
       default: '_self',
     },
+    isMenuV2: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       screenSize: 0,
+      searchActive: false,
     }
   },
   components: {
@@ -128,17 +134,26 @@ export default {
     LanguageSwitcher,
     ShoppingCartButton,
     SvgIcon,
+    Input,
   },
   created() {
     this.resizeWindow()
     window.addEventListener('resize', this.resizeWindow)
   },
   methods: {
+    toggleSearch() {
+      // Toggles v2 search input bellow top header
+      this.emitter.emit('top-header-search-toggle')
+    },
     toggleMobileMenu() {
-      this.$store.dispatch('layout/toggleMobileMenu')
+      if (!this.isMenuV2) {
+        this.$store.dispatch('layout/toggleMobileMenu')
+      }
     },
     getMobileMenuIsOpen() {
-      return this.$store.getters['layout/getMobileMenuIsOpen']
+      if (!this.isMenuV2) {
+        return this.$store.getters['layout/getMobileMenuIsOpen']
+      }
     },
     resizeWindow() {
       this.screenSize = document.body.clientWidth

@@ -30,6 +30,41 @@
   }
 }
 
+/* TODO: add transition when search is shown */
+.search--desktop {
+  @apply hidden lg:block;
+}
+
+.search--mobile {
+  @apply absolute right-0;
+  @apply mt-2 px-3.5;
+  @apply hidden;
+  @apply w-full;
+
+  label {
+    @apply sr-only;
+  }
+
+  input {
+    @apply cursor-text;
+    @apply bg-white;
+    @apply shadow-2xl;
+  }
+}
+
+.active {
+  @apply block;
+}
+
+.top-header-search__group {
+  @apply flex items-stretch justify-between relative;
+
+  .btn {
+    @apply absolute right-0 z-20 mt-[7px];
+    @apply cursor-text;
+  }
+}
+
 .search--main .search__group .form__group__input input {
   @apply -mt-1 xl:mt-0;
 }
