@@ -175,7 +175,7 @@
                         headingLevel="h3"
                         :filename="'dummy.pdf'"
                         title="Programm"
-                        :url="'../../../static/documents/dummy.pdf'"
+                        :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'22.01.2022'"
                       />
@@ -186,7 +186,7 @@
                         :filename="'image.png'"
                         title="Handouts"
                         description=""
-                        :url="'../../../static/images/html-structure.png'"
+                        :url="'../../../public/images/html-structure.png'"
                         :type="'PNG'"
                         :date="'22.01.2022'"
                       />
