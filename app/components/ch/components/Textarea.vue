@@ -87,7 +87,7 @@ export default {
       if (this.variant) base += `input--${this.variant} `
       if (this.size) base += `input--${this.size} `
       if (this.messageType) base += `input--${this.messageType} `
-      if (!this.resizable) base += 'textarea--static'
+      if (!this.resizable) base += 'textarea--public'
       return base
     },
     labelClasses() {

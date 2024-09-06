@@ -68,7 +68,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'Deutsch'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'../../../public/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                     />
@@ -78,7 +78,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'Französisch'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'../../../public/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                     />
@@ -88,7 +88,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'English'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'../../../public/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                       class="border-b-0 pb-0"
@@ -191,7 +191,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'Deutsch'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'../../../public/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                     />
@@ -201,7 +201,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'Französisch'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'../../../public/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                     />
@@ -211,7 +211,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'English'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'../../../public/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                       class="border-b-0 pb-0"

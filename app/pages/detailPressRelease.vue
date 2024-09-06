@@ -4,9 +4,11 @@
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
-      <TopHeader :overrideLogoForPrint="'Staatssekretariat für Wirtschaft SECO'" />
-      <DesktopMenu :showActiveNavigation="true"/>
-      <MobileMenu :showActiveNavigation="true"/>
+      <TopHeader
+        :overrideLogoForPrint="'Staatssekretariat für Wirtschaft SECO'"
+      />
+      <DesktopMenu :showActiveNavigation="true" />
+      <MobileMenu :showActiveNavigation="true" />
       <Breadcrumb />
       <div class="container">
         <Btn
@@ -27,16 +29,24 @@
           Rückerstattungsaktion der US-amerikanischen Konsumentenschutzbehörde
         </template>
         <template v-slot:description>
-          Bern, 10.02.2022 — Die US-amerikanische Konsumentenschutzbehörde Federal Trade Commission FTC hat das SECO im Juli 2022 über eine Rückerstattungsaktion informiert, die in den kommenden Monaten erfolgen wird. Personen in der Schweiz, die von falschen Gewinnversprechen des US-amerikanischen Unternehmens Next-Gen getäuscht worden sind, sollen einen Teil ihres bezahlten Geldes zurückerhalten.
+          Bern, 10.02.2022 — Die US-amerikanische Konsumentenschutzbehörde
+          Federal Trade Commission FTC hat das SECO im Juli 2022 über eine
+          Rückerstattungsaktion informiert, die in den kommenden Monaten
+          erfolgen wird. Personen in der Schweiz, die von falschen
+          Gewinnversprechen des US-amerikanischen Unternehmens Next-Gen
+          getäuscht worden sind, sollen einen Teil ihres bezahlten Geldes
+          zurückerhalten.
         </template>
         <template v-slot:image>
           <figure>
             <div class="ratio ratio--16/9">
               <iframe
-                width="560" height="315"
+                width="560"
+                height="315"
                 src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
                 title="YouTube video player"
-                frameborder="0" allowfullscreen
+                frameborder="0"
+                allowfullscreen
               />
             </div>
             <figcaption>
@@ -51,23 +61,59 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-
             <p>
-              Das US-amerikanische Unternehmen Next-Gen hat seit dem Jahr 2013 weltweit Mil-lionen von Personen mittels Gewinnversprechen getäuscht. Next-Gen hat diese Personen angeschrieben und ihnen einen hohen Gewinn in Aussicht gestellt. Die Auszahlung des Gewinns machte die Next-Gen jedoch von einer Vorauszahlung abhängig: Sie verlangte von den angeschriebenen Personen einen im Verhältnis zum Gewinn niedrigen Betrag, damit die Auszahlung abgewickelt werden könne. Viele Personen kamen der Aufforderung der Next-Gen nach und bezahlten den ver-langten Betrag. Einen Gewinn hat Next-Gen jedoch nie ausbezahlt. Auch Personen in der Schweiz erlagen dieser Schwindelei.
+              Das US-amerikanische Unternehmen Next-Gen hat seit dem Jahr 2013
+              weltweit Mil-lionen von Personen mittels Gewinnversprechen
+              getäuscht. Next-Gen hat diese Personen angeschrieben und ihnen
+              einen hohen Gewinn in Aussicht gestellt. Die Auszahlung des
+              Gewinns machte die Next-Gen jedoch von einer Vorauszahlung
+              abhängig: Sie verlangte von den angeschriebenen Personen einen im
+              Verhältnis zum Gewinn niedrigen Betrag, damit die Auszahlung
+              abgewickelt werden könne. Viele Personen kamen der Aufforderung
+              der Next-Gen nach und bezahlten den ver-langten Betrag. Einen
+              Gewinn hat Next-Gen jedoch nie ausbezahlt. Auch Personen in der
+              Schweiz erlagen dieser Schwindelei.
             </p>
 
             <p>
-              Die US-amerikanische Konsumentenschutzbehörde FTC hat im Jahr 2018 in den USA gegen die verantwortlichen Personen der Next-Gen ein Gerichtsverfahren eingeleitet. Im Rahmen eines Vergleichs erklärte sich die Next-Gen zu Beginn des Jahres 2019 bereit, mehrere Millionen US-Dollar zu bezahlen. Beinahe 25 Millionen US-Dollar werden von der FTC nun dazu verwendet, getäuschten Personen einen Teil ihres an Next-Gen bezahlten Geldes zurückzuerstatten. Die FTC lanciert eine Rückerstattungsaktion auch an Personen in der Schweiz. Diese Rückzahlungen werden via PayPal stattfinden.
+              Die US-amerikanische Konsumentenschutzbehörde FTC hat im Jahr 2018
+              in den USA gegen die verantwortlichen Personen der Next-Gen ein
+              Gerichtsverfahren eingeleitet. Im Rahmen eines Vergleichs erklärte
+              sich die Next-Gen zu Beginn des Jahres 2019 bereit, mehrere
+              Millionen US-Dollar zu bezahlen. Beinahe 25 Millionen US-Dollar
+              werden von der FTC nun dazu verwendet, getäuschten Personen einen
+              Teil ihres an Next-Gen bezahlten Geldes zurückzuerstatten. Die FTC
+              lanciert eine Rückerstattungsaktion auch an Personen in der
+              Schweiz. Diese Rückzahlungen werden via PayPal stattfinden.
             </p>
 
-            <p>Die FTC schreibt in den kommenden Monaten betroffene Personen in der Schweiz an, damit die Rückerstattung des Geldes abgewickelt werden kann. Der letzte Termin zur Anforderung der Rückerstattung ist der 17. Oktober 2022. Weitere Informationen zur Rückerstattungsaktion der FTC finden Sie auf deren Webseite www.ftc.gov (siehe insbesondere die Pressemitteilung vom 19. Juli 2022, Next-Gen Refund page sowie Fragen und Antworten zu den Rückzahlungen).</p>
+            <p>
+              Die FTC schreibt in den kommenden Monaten betroffene Personen in
+              der Schweiz an, damit die Rückerstattung des Geldes abgewickelt
+              werden kann. Der letzte Termin zur Anforderung der Rückerstattung
+              ist der 17. Oktober 2022. Weitere Informationen zur
+              Rückerstattungsaktion der FTC finden Sie auf deren Webseite
+              www.ftc.gov (siehe insbesondere die Pressemitteilung vom 19. Juli
+              2022, Next-Gen Refund page sowie Fragen und Antworten zu den
+              Rückzahlungen).
+            </p>
 
-            <p>Die FTC hat das Staatssekretariat für Wirtschaft (SECO) im Rahmen des internationalen Netzwerks International Consumer Protection and Enforcement Network ICPEN kontaktiert. Die FTC und das SECO sind zwei der 70 Mitglieder dieses Netz-werks, welches die Bekämpfung von grenzüberschreitenden unlauteren Geschäftspraktiken bezweckt. Durch die globale Reichweite und Zusammenarbeit unter den Behörden in diesem Netzwerk soll die Durchsetzung des Konsumentenschutzes über internationale Grenzen hinweg erleichtert werden.</p>
+            <p>
+              Die FTC hat das Staatssekretariat für Wirtschaft (SECO) im Rahmen
+              des internationalen Netzwerks International Consumer Protection
+              and Enforcement Network ICPEN kontaktiert. Die FTC und das SECO
+              sind zwei der 70 Mitglieder dieses Netz-werks, welches die
+              Bekämpfung von grenzüberschreitenden unlauteren Geschäftspraktiken
+              bezweckt. Durch die globale Reichweite und Zusammenarbeit unter
+              den Behörden in diesem Netzwerk soll die Durchsetzung des
+              Konsumentenschutzes über internationale Grenzen hinweg erleichtert
+              werden.
+            </p>
 
             <h2 class="h2">Weiterführende Artikel</h2>
             <ul>
               <li>
-                <a href="http://www.admin.ch" >
+                <a href="http://www.admin.ch">
                   Internal link, without target _blank (recommanded)
                 </a>
               </li>
@@ -77,17 +123,29 @@
                 </a>
               </li>
               <li>
-                <a href="https://www.ftc.gov/news-events/news/press-releases/2022/07/us-federal-trade-commission-returning-almost-25-million-consumers-worldwide-who-were-defrauded-next" target="_blank" rel="external">
+                <a
+                  href="https://www.ftc.gov/news-events/news/press-releases/2022/07/us-federal-trade-commission-returning-almost-25-million-consumers-worldwide-who-were-defrauded-next"
+                  target="_blank"
+                  rel="external"
+                >
                   Pressemitteilung vom 19.07.2022
                 </a>
               </li>
               <li>
-                <a href="https://www.ftc.gov/enforcement/refunds/next-gen-refunds" target="_blank" rel="external">
+                <a
+                  href="https://www.ftc.gov/enforcement/refunds/next-gen-refunds"
+                  target="_blank"
+                  rel="external"
+                >
                   Next-Gen Refund page
                 </a>
               </li>
               <li>
-                <a href="https://www.ftc.gov/enforcement/recent-ftc-cases-resulting-refunds/refund-programs-frequently-asked-questions" target="_blank" rel="external">
+                <a
+                  href="https://www.ftc.gov/enforcement/recent-ftc-cases-resulting-refunds/refund-programs-frequently-asked-questions"
+                  target="_blank"
+                  rel="external"
+                >
                   Fragen und Antworten zu den Rückzahlungen
                 </a>
               </li>
@@ -107,7 +165,7 @@
                   :filename="'dummy.pdf'"
                   :title="'Information on the usage of websites'"
                   description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
-                  :url="'../../../static/documents/dummy.pdf'"
+                  :url="'../../../public/documents/dummy.pdf'"
                   :type="'PDF'"
                   :date="'22.01.2022'"
                 />
@@ -118,7 +176,7 @@
                   :filename="'image.png'"
                   :title="'Information on the usage of websites'"
                   description=""
-                  :url="'../../../static/images/html-structure.png'"
+                  :url="'../../../public/images/html-structure.png'"
                   :type="'PNG'"
                   :date="'22.01.2022'"
                 />
@@ -127,26 +185,25 @@
 
             <h2 class="h2">Kontakt für Rückfragen</h2>
             <address>
-              <strong>Staatssekretariat für Wirtschaft SECO</strong><br/>
-              Holzikofenweg 36<br/>
-              CH-3003 Bern<br/>
-              Tel. +41 58 462 56 56<br/>
+              <strong>Staatssekretariat für Wirtschaft SECO</strong><br />
+              Holzikofenweg 36<br />
+              CH-3003 Bern<br />
+              Tel. +41 58 462 56 56<br />
               <a href="mailto:medien@seco.admin.ch">medien@seco.admin.ch</a>
             </address>
 
             <h2 class="h2">Herausgeber</h2>
 
             <p>
-              Staatssekretariat für Wirtschaft<br>
-              <a href="http://www.seco.admin.ch ">
-                www.seco.admin.ch </a>
+              Staatssekretariat für Wirtschaft<br />
+              <a href="http://www.seco.admin.ch "> www.seco.admin.ch </a>
             </p>
-            <p>Name de Amtes <br><a href="www.amtsurl.ch">www.amtsurl.ch</a></p>
+            <p>
+              Name de Amtes <br /><a href="www.amtsurl.ch">www.amtsurl.ch</a>
+            </p>
 
             <div>
-              <h2 class="h2">
-                Themen
-              </h2>
+              <h2 class="h2">Themen</h2>
               <RelatedTags :tags="tags" bare></RelatedTags>
             </div>
           </div>
@@ -224,7 +281,7 @@ export default {
     Modal,
     Badge,
     Input,
-},
+  },
   data: function () {
     return {
       URLIsCopied: false,
@@ -239,8 +296,8 @@ export default {
           caption: {
             title: 'Image one title',
             description: 'Image one description',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -251,8 +308,8 @@ export default {
           },
           caption: {
             title: 'Image two, title without description',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -263,17 +320,22 @@ export default {
           },
           caption: {
             description: 'Image three, description only',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
       ],
-      metaInfos: ['Medienmitteilung', '10. Februar 22, aktualisiert am 16. Februar 22'],
-      authors:[{
-        "name":"Staatssekretariat für Wirtschaft SECO",
-        "url":"#",
-        "prefix": "Herausgegeben vom",
-      }],
-      tags:[
+      metaInfos: [
+        'Medienmitteilung',
+        '10. Februar 22, aktualisiert am 16. Februar 22',
+      ],
+      authors: [
+        {
+          name: 'Staatssekretariat für Wirtschaft SECO',
+          url: '#',
+          prefix: 'Herausgegeben vom',
+        },
+      ],
+      tags: [
         { label: 'Datenmodell', url: '#' },
         { label: 'Energie', url: '#' },
         { label: 'INTERLIS', url: '#' },
