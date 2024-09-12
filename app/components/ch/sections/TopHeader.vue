@@ -146,14 +146,14 @@ export default {
       this.emitter.emit('top-header-search-toggle')
     },
     toggleMobileMenu() {
-      if (!this.isMenuV2) {
-        this.$store.dispatch('layout/toggleMobileMenu')
-      }
+      this.$store.dispatch('layout/toggleMobileMenu')
     },
     getMobileMenuIsOpen() {
-      if (!this.isMenuV2) {
-        return this.$store.getters['layout/getMobileMenuIsOpen']
+      /* Disable menu animation for new mobile menu */
+      if (this.isMenuV2) {
+        return false
       }
+      return this.$store.getters['layout/getMobileMenuIsOpen']
     },
     resizeWindow() {
       this.screenSize = document.body.clientWidth

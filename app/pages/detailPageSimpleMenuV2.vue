@@ -4,13 +4,14 @@
       :isMobileMenuOpen="getMobileMenuIsOpen()"
       :isIntranet="isIntranet"
       :isFreebrand="isFreebrand"
+      :UsesMenuV2="true"
     />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar v-if="!isFreebrand" :isOpen="false" />
       <TopHeader :isFreebrand="isFreebrand" :isMenuV2="true" />
       <DesktopMenu :showActiveNavigation="true" />
-      <MobileMenu :showActiveNavigation="true" />
+      <MobileMenuV2 />
       <div class="search--mobile" :class="searchActive ? 'active' : ''">
         <div class="top-header-search__group" id="search-mobile-group">
           <Input
@@ -922,10 +923,12 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
+import MobileMenuV2 from '../components/ch/sections/MobileMenuV2.vue'
 
 export default {
   name: 'detailPageSimpleMenuV2',
   components: {
+    MobileMenuV2,
     AlterBodyClasses,
     TopBar,
     TopHeader,

@@ -4,7 +4,7 @@
 
 .search--main {
   @apply flex;
-  @apply relative z-50;
+  @apply relative z-30;
 
   & .form__group__input {
     @apply w-full h-full;
@@ -30,13 +30,12 @@
   }
 }
 
-/* TODO: add transition when search is shown */
 .search--desktop {
   @apply hidden lg:block;
 }
 
 .search--mobile {
-  @apply absolute right-0;
+  @apply absolute right-0 z-30;
   @apply mt-2 px-3.5;
   @apply hidden;
   @apply w-full;
