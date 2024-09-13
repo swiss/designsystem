@@ -7,6 +7,19 @@
     />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
+      <AlertBanner
+        v-if="showAlertBanner"
+        title="Warnungen des Bundes"
+        topic="Hochwasser"
+        type="alert"
+        lastUpdated="Aktualisiert am: 11.09.2016, 11:13"
+        icon="WarningCircle"
+        text="Die Hochwassergefahr im Kanton Tessin geht ab Mittwoch 12 Uhr wieder zurück. Der Wasserstand sinkt allmählich und mit weiteren Überschwemmungen ist nicht zu rechnen. Beachten Sie jedoch weiterhin die Weisungen der Behörden und Einsatzkräfte vor Ort."
+        introLink="Weitere Informationen finden Sie unter:"
+        :link="alertBannerLink"
+        :closeBtn="true"
+        :isClosed="false"
+      />
       <TopBar v-if="!isFreebrand" :isOpen="false" />
       <TopHeader :isFreebrand="isFreebrand" />
       <DesktopMenu :showActiveNavigation="true" />
@@ -886,6 +899,7 @@ import ContactSection from '~/components/ch/sections/ContactSection'
 import Hero from '~/components/ch/sections/Hero'
 import MoreInfosAccordionSection from '~/components/ch/sections/MoreInfosAccordionSection'
 import QuoteSection from '~/components/ch/sections/QuoteSection'
+import AlertBanner from '../components/ch/components/AlertBanner.vue'
 import Badge from '../components/ch/components/Badge.vue'
 import Btn from '../components/ch/components/Btn.vue'
 import Card from '../components/ch/components/Card.vue'
@@ -906,6 +920,7 @@ import TopHeader from '../components/ch/sections/TopHeader.vue'
 export default {
   name: 'detailPageSimple',
   components: {
+    AlertBanner,
     AlterBodyClasses,
     TopBar,
     TopHeader,
@@ -937,6 +952,12 @@ export default {
   },
   data: function () {
     return {
+      showAlertBanner: false,
+      alertBannerLink: {
+        href: 'https://www.naturgefahren.ch/home.html?tab=actualdanger',
+        label: 'naturgefahren.ch',
+        icon: 'External',
+      },
       URLIsCopied: false,
       slides: [
         {
