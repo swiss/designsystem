@@ -236,12 +236,6 @@ export default {
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=29',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image one title',
             description: 'Image one description',
@@ -255,12 +249,6 @@ export default {
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=28',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image two, title without description',
             copyright: 'Photograph name'
@@ -272,12 +260,6 @@ export default {
             width: '1024',
             height: '768',
             alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=1045',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
           },
           caption: {
             description: 'Image three, description only',

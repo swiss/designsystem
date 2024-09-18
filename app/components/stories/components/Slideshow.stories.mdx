@@ -1,16 +1,12 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import SlideshowExample from '../../ch/demo/SlideshowExample.vue'
 
-<Meta
-  title="Components/Slideshow"
-  component={SlideshowExample}
-/>
+<Meta title="Components/Slideshow" component={SlideshowExample} />
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { SlideshowExample},
-  template:
-    `
+  components: { SlideshowExample },
+  template: `
     <div class="container">
       <SlideshowExample
         :breakpoints="breakpoints"
@@ -28,6 +24,7 @@ Slideshows are used to display a collection of images. This component is similar
 Slideshows are built with https://swiperjs.com/. Check the documentation for specific topics, like lazy loading if you have a large list of pictures.
 
 ## Bullets as pagination
+
 If the number of images is relatively low (around 5), use the `bullets` variant.
 
 <Canvas>
@@ -44,17 +41,11 @@ If the number of images is relatively low (around 5), use the `bullets` variant.
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=29',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image one title',
             description: 'Image one description',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -63,16 +54,10 @@ If the number of images is relatively low (around 5), use the `bullets` variant.
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=28',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image two, title without description',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -81,18 +66,12 @@ If the number of images is relatively low (around 5), use the `bullets` variant.
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=1045',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             description: 'Image three, description only',
-            copyright: 'Photograph name'
-          }
-        }
-      ]
+            copyright: 'Photograph name',
+          },
+        },
+      ],
     }}
   >
     {Template.bind({})}
@@ -100,6 +79,7 @@ If the number of images is relatively low (around 5), use the `bullets` variant.
 </Canvas>
 
 ## Fraction as pagination
+
 If the number of images is higher than 5, it's better to use the `fraction` variant.
 
 <Canvas>
@@ -116,16 +96,10 @@ If the number of images is higher than 5, it's better to use the `fraction` vari
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=29',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image title',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -134,17 +108,12 @@ If the number of images is higher than 5, it's better to use the `fraction` vari
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=28',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image title with potentially long description',
-            description: 'Example of a very long textual description, the caption is displayed on several lines, the slideshow height is adapted automatically. Example of a very long textual description. ',
-            copyright: 'Photograph name'
-          }
+            description:
+              'Example of a very long textual description, the caption is displayed on several lines, the slideshow height is adapted automatically. Example of a very long textual description. ',
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -153,16 +122,10 @@ If the number of images is higher than 5, it's better to use the `fraction` vari
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=10',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image title',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -171,16 +134,10 @@ If the number of images is higher than 5, it's better to use the `fraction` vari
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=11',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image title',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -189,16 +146,10 @@ If the number of images is higher than 5, it's better to use the `fraction` vari
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=114',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image title',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -207,16 +158,10 @@ If the number of images is higher than 5, it's better to use the `fraction` vari
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=128',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image title',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -225,16 +170,10 @@ If the number of images is higher than 5, it's better to use the `fraction` vari
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=15',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image title',
-            copyright: 'Photograph name'
-          }
+            copyright: 'Photograph name',
+          },
         },
         {
           image: {
@@ -243,18 +182,12 @@ If the number of images is higher than 5, it's better to use the `fraction` vari
             height: '768',
             alt: 'image name',
           },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=177',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
           caption: {
             title: 'Image title',
-            copyright: 'Photograph name'
-          }
-        }
-      ]
+            copyright: 'Photograph name',
+          },
+        },
+      ],
     }}
   >
     {Template.bind({})}
