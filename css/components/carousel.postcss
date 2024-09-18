@@ -251,6 +251,16 @@
   height: auto;
   position: relative;
   transition-property: transform;
+  img {
+    @apply mx-auto;
+    @apply !w-auto;
+    @apply max-h-[30rem] sm:max-h-[35rem] md:max-h-[40rem] lg:max-h-[48rem];
+  }
+  .card {
+    img {
+      @apply !w-full;
+    }
+  }
 }
 .swiper-slide-invisible-blank {
   visibility: hidden;
