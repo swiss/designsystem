@@ -13,15 +13,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import TagItem from './TagItem.vue'
 
-export default {
-  name: 'RelatedTags',
-  components: {
-    TagItem,
-  },
-  props: {
+const props = defineProps({
     tags: {
       type: Array,
       required: true,
@@ -30,6 +25,5 @@ export default {
       type: Boolean,
       default: false,
     },
-  }
-}
+  });
 </script>

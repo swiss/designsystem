@@ -18,11 +18,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 
-export default {
-  name: 'AudioPlayer',
-  props: {
+const props = defineProps({
     title: {
       type: String
     },
@@ -39,6 +37,5 @@ export default {
     type: {
       type: String,
     }
-  },
-}
+  });
 </script>

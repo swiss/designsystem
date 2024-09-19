@@ -13,18 +13,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from './SvgIcon.vue';
-export default {
-  name: 'ImageNotAvailable',
-  components: {
-    SvgIcon,
-  },
-  props: {
+
+const props = defineProps({
     text: {
       type: String,
       default: 'Image not available',
     },
-  },
-}
+  });
 </script>

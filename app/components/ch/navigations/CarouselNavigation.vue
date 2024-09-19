@@ -11,6 +11,7 @@
           enabled: true,
           onlyInViewport: false,
         }"
+        :modules="[Navigation, Pagination, A11y]"
         :navigation="{
           nextEl: `#carousel-next-${id}`,
           prevEl: `#carousel-prev-${id}`,
@@ -61,26 +62,15 @@
   </nav>
 </template>
 
-<script>
-import { Navigation, Pagination } from 'swiper'
-import { Swiper, SwiperCore, SwiperSlide } from 'swiper-vue2'
+<script setup>
+import { Navigation, Pagination, A11y } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
 import SvgIcon from '../components/SvgIcon.vue'
 
-SwiperCore.use([Navigation, Pagination])
-
-export default {
-  name: 'CarouselNavigation',
-  components: { SvgIcon, Swiper, SwiperSlide },
-  data() {
-    return {
-    }
+const props = defineProps({
+  id: {
+    type: String,
+    default: 1,
   },
-  props: {
-    id: {
-      type: String,
-      default: 1,
-    },
-  },
-  methods: {},
-}
+})
 </script>

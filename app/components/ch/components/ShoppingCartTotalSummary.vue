@@ -39,60 +39,50 @@
     />
   </div>
 </template>
-<script>
+<script setup>
 import Btn from './Btn.vue'
 import Checkbox from './Checkbox.vue'
+import { ref } from 'vue'
 
-export default {
-  name: 'ShoppingCartTotalSummary',
-  components: {
-    Btn,
-    Checkbox,
+const agbAccepted = ref(false)
+
+const props = defineProps({
+  title: {
+    type: String,
+    default: 'Total',
   },
-  props: {
-    title: {
-      type: String,
-      default: 'Total',
-    },
-    subTotalTitle: {
-      type: String,
-      default: 'Subtotal',
-    },
-    subTotal: {
-      type: String,
-      required: true,
-    },
-    totalTitle: {
-      type: String,
-      default: 'Total',
-    },
-    total: {
-      type: String,
-      required: true,
-    },
-    orderButtonText: {
-      type: String,
-      default: 'Order',
-    },
-    orderButtonAriaLabel: {
-      type: String,
-      default: 'Order',
-    },
-    agreementText: {
-      type: String,
-      required: true,
-    },
+  subTotalTitle: {
+    type: String,
+    default: 'Subtotal',
   },
-  data() {
-    return {
-      agbAccepted: false,
-    }
+  subTotal: {
+    type: String,
+    required: true,
   },
-  methods: {
-    orderClicked() {
-      if (!this.agbAccepted) return
-      this.$emit('nextStep')
-    },
+  totalTitle: {
+    type: String,
+    default: 'Total',
   },
+  total: {
+    type: String,
+    required: true,
+  },
+  orderButtonText: {
+    type: String,
+    default: 'Order',
+  },
+  orderButtonAriaLabel: {
+    type: String,
+    default: 'Order',
+  },
+  agreementText: {
+    type: String,
+    required: true,
+  },
+})
+
+const orderClicked = function () {
+  if (!agbAccepted) return
+  useNuxtApp().$emit('nextStep')
 }
 </script>

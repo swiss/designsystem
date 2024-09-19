@@ -2,7 +2,11 @@
   <div>
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
-      <TopBar :isOpen="false" :isEasyLanguage="true" :isSticky="useStickyNavigation" />
+      <TopBar
+        :isOpen="false"
+        :isEasyLanguage="true"
+        :isSticky="useStickyNavigation"
+      />
       <TopHeader :isEasyLanguage="true" />
       <DesktopMenu :isSimplePage="true" :isSticky="useStickyNavigation" />
       <MobileMenu :isSimplePage="true" :isSticky="useStickyNavigation" />
@@ -121,31 +125,17 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import Hero from '../components/ch/sections/Hero.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 
-export default {
-  name: 'OverviewEasyLanguage',
-  components: {
-    TopBar,
-    TopHeader,
-    DesktopMenu,
-    MobileMenu,
-    Hero,
+const props = defineProps({
+  useStickyNavigation: {
+    type: Boolean,
+    default: false,
   },
-  data() {
-    return {}
-  },
-  props: {
-    useStickyNavigation: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  methods: {},
-}
+})
 </script>

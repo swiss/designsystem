@@ -749,7 +749,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import btn from '../components/Btn.vue'
 import ShoppingCard from '../components/ShoppingCard.vue'
 import SvgIcon from '../components/SvgIcon.vue'
@@ -765,366 +765,347 @@ import ShoppingCartTotal from './ShoppingCartTotal.vue'
 import ShoppingCartTotalSummary from './ShoppingCartTotalSummary.vue'
 import StepIndicator from './StepIndicator.vue'
 import Textarea from './Textarea'
-const { v4: uuidv4 } = require('uuid')
+import { reactive, ref, computed, watch, onMounted } from 'vue'
+import { v4 as uuidv4 } from 'uuid'
 
-export default {
-  name: 'ShoppingCart',
-  components: {
-    SvgIcon,
-    btn,
-    ShoppingCard,
-    StepIndicator,
-    Notification,
-    Form,
-    Fieldset,
-    Radio,
-    Input,
-    Textarea,
-    Checkbox,
-    Contact,
-    ShoppingCartTotal,
-    ShoppingCartTotalSummary,
-    Select,
+const activeAccordionIndex = ref(1)
+const activeStepIndex = ref(1)
+const step1Confirmed = ref(false)
+const step2Confirmed = ref(false)
+const card1Shown = ref(true)
+const card2Shown = ref(true)
+const card3Shown = ref(true)
+const contentHeight = ref(0)
+const switchTimeOut = ref(null)
+const shoppingCartId = reactive(uuidv4())
+const showDeliveryAddress = ref(false)
+const showConfirmation = ref(false)
+const screenSize = ref(0)
+const formInputFields = reactive({
+  invoice: {
+    gender: {
+      value: null,
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    firstName: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    lastName: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    org: {
+      value: '',
+      touched: false,
+      valid: true,
+      mandatory: false,
+    },
+    street: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    zip: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    postOffice: {
+      value: '',
+      touched: false,
+      valid: true,
+      mandatory: false,
+    },
+    city: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    country: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    email: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    phone: {
+      value: '',
+      touched: false,
+      valid: true,
+      mandatory: false,
+    },
   },
-  props: {
-    cartTitle: {
-      type: String,
-      default: 'Shopping cart',
+  delivery: {
+    firstName: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
     },
-    cartOverviewTitle: {
-      type: String,
-      default: 'Shopping cart',
+    lastName: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
     },
-    cartAddressTitle: {
-      type: String,
-      default: 'Billing address & delivery address',
+    org: {
+      value: '',
+      touched: false,
+      valid: true,
+      mandatory: false,
     },
-    cartCheckoutTitle: {
-      type: String,
-      default: 'Submit order',
+    street: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    zip: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    postOffice: {
+      value: '',
+      touched: false,
+      valid: true,
+      mandatory: false,
+    },
+    city: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
+    },
+    country: {
+      value: '',
+      touched: false,
+      valid: false,
+      mandatory: true,
     },
   },
-  data() {
-    return {
-      activeAccordionIndex: 1,
-      activeStepIndex: 1,
-      step1Confirmed: false,
-      step2Confirmed: false,
-      card1Shown: true,
-      card2Shown: true,
-      card3Shown: true,
-      contentHeight: 0,
-      switchTimeOut: null,
-      shoppingCartId: uuidv4(),
-      showDeliveryAddress: false,
-      showConfirmation: false,
-      screenSize: 0,
-      formInputFields: {
-        invoice: {
-          gender: {
-            value: null,
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          firstName: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          lastName: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          org: {
-            value: '',
-            touched: false,
-            valid: true,
-            mandatory: false,
-          },
-          street: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          zip: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          postOffice: {
-            value: '',
-            touched: false,
-            valid: true,
-            mandatory: false,
-          },
-          city: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          country: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          email: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          phone: {
-            value: '',
-            touched: false,
-            valid: true,
-            mandatory: false,
-          },
-        },
-        delivery: {
-          firstName: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          lastName: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          org: {
-            value: '',
-            touched: false,
-            valid: true,
-            mandatory: false,
-          },
-          street: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          zip: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          postOffice: {
-            value: '',
-            touched: false,
-            valid: true,
-            mandatory: false,
-          },
-          city: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-          country: {
-            value: '',
-            touched: false,
-            valid: false,
-            mandatory: true,
-          },
-        },
-      },
+})
+
+const props = defineProps({
+  cartTitle: {
+    type: String,
+    default: 'Shopping cart',
+  },
+  cartOverviewTitle: {
+    type: String,
+    default: 'Shopping cart',
+  },
+  cartAddressTitle: {
+    type: String,
+    default: 'Billing address & delivery address',
+  },
+  cartCheckoutTitle: {
+    type: String,
+    default: 'Submit order',
+  },
+})
+
+const isMobile = computed(() => {
+  return screenSize.value < 1024
+})
+
+const canContinue = computed(() => {
+  const keysToValidate = ['invoice']
+  if (showDeliveryAddress.value) {
+    keysToValidate.push('delivery')
+  }
+
+  return keysToValidate.every((key) => {
+    const fields = Object.keys(formInputFields[key])
+    return fields.every((field) => {
+      return formInputFields[key][field]['valid']
+    })
+  })
+})
+
+const handleAccordionClick = function (index) {
+  if (!card1Shown.value && !card2Shown.value && !card3Shown.value) {
+    return
+  }
+  if (activeAccordionIndex.value === index) {
+    activeAccordionIndex.value = null
+  } else if (index === 1 || index === 2 || (index === 3 && canContinue)) {
+    activeAccordionIndex.value = index
+    activeStepIndex.value = index
+    if (index === 2) {
+      step1Confirmed.value = true
     }
-  },
-  mounted() {
-    this.resizeWindow()
-    window.addEventListener('resize', this.resizeWindow)
-  },
-  watch: {
-    activeAccordionIndex() {
-      this.scrollContentIntoView(this.activeAccordionIndex)
-    },
-  },
-  methods: {
-    handleAccordionClick(index) {
-      if (!this.card1Shown && !this.card2Shown && !this.card3Shown) {
-        return
-      }
-      if (this.activeAccordionIndex === index) {
-        this.activeAccordionIndex = null
-      } else if (
-        index === 1 ||
-        index === 2 ||
-        (index === 3 && this.canContinue)
-      ) {
-        this.activeAccordionIndex = index
-        this.activeStepIndex = index
-        if (index === 2) {
-          this.step1Confirmed = true
-        }
-        if (index === 3) {
-          this.step2Confirmed = true
-        }
-      } else if (index === 3 && !this.canContinue) {
-        this.step2Confirmed = false
-      }
-    },
-    overviewNextStepClicked() {
-      this.activeAccordionIndex = 2
-      this.activeStepIndex = 2
-      this.step1Confirmed = true
-    },
-    async triggerConfirmation() {
-      this.showConfirmation = true
-      await this.$nextTick()
-      const scroolTarget = document.getElementById('main-header')
-
-      if (scroolTarget) {
-        if (this.switchTimeOut) {
-          clearTimeout(this.switchTimeOut)
-        }
-        this.switchTimeOut = setTimeout(() => {
-          scroolTarget.scrollIntoView({ behavior: 'smooth' })
-        }, 200)
-      }
-    },
-    onChange(e) {
-      this.setFormFieldValue('invoice', 'gender', e.target.value)
-    },
-    editTriggered() {
-      this.activeAccordionIndex = 1
-      this.activeStepIndex = 1
-    },
-    setContentHeight() {
-      if (this.activeIndex === 1) {
-        this.contentHeight =
-          document.getElementById(
-            this.getUniqueId('shopping-cart-drawer-overview')
-          ).scrollHeight + 'px'
-      } else if (this.activeIndex === 2) {
-        this.contentHeight =
-          document.getElementById(
-            this.getUniqueId('shopping-cart-drawer-address')
-          ).scrollHeight + 'px'
-      } else if (this.activeIndex === 3) {
-        this.contentHeight =
-          document.getElementById(
-            this.getUniqueId('shopping-cart-drawer-checkout')
-          ).scrollHeight + 'px'
-      }
-    },
-    getUniqueId(text = '') {
-      return `${text}-${this.shoppingCartId}`
-    },
-    resizeWindow() {
-      this.screenSize = document.body.clientWidth
-    },
-    scrollContentIntoView(index) {
-      const accordionIdMap = {
-        1: 'shopping-cart-drawer-overview-button',
-        2: 'shopping-cart-drawer-address-button',
-        3: 'shopping-cart-drawer-checkout-button',
-      }
-
-      const scroolTarget = document.getElementById(
-        this.getUniqueId(accordionIdMap[index])
-      )
-
-      if (scroolTarget) {
-        if (this.switchTimeOut) {
-          clearTimeout(this.switchTimeOut)
-        }
-        this.switchTimeOut = setTimeout(() => {
-          scroolTarget.scrollIntoView({ behavior: 'smooth' })
-        }, 200)
-      }
-    },
-    setFormFieldValue(type, field, value) {
-      this.formInputFields[type][field]['value'] = value
-      this.formInputFields[type][field]['touched'] = true
-
-      if (this.formInputFields[type][field]['mandatory'] === false) {
-        this.formInputFields[type][field]['valid'] = true
-      } else {
-        if (
-          this.formInputFields[type][field]['value'] &&
-          this.formInputFields[type][field]['value'].trim() !== ''
-        ) {
-          this.formInputFields[type][field]['valid'] = true
-        } else {
-          this.formInputFields[type][field]['valid'] = false
-        }
-      }
-    },
-    validateFields() {
-      const keys = Object.keys(this.formInputFields)
-      const keysToValidate = ['invoice']
-      if (this.showDeliveryAddress) {
-        keysToValidate.push('delivery')
-      }
-      keys.forEach((key) => {
-        const fields = Object.keys(this.formInputFields[key])
-        if (keysToValidate.includes(key)) {
-          fields.forEach((field) => {
-            if (this.formInputFields[key][field]['mandatory'] === false) {
-              this.formInputFields[key][field]['valid'] = true
-            } else {
-              if (
-                this.formInputFields[key][field]['value'] &&
-                this.formInputFields[key][field]['value'].trim() !== ''
-              ) {
-                this.formInputFields[key][field]['valid'] = true
-              } else {
-                this.formInputFields[key][field]['valid'] = false
-              }
-            }
-            this.formInputFields[key][field]['touched'] = true
-          })
-        }
-      })
-    },
-    checkFormAndSetNextActiveStep() {
-      this.validateFields()
-      const keysToValidate = ['invoice']
-      if (this.showDeliveryAddress) {
-        keysToValidate.push('delivery')
-      }
-
-      const allFieldsValid = keysToValidate.every((key) => {
-        const fields = Object.keys(this.formInputFields[key])
-        return fields.every((field) => {
-          return this.formInputFields[key][field]['valid']
-        })
-      })
-      if (allFieldsValid) {
-        this.activeAccordionIndex = 3
-        this.activeStepIndex = 3
-        this.step2Confirmed = true
-      }
-    },
-  },
-  computed: {
-    isMobile() {
-      return this.screenSize < 1024
-    },
-    canContinue() {
-      const keysToValidate = ['invoice']
-      if (this.showDeliveryAddress) {
-        keysToValidate.push('delivery')
-      }
-
-      return keysToValidate.every((key) => {
-        const fields = Object.keys(this.formInputFields[key])
-        return fields.every((field) => {
-          return this.formInputFields[key][field]['valid']
-        })
-      })
-    },
-  },
+    if (index === 3) {
+      step2Confirmed.value = true
+    }
+  } else if (index === 3 && !canContinue) {
+    step2Confirmed.value = false
+  }
 }
+
+const overviewNextStepClicked = function () {
+  activeAccordionIndex.value = 2
+  activeStepIndex.value = 2
+  step1Confirmed.value = true
+}
+
+const triggerConfirmation = async function () {
+  showConfirmation.value = true
+  await nextTick()
+  const scroolTarget = document.getElementById('main-header')
+
+  if (scroolTarget) {
+    if (switchTimeOut.value) {
+      clearTimeout(switchTimeOut.value)
+    }
+    switchTimeOut.value = setTimeout(() => {
+      scroolTarget.scrollIntoView({ behavior: 'smooth' })
+    }, 200)
+  }
+}
+
+const onChange = function (e) {
+  setFormFieldValue('invoice', 'gender', e.target.value)
+}
+
+const editTriggered = function () {
+  activeAccordionIndex.value = 1
+  activeStepIndex.value = 1
+}
+
+// const setContentHeight = function () {
+//   if (activeIndex === 1) {
+//     contentHeight =
+//       document.getElementById(getUniqueId('shopping-cart-drawer-overview'))
+//         .scrollHeight + 'px'
+//   } else if (activeIndex === 2) {
+//     contentHeight =
+//       document.getElementById(getUniqueId('shopping-cart-drawer-address'))
+//         .scrollHeight + 'px'
+//   } else if (activeIndex === 3) {
+//     contentHeight =
+//       document.getElementById(getUniqueId('shopping-cart-drawer-checkout'))
+//         .scrollHeight + 'px'
+//   }
+// }
+
+const getUniqueId = function (text = '') {
+  return `${text}-${shoppingCartId}`
+}
+
+const resizeWindow = function () {
+  screenSize.value = document.body.clientWidth
+}
+
+const scrollContentIntoView = function (index) {
+  const accordionIdMap = {
+    1: 'shopping-cart-drawer-overview-button',
+    2: 'shopping-cart-drawer-address-button',
+    3: 'shopping-cart-drawer-checkout-button',
+  }
+
+  const scroolTarget = document.getElementById(
+    getUniqueId(accordionIdMap[index])
+  )
+
+  if (scroolTarget) {
+    if (switchTimeOut.value) {
+      clearTimeout(switchTimeOut.value)
+    }
+    switchTimeOut.value = setTimeout(() => {
+      scroolTarget.scrollIntoView({ behavior: 'smooth' })
+    }, 200)
+  }
+}
+
+const setFormFieldValue = function (type, field, value) {
+  formInputFields[type][field]['value'] = value
+  formInputFields[type][field]['touched'] = true
+
+  if (formInputFields[type][field]['mandatory'] === false) {
+    formInputFields[type][field]['valid'] = true
+  } else {
+    if (
+      formInputFields[type][field]['value'] &&
+      formInputFields[type][field]['value'].trim() !== ''
+    ) {
+      formInputFields[type][field]['valid'] = true
+    } else {
+      formInputFields[type][field]['valid'] = false
+    }
+  }
+}
+
+const validateFields = function () {
+  const keys = Object.keys(formInputFields)
+  const keysToValidate = ['invoice']
+  if (showDeliveryAddress.value) {
+    keysToValidate.push('delivery')
+  }
+  keys.forEach((key) => {
+    const fields = Object.keys(formInputFields[key])
+    if (keysToValidate.includes(key)) {
+      fields.forEach((field) => {
+        if (formInputFields[key][field]['mandatory'] === false) {
+          formInputFields[key][field]['valid'] = true
+        } else {
+          if (
+            formInputFields[key][field]['value'] &&
+            formInputFields[key][field]['value'].trim() !== ''
+          ) {
+            formInputFields[key][field]['valid'] = true
+          } else {
+            formInputFields[key][field]['valid'] = false
+          }
+        }
+        formInputFields[key][field]['touched'] = true
+      })
+    }
+  })
+}
+
+const checkFormAndSetNextActiveStep = function () {
+  validateFields()
+  const keysToValidate = ['invoice']
+  if (showDeliveryAddress.value) {
+    keysToValidate.push('delivery')
+  }
+
+  const allFieldsValid = keysToValidate.every((key) => {
+    const fields = Object.keys(formInputFields[key])
+    return fields.every((field) => {
+      return formInputFields[key][field]['valid']
+    })
+  })
+  if (allFieldsValid) {
+    activeAccordionIndex.value = 3
+    activeStepIndex.value = 3
+    step2Confirmed.value = true
+  }
+}
+
+watch(activeAccordionIndex, function () {
+  scrollContentIntoView(activeAccordionIndex.value)
+})
+
+onMounted(() => {
+  resizeWindow()
+  window.addEventListener('resize', resizeWindow)
+})
 </script>

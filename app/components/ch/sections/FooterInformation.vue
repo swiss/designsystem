@@ -98,14 +98,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from '../components/SvgIcon.vue'
 import Btn from '../components/Btn.vue'
-
-export default {
-  components: {
-    SvgIcon,
-    Btn
-  },
-}
 </script>

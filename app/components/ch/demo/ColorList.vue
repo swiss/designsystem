@@ -37,23 +37,15 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import ColorListItem from './ColorListItem.vue'
 import tailwindConfig from '../../../tailwind.config.js'
+import { reactive, onMounted } from 'vue';
 
 
-export default {
-	name: 'ColorList',
-  components: {
-    ColorListItem
-  },
-  data: function () {
-    return {
-      colors: {}
-    }
-  },
-  mounted() {
-    this.colors = tailwindConfig.theme.colors
-  }
-}
+const colors = reactive({});
+
+onMounted(() => {
+    colors = tailwindConfig.theme.colors
+  })
 </script>

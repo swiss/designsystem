@@ -31,14 +31,11 @@ export default defineNuxtConfig({
   },
 
   // TODO: might be needed to keep the whitespace as it was in vue2
-  // vue: {
-  //   compilerOptions: {
-  //     whitespace: 'preserve',
-  //   },
-  // },
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  // plugins: [{ src: '~/plugins/emit.js' }],
+  vue: {
+    compilerOptions: {
+      whitespace: 'preserve',
+    },
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: false,
@@ -64,8 +61,8 @@ export default defineNuxtConfig({
       '@whitespace/storybook-addon-html',
     ],
     stories: [
-      '~/components/stories/**/*.stories.mdx',
-      '~/components/stories/**/*.stories.@(js|jsx|ts|tsx)',
+      './components/stories/**/*.stories.mdx',
+      './components/stories/**/*.stories.@(js|jsx|ts|tsx)',
     ],
     parameters: {
       options: {

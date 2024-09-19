@@ -9,58 +9,53 @@
   </form>
 </template>
 
-<script>
-export default {
-  name: 'Form',
-  props: {
-    submitFunction: {
-      type: Function,
-    },
-    action: {
-      type: String,
-    },
-    method: {
-      type: String,
-      validator: (prop) => ['post', 'get'].includes(prop),
-      default: 'post',
-    },
-    target: {
-      type: String,
-      validator: (prop) => ['_self', '_blank'].includes(prop),
-      default: '_blank',
-    },
+<script setup>
+import { ref } from 'vue'
+
+const isCustomInvalid = ref(false)
+
+const props = defineProps({
+  submitFunction: {
+    type: Function,
   },
-  data() {
-    return {
-      isCustomInvalid: false,
+  action: {
+    type: String,
+  },
+  method: {
+    type: String,
+    validator: (prop) => ['post', 'get'].includes(prop),
+    default: 'post',
+  },
+  target: {
+    type: String,
+    validator: (prop) => ['_self', '_blank'].includes(prop),
+    default: '_blank',
+  },
+})
+
+const handleSubmit = function (e) {
+  isCustomInvalid = false
+  for (const element of $children) {
+    if (element?.classes?.includes('input--error')) {
+      isCustomInvalid = true
     }
-  },
-  methods: {
-    handleSubmit(e) {
-      this.isCustomInvalid = false
-      for (const element of this.$children) {
-        if (element?.classes?.includes('input--error')) {
-          this.isCustomInvalid = true
-        }
-        for (const child of element?.$children) {
-          if (child?.classes?.includes('input--error')) {
-            this.isCustomInvalid = true
-          }
-        }
+    for (const child of element?.$children) {
+      if (child?.classes?.includes('input--error')) {
+        isCustomInvalid = true
       }
-      if (!this.isCustomInvalid) {
-        if (this.submitFunction && !this.action) {
-          e.preventDefault()
-          this.submitFunction(e)
-        } else if (this.submitFunction) {
-          this.submitFunction(e)
-        }
-        this.$emit('emitSubmit', e)
-      } else {
-        // Prevent action from executing
-        e.preventDefault()
-      }
-    },
-  },
+    }
+  }
+  if (!isCustomInvalid) {
+    if (submitFunction && !action) {
+      e.preventDefault()
+      submitFunction(e)
+    } else if (submitFunction) {
+      submitFunction(e)
+    }
+    useNuxtApp().$emit('emitSubmit', e)
+  } else {
+    // Prevent action from executing
+    e.preventDefault()
+  }
 }
 </script>

@@ -10,11 +10,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 
-export default {
-	name: 'ColorListItem',
-	props: {
+const props = defineProps({
 		color: {
 			type: String,
 			required: true,
@@ -23,6 +21,5 @@ export default {
 			type: String,
 			required: true,
 		},
-	},
-}
+	});
 </script>

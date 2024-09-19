@@ -10,20 +10,13 @@
   </div>
 </template>
 
-<script>
-
+<script setup>
 import SvgIcon from '../components/SvgIcon.vue'
 
-export default {
-	name: 'SvgIconListItem',
-  components: {
-    SvgIcon
-  },
-	props: {
+const props = defineProps({
 		id: {
 			type: String,
 			required: true,
 		},
-	},
-}
+	});
 </script>

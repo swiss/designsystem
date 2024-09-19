@@ -84,21 +84,13 @@
   </ul>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from '../components/SvgIcon.vue'
 import MetaInfo from '../components/MetaInfo.vue'
 import Btn from '../components/Btn.vue'
 import Card from '../components/Card.vue'
 
-export default {
-  name: 'SearchresultsList',
-  components: {
-    SvgIcon,
-    MetaInfo,
-    Btn,
-    Card
-  },
-  props: {
+const props = defineProps({
     itemList: {
       type: Array,
       required: true
@@ -109,7 +101,6 @@ export default {
       default: 'list'
     }
 
-  }
-}
+  });
 </script>
 

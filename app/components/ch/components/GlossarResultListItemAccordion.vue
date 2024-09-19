@@ -10,29 +10,27 @@
   </ul>
 </template>
 
-<script>
-import Accordion from '../../../scripts/Accordion.js';
-import GlossarResultListItem from '../components/GlossarResultListItem.vue';
+<script setup>
+import Accordion from '../../../scripts/Accordion.js'
+import GlossarResultListItem from '../components/GlossarResultListItem.vue'
+import { onMounted } from 'vue'
 
-export default {
-  name: 'GlossarResultListItemAccordion',
-  components: { GlossarResultListItem },
-  props: {
-    item: {
-      type: Object,
-      required: true,
-    },
-    id: {
-      type: String,
-      required: true,
-    },
-    searchTerm: {
-      type: String,
-      required: false,
-    },
+const props = defineProps({
+  item: {
+    type: Object,
+    required: true,
   },
-  mounted() {
-    Accordion.init(`#accordion-${this.id} button`)
+  id: {
+    type: String,
+    required: true,
   },
-}
+  searchTerm: {
+    type: String,
+    required: false,
+  },
+})
+
+onMounted(() => {
+  Accordion.init(`#accordion-${props.id} button`)
+})
 </script>

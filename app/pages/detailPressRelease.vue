@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+    <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
@@ -230,21 +230,11 @@
   </div>
 </template>
 
-<script>
-import AudioPlayer from '~/components/ch/components/AudioPlayer'
-import DownloadItem from '~/components/ch/components/DownloadItem.vue'
-import Newsletter from '~/components/ch/components/Newsletter.vue'
-import RelatedTags from '~/components/ch/components/RelatedTags.vue'
-import TextImage from '~/components/ch/components/TextImage'
-import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
-import Tabs from '~/components/ch/demo/Tabs.vue'
-import Hero from '~/components/ch/sections/Hero'
-import Badge from '../components/ch/components/Badge.vue'
+<script setup>
+import DownloadItem from '../components/ch/components/DownloadItem.vue'
+import RelatedTags from '../components/ch/components/RelatedTags.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import Btn from '../components/ch/components/Btn.vue'
-import Card from '../components/ch/components/Card.vue'
-import Input from '../components/ch/components/Input.vue'
-import Modal from '../components/ch/components/Modal.vue'
-import SvgIcon from '../components/ch/components/SvgIcon.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
@@ -254,103 +244,30 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
+import { reactive } from 'vue'
+import { useLayoutStore } from '../store/layout'
 
-export default {
-  name: 'detailPagePressRelease',
-  components: {
-    AlterBodyClasses,
-    TopBar,
-    TopHeader,
-    Breadcrumb,
-    DesktopMenu,
-    MobileMenu,
-    FooterInformation,
-    FooterNavigation,
-    Hero,
-    TextImage,
-    AudioPlayer,
-    SlideshowExample,
-    Tabs,
-    RelatedTags,
-    DownloadItem,
-    Newsletter,
-    ShareBar,
-    Card,
-    Btn,
-    SvgIcon,
-    Modal,
-    Badge,
-    Input,
+const layoutStore = useLayoutStore()
+
+const metaInfos = reactive([
+  'Medienmitteilung',
+  '10. Februar 22, aktualisiert am 16. Februar 22',
+])
+const authors = reactive([
+  {
+    name: 'Staatssekretariat für Wirtschaft SECO',
+    url: '#',
+    prefix: 'Herausgegeben vom',
   },
-  data: function () {
-    return {
-      URLIsCopied: false,
-      slides: [
-        {
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=29',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          caption: {
-            title: 'Image one title',
-            description: 'Image one description',
-            copyright: 'Photograph name',
-          },
-        },
-        {
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=28',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          caption: {
-            title: 'Image two, title without description',
-            copyright: 'Photograph name',
-          },
-        },
-        {
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=1045',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          caption: {
-            description: 'Image three, description only',
-            copyright: 'Photograph name',
-          },
-        },
-      ],
-      metaInfos: [
-        'Medienmitteilung',
-        '10. Februar 22, aktualisiert am 16. Februar 22',
-      ],
-      authors: [
-        {
-          name: 'Staatssekretariat für Wirtschaft SECO',
-          url: '#',
-          prefix: 'Herausgegeben vom',
-        },
-      ],
-      tags: [
-        { label: 'Datenmodell', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Datenmodell', url: '#' },
-      ],
-    }
-  },
-  methods: {
-    getMobileMenuIsOpen() {
-      return this.$store.getters['layout/getMobileMenuIsOpen']
-    },
-  },
-}
+])
+const tags = reactive([
+  { label: 'Datenmodell', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Datenmodell', url: '#' },
+])
 </script>

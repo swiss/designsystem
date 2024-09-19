@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+    <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
@@ -11,14 +11,12 @@
     </header>
     <main id="main-content">
       <Hero type="hub">
-        <template v-slot:title>
-          Unsere Dienstleistungen
-        </template>
+        <template v-slot:title> Unsere Dienstleistungen </template>
         <template v-slot:description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Suspendisse tincidunt enim id orci facilisis placerat.
-          Proin odio mauris, venenatis non placerat at, finibus non tortor.
-          Mauris sodales ultrices neque sit amet cogsectetur.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          tincidunt enim id orci facilisis placerat. Proin odio mauris,
+          venenatis non placerat at, finibus non tortor. Mauris sodales ultrices
+          neque sit amet cogsectetur.
         </template>
       </Hero>
       <SubpagesSection />
@@ -30,7 +28,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
@@ -39,27 +37,9 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import Hero from "~/components/ch/sections/Hero";
+import Hero from '../components/ch/sections/Hero'
 import SubpagesSection from '../components/ch/sections/SubpagesSection.vue'
+import { useLayoutStore } from '../store/layout'
 
-export default {
-  name: 'hubPage',
-  components: {
-    AlterBodyClasses,
-    TopBar,
-    TopHeader,
-    Breadcrumb,
-    DesktopMenu,
-    MobileMenu,
-    FooterInformation,
-    FooterNavigation,
-    Hero,
-    SubpagesSection
-  },
-  methods: {
-    getMobileMenuIsOpen() {
-      return this.$store.getters['layout/getMobileMenuIsOpen']
-    },
-  },
-}
+const layoutStore = useLayoutStore()
 </script>

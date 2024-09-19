@@ -31,80 +31,78 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Select',
-  props: {
-    variant: {
-      type: String,
-      validator: (prop) => ['outline', 'negative'].includes(prop),
-      default: 'outline',
-    },
-    bare: {
-      type: Boolean,
-      default: false,
-    },
-    size: {
-      type: String,
-      validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
-    },
-    label: {
-      type: String,
-    },
-    hideLabel: {
-      type: Boolean,
-      default: false,
-    },
-    id: {
-      type: String,
-    },
-    name: {
-      type: String,
-    },
-    message: {
-      type: String,
-    },
-    messageType: {
-      type: String,
-      validator: (prop) =>
-        ['error', 'warning', 'success', 'info'].includes(prop),
-    },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    onSelect: {
-      type: Function,
-      default: () => ({}),
-    },
+<script setup>
+import { computed } from 'vue'
+
+const props = defineProps({
+  variant: {
+    type: String,
+    validator: (prop) => ['outline', 'negative'].includes(prop),
+    default: 'outline',
   },
-  methods: {
-    handleChange(e) {
-      this.$emit('select', e.target.value)
-      this.onSelect(e)
-    },
+  bare: {
+    type: Boolean,
+    default: false,
   },
-  computed: {
-    selectWrapperClasses() {
-      let base = 'select '
-      if (this.bare) base += `select--bare `
-      return base
-    },
-    selectClasses() {
-      let base = ''
-      if (this.variant) base += `input--${this.variant} `
-      if (this.size) base += `input--${this.size} `
-      if (this.message) base += `input--${this.messageType} `
-      return base
-    },
-    labelClasses() {
-      let base = ''
-      if (this.variant === 'negative') base += `text--negative `
-      if (this.size) base += `text--${this.size} `
-      if (this.hideLabel) base += `sr-only `
-      if (this.required) base += `text--asterisk `
-      return base
-    },
+  size: {
+    type: String,
+    validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
   },
+  label: {
+    type: String,
+  },
+  hideLabel: {
+    type: Boolean,
+    default: false,
+  },
+  id: {
+    type: String,
+  },
+  name: {
+    type: String,
+  },
+  message: {
+    type: String,
+  },
+  messageType: {
+    type: String,
+    validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+  },
+  required: {
+    type: Boolean,
+    default: false,
+  },
+  onSelect: {
+    type: Function,
+    default: () => ({}),
+  },
+})
+
+const selectWrapperClasses = computed(() => {
+  let base = 'select '
+  if (props.bare) base += `select--bare `
+  return base
+})
+
+const selectClasses = computed(() => {
+  let base = ''
+  if (props.variant) base += `input--${props.variant} `
+  if (props.size) base += `input--${props.size} `
+  if (props.message) base += `input--${props.messageType} `
+  return base
+})
+
+const labelClasses = computed(() => {
+  let base = ''
+  if (props.variant === 'negative') base += `text--negative `
+  if (props.size) base += `text--${props.size} `
+  if (props.hideLabel) base += `sr-only `
+  if (props.required) base += `text--asterisk `
+  return base
+})
+
+const handleChange = function (e) {
+  useNuxtApp().$emit('select', e.target.value)
+  props.onSelect(e)
 }
 </script>

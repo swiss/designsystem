@@ -11,42 +11,36 @@
   </div>
 </template>
 
-<script>
-import notification from '~/components/ch/components/Notification.vue'
+<script setup>
+import notification from './Notification.vue'
+import { ref, onMounted } from 'vue'
+import mitt from 'mitt'
 
-export default {
-  name: 'ToastMessage',
-  components: {
-    notification,
-  },
-  props: {
-    triggerName: {
-      type: String,
-      default: 'trigger-toast-message',
-    },
-  },
-  data() {
-    return {
-      showMessage: false,
-      text: '',
-      icon: 'CheckmarkCircle',
-      type: 'success',
-      showTimeout: null,
-    }
-  },
-  async mounted() {
-    await this.$nextTick()
-    this.emitter.on(this.triggerName, (e) => {
-      this.text = e.text
-      this.icon = e.icon
-      this.type = e.type
+const showMessage = ref(false)
+const text = ref('')
+const icon = ref('CheckmarkCircle')
+const type = ref('success')
+const showTimeout = ref(null)
 
-      this.showMessage = true
-      if (this.showTimeout) clearTimeout(this.showTimeout)
-      this.showTimeout = setTimeout(() => {
-        this.showMessage = false
-      }, 5000)
-    })
+const props = defineProps({
+  triggerName: {
+    type: String,
+    default: 'trigger-toast-message',
   },
-}
+})
+
+onMounted(async () => {
+  await nextTick()
+  useNuxtApp().$on(props.triggerName, (e) => {
+    text.value = e.text
+    icon.value = e.icon
+    type.value = e.type
+
+    showMessage.value = true
+    if (showTimeout.value) clearTimeout(showTimeout.value)
+    showTimeout.value = setTimeout(() => {
+      showMessage.value = false
+    }, 5000)
+  })
+})
 </script>

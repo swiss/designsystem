@@ -126,31 +126,17 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import Hero from '../components/ch/sections/Hero.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 
-export default {
-  name: 'OverviewSignLanguage',
-  components: {
-    TopBar,
-    TopHeader,
-    DesktopMenu,
-    MobileMenu,
-    Hero,
+const props = defineProps({
+  useStickyNavigation: {
+    type: Boolean,
+    default: false,
   },
-  data() {
-    return {}
-  },
-  props: {
-    useStickyNavigation: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  methods: {},
-}
+})
 </script>

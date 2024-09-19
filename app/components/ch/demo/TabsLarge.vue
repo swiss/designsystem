@@ -80,8 +80,7 @@
       id="tab-1"
       aria-labelledby="tab-1"
       class="tab__container"
-    >
-    </div>
+    ></div>
 
     <div
       tabindex="0"
@@ -89,8 +88,7 @@
       id="tab-2"
       aria-labelledby="tab-2"
       class="tab__container tab__container--is-hidden"
-    >
-    </div>
+    ></div>
 
     <div
       tabindex="0"
@@ -98,59 +96,51 @@
       id="tab-3"
       aria-labelledby="tab-3"
       class="tab__container tab__container--is-hidden"
-    >
-    </div>
+    ></div>
     <div
       tabindex="0"
       role="tabpanel"
       id="tab-4"
       aria-labelledby="tab-4"
       class="tab__container tab__container--is-hidden"
-    >
-    </div>
+    ></div>
     <div
       tabindex="0"
       role="tabpanel"
       id="tab-5"
       aria-labelledby="tab-5"
       class="tab__container tab__container--is-hidden"
-    >
-    </div>
+    ></div>
     <div
       tabindex="0"
       role="tabpanel"
       id="tab-6"
       aria-labelledby="tab-6"
       class="tab__container tab__container--is-hidden"
-    >
-    </div>
+    ></div>
     <div
       tabindex="0"
       role="tabpanel"
       id="tab-7"
       aria-labelledby="tab-7"
       class="tab__container tab__container--is-hidden"
-    >
-    </div>
+    ></div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'TabsLarge',
-  props: {
-    variant: {
-      type: String,
-      validator: (prop) => ['compact'].includes(prop),
-    },
-  },
+<script setup>
+import { computed } from 'vue'
 
-  computed: {
-    computedClasses() {
-      let base = 'table '
-      if (this.variant) base += `table--${this.variant} `
-      return base
-    },
+const props = defineProps({
+  variant: {
+    type: String,
+    validator: (prop) => ['compact'].includes(prop),
   },
-}
+})
+
+const computedClasses = computed(() => {
+  let base = 'table '
+  if (variant) base += `table--${variant} `
+  return base
+})
 </script>

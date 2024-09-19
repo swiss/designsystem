@@ -92,20 +92,12 @@
   </div>
 </template>
 
-<script>
-
+<script setup>
 import Accordion from '../components/Accordion.vue'
 import AccordionItem from '../components/AccordionItem.vue'
 import Btn from '../components/Btn.vue'
 
-export default {
-  name: 'Contact',
-  components: {
-    Accordion,
-    AccordionItem,
-    Btn,
-  },
-  props: {
+const props = defineProps({
     title: String,
     address1: String,
     address2: String,
@@ -121,6 +113,5 @@ export default {
     mapLink: String,
     openingHours: Boolean,
     contactForm: Boolean,
-  },
-};
+  });
 </script>

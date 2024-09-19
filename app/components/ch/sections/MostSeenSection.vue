@@ -6,21 +6,20 @@
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template v-slot:image>
-            <img src="https://picsum.photos/775/350" alt="cat">
+            <img src="https://picsum.photos/775/350" alt="cat" />
           </template>
           <template v-slot:title>
             <h3>Wandern</h3>
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
-              consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
+              ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+              dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor
+              sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
+          <template v-slot:footerInfo> Dienstleistungen & Produkte </template>
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -33,20 +32,18 @@
         </Card>
         <Card type="default">
           <template v-slot:image>
-            <img src="https://picsum.photos/775/350" alt="cat">
+            <img src="https://picsum.photos/775/350" alt="cat" />
           </template>
           <template v-slot:title>
             <h3>Historische Karten</h3>
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
+              ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
+          <template v-slot:footerInfo> Dienstleistungen & Produkte </template>
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -59,21 +56,19 @@
         </Card>
         <Card type="default">
           <template v-slot:image>
-            <img src="https://picsum.photos/775/350" alt="cat">
+            <img src="https://picsum.photos/775/350" alt="cat" />
           </template>
           <template v-slot:title>
             <h3>PLZ und Ortschaften</h3>
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
+              ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+              dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerInfo>
-            Dienstleistungen & Produkte
-          </template>
+          <template v-slot:footerInfo> Dienstleistungen & Produkte </template>
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -94,8 +89,8 @@
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
+              ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
           <template v-slot:footerAction>
@@ -115,8 +110,8 @@
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
+              ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
           <template v-slot:footerAction>
@@ -136,9 +131,9 @@
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed  Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
+              ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+              dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
           <template v-slot:footerAction>
@@ -153,22 +148,12 @@
           </template>
         </Card>
       </div>
-
     </div>
   </section>
 </template>
 
-<script>
-import Btn from "~/components/ch/components/Btn";
-import Card from '~/components/ch/components/Card.vue';
-import SvgIcon from '../components/SvgIcon.vue';
-
-export default {
-  name: 'MostSeenSection',
-  components: {
-    Card,
-    Btn,
-    SvgIcon,
-  },
-};
+<script setup>
+import Btn from '../components/Btn'
+import Card from '../components/Card.vue'
+import SvgIcon from '../components/SvgIcon.vue'
 </script>

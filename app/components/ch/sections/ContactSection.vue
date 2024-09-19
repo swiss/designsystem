@@ -54,19 +54,9 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import Btn from "../components/Btn"
 import Contact from "../components/Contact"
 import Accordion from "../components/Accordion"
 import AccordionItem from "../components/AccordionItem"
-
-export default {
-  name: 'ContactSection',
-  components: {
-    Btn,
-    Contact,
-    Accordion,
-    AccordionItem
-  },
-};
 </script>

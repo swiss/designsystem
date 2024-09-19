@@ -105,33 +105,25 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Tabs',
-  props: {
-    variant: {
-      type: String,
-      validator: (prop) => ['compact'].includes(prop),
-    },
-  },
-  data() {
-    return {
-      activeIndex: 0,
-    }
-  },
+<script setup>
+import { ref, computed } from 'vue'
 
-  methods: {
-    setActiveIndex(index) {
-      this.activeIndex = index
-    },
-  },
+const activeIndex = ref(0)
 
-  computed: {
-    computedClasses() {
-      let base = 'table '
-      if (this.variant) base += `table--${this.variant} `
-      return base
-    },
+const props = defineProps({
+  variant: {
+    type: String,
+    validator: (prop) => ['compact'].includes(prop),
   },
+})
+
+const computedClasses = computed(() => {
+  let base = 'table '
+  if (variant) base += `table--${variant} `
+  return base
+})
+
+const setActiveIndex = function (index) {
+  activeIndex = index
 }
 </script>

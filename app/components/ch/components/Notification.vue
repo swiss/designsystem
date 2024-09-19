@@ -13,45 +13,38 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from '../components/SvgIcon.vue'
+import { computed } from 'vue'
 
-export default {
-  name: 'notification',
-  components: {
-    SvgIcon,
+const props = defineProps({
+  text: {
+    type: String,
+    required: true,
   },
-  props: {
-    text: {
-      type: String,
-      required: true,
-    },
-    type: {
-      type: String,
-      default: undefined,
-      validator: (prop) =>
-        ['info', 'warning', 'error', 'success', 'alert', 'hint'].includes(prop),
-    },
-    icon: {
-      type: String,
-      default: undefined,
-    },
-    isClosed: {
-      type: Boolean,
-      default: false,
-    },
-    closeBtn: {
-      type: Boolean,
-      default: true,
-    },
+  type: {
+    type: String,
+    default: undefined,
+    validator: (prop) =>
+      ['info', 'warning', 'error', 'success', 'alert', 'hint'].includes(prop),
   },
+  icon: {
+    type: String,
+    default: undefined,
+  },
+  isClosed: {
+    type: Boolean,
+    default: false,
+  },
+  closeBtn: {
+    type: Boolean,
+    default: true,
+  },
+})
 
-  computed: {
-    classes() {
-      let base = 'notification '
-      if (this.type) base += `notification--${this.type} `
-      return base
-    },
-  },
-}
+const classes = computed(() => {
+  let base = 'notification '
+  if (props.type) base += `notification--${props.type} `
+  return base
+})
 </script>

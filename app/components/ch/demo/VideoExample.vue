@@ -9,14 +9,10 @@
   </figure>
 </template>
 
-<script>
-export default {
-  name: 'VideoExample',
-  data: function () {
-    return {
-      videoFile: '../../../public/videos/demo.mp4',
-      vttFile: '../../../public/videos/demo.vtt',
-    }
-  },
-}
+<script setup>
+import { ref } from 'vue';
+
+
+const videoFile = ref('../../../public/videos/demo.mp4');
+const vttFile = ref('../../../public/videos/demo.vtt');
 </script>

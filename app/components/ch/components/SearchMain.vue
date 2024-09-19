@@ -18,30 +18,24 @@
   </div>
 </template>
 
-<script>
-import Input from './Input.vue';
-import SvgIcon from './SvgIcon.vue';
+<script setup>
+import SvgIcon from './SvgIcon.vue'
+import Input from './Input.vue'
 
-export default {
-  components: {
-    SvgIcon,
-    Input,
+const props = defineProps({
+  isOpen: {
+    type: Boolean,
+    default: false,
   },
-  name: 'SearchMain',
-  props: {
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
-    isMenuV2: {
-      type: Boolean,
-      default: false,
-    },
+  isMenuV2: {
+    type: Boolean,
+    default: false,
   },
-  methods: {
-    toggleSearch() {
-      this.$emit('toggleSearch')
-    },
-  },
+})
+
+const emit = defineEmits(['toggleSearch'])
+
+function toggleSearch() {
+  emit('toggleSearch')
 }
 </script>
