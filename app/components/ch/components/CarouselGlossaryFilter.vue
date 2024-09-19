@@ -11,6 +11,7 @@
           enabled: true,
           onlyInViewport: false,
         }"
+        :modules="[Navigation, Pagination, A11y]"
         :navigation="{
           nextEl: `#carousel-next-${id}`,
           prevEl: `#carousel-prev-${id}`,
@@ -313,41 +314,28 @@
   </div>
 </template>
 
-<script>
-import { Navigation, Pagination } from 'swiper'
-import { Swiper, SwiperCore, SwiperSlide } from 'swiper-vue2'
+<script setup>
+import { Navigation, Pagination, A11y } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
 import badge from '../components/Badge.vue'
 import SvgIcon from '../components/SvgIcon.vue'
-const { v4: uuidv4 } = require('uuid')
 
-SwiperCore.use([Navigation, Pagination])
-
-export default {
-  name: 'CarouselGlossaryFilter',
-  components: { SvgIcon, Swiper, SwiperSlide, badge },
-  data() {
-    return {
-      carouselId: uuidv4(),
-    }
+const props = defineProps({
+  id: {
+    type: String,
+    default: 1,
   },
-  props: {
-    id: {
-      type: String,
-      default: 1,
-    },
-    badgeClicked: {
-      type: Function,
-      default: () => {},
-    },
-    activeFilter: {
-      type: String,
-      default: 'all',
-    },
-    disabledFilters: {
-      type: Array,
-      default: () => [],
-    },
+  badgeClicked: {
+    type: Function,
+    default: () => {},
   },
-  methods: {},
-}
+  activeFilter: {
+    type: String,
+    default: 'all',
+  },
+  disabledFilters: {
+    type: Array,
+    default: () => [],
+  },
+})
 </script>

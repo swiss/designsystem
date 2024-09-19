@@ -20,50 +20,44 @@
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import btn from './Btn.vue'
-export default {
-  name: 'ShoppingCartTotal',
-  components: {
-    btn,
+import { ref, onMounted } from 'vue'
+
+const screenSize = ref(0)
+
+const props = defineProps({
+  title: {
+    type: String,
+    default: 'Total:',
   },
-  props: {
-    title: {
-      type: String,
-      default: 'Total:',
-    },
-    total: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-    },
-    nextStepLabel: {
-      type: String,
-      default: 'Next step',
-    },
-    nextStepAriaLabel: {
-      type: String,
-      default: 'Go to next step',
-    },
+  total: {
+    type: String,
+    required: true,
   },
-  data() {
-    return {
-      screenSize: 0,
-    }
+  description: {
+    type: String,
   },
-  mounted() {
-    this.resizeWindow()
-    window.addEventListener('resize', this.resizeWindow)
+  nextStepLabel: {
+    type: String,
+    default: 'Next step',
   },
-  methods: {
-    nextStep() {
-      this.$emit('nextStep')
-    },
-    resizeWindow() {
-      this.screenSize = document.body.clientWidth
-    },
+  nextStepAriaLabel: {
+    type: String,
+    default: 'Go to next step',
   },
+})
+
+const nextStep = function () {
+  useNuxtApp().$emit('nextStep')
 }
+
+const resizeWindow = function () {
+  screenSize.value = document.body.clientWidth
+}
+
+onMounted(() => {
+  resizeWindow()
+  window.addEventListener('resize', resizeWindow)
+})
 </script>

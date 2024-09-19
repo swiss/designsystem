@@ -29,13 +29,8 @@
   </nav>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from '../components/SvgIcon.vue';
-export default {
-  name: 'MainNavigationSimple',
-  components: {
-    SvgIcon,
-  },
-  props: {},
-}
+
+const props = defineProps({});
 </script>

@@ -19,32 +19,27 @@
   </li>
 </template>
 
-<script>
-import SvgIcon from '../components/SvgIcon.vue';
-export default {
-  name: 'AccordionItem',
-  components: {
-    SvgIcon,
+<script setup>
+import SvgIcon from '../components/SvgIcon.vue'
+import { computed } from 'vue'
+
+const props = defineProps({
+  id: {
+    type: String,
+    required: true,
   },
-  props: {
-    id: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    headingLevel: {
-      type: String,
-      default: 'h3',
-      validator: (prop) => ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop),
-    },
+  title: {
+    type: String,
+    required: true,
   },
-  computed: {
-    tag() {
-      return this.headingLevel
-    },
+  headingLevel: {
+    type: String,
+    default: 'h3',
+    validator: (prop) => ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop),
   },
-}
+})
+
+const tag = computed(() => {
+  return props.headingLevel
+})
 </script>

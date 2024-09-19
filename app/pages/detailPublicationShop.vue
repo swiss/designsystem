@@ -1,7 +1,7 @@
 <template>
   <client-only>
     <div>
-      <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+      <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
       <header id="main-header">
         <a href="#main-content" class="skip-to-content">Skip to main content</a>
         <TopBar :isOpen="false" />
@@ -54,11 +54,11 @@
               <figure class="ratio ratio--1/1 bg--secondary-50">
                 <picture class="p-8">
                   <source
-                    srcset="images/publication-cover.png"
+                    srcset="/images/publication-cover.png"
                     media="(min-width: 800px)"
                   />
                   <img
-                    src="images/publication-cover.png"
+                    src="/images/publication-cover.png"
                     alt="publication cover"
                     class="h-full m-auto shadow-xl"
                   />
@@ -332,21 +332,21 @@
   </client-only>
 </template>
 
-<script>
-import Accordion from '~/components/ch/components/Accordion.vue'
-import AccordionItem from '~/components/ch/components/AccordionItem.vue'
-import Authors from '~/components/ch/components/Authors.vue'
-import Btn from '~/components/ch/components/Btn'
-import Card from '~/components/ch/components/Card'
-import Contact from '~/components/ch/components/Contact'
-import DownloadItem from '~/components/ch/components/DownloadItem.vue'
-import InfoBlock from '~/components/ch/components/InfoBlock.vue'
-import Notification from '~/components/ch/components/Notification.vue'
-import RelatedTags from '~/components/ch/components/RelatedTags.vue'
-import SvgIcon from '~/components/ch/components/SvgIcon'
-import ToastMessage from '~/components/ch/components/ToastMessage'
-import ShareBar from '~/components/ch/demo/ShareBar.vue'
-import Hero from '~/components/ch/sections/Hero'
+<script setup>
+import Accordion from '../components/ch/components/Accordion.vue'
+import AccordionItem from '../components/ch/components/AccordionItem.vue'
+import Authors from '../components/ch/components/Authors.vue'
+import Btn from '../components/ch/components/Btn'
+import Card from '../components/ch/components/Card'
+import Contact from '../components/ch/components/Contact'
+import DownloadItem from '../components/ch/components/DownloadItem.vue'
+import InfoBlock from '../components/ch/components/InfoBlock.vue'
+import Notification from '../components/ch/components/Notification.vue'
+import RelatedTags from '../components/ch/components/RelatedTags.vue'
+import SvgIcon from '../components/ch/components/SvgIcon'
+import ToastMessage from '../components/ch/components/ToastMessage'
+import ShareBar from '../components/ch/demo/ShareBar.vue'
+import Hero from '../components/ch/sections/Hero'
 import Input from '../components/ch/components/Input.vue'
 import OrderBox from '../components/ch/components/OrderBox.vue'
 import Select from '../components/ch/components/Select'
@@ -359,116 +359,83 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import RelatedPublicationsSection from '../components/ch/sections/RelatedPublicationsSection.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
+import { reactive, ref, computed, onMounted } from 'vue'
+import { useLayoutStore } from '../store/layout'
 
-export default {
-  name: 'detailPagePublicationShop',
-  components: {
-    ToastMessage,
-    AlterBodyClasses,
-    TopBar,
-    TopHeader,
-    Breadcrumb,
-    DesktopMenu,
-    MobileMenu,
-    FooterInformation,
-    FooterNavigation,
-    Card,
-    Btn,
-    SvgIcon,
-    Hero,
-    ShareBar,
-    Contact,
-    InfoBlock,
-    DownloadItem,
-    Accordion,
-    AccordionItem,
-    RelatedTags,
-    Authors,
-    Notification,
-    RelatedPublicationsSection,
-    Input,
-    Select,
-    OrderBox,
-  },
-  data: function () {
-    return {
-      tags: [
-        { label: 'Datenmodell', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Datenmodell', url: '#' },
-      ],
-      authors: [
-        {
-          name: 'Maria Muster',
-          img: 'https://picsum.photos/120/120/?image=29',
-          url: '#',
-          prefix: ' ',
-        },
-        {
-          name: 'Katja Anna-Beerli',
-          img: 'https://picsum.photos/120/120/?image=30',
-          url: '#',
-        },
-      ],
-      shoppingCartAriaLabel:
-        'Shopping cart: There are <amount> items in your shopping cart.',
-      shoppingCartAmount: 0,
-      shoppingCartLink: '/shopping-cart',
-      shoppingCartTarget: '_self',
-      shoppingCartLabel: 'Shopping cart',
-      selectionAmount: 1,
-      selectionLanguage: 'de',
-      languageMap: {
-        de: 'deutsch',
-        fr: 'französisch',
-        it: 'italienisch',
-      },
-      screenHeight: 0,
-      asideContainerHeight: 0,
-    }
-  },
-  async mounted() {
-    await this.$nextTick()
-    this.resizeWindow()
-    window.addEventListener('resize', this.resizeWindow)
-  },
-  methods: {
-    resizeWindow() {
-      this.screenHeight = document.body.clientHeight
+const layoutStore = useLayoutStore()
 
-      const asideContainer = document.getElementById('aside-content')
-      if (asideContainer) {
-        this.asideContainerHeight = asideContainer.clientHeight
-      }
-    },
-    getMobileMenuIsOpen() {
-      return this.$store.getters['layout/getMobileMenuIsOpen']
-    },
-    addToCart(selectedLanguage, amount) {
-      // Add amount to shopping cart
-      this.shoppingCartAmount += amount
-      const translatedLanguage = this.languageMap[selectedLanguage]
+const tags = reactive([
+  { label: 'Datenmodell', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Datenmodell', url: '#' },
+])
+const authors = reactive([
+  {
+    name: 'Maria Muster',
+    img: 'https://picsum.photos/120/120/?image=29',
+    url: '#',
+    prefix: ' ',
+  },
+  {
+    name: 'Katja Anna-Beerli',
+    img: 'https://picsum.photos/120/120/?image=30',
+    url: '#',
+  },
+])
+const shoppingCartAriaLabel = ref(
+  'Shopping cart: There are <amount> items in your shopping cart.'
+)
+const shoppingCartAmount = ref(0)
+const shoppingCartLink = ref('/shopping-cart')
+const shoppingCartTarget = ref('_self')
+const shoppingCartLabel = ref('Shopping cart')
+const selectionAmount = ref(1)
+const selectionLanguage = ref('de')
+const languageMap = reactive({
+  de: 'deutsch',
+  fr: 'französisch',
+  it: 'italienisch',
+})
+const screenHeight = ref(0)
+const asideContainerHeight = ref(0)
 
-      this.emitter.emit('trigger-toast-message', {
-        text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${amount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
-        icon: 'CheckmarkCircle',
-        type: 'success',
-      })
-    },
-  },
-  computed: {
-    computedAsideContainerClass() {
-      if (this.screenHeight > this.asideContainerHeight) {
-        return 'sticky sticky--top'
-      } else {
-        return ''
-      }
-    },
-  },
+const computedAsideContainerClass = computed(() => {
+  if (screenHeight.value > asideContainerHeight.value) {
+    return 'sticky sticky--top'
+  } else {
+    return ''
+  }
+})
+
+const resizeWindow = function () {
+  screenHeight.value = document.body.clientHeight
+
+  const asideContainer = document.getElementById('aside-content')
+  if (asideContainer) {
+    asideContainerHeight.value = asideContainer.clientHeight
+  }
 }
+
+const addToCart = function (selectedLanguage, amount) {
+  // Add amount to shopping cart
+  shoppingCartAmount.value += amount
+  const translatedLanguage = languageMap[selectedLanguage]
+
+  useNuxtApp().$emit('trigger-toast-message', {
+    text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${amount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
+    icon: 'CheckmarkCircle',
+    type: 'success',
+  })
+}
+
+onMounted(async () => {
+  await nextTick()
+  resizeWindow()
+  window.addEventListener('resize', resizeWindow)
+})
 </script>

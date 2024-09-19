@@ -24,67 +24,64 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Radio',
-  props: {
-    variant: {
-      type: String,
-      validator: (prop) => ['outline', 'negative'].includes(prop),
-      default: 'outline',
-    },
-    size: {
-      type: String,
-      validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
-    },
-    label: {
-      type: String,
-    },
-    value: {
-      type: String,
-    },
-    id: {
-      type: String,
-    },
-    name: {
-      type: String,
-    },
-    message: {
-      type: String,
-    },
-    checked: {
-      type: Boolean,
-    },
-    messageType: {
-      type: String,
-      validator: (prop) =>
-        ['error', 'warning', 'success', 'info'].includes(prop),
-    },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    onChange: {
-      type: Function,
-      default: () => ({}),
-    },
-  },
+<script setup>
+import { computed } from 'vue'
 
-  computed: {
-    classes() {
-      let base = 'input '
-      if (this.variant) base += `input--${this.variant} `
-      if (this.size) base += `input--${this.size} `
-      if (this.messageType) base += `input--${this.messageType} `
-      return base
-    },
-    labelClasses() {
-      let base = ''
-      if (this.variant === 'negative') base += `text--negative `
-      if (this.size) base += `text--${this.size} `
-      if (this.required) base += `text--asterisk `
-      return base
-    },
+const props = defineProps({
+  variant: {
+    type: String,
+    validator: (prop) => ['outline', 'negative'].includes(prop),
+    default: 'outline',
   },
-}
+  size: {
+    type: String,
+    validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
+  },
+  label: {
+    type: String,
+  },
+  value: {
+    type: String,
+  },
+  id: {
+    type: String,
+  },
+  name: {
+    type: String,
+  },
+  message: {
+    type: String,
+  },
+  checked: {
+    type: Boolean,
+  },
+  messageType: {
+    type: String,
+    validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+  },
+  required: {
+    type: Boolean,
+    default: false,
+  },
+  onChange: {
+    type: Function,
+    default: () => ({}),
+  },
+})
+
+const classes = computed(() => {
+  let base = 'input '
+  if (props.variant) base += `input--${props.variant} `
+  if (props.size) base += `input--${props.size} `
+  if (props.messageType) base += `input--${props.messageType} `
+  return base
+})
+
+const labelClasses = computed(() => {
+  let base = ''
+  if (props.variant === 'negative') base += `text--negative `
+  if (props.size) base += `text--${props.size} `
+  if (props.required) base += `text--asterisk `
+  return base
+})
 </script>

@@ -27,11 +27,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 $ npm install
 ```
 
-Adapt your Node version to `^16.13.2`, for example using `nvm`:
+Adapt your Node version to `^20.17.0`, for example using `nvm`:
 
 ```bash
 # Choose the right Node version
-$ nvm use 16
+$ nvm use 20.17
 ```
 
 ## Run Storybook
@@ -76,7 +76,7 @@ $ npm run build-css
 
 - Edit the `package.json` file and increment the `version` of the package, for example `1.0.0`
 - Create and publish a new tag with the same version number as the one in the `package.json` file, with a `v` prefix, for example `v1.0.0`
-- Create a new release on Github, document your changes, and name it for example ` Release 1.0.0`
+- Create a new release on Github, document your changes, and name it for example `Release 1.0.0`
 
 ## CSS files
 

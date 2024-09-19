@@ -226,13 +226,10 @@
     />
   </div>
 </template>
-<script>
+<script setup>
 import badge from '../components/Badge.vue';
 
-export default {
-  name: 'GlossaryFilter',
-  components: { badge },
-  props: {
+const props = defineProps({
     badgeClicked: {
       type: Function,
       default: () => {},
@@ -245,6 +242,5 @@ export default {
       type: Array,
       default: () => [],
     },
-  },
-}
+  });
 </script>

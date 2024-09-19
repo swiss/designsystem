@@ -14,15 +14,12 @@
   </button>
 </template>
 
-<script>
+<script setup>
 
-export default {
-	name: 'Burger',
-	props: {
+const props = defineProps({
 		isOpen: {
 			type: Boolean,
 			default: false,
 		}
-	}
-}
+	});
 </script>

@@ -24,21 +24,14 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import SvgIcon from './SvgIcon.vue';
 import Input from './Input.vue';
 
-export default {
-  components: {
-    SvgIcon,
-    Input
-  },
-	name: 'SearchMain',
-	props: {
+const props = defineProps({
 		isOpen: {
 			type: Boolean,
 			default: false,
 		}
-	}
-}
+	});
 </script>

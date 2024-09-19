@@ -72,80 +72,70 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import ImageNotAvailable from './ImageNotAvailable.vue'
 import SvgIcon from './SvgIcon.vue'
-export default {
-  name: 'ShoppingCard',
-  components: {
-    SvgIcon,
-    ImageNotAvailable,
+import { ref, computed, watch } from 'vue'
+
+const inputValue = ref(null)
+
+const props = defineProps({
+  type: {
+    type: String,
+    validator: (prop) => ['view', 'edit'].includes(prop),
+    default: 'edit',
   },
-  props: {
-    type: {
-      type: String,
-      validator: (prop) => ['view', 'edit'].includes(prop),
-      default: 'edit',
-    },
-    image: {
-      type: Object, // {
-      //   src: String,
-      //   alt: String,
-      // },
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    itemPrice: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: String,
-      required: true,
-    },
-    deleteTriggered: {
-      type: Function,
-      default: () => ({}),
-    },
-    editTriggered: {
-      type: Function,
-      default: () => ({}),
-    },
-    removeLabel: {
-      type: String,
-      default: 'Remove',
-    },
-    editLabel: {
-      type: String,
-      default: 'Edit',
-    },
-    amount: {
-      type: Number,
-      default: 1,
-    },
+  image: {
+    type: Object, // {
+    //   src: String,
+    //   alt: String,
+    // },
   },
-  data() {
-    return {
-      inputValue: null,
-    }
+  title: {
+    type: String,
+    required: true,
   },
-  watch: {
-    // Keep amount synced / "computed"
-    value() {
-      this.inputValue = this.amount
-    },
+  itemPrice: {
+    type: String,
+    required: true,
   },
-  created() {
-    this.inputValue = this.amount
+  price: {
+    type: String,
+    required: true,
   },
-  computed: {
-    computedClasses() {
-      let base = ''
-      base += `shopping__card--${this.type} `
-      return base
-    },
+  deleteTriggered: {
+    type: Function,
+    default: () => ({}),
   },
-}
+  editTriggered: {
+    type: Function,
+    default: () => ({}),
+  },
+  removeLabel: {
+    type: String,
+    default: 'Remove',
+  },
+  editLabel: {
+    type: String,
+    default: 'Edit',
+  },
+  amount: {
+    type: Number,
+    default: 1,
+  },
+})
+
+const computedClasses = computed(() => {
+  let base = ''
+  base += `shopping__card--${props.type} `
+  return base
+})
+
+watch(props, function () {
+  inputValue.value = props.amount
+})
+
+onMounted(() => {
+  inputValue.value = props.amount
+})
 </script>

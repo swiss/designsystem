@@ -5,11 +5,10 @@
 </div>
 </template>
 
-<script>
+<script setup>
+import { computed } from 'vue';
 
-export default {
-  name: 'Links',
-  props: {},
-  computed: {}
-};
+
+const props = defineProps({});
+
 </script>

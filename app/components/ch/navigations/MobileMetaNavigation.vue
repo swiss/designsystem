@@ -20,35 +20,26 @@
   </nav>
 </template>
 
-<script>
+<script setup>
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'
+import { ref } from 'vue'
 
-export default {
-  name: 'MetaNavigationMobile',
-  components: {
-    SvgIcon,
-    LanguageSwitcher,
+const screenSize = ref(0)
+
+const props = defineProps({
+  isFreebrand: {
+    type: Boolean,
+    default: false,
   },
-  props: {
-    isFreebrand: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  data() {
-    return {
-      screenSize: 0,
-    }
-  },
-  created() {
-    this.resizeWindow()
-    window.addEventListener('resize', this.resizeWindow)
-  },
-  methods: {
-    resizeWindow() {
-      this.screenSize = document.body.clientWidth
-    },
-  },
+})
+
+const resizeWindow = function () {
+  screenSize.value = document.body.clientWidth
 }
+
+onMounted(() => {
+  resizeWindow()
+  window.addEventListener('resize', resizeWindow)
+})
 </script>

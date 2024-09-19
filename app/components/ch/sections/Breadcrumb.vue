@@ -5,37 +5,28 @@
     class="breadcrumb container container--flex"
   >
     <BreadcrumbNavigation :isSimplePage="isSimplePage" />
-    <div
-      id="breadcrumb__drawer"
-      class="breadcrumb__drawer hidden"
-    />
+    <div id="breadcrumb__drawer" class="breadcrumb__drawer hidden" />
   </div>
 </template>
 
-<script>
-import BreadcrumbNavigation from "../navigations/BreadcrumbNavigation.vue"
+<script setup>
+import BreadcrumbNavigation from '../navigations/BreadcrumbNavigation.vue'
 import BreadcrumbNav from '../../../scripts/BreadcrumbNav.js'
+import { onMounted } from 'vue'
 
-export default {
-  name: 'Breadcrumb',
-  props: {
-    isHomePage: {
-      type: Boolean,
-      default: false
-    },
-    isSimplePage: {
-      type: Boolean,
-      default: false,
-    },
+const props = defineProps({
+  isHomePage: {
+    type: Boolean,
+    default: false,
   },
-  components: {
-   BreadcrumbNavigation
+  isSimplePage: {
+    type: Boolean,
+    default: false,
   },
-  mounted() {
-    if (this.isHomePage) return
-    BreadcrumbNav.init(
-      '#breadcrumb > nav'
-    )
-  }
-}
+})
+
+onMounted(async () => {
+  if (props.isHomePage) return
+  BreadcrumbNav.init('#breadcrumb > nav')
+})
 </script>

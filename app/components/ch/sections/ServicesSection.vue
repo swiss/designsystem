@@ -1,10 +1,7 @@
 <template>
   <section class="section bg--secondary-100">
     <div class="container">
-      <h2
-        v-if="isHomePage"
-        class="section__title"
-      >
+      <h2 v-if="isHomePage" class="section__title">
         Unsere top Dienstleistungen
       </h2>
       <div class="grid grid--responsive-cols-3 gap--responsive">
@@ -14,8 +11,9 @@
           </template>
           <template v-slot:description>
             <p>
-              At vero eos et ac-cusam et justo duo, sadipscing elitr,
-              sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
+              At vero eos et ac-cusam et justo duo, sadipscing elitr, sed diam
+              At vero eos et ac-cusam et justo duo dolores et ea rebum Stet
+              clita kasd gubergren.
             </p>
           </template>
           <template v-slot:footerAction>
@@ -34,8 +32,9 @@
           </template>
           <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sadipscing elitr,
-              sed diam. At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sadipscing elitr, sed diam. At vero eos et ac-cusam et justo duo
+              dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
           <template v-slot:footerAction>
@@ -54,8 +53,9 @@
           </template>
           <template v-slot:description>
             <p>
-              Ipsum dolor sit amet, consetetur sadipscing elitr,
-              sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
+              Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam At
+              vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita
+              kasd gubergren.
             </p>
           </template>
           <template v-slot:footerAction>
@@ -69,33 +69,28 @@
           </template>
         </Card>
       </div>
-      <div
-        v-if="isHomePage"
-        class="section__action"
-      >
-        <Btn to="#" label="Alle Dienstleistungen ansehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
+      <div v-if="isHomePage" class="section__action">
+        <Btn
+          to="#"
+          label="Alle Dienstleistungen ansehen"
+          variant="bare"
+          icon-pos="right"
+          icon="ArrowRight"
+        ></Btn>
       </div>
     </div>
   </section>
 </template>
 
-<script>
-import Card from '~/components/ch/components/Card.vue';
-import Btn from "~/components/ch/components/Btn";
-import SvgIcon from '../components/SvgIcon.vue';
+<script setup>
+import Card from '../components/Card.vue'
+import Btn from '../components/Btn'
+import SvgIcon from '../components/SvgIcon.vue'
 
-export default {
-  name: 'ServicesSection',
-  components: {
-    Card,
-    Btn,
-    SvgIcon,
+const props = defineProps({
+  isHomePage: {
+    type: Boolean,
+    default: false,
   },
-  props: {
-    isHomePage: {
-      type: Boolean,
-      default: false
-    }
-  },
-};
+})
 </script>

@@ -72,19 +72,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Input from '../../ch/components/Input.vue'
 import Select from '../../ch/components/Select.vue'
 import Radio from '../../ch/components/Radio.vue'
 import Checkbox from '../../ch/components/Checkbox.vue'
-
-export default {
-  name: 'FormDemo',
-  components: {
-    Input,
-    Select,
-    Radio,
-    Checkbox
-  }
-}
 </script>

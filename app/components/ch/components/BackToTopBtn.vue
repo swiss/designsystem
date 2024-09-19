@@ -1,52 +1,43 @@
 <template>
   <div :class="wrapper ? 'back-to-top-wrapper' : ''">
-    <a :href="`#${target}`" type="button" :class="classes" aria-label="Scroll to top">
-      <SvgIcon
-        icon="ChevronUp"
-        class="back-to-top-btn__icon"
-      />
+    <a
+      :href="`#${target}`"
+      type="button"
+      :class="classes"
+      aria-label="Scroll to top"
+    >
+      <SvgIcon icon="ChevronUp" class="back-to-top-btn__icon" />
     </a>
   </div>
 </template>
 
-<script>
-import SvgIcon from '../components/SvgIcon.vue';
+<script setup>
+import SvgIcon from '../components/SvgIcon.vue'
+import { computed } from 'vue'
 
-export default {
-  name: 'BackToTopBtn',
-  components: {
-    SvgIcon
+const props = defineProps({
+  type: {
+    type: String,
+    validator: (prop) => ['default', 'negative', 'outline'].includes(prop),
   },
-  props: {
-    type: {
-      type: String,
-      validator: (prop) => [
-        'default',
-        'negative',
-        'outline'
-      ].includes(prop)
-    },
-    target: {
-      type: String,
-      default: '#'
-    },
-    fixed: {
-      type: Boolean,
-      default: false
-    },
-    wrapper: {
-      type: Boolean,
-      default: true
-    }
+  target: {
+    type: String,
+    default: '#',
   },
+  fixed: {
+    type: Boolean,
+    default: false,
+  },
+  wrapper: {
+    type: Boolean,
+    default: true,
+  },
+})
 
-  computed: {
-    classes () {
-      let base = 'back-to-top-btn '
-      if (this.type) base += `back-to-top-btn--${this.type} `
-      if (this.fixed) base += `back-to-top-btn--fixed `
-      return base
-    },
-  }
-}
+const classes = computed(() => {
+  let base = 'back-to-top-btn '
+  if (props.type) base += `back-to-top-btn--${props.type} `
+  if (props.fixed) base += `back-to-top-btn--fixed `
+  return base
+})
 </script>

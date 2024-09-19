@@ -27,38 +27,6 @@
   </div>
 </template>
 
-<script>
-
+<script setup>
 import SvgIconListItem from './SvgIconListItem.vue'
-
-const svgContext = require.context(
-	'!svg-inline-loader?' +
-	'removeTags=true' + // remove title tags, etc.
-	'&removeSVGTagAttrs=true' + // enable removing attributes
-	'&removingTagAttrs=fill' + // remove fill attributes
-	'!../../../assets/icons', // search this directory
-	true, // search subdirectories
-	/\w+\.svg$/i // only include SVG files
-)
-
-let icons = []
-let CCIcons = []
-let array = svgContext.keys()
-for (let i = 0; i < array.length; ++i) {
-  icons[i] = {}
-  icons[i].id = array[i].replace(/^\.\/(.*)\.\w+$/, '$1')
-}
-
-// Extract CC Icons from the rest
-CCIcons = icons.filter(icon => icon.id.startsWith('CC-'))
-icons = icons.filter(icon => !icon.id.startsWith('CC-'))
-
-export default {
-	name: 'SvgIconList',
-  components: {
-    SvgIconListItem
-  },
-	svgIconList: icons,
-  svgCCIconList: CCIcons,
-}
 </script>

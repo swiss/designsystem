@@ -1,7 +1,7 @@
 <template>
   <div>
     <AlterBodyClasses
-      :isMobileMenuOpen="getMobileMenuIsOpen()"
+      :isMobileMenuOpen="layoutStore.mobileMenuIsOpen"
       :isIntranet="isIntranet"
       :isFreebrand="isFreebrand"
     />
@@ -873,19 +873,18 @@
   </div>
 </template>
 
-<script>
-import AudioPlayer from '~/components/ch/components/AudioPlayer'
-import DownloadItem from '~/components/ch/components/DownloadItem.vue'
-import Newsletter from '~/components/ch/components/Newsletter.vue'
-import RelatedTags from '~/components/ch/components/RelatedTags.vue'
-import TextImage from '~/components/ch/components/TextImage'
-import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
-import TableSortable from '~/components/ch/demo/TableSortable.vue'
-import Tabs from '~/components/ch/demo/Tabs.vue'
-import ContactSection from '~/components/ch/sections/ContactSection'
-import Hero from '~/components/ch/sections/Hero'
-import MoreInfosAccordionSection from '~/components/ch/sections/MoreInfosAccordionSection'
-import QuoteSection from '~/components/ch/sections/QuoteSection'
+<script setup>
+import AudioPlayer from '../components/ch/components/AudioPlayer.vue'
+import DownloadItem from '../components/ch/components/DownloadItem.vue'
+import Newsletter from '../components/ch/components/Newsletter.vue'
+import RelatedTags from '../components/ch/components/RelatedTags.vue'
+import TextImage from '../components/ch/components/TextImage.vue'
+import SlideshowExample from '../components/ch/demo/SlideshowExample.vue'
+import TableSortable from '../components/ch/demo/TableSortable.vue'
+import ContactSection from '../components/ch/sections/ContactSection.vue'
+import Hero from '../components/ch/sections/Hero.vue'
+import MoreInfosAccordionSection from '../components/ch/sections/MoreInfosAccordionSection.vue'
+import QuoteSection from '../components/ch/sections/QuoteSection.vue'
 import Badge from '../components/ch/components/Badge.vue'
 import Btn from '../components/ch/components/Btn.vue'
 import Card from '../components/ch/components/Card.vue'
@@ -902,145 +901,108 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
+import { reactive, ref } from 'vue'
+import { useLayoutStore } from '../store/layout'
 
-export default {
-  name: 'detailPageSimple',
-  components: {
-    AlterBodyClasses,
-    TopBar,
-    TopHeader,
-    Breadcrumb,
-    DesktopMenu,
-    MobileMenu,
-    FooterInformation,
-    FooterNavigation,
-    Hero,
-    QuoteSection,
-    ContactSection,
-    MoreInfosAccordionSection,
-    TextImage,
-    AudioPlayer,
-    SlideshowExample,
-    Tabs,
-    RelatedTags,
-    DownloadItem,
-    Newsletter,
-    ShareBar,
-    Card,
-    Btn,
-    SvgIcon,
-    Modal,
-    Badge,
-    Input,
-    Popover,
-    TableSortable,
-  },
-  data: function () {
-    return {
-      URLIsCopied: false,
-      slides: [
-        {
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=29',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=29',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: {
-            title: 'Image one title',
-            description: 'Image one description',
-            copyright: 'Photograph name',
-          },
-        },
-        {
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=28',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=28',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: {
-            title: 'Image two, title without description',
-            copyright: 'Photograph name',
-          },
-        },
-        {
-          image: {
-            src: 'https://picsum.photos/1024/768/?image=1045',
-            width: '1024',
-            height: '768',
-            alt: 'image name',
-          },
-          source: {
-            srcset: 'https://picsum.photos/2048/1152/?image=1045',
-            width: '2048',
-            height: '1152',
-            media: '(min-width: 1024px)',
-          },
-          caption: {
-            description: 'Image three, description only',
-            copyright: 'Photograph name',
-          },
-        },
-      ],
-      metaInfos: ['Webartikel', '23. Februar 2022'],
-      authors: [
-        {
-          name: 'Maria Muster',
-          img: 'https://picsum.photos/120/120/?image=29',
-        },
-        {
-          name: 'Jean-Jaques Langerename',
-          img: 'https://picsum.photos/120/120/?image=30',
-          url: '#',
-        },
-        {
-          name: 'Hans Höllman',
-          img: 'https://picsum.photos/120/120/?image=31',
-        },
-        {
-          name: 'Katja Anna-Beerli',
-          img: 'https://picsum.photos/120/120/?image=32',
-        },
-      ],
-      tags: [
-        { label: 'Datenmodell', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Datenmodell', url: '#' },
-      ],
-    }
-  },
-  props: {
-    isIntranet: {
-      type: Boolean,
-      default: false,
+const layoutStore = useLayoutStore()
+
+const URLIsCopied = ref(false)
+const slides = reactive([
+  {
+    image: {
+      src: 'https://picsum.photos/1024/768/?image=29',
+      width: '1024',
+      height: '768',
+      alt: 'image name',
     },
-    isFreebrand: {
-      type: Boolean,
-      default: false,
+    source: {
+      srcset: 'https://picsum.photos/2048/1152/?image=29',
+      width: '2048',
+      height: '1152',
+      media: '(min-width: 1024px)',
+    },
+    caption: {
+      title: 'Image one title',
+      description: 'Image one description',
+      copyright: 'Photograph name',
     },
   },
-  methods: {
-    getMobileMenuIsOpen() {
-      return this.$store.getters['layout/getMobileMenuIsOpen']
+  {
+    image: {
+      src: 'https://picsum.photos/1024/768/?image=28',
+      width: '1024',
+      height: '768',
+      alt: 'image name',
+    },
+    source: {
+      srcset: 'https://picsum.photos/2048/1152/?image=28',
+      width: '2048',
+      height: '1152',
+      media: '(min-width: 1024px)',
+    },
+    caption: {
+      title: 'Image two, title without description',
+      copyright: 'Photograph name',
     },
   },
-}
+  {
+    image: {
+      src: 'https://picsum.photos/1024/768/?image=1045',
+      width: '1024',
+      height: '768',
+      alt: 'image name',
+    },
+    source: {
+      srcset: 'https://picsum.photos/2048/1152/?image=1045',
+      width: '2048',
+      height: '1152',
+      media: '(min-width: 1024px)',
+    },
+    caption: {
+      description: 'Image three, description only',
+      copyright: 'Photograph name',
+    },
+  },
+])
+const metaInfos = reactive(['Webartikel', '23. Februar 2022'])
+const authors = reactive([
+  {
+    name: 'Maria Muster',
+    img: 'https://picsum.photos/120/120/?image=29',
+  },
+  {
+    name: 'Jean-Jaques Langerename',
+    img: 'https://picsum.photos/120/120/?image=30',
+    url: '#',
+  },
+  {
+    name: 'Hans Höllman',
+    img: 'https://picsum.photos/120/120/?image=31',
+  },
+  {
+    name: 'Katja Anna-Beerli',
+    img: 'https://picsum.photos/120/120/?image=32',
+  },
+])
+const tags = reactive([
+  { label: 'Datenmodell', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Datenmodell', url: '#' },
+])
+
+const props = defineProps({
+  isIntranet: {
+    type: Boolean,
+    default: false,
+  },
+  isFreebrand: {
+    type: Boolean,
+    default: false,
+  },
+})
 </script>

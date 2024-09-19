@@ -2,6 +2,7 @@
   <div class="table-wrapper">
     <table :class="computedClasses" :id="`table-sortable-${id}`">
       <caption>
+        <br />
         {{ caption }}
         <span class="sr-only">, column headers with buttons are sortable.</span>
       </caption>
@@ -19,9 +20,7 @@
               <span aria-hidden="true"></span>
             </button>
           </th>
-          <th scope="col">
-            E-mail
-          </th>
+          <th scope="col">E-mail</th>
           <th scope="col" class="text-right">
             <button class="table__sorter">
               ID
@@ -72,51 +71,42 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import TableSortable from '../../../scripts/TableSortable.js'
+import { computed, onMounted } from 'vue'
 
-export default {
-  name: 'TableSortable',
-  props: {
-    variant: {
-      type: String,
-      validator: (prop) => [
-        'compact',
-        'default',
-      ].includes(prop)
-    },
-    caption: {
-      type: String,
-      default: ''
-    },
-    displayCaption: {
-      type: Boolean,
-      default: true
-    },
-    zebra: {
-      type: Boolean,
-      default: false
-    },
-    id: {
-      type: String,
-      default: 'default'
-    }
+const props = defineProps({
+  variant: {
+    type: String,
+    validator: (prop) => ['compact', 'default'].includes(prop),
   },
+  caption: {
+    type: String,
+    default: '',
+  },
+  displayCaption: {
+    type: Boolean,
+    default: true,
+  },
+  zebra: {
+    type: Boolean,
+    default: false,
+  },
+  id: {
+    type: String,
+    default: 'default',
+  },
+})
 
-  computed: {
-    computedClasses () {
-      let base = 'table table--sortable '
-      if (this.variant) base += `table--${this.variant} `
-      if (this.displayCaption) base += `table--caption `
-      if (this.zebra) base += `table--zebra `
-      return base
-    }
-  },
+const computedClasses = computed(() => {
+  let base = 'table table--sortable '
+  if (props.variant) base += `table--${props.variant} `
+  if (props.displayCaption) base += `table--caption `
+  if (props.zebra) base += `table--zebra `
+  return base
+})
 
-  mounted () {
-    new TableSortable(`table-sortable-${this.id}`);
-  },
-}
+onMounted(() => {
+  new TableSortable(`table-sortable-${props.id}`)
+})
 </script>
-
-

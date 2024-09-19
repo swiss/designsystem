@@ -6,14 +6,12 @@
   </p>
 </template>
 
-<script>
-export default {
-  name: 'Metainfo',
-  props: {
+<script setup>
+
+const props = defineProps({
     metainfos: {
       type: Array,
       required: true,
     },
-  },
-}
+  });
 </script>

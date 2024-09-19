@@ -1,7 +1,7 @@
 <template>
   <client-only>
     <div>
-      <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+      <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
       <header id="main-header">
         <a href="#main-content" class="skip-to-content">Skip to main content</a>
         <TopBar :isOpen="false" />
@@ -222,15 +222,14 @@
   </client-only>
 </template>
 
-<script>
-import Accordion from '~/components/ch/components/Accordion.vue'
-import AccordionItem from '~/components/ch/components/AccordionItem.vue'
-import Btn from '~/components/ch/components/Btn'
-import Card from '~/components/ch/components/Card'
-import SvgIcon from '~/components/ch/components/SvgIcon'
-import ShareBar from '~/components/ch/demo/ShareBar.vue'
-import Hero from '~/components/ch/sections/Hero'
-import QuoteSection from '~/components/ch/sections/QuoteSection'
+<script setup>
+import Accordion from '../components/ch/components/Accordion.vue'
+import AccordionItem from '../components/ch/components/AccordionItem.vue'
+import Btn from '../components/ch/components/Btn.vue'
+import Card from '../components/ch/components/Card.vue'
+import SvgIcon from '../components/ch/components/SvgIcon.vue'
+import ShareBar from '../components/ch/demo/ShareBar.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -239,62 +238,36 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
+import AnchorNav from '../scripts/AnchorNav.js'
+import { ref, computed, onMounted } from 'vue'
+import { useLayoutStore } from '../store/layout'
 
-import AnchorNav from '~/scripts/AnchorNav.js'
+const layoutStore = useLayoutStore()
 
-export default {
-  name: 'detailPageAnchorNav',
-  components: {
-    AlterBodyClasses,
-    TopBar,
-    TopHeader,
-    Breadcrumb,
-    DesktopMenu,
-    MobileMenu,
-    FooterInformation,
-    FooterNavigation,
-    Card,
-    Btn,
-    SvgIcon,
-    Hero,
-    QuoteSection,
-    ShareBar,
-    Accordion,
-    AccordionItem,
-  },
-  data() {
-    return {
-      screenHeight: 0,
-      asideContainerHeight: 0,
-    }
-  },
-  methods: {
-    getMobileMenuIsOpen() {
-      return this.$store.getters['layout/getMobileMenuIsOpen']
-    },
-    resizeWindow() {
-      this.screenHeight = document.body.clientHeight
+const screenHeight = ref(0)
+const asideContainerHeight = ref(0)
 
-      const asideContainer = document.getElementById('aside-content')
-      if (asideContainer) {
-        this.asideContainerHeight = asideContainer.clientHeight
-      }
-    },
-  },
-  async mounted() {
-    await this.$nextTick()
-    AnchorNav.setCurrentMenuItem()
-    this.resizeWindow()
-    window.addEventListener('resize', this.resizeWindow)
-  },
-  computed: {
-    computedAsideContainerClass() {
-      if (this.screenHeight > this.asideContainerHeight) {
-        return 'sticky sticky--top'
-      } else {
-        return ''
-      }
-    },
-  },
+const computedAsideContainerClass = computed(() => {
+  if (screenHeight.value > asideContainerHeight.value) {
+    return 'sticky sticky--top'
+  } else {
+    return ''
+  }
+})
+
+const resizeWindow = function () {
+  screenHeight.value = document.body.clientHeight
+
+  const asideContainer = document.getElementById('aside-content')
+  if (asideContainer) {
+    asideContainerHeight.value = asideContainer.clientHeight
+  }
 }
+
+onMounted(async () => {
+  await nextTick()
+  AnchorNav.setCurrentMenuItem()
+  resizeWindow()
+  window.addEventListener('resize', resizeWindow)
+})
 </script>
