@@ -1,11 +1,6 @@
-import Vue from 'vue'
-import mitt from 'mitt';
-const emitter = mitt();
+import mitt from 'mitt'
+const emitter = mitt()
 
-const emitterInstall = {
-  install (Vue) {
-    Vue.prototype.emitter = emitter;
-  }
-}
-
-Vue.use(emitterInstall)
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.provide('emit', emitter.emit)
+})

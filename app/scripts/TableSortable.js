@@ -1,4 +1,4 @@
-module.exports = class TableSortable {
+export default class TableSortable {
   constructor(id) {
     this.tableNode = document.getElementById(id)
     this.columnHeaders = Array.from(this.tableNode.querySelectorAll('thead th'))

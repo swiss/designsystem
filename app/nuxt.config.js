@@ -1,9 +1,9 @@
-export default {
+export default defineNuxtConfig({
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  // target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -12,7 +12,7 @@ export default {
       lang: 'en',
     },
     meta: [
-      { charset: 'utf-8' },
+      { content: 'utf-8' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, minimum-scale=1',
@@ -30,8 +30,15 @@ export default {
     ],
   },
 
+  // TODO: might be needed to keep the whitespace as it was in vue2
+  // vue: {
+  //   compilerOptions: {
+  //     whitespace: 'preserve',
+  //   },
+  // },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/emit.js' }],
+  // plugins: [{ src: '~/plugins/emit.js' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: false,
@@ -40,6 +47,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://pinia.vuejs.org/ssr/nuxt.html
+    '@pinia/nuxt',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -72,11 +81,15 @@ export default {
       },
     },
   },
+
   typescript: {
     check: false,
   },
+
   tailwindcss: {
     cssPath: '../css/main.postcss',
     mode: 'jit',
   },
-}
+
+  compatibilityDate: '2024-09-09',
+})
