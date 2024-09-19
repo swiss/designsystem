@@ -7,7 +7,7 @@ const Navy = {
   },
 
   resizeDrawerHeight (target) {
-
+    if(!target) return;
     let paddingTop = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-top'));
     let paddingBottom = parseInt(window.getComputedStyle(Navy.drawer, null).getPropertyValue('padding-bottom'));
     let newHeight = paddingTop + paddingBottom + target.offsetHeight + "px"
