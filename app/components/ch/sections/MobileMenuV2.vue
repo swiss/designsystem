@@ -12,47 +12,51 @@
     class="mobile-menu-v2"
     :class="isOpen ? 'mobile-menu-v2--is-open' : ''"
   >
-    <div class="mobile-menu-v2-header">
-      <div class="mobile-menu-v2-header-action-container">
-        <!-- TODO: fix margin left & allign to title text -->
+    <div class="mobile-menu-v2-header" id="mobile-menu-header">
+      <div
+        v-for="(title, index) in menuTitles"
+        :key="index"
+        class="top-header__menu-v2-header-container"
+        :id="`mobile-menu-v2-header-container__level-${index}`"
+        :class="`mobile-menu-v2-header-container__level-${index}`"
+      >
         <btn
           class="mobile-menu-v2__back-button"
-          @emitClick="navigateBack()"
+          @emitClick="showLevel(currentLevel - 1)"
           icon="ArrowLeft"
           iconPos="left"
           label="Zurück"
           size="base"
           variant="bare"
           ariaLabel="Navigiere zurück"
-          v-if="canNavigateBack"
+          :class="index > 0 ? 'mobile-menu-v2__back-button--is-visible' : ''"
         />
-        <div class="mobile-menu-v2__close-button">
-          <SvgIcon
-            size="3xl"
-            :spin="false"
-            icon="Cancel"
-            @click.native="closeMenu()"
-          />
-        </div>
-      </div>
-      <div class="top-header__menu-v2-title-container">
-        <!-- Container for active titles, should use sliding titles like in navigation menu -->
         <h2
           class="top-header__menu-v2-title"
-          :class="`mobile-menu-v2-title__level-${index}`"
+          :id="`mobile-menu-v2-header-container__level-${index}`"
           :key="`menu-title-${index}`"
-          v-for="(title, index) in menuTitles"
         >
-          {{ title }}
+          <span>
+            {{ title }}
+          </span>
         </h2>
       </div>
+      <div class="mobile-menu-v2__close-button">
+        <SvgIcon
+          size="3xl"
+          :spin="false"
+          icon="Cancel"
+          @click.native="closeMenu()"
+        />
+      </div>
     </div>
+    <div id="scroll-target" />
     <div class="mobile-menu-v2-body">
       <div
         class="mobile-menu-v2-navigation-container"
         id="mobile-menu-navigation"
       >
-        <div class="mobile-menu-v2__level-0">
+        <div class="mobile-menu-v2__level-0" id="mobile-menu-v2__level-0">
           <ul class="mobile-menu-v2-navigation">
             <li>
               <a href="javascript:alert('link')">
@@ -80,6 +84,7 @@
                 role="button"
                 aria-current="true"
                 class="mobile-menu-v2-navigation-item__has-children active"
+                @click="showLevel(1)"
               >
                 <span>Dienstleistungen</span>
                 <SvgIcon icon="ArrowRight" size="lg" />
@@ -111,10 +116,9 @@
           </ul>
           <MetaNavigationMobile />
           <TopBarNavigation :isMobileMenu="true" />
-          <div class="mobile-menu-v2-section-bottom" />
         </div>
 
-        <div class="mobile-menu-v2__level-1">
+        <div class="mobile-menu-v2__level-1" id="mobile-menu-v2__level-1">
           <ul class="mobile-menu-v2-navigation">
             <li>
               <a href="javascript:alert('link')">Überblick</a>
@@ -126,6 +130,7 @@
                 role="button"
                 aria-current="true"
                 class="mobile-menu-v2-navigation-item__has-children active"
+                @click="showLevel(2)"
                 ><span>Geodienste</span> <SvgIcon icon="ArrowRight" size="lg"
               /></a>
             </li>
@@ -141,10 +146,9 @@
           </ul>
           <MetaNavigationMobile />
           <TopBarNavigation :isMobileMenu="true" />
-          <div class="mobile-menu-v2-section-bottom" />
         </div>
 
-        <div class="mobile-menu-v2__level-2">
+        <div class="mobile-menu-v2__level-2" id="mobile-menu-v2__level-2">
           <ul class="mobile-menu-v2-navigation">
             <li>
               <a href="javascript:alert('link')">Überblick</a>
@@ -153,14 +157,15 @@
               <a
                 href="javascript:void(0)"
                 aria-current="true"
-                class="mobile-menu-v2-navigation-item__has-children active"
+                class="mobile-menu-v2-navigation-item__has-children"
+                @click="showLevel(3)"
                 ><span>Darstellungsdienste</span>
                 <SvgIcon icon="ArrowRight" size="lg"
               /></a>
             </li>
             <li><a href="javascript:alert('link')">Download-Dienste</a></li>
             <li>
-              <a href="javascript:alert('link')"
+              <a href="javascript:alert('link')" class="active"
                 >Linked Data Dienst: GeoDaten semantisch verlinken</a
               >
             </li>
@@ -180,20 +185,15 @@
           </ul>
           <MetaNavigationMobile />
           <TopBarNavigation :isMobileMenu="true" />
-          <div class="mobile-menu-v2-section-bottom" />
         </div>
 
-        <div class="mobile-menu-v2__level-3">
+        <div class="mobile-menu-v2__level-3" id="mobile-menu-v2__level-3">
           <ul class="mobile-menu-v2-navigation">
             <li>
               <a href="javascript:alert('link')">Überblick</a>
             </li>
             <li>
-              <a
-                href="javascript:alert('link')"
-                aria-current="page"
-                class="active"
-              >
+              <a href="javascript:alert('link')" aria-current="page">
                 Web Map Services
               </a>
             </li>
@@ -206,7 +206,6 @@
           </ul>
           <MetaNavigationMobile />
           <TopBarNavigation :isMobileMenu="true" />
-          <div class="mobile-menu-v2-section-bottom" />
         </div>
       </div>
     </div>
@@ -243,20 +242,27 @@ export default {
       default: false,
     },
   },
+  watch: {
+    isOpen() {
+      if (this.isOpen) {
+        this.scroolToTop()
+      }
+    },
+  },
   data() {
     return {
       carouselNavId: '',
       useStickyPlaceholder: false,
       initialNavBarOffset: 0,
+      currentLevel: 2,
       menuTitles: [
-        /* TODO: Use active titles from menu */
         'Hauptmenü',
-        'Untermenü',
-        'Kategorie 1',
-        'Kategorie 2',
-        'Kategorie 3',
+        'Geodienste',
+        'Überblick',
+        'Darstellungsdienste',
       ],
-      canNavigateBack: true /* Set to false once logic is done */,
+      canNavigateBack: true,
+      headerHeigt: 0,
     }
   },
   mounted() {
@@ -269,14 +275,53 @@ export default {
       this.carouselNavId = uuidv4()
       return
     }
+    this.handleHeaderPlaceholder()
+    window.addEventListener('resize', this.handleHeaderPlaceholder)
   },
   methods: {
-    closeMenu() {
-      console.log('close menu')
-      this.$store.dispatch('layout/toggleMobileMenu')
+    handleHeaderPlaceholder() {
+      const header = document.getElementById('mobile-menu-header')
+      const titleContainer = document.getElementById(
+        `mobile-menu-v2-header-container__level-${this.currentLevel}`
+      )
+      const currentLevel = document.getElementById(
+        `mobile-menu-v2__level-${this.currentLevel}`
+      )
+      currentLevel.style.paddingTop = `${titleContainer.clientHeight}px`
+      header.style.height = `${titleContainer.clientHeight}px`
     },
-    navigateBack() {
-      console.log('navigate back')
+    scroolToTop() {
+      const scrollTarget = document.getElementById('scroll-target')
+      scrollTarget.scrollIntoView({ behavior: 'smooth' })
+    },
+    async showLevel(level) {
+      if (level === 0) {
+        this.canNavigateBack = false
+      } else {
+        this.canNavigateBack = true
+      }
+
+      this.currentLevel = level
+      document.body.classList.remove(
+        'show-level-0',
+        'show-level-1',
+        'show-level-2',
+        'show-level-3',
+        'show-level-4',
+        'show-level-5',
+        'show-level-6',
+        'show-level-7'
+      )
+      document.body.classList.add(`show-level-${level}`)
+
+      await this.$nextTick()
+
+      this.scroolToTop()
+      this.handleHeaderPlaceholder()
+    },
+    closeMenu() {
+      this.handleHeaderPlaceholder()
+      this.$store.dispatch('layout/toggleMobileMenu')
     },
     resizeWindow() {
       const topHeader = document.getElementById('top-header-id')
