@@ -134,12 +134,25 @@
   @apply p-0;
 }
 
-.accordion .accordion__drawer .card--flat {
+.accordion .accordion__drawer ul li {
   @apply mt-0;
 
   &:last-of-type {
-    @apply mb-4;
-    @apply border-b-0;
+    .card--flat {
+      @apply mb-4;
+      @apply border-b-0;
+    }
+  }
+}
+
+.accordion .accordion__drawer .card--flat {
+  &:not(.card--list, .card--list-without-image) {
+    @apply mt-0;
+
+    &:last-of-type {
+      @apply mb-4;
+      @apply border-b-0;
+    }
   }
 }
 
