@@ -10,12 +10,6 @@
       <li>
         <a href="#" class="meta-navigation__item"> Medien </a>
       </li>
-      <li>
-        <a href="#" class="meta-navigation__more">
-          <span> Mehr </span>
-          <SvgIcon icon="MoreFilled" size="md" />
-        </a>
-      </li>
     </ul>
   </nav>
 </template>
