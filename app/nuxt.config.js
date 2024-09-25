@@ -46,38 +46,12 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     // https://pinia.vuejs.org/ssr/nuxt.html
     '@pinia/nuxt',
+    // https://storybook.nuxtjs.org
+    '@nuxtjs/storybook',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
-
-  // Storybook for nuxt project: https://storybook.nuxtjs.org/setup#installation
-  storybook: {
-    addons: [
-      '@storybook/addon-links',
-      'storybook-addon-designs',
-      '@storybook/addon-essentials',
-      '@storybook/addon-a11y',
-      '@whitespace/storybook-addon-html',
-    ],
-    stories: [
-      './components/stories/**/*.stories.mdx',
-      './components/stories/**/*.stories.@(js|jsx|ts|tsx)',
-    ],
-    parameters: {
-      options: {
-        storySort: {
-          order: [
-            'Introduction',
-            'Foundations',
-            ['Overview', 'Colors', 'Icons'],
-            'Components',
-            'Examples',
-          ],
-        },
-      },
-    },
-  },
 
   typescript: {
     check: false,

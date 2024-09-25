@@ -1,9 +1,6 @@
 import './docs-fullscreen.css'
 
-// import { parameters as nuxtParameters } from '../../.nuxt-storybook/storybook/preview.js'
-
-export const parameters = {
-  // ...nuxtParameters,
+export default {
   layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
