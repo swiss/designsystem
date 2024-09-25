@@ -45,7 +45,7 @@
 </template>
 
 <script setup>
-import vSelect from 'vue-select'
+import vSelect from 'vue-select' // TODO: Switch this to vueform/multiselect
 import { reactive, ref, computed, watch, onMounted } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 

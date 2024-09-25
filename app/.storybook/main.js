@@ -5,11 +5,11 @@ export default {
     '../components/stories/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
-    // '@storybook/addon-links',
-    // 'storybook-addon-designs',
-    // '@storybook/addon-essentials',
-    // '@storybook/addon-a11y',
-    // '@whitespace/storybook-addon-html',
+    //'@storybook/addon-links',
+    //'@storybook/addon-designs',
+    //'@storybook/addon-essentials',
+    //'@storybook/addon-a11y',
+    //'@whitespace/storybook-addon-html',
   ],
   framework: {
     name: '@storybook-vue/nuxt',
