@@ -16,9 +16,9 @@
       <div
         v-for="(title, index) in menuTitles"
         :key="index"
-        class="top-header__menu-v2-header-container"
-        :id="`mobile-menu-v2-header-container__level-${index}`"
-        :class="`mobile-menu-v2-header-container__level-${index}`"
+        class="top-header__menu-v2-header-title-container"
+        :id="`mobile-menu-v2-header-title-container__level-${index}`"
+        :class="`mobile-menu-v2-header-title-container__level-${index}`"
       >
         <btn
           class="mobile-menu-v2__back-button"
@@ -31,11 +31,7 @@
           ariaLabel="Navigiere zurück"
           :class="index > 0 ? 'mobile-menu-v2__back-button--is-visible' : ''"
         />
-        <h2
-          class="top-header__menu-v2-title"
-          :id="`mobile-menu-v2-header-container__level-${index}`"
-          :key="`menu-title-${index}`"
-        >
+        <h2 class="top-header__menu-v2-title" :key="`menu-title-${index}`">
           <span>
             {{ title }}
           </span>
@@ -56,7 +52,10 @@
         class="mobile-menu-v2-navigation-container"
         id="mobile-menu-navigation"
       >
-        <div class="mobile-menu-v2__level-0" id="mobile-menu-v2__level-0">
+        <div
+          class="mobile-menu-v2__level mobile-menu-v2__level-0"
+          id="mobile-menu-v2__level-0"
+        >
           <ul class="mobile-menu-v2-navigation">
             <li>
               <a href="javascript:alert('link')">
@@ -118,7 +117,10 @@
           <TopBarNavigation :isMobileMenu="true" />
         </div>
 
-        <div class="mobile-menu-v2__level-1" id="mobile-menu-v2__level-1">
+        <div
+          class="mobile-menu-v2__level mobile-menu-v2__level-1"
+          id="mobile-menu-v2__level-1"
+        >
           <ul class="mobile-menu-v2-navigation">
             <li>
               <a href="javascript:alert('link')">Überblick</a>
@@ -148,7 +150,10 @@
           <TopBarNavigation :isMobileMenu="true" />
         </div>
 
-        <div class="mobile-menu-v2__level-2" id="mobile-menu-v2__level-2">
+        <div
+          class="mobile-menu-v2__level mobile-menu-v2__level-2"
+          id="mobile-menu-v2__level-2"
+        >
           <ul class="mobile-menu-v2-navigation">
             <li>
               <a href="javascript:alert('link')">Überblick</a>
@@ -187,7 +192,10 @@
           <TopBarNavigation :isMobileMenu="true" />
         </div>
 
-        <div class="mobile-menu-v2__level-3" id="mobile-menu-v2__level-3">
+        <div
+          class="mobile-menu-v2__level mobile-menu-v2__level-3"
+          id="mobile-menu-v2__level-3"
+        >
           <ul class="mobile-menu-v2-navigation">
             <li>
               <a href="javascript:alert('link')">Überblick</a>
@@ -282,12 +290,13 @@ export default {
     handleHeaderPlaceholder() {
       const header = document.getElementById('mobile-menu-header')
       const titleContainer = document.getElementById(
-        `mobile-menu-v2-header-container__level-${this.currentLevel}`
+        `mobile-menu-v2-header-title-container__level-${this.currentLevel}`
       )
       const currentLevel = document.getElementById(
         `mobile-menu-v2__level-${this.currentLevel}`
       )
-      currentLevel.style.paddingTop = `${titleContainer.clientHeight}px`
+      currentLevel.style.marginTop = `${titleContainer.clientHeight}px`
+      currentLevel.style.height = `calc(100% - ${titleContainer.clientHeight}px)`
       header.style.height = `${titleContainer.clientHeight}px`
     },
     scroolToTop() {

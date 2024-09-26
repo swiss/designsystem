@@ -921,9 +921,9 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
+import MobileMenuV2 from '../components/ch/sections/MobileMenuV2.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-import MobileMenuV2 from '../components/ch/sections/MobileMenuV2.vue'
 
 export default {
   name: 'detailPageSimpleMenuV2',
@@ -960,6 +960,7 @@ export default {
   },
   data: function () {
     return {
+      screenSize: 0,
       URLIsCopied: false,
       slides: [
         {
@@ -1054,15 +1055,19 @@ export default {
   async mounted() {
     await this.$nextTick()
     this.emitter.on('top-header-search-toggle', async () => {
-      this.searchActive = true
-      await this.$nextTick()
-      document.getElementById('search-mobile').focus()
+      this.searchActive = !this.searchActive
+      if (this.searchActive) {
+        await this.$nextTick()
+        document.getElementById('search-mobile').focus()
+      }
     })
     document.addEventListener('click', (event) => {
       if (!event.target.closest('#search-mobile-group, #search-main-wrapper')) {
         this.searchActive = false
       }
     })
+
+    window.addEventListener('resize', this.resizeWindow)
   },
   props: {
     isIntranet: {
@@ -1075,6 +1080,12 @@ export default {
     },
   },
   methods: {
+    resizeWindow() {
+      this.screenSize = document.body.clientWidth
+      if (this.screenSize > 1024) {
+        this.searchActive = false
+      }
+    },
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
     },
