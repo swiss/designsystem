@@ -265,8 +265,8 @@ export default {
       currentLevel: 2,
       menuTitles: [
         'Hauptmenü',
+        'Dienstleistungen',
         'Geodienste',
-        'Überblick',
         'Darstellungsdienste',
       ],
       canNavigateBack: true,
