@@ -14,13 +14,13 @@
   "dependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
     "mitt": "^3.0.1",
-    "swiper": "^11.1.12",
+    "swiper": "^11.1.14",
     "uuid": "^10.0.0",
-    "vue-inline-svg": "^3.1.2"
+    "vue-inline-svg": "^3.1.4"
   },
   "devDependencies": {
     "@nuxtjs/storybook": "^8.2.0",
-    "@nuxtjs/tailwindcss": "^6.7.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.4",
     "@storybook-vue/nuxt": "^8.2.0",
     "@storybook/addon-a11y": "^8.3.3",
@@ -35,11 +35,11 @@
     "@vueform/multiselect": "^2.6.10",
     "@whitespace/storybook-addon-html": "^6.1.1",
     "acorn": "^8.12.1",
-    "chromatic": "^6.11.4",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "nuxt": "^3.13.1",
-    "postcss": "^8.3.5",
+    "chromatic": "^6.24.1",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "nuxt": "^3.13.2",
+    "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "storybook": "^8.3.3",
     "svg-inline-loader": "^0.8.2"
