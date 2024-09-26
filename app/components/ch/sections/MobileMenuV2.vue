@@ -295,8 +295,7 @@ export default {
       const currentLevel = document.getElementById(
         `mobile-menu-v2__level-${this.currentLevel}`
       )
-      currentLevel.style.marginTop = `${titleContainer.clientHeight}px`
-      currentLevel.style.height = `calc(100% - ${titleContainer.clientHeight}px)`
+      currentLevel.style.paddingTop = `${titleContainer.clientHeight}px`
       header.style.height = `${titleContainer.clientHeight}px`
     },
     scroolToTop() {
