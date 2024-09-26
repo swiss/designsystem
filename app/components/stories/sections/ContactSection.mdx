@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import ContactSection from '../../ch/sections/ContactSection.vue'
+import * as ContactSectionStories from './ContactSection.stories';
+
+<Meta of={ContactSectionStories} />
+
+export const Template = () => ({
+  props: [],
+  components: { ContactSection },
+  template: '<ContactSection />',
+})
+
+# Contact Section
+
+<Canvas>
+  <Story of={ContactSectionStories.Example} />
+</Canvas>
+
+<Controls />
+
+<a href="?path=/story/sections-contact--example">
+  Go to the Canvas Tab
+</a>
+
+***
+
+<a href="?id=sections-content-contact--example&viewMode=story" target="_blank">
+  Open page in full width in a new tab
+</a>

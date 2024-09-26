@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import store from '@/.storybook/store'
+import mailTemplatePreview from '../../../pages/mailTemplatePreview.vue'
+import * as MailTemplateStories from './MailTemplate.stories';
+
+<Meta of={MailTemplateStories} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { mailTemplatePreview },
+  store: store,
+  template: '<mailTemplatePreview />',
+})
+
+# Shop Mail Templates
+
+<a href="?path=/story/pages-mail-sales-team-template--example">
+  Go to the Canvas Tab
+</a>
+
+***
+
+<a href="?id=pages-mail-sales-team-template--example" target="_blank">
+  Open page in full width in a new tab
+</a>
+
+<Canvas>
+  <Story of={MailTemplateStories.Example} />
+</Canvas>

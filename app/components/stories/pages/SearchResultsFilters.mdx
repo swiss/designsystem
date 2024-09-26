@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import store from '@/.storybook/store';
+import SearchResultsFilters from '../../../pages/SearchResultsFilters.vue';
+import * as SearchResultsFiltersStories from './SearchResultsFilters.stories';
+
+<Meta of={SearchResultsFiltersStories} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { SearchResultsFilters },
+  store: store,
+  template: '<SearchResultsFilters :noResults="noResults" :isLoading="isLoading" />',
+});
+
+# Search results, with filters
+
+<a href="?path=/story/pages-search-results-with-filters--with-results">Go to the Canvas Tab</a>
+
+***
+
+<a href="?id=pages-search-results-with-filters--with-results&args=&viewMode=story" target="_blank">Open page in full width in a new tab</a>
+
+<Canvas>
+  <Story of={SearchResultsFiltersStories.WithResults} />
+</Canvas>
+
+# No results
+
+<a href="?path=/story/pages-search-results-advanced--with-results">Go to the Canvas Tab</a>
+
+***
+
+<a href="?id=pages-search-results-advanced--without-results&args=&viewMode=story" target="_blank">Open page in full width in a new tab</a>
+
+<Canvas>
+  <Story of={SearchResultsFiltersStories.WithoutResults} />
+</Canvas>
+
+# Loading example
+
+<a href="?path=/story/pages-search-results-advanced--when-loading">Go to the Canvas Tab</a>
+
+***
+
+<a href="?id=pages-search-results-advanced--when-loading&args=&viewMode=story" target="_blank">Open page in full width in a new tab</a>
+
+<Canvas>
+  <Story of={SearchResultsFiltersStories.WhenLoading} />
+</Canvas>

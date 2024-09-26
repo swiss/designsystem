@@ -1,15 +1,14 @@
 /** @type { import('storybook-vue').StorybookConfig } */
+
 export default {
-  stories: [
-    '../components/stories/**/*.stories.mdx',
-    '../components/stories/**/*.stories.@(js|jsx|ts|tsx)',
-  ],
+  stories: ['../components/stories/components/Tabs.mdx', '../components/stories/components/Tabs.stories.js'],
   addons: [
-    //'@storybook/addon-links',
-    //'@storybook/addon-designs',
-    //'@storybook/addon-essentials',
-    //'@storybook/addon-a11y',
-    //'@whitespace/storybook-addon-html',
+    '@storybook/addon-docs',
+    // '@storybook/addon-links',
+    // '@storybook/addon-designs',
+    // '@storybook/addon-essentials',
+    // '@storybook/addon-a11y',
+    // '@whitespace/storybook-addon-html',
   ],
   framework: {
     name: '@storybook-vue/nuxt',

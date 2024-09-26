@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import store from '@/.storybook/store';
+import detailPageComplex from '../../../pages/detailPageComplex.vue';
+import * as DetailpageComplexStories from './DetailpageComplex.stories';
+
+<Meta of={DetailpageComplexStories} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { detailPageComplex },
+  store: store,
+  template: '<detailPageComplex />',
+});
+
+# Complex page example
+
+<a href="?path=/story/pages-detail-page-complex--example">Go to the Canvas Tab</a>
+
+***
+
+<a href="?id=pages-detail-page-complex--example" target="_blank">Open in full width in a new tab</a>
+
+<Canvas>
+  <Story of={DetailpageComplexStories.Example} />
+</Canvas>

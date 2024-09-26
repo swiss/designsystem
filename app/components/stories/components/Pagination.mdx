@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import Pagination from '../../ch/components/Pagination.vue';
+import * as PaginationStories from './Pagination.stories';
+
+<Meta of={PaginationStories} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Pagination },
+  template: '<div><Pagination :type="type" :field="field" :currentPage="currentPage" :totalPages="totalPages" :paginationItems="paginationItems" /></div>',
+});
+
+# Pagination
+
+Right and left arrows have disabled states:
+
+* left arrow is disabled when current page is the first one
+* right arrow is disabled when current page is the last one.
+
+## Default Compact Pagination
+
+<Canvas>
+  <Story of={PaginationStories.Example} />
+</Canvas>
+
+<Controls />

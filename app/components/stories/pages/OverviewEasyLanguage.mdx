@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from '@storybook/blocks'
+import store from '@/.storybook/store'
+import OverviewEasyLanguage from '../../../pages/overviewEasyLanguage.vue'
+import * as OverviewEasyLanguageStories from './OverviewEasyLanguage.stories';
+
+<Meta of={OverviewEasyLanguageStories} />
+
+export const Template = (args, { argTypes, viewMode }) => {
+  return {
+    props: Object.keys(argTypes),
+    components: { OverviewEasyLanguage },
+    store: store,
+    template:
+      '<OverviewEasyLanguage useStickyNavigation="useStickyNavigation" />',
+  }
+}
+
+# Overview easy language example
+
+Please use full width view in order to see the sticky navigation working correctly.
+
+<a href="?path=/story/pages-easy-sign-language-overview-easy-language--example">
+  Go to the Canvas Tab
+</a>
+
+***
+
+<a href="?id=pages-easy-sign-language-overview-easy-language--example" target="_blank">
+  Open in full width in a new tab
+</a>
+
+<Canvas>
+  <Story of={OverviewEasyLanguageStories.Example} />
+</Canvas>

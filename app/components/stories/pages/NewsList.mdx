@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import store from '@/.storybook/store';
+import newsList from '../../../pages/newsList.vue';
+import * as NewsListStories from './NewsList.stories';
+
+<Meta of={NewsListStories} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { newsList },
+  store: store,
+  template: '<newsList :noResults="noResults" :isLoading="isLoading" :filtersAreOpen="filtersAreOpen" :displayType="displayType" />',
+});
+
+# News List
+
+<a href="?path=/story/pages-news-list--with-results">Go to the Canvas Tab</a>
+
+***
+
+<a href="?id=pages-news-list--with-results&args=&viewMode=story" target="_blank">Open page in full width in a new tab</a>
+
+<Canvas>
+  <Story of={NewsListStories.WithResults} />
+</Canvas>
+
+# Show filters
+
+<Canvas>
+  <Story of={NewsListStories.WithoutResults} />
+</Canvas>
+
+# Loading example
+
+<Canvas>
+  <Story of={NewsListStories.WhenLoading} />
+</Canvas>

@@ -108,7 +108,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const activeIndex = ref(0)
+let activeIndex = ref(0)
 
 const props = defineProps({
   variant: {

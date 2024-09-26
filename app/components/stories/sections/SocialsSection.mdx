@@ -1,0 +1,66 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import SocialsSection from '../../ch/sections/SocialsSection.vue'
+import * as SocialsSectionStories from './SocialsSection.stories';
+
+<Meta of={SocialsSectionStories} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { SocialsSection },
+  template:
+    '<SocialsSection :section-title="sectionTitle" :section-desc="sectionDesc" :feeds="feeds" />',
+})
+
+# Socials Section
+
+Socials section is used to tease the different social channels. Each card contains the following:
+
+* A title,
+* A link,
+* A hand picked post or video, or the last Tweet for Twitter feed.
+
+## Example with 1 card
+
+<Canvas>
+  <Story of={SocialsSectionStories.ExampleWith1Card} />
+</Canvas>
+
+## Example with 2 cards
+
+<Canvas>
+  <Story of={SocialsSectionStories.ExampleWith2Cards} />
+</Canvas>
+
+## Example with 3 cards
+
+<Canvas>
+  <Story of={SocialsSectionStories.ExampleWith3Cards} />
+</Canvas>
+
+## Example with 4 cards
+
+<Canvas>
+  <Story of={SocialsSectionStories.ExampleWith4Cards} />
+</Canvas>
+
+## Example with 5 cards
+
+<Canvas>
+  <Story of={SocialsSectionStories.ExampleWith5Cards} />
+</Canvas>
+
+## Example with 6 cards
+
+6 cards are the maximum amount of cards displayable in the socials section.
+
+<Canvas>
+  <Story of={SocialsSectionStories.ExampleWith6Cards} />
+</Canvas>
+
+<a href="?path=/story/sections-socials--example">Go to the Canvas Tab</a>
+
+***
+
+<a href="?id=sections-content-socials--example&viewMode=story" target="_blank">
+  Open page in full width in a new tab
+</a>

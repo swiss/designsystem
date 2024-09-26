@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas } from '@storybook/blocks'
+import Tabs from '../../ch/demo/Tabs.vue'
+import TabsLarge from '../../ch/demo/TabsLarge.vue'
+import * as TabsStories from './Tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+Tabs are used to group related content. They can also be used to switch between views. On normal detail pages, prefer accordeons to tabs to avoid overflowing tabs.
+
+If you want to add vertical spacing to the content of your tab, add the class `.vertical-spacing` to the `.tab__container` element. [More information about vertical spacings](?path=/docs/layouts-spacings--page).
+
+<Canvas of={TabsStories.Example} />
+
+# Overflowing Tabs
+
+While it is not advised to use more than 4 tabs, it can happen that the tabs are too large or too many to fit in the available space. In this case, the tabcontainer can be made to overflow.
+
+If the tabs are placed in a grey container (`.bg--secondary-50`), the colors will update accordingly.
+
+<Canvas of={TabsStories.LargeExample} />
+
+<a href="?path=/story/components-tabs--example">Go to the Canvas Tab</a>
+
+***
+
+<a href="?id=components-tabs--example" target="_blank">Open page in full width in a new tab</a>

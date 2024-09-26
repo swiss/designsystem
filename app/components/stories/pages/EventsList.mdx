@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import store from '@/.storybook/store';
+import eventList from '../../../pages/eventsList.vue';
+import * as EventsListStories from './EventsList.stories';
+
+<Meta of={EventsListStories} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { eventList },
+  store: store,
+  template: '<eventList :noResults="noResults" :isLoading="isLoading" :filtersAreOpen="filtersAreOpen" :displayType="displayType" />',
+});
+
+# Events List
+
+<a href="?path=/story/pages-events-list--with-results">Go to the Canvas Tab</a>
+
+***
+
+<a href="?id=pages-events-list--with-results&args=&viewMode=story" target="_blank">Open page in full width in a new tab</a>
+
+<Canvas>
+  <Story of={EventsListStories.WithResults} />
+</Canvas>
+
+# Show filters
+
+<Canvas>
+  <Story of={EventsListStories.WithoutResults} />
+</Canvas>
+
+# Loading example
+
+<Canvas>
+  <Story of={EventsListStories.WhenLoading} />
+</Canvas>
