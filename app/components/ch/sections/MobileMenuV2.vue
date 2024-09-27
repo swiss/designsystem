@@ -20,23 +20,25 @@
         :id="`mobile-menu-v2-header-title-container__level-${index}`"
         :class="`mobile-menu-v2-header-title-container__level-${index}`"
       >
-        <btn
-          class="mobile-menu-v2__back-button"
-          @emitClick="showLevel(currentLevel - 1)"
-          icon="ArrowLeft"
-          iconPos="left"
-          label="Zurück"
-          size="base"
-          variant="bare"
-          ariaLabel="Navigiere zurück"
-          :class="index > 0 ? 'mobile-menu-v2__back-button--is-visible' : ''"
-        />
         <h2 class="top-header__menu-v2-title" :key="`menu-title-${index}`">
           <span>
             {{ title }}
           </span>
         </h2>
       </div>
+      <btn
+        class="mobile-menu-v2__back-button"
+        @emitClick="showLevel(currentLevel - 1)"
+        icon="ArrowLeft"
+        iconPos="left"
+        label="Zurück"
+        size="base"
+        variant="bare"
+        ariaLabel="Navigiere zurück"
+        :class="
+          currentLevel > 0 ? 'mobile-menu-v2__back-button--is-visible' : ''
+        "
+      />
       <div class="mobile-menu-v2__close-button">
         <SvgIcon
           size="3xl"
