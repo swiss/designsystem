@@ -1,19 +1,32 @@
+// TODO: clean up this file, once all stories work
 /** @type { import('storybook-vue').StorybookConfig } */
-
 export default {
-  stories: ['../components/stories/components/Tabs.mdx', '../components/stories/components/Tabs.stories.js'],
+  stories: [
+    '../components/**/*.mdx',
+    '../components/**/*.stories.js',
+    // '../components/stories/components/Tabs.mdx',
+    // '../components/stories/components/Tabs.stories.js',
+    // '../components/stories/pages/Glossary.mdx',
+    // '../components/stories/pages/Glossary.stories.js',
+    // '../stories/**/*.mdx',
+    // '../stories/**/*.stories.ts',
+  ],
   addons: [
-    '@storybook/addon-docs',
-    // '@storybook/addon-links',
-    // '@storybook/addon-designs',
-    // '@storybook/addon-essentials',
-    // '@storybook/addon-a11y',
-    // '@whitespace/storybook-addon-html',
+    // '@storybook/addon-docs',
+    '@storybook/addon-links',
+    '@storybook/addon-designs',
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    '@whitespace/storybook-addon-html',
   ],
   framework: {
-    name: '@storybook-vue/nuxt',
+    name: '@storybook/vue3-vite',
     options: {},
   },
+  staticDirs: [
+    { from: '../../dist/', to: '/dist' },
+    { from: '../../css/foundations/fonts/', to: '/dist/fonts' },
+  ],
   // webpackFinal: async (config) => {
   //   // tell webpack to accept vtt files
   //   config.module.rules.push({
@@ -25,31 +38,3 @@ export default {
   //   return config
   // },
 }
-
-// Storybook for nuxt project: https://storybook.nuxtjs.org/setup#installation
-// storybook: {
-//   addons: [
-//     '@storybook/addon-links',
-//     'storybook-addon-designs',
-//     '@storybook/addon-essentials',
-//     '@storybook/addon-a11y',
-//     '@whitespace/storybook-addon-html',
-//   ],
-//   stories: [
-//     './components/stories/**/*.stories.mdx',
-//     './components/stories/**/*.stories.@(js|jsx|ts|tsx)',
-//   ],
-//   parameters: {
-//     options: {
-//       storySort: {
-//         order: [
-//           'Introduction',
-//           'Foundations',
-//           ['Overview', 'Colors', 'Icons'],
-//           'Components',
-//           'Examples',
-//         ],
-//       },
-//     },
-//   },
-// },

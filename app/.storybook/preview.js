@@ -1,4 +1,13 @@
 import './docs-fullscreen.css'
+import { setup } from '@storybook/vue3'
+import { createPinia } from 'pinia'
+
+const pinia = createPinia()
+
+// Setup Vue for Storybook, while @nuxtjs/storybook doesn't work
+setup((app) => {
+  app.use(pinia)
+})
 
 export default {
   layout: 'fullscreen',
@@ -17,36 +26,38 @@ export default {
     },
   },
   viewMode: 'docs',
-  options: {
-    storySort: {
-      order: [
-        'Introduction',
-        'Doc for developers',
-        ['HTML Structure', 'Add CSS classes'],
-        'Foundations',
-        [
-          'Overview',
-          'Fonts',
-          'Backgrounds',
-          'Colors',
-          'Icons',
-          ['List', 'Implementation'],
+  parameters: {
+    options: {
+      storySort: {
+        order: [
+          'Introduction',
+          'Doc for developers',
+          ['HTML Structure', 'Add CSS classes'],
+          'Foundations',
+          [
+            'Overview',
+            'Fonts',
+            'Backgrounds',
+            'Colors',
+            'Icons',
+            ['List', 'Implementation'],
+          ],
+          'Layouts',
+          ['General', 'Sections', 'Containers', 'Grids', 'Spacings', 'Ratios'],
+          'Components',
+          ['Logo', 'Button'],
+          'Sections',
+          [
+            'Header',
+            ['TopBar', 'TopHeader', 'DesktopMenu'],
+            'Hero',
+            'Content',
+            'Footer',
+          ],
+          'Pages',
+          ['Homepage'],
         ],
-        'Layouts',
-        ['General', 'Sections', 'Containers', 'Grids', 'Spacings', 'Ratios'],
-        'Components',
-        ['Logo', 'Button'],
-        'Sections',
-        [
-          'Header',
-          ['TopBar', 'TopHeader', 'DesktopMenu'],
-          'Hero',
-          'Content',
-          'Footer',
-        ],
-        'Pages',
-        ['Homepage'],
-      ],
+      },
     },
   },
 }
