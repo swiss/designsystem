@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas } from '@storybook/blocks'
-import store from '@/.storybook/store'
 import OverviewEasyLanguage from '../../../pages/overviewEasyLanguage.vue'
 import * as OverviewEasyLanguageStories from './OverviewEasyLanguage.stories';
 
@@ -9,8 +8,7 @@ export const Template = (args, { argTypes, viewMode }) => {
   return {
     props: Object.keys(argTypes),
     components: { OverviewEasyLanguage },
-    store: store,
-    template:
+      template:
       '<OverviewEasyLanguage useStickyNavigation="useStickyNavigation" />',
   }
 }

@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
 import SearchResultsFilters from '../../../pages/SearchResultsFilters.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SearchResultsFilters },
-  store: store,
   template:
     '<SearchResultsFilters :noResults="noResults" :isLoading="isLoading" />',
 })

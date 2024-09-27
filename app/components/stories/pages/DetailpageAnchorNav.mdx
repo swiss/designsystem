@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import store from '@/.storybook/store';
 import detailPageAnchorNav from '../../../pages/detailPageAnchorNav.vue';
 import * as DetailpageAnchorNavStories from './DetailpageAnchorNav.stories';
 
@@ -8,7 +7,6 @@ import * as DetailpageAnchorNavStories from './DetailpageAnchorNav.stories';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailPageAnchorNav },
-  store: store,
   template: '<detailPageAnchorNav />',
 });
 

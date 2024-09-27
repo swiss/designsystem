@@ -3,7 +3,9 @@
     <table :class="computedClasses" :id="`table-sortable-${id}`">
       <caption>
         <br />
-        {{ caption }}
+        {{
+          caption
+        }}
         <span class="sr-only">, column headers with buttons are sortable.</span>
       </caption>
       <thead>
@@ -82,19 +84,19 @@ const props = defineProps({
   },
   caption: {
     type: String,
-    default: '',
+    default: () => '',
   },
   displayCaption: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   zebra: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   id: {
     type: String,
-    default: 'default',
+    default: () => 'default',
   },
 })
 

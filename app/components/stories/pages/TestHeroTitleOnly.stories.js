@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
 import testHeroTitleOnly from '../../../pages/testHeroTitleOnly.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { testHeroTitleOnly },
-  store: store,
   template: '<testHeroTitleOnly />',
 })
 

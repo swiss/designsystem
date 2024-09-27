@@ -51,11 +51,11 @@ const props = defineProps({
   },
   rows: {
     type: Number,
-    default: 4,
+    default: () => 4,
   },
   cols: {
     type: Number,
-    default: 50,
+    default: () => 50,
   },
   message: {
     type: String,
@@ -66,11 +66,11 @@ const props = defineProps({
   },
   required: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   resizable: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   maxlength: {
     type: Number,

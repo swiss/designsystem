@@ -14,13 +14,13 @@ const props = defineProps({
   },
   textStyle: {
     type: String,
-    default: 'regular',
+    default: () => 'regular',
     validator: (prop) =>
       ['regular', 'italic', 'bold', 'bold-italic'].includes(prop),
   },
   size: {
     type: String,
-    default: 'base',
+    default: () => 'base',
     validator: (prop) =>
       ['3xl', '2xl', 'xl', 'lg', 'base', 'sm', 'xs'].includes(prop),
   },

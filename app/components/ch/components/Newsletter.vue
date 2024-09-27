@@ -42,7 +42,7 @@ import { computed } from 'vue'
 
 const state = defineModel('state', {
   type: String,
-  default: '',
+  default: () => '',
   validator: (prop) => ['default', 'sent'].includes(prop),
 })
 const props = defineProps({

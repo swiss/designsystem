@@ -37,7 +37,7 @@ const slots = useSlots()
 const props = defineProps({
   imagePos: {
     type: String,
-    default: 'right',
+    default: () => 'right',
     validator: (prop) => ['left', 'right'].includes(prop),
   },
   imageWidth: {
@@ -46,7 +46,7 @@ const props = defineProps({
   },
   isInlineImage: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   textProportion: { type: String, default: '3/4-1/4 ' },
 })

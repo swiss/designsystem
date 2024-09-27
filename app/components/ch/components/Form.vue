@@ -24,28 +24,28 @@ const props = defineProps({
   method: {
     type: String,
     validator: (prop) => ['post', 'get'].includes(prop),
-    default: 'post',
+    default: () => 'post',
   },
   target: {
     type: String,
     validator: (prop) => ['_self', '_blank'].includes(prop),
-    default: '_blank',
+    default: () => '_blank',
   },
 })
 
 const handleSubmit = function (e) {
-  isCustomInvalid = false
+  isCustomInvalid.value = false
   for (const element of $children) {
     if (element?.classes?.includes('input--error')) {
-      isCustomInvalid = true
+      isCustomInvalid.value = true
     }
     for (const child of element?.$children) {
       if (child?.classes?.includes('input--error')) {
-        isCustomInvalid = true
+        isCustomInvalid.value = true
       }
     }
   }
-  if (!isCustomInvalid) {
+  if (!isCustomInvalid.value) {
     if (submitFunction && !action) {
       e.preventDefault()
       submitFunction(e)

@@ -8,15 +8,15 @@ const layoutStore = useLayoutStore()
 const props = defineProps({
   isMobileMenuOpen: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isIntranet: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isFreebrand: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 
@@ -45,7 +45,7 @@ const alterMenuClasses = function () {
   } else {
     if (props.isFreebrand) {
       document.body.classList.remove(
-        'body--mobile-menu-is-open-top-bar-disabled'
+        'body--mobile-menu-is-open-top-bar-disabled',
       )
     } else {
       document.body.classList.remove('body--mobile-menu-is-open')

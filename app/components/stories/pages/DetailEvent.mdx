@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import store from '@/.storybook/store';
 import detailEvent from '../../../pages/detailEvent.vue';
 import * as DetailEventStories from './DetailEvent.stories';
 
@@ -8,7 +7,6 @@ import * as DetailEventStories from './DetailEvent.stories';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailEvent },
-  store: store,
   template: '<detailEvent />',
 });
 

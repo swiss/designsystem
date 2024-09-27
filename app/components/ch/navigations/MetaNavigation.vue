@@ -26,14 +26,14 @@
 <script setup>
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'
-import { ref } from 'vue'
+import { ref, defineProps, onMounted } from 'vue'
 
 const screenSize = ref(0)
 
 const props = defineProps({
   isFreebrand: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

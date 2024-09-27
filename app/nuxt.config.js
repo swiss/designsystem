@@ -58,5 +58,11 @@ export default defineNuxtConfig({
     mode: 'jit',
   },
 
+  vite: {
+    optimizeDeps: {
+      include: ['jsdoc-type-pratt-parser'],
+    },
+  },
+
   compatibilityDate: '2024-09-09',
 })

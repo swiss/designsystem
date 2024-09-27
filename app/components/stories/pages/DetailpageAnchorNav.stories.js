@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
 import detailPageAnchorNav from '../../../pages/detailPageAnchorNav.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailPageAnchorNav },
-  store: store,
   template: '<detailPageAnchorNav />',
 })
 

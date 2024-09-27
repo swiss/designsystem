@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
 import testSpacings from '../../../pages/testSpacings.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { testSpacings },
-  store: store,
   template: '<testSpacings />',
 })
 

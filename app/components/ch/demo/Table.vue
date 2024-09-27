@@ -115,15 +115,15 @@ const props = defineProps({
   },
   caption: {
     type: String,
-    default: '',
+    default: () => '',
   },
   displayCaption: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   zebra: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

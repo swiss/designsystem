@@ -38,24 +38,24 @@ const initialNavBarOffset = ref(0)
 const props = defineProps({
   isOpen: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isHomePage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   // Allow disabling active navigation item highlighting for pages like shopping cart
   showActiveNavigation: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   isSimplePage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSticky: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

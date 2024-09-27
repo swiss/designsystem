@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
 import detailPageComplex from '../../../pages/detailPageComplex.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailPageComplex },
-  store: store,
   template: '<detailPageComplex />',
 })
 

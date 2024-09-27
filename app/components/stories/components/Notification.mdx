@@ -4,13 +4,6 @@ import * as NotificationStories from './Notification.stories';
 
 <Meta of={NotificationStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Notification },
-  template:
-    '<main><Notification :type="type" :icon="icon" :text="text" :closeBtn="closeBtn" :isClosed="isClosed" /></main>',
-})
-
 # Notification
 
 ## Example

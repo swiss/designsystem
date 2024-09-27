@@ -1,4 +1,3 @@
-import store from '@/.storybook/store'
 import detailSimpleLanguage from '../../../pages/detailSimpleLanguage.vue'
 
 const Template = (args, { argTypes, viewMode }) => {
@@ -6,14 +5,12 @@ const Template = (args, { argTypes, viewMode }) => {
     return {
       props: Object.keys(argTypes),
       components: { detailSimpleLanguage },
-      store: store,
       template: '<detailSimpleLanguage :isEasyLanguage="true" />',
     }
   } else {
     return {
       props: Object.keys(argTypes),
       components: { detailSimpleLanguage },
-      store: store,
       template:
         '<detailSimpleLanguage :isEasyLanguage="true" :useStickyNavigation="useStickyNavigation" />',
     }

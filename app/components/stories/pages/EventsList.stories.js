@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
 import eventList from '../../../pages/eventsList.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { eventList },
-  store: store,
   template:
     '<eventList :noResults="noResults" :isLoading="isLoading" :filtersAreOpen="filtersAreOpen" :displayType="displayType" />',
 })

@@ -8,7 +8,7 @@
       {{ label }}
     </label>
     <div :class="selectWrapperClasses">
-      <v-select
+      <!-- <v-select
         :id="getUniqueId('multi-select')"
         :multiple="multiple"
         :placeholder="placeholder"
@@ -25,7 +25,7 @@
               ? !currentSelected || currentSelected.length < selectLimit
               : true)
         "
-      />
+      /> -->
       <div class="select__icon">
         <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
           <path
@@ -45,7 +45,7 @@
 </template>
 
 <script setup>
-import vSelect from 'vue-select' // TODO: Switch this to vueform/multiselect
+// import vSelect from 'vue-select' // TODO: Switch this to vueform/multiselect
 import { reactive, ref, computed, watch, onMounted } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -61,29 +61,29 @@ const OpenIndicator = reactive({
 const props = defineProps({
   bare: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   variant: {
     type: String,
     validator: (prop) => ['outline', 'negative'].includes(prop),
-    default: 'outline',
+    default: () => 'outline',
   },
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
-    default: 'base',
+    default: () => 'base',
   },
   disabled: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   hideLabel: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   required: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   label: {
     type: String,
@@ -112,7 +112,7 @@ const props = defineProps({
   },
   multiple: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   placeholder: {
     type: String,
@@ -159,10 +159,9 @@ watch(currentSelected, function () {
   onChange(currentSelected)
 })
 
-// Set initial selected element
-currentSelected = selected
-
 onMounted(() => {
+  // Set initial selected element
+  Object.assign(currentSelected, selected)
   selectId.value = uuidv4()
 })
 </script>

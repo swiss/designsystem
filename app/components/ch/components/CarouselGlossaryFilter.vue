@@ -323,7 +323,7 @@ import SvgIcon from '../components/SvgIcon.vue'
 const props = defineProps({
   id: {
     type: String,
-    default: 1,
+    default: () => 1,
   },
   badgeClicked: {
     type: Function,
@@ -331,7 +331,7 @@ const props = defineProps({
   },
   activeFilter: {
     type: String,
-    default: 'all',
+    default: () => 'all',
   },
   disabledFilters: {
     type: Array,

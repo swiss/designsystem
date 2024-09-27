@@ -1,16 +1,8 @@
 import Notification from '../../ch/components/Notification.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Notification },
-  template:
-    '<main><Notification :type="type" :icon="icon" :text="text" :closeBtn="closeBtn" :isClosed="isClosed" /></main>',
-})
-
-export default {
+const meta = {
   title: 'Components/Notification',
   component: Notification,
-
   argTypes: {
     type: {
       control: {
@@ -18,7 +10,6 @@ export default {
         options: ['info', 'warning', 'error', 'success', 'alert', 'hint'],
       },
     },
-
     icon: {
       control: {
         type: 'select',
@@ -32,12 +23,11 @@ export default {
       },
     },
   },
-}
+};
+
+export default meta;
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
   args: {
     type: 'info',
     icon: 'InfoCircle',
@@ -45,4 +35,20 @@ export const Example = {
     closeBtn: true,
     isClosed: false,
   },
+}
+
+export const NotificationTypes = {
+  render: (args) => ({
+    components: { Notification },
+    template: `
+        <div>
+          <Notification type="info" icon="InfoCircle" text="This is an info notification." />
+          <Notification type="warning" icon="WarningCircle" text="This is a warning notification." />
+          <Notification type="error" icon="CancelCircle" text="This is an error notification." />
+          <Notification type="success" icon="HelpCircle" text="This is a success notification." />
+          <Notification type="alert" text="This is an alert notification." />
+          <Notification type="hint" text="This is a hint notification." />
+        </div>
+      `,
+  }),
 }

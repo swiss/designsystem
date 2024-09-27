@@ -23,13 +23,13 @@ const props = defineProps({
   },
   textStyle: {
     type: String,
-    default: 'regular',
+    default: () => 'regular',
     validator: (prop) =>
       ['regular', 'italic', 'bold', 'bold-italic'].includes(prop),
   },
   size: {
     type: String,
-    default: 'base',
+    default: () => 'base',
     validator: (prop) =>
       ['h1', 'h2', 'h3', 'h4', 'h5', 'lg', 'base', 'sm', 'xs'].includes(prop),
   },

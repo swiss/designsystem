@@ -1,4 +1,3 @@
-import store from '@/.storybook/store'
 import Glossar from '../../../pages/glossar.vue'
 
 const Template = (args, { argTypes, viewMode }) => {
@@ -6,14 +5,12 @@ const Template = (args, { argTypes, viewMode }) => {
     return {
       props: Object.keys(argTypes),
       components: { Glossar },
-      store: store,
       template: '<Glossar :isLoading="isLoading" />',
     }
   } else {
     return {
       props: Object.keys(argTypes),
       components: { Glossar },
-      store: store,
       template:
         '<Glossar :isLoading="isLoading" :useStickySearch="useStickySearch" />',
     }

@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
 import mailTemplatePreview from '../../../pages/mailTemplatePreview.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { mailTemplatePreview },
-  store: store,
   template: '<mailTemplatePreview />',
 })
 

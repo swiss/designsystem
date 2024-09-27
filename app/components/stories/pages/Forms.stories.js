@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
-import FormExample from '../../../pages/formExample'
+import FormExample from '../../../pages/formExample.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { FormExample },
-  store: store,
   template: '<FormExample />',
 })
 

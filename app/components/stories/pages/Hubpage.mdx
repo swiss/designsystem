@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import store from '@/.storybook/store';
 import hubPage from '../../../pages/hubPage.vue';
 import * as HubpageStories from './Hubpage.stories';
 
@@ -8,7 +7,6 @@ import * as HubpageStories from './Hubpage.stories';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { hubPage },
-  store: store,
   template: '<hubPage />',
 });
 

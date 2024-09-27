@@ -70,7 +70,7 @@ import SvgIcon from '../components/SvgIcon.vue'
 const props = defineProps({
   id: {
     type: String,
-    default: 1,
+    default: () => 1,
   },
 })
 </script>

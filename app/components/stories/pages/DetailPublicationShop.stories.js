@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
 import detailPublicationShop from '../../../pages/detailPublicationShop.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailPublicationShop },
-  store: store,
   template: '<detailPublicationShop />',
 })
 

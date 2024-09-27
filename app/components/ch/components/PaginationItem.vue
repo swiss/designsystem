@@ -19,20 +19,20 @@ import { computed } from 'vue'
 const props = defineProps({
   type: {
     type: String,
-    default: '',
+    default: () => '',
     validator: (prop) => ['outline', 'outline-negative'].includes(prop),
   },
   icon: {
     type: String,
-    default: '',
+    default: () => '',
   },
   label: {
     type: String,
-    default: '',
+    default: () => '',
   },
   disabled: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

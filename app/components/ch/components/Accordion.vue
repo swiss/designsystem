@@ -19,7 +19,7 @@ const props = defineProps({
   },
   spaced: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

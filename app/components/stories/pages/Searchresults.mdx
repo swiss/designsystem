@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import store from '@/.storybook/store';
 import searchResults from '../../../pages/searchResults.vue';
 import * as SearchresultsStories from './Searchresults.stories';
 
@@ -8,7 +7,6 @@ import * as SearchresultsStories from './Searchresults.stories';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { searchResults },
-  store: store,
   template: '<searchResults :noResults="noResults" :isLoading="isLoading" />',
 });
 

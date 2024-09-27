@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import store from '@/.storybook/store';
 import detailPressRelease from '../../../pages/detailPressRelease.vue';
 import * as DetailPressReleaseStories from './DetailPressRelease.stories';
 
@@ -8,7 +7,6 @@ import * as DetailPressReleaseStories from './DetailPressRelease.stories';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailPressRelease },
-  store: store,
   template: '<detailPressRelease />',
 });
 

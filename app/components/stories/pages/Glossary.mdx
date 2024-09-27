@@ -1,6 +1,5 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import store from '@/.storybook/store'
-import Glossar from '../../../pages/glossar.vue'
+// import Glossar from '../../../pages/glossar.vue'
 import * as GlossaryStories from './Glossary.stories';
 
 <Meta of={GlossaryStories} />
@@ -10,14 +9,12 @@ export const Template = (args, { argTypes, viewMode }) => {
     return {
       props: Object.keys(argTypes),
       components: { Glossar },
-      store: store,
       template: '<Glossar :isLoading="isLoading" />',
     }
   } else {
     return {
       props: Object.keys(argTypes),
       components: { Glossar },
-      store: store,
       template:
         '<Glossar :isLoading="isLoading" :useStickySearch="useStickySearch" />',
     }

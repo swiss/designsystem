@@ -458,11 +458,11 @@ const resultItems = reactive([
 const props = defineProps({
   isLoading: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   useStickySearch: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 
@@ -507,7 +507,7 @@ const loadLimitedResults = computed(() => {
     } else {
       let newResults = Object.values(values)[i].results.slice(
         0,
-        loadedResults.value - count
+        loadedResults.value - count,
       )
       if (newResults.length > 0) {
         result.push({
@@ -567,7 +567,7 @@ const limitedResultItems = computed(() => {
         .length > 0
     ) {
       const resultIndex = result.findIndex(
-        (elm) => elm.filter === res.title.charAt(0).toLowerCase()
+        (elm) => elm.filter === res.title.charAt(0).toLowerCase(),
       )
       result[resultIndex].results.push(res)
     } else {
@@ -632,7 +632,7 @@ const handleScroll = async function () {
     useStickyPlaceholder.value = true
     await nextTick()
     const stickyPlaceholder = document.getElementById(
-      'sticky-search-container-placeholder'
+      'sticky-search-container-placeholder',
     )
     stickyPlaceholder.style.height = `${containerHeight.value}px`
 

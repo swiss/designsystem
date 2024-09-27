@@ -148,15 +148,15 @@ import TopHeader from '../components/ch/sections/TopHeader.vue'
 const props = defineProps({
   isEasyLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSignLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   useStickyNavigation: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 </script>

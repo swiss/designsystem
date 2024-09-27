@@ -24,21 +24,21 @@ const props = defineProps({
   },
   type: {
     type: String,
-    default: undefined,
+    default: () => undefined,
     validator: (prop) =>
       ['info', 'warning', 'error', 'success', 'alert', 'hint'].includes(prop),
   },
   icon: {
     type: String,
-    default: undefined,
+    default: () => undefined,
   },
   isClosed: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   closeBtn: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
 })
 

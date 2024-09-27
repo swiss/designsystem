@@ -37,7 +37,7 @@ const props = defineProps({
         'secondary-500',
         'secondary-600',
       ].includes(prop),
-    default: 'secondary-50',
+    default: () => 'secondary-50',
   },
   quote: {
     type: String,

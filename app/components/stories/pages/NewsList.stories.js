@@ -1,10 +1,8 @@
-import store from '@/.storybook/store'
 import newsList from '../../../pages/newsList.vue'
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { newsList },
-  store: store,
   template:
     '<newsList :noResults="noResults" :isLoading="isLoading" :filtersAreOpen="filtersAreOpen" :displayType="displayType" />',
 })

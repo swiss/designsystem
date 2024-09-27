@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas } from '@storybook/blocks'
-import store from '@/.storybook/store'
 import OverviewSignLanguage from '../../../pages/overviewSignLanguage.vue'
 import * as OverviewSignLanguageStories from './OverviewSignLanguage.stories';
 
@@ -10,14 +9,12 @@ export const Template = (args, { argTypes, viewMode }) => {
     return {
       props: Object.keys(argTypes),
       components: { OverviewSignLanguage },
-      store: store,
       template: '<OverviewSignLanguage />',
     }
   } else {
     return {
       props: Object.keys(argTypes),
       components: { OverviewSignLanguage },
-      store: store,
       template:
         '<OverviewSignLanguage useStickyNavigation="useStickyNavigation" />',
     }

@@ -55,7 +55,7 @@ const props = defineProps({
   },
   type: {
     type: String,
-    default: undefined,
+    default: () => undefined,
     validator: (prop) =>
       ['info', 'alert', 'warning', 'error', 'success'].includes(prop),
   },
@@ -77,15 +77,15 @@ const props = defineProps({
   },
   icon: {
     type: String,
-    default: 'warning',
+    default: () => 'warning',
   },
   isClosed: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   closeBtn: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
 })
 

@@ -53,7 +53,7 @@ const props = defineProps({
   },
   headingLevel: {
     type: String,
-    default: 'h4',
+    default: () => 'h4',
     validator: (prop) => ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop),
   },
 })

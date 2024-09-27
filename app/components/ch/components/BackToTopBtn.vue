@@ -22,15 +22,15 @@ const props = defineProps({
   },
   target: {
     type: String,
-    default: '#',
+    default: () => '#',
   },
   fixed: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   wrapper: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
 })
 

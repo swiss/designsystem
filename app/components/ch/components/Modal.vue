@@ -56,11 +56,11 @@ const closeBtn = useTemplateRef('close')
 const props = defineProps({
   uuid: {
     type: String,
-    default: '',
+    default: () => '',
   },
   title: {
     type: String,
-    default: '',
+    default: () => '',
   },
   layout: {
     type: String,
@@ -69,7 +69,7 @@ const props = defineProps({
   },
   triggerElements: {
     type: String,
-    default: '',
+    default: () => '',
   },
 })
 

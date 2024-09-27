@@ -3,7 +3,7 @@
 export default {
   stories: [
     '../components/**/*.mdx',
-    '../components/**/*.stories.js',
+    '../components/**/*.stories.@(js|ts)',
     // '../components/stories/components/Tabs.mdx',
     // '../components/stories/components/Tabs.stories.js',
     // '../components/stories/pages/Glossary.mdx',

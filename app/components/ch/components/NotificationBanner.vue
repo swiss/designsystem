@@ -39,17 +39,17 @@ import { computed } from 'vue'
 
 const isClosed = defineModel('isClosed', {
   type: Boolean,
-  default: false,
+  default: () => false,
 })
 
 const props = defineProps({
   isFixed: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   type: {
     type: String,
-    default: 'info',
+    default: () => 'info',
     validator: (prop) => ['info', 'warning', 'error', 'success'].includes(prop),
   },
 })

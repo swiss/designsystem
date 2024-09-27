@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import store from '@/.storybook/store';
 import testSpacings from '../../../pages/testSpacings.vue';
 import * as TestSpacingsStories from './TestSpacings.stories';
 
@@ -8,7 +7,6 @@ import * as TestSpacingsStories from './TestSpacings.stories';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { testSpacings },
-  store: store,
   template: '<testSpacings />',
 });
 

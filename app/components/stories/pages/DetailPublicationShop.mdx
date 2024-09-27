@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import store from '@/.storybook/store'
 import detailPublicationShop from '../../../pages/detailPublicationShop.vue'
 import * as DetailPublicationShopStories from './DetailPublicationShop.stories';
 
@@ -8,7 +7,6 @@ import * as DetailPublicationShopStories from './DetailPublicationShop.stories';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailPublicationShop },
-  store: store,
   template: '<detailPublicationShop />',
 })
 

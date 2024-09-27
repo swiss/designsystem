@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import store from '@/.storybook/store';
 import newsList from '../../../pages/newsList.vue';
 import * as NewsListStories from './NewsList.stories';
 
@@ -8,7 +7,6 @@ import * as NewsListStories from './NewsList.stories';
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { newsList },
-  store: store,
   template: '<newsList :noResults="noResults" :isLoading="isLoading" :filtersAreOpen="filtersAreOpen" :displayType="displayType" />',
 });
 
