@@ -1,59 +1,41 @@
 import TagItem from '../../ch/components/TagItem.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { TagItem },
-  template:
-    '<TagItem :variant="variant" :label="label" :to="to" :icon="icon" :size="size" />',
-})
-
-const TemplateMultiple = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { TagItem },
-  template: `
-    <div>
-      <hr class="separator separator--xl" />
-      <ul class="list list--flex list--wrap">
-        <li v-for="item in content">
-          <TagItem :variant="item.variant" :label="item.label" :to="item.to" :icon="icon" />
-        </li>
-      </ul>
-    </div>
-    `,
-})
-
 export default {
   title: 'Components/TagItem',
   component: TagItem,
-
   argTypes: {
     variant: {
+      options: ['default', 'primary', 'active'],
       control: {
         type: 'select',
-        options: ['default', 'primary', 'active'],
       },
     },
 
     size: {
+      options: ['sm', 'base'],
       control: {
         type: 'select',
-        options: ['sm', 'base'],
       },
     },
 
     icon: {
+      options: ['Cancel', 'Checkmark', undefined],
       control: {
         type: 'select',
-        options: ['Cancel', 'Checkmark', undefined],
       },
     },
   },
 }
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
+  render: (args) => ({
+    components: { TagItem },
+    setup() {
+      return { ...args };
+    },
+    template:
+      '<TagItem :variant="variant" :label="label" :to="to" :icon="icon" />',
+  }),
   args: {
     variant: 'default',
     label: 'Button text',
@@ -63,9 +45,22 @@ export const Example = {
 }
 
 export const List = {
-  render: TemplateMultiple.bind({}),
-  name: 'List',
-
+  render: (args) => ({
+    components: { TagItem },
+    setup() {
+      return { ...args };
+    },
+    template: `
+      <div>
+        <hr class="separator separator--xl" />
+        <ul class="list list--flex list--wrap">
+          <li v-for="item in content">
+            <TagItem :variant="item.variant" :label="item.label" :to="item.to" />
+          </li>
+        </ul>
+      </div>
+      `,
+  }),
   args: {
     content: [
       {
@@ -89,13 +84,26 @@ export const List = {
         to: '#',
       },
     ],
-  },
+  }
 }
 
 export const Filters = {
-  render: TemplateMultiple.bind({}),
-  name: 'Filters',
-
+  render: (args) => ({
+    components: { TagItem },
+    setup() {
+      return { ...args };
+    },
+    template: `
+      <div>
+        <hr class="separator separator--xl" />
+        <ul class="list list--flex list--wrap">
+          <li v-for="item in content">
+            <TagItem :variant="item.variant" :label="item.label" />
+          </li>
+        </ul>
+      </div>
+      `,
+  }),
   args: {
     content: [
       {
@@ -115,5 +123,5 @@ export const Filters = {
         label: 'Filter three',
       },
     ],
-  },
+  }
 }

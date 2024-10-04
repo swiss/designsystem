@@ -1,30 +1,7 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import TagItem from '../../ch/components/TagItem.vue';
 import * as TagItemStories from './TagItem.stories';
 
 <Meta of={TagItemStories} />
-
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { TagItem },
-  template: '<TagItem :variant="variant" :label="label" :to="to" :icon="icon" :size="size" />',
-});
-
-export const TemplateMultiple = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { TagItem },
-  template:
-    `
-    <div>
-      <hr class="separator separator--xl" />
-      <ul class="list list--flex list--wrap">
-        <li v-for="item in content">
-          <TagItem :variant="item.variant" :label="item.label" :to="item.to" :icon="icon" />
-        </li>
-      </ul>
-    </div>
-    `
-});
 
 # TagItem
 
@@ -32,9 +9,7 @@ export const TemplateMultiple = (args, { argTypes }) => ({
 
 TagItems are similar to [badges](?path=/docs/components-badge--example), but they are bigger and interactive. They ensure to have the recommended minimal height of 44px for clickability.
 
-<Canvas>
-  <Story of={TagItemStories.Example} />
-</Canvas>
+<Canvas of={TagItemStories.Example} />
 
 <Controls />
 
@@ -43,9 +18,7 @@ TagItems are similar to [badges](?path=/docs/components-badge--example), but the
 Wrap TagItems into `ul.list--flex.list--wrap li` to display them as an horizontal list.
 You can add a `hr.separator` element on top to separate the list from the rest of the content.
 
-<Canvas>
-  <Story of={TagItemStories.List} />
-</Canvas>
+<Canvas of={TagItemStories.List} />
 
 ## Filters
 
@@ -53,6 +26,4 @@ A list of TagItems can be used as a filter feature.
 Attribute a `.tag-item--active` class to the selected element.
 A `button` element is recommended in place of a `a` link.
 
-<Canvas>
-  <Story of={TagItemStories.Filters} />
-</Canvas>
+<Canvas of={TagItemStories.Filters} />
