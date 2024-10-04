@@ -4,17 +4,9 @@ import * as PrintStories from './Print.stories';
 
 <Meta of={PrintStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Print },
-  template: '<Print />'
-})
-
 # Print
 
-<Canvas>
-  <Story of={PrintStories.Example} />
-</Canvas>
+<Canvas of={PrintStories.Example} />
 
 # Interaction and accessibility
 
