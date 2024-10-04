@@ -8,6 +8,6 @@ export default {
 export const Example = {
   render: () => ({
     components: { Print },
-  template: '<Print />',
+    template: '<Print />',
   }),
 }

@@ -4,24 +4,6 @@ import * as PopoverStories from './Popover.stories';
 
 <Meta of={PopoverStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Popover },
-  template: `
-    <div style="padding: 60px 0;">
-      <Popover
-        :id="id"
-        :label="label"
-        :color="color"
-        :icon="icon"
-      >
-        <p>Popover content</p>
-        <a href="#">Link</a>
-      </Popover>
-    </div>
-  `,
-});
-
 # Popover
 
 ## Example
@@ -30,11 +12,9 @@ Popovers are used to attach an extra information to a text, a label, a button, e
 
 To ensure a seamless user experience, it is important to avoid hiding essential information required to complete a task, such as filling out a form, within a popover. If such information is necessary, it should be displayed prominently on the page rather than within a popover, as this design pattern is generally not recommended for primary information. Popovers should be reserved for supplementary information only.
 
-<Canvas>
-  <Story of={PopoverStories.Example} />
-</Canvas>
+<Canvas of={PopoverStories.Example} />
 
-<Controls />
+<Controls of={PopoverStories.Example} />
 
 ## Button
 

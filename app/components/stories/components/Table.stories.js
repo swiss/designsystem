@@ -6,6 +6,13 @@ export default {
   component: Table,
   argTypes: {
     variant: {
+      table: {
+        type: {
+          summary: [
+            'string: default, compact',
+          ]
+        },
+      },
       options: ['default', 'compact'],
       control: {
         type: 'select',

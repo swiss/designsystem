@@ -5,12 +5,26 @@ export default {
   component: TagItem,
   argTypes: {
     variant: {
+      table: {
+        type: {
+          summary: [
+            'string: default, primary, active',
+          ]
+        },
+      },
       options: ['default', 'primary', 'active'],
       control: {
         type: 'select',
       },
     },
     size: {
+      table: {
+        type: {
+          summary: [
+            'string: sm, base',
+          ]
+        },
+      },
       options: ['sm', 'base'],
       control: {
         type: 'select',
