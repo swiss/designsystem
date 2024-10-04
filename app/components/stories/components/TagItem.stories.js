@@ -26,11 +26,6 @@ export default {
 }
 
 export const Example = {
-  render: (args) => ({
-    components: { TagItem },
-    setup: () => ({ args }),
-    template: `<TagItem v-bind="args" />`
-  }),
   args: {
     variant: 'default',
     label: 'Button text',
@@ -43,16 +38,14 @@ export const List = {
   render: (args) => ({
     components: { TagItem },
     setup: () => ({ args }),
-    template: `
-      <div>
-        <hr class="separator separator--xl" />
-        <ul class="list list--flex list--wrap">
-          <li v-for="item in content">
-            <TagItem :variant="item.variant" :label="item.label" :to="item.to" />
-          </li>
-        </ul>
-      </div>
-      `,
+    template: `<div>
+      <hr class="separator separator--xl" />
+      <ul class="list list--flex list--wrap">
+        <li v-for="item in args.content">
+          <TagItem v-bind="item" />
+        </li>
+      </ul>
+    </div>`,
   }),
   args: {
     content: [
@@ -88,8 +81,8 @@ export const Filters = {
       <div>
         <hr class="separator separator--xl" />
         <ul class="list list--flex list--wrap">
-          <li v-for="item in content">
-            <TagItem v-bind="args" />
+          <li v-for="item in args.content">
+            <TagItem v-bind="item" />
           </li>
         </ul>
       </div>
