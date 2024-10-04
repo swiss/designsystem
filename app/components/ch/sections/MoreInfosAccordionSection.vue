@@ -95,7 +95,7 @@
                   :filename="'image.png'"
                   :title="'Information on the usage of websites'"
                   description=""
-                  :url="'../../../public/images/html-structure.png'"
+                  :url="'/images/html-structure.png'"
                   :type="'PNG'"
                   :date="'22.01.2022'"
                 />

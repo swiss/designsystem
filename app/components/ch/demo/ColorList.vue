@@ -27,7 +27,6 @@ import { reactive, onMounted } from 'vue'
 const colors = reactive({})
 
 onMounted(() => {
-  console.log('tailwindConfig', tailwindConfig)
-  Object.assign(colors, tailwindConfig.theme.extend.colors)
+  Object.assign(colors, tailwindConfig.theme.colors)
 })
 </script>
