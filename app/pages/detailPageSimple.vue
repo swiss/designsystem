@@ -390,7 +390,7 @@
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
             <h2 class="h2">Bare Link Liste mit Beschreibung</h2>
-            <ul class="list list--bare list--loose list--indented">
+            <ul class="list list--bare list--loose">
               <li>
                 <a
                   class="link"
