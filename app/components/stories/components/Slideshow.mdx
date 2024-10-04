@@ -1,24 +1,8 @@
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import { Meta, Story, Canvas } from '@storybook/blocks'
 import SlideshowExample from '../../ch/demo/SlideshowExample.vue'
 import * as SlideshowStories from './Slideshow.stories';
 
 <Meta of={SlideshowStories} />
-
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { SlideshowExample},
-  template:
-    `
-    <div class="container">
-      <SlideshowExample
-        :breakpoints="breakpoints"
-        :paginationType="paginationType"
-        :id="id"
-        :slides="slides"
-      />
-    </div>
-    `,
-})
 
 # Slideshow
 
@@ -29,14 +13,10 @@ Slideshows are built with https://swiperjs.com/. Check the documentation for spe
 
 If the number of images is relatively low (around 5), use the `bullets` variant.
 
-<Canvas>
-  <Story of={SlideshowStories.WithBullets} />
-</Canvas>
+<Canvas of={SlideshowStories.WithBullets} />
 
 ## Fraction as pagination
 
 If the number of images is higher than 5, it's better to use the `fraction` variant.
 
-<Canvas>
-  <Story of={SlideshowStories.WithFraction} />
-</Canvas>
+<Canvas of={SlideshowStories.WithFraction} />

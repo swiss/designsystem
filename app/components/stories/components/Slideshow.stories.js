@@ -1,28 +1,20 @@
 import SlideshowExample from '../../ch/demo/SlideshowExample.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { SlideshowExample },
-  template: `
-    <div class="container">
-      <SlideshowExample
-        :breakpoints="breakpoints"
-        :paginationType="paginationType"
-        :id="id"
-        :slides="slides"
-      />
-    </div>
-    `,
-})
-
 export default {
   title: 'Components/Slideshow',
   component: SlideshowExample,
 }
 
 export const WithBullets = {
-  render: Template.bind({}),
-  name: 'With bullets',
+  render: (args) => ({
+    components: { SlideshowExample },
+    setup: () => ({ args }),
+    template: `
+      <div class="container">
+        <SlideshowExample v-bind="args" />
+      </div>
+      `,
+  }),
 
   args: {
     id: 1,
@@ -95,8 +87,15 @@ export const WithBullets = {
 }
 
 export const WithFraction = {
-  render: Template.bind({}),
-  name: 'With fraction',
+  render: (args) => ({
+    components: { SlideshowExample },
+    setup: () => ({ args }),
+    template: `
+      <div class="container">
+        <SlideshowExample v-bind="args" />
+      </div>
+      `,
+  }),
 
   args: {
     id: 2,
