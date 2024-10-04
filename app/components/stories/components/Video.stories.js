@@ -1,6 +1,11 @@
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  template: `
+export default {
+  title: 'Components/Video/Embed',
+}
+
+export const Example = {
+  render: () => ({
+    components: {},
+    template: `
     <div class="container container--grid gap--responsive">
       <div class="container__center--xs">
         <h3 class="h3">4/3 video in a tight and centered container</h3>
@@ -22,13 +27,5 @@ const Template = (args, { argTypes }) => ({
       </div>
     </div>
   `,
-})
-
-export default {
-  title: 'Components/Video/Embed',
-}
-
-export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
+  }),
 }
