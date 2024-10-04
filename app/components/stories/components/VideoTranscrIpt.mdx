@@ -1,5 +1,4 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import videoFile from '../../../public/videos/demo.mp4';
 import Accordion from '../../ch/components/Accordion.vue'
 import AccordionItem from '../../ch/components/AccordionItem.vue'
 import TranscriptionExample from '../../ch/demo/TranscriptionExample.vue'
@@ -20,7 +19,7 @@ export const Template = (args, { argTypes }) => ({
         <div class="ratio ratio--16/9">
           <video
               controls
-              src="../../../public/videos/demo.mp4"
+              src="/videos/demo.mp4"
             />
         </div>
         <figcaption>Video label — © Author Name</figcaption>

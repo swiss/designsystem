@@ -1,8 +1,9 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import videoFile from '../../../public/videos/demo.mp4';
-import vttFile from '../../../public/videos/demo.vtt';
+import videoFile from '/videos/demo.mp4';
+import vttFile from '/videos/demo.vtt';
+import * as VideoStories from './VideoCaptions.stories';
 
-<Meta title="Components/Video/Captions" />
+<Meta of={VideoStories} />
 
 # Video captions
 
@@ -27,7 +28,7 @@ If you host the video yourself and you have a `.vtt` file to describe the video 
 Play the video above to see the video captions and the improved styles for accessibility. You can also play the video in fullscreen to see the adapted styles.
 
 <Canvas>
-  <video controls src={videoFile}>
-    <track default kind="captions" srclang="en" src={vttFile} />
+  <video controls src="/videos/demo.mp4">
+    <track default kind="captions" srclang="en" src="/videos/demo.vtt" />
   </video>
 </Canvas>

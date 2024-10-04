@@ -1,4 +1,3 @@
-import videoFile from '../../../public/videos/demo.mp4'
 import Accordion from '../../ch/components/Accordion.vue'
 import AccordionItem from '../../ch/components/AccordionItem.vue'
 import TranscriptionExample from '../../ch/demo/TranscriptionExample.vue'
@@ -12,7 +11,7 @@ const Template = (args, { argTypes }) => ({
         <div class="ratio ratio--16/9">
           <video
               controls
-              src="../../../public/videos/demo.mp4"
+              src="/videos/demo.mp4"
             />
         </div>
         <figcaption>Video label — © Author Name</figcaption>
