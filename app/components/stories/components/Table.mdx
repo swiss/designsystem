@@ -5,18 +5,6 @@ import * as TableStories from './Table.stories';
 
 <Meta of={TableStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Table },
-  template: '<Table :variant="variant" :caption="caption" :displayCaption="displayCaption" :zebra="zebra" />',
-});
-
-export const TemplateSortable = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { TableSortable },
-  template: '<TableSortable :variant="variant" :caption="caption" :displayCaption="displayCaption" :zebra="zebra"  :id="id" />',
-});
-
 # Table
 
 <a href="?path=/story/components-table--example">
@@ -29,11 +17,9 @@ export const TemplateSortable = (args, { argTypes }) => ({
   Open page in full width in a new tab
 </a>
 
-<Canvas>
-  <Story of={TableStories.Example} />
-</Canvas>
+<Canvas of={TableStories.Example} story={{inline:true}} />
 
-<Controls />
+<Controls of={TableStories.Example} />
 
 ## Variants
 
@@ -96,11 +82,9 @@ Use `<th>` elements to define headers. They should have a `scope` attribute with
   Open page in full width in a new tab
 </a>
 
-<Canvas>
-  <Story of={TableStories.ExampleSortable} />
-</Canvas>
+<Canvas of={TableStories.ExampleSortable} story={{inline:true}} />
 
-<Controls />
+<Controls of={TableStories.ExampleSortable} />
 
 ## Markup example
 

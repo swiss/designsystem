@@ -1,38 +1,25 @@
 import Table from '../../ch/demo/Table.vue'
 import TableSortable from '../../ch/demo/TableSortable.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Table },
-  template:
-    '<Table :variant="variant" :caption="caption" :displayCaption="displayCaption" :zebra="zebra" />',
-})
-
-const TemplateSortable = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { TableSortable },
-  template:
-    '<TableSortable :variant="variant" :caption="caption" :displayCaption="displayCaption" :zebra="zebra"  :id="id" />',
-})
-
 export default {
   title: 'Components/Table',
   component: Table,
-
   argTypes: {
     variant: {
+      options: ['default', 'compact'],
       control: {
         type: 'select',
-        options: ['default', 'compact'],
       },
     },
   },
 }
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
+  render: (args) => ({
+    components: { Table },
+    setup: () => ({ args }),
+    template: `<Table v-bind="args"/>`
+  }),
   args: {
     variant: 'default',
     caption: 'Short description of the table content for better accessibility',
@@ -42,9 +29,11 @@ export const Example = {
 }
 
 export const ExampleSortable = {
-  render: TemplateSortable.bind({}),
-  name: 'Example Sortable',
-
+  render: (args) => ({
+    components: { TableSortable },
+    setup: () => ({ args }),
+    template: `<TableSortable v-bind="args" />`
+  }),
   args: {
     variant: 'default',
     caption: 'Short description of the table content for better accessibility',

@@ -129,9 +129,9 @@ const props = defineProps({
 
 const computedClasses = computed(() => {
   let base = 'table '
-  if (variant) base += `table--${variant} `
-  if (displayCaption) base += `table--caption `
-  if (zebra) base += `table--zebra `
+  if (props.variant) base += `table--${props.variant} `
+  if (props.displayCaption) base += `table--caption `
+  if (props.zebra) base += `table--zebra `
   return base
 })
 </script>

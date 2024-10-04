@@ -30,11 +30,9 @@ export default {
 export const Example = {
   render: (args) => ({
     components: { TagItem },
-    setup() {
-      return { ...args };
-    },
+    setup: () => ({ args }),
     template:
-      '<TagItem :variant="variant" :label="label" :to="to" :icon="icon" />',
+      `<TagItem v-bind="args" />`
   }),
   args: {
     variant: 'default',
