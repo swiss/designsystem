@@ -4,7 +4,7 @@
 
 .search--main {
   @apply flex;
-  @apply relative z-50;
+  @apply relative z-30;
 
   & .form__group__input {
     @apply w-full h-full;
@@ -27,6 +27,40 @@
       @apply cursor-text;
       @apply shadow-2xl;
     }
+  }
+}
+
+.search--desktop {
+  @apply hidden lg:block;
+}
+
+.search--mobile {
+  @apply absolute right-0 z-30;
+  @apply mt-2 px-3.5;
+  @apply hidden;
+  @apply w-full;
+
+  label {
+    @apply sr-only;
+  }
+
+  input {
+    @apply cursor-text;
+    @apply bg-white;
+    @apply shadow-2xl;
+  }
+}
+
+.search--mobile.active {
+  @apply block;
+}
+
+.top-header-search__group {
+  @apply flex items-stretch justify-between relative;
+
+  .btn {
+    @apply absolute right-0 z-20 mt-[7px];
+    @apply cursor-text;
   }
 }
 

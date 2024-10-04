@@ -14,7 +14,6 @@
   >
     <MainNavigation
       context="mobile"
-      :isHomePage="isHomePage"
       :showActiveNavigation="showActiveNavigation"
     />
     <MetaNavigationMobile />
@@ -42,10 +41,6 @@ export default {
   },
   props: {
     isOpen: {
-      type: Boolean,
-      default: false,
-    },
-    isHomePage: {
       type: Boolean,
       default: false,
     },

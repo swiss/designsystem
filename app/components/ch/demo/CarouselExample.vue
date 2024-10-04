@@ -66,12 +66,6 @@
         <Card type="default">
           <template v-slot:image>
             <picture>
-              <source
-                :srcset="slide.source.srcset"
-                :height="slide.source.height"
-                :width="slide.source.width"
-                :media="slide.source.media"
-              />
               <img
                 :src="slide.image.src"
                 :alt="slide.image.alt"

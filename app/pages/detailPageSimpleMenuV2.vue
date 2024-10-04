@@ -4,26 +4,34 @@
       :isMobileMenuOpen="getMobileMenuIsOpen()"
       :isIntranet="isIntranet"
       :isFreebrand="isFreebrand"
+      :UsesMenuV2="true"
     />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
-      <AlertBanner
-        v-if="showAlertBanner"
-        title="Warnungen des Bundes"
-        topic="Hochwasser"
-        type="alert"
-        lastUpdated="Aktualisiert am: 11.09.2016, 11:13"
-        icon="WarningCircle"
-        text="Die Hochwassergefahr im Kanton Tessin geht ab Mittwoch 12 Uhr wieder zurück. Der Wasserstand sinkt allmählich und mit weiteren Überschwemmungen ist nicht zu rechnen. Beachten Sie jedoch weiterhin die Weisungen der Behörden und Einsatzkräfte vor Ort."
-        introLink="Weitere Informationen finden Sie unter:"
-        :link="alertBannerLink"
-        :closeBtn="true"
-        :isClosed="false"
-      />
       <TopBar v-if="!isFreebrand" :isOpen="false" />
-      <TopHeader :isFreebrand="isFreebrand" />
+      <TopHeader :isFreebrand="isFreebrand" :isMenuV2="true" />
       <DesktopMenu :showActiveNavigation="true" />
-      <MobileMenu :showActiveNavigation="true" />
+      <MobileMenuV2 />
+      <div class="search--mobile" :class="searchActive ? 'active' : ''">
+        <div class="top-header-search__group" id="search-mobile-group">
+          <Input
+            type="search"
+            id="search-mobile"
+            label="Suche in dieser Website"
+            placeholder="Suche"
+            autocomplete="off"
+          />
+          <Btn
+            tabindex="-1"
+            aria-hidden="true"
+            label="Suchen auf dieser Website"
+            icon="Search"
+            icon-pos="only"
+            variant="bare"
+            size="lg"
+          />
+        </div>
+      </div>
       <Breadcrumb />
       <div class="container">
         <ShareBar />
@@ -899,7 +907,6 @@ import ContactSection from '~/components/ch/sections/ContactSection'
 import Hero from '~/components/ch/sections/Hero'
 import MoreInfosAccordionSection from '~/components/ch/sections/MoreInfosAccordionSection'
 import QuoteSection from '~/components/ch/sections/QuoteSection'
-import AlertBanner from '../components/ch/components/AlertBanner.vue'
 import Badge from '../components/ch/components/Badge.vue'
 import Btn from '../components/ch/components/Btn.vue'
 import Card from '../components/ch/components/Card.vue'
@@ -914,13 +921,14 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
+import MobileMenuV2 from '../components/ch/sections/MobileMenuV2.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 
 export default {
-  name: 'detailPageSimple',
+  name: 'detailPageSimpleMenuV2',
   components: {
-    AlertBanner,
+    MobileMenuV2,
     AlterBodyClasses,
     TopBar,
     TopHeader,
@@ -952,12 +960,7 @@ export default {
   },
   data: function () {
     return {
-      showAlertBanner: false,
-      alertBannerLink: {
-        href: 'https://www.naturgefahren.ch/home.html?tab=actualdanger',
-        label: 'naturgefahren.ch',
-        icon: 'External',
-      },
+      screenSize: 0,
       URLIsCopied: false,
       slides: [
         {
@@ -966,6 +969,12 @@ export default {
             width: '1024',
             height: '768',
             alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=29',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
           },
           caption: {
             title: 'Image one title',
@@ -980,6 +989,12 @@ export default {
             height: '768',
             alt: 'image name',
           },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=28',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
           caption: {
             title: 'Image two, title without description',
             copyright: 'Photograph name',
@@ -991,6 +1006,12 @@ export default {
             width: '1024',
             height: '768',
             alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=1045',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
           },
           caption: {
             description: 'Image three, description only',
@@ -1028,7 +1049,25 @@ export default {
         { label: 'GKG/KOGIS', url: '#' },
         { label: 'Datenmodell', url: '#' },
       ],
+      searchActive: false,
     }
+  },
+  async mounted() {
+    await this.$nextTick()
+    this.emitter.on('top-header-search-toggle', async () => {
+      this.searchActive = !this.searchActive
+      if (this.searchActive) {
+        await this.$nextTick()
+        document.getElementById('search-mobile').focus()
+      }
+    })
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('#search-mobile-group, #search-main-wrapper')) {
+        this.searchActive = false
+      }
+    })
+
+    window.addEventListener('resize', this.resizeWindow)
   },
   props: {
     isIntranet: {
@@ -1041,6 +1080,12 @@ export default {
     },
   },
   methods: {
+    resizeWindow() {
+      this.screenSize = document.body.clientWidth
+      if (this.screenSize > 1024) {
+        this.searchActive = false
+      }
+    },
     getMobileMenuIsOpen() {
       return this.$store.getters['layout/getMobileMenuIsOpen']
     },

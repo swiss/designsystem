@@ -5,7 +5,7 @@
     <swiper
       :breakpoints="breakpoints"
       :speed="500"
-      :autoHeight="true"
+      :autoHeight="false"
       :loop="loop"
       :keyboard="{
         enabled: true,
@@ -33,12 +33,6 @@
       >
         <figure>
           <picture>
-            <source
-              :srcset="slide.source.srcset"
-              :height="slide.source.height"
-              :width="slide.source.width"
-              :media="slide.source.media"
-            />
             <img
               :src="slide.image.src"
               :alt="slide.image.alt"
