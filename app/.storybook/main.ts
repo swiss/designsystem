@@ -1,3 +1,5 @@
+import remarkGfm from 'remark-gfm';
+
 // TODO: clean up this file, once all stories work
 /** @type { import('storybook-vue').StorybookConfig } */
 export default {
@@ -12,7 +14,16 @@ export default {
     // '../stories/**/*.stories.ts',
   ],
   addons: [
-    // '@storybook/addon-docs',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm]
+          }
+        }
+      }
+    },
     '@storybook/addon-links',
     '@storybook/addon-designs',
     '@storybook/addon-essentials',

@@ -45,6 +45,7 @@
     "nuxt": "^3.13.2",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
+    "remark-gfm": "^4.0.0",
     "storybook": "^8.3.4",
     "svg-inline-loader": "^0.8.2",
     "vite": "^5.4.8"
