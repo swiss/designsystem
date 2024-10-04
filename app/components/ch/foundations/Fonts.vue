@@ -28,12 +28,12 @@ const props = defineProps({
 
 const classes = computed(() => {
   let base = ''
-  if (textStyle) base += `font--${textStyle} `
-  if (size) {
-    if (size.startsWith('h')) {
-      base += `${size} `
+  if (props.textStyle) base += `font--${props.textStyle} `
+  if (props.size) {
+    if (props.size.startsWith('h')) {
+      base += `${props.size} `
     } else {
-      base += `text--${size} `
+      base += `text--${props.size} `
     }
   }
   return base

@@ -4,12 +4,6 @@ import * as FontsStories from './Fonts.stories';
 
 <Meta of={FontsStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Fonts },
-  template: '<Fonts :label="label" :textStyle="textStyle" :size="size" />',
-});
-
 # Fonts
 
 ## Headings
@@ -22,15 +16,7 @@ For heading, the following css classes are built. These classes combine a text s
 * `.h4` for heading 4
 * `.h5` for heading 5
 
-<Canvas>
-  <div>
-    <div class="h1">Title heading 1</div>
-    <div class="h2">Title heading 2</div>
-    <div class="h3">Title heading 3</div>
-    <div class="h4">Title heading 4</div>
-    <div class="h5">Title heading 5</div>
-  </div>
-</Canvas>
+<Canvas of={FontsStories.Headings} />
 
 ## Text sizes
 
@@ -44,17 +30,7 @@ If you need to control font-size only, the following responsive css classes are 
 * `text--sm` for sm
 * `text--xs` for xs
 
-<Canvas>
-  <div>
-    <div class="text--3xl">Text size 3xl</div>
-    <div class="text--2xl">Text size 2xl</div>
-    <div class="text--xl">Text size xl</div>
-    <div class="text--lg">Text size lg</div>
-    <div class="text--base">Text size base</div>
-    <div class="text--sm">Text size sm</div>
-    <div class="text--xs">Text size xs</div>
-  </div>
-</Canvas>
+<Canvas of={FontsStories.TextSize} />
 
 ## Styles and Weights
 
@@ -65,37 +41,20 @@ For style variations, the following css classes are built:
 * `font--bold` for bold
 * `font--bold-italic`  for bold italic
 
-<Canvas>
-  <div>
-    <div class="font--regular">Regular</div>
-    <div class="font--italic">Italic</div>
-    <div class="font--bold">Bold</div>
-    <div class="font--bold-italic">Bold italic</div>
-  </div>
-</Canvas>
+<Canvas of={FontsStories.StyleVariations} />
 
 ## Super and subscripts
 
 use `<sub>` and `<sup>` tags to create superscript and subscript text.
 
-<Canvas>
-  <div>
-    <p>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
-  </div>
-</Canvas>
+<Canvas of={FontsStories.Superscript} />
 
-<Canvas>
-  <div>
-    <p>H<sub>2</sub>SO<sub>4</sub> for sulphuric acid.</p>
-  </div>
-</Canvas>
+<Canvas of={FontsStories.Subscript} />
 
 ## Example
 
 As example you can modify the props values in the table below to combine the different classes and see the result:
 
-<Controls />
+<Controls of={FontsStories.Example} />
 
-<Canvas>
-  <Story of={FontsStories.Example} />
-</Canvas>
+<Canvas of={FontsStories.Example} story={{inline:true}} />
