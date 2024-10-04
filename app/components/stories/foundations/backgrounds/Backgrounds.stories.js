@@ -3,7 +3,7 @@ export default {
 }
 
 export const Example = {
-  render: (args) => ({
+  render: () => ({
     template: `<div class="storybook-backgrounds">
       <div class="bg--secondary-900">
         <div class="text--negative">

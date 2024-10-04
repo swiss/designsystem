@@ -21,7 +21,7 @@ export default {
 }
 
 export const Headings = {
-  render: (args) => ({
+  render: () => ({
     template: `<div>
       <div class="h1">Title heading 1</div>
       <div class="h2">Title heading 2</div>
@@ -33,7 +33,7 @@ export const Headings = {
 }
 
 export const TextSize = {
-  render: (args) => ({
+  render: () => ({
     template: `<div>
       <div class="text--3xl">Text size 3xl</div>
       <div class="text--2xl">Text size 2xl</div>
@@ -47,7 +47,7 @@ export const TextSize = {
 }
 
 export const StyleVariations = {
-  render: (args) => ({
+  render: () => ({
     template: `<div>
       <div class="font--regular">Regular</div>
       <div class="font--italic">Italic</div>
@@ -58,7 +58,7 @@ export const StyleVariations = {
 }
 
 export const Superscript = {
-  render: (args) => ({
+  render: () => ({
     template: `<div>
       <p>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
     </div>`,
@@ -66,7 +66,7 @@ export const Superscript = {
 }
 
 export const Subscript = {
-  render: (args) => ({
+  render: () => ({
     template: `<div>
       <p>H<sub>2</sub>SO<sub>4</sub> for sulphuric acid.</p>
     </div>`,
@@ -74,11 +74,6 @@ export const Subscript = {
 }
 
 export const Example = {
-  render: (args) => ({
-    components: { Fonts },
-    setup: () => ({ args }),
-    template: `<Fonts v-bind="args" />`,
-  }),
   args: {
     label: 'Confoederatio helvetica',
     textStyle: 'bold',

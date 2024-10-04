@@ -1,14 +1,12 @@
-import { render } from 'vue'
 import ColorList from '../../../ch/demo/ColorList.vue'
 
 export default {
   title: 'Foundations/Fonts/Colors',
   component: ColorList,
-  argTypes: {},
 }
 
 export const TextColors = {
-  render: (args) => ({
+  render: () => ({
     template: `<div>
       <div class="color--default">color--default</div>
       <div class="color--light">color--light</div>
@@ -18,7 +16,7 @@ export const TextColors = {
 }
 
 export const NegativeColor = {
-  render: (args) => ({
+  render: () => ({
     template: `<div>
       <div class="color--negative">color--negative</div>
     </div>`,
@@ -26,7 +24,7 @@ export const NegativeColor = {
 }
 
 export const AllColorVariantsDefault = {
-  render: (args) => ({
+  render: () => ({
     template: `<div class="storybook-backgrounds">
       <div class="color--text-900">color--text-900</div>
       <div class="color--text-800">color--text-800 – default text color</div>
@@ -44,7 +42,7 @@ export const AllColorVariantsDefault = {
 }
 
 export const AllColorVariantsPrimary = {
-  render: (args) => ({
+  render: () => ({
     template: `<div class="storybook-backgrounds">
       <div class="color--primary-900">color--primary-900</div>
       <div class="color--primary-800">color--primary-800</div>
@@ -61,9 +59,4 @@ export const AllColorVariantsPrimary = {
   }),
 }
 
-export const FlexibleColors = {
-  render: (args) => ({
-    components: { ColorList },
-    template:`<ColorList />`,
-  }),
-}
+export const FlexibleColors = {}

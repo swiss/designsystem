@@ -4,9 +4,7 @@ export default {
 
 export const Example = {
   render: () => ({
-    components: {},
-    template: `
-    <div class="container container--grid gap--responsive">
+    template: `<div class="container container--grid gap--responsive">
       <div class="container__center--xs">
         <h3 class="h3">4/3 video in a tight and centered container</h3>
         <figure>
@@ -25,7 +23,6 @@ export const Example = {
           <figcaption>Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal</figcaption>
         </figure>
       </div>
-    </div>
-  `,
+    </div>`,
   }),
 }

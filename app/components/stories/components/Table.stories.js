@@ -15,11 +15,6 @@ export default {
 }
 
 export const Example = {
-  render: (args) => ({
-    components: { Table },
-    setup: () => ({ args }),
-    template: `<Table v-bind="args"/>`
-  }),
   args: {
     variant: 'default',
     caption: 'Short description of the table content for better accessibility',

@@ -10,14 +10,12 @@ export default {
         type: 'select',
       },
     },
-
     size: {
       options: ['sm', 'base'],
       control: {
         type: 'select',
       },
     },
-
     icon: {
       options: ['Cancel', 'Checkmark', undefined],
       control: {
@@ -31,8 +29,7 @@ export const Example = {
   render: (args) => ({
     components: { TagItem },
     setup: () => ({ args }),
-    template:
-      `<TagItem v-bind="args" />`
+    template: `<TagItem v-bind="args" />`
   }),
   args: {
     variant: 'default',
@@ -45,9 +42,7 @@ export const Example = {
 export const List = {
   render: (args) => ({
     components: { TagItem },
-    setup() {
-      return { ...args };
-    },
+    setup: () => ({ args }),
     template: `
       <div>
         <hr class="separator separator--xl" />
@@ -88,15 +83,13 @@ export const List = {
 export const Filters = {
   render: (args) => ({
     components: { TagItem },
-    setup() {
-      return { ...args };
-    },
+    setup: () => ({ args }),
     template: `
       <div>
         <hr class="separator separator--xl" />
         <ul class="list list--flex list--wrap">
           <li v-for="item in content">
-            <TagItem :variant="item.variant" :label="item.label" />
+            <TagItem v-bind="args" />
           </li>
         </ul>
       </div>
