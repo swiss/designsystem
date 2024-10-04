@@ -106,24 +106,11 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 
 let activeIndex = ref(0)
 
-const props = defineProps({
-  variant: {
-    type: String,
-    validator: (prop) => ['compact'].includes(prop),
-  },
-})
-
-const computedClasses = computed(() => {
-  let base = 'table '
-  if (variant) base += `table--${variant} `
-  return base
-})
-
 const setActiveIndex = function (index) {
-  activeIndex = index
+  activeIndex.value = index
 }
 </script>
