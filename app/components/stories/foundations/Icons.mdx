@@ -1,4 +1,5 @@
-import { Meta } from '@storybook/blocks';
+import { Meta, Story } from '@storybook/blocks';
+import * as IconsStories from './Icons.stories';
 
 <Meta title="Foundations/Icons/Implementation" />
 
@@ -55,45 +56,7 @@ Use the following classes to set the size of the icon:
 * `icon--4xl`
 * `icon--5xl`
 
-<Canvas>
-  <div className="flex items-center">
-    <svg viewBox="0 0 24 24" class="icon icon--sm">
-      <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>
-
-    <svg viewBox="0 0 24 24" class="icon icon--base">
-      <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>
-
-    <svg viewBox="0 0 24 24" class="icon icon--md">
-      <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>
-
-    <svg viewBox="0 0 24 24" class="icon icon--lg">
-      <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>
-
-    <svg viewBox="0 0 24 24" class="icon icon--xl">
-      <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>
-
-    <svg viewBox="0 0 24 24" class="icon icon--2xl">
-      <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>
-
-    <svg viewBox="0 0 24 24" class="icon icon--3xl">
-      <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>
-
-    <svg viewBox="0 0 24 24" class="icon icon--4xl">
-      <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>
-
-    <svg viewBox="0 0 24 24" class="icon icon--5xl">
-      <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>
-  </div>
-</Canvas>
+<Story of={IconsStories.Example} />
 
 If you want to control the width of an icon with its parent container, use the `icon--full` class.
 
@@ -101,14 +64,10 @@ If you want to control the width of an icon with its parent container, use the `
 
 Use the `icon--spin` class to spin an icon.
 
-<Canvas>
-  <svg viewBox="0 0 24 24" class="icon icon--3xl icon--spin">
-    <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-  </svg>
-</Canvas>
+<Story of={IconsStories.SpinningIcon} />
 
 ```html
-  <svg viewBox="0 0 24 24" class="icon icon--3xl icon--spin">
-    <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z"></path>
-  </svg>
+<svg viewBox="0 0 24 24" class="icon icon--3xl icon--spin">
+  <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z"></path>
+</svg>
 ```
