@@ -1,4 +1,4 @@
-/* Vuepic v8.8.0 css */
+/* Vuepic v9.0.3 css */
 
 /* When updating to new version, adapt customized classes in new version */
 /* Start customized css */
@@ -40,7 +40,7 @@
   --dp-hover-icon-color: #959595;
   --dp-primary-color: #1976d2;
   --dp-primary-disabled-color: #6bacea;
-  --dp-primary-text-color: #f8f5f5;
+  --dp-primary-text-color: #fff;
   --dp-secondary-color: #c0c4cc;
   --dp-border-color: #ddd;
   --dp-menu-border-color: #ddd;
@@ -71,7 +71,7 @@
   --dp-transition-timing: ease-out;
   --dp-action-row-transtion: all 0.2s ease-in;
   --dp-font-family: font-regular;
-  --dp-border-radius: 0px;
+  --dp-border-radius: 4px;
   --dp-cell-border-radius: 4px;
   --dp-transition-length: 22px;
   --dp-transition-timing-general: 0.1s;
@@ -97,6 +97,7 @@
   --dp-time-font-size: 2rem;
   --dp-action-button-height: 22px;
   --dp-action-row-padding: 8px;
+  --dp-direction: ltr;
 }
 
 .date-input--sm {
@@ -172,7 +173,6 @@
 }
 .dp__input::placeholder {
   opacity: 0.7;
-  color: var(--dp-text-color);
 }
 .dp__input:hover:not(.dp__input_focus) {
   border-color: var(--dp-border-color-hover);
@@ -208,13 +208,19 @@
   transform: translateY(-50%);
   color: var(--dp-icon-color);
 }
-.dp__clear_icon {
+.dp--clear-btn {
   position: absolute;
   top: 50%;
   inset-inline-end: 0;
   transform: translateY(-50%);
   cursor: pointer;
   color: var(--dp-icon-color);
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 .dp__input_icon_pad {
   padding-inline-start: var(--dp-input-icon-padding);
@@ -1062,6 +1068,9 @@
   position: relative;
   width: 100%;
 }
+.dp__main * {
+  direction: var(--dp-direction, ltr);
+}
 .dp__pointer {
   cursor: pointer;
 }
@@ -1158,4 +1167,7 @@
 }
 .dp--highlighted {
   background-color: var(--dp-highlight-color);
+}
+.dp--hidden-el {
+  visibility: hidden;
 } /*# sourceMappingURL=main.css.map */
