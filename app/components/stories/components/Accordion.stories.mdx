@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import Accordion from '../../ch/components/Accordion.vue'
 import AccordionItem from '../../ch/components/AccordionItem.vue'
+import SvgIcon from '../../ch/components/SvgIcon.vue'
 
 <Meta
   title="Components/Accordion"
@@ -30,6 +31,21 @@ export const Template = (args, { argTypes }) => ({
     `
 })
 
+export const TemplateLoading = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Accordion, AccordionItem, SvgIcon },
+  template: `
+    <Accordion id="2">
+      <AccordionItem
+        id="10"
+        title="Accordion item one"
+        :isLoading="true"
+      >
+        <SvgIcon  icon="Spinner" :spin="true" size="2xl" class="accordion__loading-icon" />
+      </AccordionItem>
+    </Accordion>
+    `,
+})
 
 # Accordion
 
@@ -39,6 +55,14 @@ export const Template = (args, { argTypes }) => ({
     args={{}}
   >
     {Template.bind({})}
+  </Story>
+</Canvas>
+
+# Accordion with loading spinner
+
+<Canvas>
+  <Story name="Loading example" args={{}}>
+    {TemplateLoading.bind({})}
   </Story>
 </Canvas>
 
