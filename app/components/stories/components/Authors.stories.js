@@ -1,28 +1,16 @@
 import Authors from '../../ch/components/Authors.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Authors },
-  template: '<Authors :authors="authors" :bare="bare" />',
-})
-
 export default {
   title: 'Components/Authors',
   component: Authors,
-
   argTypes: {
     bare: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
   },
 }
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
   args: {
     authors: [
       {
@@ -50,9 +38,7 @@ export const Example = {
 }
 
 export const ExampleWOPictures = {
-  render: Template.bind({}),
   name: 'Example w/o pictures',
-
   args: {
     authors: [
       {
@@ -73,9 +59,6 @@ export const ExampleWOPictures = {
 }
 
 export const OneAuthor = {
-  render: Template.bind({}),
-  name: 'One author',
-
   args: {
     authors: [
       {
@@ -87,9 +70,7 @@ export const OneAuthor = {
 }
 
 export const OneAuthorWOPicture = {
-  render: Template.bind({}),
   name: 'One author w/o picture',
-
   args: {
     authors: [
       {

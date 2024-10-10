@@ -1,14 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import Authors from '../../ch/components/Authors.vue'
-import * as AuthorsStories from './Authors.stories';
+import * as AuthorsStories from './Authors.stories'
 
 <Meta of={AuthorsStories} />
-
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Authors },
-  template: '<Authors :authors="authors" :bare="bare" />'
-})
 
 # Authors
 
@@ -20,45 +14,35 @@ If no initials are provided, the disc contains the `User` svg icon.
 
 The default author component include horizontal lines and padding. Use the `bare` prop to remove these properties.
 
-<Canvas>
-  <Story of={AuthorsStories.Example} />
-</Canvas>
+<Canvas of={AuthorsStories.Example} />
 
-<Controls />
+<Controls of={AuthorsStories.Example} />
 
 ## Example without images
 
 Author images are not displayed in two cases
 
-* When none of the authors or most of them don't have an image
-* When author list is very large (more than 7)
+- When none of the authors or most of them don't have an image
+- When author list is very large (more than 7)
 
-<Canvas>
-  <Story of={AuthorsStories.ExampleWOPictures} />
-</Canvas>
+<Canvas of={AuthorsStories.ExampleWOPictures} />
 
 ## Example with one author
 
 Example with only one author, with picture.
 
-<Canvas>
-  <Story of={AuthorsStories.OneAuthor} />
-</Canvas>
+<Canvas of={AuthorsStories.OneAuthor} />
 
 ## Example with one author, without image
 
 Example with only one author, without picture.
 
-<Canvas>
-  <Story of={AuthorsStories.OneAuthorWOPicture} />
-</Canvas>
+<Canvas of={AuthorsStories.OneAuthorWOPicture} />
 
-<a href="?path=/story/components-authors--example">
-  Go to the Canvas Tab
-</a>
+<a href="?path=/story/components-authors--example">{'Go to the Canvas Tab'}</a>
 
-***
+---
 
 <a href="?id=components-authors--example&args=&viewMode=story" target="_blank">
-  Open page in full width in a new tab
+  {'Open page in full width in a new tab'}
 </a>
