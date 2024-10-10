@@ -145,8 +145,7 @@
 }
 
 @layer utilities {
-  .broader-than-container,
-  .broader-than-container-centered {
+  .broader-than-container {
     --side-margin: calc(theme('spacing.4') * -1);
 
     @media screen(xs) {
@@ -170,12 +169,5 @@
 
     padding-left: calc(var(--side-margin) * -1);
     padding-right: calc(var(--side-margin) * -1);
-  }
-
-  .broader-than-container {
-    @media screen(md) {
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 }
