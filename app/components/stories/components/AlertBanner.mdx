@@ -1,14 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import AlertBanner from '../../ch/components/AlertBanner.vue'
-import * as AlertBannerStories from './AlertBanner.stories';
+import * as AlertBannerStories from './AlertBanner.stories'
 
 <Meta of={AlertBannerStories} />
-
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { AlertBanner },
-  template: '<AlertBanner :title="title" :topic="topic" :type="type" :lastUpdated="lastUpdated" :icon="icon" :text="text" :introLink="introLink" :link="link" :closeBtn="closeBtn" :isClosed="isClosed" />',
-})
 
 # AlertBanner
 
@@ -16,8 +10,6 @@ Use this component only for very important notifications, for example when the p
 
 ## Example
 
-<Canvas>
-  <Story of={AlertBannerStories.Example} />
-</Canvas>
+<Canvas of={AlertBannerStories.Example} />
 
-<Controls />
+<Controls of={AlertBannerStories.Example} />

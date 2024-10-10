@@ -38,6 +38,10 @@ const iconClass = computed(() => {
 
 watchEffect(async () => {
   // TODO: check if this works in production. Not consistent in dev
+  if (!props.icon) {
+    svgSrc.value = ''
+    return
+  }
   svgSrc.value = (
     await import(`../../../assets/icons/${props.icon}.svg`)
   ).default

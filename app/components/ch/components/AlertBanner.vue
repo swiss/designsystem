@@ -77,7 +77,7 @@ const props = defineProps({
   },
   icon: {
     type: String,
-    default: () => 'warning',
+    default: () => 'WarningCircle',
   },
   isClosed: {
     type: Boolean,
@@ -91,7 +91,7 @@ const props = defineProps({
 
 const classes = computed(() => {
   let base = 'alert-banner '
-  if (type) base += `alert-banner--${type} `
+  if (props.type) base += `alert-banner--${props.type} `
   return base
 })
 </script>

@@ -1,43 +1,39 @@
 import AlertBanner from '../../ch/components/AlertBanner.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { AlertBanner },
-  template:
-    '<AlertBanner :title="title" :topic="topic" :type="type" :lastUpdated="lastUpdated" :icon="icon" :text="text" :introLink="introLink" :link="link" :closeBtn="closeBtn" :isClosed="isClosed" />',
-})
-
 export default {
   title: 'Components/AlertBanner',
   component: AlertBanner,
-
   argTypes: {
     type: {
-      control: {
-        type: 'select',
-        options: ['info', 'warning', 'alert', 'error', 'success'],
+      table: {
+        type: { summary: ['string: info, warning, alert, error, success'] },
       },
+      options: ['info', 'warning', 'alert', 'error', 'success'],
+      control: { type: 'select' },
     },
-
     icon: {
-      control: {
-        type: 'select',
-        options: [
-          'InfoCircle',
-          'WarningCircle',
-          'CancelCircle',
-          'HelpCircle',
-          undefined,
-        ],
+      table: {
+        type: {
+          summary: [
+            'string: InfoCircle, WarningCircle, CancelCircle, HelpCircle',
+          ],
+        },
       },
+      options: [
+        'InfoCircle',
+        'WarningCircle',
+        'CancelCircle',
+        'HelpCircle',
+        null,
+      ],
+      control: { type: 'select' },
     },
   },
 }
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
+  components: { AlertBanner },
+  template: '<AlertBanner v-bind="args" />',
   args: {
     title: 'Warnungen des Bundes',
     topic: 'Hochwasser',
@@ -46,13 +42,11 @@ export const Example = {
     icon: 'WarningCircle',
     text: 'Die Hochwassergefahr im Kanton Tessin geht ab Mittwoch 12 Uhr wieder zurück. Der Wasserstand sinkt allmählich und mit weiteren Überschwemmungen ist nicht zu rechnen. Beachten Sie jedoch weiterhin die Weisungen der Behörden und Einsatzkräfte vor Ort.',
     introLink: 'Weitere Informationen finden Sie unter:',
-
     link: {
       href: 'https://www.naturgefahren.ch/home.html?tab=actualdanger',
       label: 'naturgefahren.ch',
       icon: 'External',
     },
-
     closeBtn: true,
     isClosed: false,
   },
