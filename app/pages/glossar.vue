@@ -52,18 +52,21 @@
                   </div>
                 </div>
                 <div class="glossary__filters">
-                    <CarouselGlossaryFilter
-                      :badgeClicked="setActiveFilter"
-                      :activeFilter="activeFilter"
-                      :disabledFilters="disabledFilters"
-                      :id="carouselId"
-                    />
-                    <GlossaryFilter
-                      :badgeClicked="setActiveFilter"
-                      :activeFilter="activeFilter"
-                      :disabledFilters="disabledFilters"
-                    />
-                  <div v-if="showFilterSection" class="glossary__filters__drawer-section">
+                  <CarouselGlossaryFilter
+                    :badgeClicked="setActiveFilter"
+                    :activeFilter="activeFilter"
+                    :disabledFilters="disabledFilters"
+                    :id="carouselId"
+                  />
+                  <GlossaryFilter
+                    :badgeClicked="setActiveFilter"
+                    :activeFilter="activeFilter"
+                    :disabledFilters="disabledFilters"
+                  />
+                  <div
+                    v-if="showFilterSection"
+                    class="glossary__filters__drawer-section"
+                  >
                     <Btn
                       :label="
                         filtersAreOpen ? 'Filter ausblenden' : 'Filter anzeigen'
