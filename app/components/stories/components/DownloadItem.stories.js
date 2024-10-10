@@ -1,45 +1,17 @@
 import DownloadItem from '../../ch/components/DownloadItem.vue'
 import Btn from '../../ch/components/Btn.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { DownloadItem },
-  template: `
-    <DownloadItem :filename="filename" :title="title" :description="description" :url="url" :type="type" :date="date" :headingLevel="headingLevel" />
-    `,
-})
-
-const LargeTemplate = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { DownloadItem, Btn },
-  template: `
-    <div>
-      <ul>
-        <li v-for="item in content">
-          <DownloadItem :filename="filename" :title="item.title" :description="item.description" :url="item.url" :type="item.type" :date="item.date" :headingLevel="headingLevel"  />
-        </li>
-      </ul>
-      <div class="flex justify-end">
-        <button type="button" class="btn btn--base btn--bare">
-          <span class="btn__text">Alle Anzeigen</span>
-          <svg viewBox="0 0 24 24" class="btn__icon icon icon--base">
-            <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z" />
-          </svg>
-        </button>
-      </div>
-    </div>
-    `,
-})
-
 export default {
   title: 'Components/DownloadItem',
   component: DownloadItem,
 }
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
+  render: (args) => ({
+    components: { DownloadItem },
+    setup: () => ({ args }),
+    template: '<DownloadItem v-bind="args" />',
+  }),
   args: {
     filename: 'dummy.pdf',
     title: 'Information on the usage of websites',
@@ -52,10 +24,28 @@ export const Example = {
   },
 }
 
-export const List = {
-  render: LargeTemplate.bind({}),
-  name: 'List',
-
+export const ListExample = {
+  render: (args) => ({
+    components: { DownloadItem, Btn },
+    setup: () => ({ args }),
+    template: `
+      <div>
+        <ul>
+          <li v-for="item in args.content">
+            <DownloadItem v-bind="item"  />
+          </li>
+        </ul>
+        <div class="flex justify-end">
+          <button type="button" class="btn btn--base btn--bare">
+            <span class="btn__text">Alle Anzeigen</span>
+            <svg viewBox="0 0 24 24" class="btn__icon icon icon--base">
+              <path d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    `,
+  }),
   args: {
     content: [
       {
