@@ -26,7 +26,8 @@ const props = defineProps({
   },
   ariaLabel: {
     type: String,
-    default: 'Shopping cart: There are <amount> items in your shopping cart.',
+    default: () =>
+      'Shopping cart: There are <amount> items in your shopping cart.',
   },
   href: {
     type: String,
@@ -34,7 +35,7 @@ const props = defineProps({
   target: {
     type: String,
     validator: (prop) => ['_blank', '_parent', '_self', '_top'].includes(prop),
-    default: '_self',
+    default: () => '_self',
   },
   label: {
     type: String,

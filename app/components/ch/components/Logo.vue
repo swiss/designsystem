@@ -300,29 +300,29 @@ const props = defineProps({
   title: {
     type: String,
     required: false,
-    default: '',
+    default: () => '',
   },
   accronym: {
     type: String,
     required: false,
-    default: '',
+    default: () => '',
   },
   link: {
     type: String,
     required: false,
-    default: '/',
+    default: () => '/',
   },
   isFreebrand: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isEasyLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSignLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

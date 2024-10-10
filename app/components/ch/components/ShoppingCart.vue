@@ -192,7 +192,7 @@
                           setFormFieldValue(
                             'invoice',
                             'lastName',
-                            e.target.value
+                            e.target.value,
                           )
                       "
                       :message="
@@ -212,7 +212,7 @@
                           setFormFieldValue(
                             'invoice',
                             'firstName',
-                            e.target.value
+                            e.target.value,
                           )
                       "
                       :message="
@@ -272,7 +272,7 @@
                           setFormFieldValue(
                             'invoice',
                             'postOffice',
-                            e.target.value
+                            e.target.value,
                           )
                       "
                       :message="
@@ -337,7 +337,7 @@
                           setFormFieldValue(
                             'invoice',
                             'country',
-                            e.target.value
+                            e.target.value,
                           )
                       "
                     >
@@ -429,7 +429,7 @@
                             setFormFieldValue(
                               'delivery',
                               'lastName',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -449,7 +449,7 @@
                             setFormFieldValue(
                               'delivery',
                               'firstName',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -489,7 +489,7 @@
                             setFormFieldValue(
                               'delivery',
                               'street',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -514,7 +514,7 @@
                             setFormFieldValue(
                               'delivery',
                               'postOffice',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -554,7 +554,7 @@
                             setFormFieldValue(
                               'delivery',
                               'city',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -583,7 +583,7 @@
                             setFormFieldValue(
                               'delivery',
                               'country',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                       >
@@ -760,11 +760,11 @@ import Form from './Form.vue'
 import Input from './Input.vue'
 import Notification from './Notification.vue'
 import Radio from './Radio.vue'
-import Select from './Select'
+import Select from './Select.vue'
 import ShoppingCartTotal from './ShoppingCartTotal.vue'
 import ShoppingCartTotalSummary from './ShoppingCartTotalSummary.vue'
 import StepIndicator from './StepIndicator.vue'
-import Textarea from './Textarea'
+import Textarea from './Textarea.vue'
 import { reactive, ref, computed, watch, onMounted } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -905,19 +905,19 @@ const formInputFields = reactive({
 const props = defineProps({
   cartTitle: {
     type: String,
-    default: 'Shopping cart',
+    default: () => 'Shopping cart',
   },
   cartOverviewTitle: {
     type: String,
-    default: 'Shopping cart',
+    default: () => 'Shopping cart',
   },
   cartAddressTitle: {
     type: String,
-    default: 'Billing address & delivery address',
+    default: () => 'Billing address & delivery address',
   },
   cartCheckoutTitle: {
     type: String,
-    default: 'Submit order',
+    default: () => 'Submit order',
   },
 })
 
@@ -1021,7 +1021,7 @@ const scrollContentIntoView = function (index) {
   }
 
   const scroolTarget = document.getElementById(
-    getUniqueId(accordionIdMap[index])
+    getUniqueId(accordionIdMap[index]),
   )
 
   if (scroolTarget) {

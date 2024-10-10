@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import DesktopMenu from '../../ch/sections/DesktopMenu.vue';
+import * as DesktopMenuStories from './DesktopMenu.stories';
+
+<Meta of={DesktopMenuStories} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { DesktopMenu },
+  template: '<DesktopMenu :isOpen="isOpen" :showActiveNavigation="true" />',
+});
+
+# Desktop Menu
+
+<Canvas>
+  <Story of={DesktopMenuStories.Example} />
+</Canvas>
+
+<Controls />
+
+<a href="?path=/story/sections-header-desktopmenu--example">Go to the Canvas Tab</a>
+
+***
+
+<a href="?id=sections-header-desktopmenu--example" target="_blank">Open page in full width in a new tab</a>

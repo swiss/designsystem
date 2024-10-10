@@ -1,6 +1,7 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme'
 
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: [
     './safelist.txt',
     './app/pages/**/*.vue',
@@ -14,7 +15,7 @@ module.exports = {
     extend: {
       animation: {
         'spin-fast': 'spin 0.5s linear infinite',
-      }
+      },
     },
     screens: {
       xs: '480px',
@@ -28,7 +29,6 @@ module.exports = {
     container: {
       '2xl': '1544px',
       '3xl': '1676px',
-
     },
     scale: {
       102: '1.02',
@@ -195,7 +195,7 @@ module.exports = {
       },
       white: '#ffffff',
       black: '#000000',
-      transparent: 'transparent'
+      transparent: 'transparent',
     },
     fontWeight: {
       normal: 400,
@@ -217,12 +217,7 @@ module.exports = {
       '9xl': '5rem',
     },
     fontFamily: {
-      regular: [
-        'Font-Regular',
-        'Hind',
-        'Fallback-font',
-        'Sans-Serif',
-      ],
+      regular: ['Font-Regular', 'Hind', 'Fallback-font', 'Sans-Serif'],
       italic: ['Font-Italic', 'Hind', 'Fallback-font'],
       bold: ['Font-Bold', 'Hind', 'Fallback-font'],
       'bold-italic': ['Font-Bold-Italic', 'Hind', 'Fallback-font'],

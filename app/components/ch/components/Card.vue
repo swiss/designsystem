@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { useSlots, computed } from 'vue'
 
 const slots = useSlots()
 

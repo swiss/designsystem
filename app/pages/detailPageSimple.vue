@@ -166,7 +166,8 @@
                 />
               </div>
               <figcaption>
-                Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal
+                Geoinformation - Alles findet irgendwo statt — © Swiss
+                Geoportal
               </figcaption>
             </figure>
 
@@ -998,11 +999,11 @@ const tags = reactive([
 const props = defineProps({
   isIntranet: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isFreebrand: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 </script>

@@ -72,7 +72,7 @@ const pricePiece = ref(0)
 const props = defineProps({
   defaultAmount: {
     type: Number,
-    default: 1,
+    default: () => 1,
   },
   amountInputLabel: {
     type: String,
@@ -116,7 +116,7 @@ onMounted(() => {
   inputValue.value = props.defaultAmount
   Object.assign(
     selectedValue,
-    props.options.find((option) => option.selected).value
+    props.options.find((option) => option.selected).value,
   )
   pricePiece.value = props.options.find((option) => option.selected).pricePiece
 })
@@ -145,7 +145,7 @@ const getUniqueId = function (text = '') {
 const setSelectedValue = function (value) {
   Object.assign(selectedValue, value)
   pricePiece.value = props.options.find(
-    (option) => option.value === value
+    (option) => option.value === value,
   ).pricePiece
 }
 </script>

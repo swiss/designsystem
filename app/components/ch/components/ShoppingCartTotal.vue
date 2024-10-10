@@ -29,7 +29,7 @@ const screenSize = ref(0)
 const props = defineProps({
   title: {
     type: String,
-    default: 'Total:',
+    default: () => 'Total:',
   },
   total: {
     type: String,
@@ -40,11 +40,11 @@ const props = defineProps({
   },
   nextStepLabel: {
     type: String,
-    default: 'Next step',
+    default: () => 'Next step',
   },
   nextStepAriaLabel: {
     type: String,
-    default: 'Go to next step',
+    default: () => 'Go to next step',
   },
 })
 

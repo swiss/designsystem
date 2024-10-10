@@ -34,12 +34,12 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: 'base',
+    default: () => 'base',
     validator: (prop) => ['base', 'sm'].includes(prop),
   },
   icon: {
     type: String,
-    default: undefined,
+    default: () => undefined,
   },
 })
 

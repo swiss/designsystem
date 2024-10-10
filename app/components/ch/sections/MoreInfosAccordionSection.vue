@@ -95,7 +95,7 @@
                   :filename="'image.png'"
                   :title="'Information on the usage of websites'"
                   description=""
-                  :url="'../../../public/images/html-structure.png'"
+                  :url="'/images/html-structure.png'"
                   :type="'PNG'"
                   :date="'22.01.2022'"
                 />
@@ -141,7 +141,7 @@
 <script setup>
 import Accordion from '../components/Accordion.vue'
 import AccordionItem from '../components/AccordionItem.vue'
-import Btn from '../components/Btn'
+import Btn from '../components/Btn.vue'
 import Card from '../components/Card.vue'
 import DownloadItem from '../components/DownloadItem.vue'
 import SvgIcon from '../components/SvgIcon.vue'

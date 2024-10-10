@@ -47,19 +47,21 @@ export default defineNuxtConfig({
     // https://pinia.vuejs.org/ssr/nuxt.html
     '@pinia/nuxt',
     // https://storybook.nuxtjs.org
-    '@nuxtjs/storybook',
+    // '@nuxtjs/storybook',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
 
-  typescript: {
-    check: false,
-  },
-
   tailwindcss: {
     cssPath: '../css/main.postcss',
     mode: 'jit',
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: ['jsdoc-type-pratt-parser'],
+    },
   },
 
   compatibilityDate: '2024-09-09',

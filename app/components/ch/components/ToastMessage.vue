@@ -25,7 +25,7 @@ const showTimeout = ref(null)
 const props = defineProps({
   triggerName: {
     type: String,
-    default: 'trigger-toast-message',
+    default: () => 'trigger-toast-message',
   },
 })
 

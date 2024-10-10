@@ -37,7 +37,7 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import Hero from '../components/ch/sections/Hero'
+import Hero from '../components/ch/sections/Hero.vue'
 import SubpagesSection from '../components/ch/sections/SubpagesSection.vue'
 import { useLayoutStore } from '../store/layout'
 

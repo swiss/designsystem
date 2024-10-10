@@ -39,7 +39,7 @@ const props = defineProps({
   },
   disabled: {
     type: Object,
-    default: false,
+    default: () => false,
   },
   size: {
     type: String,
@@ -47,7 +47,7 @@ const props = defineProps({
   },
   icon: {
     type: String,
-    default: '',
+    default: () => '',
   },
   iconPos: {
     type: String,
@@ -63,11 +63,11 @@ const props = defineProps({
   },
   fullWidth: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSubmit: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 const emit = defineEmits(['emitClick'])

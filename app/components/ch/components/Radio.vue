@@ -31,7 +31,7 @@ const props = defineProps({
   variant: {
     type: String,
     validator: (prop) => ['outline', 'negative'].includes(prop),
-    default: 'outline',
+    default: () => 'outline',
   },
   size: {
     type: String,
@@ -61,7 +61,7 @@ const props = defineProps({
   },
   required: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   onChange: {
     type: Function,

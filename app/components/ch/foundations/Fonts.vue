@@ -14,13 +14,13 @@ const props = defineProps({
   },
   textStyle: {
     type: String,
-    default: 'regular',
+    default: () => 'regular',
     validator: (prop) =>
       ['regular', 'italic', 'bold', 'bold-italic'].includes(prop),
   },
   size: {
     type: String,
-    default: 'base',
+    default: () => 'base',
     validator: (prop) =>
       ['3xl', '2xl', 'xl', 'lg', 'base', 'sm', 'xs'].includes(prop),
   },
@@ -28,12 +28,12 @@ const props = defineProps({
 
 const classes = computed(() => {
   let base = ''
-  if (textStyle) base += `font--${textStyle} `
-  if (size) {
-    if (size.startsWith('h')) {
-      base += `${size} `
+  if (props.textStyle) base += `font--${props.textStyle} `
+  if (props.size) {
+    if (props.size.startsWith('h')) {
+      base += `${props.size} `
     } else {
-      base += `text--${size} `
+      base += `text--${props.size} `
     }
   }
   return base

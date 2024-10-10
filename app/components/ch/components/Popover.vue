@@ -48,7 +48,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: 'white',
+    default: () => 'white',
     validator: (prop) =>
       [
         'info',
@@ -69,7 +69,7 @@ const props = defineProps({
   },
   icon: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
 })
 

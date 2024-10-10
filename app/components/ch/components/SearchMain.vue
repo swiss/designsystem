@@ -9,29 +9,22 @@
         placeholder="Suche"
         autocomplete="off"
       />
-      <div
-        class="search__button"
-        title="Toggle search"
-      >
+      <div class="search__button" title="Toggle search">
         <span class="search__button__title">Suche</span>
-        <SvgIcon
-          icon="Search" size="lg"
-          class="search__button__icon"
-        />
+        <SvgIcon icon="Search" size="lg" class="search__button__icon" />
+      </div>
     </div>
-    </div>
-
   </div>
 </template>
 
 <script setup>
-import SvgIcon from './SvgIcon.vue';
-import Input from './Input.vue';
+import SvgIcon from './SvgIcon.vue'
+import Input from './Input.vue'
 
 const props = defineProps({
-		isOpen: {
-			type: Boolean,
-			default: false,
-		}
-	});
+  isOpen: {
+    type: Boolean,
+    default: () => false,
+  },
+})
 </script>

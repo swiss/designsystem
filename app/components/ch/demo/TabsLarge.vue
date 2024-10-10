@@ -129,18 +129,5 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
 
-const props = defineProps({
-  variant: {
-    type: String,
-    validator: (prop) => ['compact'].includes(prop),
-  },
-})
-
-const computedClasses = computed(() => {
-  let base = 'table '
-  if (variant) base += `table--${variant} `
-  return base
-})
 </script>

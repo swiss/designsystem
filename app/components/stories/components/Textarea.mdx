@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import Textarea from '../../ch/components/Textarea.vue'
+import * as TextareaStories from './Textarea.stories';
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+## Example
+
+<Canvas of={TextareaStories.Example} />
+
+<Controls of={TextareaStories.Example} />
+
+## Textarea negative type
+
+- `input--negative` for standard textareas on dark background
+
+<Canvas of={TextareaStories.NegativeTextarea } className='storybook-bg-negative' />
+
+## Textarea disabled state
+
+- `input--disabled` or `disabled state on the input` to add the disabled style
+
+<Canvas of={TextareaStories.DisabledTextarea} />
+
+## Sizes
+
+For size variations, the following css classes are built:
+
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
+
+<Canvas of={TextareaStories.SizesTextarea} />
+
+## Required textarea
+
+If the textarea is mandatory:
+
+- a `required` attribute is added to the input element
+- an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element:
+
+<Canvas of={TextareaStories.RequiredTextarea} />
+
+## Messages
+
+If the textarea has error, an `input--error` class is added to the input element. Additionally
+a `badge badge--sm badge--error` element wraps the error message, right after the input element:
+
+<Canvas of={TextareaStories.MessagesTextarea} />

@@ -49,11 +49,11 @@ const agbAccepted = ref(false)
 const props = defineProps({
   title: {
     type: String,
-    default: 'Total',
+    default: () => 'Total',
   },
   subTotalTitle: {
     type: String,
-    default: 'Subtotal',
+    default: () => 'Subtotal',
   },
   subTotal: {
     type: String,
@@ -61,7 +61,7 @@ const props = defineProps({
   },
   totalTitle: {
     type: String,
-    default: 'Total',
+    default: () => 'Total',
   },
   total: {
     type: String,
@@ -69,11 +69,11 @@ const props = defineProps({
   },
   orderButtonText: {
     type: String,
-    default: 'Order',
+    default: () => 'Order',
   },
   orderButtonAriaLabel: {
     type: String,
-    default: 'Order',
+    default: () => 'Order',
   },
   agreementText: {
     type: String,

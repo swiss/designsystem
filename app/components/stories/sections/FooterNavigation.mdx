@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import FooterNavigation from '../../ch/sections/FooterNavigation.vue'
+import * as FooterNavigationStories from './FooterNavigation.stories';
+
+<Meta of={FooterNavigationStories} />
+
+export const Template = () => ({
+  props: [],
+  components: { FooterNavigation },
+  template: '<FooterNavigation />',
+  parameters: {
+    layout: 'fullscreen',
+  },
+})
+
+# Footer navigation
+
+<Canvas className="test">
+  <Story of={FooterNavigationStories.Example} />
+</Canvas>
+
+<Controls />
+
+<a href="?path=/story/sections-footer-footernavigation--example">
+  Go to the Canvas Tab
+</a>
+
+***
+
+<a href="?id=sections-footer-footernavigation--example" target="_blank">
+  Open page in full width in a new tab
+</a>

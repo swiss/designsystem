@@ -333,23 +333,15 @@
 </template>
 
 <script setup>
-import Accordion from '../components/ch/components/Accordion.vue'
-import AccordionItem from '../components/ch/components/AccordionItem.vue'
-import Authors from '../components/ch/components/Authors.vue'
-import Btn from '../components/ch/components/Btn'
-import Card from '../components/ch/components/Card'
-import Contact from '../components/ch/components/Contact'
+import Btn from '../components/ch/components/Btn.vue'
 import DownloadItem from '../components/ch/components/DownloadItem.vue'
 import InfoBlock from '../components/ch/components/InfoBlock.vue'
 import Notification from '../components/ch/components/Notification.vue'
 import RelatedTags from '../components/ch/components/RelatedTags.vue'
-import SvgIcon from '../components/ch/components/SvgIcon'
-import ToastMessage from '../components/ch/components/ToastMessage'
+import ToastMessage from '../components/ch/components/ToastMessage.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
-import Hero from '../components/ch/sections/Hero'
-import Input from '../components/ch/components/Input.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import OrderBox from '../components/ch/components/OrderBox.vue'
-import Select from '../components/ch/components/Select'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -388,7 +380,7 @@ const authors = reactive([
   },
 ])
 const shoppingCartAriaLabel = ref(
-  'Shopping cart: There are <amount> items in your shopping cart.'
+  'Shopping cart: There are <amount> items in your shopping cart.',
 )
 const shoppingCartAmount = ref(0)
 const shoppingCartLink = ref('/shopping-cart')

@@ -136,7 +136,7 @@ import TopHeader from '../components/ch/sections/TopHeader.vue'
 const props = defineProps({
   useStickyNavigation: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 </script>

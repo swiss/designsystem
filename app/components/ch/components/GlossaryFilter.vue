@@ -227,20 +227,20 @@
   </div>
 </template>
 <script setup>
-import badge from '../components/Badge.vue';
+import badge from '../components/Badge.vue'
 
 const props = defineProps({
-    badgeClicked: {
-      type: Function,
-      default: () => {},
-    },
-    activeFilter: {
-      type: String,
-      default: 'all',
-    },
-    disabledFilters: {
-      type: Array,
-      default: () => [],
-    },
-  });
+  badgeClicked: {
+    type: Function,
+    default: () => {},
+  },
+  activeFilter: {
+    type: String,
+    default: () => 'all',
+  },
+  disabledFilters: {
+    type: Array,
+    default: () => [],
+  },
+})
 </script>

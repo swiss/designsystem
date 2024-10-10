@@ -230,11 +230,11 @@ import { computed } from 'vue'
 const props = defineProps({
   isSimplePage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   context: {
     type: String,
-    default: '',
+    default: () => '',
   },
 })
 

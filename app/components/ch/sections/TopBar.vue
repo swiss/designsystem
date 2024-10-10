@@ -363,20 +363,20 @@ const initialTopBarOffset = ref(0)
 
 const isOpen = defineModel('isOpen', {
   type: Boolean,
-  default: false,
+  default: () => false,
 })
 const props = defineProps({
   isEasyLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSignLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSticky: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

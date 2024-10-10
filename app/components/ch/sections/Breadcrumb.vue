@@ -17,11 +17,11 @@ import { onMounted } from 'vue'
 const props = defineProps({
   isHomePage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSimplePage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

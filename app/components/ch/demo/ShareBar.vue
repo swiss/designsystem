@@ -26,7 +26,7 @@ import SvgIcon from '../components/SvgIcon.vue'
 const props = defineProps({
   showEasyIcons: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
 })
 </script>
