@@ -45,7 +45,7 @@
 
 <script setup>
 import SvgIcon from './SvgIcon.vue'
-import { ref, computed, onMounted, onBeforeUnmount, useTemplateRef } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount, useTemplateRef, useSlots } from 'vue'
 
 const slots = useSlots()
 
