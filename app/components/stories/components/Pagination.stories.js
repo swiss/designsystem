@@ -23,11 +23,6 @@ export default {
         type: 'boolean',
       },
     },
-    currentPage: {
-      control: {
-        type: 'text',
-      },
-    },
   },
 }
 

@@ -33,7 +33,6 @@
 </template>
 
 <script setup>
-import SvgIcon from '../components/SvgIcon.vue'
 import Btn from '../components/Btn.vue'
 import { computed } from 'vue'
 

@@ -4,17 +4,6 @@ import * as NotificationBannerStories from './NotificationBanner.stories';
 
 <Meta of={NotificationBannerStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { NotificationBanner },
-  template:
-    `
-    <div style="min-height: 100vh">
-      <NotificationBanner :isClosed="isClosed" :isFixed="isFixed" :type="type" />
-    </div>
-    `
-})
-
 # Notification Banner
 
 Use this component for cookie consent banner.
@@ -27,6 +16,4 @@ The links in the cookie banner should be the first focusable elements in the pag
 
 <Controls />
 
-<Canvas>
-  <Story of={NotificationBannerStories.Example} />
-</Canvas>
+<Canvas of={NotificationBannerStories.Example} />

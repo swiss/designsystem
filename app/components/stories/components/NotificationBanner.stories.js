@@ -1,33 +1,41 @@
 import NotificationBanner from '../../ch/components/NotificationBanner.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { NotificationBanner },
-  template: `
-    <div style="min-height: 100vh">
-      <NotificationBanner :isClosed="isClosed" :isFixed="isFixed" :type="type" />
-    </div>
-    `,
-})
-
 export default {
   title: 'Components/NotificationBanner',
   component: NotificationBanner,
 
   argTypes: {
     type: {
+      table: {
+        type: {
+          summary: [
+            'string: info, warning, error, success',
+          ]
+        },
+      },
+      options: ['info', 'warning', 'error', 'success'],
       control: {
         type: 'select',
-        options: ['info', 'warning', 'error', 'success'],
+      },
+    },
+    isClosed: {
+      control: {
+        type: 'boolean',
       },
     },
   },
 }
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
+  render: (args) => ({
+    components: { NotificationBanner },
+    setup: () => ({ args }),
+    template: `
+    <div style="min-height: 100vh">
+      <NotificationBanner v-bind="args" />
+    </div>
+    `,
+  }),
   args: {
     type: 'info',
     isFixed: false,
