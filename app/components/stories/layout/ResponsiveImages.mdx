@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 
 <Meta title="Layouts/Responsive Images" />
 
@@ -18,8 +18,18 @@ The **minimal declarations** keep the automatic image generation smaller, while 
 
 ```html
 <picture>
-  <source srcset="https://picsum.photos/720/405/?image=29" width="720" height="405" media="(min-width: 480px)">
-  <img src="https://picsum.photos/480/xxx/?image=29" with="480" height="248" alt="image name">
+  <source
+    srcset="https://picsum.photos/720/405/?image=29"
+    width="720"
+    height="405"
+    media="(min-width: 480px)"
+  />
+  <img
+    src="https://picsum.photos/480/xxx/?image=29"
+    with="480"
+    height="248"
+    alt="image name"
+  />
 </picture>
 ```
 
@@ -27,23 +37,63 @@ The **minimal declarations** keep the automatic image generation smaller, while 
 
 ```html
 <picture>
-  <source srcset="https://picsum.photos/480/270/?image=29" width="480" height="270" media="(min-width: 1544px)">
-  <source srcset="https://picsum.photos/460/259/?image=29" width="460" height="259" media="(min-width: 1280px)">
-  <source srcset="https://picsum.photos/400/225/?image=29" width="400" height="225" media="(min-width: 1024px)">
-  <source srcset="https://picsum.photos/460/259/?image=29" width="460" height="259" media="(min-width: 768px)">
-  <source srcset="https://picsum.photos/720/405/?image=29" width="720" height="405" media="(min-width: 480px)">
-  <img src="https://picsum.photos/480/xxx/?image=29" with="480" height="248" alt="image name">
+  <source
+    srcset="https://picsum.photos/480/270/?image=29"
+    width="480"
+    height="270"
+    media="(min-width: 1544px)"
+  />
+  <source
+    srcset="https://picsum.photos/460/259/?image=29"
+    width="460"
+    height="259"
+    media="(min-width: 1280px)"
+  />
+  <source
+    srcset="https://picsum.photos/400/225/?image=29"
+    width="400"
+    height="225"
+    media="(min-width: 1024px)"
+  />
+  <source
+    srcset="https://picsum.photos/460/259/?image=29"
+    width="460"
+    height="259"
+    media="(min-width: 768px)"
+  />
+  <source
+    srcset="https://picsum.photos/720/405/?image=29"
+    width="720"
+    height="405"
+    media="(min-width: 480px)"
+  />
+  <img
+    src="https://picsum.photos/480/xxx/?image=29"
+    with="480"
+    height="248"
+    alt="image name"
+  />
 </picture>
 ```
 
-## Cards 1/2  - 1/2
+## Cards 1/2 - 1/2
 
 **Minimal declaration**
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/760/428/?image=29" width="760" height="428" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" with="480" height="248" alt="image name">
+  <source
+    srcset="https://picsum.photos/760/428/?image=29"
+    width="760"
+    height="428"
+    media="(min-width: 480px)"
+  />
+  <img
+    src="https://picsum.photos/480/xxx/?image=29"
+    with="480"
+    height="248"
+    alt="image name"
+  />
 </picture>
 ```
 
@@ -51,12 +101,42 @@ The **minimal declarations** keep the automatic image generation smaller, while 
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/760/428/?image=29" width="760" height="428" media="(min-width: 1544px)">
-    <source srcset="https://picsum.photos/720/405/?image=29" width="720" height="405" media="(min-width: 1280px)">
-    <source srcset="https://picsum.photos/600/338/?image=29" width="600" height="338" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/460/259/?image=29" width="460" height="259" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/720/405/?image=29" width="720" height="405" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" with="480" height="248" alt="image name">
+  <source
+    srcset="https://picsum.photos/760/428/?image=29"
+    width="760"
+    height="428"
+    media="(min-width: 1544px)"
+  />
+  <source
+    srcset="https://picsum.photos/720/405/?image=29"
+    width="720"
+    height="405"
+    media="(min-width: 1280px)"
+  />
+  <source
+    srcset="https://picsum.photos/600/338/?image=29"
+    width="600"
+    height="338"
+    media="(min-width: 1024px)"
+  />
+  <source
+    srcset="https://picsum.photos/460/259/?image=29"
+    width="460"
+    height="259"
+    media="(min-width: 768px)"
+  />
+  <source
+    srcset="https://picsum.photos/720/405/?image=29"
+    width="720"
+    height="405"
+    media="(min-width: 480px)"
+  />
+  <img
+    src="https://picsum.photos/480/xxx/?image=29"
+    with="480"
+    height="248"
+    alt="image name"
+  />
 </picture>
 ```
 
@@ -74,9 +154,15 @@ This represent the biggest image displayable on the website.
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/1552/xxx/?image=29" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/960/xxx/?image=29" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
+  <source
+    srcset="https://picsum.photos/1552/xxx/?image=29"
+    media="(min-width: 1024px)"
+  />
+  <source
+    srcset="https://picsum.photos/960/xxx/?image=29"
+    media="(min-width: 480px)"
+  />
+  <img src="https://picsum.photos/480/xxx/?image=29" alt="image name" />
 </picture>
 ```
 
@@ -84,12 +170,27 @@ This represent the biggest image displayable on the website.
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/1552/xxx/?image=29" media="(min-width: 1544px)">
-    <source srcset="https://picsum.photos/1440/xxx/?image=29" media="(min-width: 1280px)">
-    <source srcset="https://picsum.photos/1200/xxx/?image=29" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/960/xxx/?image=29" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/720/xxx/?image=29" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
+  <source
+    srcset="https://picsum.photos/1552/xxx/?image=29"
+    media="(min-width: 1544px)"
+  />
+  <source
+    srcset="https://picsum.photos/1440/xxx/?image=29"
+    media="(min-width: 1280px)"
+  />
+  <source
+    srcset="https://picsum.photos/1200/xxx/?image=29"
+    media="(min-width: 1024px)"
+  />
+  <source
+    srcset="https://picsum.photos/960/xxx/?image=29"
+    media="(min-width: 768px)"
+  />
+  <source
+    srcset="https://picsum.photos/720/xxx/?image=29"
+    media="(min-width: 480px)"
+  />
+  <img src="https://picsum.photos/480/xxx/?image=29" alt="image name" />
 </picture>
 ```
 
@@ -99,8 +200,11 @@ This represent the biggest image displayable on the website.
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/1282/xxx/?image=29" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
+  <source
+    srcset="https://picsum.photos/1282/xxx/?image=29"
+    media="(min-width: 480px)"
+  />
+  <img src="https://picsum.photos/480/xxx/?image=29" alt="image name" />
 </picture>
 ```
 
@@ -108,11 +212,23 @@ This represent the biggest image displayable on the website.
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/1282/xxx/?image=29" media="(min-width: 1800px)">
-    <source srcset="https://picsum.photos/1192/xxx/?image=29" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/800/xxx/?image=29" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/680/xxx/?image=29" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
+  <source
+    srcset="https://picsum.photos/1282/xxx/?image=29"
+    media="(min-width: 1800px)"
+  />
+  <source
+    srcset="https://picsum.photos/1192/xxx/?image=29"
+    media="(min-width: 1024px)"
+  />
+  <source
+    srcset="https://picsum.photos/800/xxx/?image=29"
+    media="(min-width: 768px)"
+  />
+  <source
+    srcset="https://picsum.photos/680/xxx/?image=29"
+    media="(min-width: 480px)"
+  />
+  <img src="https://picsum.photos/480/xxx/?image=29" alt="image name" />
 </picture>
 ```
 
@@ -120,11 +236,23 @@ Example of an image displayed in `.hero--default` component. The image has a 16:
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/1282/721/?image=29" media="(min-width: 1800px)">
-    <source srcset="https://picsum.photos/1192/670/?image=28" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/800/450/?image=29" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/680/382/?image=28" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
+  <source
+    srcset="https://picsum.photos/1282/721/?image=29"
+    media="(min-width: 1800px)"
+  />
+  <source
+    srcset="https://picsum.photos/1192/670/?image=28"
+    media="(min-width: 1024px)"
+  />
+  <source
+    srcset="https://picsum.photos/800/450/?image=29"
+    media="(min-width: 768px)"
+  />
+  <source
+    srcset="https://picsum.photos/680/382/?image=28"
+    media="(min-width: 480px)"
+  />
+  <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9" />
 </picture>
 ```
 
@@ -134,8 +262,11 @@ Example of an image displayed in `.hero--default` component. The image has a 16:
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/1024/xxx/?image=29" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
+  <source
+    srcset="https://picsum.photos/1024/xxx/?image=29"
+    media="(min-width: 480px)"
+  />
+  <img src="https://picsum.photos/480/xxx/?image=29" alt="image name" />
 </picture>
 ```
 
@@ -143,10 +274,19 @@ Example of an image displayed in `.hero--default` component. The image has a 16:
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/1024/xxx/?image=29" media="(min-width: 1024px)">
-    <source srcset="https://picsum.photos/800/xxx/?image=29" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/720/xxx/?image=29" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
+  <source
+    srcset="https://picsum.photos/1024/xxx/?image=29"
+    media="(min-width: 1024px)"
+  />
+  <source
+    srcset="https://picsum.photos/800/xxx/?image=29"
+    media="(min-width: 768px)"
+  />
+  <source
+    srcset="https://picsum.photos/720/xxx/?image=29"
+    media="(min-width: 480px)"
+  />
+  <img src="https://picsum.photos/480/xxx/?image=29" alt="image name" />
 </picture>
 ```
 
@@ -158,8 +298,11 @@ In content of simple detail pages or in content with sidebar, for example.
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/800/xxx/?image=29" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
+  <source
+    srcset="https://picsum.photos/800/xxx/?image=29"
+    media="(min-width: 480px)"
+  />
+  <img src="https://picsum.photos/480/xxx/?image=29" alt="image name" />
 </picture>
 ```
 
@@ -167,9 +310,15 @@ In content of simple detail pages or in content with sidebar, for example.
 
 ```html
 <picture>
-    <source srcset="https://picsum.photos/800/xxx/?image=29" media="(min-width: 768px)">
-    <source srcset="https://picsum.photos/720/xxx/?image=29" media="(min-width: 480px)">
-    <img src="https://picsum.photos/480/xxx/?image=29" alt="image name">
+  <source
+    srcset="https://picsum.photos/800/xxx/?image=29"
+    media="(min-width: 768px)"
+  />
+  <source
+    srcset="https://picsum.photos/720/xxx/?image=29"
+    media="(min-width: 480px)"
+  />
+  <img src="https://picsum.photos/480/xxx/?image=29" alt="image name" />
 </picture>
 ```
 
@@ -177,19 +326,28 @@ In content of simple detail pages or in content with sidebar, for example.
 
 ## Image ratio declaration
 
-* Consist of declaring the width and the height of the images for each steps.
-* 16/9 ratio is obligatory for cards
-* 16/9 ratio is recommanded for other content images (hero, images, videos, slideshows, etc)
+- Consist of declaring the width and the height of the images for each steps.
+- 16/9 ratio is obligatory for cards
+- 16/9 ratio is recommanded for other content images (hero, images, videos, slideshows, etc)
 
 ## Retina
 
-* All the current sizes are defined for normal screens.
-* If you want to define the retina sizes, you should add HD definitions (x1.5 or x2) to each source
+- All the current sizes are defined for normal screens.
+- If you want to define the retina sizes, you should add HD definitions (x1.5 or x2) to each source
 
 ```html
 // normal declaration
-<source srcset="https://picsum.photos/720/xxx/?image=29" media="(min-width: 480px)">
+<source
+  srcset="https://picsum.photos/720/xxx/?image=29"
+  media="(min-width: 480px)"
+/>
 
 // retina declaration
-<source srcset="https://picsum.photos/720/xxx/?image=29 1x, https://picsum.photos/1440/xxx/?image=29 2x" media="(min-width: 480px)">
+<source
+  srcset="
+    https://picsum.photos/720/xxx/?image=29  1x,
+    https://picsum.photos/1440/xxx/?image=29 2x
+  "
+  media="(min-width: 480px)"
+/>
 ```

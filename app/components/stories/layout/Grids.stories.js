@@ -1,5 +1,5 @@
 export default {
-  title: 'Layout/Grids',
+  title: 'Layouts/Grids',
 }
 
 export const OneCol = {

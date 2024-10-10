@@ -1,5 +1,5 @@
 export default {
-  title: 'Layout/Spacings',
+  title: 'Layouts/Spacings',
 }
 
 export const WithVerticalSpacing = {
