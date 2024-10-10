@@ -1,6 +1,7 @@
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as ContainersStories from './Containers.stories'
 
-<Meta title="Layouts/Containers" />
+<Meta of={ContainersStories} />
 
 # Containers
 
@@ -8,45 +9,29 @@ import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 
 `.container` is frequently a child of a `.section` element.
 
-<Canvas className="storybook-demo-grid storybook-show-container">
-  <section class="section section--default">
-    <div class="container">
-      <div>Container with horizontal padding and limited width on large viewport</div>
-    </div>
-  </section>
-</Canvas>
-
+<Canvas
+  className="storybook-demo-grid storybook-show-container"
+  of={ContainersStories.ContainerExample}
+/>
 # Consecutive Containers
 
 Consecutive `.container` elements adds a top padding to the second container.
 
 The gap between two consecutive containers will be identical to the gap between two consecutive sections. Check the [Section](/docs/layouts-sections--page) documentation for more details.
 
-<Canvas className="storybook-demo-grid storybook-show-container">
-  <section class="section section--default">
-    <div class="container">
-      <div>Section with consecutive containers. Container 1.</div>
-    </div>
-
-    <div class="container">
-      <div>Section with consecutive containers. Container 2. Padding top is added.</div>
-    </div>
-  </section>
-</Canvas>
+<Canvas
+  className="storybook-demo-grid storybook-show-container"
+  of={ContainersStories.ConsecutiveContainers}
+/>
 
 # Container with flexbox
 
-* `container--flex` displays its content horizontally
+- `container--flex` displays its content horizontally
 
-<Canvas className="storybook-demo-grid storybook-show-container">
-  <section>
-    <div class="container container--flex">
-      <div>Child 1</div>
-      <div>Child 2</div>
-      <div>Child 3</div>
-    </div>
-  </section>
-</Canvas>
+<Canvas
+  className="storybook-demo-grid storybook-show-container"
+  of={ContainersStories.ContainerFlexbox}
+/>
 
 # Container with 12 cols grid
 
@@ -56,62 +41,44 @@ The gap between two consecutive containers will be identical to the gap between 
 
 Use the following classes for `container--grid` children:
 
-* `container__full` fullfills the 12 columns
-* `container__center--md` fills 10 columns on large viewports
-* `container__center--sm` fills 8 columns on large viewports
-* `container__center--xs` fills 6 columns on large viewports
+- `container__full` fullfills the 12 columns
+- `container__center--md` fills 10 columns on large viewports
+- `container__center--sm` fills 8 columns on large viewports
+- `container__center--xs` fills 6 columns on large viewports
 
 Additionally, a `gap--responsive` class applies default spacings between grid items.
 
-<Canvas className="storybook-demo-grid storybook-show-grid">
-  <section>
-    <div class="container container--grid gap--responsive">
-      <div class="container__full">container\_\_full</div>
-      <div class="container__center--md">container\_\_center--md</div>
-      <div class="container__center--sm">container\_\_center--sm</div>
-      <div class="container__center--xs">container\_\_center--xs</div>
-    </div>
-  </section>
-</Canvas>
+<Canvas
+  className="storybook-demo-grid storybook-show-grid"
+  of={ContainersStories.CenteredSubContainers}
+/>
 
 ## Main and Aside sub-containers
 
-* `container__main` is left aligned per default, use it in combination with `container__aside`
-* `container__aside` is right aligned per default
+- `container__main` is left aligned per default, use it in combination with `container__aside`
+- `container__aside` is right aligned per default
 
-<Canvas className="storybook-demo-grid storybook-show-grid">
-  <section>
-    <div class="container container--grid gap--responsive">
-      <div class="container__main">container\_\_main</div>
-      <div class="container__aside">container\_\_aside</div>
-    </div>
-  </section>
-</Canvas>
+<Canvas
+  className="storybook-demo-grid storybook-show-grid"
+  of={ContainersStories.MainAsideSubContainers}
+/>
 
 Use `container--grid container--reverse` on the parent to swap the columns `container__main` and `container__aside` on desktop viewports only.
 
-<Canvas className="storybook-demo-grid storybook-show-grid">
-  <section>
-    <div class="container container--grid container--reverse gap--responsive">
-      <div class="container__main">container\_\_main</div>
-      <div class="container__aside">container\_\_aside</div>
-    </div>
-  </section>
-</Canvas>
+<Canvas
+  className="storybook-demo-grid storybook-show-grid"
+  of={ContainersStories.MainAsideSubContainersReverse}
+/>
 
 use `container--grid container--reverse-mobile` on the parent to swap `container__main` and `container__aside` on mobile viewports only.
 Use it when the aside content contains anchor links for example. This will display them before the main content on mobile viewports.
 
-<Canvas className="storybook-demo-grid storybook-show-grid">
-  <section>
-    <div class="container container--grid container--reverse-mobile gap--responsive">
-      <div class="container__main">container\_\_main</div>
-      <div class="container__aside">container\_\_aside</div>
-    </div>
-  </section>
-</Canvas>
+<Canvas
+  className="storybook-demo-grid storybook-show-grid"
+  of={ContainersStories.MainAsideSubContainersReverseMobile}
+/>
 
-***
+---
 
 # Homepage and hub pages structure
 
@@ -140,8 +107,8 @@ The default full width of `container` is used for hub pages and homepage. It's g
 </main>
 ```
 
-* <a href="?path=/docs/pages-homepage--example">Homepage complete example</a>
-* <a href="?path=/docs/pages-hub-page--example">Hub page complete example</a>
+- <a href="?path=/docs/pages-homepage--example">Homepage complete example</a>
+- <a href="?path=/docs/pages-hub-page--example">Hub page complete example</a>
 
 # Default page structure
 
@@ -184,7 +151,9 @@ Consecutive sections with different full width backgrounds will give visual ryth
 </main>
 ```
 
-* <a href="?path=/docs/pages-detail-page-simple--example">Default page complete example</a>
+- <a href="?path=/docs/pages-detail-page-simple--example">
+    {'Default page complete example'}
+  </a>
 
 # Complex page structure
 
@@ -200,7 +169,7 @@ Then, the content can be rythmed by consecutive sections with different backgrou
         <!-- Main content flow here -->
       </div>
       <div class="container__aside">
-         <!-- Side content flow here -->
+        <!-- Side content flow here -->
       </div>
     </div>
   </section>
@@ -227,4 +196,6 @@ Then, the content can be rythmed by consecutive sections with different backgrou
 </main>
 ```
 
-* <a href="?path=/docs/pages-detail-page-complex--example">Complex page complete example</a>
+- <a href="?path=/docs/pages-detail-page-complex--example">
+    {'Complex page complete example'}
+  </a>
