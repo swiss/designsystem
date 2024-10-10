@@ -3,38 +3,13 @@ import Accordion from '../../ch/components/Accordion.vue'
 import AccordionItem from '../../ch/components/AccordionItem.vue'
 import TranscriptionExample from '../../ch/demo/TranscriptionExample.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { AudioPlayer, Accordion, AccordionItem, TranscriptionExample },
-  template: `
-    <div>
-      <AudioPlayer
-        :url="url"
-        :title="title"
-        :description="description"
-        :type="type"
-        :copyright="copyright"
-      />
-      <Accordion v-if="displayTranscript" id="1" spaced>
-        <AccordionItem
-          id="10"
-          title="Transcript"
-        >
-          <TranscriptionExample />
-        </AccordionItem>
-      </Accordion>
-    </div>
-    `,
-})
-
 export default {
   title: 'Components/AudioPlayer',
+  component: AudioPlayer,
 }
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
+  components: { AudioPlayer, Accordion, AccordionItem, TranscriptionExample },
   args: {
     title: 'First of August speech',
     description:
@@ -47,9 +22,28 @@ export const Example = {
 }
 
 export const Transcript = {
-  render: Template.bind({}),
-  name: 'Transcript',
-
+  render: (args) => ({
+    components: { AudioPlayer, Accordion, AccordionItem, TranscriptionExample },
+    setup: () => ({ ...args }),
+    template: `
+      <div>
+        <AudioPlayer
+          :url="url"
+          :title="title"
+          :description="description"
+          :type="type"
+          :copyright="copyright"
+        />
+        <Accordion v-if="displayTranscript" id="1">
+          <AccordionItem
+            id="10"
+            title="Transcript"
+          >
+            <TranscriptionExample />
+          </AccordionItem>
+        </Accordion>
+      </div>`,
+  }),
   args: {
     title: 'First of August speech',
     description:

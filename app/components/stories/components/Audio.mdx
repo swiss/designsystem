@@ -3,54 +3,27 @@ import AudioPlayer from '../../ch/components/AudioPlayer.vue'
 import Accordion from '../../ch/components/Accordion.vue'
 import AccordionItem from '../../ch/components/AccordionItem.vue'
 import TranscriptionExample from '../../ch/demo/TranscriptionExample.vue'
-import * as AudioStories from './Audio.stories';
+import * as AudioStories from './Audio.stories'
 
 <Meta of={AudioStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { AudioPlayer, Accordion, AccordionItem, TranscriptionExample },
-  template: `
-    <div>
-      <AudioPlayer
-        :url="url"
-        :title="title"
-        :description="description"
-        :type="type"
-        :copyright="copyright"
-      />
-      <Accordion v-if="displayTranscript" id="1" spaced>
-        <AccordionItem
-          id="10"
-          title="Transcript"
-        >
-          <TranscriptionExample />
-        </AccordionItem>
-      </Accordion>
-    </div>
-    `
-})
-
 # Audio player
 
-<Canvas>
-  <Story of={AudioStories.Example} />
-</Canvas>
+<Canvas of={AudioStories.Example} />
 
 Use the default `<audio>` element to play audio documents. Every `<audio>` element should be wrapped into a `div.auto-player` element, to keep consistent styling.
 
-<a href="?path=/story/components-audioplayer--example">
-  Go to the Canvas Tab
-</a>
+<a href="?path=/story/components-audioplayer--example">Go to the Canvas Tab</a>
 
-***
+---
 
-<a href="?id=components-audioplayer--example&args=&viewMode=story" target="_blank">
-  Open page in full width in a new tab
+<a
+  href="?id=components-audioplayer--example&args=&viewMode=story"
+  target="_blank"
+>
+  {'Open page in full width in a new tab'}
 </a>
 
 # Transcript
 
-<Canvas>
-  <Story of={AudioStories.Transcript} />
-</Canvas>
+<Canvas of={AudioStories.Transcript} />
