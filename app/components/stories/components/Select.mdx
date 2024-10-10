@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import Select from '../../ch/components/Select.vue'
-import * as SelectStories from './Select.stories';
+import * as SelectStories from './Select.stories'
 
 <Meta of={SelectStories} />
 
@@ -40,9 +40,9 @@ export const Template = (args, { argTypes }) => ({
 
 ## Select negative type
 
-* `input--negative` for standard textareas on dark background
+- `input--negative` for standard textareas on dark background
 
-<Canvas style={{ backgroundColor: '#2f4356' }}>
+<Canvas className="storybook-bg-negative">
   <div class="select">
     <select id="select-id" name="select-name" class="input--outline input--base input--negative">
       <option>Choose your country</option>
@@ -56,12 +56,13 @@ export const Template = (args, { argTypes }) => ({
         <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
       </svg>
     </div>
+
   </div>
 </Canvas>
 
 ## Select disabled state
 
-* `input--disabled` or `disabled state on the input` to add the disabled style
+- `input--disabled` or `disabled state on the input` to add the disabled style
 
 <Canvas>
   <div class="select">
@@ -77,6 +78,7 @@ export const Template = (args, { argTypes }) => ({
         <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
       </svg>
     </div>
+
   </div>
 </Canvas>
 
@@ -84,9 +86,9 @@ export const Template = (args, { argTypes }) => ({
 
 For size variations, the following css classes are built:
 
-* `input--sm` for small inputs
-* `input--base` for standard size
-* `input--lg` for large inputs
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
 
 <Canvas>
   <div class="select">
@@ -99,6 +101,7 @@ For size variations, the following css classes are built:
         <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
       </svg>
     </div>
+
   </div>
 </Canvas>
 
@@ -113,6 +116,7 @@ For size variations, the following css classes are built:
         <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
       </svg>
     </div>
+
   </div>
 </Canvas>
 
@@ -127,6 +131,7 @@ For size variations, the following css classes are built:
         <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
       </svg>
     </div>
+
   </div>
 </Canvas>
 
@@ -134,8 +139,8 @@ For size variations, the following css classes are built:
 
 If the select is mandatory:
 
-* a `required` attribute is added to the input element
-* an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element:
+- a `required` attribute is added to the input element
+- an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element:
 
 <Canvas>
   <div class="form__group__select">
@@ -160,6 +165,7 @@ If the select is mandatory:
         </svg>
       </div>
     </div>
+
   </div>
 </Canvas>
 
@@ -195,5 +201,6 @@ a `badge badge--sm badge--error` element wraps the error message, right after th
     <div class="badge badge--sm badge--error">
       This field is required
     </div>
+
   </div>
 </Canvas>

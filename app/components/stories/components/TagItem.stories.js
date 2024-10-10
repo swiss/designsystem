@@ -7,9 +7,7 @@ export default {
     variant: {
       table: {
         type: {
-          summary: [
-            'string: default, primary, active',
-          ]
+          summary: ['string: default, primary, active'],
         },
       },
       options: ['default', 'primary', 'active'],
@@ -20,9 +18,7 @@ export default {
     size: {
       table: {
         type: {
-          summary: [
-            'string: sm, base',
-          ]
+          summary: ['string: sm, base'],
         },
       },
       options: ['sm', 'base'],
@@ -54,11 +50,9 @@ export const List = {
     setup: () => ({ args }),
     template: `<div>
       <hr class="separator separator--xl" />
-      <ul class="list list--flex list--wrap">
-        <li v-for="item in args.content">
-          <TagItem v-bind="item" />
-        </li>
-      </ul>
+      <div class="list list--flex list--wrap">
+        <TagItem v-for="item in args.content" v-bind="item" />
+      </div>
     </div>`,
   }),
   args: {
@@ -84,7 +78,7 @@ export const List = {
         to: '#',
       },
     ],
-  }
+  },
 }
 
 export const Filters = {
@@ -94,11 +88,9 @@ export const Filters = {
     template: `
       <div>
         <hr class="separator separator--xl" />
-        <ul class="list list--flex list--wrap">
-          <li v-for="item in args.content">
-            <TagItem v-bind="item" />
-          </li>
-        </ul>
+        <div class="list list--flex list--wrap">
+          <TagItem v-for="item in args.content" v-bind="item" />
+        </div>
       </div>
       `,
   }),
@@ -121,5 +113,5 @@ export const Filters = {
         label: 'Filter three',
       },
     ],
-  }
+  },
 }

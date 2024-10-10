@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import Textarea from '../../ch/components/Textarea.vue'
-import * as TextareaStories from './Textarea.stories';
+import * as TextareaStories from './Textarea.stories'
 
 <Meta of={TextareaStories} />
 
@@ -39,28 +39,32 @@ export const Template = (args, { argTypes }) => ({
 
 ## Textarea negative type
 
-* `input--negative` for standard textareas on dark background
+- `input--negative` for standard textareas on dark background
 
-<Canvas style={{ backgroundColor: '#2f4356' }}>
+<Canvas className="storybook-bg-negative">
   <textarea class="input--negative input--base" />
 </Canvas>
 
 ## Textarea disabled state
 
-* `input--disabled` or `disabled state on the input` to add the disabled style
+- `input--disabled` or `disabled state on the input` to add the disabled style
 
 <Canvas>
-  <textarea class="input--outline input--base" disabled>Disabled</textarea>
-  <textarea class="input--negative input--base" disabled>Disabled and negative</textarea>
+  <textarea class="input--outline input--base" disabled>
+    Disabled
+  </textarea>
+  <textarea class="input--negative input--base" disabled>
+    Disabled and negative
+  </textarea>
 </Canvas>
 
 ## Sizes
 
 For size variations, the following css classes are built:
 
-* `input--sm` for small inputs
-* `input--base` for standard size
-* `input--lg` for large inputs
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
 
 <Canvas>
   <textarea class="input--outline input--sm">Small</textarea>
@@ -72,8 +76,8 @@ For size variations, the following css classes are built:
 
 If the textarea is mandatory:
 
-* a `required` attribute is added to the input element
-* an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element:
+- a `required` attribute is added to the input element
+- an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element:
 
 <Canvas>
   <div class="form__group__input">
@@ -82,6 +86,7 @@ If the textarea is mandatory:
     </label>
 
     <textarea class="input--outline input--base" required />
+
   </div>
 </Canvas>
 
@@ -101,5 +106,6 @@ a `badge badge--sm badge--error` element wraps the error message, right after th
     <div class="badge badge--sm badge--error">
       This field is required
     </div>
+
   </div>
 </Canvas>

@@ -3,9 +3,6 @@ import Logo from '../../ch/components/Logo.vue'
 export default {
   title: 'Components/Logo',
   component: Logo,
-  decorators: [
-    () => ({ template: '<div style="margin: 2rem;"><story/></div>' }),
-  ],
 }
 
 export const Logotype = {
