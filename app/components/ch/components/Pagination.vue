@@ -4,7 +4,7 @@
       v-if="field"
       class="pagination__input"
       :class="computedClasses"
-      v-model="currentPage"
+      v-model="props.currentPage"
       aria-label="pagination input"
     />
     <div v-if="field" class="pagination__text">
@@ -28,12 +28,12 @@
 import PaginationItem from './PaginationItem.vue'
 import { computed } from 'vue'
 
-const currentPage = defineModel('currentPage', {
-  type: String,
-  required: true,
-})
-
 const props = defineProps({
+  currentPage: {
+    type: String,
+    required: true,
+    default: () => '',
+  },
   type: {
     type: String,
     default: () => 'outline',
