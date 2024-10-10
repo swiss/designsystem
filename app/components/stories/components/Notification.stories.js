@@ -1,31 +1,37 @@
 import Notification from '../../ch/components/Notification.vue'
 
-const meta = {
+export default {
   title: 'Components/Notification',
   component: Notification,
   argTypes: {
     type: {
+      table: {
+        type: {
+          summary: [
+            'string: info, warning, error, success, alert, hint',
+          ]
+        },
+      },
+      options: ['info', 'warning', 'error', 'success', 'alert', 'hint'],
       control: {
         type: 'select',
-        options: ['info', 'warning', 'error', 'success', 'alert', 'hint'],
       },
     },
     icon: {
-      control: {
-        type: 'select',
-        options: [
+      options: [
           'InfoCircle',
           'WarningCircle',
           'CancelCircle',
           'HelpCircle',
+          'CheckmarkCircle',
           undefined,
         ],
+      control: {
+        type: 'select',
       },
     },
   },
 };
-
-export default meta;
 
 export const Example = {
   args: {
@@ -40,15 +46,124 @@ export const Example = {
 export const NotificationTypes = {
   render: (args) => ({
     components: { Notification },
+    setup: () => ({ args }),
     template: `
         <div>
-          <Notification type="info" icon="InfoCircle" text="This is an info notification." />
-          <Notification type="warning" icon="WarningCircle" text="This is a warning notification." />
-          <Notification type="error" icon="CancelCircle" text="This is an error notification." />
-          <Notification type="success" icon="HelpCircle" text="This is a success notification." />
-          <Notification type="alert" text="This is an alert notification." />
-          <Notification type="hint" text="This is a hint notification." />
+          <ul class="list">
+            <li v-for="item in args.notifications">
+              <Notification v-bind="item" />
+            </li>
+            <hr class="separator separator--xl" />
+            <Notification v-bind="args.separatedNotifications" />
+          </ul>
         </div>
       `,
   }),
+  args: {
+    notifications: [
+      {
+        type: 'hint',
+        text: 'Hint: A new software update is available.',
+        closeBtn: false,
+        isClosed: false,
+      },
+      {
+        type: 'info',
+        text: 'Info: A new software update is available.',
+        closeBtn: false,
+        isClosed: false,
+      },
+      {
+        type: 'warning',
+        text: 'Warning: A new software update is available.',
+        closeBtn: false,
+        isClosed: false,
+      },
+      {
+        type: 'error',
+        text: 'Error: A new software update is available.',
+        closeBtn: false,
+        isClosed: false,
+      },
+      {
+        type: 'success',
+        text: 'Success: A new software update is available.',
+        closeBtn: false,
+        isClosed: false,
+      },
+    ],
+    separatedNotifications: {
+      type: 'alert',
+      text: 'Alert: A new software update is available.',
+      closeBtn: false,
+      isClosed: false,
+    }
+  },
+}
+
+export const NotificationTypesWithIcons = {
+  render: (args) => ({
+    components: { Notification },
+    setup: () => ({ args }),
+    template: `
+        <div>
+          <ul class="list">
+            <li v-for="item in args.notifications">
+              <Notification v-bind="item" />
+            </li>
+            <hr class="separator separator--xl" />
+            <Notification v-bind="args.separatedNotifications" />
+          </ul>
+        </div>
+      `,
+  }),
+  args: {
+    notifications: [
+      {
+        type: 'info',
+        icon: 'InfoCircle',
+        text: 'Info: A new software update is available.',
+        closeBtn: false,
+        isClosed: false,
+      },
+      {
+        type: 'warning',
+        icon: 'WarningCircle',
+        text: 'Warning: A new software update is available. <a href="#" target="_blank">Download</a>',
+        closeBtn: false,
+        isClosed: false,
+      },
+      {
+        type: 'error',
+        icon: 'WarningCircle',
+        text: 'Error: A new software update is available.',
+        closeBtn: false,
+        isClosed: false,
+      },
+      {
+        type: 'success',
+        icon: 'CheckmarkCircle',
+        text: 'Success: A new software update is available.',
+        closeBtn: false,
+        isClosed: false,
+      },
+    ],
+    separatedNotifications: {
+      type: 'alert',
+      icon: 'WarningCircle',
+      text: 'Alert: A new software update is available.',
+      closeBtn: false,
+      isClosed: false,
+    }
+  },
+}
+
+export const ComplexContent = {
+  args: {
+    type: 'info',
+    icon: 'InfoCircle',
+    text: '<h6 class="font--bold">Brand new!</h6><p>A new software update is available.</p><p><a class="link" href="javascript:void(0)">Discover the new version</a></p>',
+    closeBtn: false,
+    isClosed: false,
+  },
 }
