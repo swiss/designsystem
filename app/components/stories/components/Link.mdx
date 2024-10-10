@@ -1,6 +1,8 @@
 import { Meta, Canvas } from '@storybook/blocks';
 
-<Meta title="Components/Links" />
+import * as LinkStories from './Link.stories';
+
+<Meta of={LinkStories} />
 
 # Links
 
@@ -8,37 +10,23 @@ import { Meta, Canvas } from '@storybook/blocks';
 
 Per default, `<a>` links are not styled and shouldn't be used unstyled.
 
-<Canvas>
-  <div>
-    <a>Link</a> without style
-  </div>
-</Canvas>
+<Canvas of={LinkStories.DefaultLink} />
 
 ## Links in paragraphs
 
 Links included in paragraphs in the main section (`main p a`) are styled though:
 
-<Canvas>
-  <main>
-    <p>Sed luctus pharetra nunc, et egestas <a>metus tempor</a> at. Donec volutpat ex et enim gravida vehicula.</p>
-  </main>
-</Canvas>
+<Canvas of={LinkStories.ParagraphLink} />
 
 ## Force Link appearance
 
 You can add a `.link` class to force the link appearance
 
-<Canvas>
-  <div>
-    <a class="link">Link</a> with style
-  </div>
-</Canvas>
+<Canvas of={LinkStories.ForceLink} />
 
 ## Negative links
 
-<Canvas style={{ backgroundColor: '#2f4356' }}>
-  <a class="link link--negative">Negative Link</a>
-</Canvas>
+<Canvas of={LinkStories.NegativeLink} className='storybook-bg-negative' />
 
 ## Links with icons
 
@@ -48,21 +36,7 @@ Use the `.btn btn--link` component and its variants to display a link with an ic
 
 <a href="?path=/docs/components-button--example#button-links">Read more about Button component</a>
 
-<Canvas>
-  <main>
-    <p>
-      <a href="#" class="btn btn--link" target="_blank">
-        <svg viewBox="0 0 24 24" class="btn__icon">
-          <path d="m12.3916 20.99951-5.25976-8.42578a5.87365 5.87365 0 1 1 10.53857-.0332zm0-16.167a5.1305 5.1305 0 0 0 -5.125 5.125 5.07366 5.07366 0 0 0 .52 2.25293l4.605 7.373 4.624-7.40625a5.07217 5.07217 0 0 0 .501-2.21972 5.1305 5.1305 0 0 0 -5.125-5.12495zm0 7.418a2.292 2.292 0 1 1 2.292-2.292 2.29476 2.29476 0 0 1 -2.292 2.29198zm0-3.834a1.542 1.542 0 1 0 1.542 1.542 1.54363 1.54363 0 0 0 -1.542-1.54201z" />
-        </svg>
-
-        <span class="btn__text">
-          Standort auf Karte anzeigen
-        </span>
-      </a>
-    </p>
-  </main>
-</Canvas>
+<Canvas of={LinkStories.IconLink} />
 
 # External links
 
@@ -85,11 +59,7 @@ Use the `.btn btn--link` component and its variants to display a link with an ic
 * `<a href="..." rel="external"> Link <a>` (sementical way)
 * `<a href="..." class="link--external"> Link </a>` (forced way)
 
-<Canvas>
-  <main>
-    <p>Sed luctus pharetra nunc, et egestas <a href="http://admin.ch" rel="external">sementical external</a> at. Donec volutpat ex et enim <a href="http://admin.ch" class="link--external">forced external</a> gravida vehicula.</p>
-  </main>
-</Canvas>
+<Canvas of={LinkStories.IconExternalLink} />
 
 ## Icon for external cards
 

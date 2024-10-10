@@ -3,13 +3,6 @@ import MetaInfo from '../../ch/components/MetaInfo.vue'
 export default {
   title: 'Components/Metainfo',
   component: MetaInfo,
-  argTypes: {
-    metaInfos: {
-      control: {
-        type: 'Array',
-      },
-    },
-  },
 }
 
 export const Example = {
@@ -19,6 +12,6 @@ export const Example = {
     template: '<MetaInfo v-bind="args" />'
   }),
   args: {
-    metaInfos: ["This is a meta info", "This is another meta info"]
+    metainfos: ["This is a meta info", "This is another meta info"]
   },
 }
