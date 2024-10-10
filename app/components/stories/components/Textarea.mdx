@@ -1,62 +1,28 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import Textarea from '../../ch/components/Textarea.vue'
-import * as TextareaStories from './Textarea.stories'
+import * as TextareaStories from './Textarea.stories';
 
 <Meta of={TextareaStories} />
-
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Textarea },
-  template: `
-    <Textarea
-      :variant="variant"
-      :size="size"
-      :label="label"
-      :id="id"
-      :name="name"
-      :rows="rows"
-      :cols="cols"
-      :placeholder="placeholder"
-      :message="message"
-      :messageType="messageType"
-      :required="required"
-      :resizable="resizable"
-      :maxlength="maxlength"
-      :minlength="minlength"
-    />
-  `,
-})
 
 # Textarea
 
 ## Example
 
-<Canvas>
-  <Story of={TextareaStories.Example} />
-</Canvas>
+<Canvas of={TextareaStories.Example} />
 
-<Controls />
+<Controls of={TextareaStories.Example} />
 
 ## Textarea negative type
 
 - `input--negative` for standard textareas on dark background
 
-<Canvas className="storybook-bg-negative">
-  <textarea class="input--negative input--base" />
-</Canvas>
+<Canvas of={TextareaStories.NegativeTextarea } className='storybook-bg-negative' />
 
 ## Textarea disabled state
 
 - `input--disabled` or `disabled state on the input` to add the disabled style
 
-<Canvas>
-  <textarea class="input--outline input--base" disabled>
-    Disabled
-  </textarea>
-  <textarea class="input--negative input--base" disabled>
-    Disabled and negative
-  </textarea>
-</Canvas>
+<Canvas of={TextareaStories.DisabledTextarea} />
 
 ## Sizes
 
@@ -66,11 +32,7 @@ For size variations, the following css classes are built:
 - `input--base` for standard size
 - `input--lg` for large inputs
 
-<Canvas>
-  <textarea class="input--outline input--sm">Small</textarea>
-  <textarea class="input--outline input--base">Default</textarea>
-  <textarea class="input--outline input--lg">Large</textarea>
-</Canvas>
+<Canvas of={TextareaStories.SizesTextarea} />
 
 ## Required textarea
 
@@ -79,33 +41,11 @@ If the textarea is mandatory:
 - a `required` attribute is added to the input element
 - an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element:
 
-<Canvas>
-  <div class="form__group__input">
-    <label for="my-id" class="text--base text--asterisk">
-      Your message
-    </label>
-
-    <textarea class="input--outline input--base" required />
-
-  </div>
-</Canvas>
+<Canvas of={TextareaStories.RequiredTextarea} />
 
 ## Messages
 
 If the textarea has error, an `input--error` class is added to the input element. Additionally
 a `badge badge--sm badge--error` element wraps the error message, right after the input element:
 
-<Canvas>
-  <div class="form__group__input">
-    <label for="my-id" class="text--base text--asterisk">
-      Your message
-    </label>
-
-    <textarea class="input--outline input--base input--error" required />
-
-    <div class="badge badge--sm badge--error">
-      This field is required
-    </div>
-
-  </div>
-</Canvas>
+<Canvas of={TextareaStories.MessagesTextarea} />
