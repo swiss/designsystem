@@ -63,6 +63,77 @@
                     :activeFilter="activeFilter"
                     :disabledFilters="disabledFilters"
                   />
+                  <div
+                    v-if="showFilterSection"
+                    class="glossary__filters__drawer-section"
+                  >
+                    <Btn
+                      :label="
+                        filtersAreOpen ? 'Filter ausblenden' : 'Filter anzeigen'
+                      "
+                      variant="bare"
+                      size="sm"
+                      icon-pos="left"
+                      icon="ChevronDown"
+                      :class="filtersAreOpen ? ' btn--icon-180' : ''"
+                      @click.native="filtersAreOpen = !filtersAreOpen"
+                    />
+                    <div
+                      v-if="filtersAreOpen"
+                      class="glossary__filters__drawer"
+                    >
+                      <Select
+                        variant="outline"
+                        size="sm"
+                        id="select-1"
+                        name="select-name"
+                        label="Filter name"
+                      >
+                        <option selected="">Option</option>
+                        <option>...</option>
+                      </Select>
+                      <Select
+                        variant="outline"
+                        size="sm"
+                        id="select-2"
+                        name="select-name"
+                        label="Filter name"
+                      >
+                        <option selected="">Option</option>
+                        <option>...</option>
+                      </Select>
+                      <Select
+                        variant="outline"
+                        size="sm"
+                        id="select-3"
+                        name="select-name"
+                        label="Filter name"
+                      >
+                        <option selected="">Option</option>
+                        <option>...</option>
+                      </Select>
+                      <Select
+                        variant="outline"
+                        size="sm"
+                        id="select-4"
+                        name="select-name"
+                        label="Filter name"
+                      >
+                        <option selected="">Option</option>
+                        <option>...</option>
+                      </Select>
+                      <Select
+                        variant="outline"
+                        size="sm"
+                        id="select-5"
+                        name="select-name"
+                        label="Filter name"
+                      >
+                        <option selected="">Option</option>
+                        <option>...</option>
+                      </Select>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -190,6 +261,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    showFilterSection: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -202,6 +277,7 @@ export default {
       carouselId: uuidv4(),
       activeFilter: 'all',
       searchTerm: '',
+      filtersAreOpen: false,
       filters: [
         'numbric',
         'a',

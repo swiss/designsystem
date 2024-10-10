@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import MetaInfo from '../../ch/components/MetaInfo.vue'
+
+<Meta title="Components/MetaInfo" component={MetaInfo} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { MetaInfo },
+  template: '<MetaInfo :metainfos="metainfos"  />',
+})
+
+# MetaInfo
+
+Meta infos are used to provide additional information about the content.
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      metainfos: ['This is a meta info', 'This is another meta info'],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+

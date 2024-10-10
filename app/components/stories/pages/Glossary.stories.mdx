@@ -10,6 +10,7 @@ import Glossar from '../../../pages/glossar.vue'
       control: { type: 'boolean' },
     },
     useStickySearch: { control: { type: 'boolean' } },
+    showFilterSection: { control: { type: 'boolean' } },
   }}
 />
 
@@ -19,7 +20,8 @@ export const Template = (args, { argTypes, viewMode }) => {
       props: Object.keys(argTypes),
       components: { Glossar },
       store: store,
-      template: '<Glossar :isLoading="isLoading" />',
+      template:
+        '<Glossar :isLoading="isLoading" :showFilterSection="showFilterSection" />',
     }
   } else {
     return {
@@ -27,7 +29,7 @@ export const Template = (args, { argTypes, viewMode }) => {
       components: { Glossar },
       store: store,
       template:
-        '<Glossar :isLoading="isLoading" :useStickySearch="useStickySearch" />',
+        '<Glossar :isLoading="isLoading" :useStickySearch="useStickySearch" :showFilterSection="showFilterSection" />',
     }
   }
 }
@@ -76,6 +78,36 @@ Please use full width view in order to see the sticky search working correctly.
     name="With results"
     args={{
       isLoading: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+# Glossar results with sticky search and filters
+
+Please use full width view in order to see the sticky search working correctly.
+
+<a href="?path=/story/pages-glossar--with-results-sticky-and-filters">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a
+  href="?id=pages-glossar--with-results-sticky-and-filters&args=&viewMode=story"
+  target="_blank"
+>
+  Open page in full width in a new tab
+</a>
+
+<Canvas>
+  <Story
+    name="With results sticky and filters"
+    args={{
+      isLoading: false,
+      useStickySearch: true,
+      showFilterSection: true,
     }}
   >
     {Template.bind({})}
