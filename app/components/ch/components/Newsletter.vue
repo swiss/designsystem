@@ -45,6 +45,7 @@ const state = defineModel('state', {
   default: () => '',
   validator: (prop) => ['default', 'sent'].includes(prop),
 })
+
 const props = defineProps({
   type: {
     type: String,
