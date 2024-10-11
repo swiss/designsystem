@@ -1,27 +1,26 @@
 import CarouselExample from '../../ch/demo/CarouselExample.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
+const TemplateDefault = (args) => ({
+  setup: () => ({ ...args }),
   components: { CarouselExample },
   template: `
     <div class="section section--default">
-        <div class="container">
-          <CarouselExample
-            :breakpoints="breakpoints"
-            :paginationType="paginationType"
-            :id="id"
-            :slides="slides"
-          />
-          <div>
-            Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel.
-          </div>
+      <div class="container">
+        <CarouselExample
+          :breakpoints="breakpoints"
+          :paginationType="paginationType"
+          :id="id"
+          :slides="slides"
+        />
+        <div>
+          Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel.
         </div>
       </div>
-    `,
+    </div>`,
 })
 
-const TemplateBackgrounds = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
+const TemplateBackgrounds = (args) => ({
+  setup: () => ({ ...args }),
   components: { CarouselExample },
   template: `
     <div>
@@ -65,23 +64,20 @@ const TemplateBackgrounds = (args, { argTypes }) => ({
           />
         </div>
       </div>
-    </div>
-    `,
+    </div>`,
 })
 
 export default {
+  render: TemplateDefault,
   title: 'Components/Carousel',
   component: CarouselExample,
 }
 
 export const WithBullets = {
-  render: Template.bind({}),
-  name: 'With bullets',
-
+  render: TemplateDefault.bind({}),
   args: {
     id: 1,
     paginationType: 'bullets',
-
     slides: [
       {
         image: {
@@ -90,7 +86,6 @@ export const WithBullets = {
           height: '768',
           alt: 'image name',
         },
-
         source: {
           srcset: 'https://picsum.photos/2048/1152/?image=29',
           width: '2048',
@@ -188,13 +183,10 @@ export const WithBullets = {
 }
 
 export const LargeNumberOfCards = {
-  render: Template.bind({}),
-  name: 'Large number of cards',
-
+  render: TemplateDefault.bind({}),
   args: {
     id: 111,
     paginationType: 'bullets',
-
     slides: [
       {
         image: {
@@ -442,12 +434,9 @@ export const LargeNumberOfCards = {
 
 export const Backgrounds = {
   render: TemplateBackgrounds.bind({}),
-  name: 'Backgrounds',
-
   args: {
     id: 10,
     paginationType: 'bullets',
-
     slides: [
       {
         image: {

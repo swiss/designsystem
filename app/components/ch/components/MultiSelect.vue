@@ -156,7 +156,7 @@ const getUniqueId = function (text = '') {
 
 watch(currentSelected, function () {
   props.onChange(currentSelected)
-  window.postMessage({ trigger: 'emitSelect', data: currentSelected })
+  window.postMessage({ trigger: 'emitSelect', data: [...currentSelected] })
 })
 
 onMounted(() => {

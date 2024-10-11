@@ -1,79 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import CarouselExample from '../../ch/demo/CarouselExample.vue'
-import * as CarouselStories from './Carousel.stories';
+import * as CarouselStories from './Carousel.stories'
 
 <Meta of={CarouselStories} />
-
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { CarouselExample},
-  template:
-    `
-    <div class="section section--default">
-        <div class="container">
-          <CarouselExample
-            :breakpoints="breakpoints"
-            :paginationType="paginationType"
-            :id="id"
-            :slides="slides"
-          />
-          <div>
-            Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel. Some random content below carousel.
-          </div>
-        </div>
-      </div>
-    `,
-})
-
-export const TemplateBackgrounds = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { CarouselExample},
-  template:
-    `
-    <div>
-      <div class="section bg--secondary-50">
-        <div class="container">
-          <CarouselExample
-            :breakpoints="breakpoints"
-            :paginationType="paginationType"
-            :id="2"
-            :slides="slides"
-          />
-        </div>
-      </div>
-      <div class="section bg--secondary-100">
-        <div class="container">
-          <CarouselExample
-            :breakpoints="breakpoints"
-            :paginationType="paginationType"
-            :id="3"
-            :slides="slides"
-          />
-        </div>
-      </div>
-      <div class="section bg--secondary-500">
-        <div class="container">
-          <CarouselExample
-            :breakpoints="breakpoints"
-            :paginationType="paginationType"
-            :id="4"
-            :slides="slides"
-          />
-        </div>
-      </div>
-      <div class="section bg--secondary-600">
-        <div class="container">
-          <CarouselExample
-            :breakpoints="breakpoints"
-            :paginationType="paginationType"
-            :id="5"
-            :slides="slides"
-          />
-        </div>
-      </div>
-    </div>
-    `,
-})
 
 # Carousel
 
@@ -84,22 +13,16 @@ Carousels are built with https://swiperjs.com/.
 
 If the number of images is relatively low (below 6), use the `bullets` variant.
 
-<Canvas>
-  <Story of={CarouselStories.WithBullets} />
-</Canvas>
+<Canvas of={CarouselStories.WithBullets} />
 
 ## Large number of Cards
 
 If the number of cards is larger than 6, the bullet points are hidden through CSS on small viewports.
 
-<Canvas>
-  <Story of={CarouselStories.LargeNumberOfCards} />
-</Canvas>
+<Canvas of={CarouselStories.LargeNumberOfCards} />
 
 # Backgrounds
 
 The recommended background colors for carousels are the following: `bg--default`, `bg--secondary-50`, `bg--secondary-100`, `bg--secondary-500`, `bg--secondary-600`.
 
-<Canvas>
-  <Story of={CarouselStories.Backgrounds} />
-</Canvas>
+<Canvas of={CarouselStories.Backgrounds} />
