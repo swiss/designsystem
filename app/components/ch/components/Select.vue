@@ -102,7 +102,6 @@ const labelClasses = computed(() => {
 })
 
 const handleChange = function (e) {
-  useNuxtApp().$emit('select', e.target.value)
   props.onSelect(e)
 }
 </script>

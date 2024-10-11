@@ -1,79 +1,78 @@
 import Select from '../../ch/components/Select.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Select },
-  template: `
-    <Select
-      :variant="variant"
-      :bare="bare"
-      :size="size"
-      :label="label"
-      :hideLabel="hideLabel"
-      :id="id"
-      :name="name"
-      :message="message"
-      :messageType="messageType"
-      :required="required"
-    >
-      <option disabled selected>Choose your country</option>
-      <option>Switzerland</option>
-      <option>Swaziland</option>
-      <option>Sweden</option>
-    </Select>
-  `,
-})
-
 export default {
   title: 'Components/Form/Select',
   component: Select,
 
   argTypes: {
     variant: {
+      table: {
+        type: {
+          summary: [
+            'string: outline, negative',
+          ]
+        },
+      },
+      options: ['outline', 'negative'],
       control: {
         type: 'select',
-        options: ['outline', 'negative'],
       },
     },
-
     required: {
       control: {
         type: 'boolean',
       },
     },
-
     bare: {},
-
     size: {
+      table: {
+        type: {
+          summary: [
+            'string: sm, base, lg',
+          ]
+        },
+      },
+      options: ['sm', 'base', 'lg'],
       control: {
         type: 'select',
-        options: ['sm', 'base', 'lg'],
       },
     },
-
     label: {},
-
     hideLabel: {
       control: {
         type: 'boolean',
       },
     },
-
     message: {},
-
     messageType: {
+      table: {
+        type: {
+          summary: [
+            'string: error, warning, success, info',
+          ]
+        },
+      },
+      options: ['error', 'warning', 'success', 'info'],
       control: {
         type: 'select',
-        options: ['error', 'warning', 'success', 'info'],
       },
     },
   },
 }
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
+  render: (args) => ({
+    components: { Select },
+    setup: () => ({ args }),
+    template: `
+      <Select v-bind="args" >
+        <option disabled selected>Choose your country</option>
+        <option>Switzerland</option>
+        <option>Swaziland</option>
+        <option>Sweden</option>
+      </Select>
+    `,
+  }),
   args: {
     variant: 'outline',
     bare: false,
@@ -83,4 +82,153 @@ export const Example = {
     name: 'select-name',
     id: 'select-id',
   },
+}
+
+export const NegativeSelect = {
+  render: () => ({
+    template: `
+      <div class="select">
+        <select id="select-id" name="select-name" class="input--outline input--base input--negative">
+          <option>Choose your country</option>
+          <option>Switzerland</option>
+          <option>Swaziland</option>
+          <option>Sweden</option>
+        </select>
+        <div class="select__icon">
+          <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
+          </svg>
+        </div>
+      </div>
+    `,
+  }),
+}
+
+export const DisabledSelect = {
+  render: () => ({
+    template: `
+      <div class="select">
+        <select id="select-id" name="select-name" class="input--outline input--base input--disabled">
+          <option>Choose your country</option>
+          <option>Switzerland</option>
+          <option>Swaziland</option>
+          <option>Sweden</option>
+        </select>
+        <div class="select__icon">
+          <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
+          </svg>
+        </div>
+      </div>
+    `,
+  }),
+}
+
+export const SmallSizesSelect = {
+  render: () => ({
+    template: `
+      <div class="select">
+        <select id="select-0" name="select-name" class="input--outline input--sm">
+          <option>Small</option>
+        </select>
+        <div class="select__icon">
+          <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
+          </svg>
+        </div>
+      </div>
+    `,
+  }),
+}
+
+export const BaseSizesSelect = {
+  render: () => ({
+    template: `
+      <div class="select">
+        <select id="select-0" name="select-name" class="input--outline input--base">
+          <option>Default</option>
+        </select>
+        <div class="select__icon">
+          <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
+          </svg>
+        </div>
+      </div>
+    `,
+  }),
+}
+
+export const LargeSizesSelect = {
+  render: () => ({
+    template: `
+      <div class="select">
+        <select id="select-0" name="select-name" class="input--outline input--lg">
+          <option>Large</option>
+        </select>
+        <div class="select__icon">
+          <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
+          </svg>
+        </div>
+      </div>
+    `,
+  }),
+}
+
+export const RequiredSelect = {
+  render: () => ({
+    template: `
+      <div class="form__group__select">
+        <label for="select-id" class="text--base text--asterisk">
+          Label
+        </label>
+        <div class="select">
+          <select id="select-id" name="select-name" class="input--outline input--base">
+            <option disabled="disabled" selected="selected">
+              Choose your country
+            </option>
+            <option>Switzerland</option>
+            <option>Swaziland</option>
+            <option>Sweden</option>
+          </select>
+          <div class="select__icon">
+            <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    `,
+  }),
+}
+
+export const MessagesSelect = {
+  render: () => ({
+    template: `
+     <div class="form__group__select">
+        <label for="select-id" class="text--base text--asterisk">
+          Label
+        </label>
+        <div class="select">
+          <select id="select-id" name="select-name" class="input--outline input--base input--error">
+            <option disabled="disabled" selected="selected">
+              Choose your country
+            </option>
+            <option>Switzerland</option>
+            <option>Swaziland</option>
+            <option>Sweden</option>
+          </select>
+          <div class="select__icon">
+            <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
+            </svg>
+          </div>
+        </div>
+        <div class="badge badge--sm badge--error">
+          This field is required
+        </div>
+      </div>
+    `,
+  }),
 }

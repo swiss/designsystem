@@ -4,83 +4,25 @@ import * as SelectStories from './Select.stories'
 
 <Meta of={SelectStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Select },
-  template: `
-    <Select
-      :variant="variant"
-      :bare="bare"
-      :size="size"
-      :label="label"
-      :hideLabel="hideLabel"
-      :id="id"
-      :name="name"
-      :message="message"
-      :messageType="messageType"
-      :required="required"
-    >
-      <option disabled selected>Choose your country</option>
-      <option>Switzerland</option>
-      <option>Swaziland</option>
-      <option>Sweden</option>
-    </Select>
-  `,
-})
-
 # Select
 
 ## Example
 
-<Canvas>
-  <Story of={SelectStories.Example} />
-</Canvas>
+<Canvas of={SelectStories.Example} />
 
-<Controls />
+<Controls of={SelectStories.Example} />
 
 ## Select negative type
 
 - `input--negative` for standard textareas on dark background
 
-<Canvas className="storybook-bg-negative">
-  <div class="select">
-    <select id="select-id" name="select-name" class="input--outline input--base input--negative">
-      <option>Choose your country</option>
-      <option>Switzerland</option>
-      <option>Swaziland</option>
-      <option>Sweden</option>
-    </select>
-
-    <div class="select__icon">
-      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-        <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
-      </svg>
-    </div>
-
-  </div>
-</Canvas>
+<Canvas of={SelectStories.NegativeSelect} className="storybook-bg-negative" />
 
 ## Select disabled state
 
 - `input--disabled` or `disabled state on the input` to add the disabled style
 
-<Canvas>
-  <div class="select">
-    <select id="select-id" name="select-name" class="input--outline input--base input--disabled">
-      <option>Choose your country</option>
-      <option>Switzerland</option>
-      <option>Swaziland</option>
-      <option>Sweden</option>
-    </select>
-
-    <div class="select__icon">
-      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-        <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
-      </svg>
-    </div>
-
-  </div>
-</Canvas>
+<Canvas of={SelectStories.DisabledSelect} />
 
 ## Sizes
 
@@ -90,50 +32,11 @@ For size variations, the following css classes are built:
 - `input--base` for standard size
 - `input--lg` for large inputs
 
-<Canvas>
-  <div class="select">
-    <select id="select-0" name="select-name" class="input--outline input--sm">
-      <option>Small</option>
-    </select>
+<Canvas of={SelectStories.SmallSizesSelect} />
 
-    <div class="select__icon">
-      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-        <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
-      </svg>
-    </div>
+<Canvas of={SelectStories.BaseSizesSelect} />
 
-  </div>
-</Canvas>
-
-<Canvas>
-  <div class="select">
-    <select id="select-0" name="select-name" class="input--outline input--base">
-      <option>Default</option>
-    </select>
-
-    <div class="select__icon">
-      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-        <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
-      </svg>
-    </div>
-
-  </div>
-</Canvas>
-
-<Canvas>
-  <div class="select">
-    <select id="select-0" name="select-name" class="input--outline input--lg">
-      <option>Large</option>
-    </select>
-
-    <div class="select__icon">
-      <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-        <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
-      </svg>
-    </div>
-
-  </div>
-</Canvas>
+<Canvas of={SelectStories.LargeSizesSelect} />
 
 ## Required select
 
@@ -142,65 +45,11 @@ If the select is mandatory:
 - a `required` attribute is added to the input element
 - an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element:
 
-<Canvas>
-  <div class="form__group__select">
-    <label for="select-id" class="text--base text--asterisk">
-      Label
-    </label>
-
-    <div class="select">
-      <select id="select-id" name="select-name" class="input--outline input--base">
-        <option disabled="disabled" selected="selected">
-          Choose your country
-        </option>
-
-        <option>Switzerland</option>
-        <option>Swaziland</option>
-        <option>Sweden</option>
-      </select>
-
-      <div class="select__icon">
-        <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-          <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
-        </svg>
-      </div>
-    </div>
-
-  </div>
-</Canvas>
+<Canvas of={SelectStories.RequiredSelect} />
 
 ## Messages
 
 If the select has error, an `input--error` class is added to the input element. Additionally
 a `badge badge--sm badge--error` element wraps the error message, right after the input element:
 
-<Canvas>
-  <div class="form__group__select">
-    <label for="select-id" class="text--base text--asterisk">
-      Label
-    </label>
-
-    <div class="select">
-      <select id="select-id" name="select-name" class="input--outline input--base input--error">
-        <option disabled="disabled" selected="selected">
-          Choose your country
-        </option>
-
-        <option>Switzerland</option>
-        <option>Swaziland</option>
-        <option>Sweden</option>
-      </select>
-
-      <div class="select__icon">
-        <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-          <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
-        </svg>
-      </div>
-    </div>
-
-    <div class="badge badge--sm badge--error">
-      This field is required
-    </div>
-
-  </div>
-</Canvas>
+<Canvas of={SelectStories.MessagesSelect} />
