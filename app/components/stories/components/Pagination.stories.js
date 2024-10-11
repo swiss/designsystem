@@ -23,6 +23,11 @@ export default {
         type: 'boolean',
       },
     },
+    currentPage: {
+      table: {
+        category: 'props',
+      },
+    },
   },
 }
 

@@ -19,6 +19,9 @@ export default {
       },
     },
     isClosed: {
+      table: {
+        category: 'props',
+      },
       control: {
         type: 'boolean',
       },
