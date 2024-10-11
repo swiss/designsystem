@@ -1,21 +1,11 @@
 import SocialsSection from '../../ch/sections/SocialsSection.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { SocialsSection },
-  template:
-    '<SocialsSection :section-title="sectionTitle" :section-desc="sectionDesc" :feeds="feeds" />',
-})
-
 export default {
   title: 'Sections/Content/Socials',
   component: SocialsSection,
 }
 
 export const ExampleWith1Card = {
-  render: Template.bind({}),
-  name: 'Example with 1 card',
-
   args: {
     sectionTitle: 'Geoportal in den sozialen Medien',
     sectionDesc:
@@ -33,9 +23,6 @@ export const ExampleWith1Card = {
 }
 
 export const ExampleWith2Cards = {
-  render: Template.bind({}),
-  name: 'Example with 2 cards',
-
   args: {
     sectionTitle: 'Geoportal in den sozialen Medien',
     sectionDesc:
@@ -60,9 +47,6 @@ export const ExampleWith2Cards = {
 }
 
 export const ExampleWith3Cards = {
-  render: Template.bind({}),
-  name: 'Example with 3 cards',
-
   args: {
     sectionTitle: 'Geoportal in den sozialen Medien',
     sectionDesc:
@@ -93,9 +77,6 @@ export const ExampleWith3Cards = {
 }
 
 export const ExampleWith4Cards = {
-  render: Template.bind({}),
-  name: 'Example with 4 cards',
-
   args: {
     sectionTitle: 'Geoportal in den sozialen Medien',
     sectionDesc:
@@ -133,9 +114,6 @@ export const ExampleWith4Cards = {
 }
 
 export const ExampleWith5Cards = {
-  render: Template.bind({}),
-  name: 'Example with 5 cards',
-
   args: {
     sectionTitle: 'Geoportal in den sozialen Medien',
     sectionDesc:
@@ -179,9 +157,6 @@ export const ExampleWith5Cards = {
 }
 
 export const ExampleWith6Cards = {
-  render: Template.bind({}),
-  name: 'Example with 6 cards',
-
   args: {
     sectionTitle: 'Geoportal in den sozialen Medien',
     sectionDesc:

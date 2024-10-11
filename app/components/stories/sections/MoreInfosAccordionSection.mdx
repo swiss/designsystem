@@ -4,17 +4,6 @@ import * as MoreInfosAccordionSectionStories from './MoreInfosAccordionSection.s
 
 <Meta of={MoreInfosAccordionSectionStories} />
 
-export const Template = () => ({
-  props: [],
-  components: { MoreInfosAccordionSection },
-  template:
-    `
-    <main>
-      <MoreInfosAccordionSection />
-    </main>
-    `,
-})
-
 # More Infos Section
 
 Example of an accordion with complex content:
@@ -26,6 +15,4 @@ Example of an accordion with complex content:
 
 This section is displayed at the bottom of the [detail page example](?path=/docs/pages-detail-page-simple--example)
 
-<Canvas>
-  <Story of={MoreInfosAccordionSectionStories.Example} />
-</Canvas>
+<Canvas of={MoreInfosAccordionSectionStories.Example} />

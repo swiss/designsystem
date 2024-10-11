@@ -1,39 +1,24 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import QuoteSection from '../../ch/sections/QuoteSection.vue'
-import * as QuoteSectionStories from './QuoteSection.stories'
+import * as QuoteSectionStories from './QuoteSection.stories';
 
 <Meta of={QuoteSectionStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { QuoteSection },
-  template: `
-    <QuoteSection
-      :quote="quote"
-      :author="author"
-      :image="image"
-      :background="background"
-    />
-  `,
-})
-
 # Quote Section
 
-<Canvas>
-  <Story of={QuoteSectionStories.Example} />
-</Canvas>
+<Canvas of={QuoteSectionStories.Example} />
 
-<Controls />
+<Controls of={QuoteSectionStories.Example} />
 
 ## Background
 
 The recommended background colors for the section are the following:
 
-- white
-- secondary-50
-- secondary-100
-- secondary-500
-- secondary-600
+* white
+* secondary-50
+* secondary-100
+* secondary-500
+* secondary-600
 
 <a href="?path=/story/sections-content-quote--example">
   {'Go to the Canvas Tab'}

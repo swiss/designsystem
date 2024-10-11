@@ -1,20 +1,12 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import PortraitSection from '../../ch/sections/PortraitSection.vue'
-import * as PortraitSectionStories from './PortraitSection.stories'
+import * as PortraitSectionStories from './PortraitSection.stories';
 
 <Meta of={PortraitSectionStories} />
 
-export const Template = () => ({
-  props: [],
-  components: { PortraitSection },
-  template: '<PortraitSection />',
-})
-
 # Portrait Section
 
-<Canvas>
-  <Story of={PortraitSectionStories.Example} />
-</Canvas>
+<Canvas of={PortraitSectionStories.Example} />
 
 <a href="?path=/story/sections-content-portait--example">
   {'Go to the Canvas Tab'}
