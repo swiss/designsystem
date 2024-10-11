@@ -4,28 +4,15 @@ import * as FooterNavigationStories from './FooterNavigation.stories';
 
 <Meta of={FooterNavigationStories} />
 
-export const Template = () => ({
-  props: [],
-  components: { FooterNavigation },
-  template: '<FooterNavigation />',
-  parameters: {
-    layout: 'fullscreen',
-  },
-})
-
 # Footer navigation
 
-<Canvas className="test">
-  <Story of={FooterNavigationStories.Example} />
-</Canvas>
-
-<Controls />
+<Canvas of={FooterNavigationStories.Example} />
 
 <a href="?path=/story/sections-footer-footernavigation--example">
   Go to the Canvas Tab
 </a>
 
-***
+---
 
 <a href="?id=sections-footer-footernavigation--example" target="_blank">
   Open page in full width in a new tab
