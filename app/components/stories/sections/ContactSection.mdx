@@ -4,19 +4,11 @@ import * as ContactSectionStories from './ContactSection.stories'
 
 <Meta of={ContactSectionStories} />
 
-export const Template = () => ({
-  props: [],
-  components: { ContactSection },
-  template: '<ContactSection />',
-})
-
 # Contact Section
 
-<Canvas>
-  <Story of={ContactSectionStories.Example} />
-</Canvas>
+<Canvas of={ContactSectionStories.Example} />
 
-<Controls />
+<Controls of={ContactSectionStories.Example} />
 
 <a href="?path=/story/sections-contact--example">{'Go to the Canvas Tab'}</a>
 
