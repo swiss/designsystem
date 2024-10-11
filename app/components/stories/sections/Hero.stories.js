@@ -8,10 +8,10 @@ export default {
     setup: () => ({ args }),
     components: { Hero, Btn },
     template: `
-      <Hero :type="type" :meta-infos="metaInfos" :authors="authors">
+      <Hero :type="args.type" :meta-infos="args.metaInfos" :authors="args.authors">
         <template
           v-if="args.type == 'main-image' || args.type == 'default'"
-          v-slot:image
+          #image
         >
           <picture  v-if="args.type == 'main-image'">
             <source srcset="https://picsum.photos/1282/961/?image=29" media="(min-width: 1800px)">
@@ -28,35 +28,34 @@ export default {
             <img src="https://picsum.photos/480/270/?image=29" alt="ratio is 16/9">
           </picture>
         </template>
-          <template v-slot:title>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </template>
-          <template v-slot:subtitle>
-            Pellentesque dui dui, eleifend ac interdum eget, consectetur in odio.
-          </template>
-        <template v-if="args.type !== 'main-image' v-slot:title>
+        <template #title>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </template>
+        <template #subtitle>
+          Pellentesque dui dui, eleifend ac interdum eget, consectetur in odio.
+        </template>
+        <template v-if="args.type !== 'main-image'" #title>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </template>
         <template
           v-if="args.type !== 'title-only'"
-          v-slot:description
+          #description
         >
           Pellentesque dui dui, eleifend ac interdum eget, consectetur in odio. Suspendisse potenti. Integer a mi ullamcorper, fermentum nisi quis, efficitur velit.
         </template>
         <template
           v-if="args.type == 'main-image' || args.type == 'main'"
-          v-slot:cta
+          #cta
         >
           <Btn
-              to="#"
-              variant="outline"
-              icon-pos="right"
-              icon="ArrowRight"
-              label="Unsere Dienstleistungen"
-            />
+            to="#"
+            variant="outline"
+            icon-pos="right"
+            icon="ArrowRight"
+            label="Unsere Dienstleistungen"
+          />
         </template>
-      </Hero>
-      `,
+      </Hero>`,
   }),
   argTypes: {
     type: {
