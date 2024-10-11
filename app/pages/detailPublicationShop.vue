@@ -351,7 +351,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import RelatedPublicationsSection from '../components/ch/sections/RelatedPublicationsSection.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-import { reactive, ref, computed, onMounted } from 'vue'
+import { reactive, ref, computed, onMounted, nextTick } from 'vue'
 import { useLayoutStore } from '../store/layout'
 
 const layoutStore = useLayoutStore()
@@ -418,10 +418,13 @@ const addToCart = function (selectedLanguage, amount) {
   shoppingCartAmount.value += amount
   const translatedLanguage = languageMap[selectedLanguage]
 
-  useNuxtApp().$emit('trigger-toast-message', {
-    text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${amount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
-    icon: 'CheckmarkCircle',
-    type: 'success',
+  window.postMessage({
+    trigger: 'trigger-toast-message',
+    data: {
+      text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${amount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
+      icon: 'CheckmarkCircle',
+      type: 'success',
+    },
   })
 }
 

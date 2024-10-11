@@ -1,23 +1,19 @@
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import detailPageShoppingCart from '../../../pages/detailPageShoppingCart.vue';
-import * as DetailShoppingCartStories from './DetailShoppingCart.stories';
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import detailPageShoppingCart from '../../../pages/detailPageShoppingCart.vue'
+import * as DetailShoppingCartStories from './DetailShoppingCart.stories'
 
 <Meta of={DetailShoppingCartStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { detailPageShoppingCart },
-  template: '<detailPageShoppingCart />',
-});
-
 # Shopping cart example
 
-<a href="?path=/story/pages-detail-shopping-cart--example">Go to the Canvas Tab</a>
+<a href="?path=/story/pages-detail-shopping-cart--example">
+  {'Go to the Canvas Tab'}
+</a>
 
-***
+---
 
-<a href="?id=pages-detail-shopping-cart--example" target="_blank">Open page in full width in a new tab</a>
+<a href="?id=pages-detail-shopping-cart--example" target="_blank">
+  {'Open page in full width in a new tab'}
+</a>
 
-<Canvas>
-  <Story of={DetailShoppingCartStories.Example} />
-</Canvas>
+<Canvas of={DetailShoppingCartStories.Example} />

@@ -10,10 +10,9 @@
           type="number"
           variant="outline"
           size="base"
-          :value="defaultAmount"
+          :value="inputValue"
           @keypress="restrictChars"
-          v-on:input="inputValue = $event.target.value"
-          v-model="inputValue"
+          @input="inputValue = $event.target.value"
           class="order__box-amount-input"
           :min="0"
         />
@@ -116,7 +115,7 @@ onMounted(() => {
   inputValue.value = props.defaultAmount
   Object.assign(
     selectedValue,
-    props.options.find((option) => option.selected).value,
+    props.options.find((option) => option.selected),
   )
   pricePiece.value = props.options.find((option) => option.selected).pricePiece
 })
@@ -129,7 +128,6 @@ const totalPrice = computed(() => {
 
 const restrictChars = function (event) {
   // Restrict input to numbric input chars
-  // eslint-disable-next-line no-useless-escape
   const regex = /[0-9eE.+\-]/g
   if (regex.test(String.fromCharCode(event.keyCode))) {
     return true
@@ -144,8 +142,5 @@ const getUniqueId = function (text = '') {
 
 const setSelectedValue = function (value) {
   Object.assign(selectedValue, value)
-  pricePiece.value = props.options.find(
-    (option) => option.value === value,
-  ).pricePiece
 }
 </script>

@@ -78,6 +78,8 @@ const props = defineProps({
   },
 })
 
+const emit = defineEmits(['change'])
+
 const selectWrapperClasses = computed(() => {
   let base = 'select '
   if (props.bare) base += `select--bare `
@@ -103,5 +105,6 @@ const labelClasses = computed(() => {
 
 const handleChange = function (e) {
   props.onSelect(e)
+  emit('change', e.target.value)
 }
 </script>

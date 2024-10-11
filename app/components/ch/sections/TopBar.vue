@@ -429,7 +429,7 @@ const handleScroll = async function () {
 
 const triggerTopBar = function () {
   isOpen.value = !isOpen.value
-  useNuxtApp().$emit('top-bar-drawer-change')
+  window.postMessage({ trigger: 'top-bar-drawer-change' })
 }
 
 onMounted(() => {

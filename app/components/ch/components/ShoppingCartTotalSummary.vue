@@ -81,8 +81,10 @@ const props = defineProps({
   },
 })
 
+const emit = defineEmits(['nextStep'])
+
 const orderClicked = function () {
   if (!agbAccepted) return
-  useNuxtApp().$emit('nextStep')
+  emit('nextStep')
 }
 </script>

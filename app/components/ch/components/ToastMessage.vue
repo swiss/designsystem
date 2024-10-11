@@ -13,8 +13,7 @@
 
 <script setup>
 import notification from './Notification.vue'
-import { ref, onMounted } from 'vue'
-import mitt from 'mitt'
+import { ref, onMounted, nextTick } from 'vue'
 
 const showMessage = ref(false)
 const text = ref('')
@@ -31,10 +30,14 @@ const props = defineProps({
 
 onMounted(async () => {
   await nextTick()
-  useNuxtApp().$on(props.triggerName, (e) => {
-    text.value = e.text
-    icon.value = e.icon
-    type.value = e.type
+
+  window.addEventListener('message', (e) => {
+    if (!e.data?.trigger === props.triggerName) return
+
+    const payload = e.data.data
+    text.value = payload.text
+    icon.value = payload.icon
+    type.value = payload.type
 
     showMessage.value = true
     if (showTimeout.value) clearTimeout(showTimeout.value)

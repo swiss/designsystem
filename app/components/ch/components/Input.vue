@@ -17,7 +17,7 @@
       :autocomplete="autocomplete"
       :readonly="readonly"
       :required="required"
-      @change.stop="onInput"
+      @input.stop="onInput"
     />
     <div
       v-if="message"

@@ -13,7 +13,6 @@
     "chromatic": "npx chromatic --project-token=a59f72b20002"
   },
   "dependencies": {
-    "mitt": "^3.0.1",
     "pinia": "^2.2.2",
     "swiper": "^11.1.14",
     "uuid": "^10.0.0",

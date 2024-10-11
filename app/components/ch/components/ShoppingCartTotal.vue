@@ -48,8 +48,10 @@ const props = defineProps({
   },
 })
 
+const emit = defineEmits(['nextStep'])
+
 const nextStep = function () {
-  useNuxtApp().$emit('nextStep')
+  emit('nextStep')
 }
 
 const resizeWindow = function () {

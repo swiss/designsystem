@@ -52,7 +52,7 @@ const handleSubmit = function (e) {
     } else if (submitFunction) {
       submitFunction(e)
     }
-    useNuxtApp().$emit('emitSubmit', e)
+    window.postMessage({ trigger: 'emitSubmit', data: e })
   } else {
     // Prevent action from executing
     e.preventDefault()

@@ -765,7 +765,7 @@ import ShoppingCartTotal from './ShoppingCartTotal.vue'
 import ShoppingCartTotalSummary from './ShoppingCartTotalSummary.vue'
 import StepIndicator from './StepIndicator.vue'
 import Textarea from './Textarea.vue'
-import { reactive, ref, computed, watch, onMounted } from 'vue'
+import { reactive, ref, computed, watch, onMounted, nextTick } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
 const activeAccordionIndex = ref(1)
