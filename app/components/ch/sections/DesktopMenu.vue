@@ -42,6 +42,7 @@ const props = defineProps({
   // Allow disabling active navigation item highlighting for pages like shopping cart
   showActiveNavigation: {
     type: Boolean,
+    default: () => false,
   },
   isSimplePage: {
     type: Boolean,
