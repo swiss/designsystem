@@ -5,33 +5,6 @@ import * as MultiSelectStories from './MultiSelect.stories';
 
 <Meta of={MultiSelectStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { MultiSelect },
-  template: `
-    <div style="padding: 20px 0 100px 0;">
-      <MultiSelect
-        :options="options"
-        :variant="variant"
-        :size="size"
-        :label="label"
-        :disabled="disabled"
-        :hideLabel="hideLabel"
-        :multiple="multiple"
-        :name="name"
-        :message="message"
-        :messageType="messageType"
-        :required="required"
-        :selected="selected"
-        :placeholder="placeholder"
-        :excluded="excluded"
-        :selectLimit="selectLimit"
-        :bare="bare"
-      />
-    </div>
-  `,
-})
-
 # MultiSelect
 
 ## General
@@ -44,11 +17,9 @@ export const Template = (args, { argTypes }) => ({
 
 ## Example
 
-<Canvas>
-  <Story of={MultiSelectStories.Example} />
-</Canvas>
+<Canvas of={MultiSelectStories.Example} />
 
-<Controls />
+<Controls of={MultiSelectStories.Example} />
 
 ## Install Vue Select
 

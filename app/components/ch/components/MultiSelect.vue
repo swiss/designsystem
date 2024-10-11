@@ -45,7 +45,7 @@
 </template>
 
 <script setup>
-// import vSelect from 'vue-select' // TODO: Switch this to vueform/multiselect
+// import vSelect from 'vue-select' // TODO: Switch this to another library
 import { reactive, ref, computed, watch, onMounted } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -128,25 +128,25 @@ const props = defineProps({
 
 const selectWrapperClasses = computed(() => {
   let base = 'select shadow-lg '
-  if (bare) base += 'select--bare'
+  if (props.bare) base += 'select--bare'
   return base
 })
 
 const selectClasses = computed(() => {
   let base = ''
-  if (variant) base += `input--${variant} `
-  if (size) base += `input--${size} `
-  if (disabled) base += 'input--disabled '
-  if (messageType) base += `input--${messageType} `
+  if (props.variant) base += `input--${props.variant} `
+  if (props.size) base += `input--${props.size} `
+  if (props.disabled) base += 'input--disabled '
+  if (props.messageType) base += `input--${props.messageType} `
   return base
 })
 
 const labelClasses = computed(() => {
   let base = ''
-  if (variant === 'negative') base += 'text--negative '
-  if (size) base += `text--${size} `
-  if (hideLabel) base += 'sr-only '
-  if (required) base += 'text--asterisk '
+  if (props.variant === 'negative') base += 'text--negative '
+  if (props.size) base += `text--${props.size} `
+  if (props.hideLabel) base += 'sr-only '
+  if (props.required) base += 'text--asterisk '
   return base
 })
 
@@ -155,13 +155,12 @@ const getUniqueId = function (text = '') {
 }
 
 watch(currentSelected, function () {
-  useNuxtApp().$emit('emitSelect', currentSelected)
-  onChange(currentSelected)
+  props.onChange(currentSelected)
 })
 
 onMounted(() => {
   // Set initial selected element
-  Object.assign(currentSelected, selected)
+  Object.assign(currentSelected, props.selected)
   selectId.value = uuidv4()
 })
 </script>

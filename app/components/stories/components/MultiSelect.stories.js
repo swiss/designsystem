@@ -1,32 +1,4 @@
 import MultiSelect from '../../ch/components/MultiSelect.vue'
-import Notification from '../../ch/components/Notification.vue'
-
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { MultiSelect },
-  template: `
-    <div style="padding: 20px 0 100px 0;">
-      <MultiSelect
-        :options="options"
-        :variant="variant"
-        :size="size"
-        :label="label"
-        :disabled="disabled"
-        :hideLabel="hideLabel"
-        :multiple="multiple"
-        :name="name"
-        :message="message"
-        :messageType="messageType"
-        :required="required"
-        :selected="selected"
-        :placeholder="placeholder"
-        :excluded="excluded"
-        :selectLimit="selectLimit"
-        :bare="bare"
-      />
-    </div>
-  `,
-})
 
 export default {
   title: 'Components/Form/MultiSelect',
@@ -38,64 +10,82 @@ export default {
         type: 'boolean',
       },
     },
-
     variant: {
+      table: {
+        type: {
+          summary: [
+            'string: outline, negative',
+          ]
+        },
+      },
+      options: ['outline', 'negative'],
       control: {
         type: 'select',
-        options: ['outline', 'negative'],
       },
     },
-
     required: {
       control: {
         type: 'boolean',
       },
     },
-
     size: {
+      table: {
+        type: {
+          summary: [
+            'string: sm, base, lg',
+          ]
+        },
+      },
+      options: ['sm', 'base', 'lg'],
       control: {
         type: 'select',
-        options: ['sm', 'base', 'lg'],
       },
     },
-
     label: {},
-
     disabled: {
       control: {
         type: 'boolean',
       },
     },
-
     hideLabel: {
       control: {
         type: 'boolean',
       },
     },
-
     multiple: {
       control: {
         type: 'boolean',
       },
     },
-
     placeholder: {},
     name: {},
     message: {},
-
     messageType: {
+      table: {
+        type: {
+          summary: [
+            'string: error, warning, success, info',
+          ]
+        },
+      },
+      options: ['error', 'warning', 'success', 'info'],
       control: {
         type: 'select',
-        options: ['error', 'warning', 'success', 'info'],
       },
     },
   },
 }
 
 export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
+  render: (args) => ({
+    components: { MultiSelect },
+    setup: () => ({ args }),
+    template: `
+    <div style="padding: 20px 0 100px 0;">
+      <MultiSelect v-bind="args" />
+    </div>
+  `,
+  }),
   args: {
     options: [
       'Relatively long option',
@@ -104,7 +94,6 @@ export const Example = {
       'bar',
       'baz',
     ],
-
     variant: 'outline',
     size: 'base',
     label: 'Label',
