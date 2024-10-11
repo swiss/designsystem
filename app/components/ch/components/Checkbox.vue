@@ -14,6 +14,7 @@
       <span v-html="label"></span
       ><span v-if="required" class="sr-only">required</span>
     </label>
+    {{  }}
     <div
       v-if="message"
       class="badge badge--sm"

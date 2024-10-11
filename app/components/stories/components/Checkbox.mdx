@@ -1,60 +1,27 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import Checkbox from '../../ch/components/Checkbox.vue'
 import * as CheckboxStories from './Checkbox.stories';
 
 <Meta of={CheckboxStories} />
-
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Checkbox },
-  template: `
-  <div>
-    <Checkbox
-      :variant="variant"
-      :size="size"
-      :label="label"
-      :id="id"
-      :name="name"
-      :value="value"
-      :message="message"
-      :messageType="messageType"
-      :required="required"
-    />
-    </div>
-  `,
-})
 
 # Input Checkbox
 
 ## Example
 
-<Canvas>
-  <Story of={CheckboxStories.Example} />
-</Canvas>
+<Canvas of={CheckboxStories.Example} />
 
-<Controls />
+<Controls of={CheckboxStories.Example} />
 
 ## Checkbox negative type
 
 * `input--negative` for standard checkboxes on dark background
 
-<Canvas style={{ backgroundColor: '#2f4356' }}>
-  <input type="checkbox" class="input--negative input--base" />
-</Canvas>
+<Canvas of={CheckboxStories.NegativeCheckbox}  className='storybook-bg-negative' />
 
 ## Input disabled state
 
 * `input--disabled` or `disabled state on the input` to add the disabled style
 
-<Canvas>
-  <input type="checkbox" class="input--outline input--base" disabled />
-
-  <input type="checkbox" class="input--outline input--base" disabled checked />
-
-  <input type="checkbox" class="input--negative input--base" disabled />
-
-  <input type="checkbox" class="input--negative input--base" disabled checked />
-</Canvas>
+<Canvas of={CheckboxStories.DisabledInput} />
 
 ## Sizes
 
@@ -64,13 +31,7 @@ For size variations, the following css classes are built:
 * `input--base` for standard size
 * `input--lg` for large inputs
 
-<Canvas>
-  <input type="checkbox" class="input--outline input--sm" value="input--sm" />
-
-  <input type="checkbox" class="input--outline input--base" value="input--base" />
-
-  <input type="checkbox" class="input--outline input--lg" value="input--lg" />
-</Canvas>
+<Canvas of={CheckboxStories.SizesCheckbox} />
 
 ## Required checkbox
 
@@ -80,32 +41,14 @@ If the field is mandatory:
 * an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element.
 * the word “required“ is added to the legend for screen readers. This can be done by wrapping the word into a `.sr-only` element.
 
-<Canvas>
-  <div class="form__group__checkbox">
-    <input type="checkbox" id="checkbox-id1" name="checkbox-name" required="required" class="input input--outline input--base" value="" />
-
-    <label for="checkbox-id1" class="text--base text--asterisk">
-      Label <span class="sr-only">required</span>
-    </label>
-  </div>
-</Canvas>
+<Canvas of={CheckboxStories.RequiredCheckbox} />
 
 ## Messages
 
 If the field has error, an `input--error` class is added to the input element. Additionally
 a `badge badge--sm badge--error` element wraps the error message, right after the input element:
 
-<Canvas>
-  <div class="form__group__checkbox">
-    <input type="checkbox" id="checkbox-id2" name="checkbox-name" required="required" class="input input--outline input--base input--error" value="" />
-
-    <label for="checkbox-id2" class="text--base text--asterisk">
-      Label <span class="sr-only">required</span>
-    </label>
-
-    <div class="badge badge--sm badge--error">Error message</div>
-  </div>
-</Canvas>
+<Canvas of={CheckboxStories.MessagesCheckbox} />
 
 ## Multiple Checkboxes
 
