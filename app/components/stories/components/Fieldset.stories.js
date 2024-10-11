@@ -40,7 +40,11 @@ export default {
 
       },
     },
-    legend: {},
+    legend: {
+      table: {
+        category: 'props',
+      },
+    },
     message: {},
     messageType: {
       table: {
