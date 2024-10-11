@@ -43,15 +43,6 @@ export default {
 }
 
 export const Example = {
-  render: (args) => ({
-    components: { Badge },
-    setup: () => ({ args }),
-    template: `
-      <div id="root">
-        <Badge v-bind="args" />
-      </div>
-    `,
-  }),
   args: {
     color: 'blue',
     size: 'base',

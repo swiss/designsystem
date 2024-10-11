@@ -1,29 +1,21 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import MobileMenu from '../../ch/sections/MobileMenu.vue'
-import * as MobileMenuStories from './MobileMenu.stories';
+import * as MobileMenuStories from './MobileMenu.stories'
 
 <Meta of={MobileMenuStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { MobileMenu },
-  template: '<MobileMenu :isOpen="isOpen" :showActiveNavigation="true" />',
-})
-
 # Mobile Menu
 
-<Canvas className="storybook-demo-mobile-menu">
-  <Story of={MobileMenuStories.Example} />
-</Canvas>
+<Canvas className="storybook-demo-mobile-menu" of={MobileMenuStories.Example} />
 
-<Controls />
+<Controls of={MobileMenuStories.Example} />
 
 <a href="?path=/story/sections-header-mobilemenu--example">
-  Go to the Canvas Tab
+  {'Go to the Canvas Tab'}
 </a>
 
-***
+---
 
 <a href="?id=sections-header-mobilemenu--example" target="_blank">
-  Open page in full width in a new tab
+  {'Open page in full width in a new tab'}
 </a>

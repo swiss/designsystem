@@ -10,7 +10,7 @@
     v-else
     id="mobile-menu-id"
     class="mobile-menu"
-    :class="isOpen ? 'mobile-menu--is-open' : ''"
+    :class="showActiveNavigation ? 'mobile-menu--is-open' : ''"
   >
     <MainNavigation
       context="mobile"
@@ -36,10 +36,6 @@ const useStickyPlaceholder = ref(false)
 const initialNavBarOffset = ref(0)
 
 const props = defineProps({
-  isOpen: {
-    type: Boolean,
-    default: () => false,
-  },
   isHomePage: {
     type: Boolean,
     default: () => false,

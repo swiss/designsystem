@@ -48,7 +48,7 @@ export const Example = {
     components: { Btn },
     setup: () => ({ args }),
     template: `
-      <div id="root" style="padding: 3em" class="${args.variant.endsWith('-negative') ? 'bg--secondary-600' : ''}">
+      <div style="padding: 3em" class="${args.variant.endsWith('-negative') ? 'bg--secondary-600' : ''}">
         <Btn v-bind="args" />
       </div>
     `,
