@@ -1,13 +1,7 @@
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import TopBar from '../ch/sections/TopBar.vue';
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import TopBar from '../ch/sections/TopBar.vue'
 
 <Meta title="Get started" component={TopBar} />
-
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { TopBar },
-  template: '<TopBar :isOpen="isOpen" />',
-});
 
 # Design system for the Swiss Confederation
 

@@ -1,23 +1,17 @@
-import { Meta, Story, Canvas } from '@storybook/blocks';
-import Index from '../../../pages/index.vue';
-import * as HomepageStories from './Homepage.stories';
+import { Meta, Story, Canvas } from '@storybook/blocks'
+import Index from '../../../pages/index.vue'
+import * as HomepageStories from './Homepage.stories'
 
 <Meta of={HomepageStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Index },
-  template: '<Index />',
-});
-
 # Homepage example
 
-<a href="?path=/story/pages-homepage--example">Go to the Canvas Tab</a>
+<a href="?path=/story/pages-homepage--example">{'Go to the Canvas Tab'}</a>
 
-***
+---
 
-<a href="?id=pages-homepage--example" target="_blank">Open in full width in a new tab</a>
+<a href="?id=pages-homepage--example" target="_blank">
+  {'Open in full width in a new tab'}
+</a>
 
-<Canvas>
-  <Story of={HomepageStories.Example} />
-</Canvas>
+<Canvas of={HomepageStories.Example} />

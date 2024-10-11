@@ -10,7 +10,7 @@
     v-else
     id="mobile-menu-id"
     class="mobile-menu"
-    :class="showActiveNavigation ? 'mobile-menu--is-open' : ''"
+    :class="isOpen ? 'mobile-menu--is-open' : ''"
   >
     <MainNavigation
       context="mobile"
@@ -36,6 +36,10 @@ const useStickyPlaceholder = ref(false)
 const initialNavBarOffset = ref(0)
 
 const props = defineProps({
+  isOpen: {
+    type: Boolean,
+    default: () => false,
+  },
   isHomePage: {
     type: Boolean,
     default: () => false,
@@ -43,7 +47,7 @@ const props = defineProps({
   // Allow disabling active navigation item highlighting for pages like shopping cart
   showActiveNavigation: {
     type: Boolean,
-    default: () => true,
+    default: () => false,
   },
   isSimplePage: {
     type: Boolean,

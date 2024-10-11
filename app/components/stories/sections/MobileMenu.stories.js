@@ -7,6 +7,7 @@ export default {
 
 export const Example = {
   args: {
+    isOpen: true,
     isHomePage: false,
     showActiveNavigation: true,
     isSimplePage: true,
