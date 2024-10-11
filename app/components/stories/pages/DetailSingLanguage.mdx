@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/blocks'
 import detailSimpleLanguage from '../../../pages/detailSimpleLanguage.vue'
-import * as DetailSingLanguageStories from './DetailSingLanguage.stories';
+import * as DetailSingLanguageStories from './DetailSingLanguage.stories'
 
 <Meta of={DetailSingLanguageStories} />
 
@@ -16,7 +16,7 @@ export const Template = (args, { argTypes, viewMode }) => {
       props: Object.keys(argTypes),
       components: { detailSimpleLanguage },
       template:
-        '<detailSimpleLanguage :isSignLanguage="true" :useStickyNavigation="useStickyNavigation" />',
+        '<detailSimpleLanguage :isSignLanguage="trdue" :useStickyNavigation="useStickyNavigation" />',
     }
   }
 }
@@ -26,13 +26,16 @@ export const Template = (args, { argTypes, viewMode }) => {
 Please use full width view in order to see the sticky navigation working correctly.
 
 <a href="?path=/story/pages-sing-language-detail-easy-language--example">
-  Go to the Canvas Tab
+  {'Go to the Canvas Tab'}
 </a>
 
-***
+---
 
-<a href="?id=pages-easy-sign-language-detail-sign-language--example" target="_blank">
-  Open in full width in a new tab
+<a
+  href="?id=pages-easy-sign-language-detail-sign-language--example"
+  target="_blank"
+>
+  {'Open in full width in a new tab'}
 </a>
 
 <Canvas>

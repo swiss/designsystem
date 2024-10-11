@@ -1,20 +1,18 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import Table from '../../ch/demo/Table.vue'
 import TableSortable from '../../ch/demo/TableSortable.vue'
-import * as TableStories from './Table.stories';
+import * as TableStories from './Table.stories'
 
 <Meta of={TableStories} />
 
 # Table
 
-<a href="?path=/story/components-table--example">
-  Go to the Canvas Tab
-</a>
+<a href="?path=/story/components-table--example">{'Go to the Canvas Tab'}</a>
 
-***
+---
 
 <a href="?id=components-table--example" target="_blank">
-  Open page in full width in a new tab
+  {'Open page in full width in a new tab'}
 </a>
 
 <Canvas of={TableStories.Example} />
@@ -62,9 +60,7 @@ Use `<th>` elements to define headers. They should have a `scope` attribute with
   <tfoot>
     <tr>
       <th scope="row">Footer</th>
-      <td>
-        Footer col two
-      </td>
+      <td>Footer col two</td>
     </tr>
   </tfoot>
 </table>
@@ -73,13 +69,13 @@ Use `<th>` elements to define headers. They should have a `scope` attribute with
 # Sortable Table
 
 <a href="?path=/story/components-table--example-sortable">
-  Go to the Canvas Tab
+  {'Go to the Canvas Tab'}
 </a>
 
-***
+---
 
 <a href="?id=components-table--example-sortable" target="_blank">
-  Open page in full width in a new tab
+  {'Open page in full width in a new tab'}
 </a>
 
 <Canvas of={TableStories.ExampleSortable} />
@@ -89,10 +85,7 @@ Use `<th>` elements to define headers. They should have a `scope` attribute with
 ## Markup example
 
 ```html
-<table
-  id="table-sortable-1"
-  class="table table--default table--sortable"
->
+<table id="table-sortable-1" class="table table--default table--sortable">
   <caption>
     Description of the table content here
     <span class="sr-only">, column headers with buttons are sortable.</span>
@@ -153,7 +146,7 @@ module.exports = class TableSortable {
     })
   }
 
-  setColumnHeaderSort (columnIndex) {
+  setColumnHeaderSort(columnIndex) {
     if (typeof columnIndex === 'string') {
       columnIndex = parseInt(columnIndex)
     }
@@ -168,7 +161,7 @@ module.exports = class TableSortable {
         this.sortColumn(
           columnIndex,
           sortDirection,
-          ch.classList.contains('num') ? 'number' : 'text'
+          ch.classList.contains('num') ? 'number' : 'text',
         )
       } else {
         if (ch.hasAttribute('aria-sort') && buttonNode) {
@@ -177,7 +170,7 @@ module.exports = class TableSortable {
       }
     })
   }
-  sortColumn (columnIndex, sortValue, type) {
+  sortColumn(columnIndex, sortValue, type) {
     const tbodyNode = this.tableNode.querySelector('tbody')
     const rowNodes = Array.from(tbodyNode.children)
 
@@ -227,7 +220,7 @@ module.exports = class TableSortable {
 
   /* EVENT HANDLERS */
 
-  handleClick (event) {
+  handleClick(event) {
     const tgt = event.currentTarget
     this.setColumnHeaderSort(tgt.getAttribute('data-column-index'))
   }

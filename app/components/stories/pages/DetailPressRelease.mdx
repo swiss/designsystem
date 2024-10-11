@@ -1,6 +1,6 @@
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import detailPressRelease from '../../../pages/detailPressRelease.vue';
-import * as DetailPressReleaseStories from './DetailPressRelease.stories';
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import detailPressRelease from '../../../pages/detailPressRelease.vue'
+import * as DetailPressReleaseStories from './DetailPressRelease.stories'
 
 <Meta of={DetailPressReleaseStories} />
 
@@ -8,15 +8,19 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailPressRelease },
   template: '<detailPressRelease />',
-});
+})
 
 # Press release page example
 
-<a href="?path=/story/pages-detail-press-release--example">Go to the Canvas Tab</a>
+<a href="?path=/story/pages-detail-press-release--example">
+  {'Go to the Canvas Tab'}
+</a>
 
-***
+---
 
-<a href="?id=pages-detail-press-release--example" target="_blank">Open page in full width in a new tab</a>
+<a href="?id=pages-detail-press-release--example" target="_blank">
+  {'Open page in full width in a new tab'}
+</a>
 
 <Canvas>
   <Story of={DetailPressReleaseStories.Example} />

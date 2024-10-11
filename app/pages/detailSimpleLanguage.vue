@@ -137,7 +137,6 @@
 
 <script setup>
 import Btn from '../components/ch/components/Btn.vue'
-import TextImage from '../components/ch/components/TextImage.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'

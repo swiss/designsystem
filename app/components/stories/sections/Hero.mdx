@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import Hero from '../../ch/sections/Hero.vue'
 import Btn from '../../ch/components/Btn.vue'
-import * as HeroStories from './Hero.stories';
+import * as HeroStories from './Hero.stories'
 
 <Meta of={HeroStories} />
 
@@ -68,9 +68,7 @@ export const Template = (args, { argTypes }) => ({
 
 This variant doesn't contain any article type, date or authors.
 
-<Canvas>
-  <Story of={HeroStories.MainWithoutImage} />
-</Canvas>
+<Canvas of={HeroStories.MainWithoutImage} />
 
 ## Main hero with image
 
@@ -80,9 +78,7 @@ This variant doesn't contain any article type, date or authors.
 
 The image should have a 4:3 ratio and the height of both title and description shouldn't be bigger than the height of the image on a large desktop.
 
-<Canvas>
-  <Story of={HeroStories.MainWithImage} />
-</Canvas>
+<Canvas of={HeroStories.MainWithImage} />
 
 ## Hero for hub pages
 
@@ -90,9 +86,7 @@ The image should have a 4:3 ratio and the height of both title and description s
 
 This variant doesn't contain any article type, date or authors.
 
-<Canvas>
-  <Story of={HeroStories.HubPage} />
-</Canvas>
+<Canvas of={HeroStories.HubPage} />
 
 ## Hero for detail pages
 
@@ -100,9 +94,7 @@ This variant doesn't contain any article type, date or authors.
 
 This variant can optionally contain an article type, a date and one ore more authors.
 
-<Canvas>
-  <Story of={HeroStories.DetailPage} />
-</Canvas>
+<Canvas of={HeroStories.DetailPage} />
 
 ## Hero for detail pages, with only a title and subtitle
 
@@ -110,19 +102,15 @@ This variant can optionally contain an article type, a date and one ore more aut
 
 This variant can contain only a title and subtitle.
 
-<Canvas>
-  <Story of={HeroStories.DetailPageTitleOnly} />
-</Canvas>
+<Canvas of={HeroStories.DetailPageTitleOnly} />
 
 ## Hero for screenreaders only
 
 If there isn't any specific content for the hero, we still need to display a `h1` title for screen readers.
 Set type to `sr-only` to hide the component visually. Check the <a href="?path=/story/sections-content-hero--example">Storybook Canvas Tab</a> to display the HTML markup.
 
-<Canvas>
-  <Story of={HeroStories.ScreenReadersOnly} />
-</Canvas>
+<Canvas of={HeroStories.ScreenReadersOnly} />
 
-<a href="?path=/story/sections-content-hero--example">Go to the Canvas Tab</a>import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
-import Btn from '../../ch/components/Btn.vue'
-import Hero from '../../ch/sections/Hero.vue'
+<a href="?path=/story/sections-content-hero--example">
+  {'Go to the Canvas Tab'}
+</a>

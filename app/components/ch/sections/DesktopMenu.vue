@@ -33,7 +33,7 @@ import Navy from '../../../scripts/Navy.js'
 import SvgIcon from '../components/SvgIcon.vue'
 import MainNavigation from '../navigations/MainNavigation.vue'
 import MainNavigationSimple from '../navigations/MainNavigationSimple.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 
 const useStickyPlaceholder = ref(false)
 const initialNavBarOffset = ref(0)

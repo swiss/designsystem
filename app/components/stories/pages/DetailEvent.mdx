@@ -1,6 +1,6 @@
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import detailEvent from '../../../pages/detailEvent.vue';
-import * as DetailEventStories from './DetailEvent.stories';
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import detailEvent from '../../../pages/detailEvent.vue'
+import * as DetailEventStories from './DetailEvent.stories'
 
 <Meta of={DetailEventStories} />
 
@@ -8,16 +8,18 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { detailEvent },
   template: '<detailEvent />',
-});
+})
 
 # Event page example
 
-<a href="?path=/story/pages-detail-page-event--example">Go to the Canvas Tab</a>
+<a href="?path=/story/pages-detail-page-event--example">
+  {'Go to the Canvas Tab'}
+</a>
 
-***
+---
 
-<a href="?id=pages-detail-page-event--example" target="_blank">Open in full width in a new tab</a>
+<a href="?id=pages-detail-page-event--example" target="_blank">
+  {'Open in full width in a new tab'}
+</a>
 
-<Canvas>
-  <Story of={DetailEventStories.Example} />
-</Canvas>
+<Canvas of={DetailEventStories.Example} />

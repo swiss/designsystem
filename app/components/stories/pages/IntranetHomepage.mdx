@@ -1,6 +1,6 @@
-import { Meta, Story, Canvas } from '@storybook/blocks';
-import Index from '../../../pages/index.vue';
-import * as IntranetHomepageStories from './IntranetHomepage.stories';
+import { Meta, Story, Canvas } from '@storybook/blocks'
+import Index from '../../../pages/index.vue'
+import * as IntranetHomepageStories from './IntranetHomepage.stories'
 
 <Meta of={IntranetHomepageStories} />
 
@@ -8,15 +8,19 @@ export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Index },
   template: '<Index :isIntranet="true" />',
-});
+})
 
 # Intranet Homepage example
 
-<a href="?path=/story/pages-intranet-homepage--example">Go to the Canvas Tab</a>
+<a href="?path=/story/pages-intranet-homepage--example">
+  {'Go to the Canvas Tab'}
+</a>
 
-***
+---
 
-<a href="?id=pages-intranet-homepage--example" target="_blank">Open in full width in a new tab</a>
+<a href="?id=pages-intranet-homepage--example" target="_blank">
+  {'Open in full width in a new tab'}
+</a>
 
 Add a `body--intranet` class to the body tag to display the intranet version of the homepage.
 

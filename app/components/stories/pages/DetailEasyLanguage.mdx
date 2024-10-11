@@ -1,40 +1,24 @@
 import { Meta, Story, Canvas } from '@storybook/blocks'
 import detailSimpleLanguage from '../../../pages/detailSimpleLanguage.vue'
-import * as DetailEasyLanguageStories from './DetailEasyLanguage.stories';
+import * as DetailEasyLanguageStories from './DetailEasyLanguage.stories'
 
 <Meta of={DetailEasyLanguageStories} />
-
-export const Template = (args, { argTypes, viewMode }) => {
-  if (viewMode === 'docs') {
-    return {
-      props: Object.keys(argTypes),
-      components: { detailSimpleLanguage },
-      template: '<detailSimpleLanguage :isEasyLanguage="true" />',
-    }
-  } else {
-    return {
-      props: Object.keys(argTypes),
-      components: { detailSimpleLanguage },
-      template:
-        '<detailSimpleLanguage :isEasyLanguage="true" :useStickyNavigation="useStickyNavigation" />',
-    }
-  }
-}
 
 # Detailpage easy language example
 
 Please use full width view in order to see the sticky navigation working correctly.
 
 <a href="?path=/story/pages-easy-sign-language-detail-easy-language--example">
-  Go to the Canvas Tab
+  {'Go to the Canvas Tab'}
 </a>
 
-***
+---
 
-<a href="?id=pages-easy-sign-language-detail-easy-language--example" target="_blank">
-  Open in full width in a new tab
+<a
+  href="?id=pages-easy-sign-language-detail-easy-language--example"
+  target="_blank"
+>
+  {'Open in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={DetailEasyLanguageStories.Example} />
-</Canvas>
+<Canvas of={DetailEasyLanguageStories.Example} />

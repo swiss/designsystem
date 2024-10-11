@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import detailPageSimple from '../../../pages/detailPageSimple.vue'
-import * as FreebrandPageSimpleStories from './FreebrandPageSimple.stories';
+import * as FreebrandPageSimpleStories from './FreebrandPageSimple.stories'
 
 <Meta of={FreebrandPageSimpleStories} />
 
@@ -13,13 +13,13 @@ export const Template = (args, { argTypes }) => ({
 # Freebrand Simple page example
 
 <a href="?path=/story/pages-freebrand-detail-page-simple--example">
-  Go to the Canvas Tab
+  {'Go to the Canvas Tab'}
 </a>
 
-***
+---
 
 <a href="?id=pages-freebrand-detail-page-simple--example" target="_blank">
-  Open page in full width in a new tab
+  {'Open page in full width in a new tab'}
 </a>
 
 Freebrand design. See bottom of page for configuration options.
@@ -63,35 +63,35 @@ Overwrite fonts by loading the font faces. Has to be loaded last in order for th
 
 ```css
 @font-face {
- font-family: 'Font-Regular';
- font-style: normal;
- font-weight: 400;
- font-display: swap;
- src: url('../fonts/Font-Regular.ttf') format('truetype');
+  font-family: 'Font-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Font-Regular.ttf') format('truetype');
 }
 
 @font-face {
- font-family: 'Font-Bold';
- font-style: normal;
- font-weight: 700;
- font-display: swap;
- src: url('../fonts/Font-Bold.ttf') format('truetype');
+  font-family: 'Font-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Font-Bold.ttf') format('truetype');
 }
 
 @font-face {
- font-family: 'Font-Italic';
- font-style: italic;
- font-weight: 400;
- font-display: swap;
- src: url('../fonts/Font-Italic.ttf') format('truetype');
+  font-family: 'Font-Italic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Font-Italic.ttf') format('truetype');
 }
 
 @font-face {
- font-family: 'Font-Bold-Italic';
- font-style: italic;
- font-weight: 700;
- font-display: swap;
- src: url('../fonts/Font-Bold-Italic.ttf') format('truetype');
+  font-family: 'Font-Bold-Italic';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/Font-Bold-Italic.ttf') format('truetype');
 }
 
 @font-face {
@@ -102,5 +102,4 @@ Overwrite fonts by loading the font faces. Has to be loaded last in order for th
   descent-override: -25%;
   line-gap-override: 25%;
 }
-
 ```

@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 // import Glossar from '../../../pages/glossar.vue'
-import * as GlossaryStories from './Glossary.stories';
+import * as GlossaryStories from './Glossary.stories'
 
 <Meta of={GlossaryStories} />
 
@@ -26,13 +26,16 @@ export const Template = (args, { argTypes, viewMode }) => {
 Please use full width view in order to see the sticky search working correctly.
 
 <a href="?path=/story/pages-glossar--with-results-sticky">
-  Go to the Canvas Tab
+  {'Go to the Canvas Tab'}
 </a>
 
-***
+---
 
-<a href="?id=pages-glossar--with-results-sticky&args=&viewMode=story" target="_blank">
-  Open page in full width in a new tab
+<a
+  href="?id=pages-glossar--with-results-sticky&args=&viewMode=story"
+  target="_blank"
+>
+  {'Open page in full width in a new tab'}
 </a>
 
 <Canvas>
@@ -41,12 +44,12 @@ Please use full width view in order to see the sticky search working correctly.
 
 # Glossar results
 
-<a href="?path=/story/pages-glossar--with-results">Go to the Canvas Tab</a>
+<a href="?path=/story/pages-glossar--with-results">{'Go to the Canvas Tab'}</a>
 
-***
+---
 
 <a href="?id=pages-glossar--with-results&args=&viewMode=story" target="_blank">
-  Open page in full width in a new tab
+  {'Open page in full width in a new tab'}
 </a>
 
 <Canvas>

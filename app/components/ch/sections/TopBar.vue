@@ -355,7 +355,7 @@ import Btn from '../components/Btn.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import TopBarNavigation from '../navigations/TopBarNavigation.vue'
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 
 const filterString = ref('')
 const useStickyPlaceholder = ref(false)
