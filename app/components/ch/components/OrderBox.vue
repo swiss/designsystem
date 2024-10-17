@@ -39,7 +39,7 @@
     <div class="order__box-piece-price-container">
       <p class="order__box-piece-price-title">{{ pricePieceTitle }}</p>
       <p class="order__box-piece-price">
-        {{ `${curencyPrefix} ${pricePiece}` }}
+        {{ `${currencyPrefix} ${pricePiece}` }}
       </p>
     </div>
     <div class="order__box-total-price-container">
@@ -105,7 +105,7 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  curencyPrefix: {
+  currencyPrefix: {
     type: String,
     required: true,
   },
@@ -121,7 +121,7 @@ onMounted(() => {
 })
 
 const totalPrice = computed(() => {
-  return `${props.curencyPrefix} ${(
+  return `${props.currencyPrefix} ${(
     pricePiece.value * inputValue.value
   ).toFixed(2)}`
 })
@@ -141,6 +141,8 @@ const getUniqueId = function (text = '') {
 }
 
 const setSelectedValue = function (value) {
-  Object.assign(selectedValue, value)
+  const newPriceObject = props.options.find((option) => option.value === value)
+  pricePiece.value = newPriceObject.pricePiece
+  Object.assign(selectedValue, newPriceObject)
 }
 </script>

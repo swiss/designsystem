@@ -98,7 +98,7 @@
                         :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
-                        class="border-b-0 pb-0"
+                        class="pb-0 border-b-0"
                       />
                     </li>
                   </ul>
@@ -107,7 +107,7 @@
                   title="Bestellung gedruckte Version in DE, IT, FR"
                   totalPriceTitle="Total (exklusiv MwSt.)"
                   pricePieceTitle="Pro Stück"
-                  curencyPrefix="CHF"
+                  currencyPrefix="CHF"
                   :options="[
                     {
                       label: 'Deutsch',
@@ -222,7 +222,7 @@
                 <RelatedTags :tags="tags" bare></RelatedTags>
               </div>
             </div>
-            <div class="container__aside hidden md:block">
+            <div class="hidden container__aside md:block">
               <div id="aside-content" :class="computedAsideContainerClass">
                 <!-- desktop only -->
                 <div class="box">
@@ -256,7 +256,7 @@
                         :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
-                        class="border-b-0 pb-0"
+                        class="pb-0 border-b-0"
                       />
                     </li>
                   </ul>
@@ -265,7 +265,7 @@
                   title="Bestellung gedruckte Version in DE, IT, FR"
                   totalPriceTitle="Total (exklusiv MwSt.)"
                   pricePieceTitle="Pro Stück"
-                  curencyPrefix="CHF"
+                  currencyPrefix="CHF"
                   :options="[
                     {
                       label: 'Deutsch',
@@ -416,7 +416,7 @@ const resizeWindow = function () {
 const addToCart = function (selectedLanguage, amount) {
   // Add amount to shopping cart
   shoppingCartAmount.value += amount
-  const translatedLanguage = languageMap[selectedLanguage]
+  const translatedLanguage = languageMap[selectedLanguage.value]
 
   window.postMessage({
     trigger: 'trigger-toast-message',
