@@ -323,7 +323,7 @@ const { v4: uuidv4 } = require('uuid')
 SwiperCore.use([Navigation, Pagination])
 
 export default {
-  name: 'CarouselGlossaryFilter',
+  name: 'CarouselBadgeFilter',
   components: { SvgIcon, Swiper, SwiperSlide, badge },
   data() {
     return {
@@ -348,6 +348,5 @@ export default {
       default: () => [],
     },
   },
-  methods: {},
 }
 </script>

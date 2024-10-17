@@ -230,7 +230,7 @@
 import badge from '../components/Badge.vue';
 
 export default {
-  name: 'GlossaryFilter',
+  name: 'BadgeFilter',
   components: { badge },
   props: {
     badgeClicked: {

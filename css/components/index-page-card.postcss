@@ -1,0 +1,97 @@
+/*----------------------------------------*\
+  INDEX PAGE CARD
+\*----------------------------------------*/
+
+.index-page__card {
+  container-type: inline-size;
+  @apply space-y-3;
+  @apply bg-white;
+
+  &,
+  &:hover {
+    @apply no-underline text-inherit; /* override general styling for links in main */
+  }
+
+  /* Flat */
+  @apply py-6;
+  @apply px-1;
+  @apply border-b border-secondary-200;
+
+  /* Reverse on desktop in order to show the image on the right */
+  @screen md {
+    @apply space-y-0;
+    @apply flex flex-row-reverse;
+  }
+
+  .btn {
+    @apply h-0 min-h-0 border-0;
+
+    &:focus-visible {
+      @apply ring-0 ring-transparent;
+    }
+
+    &:focus-visible::after {
+      @apply ring-2 ring-purple-500;
+    }
+  }
+}
+
+.index-page__card-clickable {
+  @apply cursor-pointer;
+  @apply relative;
+  @apply transition-shadow duration-300 ease-in-out;
+
+  /* Whole Card clickable */
+  a::after,
+  .btn::after {
+    content: '';
+    @apply absolute top-0 right-0 left-0 bottom-0;
+    @apply border-2 border-text-50 border-opacity-0 transition-all duration-300 ease-in-out;
+  }
+
+  /* Hover shadow effect */
+  &:hover,
+  &:focus-within {
+    @apply shadow-xl;
+
+    /* Title hover interaction color */
+    .index-page__card-title {
+      @apply text-primary-700;
+    }
+    
+    a::after,
+    .btn::after {
+      content: '';
+      @apply border-opacity-90;
+    }
+  }
+}
+
+.index-page__card-image {
+  @apply relative;
+  @apply h-[150px] w-full;
+
+  @apply flex items-center justify-start;
+
+  img {
+    @apply max-w-full max-h-full;
+  }
+
+  @screen md {
+    @apply h-[200px];
+    @apply max-w-[200px];
+    @apply items-center justify-end;
+  }
+}
+
+.index-page__card-details-continer {
+  @apply space-y-3;
+  @apply md:mr-4;
+}
+
+.index-page__card-title {
+  @apply break-words;
+  @apply text-lg xl:text-xl 3xl:text-2xl;
+  @apply font-bold leading-snug;
+  @apply transition-colors duration-200 ease-in-out;
+}

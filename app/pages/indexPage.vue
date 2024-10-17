@@ -11,7 +11,7 @@
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
         <div class="container">
-          <h1 id="glossary-title" class="h1">Glossar</h1>
+          <h1 id="index-page-title" class="h1">Reisen ins Ausland</h1>
           <div id="outer-search-container">
             <div id="search-container">
               <div id="inner-search-container">
@@ -20,7 +20,7 @@
                     <input
                       type="search"
                       id="search-input"
-                      label="GLossar filtern"
+                      label="Reiseländer filtern"
                       placeholder="Suchbegriff eingeben"
                       autocomplete="off"
                       v-model="searchTerm"
@@ -34,7 +34,7 @@
                     </div>
                     <Btn
                       v-else-if="!searchTerm"
-                      label="GLossar filtern"
+                      label="Reiseländer filtern"
                       icon="Filter"
                       icon-pos="only"
                       variant="bare"
@@ -51,7 +51,7 @@
                     />
                   </div>
                 </div>
-                <div class="glossary__filters">
+                <div class="index-page__filters">
                   <CarouselBadgeFilter
                     :badgeClicked="setActiveFilter"
                     :activeFilter="activeFilter"
@@ -65,7 +65,7 @@
                   />
                   <div
                     v-if="showFilterSection"
-                    class="glossary__filters__drawer-section"
+                    class="index-page__filters__drawer-section"
                   >
                     <Btn
                       :label="
@@ -80,7 +80,7 @@
                     />
                     <div
                       v-if="filtersAreOpen"
-                      class="glossary__filters__drawer"
+                      class="index-page__filters__drawer"
                     >
                       <Select
                         variant="outline"
@@ -147,16 +147,16 @@
       </section>
       <section class="section section--default">
         <div class="container gap--responsive">
-          <div class="glossary-results">
+          <div class="index-page-results">
             <div
-              class="glossary-results__header"
+              class="index-page-results__header"
               v-if="loadLimitedResults.length !== 0 && !isLoading"
             >
-              <div class="glossary-results__header__left">
+              <div class="index-page-results__header__left">
                 <strong>{{ foundEntries }}</strong
-                >Einträge
+                >Länder
               </div>
-              <div class="glossary-results__header__right">
+              <div class="index-page-results__header__right">
                 <Select
                   variant="outline"
                   bare
@@ -171,7 +171,7 @@
                 </Select>
               </div>
             </div>
-            <GlossarResultList
+            <IndexPageResultList
               v-if="!isLoading && loadLimitedResults.length > 0"
               :resultItems="loadLimitedResults"
               :searchTerm="searchTerm"
@@ -223,7 +223,7 @@
 import BadgeFilter from '../components/ch/components/BadgeFilter.vue'
 import Btn from '../components/ch/components/Btn'
 import CarouselBadgeFilter from '../components/ch/components/CarouselBadgeFilter.vue'
-import GlossarResultList from '../components/ch/components/GlossarResultList.vue'
+import IndexPageResultList from '../components/ch/components/IndexPageResultList.vue'
 import Select from '../components/ch/components/Select.vue'
 import SvgIcon from '../components/ch/components/SvgIcon'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
@@ -236,7 +236,7 @@ import TopHeader from '../components/ch/sections/TopHeader.vue'
 const { v4: uuidv4 } = require('uuid')
 
 export default {
-  name: 'Glossar',
+  name: 'IndexPage',
   components: {
     FooterInformation,
     FooterNavigation,
@@ -250,7 +250,7 @@ export default {
     CarouselBadgeFilter,
     BadgeFilter,
     Select,
-    GlossarResultList,
+    IndexPageResultList,
   },
   props: {
     isLoading: {
@@ -309,253 +309,201 @@ export default {
       ],
       resultItems: [
         {
-          title: '1. Platziert',
-          description: 'Der 1. Platziert ist der Gewinner eines Wettbewerbs.',
-        },
-        {
-          title: 'Ahorn',
+          title: 'Afganistan',
           description:
-            'Der Ahorn ist ein Laubbaum. Siehe Wikipedia. <a href="https://de.wikipedia.org/wiki/Ahorne">Ahorn</a>',
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '10. August 2021'],
+          footerInfos: ['PDF', '5.4 MB', '16. Oktober 2021'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
         },
         {
-          title: 'Birne',
-          description: 'Die Birne ist eine Frucht.',
-        },
-        {
-          title: 'Eiche',
-          description: 'Die Eiche ist ein Laubbaum.',
-        },
-        {
-          title: 'Garten',
-          description: 'Der Garten ist ein Ort zum Anpflanzen von Pflanzen.',
-        },
-        {
-          title: 'Hund',
-          description: 'Der Hund ist ein Haustier.',
-        },
-        {
-          title: 'Jagd',
-          description: 'Die Jagd ist die Suche nach wilden Tieren.',
-        },
-        {
-          title: 'Kuh',
-          description: 'Die Kuh ist ein Nutztier.',
-        },
-        {
-          title: 'Löwe',
-          description: 'Der Löwe ist ein Raubtier.',
-        },
-        {
-          title: 'Maus',
-          description: 'Die Maus ist ein kleines Nagetier.',
-        },
-        {
-          title: 'Natur',
-          description: 'Die Natur umfasst alles, was lebt und existiert.',
-        },
-        {
-          title: 'Ozean',
-          description: 'Der Ozean ist ein großer Salzwasserbereich.',
-        },
-        {
-          title: 'Pflanze',
+          title: 'Australien',
           description:
-            'Die Pflanze ist ein lebendes Organismus, der Photosynthese betreibt.',
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '23. januar 2022'],
+          footerInfos: ['PDF', '4.1 MB', '10. Oktober 2023'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
         },
         {
-          title: 'Qualle',
-          description: 'Die Qualle ist ein wirbelloses Meerestier.',
-        },
-        {
-          title: 'Rabe',
-          description: 'Der Rabe ist ein schwarzer Vogel.',
-        },
-        {
-          title: 'Schaf',
-          description: 'Das Schaf ist ein Nutztier, das Wolle produziert.',
-        },
-        {
-          title: 'Tiger',
-          description: 'Der Tiger ist ein großer Raubkatze.',
-        },
-        {
-          title: 'Uhu',
-          description: 'Der Uhu ist eine große Eulenart.',
-        },
-        {
-          title: 'Vogel',
-          description: 'Der Vogel ist ein fliegendes Tier mit Federn.',
-        },
-        {
-          title: 'Wal',
-          description: 'Der Wal ist ein großes Meeressäugetier.',
-        },
-        {
-          title: 'Xylophon',
+          title: 'Brasilien',
           description:
-            'Das Xylophon ist ein Musikinstrument mit Holzklangplatten.',
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '05. März 2020'],
+          footerInfos: ['PDF', '3.9 MB', '08. April 2020'],
+          footerAction: 'https://www.google.ch',
         },
         {
-          title: 'Yoga',
-          description: 'Yoga ist eine körperliche und geistige Übungsmethode.',
-        },
-        {
-          title: 'Zebra',
-          description: 'Das Zebra ist ein afrikanisches Huftier mit Streifen.',
-        },
-        {
-          title: 'Apfel',
-          description: 'Der Apfel ist eine Frucht.',
-        },
-        {
-          title: 'Banane',
-          description: 'Die Banane ist eine tropische Frucht.',
-        },
-        {
-          title: 'Elefant',
-          description: 'Der Elefant ist ein großes Säugetier mit Rüssel.',
-        },
-        {
-          title: 'Giraffe',
+          title: 'Irland',
           description:
-            'Die Giraffe ist ein hohes afrikanisches Tier mit langem Hals.',
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '30. Dezember 2019'],
+          footerInfos: ['PDF', '1.8 MB', '30. Dezember 2019'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
         },
         {
-          title: 'Hai',
-          description: 'Der Hai ist ein großer Raubfisch.',
-        },
-        {
-          title: 'Jaguar',
-          description: 'Der Jaguar ist eine große Raubkatze.',
-        },
-        {
-          title: 'Krokodil',
-          description: 'Das Krokodil ist ein großes Reptil.',
-        },
-        {
-          title: 'Löwenzahn',
-          description: 'Der Löwenzahn ist eine gelbe Blume.',
-        },
-        {
-          title: 'Mango',
-          description: 'Die Mango ist eine tropische Frucht.',
-        },
-        {
-          title: 'Nashorn',
-          description: 'Das Nashorn ist ein großes Säugetier mit Horn.',
-        },
-        {
-          title: 'Orchidee',
-          description: 'Die Orchidee ist eine exotische Blume.',
-        },
-        {
-          title: 'Pinguin',
-          description: 'Der Pinguin ist ein flugunfähiger Vogel.',
-        },
-        {
-          title: 'Quokka',
-          description: 'Das Quokka ist ein kleines Beuteltier.',
-        },
-        {
-          title: 'Rose',
-          description: 'Die Rose ist eine duftende Blume.',
-        },
-        {
-          title: 'Schmetterling',
-          description: 'Der Schmetterling ist ein fliegendes Insekt.',
-        },
-        {
-          title: 'Tukan',
-          description: 'Der Tukan ist ein bunter Vogel mit großem Schnabel.',
-        },
-        {
-          title: 'Vulkan',
-          description: 'Der Vulkan ist ein Berg, der Lava und Asche ausstößt.',
-        },
-        {
-          title: 'Walross',
+          title: 'Kanada',
           description:
-            'Das Walross ist ein großes Meeressäugetier mit Stoßzähnen.',
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '15. Februar 2021'],
+          footerInfos: ['PDF', '2.3 MB', '20. Februar 2021'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
         },
         {
-          title: 'Xerophyte',
+          title: 'Deutschland',
           description:
-            'Die Xerophyte sind Pflanzen, die an trockene Bedingungen angepasst sind.',
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '12. März 2022'],
+          footerInfos: ['PDF', '3.2 MB', '18. März 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
         },
         {
-          title: 'Yeti',
+          title: 'Japan',
           description:
-            'Der Yeti ist ein legendäres Wesen, das in den Bergen lebt.',
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '22. April 2020'],
+          footerInfos: ['PDF', '4.5 MB', '28. April 2020'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
         },
         {
-          title: 'Zitrone',
-          description: 'Die Zitrone ist eine saure Zitrusfrucht.',
-        },
-        {
-          title: 'Ananas',
-          description: 'Die Ananas ist eine tropische Frucht.',
-        },
-        {
-          title: 'Bambus',
-          description: 'Der Bambus ist eine schnell wachsende Pflanze.',
-        },
-        {
-          title: 'Esel',
-          description: 'Der Esel ist ein Haustier und Arbeitstier.',
-        },
-        {
-          title: 'Gazelle',
-          description: 'Die Gazelle ist ein schnelles afrikanisches Tier.',
-        },
-        {
-          title: 'Hibiskus',
-          description: 'Der Hibiskus ist eine bunte Blume.',
-        },
-        {
-          title: 'Jagdhund',
+          title: 'Indien',
           description:
-            'Der Jagdhund ist ein speziell ausgebildeter Hund für die Jagd.',
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '05. Mai 2021'],
+          footerInfos: ['PDF', '3.7 MB', '10. Mai 2021'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
         },
         {
-          title: 'Kaktus',
-          description: 'Der Kaktus ist eine stachelige Pflanze.',
-        },
-        {
-          title: 'Lama',
-          description: 'Das Lama ist ein südamerikanisches Kameltier.',
-        },
-        {
-          title: 'Maulwurf',
-          description: 'Der Maulwurf ist ein grabendes Säugetier.',
-        },
-        {
-          title: 'Nashornkäfer',
-          description: 'Der Nashornkäfer ist ein großer Käfer mit Horn.',
-        },
-        {
-          title: 'Orang-Utan',
-          description: 'Der Orang-Utan ist ein Menschenaffe.',
-        },
-        {
-          title: 'Papagei',
-          description: 'Der Papagei ist ein bunter Vogel, der sprechen kann.',
-        },
-        {
-          title: 'Qualm',
-          description: 'Qualm ist Rauch oder Dampf.',
-        },
-        {
-          title: 'Raubvogel',
-          description: 'Der Raubvogel ist ein Vogel, der andere Tiere jagt.',
-        },
-        {
-          title: 'Schnecke',
-          description: 'Die Schnecke ist ein langsam kriechendes Weichtier.',
-        },
-        {
-          title: 'Einhorn',
+          title: 'China',
           description:
-            'Das Einhorn ist ein mythologisches Tier mit einem Horn auf der Stirn.',
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '18. Juni 2022'],
+          footerInfos: ['PDF', '4.0 MB', '25. Juni 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Russland',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '10. Juli 2021'],
+          footerInfos: ['PDF', '5.1 MB', '15. Juli 2021'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Südafrika',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '25. August 2020'],
+          footerInfos: ['PDF', '2.8 MB', '30. August 2020'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Neuseeland',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '12. September 2021'],
+          footerInfos: ['PDF', '3.4 MB', '18. September 2021'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Spanien',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '05. Oktober 2022'],
+          footerInfos: ['PDF', '4.7 MB', '10. Oktober 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Italien',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '15. November 2021'],
+          footerInfos: ['PDF', '3.6 MB', '20. November 2021'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Frankreich',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '20. Dezember 2021'],
+          footerInfos: ['PDF', '4.2 MB', '25. Dezember 2021'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Schweiz',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '10. Januar 2022'],
+          footerInfos: ['PDF', '3.9 MB', '15. Januar 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Norwegen',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '05. Februar 2022'],
+          footerInfos: ['PDF', '4.3 MB', '10. Februar 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Schweden',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '15. März 2022'],
+          footerInfos: ['PDF', '4.1 MB', '20. März 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Mexiko',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '10. April 2022'],
+          footerInfos: ['PDF', '3.8 MB', '15. April 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Argentinien',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '20. Mai 2022'],
+          footerInfos: ['PDF', '4.0 MB', '25. Mai 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Griechenland',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '10. Juli 2022'],
+          footerInfos: ['PDF', '4.5 MB', '15. Juli 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
+        },
+        {
+          title: 'Thailand',
+          description:
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
+          metaInfos: ['Blogpost', '20. August 2022'],
+          footerInfos: ['PDF', '4.6 MB', '25. August 2022'],
+          image: 'https://picsum.photos/400/200',
+          footerAction: 'https://www.google.ch',
         },
       ],
     }
@@ -583,7 +531,7 @@ export default {
     },
     scroolToTop() {
       if (this.useStickyPlaceholder) {
-        const scrollTarget = document.getElementById('glossary-title')
+        const scrollTarget = document.getElementById('index-page-title')
 
         if (scrollTarget) {
           scrollTarget.scrollIntoView({ behavior: 'smooth' })
