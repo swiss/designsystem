@@ -6,70 +6,55 @@ export default {
 
   argTypes: {
     type: {
-      table: {
-        type: {
-          summary: [
-            'string: default, inline',
-          ]
-        },
-      },
+      table: { type: { summary: ['string: default, inline'] } },
       options: ['default', 'inline'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     state: {
       table: {
-        type: {
-          summary: [
-            'string: default, sent',
-          ]
-        },
+        category: 'props',
+        type: { summary: ['string: default, sent'] },
       },
       options: ['default', 'sent'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
   },
-}
-
-const defaultArgs = {
-  type: 'default',
-  state: 'default',
-  title: 'Abonnieren Sie unseren Newsletter',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo',
-  inputLabel: 'E-Mail',
-  buttonLabel: 'Newsletter abonnieren',
-  successText:
-    'Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>',
 }
 
 export const Example = {
   render: (args) => ({
     components: { Newsletter },
     setup: () => ({ args }),
-    template:`
+    template: `
       <main style="max-width: 600px; margin: auto">
         <Newsletter v-bind="args" />
       </main>
     `,
   }),
-  args: defaultArgs,
+  args: {
+    type: 'default',
+    state: 'default',
+    title: 'Abonnieren Sie unseren Newsletter',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo',
+    inputLabel: 'E-Mail',
+    buttonLabel: 'Newsletter abonnieren',
+    successText:
+      'Danke für Ihre Anmeldung. Sie sollten gerade eine Email bekommen haben.  <strong>Bitte klicken sie den enthaltenen Link um die Anmeldung zu abschliessen.</strong>',
+  },
 }
 
 export const ExampleInlineForm = {
   render: (args) => ({
     components: { Newsletter },
     setup: () => ({ args }),
-    template:`
+    template: `
       <main style="max-width: 600px; margin: auto">
         <Newsletter v-bind="args"/>
       </main>
     `,
   }),
   args: {
-    ...defaultArgs,
+    ...Example.args,
     type: 'inline',
   },
 }
@@ -78,7 +63,7 @@ export const ExampleDetailPage = {
   render: (args) => ({
     components: { Newsletter },
     setup: () => ({ args }),
-    template:`
+    template: `
       <main>
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
@@ -91,7 +76,7 @@ export const ExampleDetailPage = {
     `,
   }),
   args: {
-    ...defaultArgs,
+    ...Example.args,
     type: 'inline',
   },
 }

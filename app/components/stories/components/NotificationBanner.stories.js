@@ -6,25 +6,13 @@ export default {
 
   argTypes: {
     type: {
-      table: {
-        type: {
-          summary: [
-            'string: info, warning, error, success',
-          ]
-        },
-      },
+      table: { type: { summary: ['string: info, warning, error, success'] } },
       options: ['info', 'warning', 'error', 'success'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     isClosed: {
-      table: {
-        category: 'props',
-      },
-      control: {
-        type: 'boolean',
-      },
+      table: { category: 'props' },
+      control: { type: 'boolean' },
     },
   },
 }

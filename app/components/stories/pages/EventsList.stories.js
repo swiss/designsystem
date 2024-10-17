@@ -8,10 +8,11 @@ export default {
       control: { type: 'boolean' },
     },
     filtersAreOpen: {
+      table: { category: 'props' },
       control: { type: 'boolean' },
     },
     displayType: {
-      table: { type: { summary: ['string: list, grid'] } },
+      table: { category: 'props', type: { summary: ['string: list, grid'] } },
       options: ['list', 'grid'],
       control: { type: 'select' },
     },

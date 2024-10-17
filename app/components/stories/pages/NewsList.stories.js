@@ -3,6 +3,23 @@ import newsList from '../../../pages/newsList.vue'
 export default {
   title: 'Pages/News List',
   component: newsList,
+  argTypes: {
+    noResults: {
+      control: { type: 'boolean' },
+    },
+    filtersAreOpen: {
+      table: { category: 'props' },
+      control: { type: 'boolean' },
+    },
+    displayType: {
+      table: { category: 'props', type: { summary: ['string: list, grid'] } },
+      options: ['list', 'grid'],
+      control: { type: 'select' },
+    },
+    isLoading: {
+      control: { type: 'boolean' },
+    },
+  },
 }
 
 export const WithResults = {

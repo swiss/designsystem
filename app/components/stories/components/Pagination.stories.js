@@ -6,27 +6,15 @@ export default {
 
   argTypes: {
     type: {
-      table: {
-        type: {
-          summary: [
-            'string: outline, outline-negative',
-          ]
-        },
-      },
+      table: { type: { summary: ['string: outline, outline-negative'] } },
       options: ['outline', 'outline-negative'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     field: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     currentPage: {
-      table: {
-        category: 'props',
-      },
+      table: { category: 'props' },
     },
   },
 }
