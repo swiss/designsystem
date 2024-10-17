@@ -3,7 +3,7 @@ import TabsLarge from '../../ch/demo/TabsLarge.vue'
 
 export default {
   title: 'Components/Tabs',
-  component: (Tabs, TabsLarge),
+  component: Tabs,
 }
 
 export const Example = {
@@ -16,6 +16,7 @@ export const Example = {
 export const LargeExample = {
   render: () => ({
     components: { TabsLarge },
-    template: '<div class="container bg--secondary-50"><br /><TabsLarge /><br /></div>',
+    template:
+      '<div class="container bg--secondary-50"><br /><TabsLarge /><br /></div>',
   }),
 }
