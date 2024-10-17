@@ -59,7 +59,7 @@ const props = defineProps({
     type: String,
     default: () => undefined,
   },
-  highlighCancel: {
+  highlightCancel: {
     type: Boolean,
     default: () => false,
   },

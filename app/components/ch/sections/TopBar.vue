@@ -22,7 +22,7 @@
             :iconLeft="computedAccessibilityIcon"
             :label="computedAccessibilityBadgeLabel"
             size="base"
-            :highlighCancel="true"
+            :highlightCancel="true"
           />
           <TopBarNavigation v-if="!isEasyLanguage && !isSignLanguage" />
           <LanguageSwitcher type="negative" />
