@@ -18,6 +18,7 @@ export const Example = {
   args: {
     isEasyLanguage: false,
     isSimpleLanguage: false,
+    isSignLanguage: true,
     useStickyNavigation: true,
   },
 }

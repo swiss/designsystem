@@ -16,7 +16,7 @@ export const Example = {
       />`,
   }),
   args: {
-    isEasyLanguage: false,
+    isEasyLanguage: true,
     isSimpleLanguage: false,
     useStickyNavigation: true,
   },
