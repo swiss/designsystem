@@ -4,12 +4,6 @@ import * as FreebrandPageSimpleStories from './FreebrandPageSimple.stories'
 
 <Meta of={FreebrandPageSimpleStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { detailPageSimple },
-  template: '<detailPageSimple :isFreebrand="true" />',
-})
-
 # Freebrand Simple page example
 
 <a href="?path=/story/pages-freebrand-detail-page-simple--example">
@@ -24,9 +18,7 @@ export const Template = (args, { argTypes }) => ({
 
 Freebrand design. See bottom of page for configuration options.
 
-<Canvas>
-  <Story of={FreebrandPageSimpleStories.Example} />
-</Canvas>
+<Canvas of={FreebrandPageSimpleStories.Example} />
 
 Overwrite the colors by setting the color style attributes on the body
 

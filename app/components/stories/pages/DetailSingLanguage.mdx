@@ -4,23 +4,6 @@ import * as DetailSingLanguageStories from './DetailSingLanguage.stories'
 
 <Meta of={DetailSingLanguageStories} />
 
-export const Template = (args, { argTypes, viewMode }) => {
-  if (viewMode === 'docs') {
-    return {
-      props: Object.keys(argTypes),
-      components: { detailSimpleLanguage },
-      template: '<detailSimpleLanguage :isSignLanguage="true" />',
-    }
-  } else {
-    return {
-      props: Object.keys(argTypes),
-      components: { detailSimpleLanguage },
-      template:
-        '<detailSimpleLanguage :isSignLanguage="trdue" :useStickyNavigation="useStickyNavigation" />',
-    }
-  }
-}
-
 # Detailpage sign language example
 
 Please use full width view in order to see the sticky navigation working correctly.
@@ -38,6 +21,4 @@ Please use full width view in order to see the sticky navigation working correct
   {'Open in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={DetailSingLanguageStories.Example} />
-</Canvas>
+<Canvas of={DetailSingLanguageStories.Example} />

@@ -1,31 +1,8 @@
 import detailPublicationShop from '../../../pages/detailPublicationShop.vue'
 
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { detailPublicationShop },
-  template: '<detailPublicationShop />',
-})
-
 export default {
   title: 'Pages/Publication/Shop',
   component: detailPublicationShop,
-
-  argTypes: {
-    isOpen: {
-      name: 'Is open',
-
-      control: {
-        type: 'boolean',
-      },
-    },
-  },
 }
 
-export const Example = {
-  render: Template.bind({}),
-  name: 'Example',
-
-  args: {
-    isOpen: false,
-  },
-}
+export const Example = {}

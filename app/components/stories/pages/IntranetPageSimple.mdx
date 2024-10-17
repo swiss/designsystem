@@ -4,12 +4,6 @@ import * as IntranetPageSimpleStories from './IntranetPageSimple.stories'
 
 <Meta of={IntranetPageSimpleStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { detailPageSimple },
-  template: '<detailPageSimple :isIntranet="true" />',
-})
-
 # Intranet Simple page example
 
 <a href="?path=/story/pages-intranet-detail-page-simple--example">
@@ -24,6 +18,4 @@ export const Template = (args, { argTypes }) => ({
 
 Add a `body--intranet` class to the body tag to display the intranet version of the page.
 
-<Canvas>
-  <Story of={IntranetPageSimpleStories.Example} />
-</Canvas>
+<Canvas of={IntranetPageSimpleStories.Example} />

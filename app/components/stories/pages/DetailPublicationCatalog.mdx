@@ -4,12 +4,6 @@ import * as DetailPublicationCatalogStories from './DetailPublicationCatalog.sto
 
 <Meta of={DetailPublicationCatalogStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { detailPublicationCatalog },
-  template: '<detailPublicationCatalog />',
-})
-
 # Publication page example
 
 <a href="?path=/story/pages-publication-katalog--example">
@@ -22,6 +16,4 @@ export const Template = (args, { argTypes }) => ({
   {'Open page in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={DetailPublicationCatalogStories.Example} />
-</Canvas>
+<Canvas of={DetailPublicationCatalogStories.Example} />

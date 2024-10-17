@@ -4,12 +4,6 @@ import * as DetailpageSimpleStories from './DetailpageSimple.stories'
 
 <Meta of={DetailpageSimpleStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { detailPageSimple },
-  template: '<detailPageSimple />',
-})
-
 # Simple page example
 
 <a href="?path=/story/pages-detail-page-simple--example">
@@ -22,6 +16,4 @@ export const Template = (args, { argTypes }) => ({
   {'Open page in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={DetailpageSimpleStories.Example} />
-</Canvas>
+<Canvas of={DetailpageSimpleStories.Example} />

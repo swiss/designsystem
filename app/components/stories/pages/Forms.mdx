@@ -4,12 +4,6 @@ import * as FormsStories from './Forms.stories'
 
 <Meta of={FormsStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { FormExample },
-  template: '<FormExample />',
-})
-
 # Homepage example
 
 <a href="?path=/story/pages-form-example--example">{'Go to the Canvas Tab'}</a>
@@ -23,6 +17,4 @@ export const Template = (args, { argTypes }) => ({
   {'Open page in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={FormsStories.FormExample} />
-</Canvas>
+<Canvas of={FormsStories.FormExample} />

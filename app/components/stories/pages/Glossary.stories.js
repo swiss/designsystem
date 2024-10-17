@@ -1,45 +1,28 @@
 import Glossar from '../../../pages/glossar.vue'
 
-const Template = (args, { argTypes, viewMode }) => {
-  if (viewMode === 'docs') {
-    return {
-      props: Object.keys(argTypes),
-      components: { Glossar },
-      template: '<Glossar :isLoading="isLoading" />',
-    }
-  } else {
-    return {
-      props: Object.keys(argTypes),
-      components: { Glossar },
-      template:
-        '<Glossar :isLoading="isLoading" :useStickySearch="useStickySearch" />',
-    }
-  }
-}
-
 export default {
   title: 'Pages/Glossar',
   component: Glossar,
-
   argTypes: {
     isLoading: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
-
     useStickySearch: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
   },
+  render: (args, { viewMode }) => ({
+    setup: () => ({ args, viewMode }),
+    components: { Glossar },
+    template: `
+      <Glossar
+        v-bind="args"
+        :useStickySearch="viewMode === 'docs' ? false : args.useStickySearch"
+      />`,
+  }),
 }
 
 export const WithResultsSticky = {
-  render: Template.bind({}),
-  name: 'With results sticky',
-
   args: {
     isLoading: false,
     useStickySearch: true,
@@ -47,10 +30,8 @@ export const WithResultsSticky = {
 }
 
 export const WithResults = {
-  render: Template.bind({}),
-  name: 'With results',
-
   args: {
     isLoading: false,
+    useStickySearch: false,
   },
 }

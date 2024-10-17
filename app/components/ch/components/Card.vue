@@ -1,22 +1,22 @@
 <template>
   <div :class="computedClasses">
     <div
-      v-if="slots.image && type !== 'highlight' && type !== 'universal'"
+      v-if="$slots.image && type !== 'highlight' && type !== 'universal'"
       class="card__image"
     >
       <slot name="image"></slot>
     </div>
-    <div v-if="slots.header" class="card__header">
+    <div v-if="$slots.header" class="card__header">
       <slot name="header"></slot>
     </div>
     <div class="card__content">
       <div class="card__body">
         <slot name="metaInfos"></slot>
-        <div v-if="slots.title" class="card__title">
+        <div v-if="$slots.title" class="card__title">
           <slot name="title"></slot>
         </div>
         <slot name="description" class="card__description"></slot>
-        <div v-if="slots.image && type === 'universal'" class="card__image">
+        <div v-if="$slots.image && type === 'universal'" class="card__image">
           <slot name="image"></slot>
         </div>
         <slot name="author"></slot>
@@ -25,13 +25,13 @@
         <slot name="contentIcons"></slot>
       </div>
       <div
-        v-if="slots.footerInfo || slots.footerAction"
+        v-if="$slots.footerInfo || $slots.footerAction"
         :class="computedClassesFooter"
       >
-        <div v-if="slots.footerInfo" class="card__footer__info">
+        <div v-if="$slots.footerInfo" class="card__footer__info">
           <slot name="footerInfo"></slot>
         </div>
-        <div v-if="slots.footerAction" class="card__footer__action">
+        <div v-if="$slots.footerAction" class="card__footer__action">
           <slot name="footerAction"></slot>
         </div>
       </div>
@@ -49,7 +49,7 @@ const props = defineProps({
     type: String,
     validator: (prop) =>
       ['default', 'highlight', 'twitter', 'flat', 'universal', 'list'].includes(
-        prop
+        prop,
       ),
   },
   layout: {

@@ -4,23 +4,6 @@ import * as GlossaryStories from './Glossary.stories'
 
 <Meta of={GlossaryStories} />
 
-export const Template = (args, { argTypes, viewMode }) => {
-  if (viewMode === 'docs') {
-    return {
-      props: Object.keys(argTypes),
-      components: { Glossar },
-      template: '<Glossar :isLoading="isLoading" />',
-    }
-  } else {
-    return {
-      props: Object.keys(argTypes),
-      components: { Glossar },
-      template:
-        '<Glossar :isLoading="isLoading" :useStickySearch="useStickySearch" />',
-    }
-  }
-}
-
 # Glossar results with sticky search
 
 Please use full width view in order to see the sticky search working correctly.
@@ -38,9 +21,7 @@ Please use full width view in order to see the sticky search working correctly.
   {'Open page in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={GlossaryStories.WithResultsSticky} />
-</Canvas>
+<Canvas of={GlossaryStories.WithResultsSticky} />
 
 # Glossar results
 
@@ -52,6 +33,4 @@ Please use full width view in order to see the sticky search working correctly.
   {'Open page in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={GlossaryStories.WithResults} />
-</Canvas>
+<Canvas of={GlossaryStories.WithResults} />

@@ -4,13 +4,6 @@ import * as EventsListStories from './EventsList.stories'
 
 <Meta of={EventsListStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { eventList },
-  template:
-    '<eventList :noResults="noResults" :isLoading="isLoading" :filtersAreOpen="filtersAreOpen" :displayType="displayType" />',
-})
-
 # Events List
 
 <a href="?path=/story/pages-events-list--with-results">
@@ -26,18 +19,12 @@ export const Template = (args, { argTypes }) => ({
   {'Open page in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={EventsListStories.WithResults} />
-</Canvas>
+<Canvas of={EventsListStories.WithResults} />
 
 # Show filters
 
-<Canvas>
-  <Story of={EventsListStories.WithoutResults} />
-</Canvas>
+<Canvas of={EventsListStories.WithoutResults} />
 
 # Loading example
 
-<Canvas>
-  <Story of={EventsListStories.WhenLoading} />
-</Canvas>
+<Canvas of={EventsListStories.WhenLoading} />

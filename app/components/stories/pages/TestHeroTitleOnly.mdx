@@ -1,19 +1,11 @@
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import testHeroTitleOnly from '../../../pages/testHeroTitleOnly.vue';
-import * as TestHeroTitleOnlyStories from './TestHeroTitleOnly.stories';
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import testHeroTitleOnly from '../../../pages/testHeroTitleOnly.vue'
+import * as TestHeroTitleOnlyStories from './TestHeroTitleOnly.stories'
 
 <Meta of={TestHeroTitleOnlyStories} />
-
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { testHeroTitleOnly },
-  template: '<testHeroTitleOnly />',
-});
 
 # Test page for hero with only a title
 
 A detail page with a hero containing only a title.
 
-<Canvas>
-  <Story of={TestHeroTitleOnlyStories.Example} />
-</Canvas>
+<Canvas of={TestHeroTitleOnlyStories.Example} />

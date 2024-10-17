@@ -4,12 +4,6 @@ import * as DetailPressReleaseStories from './DetailPressRelease.stories'
 
 <Meta of={DetailPressReleaseStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { detailPressRelease },
-  template: '<detailPressRelease />',
-})
-
 # Press release page example
 
 <a href="?path=/story/pages-detail-press-release--example">
@@ -22,6 +16,4 @@ export const Template = (args, { argTypes }) => ({
   {'Open page in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={DetailPressReleaseStories.Example} />
-</Canvas>
+<Canvas of={DetailPressReleaseStories.Example} />

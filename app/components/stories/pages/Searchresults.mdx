@@ -4,17 +4,9 @@ import * as SearchresultsStories from './Searchresults.stories'
 
 <Meta of={SearchresultsStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { searchResults },
-  template: '<searchResults :noResults="noResults" :isLoading="isLoading" />',
-})
-
 # Search results
 
-<Canvas>
-  <Story of={SearchresultsStories.WithResults} />
-</Canvas>
+<Canvas of={SearchresultsStories.WithResults} />
 
 <a href="?path=/story/pages-search-results--example">
   {'Go to the Canvas Tab'}
@@ -31,9 +23,7 @@ export const Template = (args, { argTypes }) => ({
 
 # No results
 
-<Canvas>
-  <Story of={SearchresultsStories.WithoutResults} />
-</Canvas>
+<Canvas of={SearchresultsStories.WithoutResults} />
 
 <a href="?path=/story/pages-search-results--example">
   {'Go to the Canvas Tab'}
@@ -63,6 +53,4 @@ export const Template = (args, { argTypes }) => ({
   {'Open page in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={SearchresultsStories.WhenLoading} />
-</Canvas>
+<Canvas of={SearchresultsStories.WhenLoading} />

@@ -4,12 +4,6 @@ import * as DetailpageAnchorNavStories from './DetailpageAnchorNav.stories'
 
 <Meta of={DetailpageAnchorNavStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { detailPageAnchorNav },
-  template: '<detailPageAnchorNav />',
-})
-
 # Anchor navigation example
 
 <a href="?path=/story/pages-detail-page-anchor-nav--example">
@@ -30,9 +24,7 @@ export const Template = (args, { argTypes }) => ({
 - the “sticky” functionality works only <a href="?id=pages-detail-page-anchor-nav--example&args=&viewMode=story" target="_blank">in full width view</a>
 - A short Javascript example is displayed at the <a href="#javascript-example">bottom of the page</a>, showing how to set a class on the current menu item, depending on the scroll position.
 
-<Canvas>
-  <Story of={DetailpageAnchorNavStories.Example} />
-</Canvas>
+<Canvas of={DetailpageAnchorNavStories.Example} />
 
 # Javascript example
 

@@ -4,12 +4,6 @@ import * as MailTemplateStories from './MailTemplate.stories'
 
 <Meta of={MailTemplateStories} />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { mailTemplatePreview },
-  template: '<mailTemplatePreview />',
-})
-
 # Shop Mail Templates
 
 <a href="?path=/story/pages-mail-sales-team-template--example">
@@ -22,6 +16,4 @@ export const Template = (args, { argTypes }) => ({
   {'Open page in full width in a new tab'}
 </a>
 
-<Canvas>
-  <Story of={MailTemplateStories.Example} />
-</Canvas>
+<Canvas of={MailTemplateStories.Example} />

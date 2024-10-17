@@ -10,7 +10,6 @@ setup((app) => {
 })
 
 export default {
-  layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
@@ -27,6 +26,7 @@ export default {
   },
   viewMode: 'docs',
   parameters: {
+    layout: 'fullscreen',
     options: {
       storySort: {
         order: [
