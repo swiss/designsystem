@@ -104,7 +104,7 @@ const labelClasses = computed(() => {
 })
 
 const handleChange = function (e) {
-  props.onSelect(e)
+  props.onSelect(e.target.value)
   emit('change', e.target.value)
 }
 </script>
