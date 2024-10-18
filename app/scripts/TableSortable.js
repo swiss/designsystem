@@ -12,7 +12,7 @@ export default class TableSortable {
     })
   }
 
-  setColumnHeaderSort (columnIndex) {
+  setColumnHeaderSort(columnIndex) {
     if (typeof columnIndex === 'string') {
       columnIndex = parseInt(columnIndex)
     }
@@ -27,7 +27,7 @@ export default class TableSortable {
         this.sortColumn(
           columnIndex,
           sortDirection,
-          ch.classList.contains('num') ? 'number' : 'text'
+          ch.classList.contains('num') ? 'number' : 'text',
         )
       } else {
         if (ch.hasAttribute('aria-sort') && buttonNode) {
@@ -36,7 +36,7 @@ export default class TableSortable {
       }
     })
   }
-  sortColumn (columnIndex, sortValue, type) {
+  sortColumn(columnIndex, sortValue, type) {
     const tbodyNode = this.tableNode.querySelector('tbody')
     const rowNodes = Array.from(tbodyNode.children)
 
@@ -86,7 +86,7 @@ export default class TableSortable {
 
   /* EVENT HANDLERS */
 
-  handleClick (event) {
+  handleClick(event) {
     const tgt = event.currentTarget
     this.setColumnHeaderSort(tgt.getAttribute('data-column-index'))
   }

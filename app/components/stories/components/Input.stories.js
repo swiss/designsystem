@@ -10,27 +10,27 @@ export default {
         type: {
           summary: [
             'string: color, date, datetime-local, email, file, month, number, password, range, search, tel, text, time, url, week, submit',
-          ]
+          ],
         },
       },
       options: [
-          'color',
-          'date',
-          'datetime-local',
-          'email',
-          'file',
-          'month',
-          'number',
-          'password',
-          'range',
-          'search',
-          'tel',
-          'text',
-          'time',
-          'url',
-          'week',
-          'submit',
-        ],
+        'color',
+        'date',
+        'datetime-local',
+        'email',
+        'file',
+        'month',
+        'number',
+        'password',
+        'range',
+        'search',
+        'tel',
+        'text',
+        'time',
+        'url',
+        'week',
+        'submit',
+      ],
       control: {
         type: 'select',
       },
@@ -43,9 +43,7 @@ export default {
     size: {
       table: {
         type: {
-          summary: [
-            'string: sm, base, lg',
-          ]
+          summary: ['string: sm, base, lg'],
         },
       },
       options: ['sm', 'base', 'lg'],
@@ -56,9 +54,7 @@ export default {
     variant: {
       table: {
         type: {
-          summary: [
-            'string: outline, negative',
-          ]
+          summary: ['string: outline, negative'],
         },
       },
       options: ['outline', 'negative'],
@@ -76,9 +72,7 @@ export default {
     messageType: {
       table: {
         type: {
-          summary: [
-            'string: error, warning, success, info',
-          ]
+          summary: ['string: error, warning, success, info'],
         },
       },
       options: ['error', 'warning', 'success', 'info'],
@@ -93,8 +87,7 @@ export const Example = {
   render: (args) => ({
     components: { Input },
     setup: () => ({ args }),
-    template:
-    '<Input v-bind="args" />',
+    template: '<Input v-bind="args" />',
   }),
   args: {
     type: 'outline',
@@ -115,13 +108,13 @@ export const Example = {
 export const NegativeInput = {
   render: () => ({
     template:
-    '<input class="input--negative input--base" value="Input text" />',
+      '<input class="input--negative input--base" value="Input text" />',
   }),
 }
 
 export const DisabledInput = {
   render: () => ({
-    template:`
+    template: `
       <div style="display: flex; flex-direction: row; gap: 10pt; width: 90%" >
         <input class="input--outline input--base" disabled value="Input text" />
         <input class="input--negative input--base" disabled value="Input text" />
@@ -132,7 +125,7 @@ export const DisabledInput = {
 
 export const SizesInput = {
   render: () => ({
-    template:`
+    template: `
       <div style="display: flex; flex-direction: row; gap: 10pt; width: 90%" >
         <input class="input--outline input--sm" value="input--sm" />
         <input class="input--outline input--base" value="input--base" />
@@ -144,7 +137,7 @@ export const SizesInput = {
 
 export const RequiredInput = {
   render: () => ({
-    template:`
+    template: `
       <div class="form__group__input">
         <label for="my-id" class="text--base text--asterisk">
           Name <span class="sr-only">required</span>
@@ -157,7 +150,7 @@ export const RequiredInput = {
 
 export const MessagesInput = {
   render: () => ({
-    template:`
+    template: `
       <div class="form__group__input">
         <label for="my-id" class="text--base text--asterisk">
           Name <span class="sr-only">required</span>

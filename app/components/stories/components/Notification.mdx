@@ -1,6 +1,5 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import Notification from '../../ch/components/Notification.vue'
-import * as NotificationStories from './Notification.stories';
+import * as NotificationStories from './Notification.stories'
 
 <Meta of={NotificationStories} />
 
@@ -16,10 +15,10 @@ import * as NotificationStories from './Notification.stories';
 
 For type variations, the following css classes are built:
 
-* `notification--info` for information
-* `notification--warning` for warnings
-* `notification--error` for errors
-* `notification--success` for success messages
+- `notification--info` for information
+- `notification--warning` for warnings
+- `notification--error` for errors
+- `notification--success` for success messages
 
 For really important notifications, for example when the population is facing a danger (flooding, landslides, earthquakes, etc) you can use the `notification--alert` variant.
 For this specific use case, the [Alert Banner component](?path=/docs/components-alertbanner--example) is recommended.

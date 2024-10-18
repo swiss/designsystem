@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import * as CheckboxStories from './Checkbox.stories';
+import * as CheckboxStories from './Checkbox.stories'
 
 <Meta of={CheckboxStories} />
 
@@ -13,13 +13,16 @@ import * as CheckboxStories from './Checkbox.stories';
 
 ## Checkbox negative type
 
-* `input--negative` for standard checkboxes on dark background
+- `input--negative` for standard checkboxes on dark background
 
-<Canvas of={CheckboxStories.NegativeCheckbox}  className='storybook-bg-negative' />
+<Canvas
+  of={CheckboxStories.NegativeCheckbox}
+  className="storybook-bg-negative"
+/>
 
 ## Input disabled state
 
-* `input--disabled` or `disabled state on the input` to add the disabled style
+- `input--disabled` or `disabled state on the input` to add the disabled style
 
 <Canvas of={CheckboxStories.DisabledInput} />
 
@@ -27,9 +30,9 @@ import * as CheckboxStories from './Checkbox.stories';
 
 For size variations, the following css classes are built:
 
-* `input--sm` for small inputs
-* `input--base` for standard size
-* `input--lg` for large inputs
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
 
 <Canvas of={CheckboxStories.SizesCheckbox} />
 
@@ -37,9 +40,9 @@ For size variations, the following css classes are built:
 
 If the field is mandatory:
 
-* a `required` attribute is added to the input element
-* an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element.
-* the word “required“ is added to the legend for screen readers. This can be done by wrapping the word into a `.sr-only` element.
+- a `required` attribute is added to the input element
+- an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element.
+- the word “required“ is added to the legend for screen readers. This can be done by wrapping the word into a `.sr-only` element.
 
 <Canvas of={CheckboxStories.RequiredCheckbox} />
 

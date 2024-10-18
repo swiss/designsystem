@@ -10,16 +10,16 @@ export default {
         type: {
           summary: [
             'string: white, secondary-50, secondary-100, secondary-500, secondary-600',
-          ]
+          ],
         },
       },
       options: [
-          'white',
-          'secondary-50',
-          'secondary-100',
-          'secondary-500',
-          'secondary-600',
-        ],
+        'white',
+        'secondary-50',
+        'secondary-100',
+        'secondary-500',
+        'secondary-600',
+      ],
       control: {
         type: 'select',
       },

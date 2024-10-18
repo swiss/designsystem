@@ -9,9 +9,9 @@ export const Example = {
   render: (args) => ({
     components: { MetaInfo },
     setup: () => ({ args }),
-    template: '<MetaInfo v-bind="args" />'
+    template: '<MetaInfo v-bind="args" />',
   }),
   args: {
-    metainfos: ["This is a meta info", "This is another meta info"]
+    metainfos: ['This is a meta info', 'This is another meta info'],
   },
 }

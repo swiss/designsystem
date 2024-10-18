@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import Accordion from '../../ch/components/Accordion.vue'
 import AccordionItem from '../../ch/components/AccordionItem.vue'
-import * as AccordionStories from './Accordion.stories';
+import * as AccordionStories from './Accordion.stories'
 
 <Meta of={AccordionStories} />
 
@@ -11,7 +11,7 @@ import * as AccordionStories from './Accordion.stories';
 
 # Interactions and accessibility
 
-Each accordion item regroup a button `.accordion__button`  and a related `.accordion__drawer`. Each button have an `aria-controls` attribute pointing the id of the drawer:
+Each accordion item regroup a button `.accordion__button` and a related `.accordion__drawer`. Each button have an `aria-controls` attribute pointing the id of the drawer:
 
 ```html
 <ul class="accordion">
@@ -26,11 +26,7 @@ Each accordion item regroup a button `.accordion__button`  and a related `.accor
       </h3>
       <svg class="accordion__arrow">...</svg>
     </button>
-    <div
-      class="accordion__drawer"
-      aria-hidden="true"
-      :id="content-id"
-    >
+    <div class="accordion__drawer" aria-hidden="true" :id="content-id">
       <div class="accordion__content vertical-spacing">
         <!--Content here-->
       </div>
@@ -50,34 +46,33 @@ Below an example of a simple script resolving two accessibility topics:
 const Accordion = {
   init(target) {
     let buttons = document.querySelectorAll(target)
-    buttons.forEach(button => {
+    buttons.forEach((button) => {
       let content = button.nextElementSibling
       let focusableElements = getFocusableElements(content)
       // make focusable content unfocusable
-      focusableElements.forEach(item => {
-        item.tabIndex =  -1
+      focusableElements.forEach((item) => {
+        item.tabIndex = -1
       })
 
-      button.addEventListener("click", (event) => {
-        if (button.classList.contains("active")) {
+      button.addEventListener('click', (event) => {
+        if (button.classList.contains('active')) {
           // close drawer
-          button.classList.remove("active")
-          button.setAttribute("aria-expanded", false)
+          button.classList.remove('active')
+          button.setAttribute('aria-expanded', false)
           content.style.maxHeight = null
-          content.setAttribute("aria-hidden", true)
+          content.setAttribute('aria-hidden', true)
           // make focusable content unfocusable
-          focusableElements.forEach(item => {
-            item.tabIndex =  -1
+          focusableElements.forEach((item) => {
+            item.tabIndex = -1
           })
-        }
-        else {
+        } else {
           // open drawer
-          button.classList.add("active")
-          content.style.maxHeight = content.scrollHeight + "px";
-          content.setAttribute("aria-hidden", false)
-          button.setAttribute("aria-expanded", true)
+          button.classList.add('active')
+          content.style.maxHeight = content.scrollHeight + 'px'
+          content.setAttribute('aria-hidden', false)
+          button.setAttribute('aria-expanded', true)
           // make focusable content focusable again
-          focusableElements.forEach(item => {
+          focusableElements.forEach((item) => {
             item.tabIndex = undefined
           })
         }

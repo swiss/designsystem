@@ -340,12 +340,7 @@
                           : ''
                       "
                       :onSelect="
-                        (e) =>
-                          setFormFieldValue(
-                            'invoice',
-                            'country',
-                            e,
-                          )
+                        (e) => setFormFieldValue('invoice', 'country', e)
                       "
                     >
                       <option selected disabled>Land auswählen</option>
@@ -595,12 +590,7 @@
                             : ''
                         "
                         :onSelect="
-                          (e) =>
-                            setFormFieldValue(
-                              'delivery',
-                              'country',
-                              e,
-                            )
+                          (e) => setFormFieldValue('delivery', 'country', e)
                         "
                       >
                         <option selected disabled>Land auswählen</option>

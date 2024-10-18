@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import Fieldset from '../../ch/components/Fieldset.vue'
 import Checkbox from '../../ch/components/Checkbox.vue'
 import Radio from '../../ch/components/Radio.vue'
-import * as FieldsetStories from './Fieldset.stories';
+import * as FieldsetStories from './Fieldset.stories'
 
 <Meta of={FieldsetStories} />
 
@@ -12,9 +12,7 @@ import * as FieldsetStories from './Fieldset.stories';
 
 ```html
 <fieldset class="form__group">
-  <legend class="form__group__legend">
-    Radio button group legend
-  </legend>
+  <legend class="form__group__legend">Radio button group legend</legend>
   <div class="form__group__radio">
     <input
       type="radio"
@@ -53,9 +51,7 @@ The `legend` element provide a caption for the `fieldset` group.
 
 ```html
 <fieldset class="form__group">
-  <legend class="form__group__legend">
-    Radio button group legend
-  </legend>
+  <legend class="form__group__legend">Radio button group legend</legend>
   <div class="form__group__radio">
     <input
       type="radio"
@@ -89,9 +85,9 @@ The `legend` element provide a caption for the `fieldset` group.
 
 If the radios or the checkboxes within a `fieldset` are mandatory:
 
-* a `required` attribute is added to the input elements, or to the first input element.
-* an asterisk is displayed right after the legend. This can be done by adding a `text--asterisk` class on the legend element.
-* the word “required“ is added to the legend for screen readers. This can be done by wrapping the word into a `.sr-only` element.
+- a `required` attribute is added to the input elements, or to the first input element.
+- an asterisk is displayed right after the legend. This can be done by adding a `text--asterisk` class on the legend element.
+- the word “required“ is added to the legend for screen readers. This can be done by wrapping the word into a `.sr-only` element.
 
 <Canvas of={FieldsetStories.RequiredFieldset} />
 

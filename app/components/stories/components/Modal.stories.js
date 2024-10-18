@@ -18,9 +18,7 @@ export default {
     layout: {
       table: {
         type: {
-          summary: [
-            'string: auto, xs, sm, md, lg, xl, xs',
-          ]
+          summary: ['string: auto, xs, sm, md, lg, xl, xs'],
         },
       },
       options: ['auto', 'sm', 'md', 'lg', 'xl', undefined],

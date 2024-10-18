@@ -6,44 +6,20 @@ export default {
 
   argTypes: {
     variant: {
-      table: {
-        type: {
-          summary: [
-            'string: outline, negative',
-          ]
-        },
-      },
+      table: { type: { summary: ['string: outline, negative'] } },
       options: ['outline', 'negative'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     size: {
-      table: {
-        type: {
-          summary: [
-            'string: sm, base, lg',
-          ]
-        },
-      },
+      table: { type: { summary: ['string: sm, base, lg'] } },
       options: ['sm', 'base', 'lg'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     message: {},
     messageType: {
-      table: {
-        type: {
-          summary: [
-            'string: error, warning, success, info',
-          ]
-        },
-      },
+      table: { type: { summary: ['string: error, warning, success, info'] } },
       options: ['error', 'warning', 'success', 'info'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
   },
 }

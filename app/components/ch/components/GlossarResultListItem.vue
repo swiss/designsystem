@@ -44,7 +44,7 @@ const highlightTextNodes = function (node, term) {
     const span = document.createElement('span')
     span.innerHTML = node.textContent.replace(
       regex,
-      (match) => `<span class='highlight-blue'>${match}</span>`
+      (match) => `<span class='highlight-blue'>${match}</span>`,
     )
     node.replaceWith(...span.childNodes)
   } else if (node.nodeType === Node.ELEMENT_NODE) {

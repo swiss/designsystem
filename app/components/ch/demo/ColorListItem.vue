@@ -2,24 +2,24 @@
   <div class="storybook-color">
     <div
       class="storybook-color__palette"
-      :style="`background-color: ${color} `" />
+      :style="`background-color: ${color} `"
+    />
     <div class="storybook-color__text">
-      {{ name }} <br>
+      {{ name }} <br />
       {{ color }}
     </div>
   </div>
 </template>
 
 <script setup>
-
 const props = defineProps({
-		color: {
-			type: String,
-			required: true,
-		},
-    name: {
-			type: String,
-			required: true,
-		},
-	});
+  color: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+})
 </script>

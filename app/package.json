@@ -7,10 +7,13 @@
     "build": "nuxi build",
     "generate": "nuxi generate",
     "start": "nuxi preview",
-    "check": "nuxi typecheck",
     "storybook": "storybook dev --no-open -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=a59f72b20002"
+    "chromatic": "chromatic --project-token=a59f72b20002",
+    "check": "pnpm check:format && pnpm check:ts:vue",
+    "check:format": "prettier --check \"./**/*.{ts,js,vue,mdx,md}\"",
+    "check:format:write": "prettier --write \"./**/*.{ts,js,vue,mdx,md}\"",
+    "check:ts:vue": "nuxi typecheck"
   },
   "dependencies": {
     "pinia": "^2.2.4",

@@ -1,4 +1,5 @@
-import { Meta, Story, Canvas } from '@storybook/blocks';
+import { Meta, Story, Canvas } from '@storybook/blocks'
+import imageFile from '../../../public/images/html-structure.png'
 
 <Meta title="Doc for developers/HTML Structure" />
 
@@ -49,17 +50,15 @@ The `.skip-to-content` is a hidden link appearing only when `TAB` key is hit. It
 
 The three next blocks contain each a navigation in the desktop context:
 
-* `.top-bar` contains the `.top-bar-navigation`
-* `.top-header` contains the `.meta-navigation`
-* `.desktop-menu` contains the `.main-navigation`
+- `.top-bar` contains the `.top-bar-navigation`
+- `.top-header` contains the `.meta-navigation`
+- `.desktop-menu` contains the `.main-navigation`
 
 In a mobile context though, these three navigations are all regrouped in the `.mobile-menu` container.
 
 Regarding the implementation approach, the content of the navigations may be duplicated in the `.mobile-menu` container. A better approach would be to swap their positions between the mobile-menu and their desktop containers.
 
 Below a schema to explain how these navigations are displayed in the header depending on the context:
-
-import imageFile from '../../../public/images/html-structure.png';
 
 <img src={imageFile} />
 
@@ -79,9 +78,7 @@ Inside this navigation, `<li>` elements can have two aspects, regarding if they 
 
 ```html
 <li>
-  <a href="#">
-    Menu item without children
-  </a>
+  <a href="#"> Menu item without children </a>
 </li>
 ```
 
@@ -98,7 +95,12 @@ or
   <ul>
     <li>
       <a role="button" class="navy__back">
-        <svg class="icon icon--lg" aria-hidden="true" focusable="false" role="img">
+        <svg
+          class="icon icon--lg"
+          aria-hidden="true"
+          focusable="false"
+          role="img"
+        >
           <use xlink:href="#ArrowLeft" />
         </svg>
         <span>Back</span>

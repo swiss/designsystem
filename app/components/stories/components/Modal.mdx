@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import * as ModalStories from './Modal.stories';
+import * as ModalStories from './Modal.stories'
 
 <Meta of={ModalStories} />
 
@@ -21,13 +21,13 @@ See the `Share links` as example of Modal content on the [detail page simple](?p
 
 **layout**: options to control the width of the modal overlay:
 
-* `undefined`: the modal will have the same width as the website container.
-* `auto`: the width of the modal depends on the width of the `body` content. Max-width is the website's container width.
-* `xs`: the modal will have a max-width of `480px`.
-* `sm`: the modal will have a max-width of `640px`.
-* `md`: the modal will have a max-width of `768px`.
-* `lg`: the modal will have a max-width of `1024px`.
-* `xl`: the modal will have a max-width of `1280px`.
+- `undefined`: the modal will have the same width as the website container.
+- `auto`: the width of the modal depends on the width of the `body` content. Max-width is the website's container width.
+- `xs`: the modal will have a max-width of `480px`.
+- `sm`: the modal will have a max-width of `640px`.
+- `md`: the modal will have a max-width of `768px`.
+- `lg`: the modal will have a max-width of `1024px`.
+- `xl`: the modal will have a max-width of `1280px`.
 
 **title**: a title placed on top of the modal.
 
@@ -35,8 +35,8 @@ See the `Share links` as example of Modal content on the [detail page simple](?p
 
 ## Accessibility
 
-* The modal components should always be placed after the `main` tag.
-* When several modals are present on a page, they should have an `uuid`, for accessibility purpose. (unique `aria-labelledby` and `aria-describedby` )
-* The `title`should always be delivered.
+- The modal components should always be placed after the `main` tag.
+- When several modals are present on a page, they should have an `uuid`, for accessibility purpose. (unique `aria-labelledby` and `aria-describedby` )
+- The `title`should always be delivered.
 
 Sources: [w3.org](https://www.w3.org/WAI/ARIA/apg/example-index/dialog-modal/dialog) & [harvard.edu](https://accessibility.huit.harvard.edu/technique-accessible-modal-dialogs)

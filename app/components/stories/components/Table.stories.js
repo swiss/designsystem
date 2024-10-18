@@ -8,9 +8,7 @@ export default {
     variant: {
       table: {
         type: {
-          summary: [
-            'string: default, compact',
-          ]
+          summary: ['string: default, compact'],
         },
       },
       options: ['default', 'compact'],
@@ -34,7 +32,7 @@ export const ExampleSortable = {
   render: (args) => ({
     components: { TableSortable },
     setup: () => ({ args }),
-    template: `<TableSortable v-bind="args" />`
+    template: `<TableSortable v-bind="args" />`,
   }),
   args: {
     variant: 'default',

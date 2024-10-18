@@ -13,9 +13,7 @@ export default {
     variant: {
       table: {
         type: {
-          summary: [
-            'string: outline, negative',
-          ]
+          summary: ['string: outline, negative'],
         },
       },
       options: ['outline', 'negative'],
@@ -31,9 +29,7 @@ export default {
     size: {
       table: {
         type: {
-          summary: [
-            'string: sm, base, lg',
-          ]
+          summary: ['string: sm, base, lg'],
         },
       },
       options: ['sm', 'base', 'lg'],
@@ -63,9 +59,7 @@ export default {
     messageType: {
       table: {
         type: {
-          summary: [
-            'string: error, warning, success, info',
-          ]
+          summary: ['string: error, warning, success, info'],
         },
       },
       options: ['error', 'warning', 'success', 'info'],
