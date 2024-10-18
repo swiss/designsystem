@@ -1,7 +1,11 @@
 <template>
   <div>
     <ul class="storybook-icon-list">
-      <li v-for="item in svgIconList" :key="item" class="storybook-icon-list__item">
+      <li
+        v-for="item in svgIconList"
+        :key="item"
+        class="storybook-icon-list__item"
+      >
         <SvgIconListItem :id="item" />
       </li>
     </ul>
@@ -27,13 +31,10 @@ let array = import.meta.glob([
 ])
 
 onMounted(() => {
-  array = Object.keys(array).map((key, i) => (
-    key.replace(/.*\/(.+)\.svg/, '$1')
-  ))
+  array = Object.keys(array).map((key, i) => key.replace(/.*\/(.+)\.svg/, '$1'))
 
   // Extract CC Icons from the rest
-  svgIconList.value = array.filter(icon => !icon.startsWith('CC-'))
-  svgCCIconList.value = array.filter(icon => icon.startsWith('CC-'))
+  svgIconList.value = array.filter((icon) => !icon.startsWith('CC-'))
+  svgCCIconList.value = array.filter((icon) => icon.startsWith('CC-'))
 })
-
 </script>

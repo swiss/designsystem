@@ -1,7 +1,7 @@
-import { Meta, Canvas } from '@storybook/blocks';
-import * as SectionsStories from './Sections.stories';
+import { Meta, Canvas } from '@storybook/blocks'
+import * as SectionsStories from './Sections.stories'
 
-<Meta title='Layouts/Sections' />
+<Meta of={SectionsStories} />
 
 # Sections
 
@@ -24,9 +24,9 @@ If you define a dark background (`.bg--secondary-[variant]` where `variant ≥ 5
 
 # Paddings for sections
 
-* `.section.section--default` and
-* `.section.bg--secondary-[color-variant]` add top and bottom paddings to the section.
-* consecutive sections with the same background color removes the double spacing automatically.
-* consecutive `.container` elements adds a top padding to the second container.
+- `.section.section--default` and
+- `.section.bg--secondary-[color-variant]` add top and bottom paddings to the section.
+- consecutive sections with the same background color removes the double spacing automatically.
+- consecutive `.container` elements adds a top padding to the second container.
 
 <Canvas of={SectionsStories.Paddings} />

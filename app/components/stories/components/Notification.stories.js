@@ -7,9 +7,7 @@ export default {
     type: {
       table: {
         type: {
-          summary: [
-            'string: info, warning, error, success, alert, hint',
-          ]
+          summary: ['string: info, warning, error, success, alert, hint'],
         },
       },
       options: ['info', 'warning', 'error', 'success', 'alert', 'hint'],
@@ -19,19 +17,19 @@ export default {
     },
     icon: {
       options: [
-          'InfoCircle',
-          'WarningCircle',
-          'CancelCircle',
-          'HelpCircle',
-          'CheckmarkCircle',
-          undefined,
-        ],
+        'InfoCircle',
+        'WarningCircle',
+        'CancelCircle',
+        'HelpCircle',
+        'CheckmarkCircle',
+        undefined,
+      ],
       control: {
         type: 'select',
       },
     },
   },
-};
+}
 
 export const Example = {
   args: {

@@ -1,6 +1,5 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import Radio from '../../ch/components/Radio.vue'
-import * as RadioStories from './Radio.stories';
+import * as RadioStories from './Radio.stories'
 
 <Meta of={RadioStories} />
 
@@ -14,13 +13,13 @@ import * as RadioStories from './Radio.stories';
 
 ## Radiobox negative type
 
-* `input--negative` for standard radioboxes on dark background
+- `input--negative` for standard radioboxes on dark background
 
 <Canvas of={RadioStories.NegativeRadio} className="storybook-bg-negative" />
 
 ## Radio disabled state
 
-* `input--disabled` or `disabled state on the input` to add the disabled style
+- `input--disabled` or `disabled state on the input` to add the disabled style
 
 <Canvas of={RadioStories.DisabledRadio} />
 
@@ -28,9 +27,9 @@ import * as RadioStories from './Radio.stories';
 
 For size variations, the following css classes are built:
 
-* `input--sm` for small inputs
-* `input--base` for standard size
-* `input--lg` for large inputs
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
 
 <Canvas of={RadioStories.SizesRadio} />
 
@@ -82,9 +81,9 @@ Check the [Fieldset documentation](/docs/components-form-fieldset--example-radio
 
 If the radio is mandatory:
 
-* a `required` attribute is added to the input element
-* an asterisk is displayed right after the legend. This can be done by adding a `text--asterisk` class on the legend element.
-* the word “required“ is added to the legend for screen readers. This can be done by wrapping the word into a `.sr-only` element.
+- a `required` attribute is added to the input element
+- an asterisk is displayed right after the legend. This can be done by adding a `text--asterisk` class on the legend element.
+- the word “required“ is added to the legend for screen readers. This can be done by wrapping the word into a `.sr-only` element.
 
 <Canvas of={RadioStories.RequiredRadio} />
 

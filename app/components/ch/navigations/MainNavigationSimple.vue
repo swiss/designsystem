@@ -29,8 +29,4 @@
   </nav>
 </template>
 
-<script setup>
-import SvgIcon from '../components/SvgIcon.vue';
-
-const props = defineProps({});
-</script>
+<script setup></script>

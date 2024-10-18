@@ -1,5 +1,5 @@
-import { Meta, Story } from '@storybook/blocks';
-import * as IconsStories from './Icons.stories';
+import { Meta, Story } from '@storybook/blocks'
+import * as IconsStories from './Icons.stories'
 
 <Meta title="Foundations/Icons/Implementation" />
 
@@ -10,8 +10,15 @@ We recommend to use inline svg's or svg symbols to avoid http requests and to gi
 ## Inline Svg example
 
 ```html
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon icon--4xl ">
-  <path xmlns="http://www.w3.org/2000/svg" d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z" />
+<svg
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+  class="icon icon--4xl "
+>
+  <path
+    xmlns="http://www.w3.org/2000/svg"
+    d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
+  />
 </svg>
 ```
 
@@ -46,15 +53,15 @@ Another way to load svg icons is to define `<symbol>` elements in a hidden `<svg
 
 Use the following classes to set the size of the icon:
 
-* `icon--sm`
-* `icon--base`
-* `icon--md`
-* `icon--lg`
-* `icon--xl`
-* `icon--2xl`
-* `icon--3xl`
-* `icon--4xl`
-* `icon--5xl`
+- `icon--sm`
+- `icon--base`
+- `icon--md`
+- `icon--lg`
+- `icon--xl`
+- `icon--2xl`
+- `icon--3xl`
+- `icon--4xl`
+- `icon--5xl`
 
 <Story of={IconsStories.Example} />
 
@@ -68,6 +75,8 @@ Use the `icon--spin` class to spin an icon.
 
 ```html
 <svg viewBox="0 0 24 24" class="icon icon--3xl icon--spin">
-  <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z"></path>
+  <path
+    d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z"
+  ></path>
 </svg>
 ```

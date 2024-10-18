@@ -10,9 +10,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-
-const videoFile = ref('../../../public/videos/demo.mp4');
-const vttFile = ref('../../../public/videos/demo.vtt');
+const videoFile = ref('../../../public/videos/demo.mp4')
+const vttFile = ref('../../../public/videos/demo.vtt')
 </script>

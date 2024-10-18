@@ -1,7 +1,5 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import videoFile from '/videos/demo.mp4';
-import vttFile from '/videos/demo.vtt';
-import * as VideoStories from './VideoCaptions.stories';
+import * as VideoStories from './VideoCaptions.stories'
 
 <Meta of={VideoStories} />
 
@@ -10,16 +8,8 @@ import * as VideoStories from './VideoCaptions.stories';
 If you host the video yourself and you have a `.vtt` file to describe the video captions, use the `track` element to add them. More informations about the [Video Text Track format](https://www.w3.org/TR/webvtt1/) and [customisation examples](https://css-tricks.com/improving-video-accessibility-with-webvtt/)
 
 ```html
-<video
-  controls
-  src="path/to/your/video.mp4"
->
-  <track
-    default
-    kind="captions"
-    srclang="en"
-    src="path/to/your/file.vtt"
-  />
+<video controls src="path/to/your/video.mp4">
+  <track default kind="captions" srclang="en" src="path/to/your/file.vtt" />
 </video>
 ```
 

@@ -10,7 +10,7 @@ export const Separator = {
           <hr class="separator sperator--negative" />
         <div>Content below</div>
       </div>
-    `
+    `,
   }),
 }
 
@@ -22,7 +22,7 @@ export const SeparatorSpacings = {
           <hr class="separator separator--xl" />
         <div>Content below</div>
       </div>
-    `
+    `,
   }),
 }
 
@@ -34,6 +34,6 @@ export const SeparatorNegative = {
           <hr class="separator sperator--negative" />
         <div>Content below</div>
       </div>
-    `
+    `,
   }),
 }

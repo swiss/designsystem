@@ -9,7 +9,7 @@ export default {
         type: {
           summary: [
             'string: info, error, warning, success, gray, red, yellow, orange, green, blue, indigo, purple, pink',
-          ]
+          ],
         },
       },
       options: [

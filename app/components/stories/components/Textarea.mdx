@@ -1,6 +1,5 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import Textarea from '../../ch/components/Textarea.vue'
-import * as TextareaStories from './Textarea.stories';
+import * as TextareaStories from './Textarea.stories'
 
 <Meta of={TextareaStories} />
 
@@ -16,7 +15,10 @@ import * as TextareaStories from './Textarea.stories';
 
 - `input--negative` for standard textareas on dark background
 
-<Canvas of={TextareaStories.NegativeTextarea } className='storybook-bg-negative' />
+<Canvas
+  of={TextareaStories.NegativeTextarea}
+  className="storybook-bg-negative"
+/>
 
 ## Textarea disabled state
 

@@ -1,14 +1,12 @@
 <template>
-<div>
-  <h2>Links!</h2>
-  <p>Content </p>
-</div>
+  <div>
+    <h2>Links!</h2>
+    <p>Content</p>
+  </div>
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
 
-
-const props = defineProps({});
-
+const props = defineProps({})
 </script>

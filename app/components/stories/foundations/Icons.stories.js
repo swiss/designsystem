@@ -1,9 +1,9 @@
-import SvgIconList from '../../ch/demo/SvgIconList.vue';
+import SvgIconList from '../../ch/demo/SvgIconList.vue'
 
 export default {
   title: 'Foundations/Icons/List',
   component: SvgIconList,
-};
+}
 
 export const List = {}
 
@@ -53,6 +53,6 @@ export const SpinningIcon = {
   render: () => ({
     template: `<svg viewBox="0 0 24 24" class="icon icon--3xl icon--spin">
       <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
-    </svg>`
+    </svg>`,
   }),
 }

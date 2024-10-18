@@ -30,5 +30,5 @@ export const Example = {
         </Accordion>
       </div>
       `,
-    }),
+  }),
 }
