@@ -80,11 +80,11 @@ import { computed } from 'vue'
 const props = defineProps({
   id: {
     type: Number,
-    default: 1,
+    default: () => 1,
   },
   loop: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   breakpoints: {
     type: Object,
@@ -92,7 +92,7 @@ const props = defineProps({
   paginationType: {
     type: String,
     validator: (prop) => ['bullets', 'fraction'].includes(prop),
-    default: 'bullets',
+    default: () => 'bullets',
   },
   slides: {
     type: Array,

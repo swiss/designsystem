@@ -1,0 +1,35 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as GlossaryStories from './Glossary.stories'
+
+<Meta of={GlossaryStories} />
+
+# Glossar results with sticky search
+
+Please use full width view in order to see the sticky search working correctly.
+
+<a href="?path=/story/pages-glossar--with-results-sticky">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a
+  href="?id=pages-glossar--with-results-sticky&args=&viewMode=story"
+  target="_blank"
+>
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas of={GlossaryStories.WithResultsSticky} />
+
+# Glossar results
+
+<a href="?path=/story/pages-glossar--with-results">{'Go to the Canvas Tab'}</a>
+
+---
+
+<a href="?id=pages-glossar--with-results&args=&viewMode=story" target="_blank">
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas of={GlossaryStories.WithResults} />

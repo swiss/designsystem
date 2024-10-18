@@ -91,20 +91,18 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import TopNewsSection from '../components/ch/sections/TopNewsSection'
-import ServicesSection from '../components/ch/sections/ServicesSection'
-import SocialsSection from '../components/ch/sections/SocialsSection'
-import MostSeenSection from '../components/ch/sections/MostSeenSection'
-import PortraitSection from '../components/ch/sections/PortraitSection'
-import MediasSection from '../components/ch/sections/MediasSection'
-import TopicsSection from '../components/ch/sections/TopicsSection'
-import Hero from '../components/ch/sections/Hero'
+import TopNewsSection from '../components/ch/sections/TopNewsSection.vue'
+import ServicesSection from '../components/ch/sections/ServicesSection.vue'
+import SocialsSection from '../components/ch/sections/SocialsSection.vue'
+import MediasSection from '../components/ch/sections/MediasSection.vue'
+import TopicsSection from '../components/ch/sections/TopicsSection.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
 import Btn from '../components/ch/components/Btn.vue'
 import { reactive } from 'vue'
 import { useLayoutStore } from '../store/layout'
 
-const { mobileMenuIsOpen } = toRefs(useLayoutStore())
+const layoutStore = useLayoutStore()
 
 const socialSection = reactive({
   sectionTitle: 'Das Amt XY in den Sozialen Medien',
@@ -115,7 +113,9 @@ const socialSection = reactive({
       type: 'twitter',
       title: 'Press-resleases on Twitter',
       pofileURL: 'https://twitter.com/swiss_geoportal',
-      feedURL: 'https://twitter.com/swiss_geoportal',
+      feedURL:
+          '<blockquote class="twitter-tweet"><p lang="de" dir="ltr">[DE] Erfahre alles über die Energie-/Wärmequelle (Leistung und Aktualisierungsdaten) der Heizung in Schweizer Gebäuden dank dem eidgenössischen Gebäude- und Wohnungsregister! <br>Karte: <a href="https://t.co/DuexdeRciJ">https://t.co/DuexdeRciJ</a><br>🔥🏠📊 <a href="https://twitter.com/hashtag/Energieeffizienz?src=hash&amp;ref_src=twsrc%5Etfw">#Energieeffizienz</a> <a href="https://twitter.com/hashtag/BFS?src=hash&amp;ref_src=twsrc%5Etfw">#BFS</a> <a href="https://twitter.com/hashtag/GWR?src=hash&amp;ref_src=twsrc%5Etfw">#GWR</a> <a href="https://twitter.com/StatSchweiz?ref_src=twsrc%5Etfw">@StatSchweiz</a> <a href="https://t.co/ofNwgPulhf">pic.twitter.com/ofNwgPulhf</a></p>&mdash; geo.admin.ch (@swiss_geoportal) <a href="https://twitter.com/swiss_geoportal/status/1636356390708219904?ref_src=twsrc%5Etfw">March 16, 2023</a></blockquote>',
+
     },
     {
       type: 'youtube',
@@ -129,7 +129,7 @@ const socialSection = reactive({
 const props = defineProps({
   isIntranet: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 </script>

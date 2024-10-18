@@ -4,7 +4,7 @@
 
 <script setup>
 import InlineSvg from 'vue-inline-svg'
-import { computed, watch, watchEffect } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 
 const props = defineProps({
   icon: {
@@ -14,15 +14,15 @@ const props = defineProps({
   size: {
     type: String,
     required: false,
-    default: 'base',
+    default: () => 'base',
     validator: (prop) =>
       ['sm', 'base', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', 'full'].includes(
-        prop
+        prop,
       ),
   },
   spin: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 
@@ -38,6 +38,10 @@ const iconClass = computed(() => {
 
 watchEffect(async () => {
   // TODO: check if this works in production. Not consistent in dev
+  if (!props.icon) {
+    svgSrc.value = ''
+    return
+  }
   svgSrc.value = (
     await import(`../../../assets/icons/${props.icon}.svg`)
   ).default

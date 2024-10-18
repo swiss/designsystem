@@ -46,7 +46,7 @@ import SvgIcon from '../components/SvgIcon.vue'
 const props = defineProps({
   isMobileMenu: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   context: {
     type: String,

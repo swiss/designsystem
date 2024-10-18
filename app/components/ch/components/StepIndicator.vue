@@ -20,11 +20,11 @@ const props = defineProps({
   },
   isConfirmed: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isActive: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

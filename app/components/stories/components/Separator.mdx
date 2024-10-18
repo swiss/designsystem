@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as SeparatorStories from './Separator.stories';
+
+<Meta of={SeparatorStories} />
+
+# Separator
+
+## Example
+
+A separator is an horizonal line, helping to separate content visually.
+
+## Default Separator
+
+<Canvas of={SeparatorStories.Separator} />
+
+## Separator with spacings
+
+<Canvas of={SeparatorStories.SeparatorSpacings} />
+
+## Negative Separator
+
+
+<Canvas of={SeparatorStories.SeparatorNegative} className='storybook-bg-negative'/>

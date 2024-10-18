@@ -153,7 +153,7 @@
 </template>
 
 <script setup>
-import Btn from '../components/Btn'
+import Btn from '../components/Btn.vue'
 import Card from '../components/Card.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 </script>

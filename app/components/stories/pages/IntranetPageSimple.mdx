@@ -1,0 +1,21 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import detailPageSimple from '../../../pages/detailPageSimple.vue'
+import * as IntranetPageSimpleStories from './IntranetPageSimple.stories'
+
+<Meta of={IntranetPageSimpleStories} />
+
+# Intranet Simple page example
+
+<a href="?path=/story/pages-intranet-detail-page-simple--example">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a href="?id=pages-intranet-detail-page-simple--example" target="_blank">
+  {'Open page in full width in a new tab'}
+</a>
+
+Add a `body--intranet` class to the body tag to display the intranet version of the page.
+
+<Canvas of={IntranetPageSimpleStories.Example} />

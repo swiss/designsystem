@@ -28,7 +28,7 @@ import CarouselNavigation from '../navigations/CarouselNavigation.vue'
 import MainNavigation from '../navigations/MainNavigation.vue'
 import MetaNavigationMobile from '../navigations/MobileMetaNavigation.vue'
 import TopBarNavigation from '../navigations/TopBarNavigation.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
 const carouselNavId = ref('')
@@ -38,24 +38,24 @@ const initialNavBarOffset = ref(0)
 const props = defineProps({
   isOpen: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isHomePage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   // Allow disabling active navigation item highlighting for pages like shopping cart
   showActiveNavigation: {
     type: Boolean,
-    default: true,
+    default: () => false,
   },
   isSimplePage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSticky: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

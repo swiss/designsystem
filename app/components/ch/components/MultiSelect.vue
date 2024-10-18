@@ -25,7 +25,19 @@
               ? !currentSelected || currentSelected.length < selectLimit
               : true)
         "
-      />
+      >
+        <!-- Workarround for required validation -->
+        <template #search="{ attributes, events }">
+          <input
+            class="vs__search"
+            :required="
+              required && (!currentSelected || currentSelected.length === 0)
+            "
+            v-bind="attributes"
+            v-on="events"
+          />
+        </template>
+      </v-select>
       <div class="select__icon">
         <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
           <path
@@ -46,44 +58,40 @@
 
 <script setup>
 import vSelect from 'vue-select'
-import { reactive, ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted, h } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
 const selectId = ref('')
-const currentSelected = reactive([])
-const Deselect = reactive({
-  render: (createElement) => createElement('span', '×'),
-})
-const OpenIndicator = reactive({
-  render: (createElement) => createElement('span'),
-})
+const currentSelected = ref([])
+const Deselect = { render: () => h('span', '×') }
+const OpenIndicator = { render: () => h('span') }
 
 const props = defineProps({
   bare: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   variant: {
     type: String,
     validator: (prop) => ['outline', 'negative'].includes(prop),
-    default: 'outline',
+    default: () => 'outline',
   },
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
-    default: 'base',
+    default: () => 'base',
   },
   disabled: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   hideLabel: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   required: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   label: {
     type: String,
@@ -112,7 +120,7 @@ const props = defineProps({
   },
   multiple: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   placeholder: {
     type: String,
@@ -128,25 +136,25 @@ const props = defineProps({
 
 const selectWrapperClasses = computed(() => {
   let base = 'select shadow-lg '
-  if (bare) base += 'select--bare'
+  if (props.bare) base += 'select--bare'
   return base
 })
 
 const selectClasses = computed(() => {
   let base = ''
-  if (variant) base += `input--${variant} `
-  if (size) base += `input--${size} `
-  if (disabled) base += 'input--disabled '
-  if (messageType) base += `input--${messageType} `
+  if (props.variant) base += `input--${props.variant} `
+  if (props.size) base += `input--${props.size} `
+  if (props.disabled) base += 'input--disabled '
+  if (props.messageType) base += `input--${props.messageType} `
   return base
 })
 
 const labelClasses = computed(() => {
   let base = ''
-  if (variant === 'negative') base += 'text--negative '
-  if (size) base += `text--${size} `
-  if (hideLabel) base += 'sr-only '
-  if (required) base += 'text--asterisk '
+  if (props.variant === 'negative') base += 'text--negative '
+  if (props.size) base += `text--${props.size} `
+  if (props.hideLabel) base += 'sr-only '
+  if (props.required) base += 'text--asterisk '
   return base
 })
 
@@ -155,14 +163,16 @@ const getUniqueId = function (text = '') {
 }
 
 watch(currentSelected, function () {
-  useNuxtApp().$emit('emitSelect', currentSelected)
-  onChange(currentSelected)
+  props.onChange(currentSelected.value)
+  window.postMessage({
+    trigger: 'emitSelect',
+    data: [...currentSelected.value],
+  })
 })
 
-// Set initial selected element
-currentSelected = selected
-
 onMounted(() => {
+  // Set initial selected element
+  Object.assign(currentSelected.value, props.selected)
   selectId.value = uuidv4()
 })
 </script>

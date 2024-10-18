@@ -1,6 +1,10 @@
 <template>
   <div class="image__not-available">
-    <svg class="icon icon--image" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      class="icon icon--image"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="m8.20794 5.78467a2.292 2.292 0 1 0 2.29151 2.292 2.29476 2.29476 0 0 0 -2.29151-2.292zm0 3.834a1.542 1.542 0 1 1 1.54151-1.542 1.54362 1.54362 0 0 1 -1.54151 1.54198z"
       />
@@ -14,12 +18,12 @@
 </template>
 
 <script setup>
-import SvgIcon from './SvgIcon.vue';
+import SvgIcon from './SvgIcon.vue'
 
 const props = defineProps({
-    text: {
-      type: String,
-      default: 'Image not available',
-    },
-  });
+  text: {
+    type: String,
+    default: () => 'Image not available',
+  },
+})
 </script>

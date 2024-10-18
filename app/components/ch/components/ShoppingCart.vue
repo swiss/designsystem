@@ -1,6 +1,6 @@
 <template>
   <div class="container container--grid">
-    <div class="container__center--md my-16" v-if="!showConfirmation">
+    <div class="my-16 container__center--md" v-if="!showConfirmation">
       <h1 class="h1 shopping__cart-title">{{ cartTitle }}</h1>
       <ul class="accordion">
         <li class="accordion__item">
@@ -107,11 +107,11 @@
                   @nextStep="overviewNextStepClicked"
                 />
               </template>
-              <template v-else
-                ><p class="shopping__cart-empty-text">
+              <template v-else>
+                <p class="shopping__cart-empty-text">
                   Es befinden sich keine Produkte im Warenkorb
-                </p></template
-              >
+                </p>
+              </template>
             </div>
           </div>
         </li>
@@ -187,12 +187,13 @@
                       label="Name"
                       placeholder="Name"
                       messageType="error"
+                      :value="formInputFields.invoice.lastName.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue(
                             'invoice',
                             'lastName',
-                            e.target.value
+                            e.target.value,
                           )
                       "
                       :message="
@@ -207,12 +208,13 @@
                       label="Vorname"
                       placeholder="Vorname"
                       messageType="error"
+                      :value="formInputFields.invoice.firstName.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue(
                             'invoice',
                             'firstName',
-                            e.target.value
+                            e.target.value,
                           )
                       "
                       :message="
@@ -231,6 +233,7 @@
                       label="Organisation"
                       placeholder="Organisation"
                       messageType="error"
+                      :value="formInputFields.invoice.org.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue('invoice', 'org', e.target.value)
@@ -248,6 +251,7 @@
                       label="Strasse / Nr."
                       placeholder="Strasse & Hausnummer"
                       messageType="error"
+                      :value="formInputFields.invoice.street.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue('invoice', 'street', e.target.value)
@@ -267,12 +271,13 @@
                       label="Postfach"
                       placeholder="Postfach"
                       messageType="error"
+                      :value="formInputFields.invoice.postOffice.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue(
                             'invoice',
                             'postOffice',
-                            e.target.value
+                            e.target.value,
                           )
                       "
                       :message="
@@ -288,6 +293,7 @@
                       label="Postleitzahl"
                       placeholder="Postleitzahl"
                       messageType="error"
+                      :value="formInputFields.invoice.zip.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue('invoice', 'zip', e.target.value)
@@ -307,6 +313,7 @@
                       label="Ort"
                       placeholder="Ort"
                       messageType="error"
+                      :value="formInputFields.invoice.city.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue('invoice', 'city', e.target.value)
@@ -337,7 +344,7 @@
                           setFormFieldValue(
                             'invoice',
                             'country',
-                            e.target.value
+                            e,
                           )
                       "
                     >
@@ -356,6 +363,7 @@
                       label="Telefon"
                       placeholder="+41 (0)58 555 55 44"
                       messageType="error"
+                      :value="formInputFields.invoice.phone.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue('invoice', 'phone', e.target.value)
@@ -373,6 +381,7 @@
                       label="E-Mail"
                       placeholder="E-Mail Addresse"
                       messageType="error"
+                      :value="formInputFields.invoice.email.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue('invoice', 'email', e.target.value)
@@ -424,12 +433,13 @@
                         label="Name"
                         placeholder="Name"
                         messageType="error"
+                        :value="formInputFields.delivery.lastName.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'lastName',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -444,12 +454,13 @@
                         label="Vorname"
                         placeholder="Vorname"
                         messageType="error"
+                        :value="formInputFields.delivery.firstName.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'firstName',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -467,6 +478,7 @@
                         label="Organisation"
                         placeholder="Organisation"
                         messageType="error"
+                        :value="formInputFields.delivery.org.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue('delivery', 'org', e.target.value)
@@ -484,12 +496,13 @@
                         label="Strasse / Nr."
                         placeholder="Strasse  & Hausnummer"
                         messageType="error"
+                        :value="formInputFields.delivery.street.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'street',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -509,12 +522,13 @@
                         label="Postfach"
                         placeholder="Postfach"
                         messageType="error"
+                        :value="formInputFields.delivery.postOffice.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'postOffice',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -530,6 +544,7 @@
                         label="Postleitzahl"
                         placeholder="Postleitzahl"
                         messageType="error"
+                        :value="formInputFields.delivery.zip.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue('delivery', 'zip', e.target.value)
@@ -549,12 +564,13 @@
                         label="Ort"
                         placeholder="Ort"
                         messageType="error"
+                        :value="formInputFields.delivery.city.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'city',
-                              e.target.value
+                              e.target.value,
                             )
                         "
                         :message="
@@ -583,7 +599,7 @@
                             setFormFieldValue(
                               'delivery',
                               'country',
-                              e.target.value
+                              e,
                             )
                         "
                       >
@@ -760,12 +776,12 @@ import Form from './Form.vue'
 import Input from './Input.vue'
 import Notification from './Notification.vue'
 import Radio from './Radio.vue'
-import Select from './Select'
+import Select from './Select.vue'
 import ShoppingCartTotal from './ShoppingCartTotal.vue'
 import ShoppingCartTotalSummary from './ShoppingCartTotalSummary.vue'
 import StepIndicator from './StepIndicator.vue'
-import Textarea from './Textarea'
-import { reactive, ref, computed, watch, onMounted } from 'vue'
+import Textarea from './Textarea.vue'
+import { reactive, ref, computed, watch, onMounted, nextTick } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
 const activeAccordionIndex = ref(1)
@@ -905,19 +921,19 @@ const formInputFields = reactive({
 const props = defineProps({
   cartTitle: {
     type: String,
-    default: 'Shopping cart',
+    default: () => 'Shopping cart',
   },
   cartOverviewTitle: {
     type: String,
-    default: 'Shopping cart',
+    default: () => 'Shopping cart',
   },
   cartAddressTitle: {
     type: String,
-    default: 'Billing address & delivery address',
+    default: () => 'Billing address & delivery address',
   },
   cartCheckoutTitle: {
     type: String,
-    default: 'Submit order',
+    default: () => 'Submit order',
   },
 })
 
@@ -1021,7 +1037,7 @@ const scrollContentIntoView = function (index) {
   }
 
   const scroolTarget = document.getElementById(
-    getUniqueId(accordionIdMap[index])
+    getUniqueId(accordionIdMap[index]),
   )
 
   if (scroolTarget) {

@@ -21,7 +21,7 @@ const props = defineProps({
   variant: {
     type: String,
     validator: (prop) => ['outline', 'negative'].includes(prop),
-    default: 'outline',
+    default: () => 'outline',
   },
   size: {
     type: String,
@@ -36,11 +36,11 @@ const props = defineProps({
   messageType: {
     type: String,
     validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
-    default: 'error',
+    default: () => 'error',
   },
   required: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

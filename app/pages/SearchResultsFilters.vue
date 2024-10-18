@@ -228,8 +228,8 @@ import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
-import SvgIcon from '../components/ch/components/SvgIcon'
-import Btn from '../components/ch/components/Btn'
+import SvgIcon from '../components/ch/components/SvgIcon.vue'
+import Btn from '../components/ch/components/Btn.vue'
 import SearchResultsList from '../components/ch/components/SearchResultsList.vue'
 import Pagination from '../components/ch/components/Pagination.vue'
 import Notification from '../components/ch/components/Notification.vue'
@@ -323,22 +323,22 @@ const searchResults = reactive([
   },
 ])
 
+const filtersAreOpen = defineModel('filtersAreOpen', {
+  type: Boolean,
+  default: () => false,
+})
+const displayType = defineModel('displayType', {
+  type: String,
+  default: () => 'grid',
+})
 const props = defineProps({
   noResults: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isLoading: {
     type: Boolean,
-    default: false,
-  },
-  filtersAreOpen: {
-    type: Boolean,
-    default: false,
-  },
-  displayType: {
-    type: String,
-    default: 'grid',
+    default: () => false,
   },
 })
 </script>

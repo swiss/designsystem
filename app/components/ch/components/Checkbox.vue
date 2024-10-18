@@ -14,6 +14,7 @@
       <span v-html="label"></span
       ><span v-if="required" class="sr-only">required</span>
     </label>
+    {{  }}
     <div
       v-if="message"
       class="badge badge--sm"
@@ -31,7 +32,7 @@ const props = defineProps({
   variant: {
     type: String,
     validator: (prop) => ['outline', 'negative'].includes(prop),
-    default: 'outline',
+    default: () => 'outline',
   },
   size: {
     type: String,
@@ -58,7 +59,7 @@ const props = defineProps({
   },
   required: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   onChange: {
     type: Function,
@@ -66,7 +67,7 @@ const props = defineProps({
   },
   checked: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

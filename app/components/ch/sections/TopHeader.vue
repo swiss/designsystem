@@ -74,7 +74,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import ShoppingCartButton from '../components/ShoppingCartButton.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import MetaNavigation from '../navigations/MetaNavigation.vue'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useLayoutStore } from '../../../store/layout'
 
 const layoutStore = useLayoutStore()
@@ -84,39 +84,40 @@ const screenSize = ref(0)
 const props = defineProps({
   overrideLogoForPrint: {
     type: String,
-    default: '',
+    default: () => '',
   },
   isEasyLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSignLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isFreebrand: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   shoppingCartAriaLabel: {
     type: String,
-    default: 'Shopping cart: There are <amount> items in your shopping cart.',
+    default: () =>
+      'Shopping cart: There are <amount> items in your shopping cart.',
   },
   shoppingCartAmount: {
     type: Number,
-    default: 0,
+    default: () => 0,
   },
   shoppingCartLink: {
     type: String,
   },
   shoppingCartLabel: {
     type: String,
-    default: 'Shopping cart',
+    default: () => 'Shopping cart',
   },
   shoppingCartTarget: {
     type: String,
     validator: (prop) => ['_blank', '_parent', '_self', '_top'].includes(prop),
-    default: '_self',
+    default: () => '_self',
   },
 })
 
