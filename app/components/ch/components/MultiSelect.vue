@@ -60,7 +60,7 @@ import { reactive, ref, computed, watch, onMounted, h } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
 const selectId = ref('')
-const currentSelected = reactive([])
+const currentSelected = ref([])
 const Deselect = {render: () => h('span', '×')}
 const OpenIndicator = {render: () => h('span')}
 
@@ -161,13 +161,13 @@ const getUniqueId = function (text = '') {
 }
 
 watch(currentSelected, function () {
-  props.onChange(currentSelected)
-  window.postMessage({ trigger: 'emitSelect', data: [...currentSelected] })
+  props.onChange(currentSelected.value)
+  window.postMessage({ trigger: 'emitSelect', data: [...currentSelected.value] })
 })
 
 onMounted(() => {
   // Set initial selected element
-  Object.assign(currentSelected, props.selected)
+  Object.assign(currentSelected.value, props.selected)
   selectId.value = uuidv4()
 })
 </script>
