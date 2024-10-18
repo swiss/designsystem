@@ -22,7 +22,7 @@
 
 <script setup>
 import SvgIcon from '../components/SvgIcon.vue'
-import { ref, defineProps, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const screenSize = ref(0)
 

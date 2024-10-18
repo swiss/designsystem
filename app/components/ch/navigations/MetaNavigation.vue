@@ -26,7 +26,7 @@
 <script setup>
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'
-import { ref, defineProps, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const screenSize = ref(0)
 

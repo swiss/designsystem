@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import * as MultiSelectStories from './MultiSelect.stories';
+import * as MultiSelectStories from './MultiSelect.stories'
 
 <Meta of={MultiSelectStories} />
 
@@ -7,11 +7,11 @@ import * as MultiSelectStories from './MultiSelect.stories';
 
 ## General
 
-* A multi select component is complex to style and customize without using a library. In this style guide, we use [Vue Select](https://vue-select.org/) to handle the logic and style of the select. Vue 2 and 3 are supported. To avoid a pollution of the CSS with Vue-only styles for other frameworks, all CSS definitions are scoped to the demo Vue component.
+- A multi select component is complex to style and customize without using a library. In this style guide, we use [Vue Select](https://vue-select.org/) to handle the logic and style of the select. Vue 2 and 3 are supported. To avoid a pollution of the CSS with Vue-only styles for other frameworks, all CSS definitions are scoped to the demo Vue component.
 
-* The `MultiSelect` component is a wrapper around the `Vue Select` component.
+- The `MultiSelect` component is a wrapper around the `Vue Select` component.
 
-* If you define the `multiple` prop to false, you can use this component instead of the standard `Select` component.
+- If you define the `multiple` prop to false, you can use this component instead of the standard `Select` component.
 
 ## Example
 
@@ -22,7 +22,7 @@ import * as MultiSelectStories from './MultiSelect.stories';
 ## Install Vue Select
 
 ```bash
-npm install vue-select
+npm install vue-select@beta
 ```
 
 ## Overwrite Vue Select child components
@@ -35,15 +35,10 @@ The `Deselect` button and the `Openindicator` are two child components of the `V
 
 and render directly the child components in the `data` function:
 
-```js
-export default {
-  data: () => ({
-    Deselect: {
-      render: (createElement) => createElement('span', '×'),
-    },
-    OpenIndicator: {
-      render: (createElement) => createElement('span'), // replace the default icon
-    },
-  }),
-}
+```html
+<script setup>
+  import { h } from 'vue'
+  const Deselect = { render: () => h('span', '×') }
+  const OpenIndicator = { render: () => h('span') } // replace the default icon
+</script>
 ```

@@ -27,10 +27,12 @@
         "
       >
         <!-- Workarround for required validation -->
-        <template #search="{attributes, events}">
+        <template #search="{ attributes, events }">
           <input
             class="vs__search"
-            :required="required && (!currentSelected || currentSelected.length === 0)"
+            :required="
+              required && (!currentSelected || currentSelected.length === 0)
+            "
             v-bind="attributes"
             v-on="events"
           />
@@ -56,13 +58,13 @@
 
 <script setup>
 import vSelect from 'vue-select'
-import { reactive, ref, computed, watch, onMounted, h } from 'vue'
+import { ref, computed, watch, onMounted, h } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
 const selectId = ref('')
 const currentSelected = ref([])
-const Deselect = {render: () => h('span', '×')}
-const OpenIndicator = {render: () => h('span')}
+const Deselect = { render: () => h('span', '×') }
+const OpenIndicator = { render: () => h('span') }
 
 const props = defineProps({
   bare: {
@@ -162,7 +164,10 @@ const getUniqueId = function (text = '') {
 
 watch(currentSelected, function () {
   props.onChange(currentSelected.value)
-  window.postMessage({ trigger: 'emitSelect', data: [...currentSelected.value] })
+  window.postMessage({
+    trigger: 'emitSelect',
+    data: [...currentSelected.value],
+  })
 })
 
 onMounted(() => {
