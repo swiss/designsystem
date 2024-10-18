@@ -20,15 +20,15 @@ const props = defineProps({
   },
   borderTop: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   borderBottom: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   headingLevel: {
     type: String,
-    default: 'h3',
+    default: () => 'h3',
     validator: (prop) => ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop),
   },
 })

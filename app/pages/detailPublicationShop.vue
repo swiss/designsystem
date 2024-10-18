@@ -98,7 +98,7 @@
                         :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
-                        class="border-b-0 pb-0"
+                        class="pb-0 border-b-0"
                       />
                     </li>
                   </ul>
@@ -107,7 +107,7 @@
                   title="Bestellung gedruckte Version in DE, IT, FR"
                   totalPriceTitle="Total (exklusiv MwSt.)"
                   pricePieceTitle="Pro Stück"
-                  curencyPrefix="CHF"
+                  currencyPrefix="CHF"
                   :options="[
                     {
                       label: 'Deutsch',
@@ -222,7 +222,7 @@
                 <RelatedTags :tags="tags" bare></RelatedTags>
               </div>
             </div>
-            <div class="container__aside hidden md:block">
+            <div class="hidden container__aside md:block">
               <div id="aside-content" :class="computedAsideContainerClass">
                 <!-- desktop only -->
                 <div class="box">
@@ -256,7 +256,7 @@
                         :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
-                        class="border-b-0 pb-0"
+                        class="pb-0 border-b-0"
                       />
                     </li>
                   </ul>
@@ -265,7 +265,7 @@
                   title="Bestellung gedruckte Version in DE, IT, FR"
                   totalPriceTitle="Total (exklusiv MwSt.)"
                   pricePieceTitle="Pro Stück"
-                  curencyPrefix="CHF"
+                  currencyPrefix="CHF"
                   :options="[
                     {
                       label: 'Deutsch',
@@ -333,23 +333,15 @@
 </template>
 
 <script setup>
-import Accordion from '../components/ch/components/Accordion.vue'
-import AccordionItem from '../components/ch/components/AccordionItem.vue'
-import Authors from '../components/ch/components/Authors.vue'
-import Btn from '../components/ch/components/Btn'
-import Card from '../components/ch/components/Card'
-import Contact from '../components/ch/components/Contact'
+import Btn from '../components/ch/components/Btn.vue'
 import DownloadItem from '../components/ch/components/DownloadItem.vue'
 import InfoBlock from '../components/ch/components/InfoBlock.vue'
 import Notification from '../components/ch/components/Notification.vue'
 import RelatedTags from '../components/ch/components/RelatedTags.vue'
-import SvgIcon from '../components/ch/components/SvgIcon'
-import ToastMessage from '../components/ch/components/ToastMessage'
+import ToastMessage from '../components/ch/components/ToastMessage.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
-import Hero from '../components/ch/sections/Hero'
-import Input from '../components/ch/components/Input.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import OrderBox from '../components/ch/components/OrderBox.vue'
-import Select from '../components/ch/components/Select'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -359,7 +351,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import RelatedPublicationsSection from '../components/ch/sections/RelatedPublicationsSection.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-import { reactive, ref, computed, onMounted } from 'vue'
+import { reactive, ref, computed, onMounted, nextTick } from 'vue'
 import { useLayoutStore } from '../store/layout'
 
 const layoutStore = useLayoutStore()
@@ -388,7 +380,7 @@ const authors = reactive([
   },
 ])
 const shoppingCartAriaLabel = ref(
-  'Shopping cart: There are <amount> items in your shopping cart.'
+  'Shopping cart: There are <amount> items in your shopping cart.',
 )
 const shoppingCartAmount = ref(0)
 const shoppingCartLink = ref('/shopping-cart')
@@ -424,12 +416,15 @@ const resizeWindow = function () {
 const addToCart = function (selectedLanguage, amount) {
   // Add amount to shopping cart
   shoppingCartAmount.value += amount
-  const translatedLanguage = languageMap[selectedLanguage]
+  const translatedLanguage = languageMap[selectedLanguage.value]
 
-  useNuxtApp().$emit('trigger-toast-message', {
-    text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${amount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
-    icon: 'CheckmarkCircle',
-    type: 'success',
+  window.postMessage({
+    trigger: 'trigger-toast-message',
+    data: {
+      text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${amount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
+      icon: 'CheckmarkCircle',
+      type: 'success',
+    },
   })
 }
 

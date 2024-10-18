@@ -2,31 +2,31 @@
 
 ```bash
 # install dependencies
-$ npm install
+$ pnpm install
 ```
 
-# Storybook
+## Storybook
 
 ```bash
 # serve Storybook with hot reload
-$ npm run storybook
+$ pnpm run storybook
 
 # build Storybook
-$ npm run build-storybook
+$ pnpm run build-storybook
 ```
 
-# Nuxt application
+## Nuxt application
 
 ```bash
 # serve with hot reload
-$ npm run dev
+$ pnpm run dev
 
 # build for production and launch server
-$ npm run build
-$ npm run start
+$ pnpm run build
+$ pnpm run start
 
 # generate static project
-$ npm run generate
+$ pnpm run generate
 ```
 
 For detailed explanation on how Nuxt work, check out [Nuxt.js docs](https://nuxtjs.org).

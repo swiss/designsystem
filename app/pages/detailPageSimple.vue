@@ -999,11 +999,11 @@ const tags = reactive([
 const props = defineProps({
   isIntranet: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isFreebrand: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 </script>

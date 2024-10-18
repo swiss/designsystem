@@ -1,0 +1,69 @@
+import { Meta, Canvas } from '@storybook/blocks';
+
+import * as ListStories from './Lists.stories';
+
+<Meta of={ListStories} />
+
+# Lists
+
+## Bare list
+
+Per default, all styles from `ul` and `ol` lists are removed:
+
+<Canvas of={ListStories.BareList} />
+
+## Lists in the main content
+
+In the `main` element, the lists have a default style applied
+
+<Canvas of={ListStories.MainContentList} />
+
+Use `.list .list--bare` in case you want to remove eventual default styles on your list
+
+## Dotted List
+
+Out of the `main` element, use `.list .list--default` variant on `ul` for dotted lists.
+This can be applied on a `ol` list too.
+
+<Canvas of={ListStories.DottedList} />
+
+## Ordered List
+
+Use `.list .list--ordered` variant on `ol` for decimal lists.
+This can be applied on a `ul` list too.
+
+<Canvas of={ListStories.OrderedList} />
+
+Use `.list .list--roman` for roman glyphs:
+
+<Canvas of={ListStories.OrderedRomanList} />
+
+## Loose Variant
+
+`.list--loose` add more space between items
+
+<Canvas of={ListStories.LooseVariant} />
+
+## Negative List
+
+<Canvas of={ListStories.NegativeList} className='storybook-bg-negative' />
+
+## Horizontal Lists
+
+`.list--flex` display list items horizontally, without wrapping
+
+<Canvas of={ListStories.HorizontalList} />
+
+`.list--flex list--wrap` display list items horizontally, with wrapping
+
+<Canvas of={ListStories.HorizontalWrappedList} />
+
+# Custom icons
+
+## List with small custom icons
+
+<Canvas of={ListStories.SmallIconList} />
+
+## List with larger custom icons
+
+<Canvas of={ListStories.LargeIconList} />

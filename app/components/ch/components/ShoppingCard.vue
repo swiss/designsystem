@@ -75,7 +75,7 @@
 <script setup>
 import ImageNotAvailable from './ImageNotAvailable.vue'
 import SvgIcon from './SvgIcon.vue'
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 
 const inputValue = ref(null)
 
@@ -83,7 +83,7 @@ const props = defineProps({
   type: {
     type: String,
     validator: (prop) => ['view', 'edit'].includes(prop),
-    default: 'edit',
+    default: () => 'edit',
   },
   image: {
     type: Object, // {
@@ -113,15 +113,15 @@ const props = defineProps({
   },
   removeLabel: {
     type: String,
-    default: 'Remove',
+    default: () => 'Remove',
   },
   editLabel: {
     type: String,
-    default: 'Edit',
+    default: () => 'Edit',
   },
   amount: {
     type: Number,
-    default: 1,
+    default: () => 1,
   },
 })
 

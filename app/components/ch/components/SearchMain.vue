@@ -25,11 +25,11 @@ import Input from './Input.vue'
 const props = defineProps({
   isOpen: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isMenuV2: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

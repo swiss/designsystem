@@ -111,14 +111,14 @@
 import { Navigation, Pagination, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import SvgIcon from '../components/SvgIcon.vue'
-import Card from '../components/Card'
-import Btn from '../components/Btn'
+import Card from '../components/Card.vue'
+import Btn from '../components/Btn.vue'
 import { computed } from 'vue'
 
 const props = defineProps({
   id: {
     type: Number,
-    default: 1,
+    default: () => 1,
   },
   breakpoints: {
     type: Object,
@@ -126,11 +126,11 @@ const props = defineProps({
   paginationType: {
     type: String,
     validator: (prop) => ['bullets', 'fraction'].includes(prop),
-    default: 'bullets',
+    default: () => 'bullets',
   },
   loop: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   slides: {
     type: Array,

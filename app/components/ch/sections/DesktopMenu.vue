@@ -33,7 +33,7 @@ import Navy from '../../../scripts/Navy.js'
 import SvgIcon from '../components/SvgIcon.vue'
 import MainNavigation from '../navigations/MainNavigation.vue'
 import MainNavigationSimple from '../navigations/MainNavigationSimple.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 
 const useStickyPlaceholder = ref(false)
 const initialNavBarOffset = ref(0)
@@ -42,14 +42,15 @@ const props = defineProps({
   // Allow disabling active navigation item highlighting for pages like shopping cart
   showActiveNavigation: {
     type: Boolean,
+    default: () => false,
   },
   isSimplePage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSticky: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 
@@ -70,7 +71,7 @@ const handleScroll = async function () {
     await nextTick()
     // Set height on placeholder to avoid jump when navigation is set to sticky
     const stickyPlaceholder = document.getElementById(
-      'sticky-desktop-navigation-placeholder'
+      'sticky-desktop-navigation-placeholder',
     )
     stickyPlaceholder.style.height = `${navigation.clientHeight}px`
 

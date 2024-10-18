@@ -35,7 +35,7 @@ import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import FormDemo from '../components/ch/sections/FormDemo.vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
-import Hero from '../components/ch/sections/Hero'
+import Hero from '../components/ch/sections/Hero.vue'
 import { useLayoutStore } from '../store/layout'
 
 const layoutStore = useLayoutStore()

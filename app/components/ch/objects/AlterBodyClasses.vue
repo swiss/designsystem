@@ -8,15 +8,15 @@ const layoutStore = useLayoutStore()
 const props = defineProps({
   isMobileMenuOpen: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isIntranet: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isFreebrand: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   UsesMenuV2: {
     type: Boolean,

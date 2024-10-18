@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import detailPageSimple from '../../../pages/detailPageSimple.vue'
+import * as DetailpageSimpleStories from './DetailpageSimple.stories'
+
+<Meta of={DetailpageSimpleStories} />
+
+# Simple page example
+
+<a href="?path=/story/pages-detail-page-simple--example">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a href="?id=pages-detail-page-simple--example" target="_blank">
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas of={DetailpageSimpleStories.Example} />
+
+# Simple page example mobile menu v2
+
+<a href="?path=/story/pages-detail-page-simple--example-menu-v-2">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a href="?id=pages-detail-page-simple--example-menu-v-2" target="_blank">
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas of={DetailpageSimpleStories.ExampleMenuV2} />

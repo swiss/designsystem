@@ -530,11 +530,11 @@ const resultItems = reactive([
 const props = defineProps({
   isLoading: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   useStickySearch: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   showFilterSection: {
     type: Boolean,

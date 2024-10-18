@@ -18,11 +18,11 @@ const props = defineProps({
 
 const computedClasses = computed(() => {
   let base = 'grid gap--responsive '
-  if (nItems === 1) base += `grid--items-1 `
-  else if (nItems === 2) base += `grid--items-2 `
-  else if (nItems === 3) base += `grid--items-3 `
-  else if (nItems === 4) base += `grid--items-4 `
-  else if (nItems === 5) base += `grid--items-5 `
+  if (props.nItems === 1) base += `grid--items-1 `
+  else if (props.nItems === 2) base += `grid--items-2 `
+  else if (props.nItems === 3) base += `grid--items-3 `
+  else if (props.nItems === 4) base += `grid--items-4 `
+  else if (props.nItems === 5) base += `grid--items-5 `
   return base
 })
 </script>

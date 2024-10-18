@@ -17,7 +17,7 @@
       :autocomplete="autocomplete"
       :readonly="readonly"
       :required="required"
-      @change.stop="onInput"
+      @input.stop="onInput"
     />
     <div
       v-if="message"
@@ -54,12 +54,12 @@ const props = defineProps({
         'week',
         'submit',
       ].includes(prop),
-    default: 'text',
+    default: () => 'text',
   },
   variant: {
     type: String,
     validator: (prop) => ['outline', 'negative'].includes(prop),
-    default: 'outline',
+    default: () => 'outline',
   },
   message: {
     type: String,
@@ -71,7 +71,7 @@ const props = defineProps({
   messageType: {
     type: String,
     validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
-    default: 'error',
+    default: () => 'error',
   },
   size: {
     type: String,
@@ -82,7 +82,7 @@ const props = defineProps({
   },
   hideLabel: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   placeholder: {
     type: String,
@@ -110,11 +110,11 @@ const props = defineProps({
   },
   readonly: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   required: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 

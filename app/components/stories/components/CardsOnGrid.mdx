@@ -1,0 +1,94 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import Card from '../../ch/components/Card.vue'
+import Btn from '../../ch/components/Btn.vue'
+import SvgIcon from '../../ch/components/SvgIcon.vue'
+import CardGrid from '../../ch/demo/CardGrid.vue'
+import * as CardsOnGridStories from './CardsOnGrid.stories'
+
+<Meta of={CardsOnGridStories} />
+
+# Cards and Grids
+
+Most of the time, cards are grouped into a section. They are considered as teasers and they point to a specific content deeper in the website.
+
+# Dynamic list of cards
+
+A news list is a classic example of dynamic list: the content is updated everytime a news is published. The layout is simple and uniform: all columns have the same width.
+
+## Number of cards
+
+**Put a maximum of 3 cards per dynamic list of cards.**
+
+**Exceptions:**
+
+- On a hub page, you have to list every sub pages.
+- If you really need to display more items, use the [carousel pattern](?path=/docs/components-carousel--with-bullets).
+
+## Grid classes
+
+For dynamic lists, all columns have the same width. Use one of the following grid variants:
+
+- `grid grid--responsive-cols-2 gap--responsive` or
+- `grid grid--responsive-cols-3 gap--responsive` or
+- `grid grid--responsive-cols-4 gap--responsive`
+
+Below a simplified example of a section with 3 news picked dynamically, and a link pointing to additional content:
+
+<Canvas of={CardsOnGridStories.DynamicList} />
+
+# Curated list of cards
+
+Curated list is a section where the items are picked manually. Depending on the numbers of cards, the layout adapts accordingly.
+
+## Number of rows
+
+**Put a maximum of 5 cards per curated list of cards.**
+
+## Grid classes
+
+For curated lists, columns have different widths depending the numbers of cards. Use one of the following grid variants:
+
+- `grid grid--items-1 gap--responsive` or
+- `grid grid--items-2 gap--responsive` or
+- `grid grid--items-3 gap--responsive` or
+- `grid grid--items-4 gap--responsive` or
+- `grid grid--items-5 gap--responsive`
+
+Below a simplified example of a section with 5 cards picked manually, and a link pointing to additional content:
+
+<Canvas of={CardsOnGridStories.GridClasses} />
+
+# Full examples
+
+## One Card
+
+- Apply the `grid grid--items-1 gap--responsive` variants to the parent grid
+- Apply the `card--image-left` variant to the first card
+
+<Story of={CardsOnGridStories.OneCard} />
+
+## Two cards
+
+- Apply the `grid grid--items-2 gap--responsive` variants to the parent grid
+
+<Story of={CardsOnGridStories.TwoCards} />
+
+## Three cards
+
+- Apply the `grid grid--items-3 gap--responsive` variants to the parent grid
+- Apply the `card--image-left` variant to the first card
+
+<Story of={CardsOnGridStories.ThreeCards} />
+
+## Four cards
+
+- Apply the `grid grid--items-4 gap--responsive` variants to the parent grid
+- Apply the `card--image-left` variant to the first card
+
+<Story of={CardsOnGridStories.FourCards} />
+
+## Five cards
+
+- Apply the `grid grid--items-5 gap--responsive` variants to the parent grid
+
+<Story of={CardsOnGridStories.FiveCards} />

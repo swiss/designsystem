@@ -38,11 +38,11 @@ const props = defineProps({
   variant: {
     type: String,
     validator: (prop) => ['outline', 'negative'].includes(prop),
-    default: 'outline',
+    default: () => 'outline',
   },
   bare: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   size: {
     type: String,
@@ -53,7 +53,7 @@ const props = defineProps({
   },
   hideLabel: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   id: {
     type: String,
@@ -70,13 +70,15 @@ const props = defineProps({
   },
   required: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   onSelect: {
     type: Function,
     default: () => ({}),
   },
 })
+
+const emit = defineEmits(['change'])
 
 const selectWrapperClasses = computed(() => {
   let base = 'select '
@@ -102,7 +104,7 @@ const labelClasses = computed(() => {
 })
 
 const handleChange = function (e) {
-  useNuxtApp().$emit('select', e.target.value)
-  props.onSelect(e)
+  props.onSelect(e.target.value)
+  emit('change', e.target.value)
 }
 </script>

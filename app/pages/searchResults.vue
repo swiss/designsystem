@@ -290,11 +290,11 @@ const searchResults = reactive([
 const props = defineProps({
   noResults: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isLoading: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 </script>

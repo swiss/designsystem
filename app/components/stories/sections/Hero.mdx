@@ -1,0 +1,61 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import Hero from '../../ch/sections/Hero.vue'
+import Btn from '../../ch/components/Btn.vue'
+import * as HeroStories from './Hero.stories'
+
+<Meta of={HeroStories} />
+
+# Hero
+
+## Main hero without image
+
+**The `.hero.hero--main` section is used on the [homepage](?path=/docs/pages-homepage--example) or on [landing pages](?path=/docs/pages-detail-page-complex--example).**
+
+This variant doesn't contain any article type, date or authors.
+
+<Canvas of={HeroStories.MainWithoutImage} />
+
+## Main hero with image
+
+**The `.hero.hero--main-image` section is used on the [homepage](?path=/docs/pages-homepage--example) or on [landing pages](?path=/docs/pages-detail-page-complex--example),** when an image is available.
+
+This variant doesn't contain any article type, date or authors.
+
+The image should have a 4:3 ratio and the height of both title and description shouldn't be bigger than the height of the image on a large desktop.
+
+<Canvas of={HeroStories.MainWithImage} />
+
+## Hero for hub pages
+
+**The `.hero.hero--hub` section is used on the [hub pages](?path=/docs/pages-hub-page--example), where children pages are listed on a dark background right after the hero section.**
+
+This variant doesn't contain any article type, date or authors.
+
+<Canvas of={HeroStories.HubPage} />
+
+## Hero for detail pages
+
+**The `.hero.hero--default` section is used on the [detail pages](?path=/docs/pages-detail-page-simple--example).**
+
+This variant can optionally contain an article type, a date and one ore more authors.
+
+<Canvas of={HeroStories.DetailPage} />
+
+## Hero for detail pages, with only a title and subtitle
+
+**The `.hero.hero--title-only` section is used on [detail pages](?path=/docs/pages-test-hero-title-only--example) where the hero only contains a title and subtitle.**
+
+This variant can contain only a title and subtitle.
+
+<Canvas of={HeroStories.DetailPageTitleOnly} />
+
+## Hero for screenreaders only
+
+If there isn't any specific content for the hero, we still need to display a `h1` title for screen readers.
+Set type to `sr-only` to hide the component visually. Check the <a href="?path=/story/sections-content-hero--example">Storybook Canvas Tab</a> to display the HTML markup.
+
+<Canvas of={HeroStories.ScreenReadersOnly} />
+
+<a href="?path=/story/sections-content-hero--example">
+  {'Go to the Canvas Tab'}
+</a>

@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as ModalStories from './Modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+The `Modal` component allows to display content on top of the page, in an overlay.
+
+See the `Share links` as example of Modal content on the [detail page simple](?path=/docs/pages-detail-page-simple--example).
+
+## Example
+
+<Canvas of={ModalStories.Example} />
+
+<Controls of={ModalStories.Example} />
+
+## Options
+
+**triggerElements**: a string containing all the selectors (classes and id's) which should trigger an opening of the modal.
+
+**layout**: options to control the width of the modal overlay:
+
+* `undefined`: the modal will have the same width as the website container.
+* `auto`: the width of the modal depends on the width of the `body` content. Max-width is the website's container width.
+* `xs`: the modal will have a max-width of `480px`.
+* `sm`: the modal will have a max-width of `640px`.
+* `md`: the modal will have a max-width of `768px`.
+* `lg`: the modal will have a max-width of `1024px`.
+* `xl`: the modal will have a max-width of `1280px`.
+
+**title**: a title placed on top of the modal.
+
+**footer**: a slot to place call to actions at the end of the modal, beeing always visible, also when the body is too loog for the viewport.
+
+## Accessibility
+
+* The modal components should always be placed after the `main` tag.
+* When several modals are present on a page, they should have an `uuid`, for accessibility purpose. (unique `aria-labelledby` and `aria-describedby` )
+* The `title`should always be delivered.
+
+Sources: [w3.org](https://www.w3.org/WAI/ARIA/apg/example-index/dialog-modal/dialog) & [harvard.edu](https://accessibility.huit.harvard.edu/technique-accessible-modal-dialogs)

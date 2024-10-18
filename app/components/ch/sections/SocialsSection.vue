@@ -2,7 +2,7 @@
   <section class="section bg--secondary-50">
     <div class="container">
       <div :class="computedClasses">
-        <div class="socials__grid grid gap--responsive">
+        <div class="grid socials__grid gap--responsive">
           <div class="socials__info">
             <h2 class="section__title">{{ sectionTitle }}</h2>
 
@@ -54,7 +54,8 @@
                     background: #fff;
                     border: 0;
                     border-radius: 3px;
-                    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
+                    box-shadow:
+                      0 0 1px 0 rgba(0, 0, 0, 0.5),
                       0 1px 10px 0 rgba(0, 0, 0, 0.15);
                     margin: 1px;
                     padding: 0;
@@ -345,7 +346,7 @@
 
 <script setup>
 import Card from '../components/Card.vue'
-import Btn from '../components/Btn'
+import Btn from '../components/Btn.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import { computed, onMounted } from 'vue'
 
@@ -353,12 +354,12 @@ const props = defineProps({
   sectionTitle: {
     type: String,
     require: true,
-    default: '',
+    default: () => '',
   },
   sectionDesc: {
     type: String,
     required: true,
-    default: '',
+    default: () => '',
   },
   feeds: {
     type: Array,

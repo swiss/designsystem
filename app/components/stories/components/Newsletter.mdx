@@ -1,0 +1,27 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import Newsletter from '../../ch/components/Newsletter.vue'
+import * as NewsletterStories from './Newsletter.stories';
+
+<Meta of={NewsletterStories} />
+
+# Newsletter
+
+## Example
+
+The default newsletter component can for example be placed in a sidebar on a [Detail Page Complex](?path=/docs/pages-detail-page-complex--example).
+
+<Canvas of={NewsletterStories.Example} />
+
+<Controls of={NewsletterStories.Example} />
+
+## Example with inline form
+
+If the component is placed in a big enough context, you can display the form inline by adding the `.newsletter--inline` class.
+
+<Canvas of={NewsletterStories.ExampleInlineForm} />
+
+## Example on simple detail pages
+
+When the newsletter component is placed on a [Detail Page Simple](?path=/docs/pages-detail-page-simple--example) inside a `.container__center--xs` container, it will have a slightly different layout (broader than container, more spacings).
+
+<Canvas of={NewsletterStories.ExampleDetailPage} />

@@ -36,20 +36,20 @@ const currentPage = defineModel('currentPage', {
 const props = defineProps({
   type: {
     type: String,
-    default: 'outline',
+    default: () => 'outline',
     validator: (prop) => ['outline', 'outline-negative'].includes(prop),
   },
   field: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
   totalPages: {
     type: String,
-    default: '',
+    default: () => '',
   },
   paginationItems: {
     type: Array,
-    default: [],
+    default: () => [],
   },
 })
 

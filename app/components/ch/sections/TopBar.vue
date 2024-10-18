@@ -22,7 +22,7 @@
             :iconLeft="computedAccessibilityIcon"
             :label="computedAccessibilityBadgeLabel"
             size="base"
-            :highlighCancel="true"
+            :highlightCancel="true"
           />
           <TopBarNavigation v-if="!isEasyLanguage && !isSignLanguage" />
           <LanguageSwitcher type="negative" />
@@ -355,7 +355,7 @@ import Btn from '../components/Btn.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import TopBarNavigation from '../navigations/TopBarNavigation.vue'
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 
 const filterString = ref('')
 const useStickyPlaceholder = ref(false)
@@ -363,20 +363,20 @@ const initialTopBarOffset = ref(0)
 
 const isOpen = defineModel('isOpen', {
   type: Boolean,
-  default: false,
+  default: () => false,
 })
 const props = defineProps({
   isEasyLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSignLanguage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isSticky: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 
@@ -429,7 +429,7 @@ const handleScroll = async function () {
 
 const triggerTopBar = function () {
   isOpen.value = !isOpen.value
-  useNuxtApp().$emit('top-bar-drawer-change')
+  window.postMessage({ trigger: 'top-bar-drawer-change' })
 }
 
 onMounted(() => {

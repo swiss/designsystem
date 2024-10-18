@@ -84,13 +84,13 @@
 
 <script setup>
 import Card from '../components/Card.vue'
-import Btn from '../components/Btn'
+import Btn from '../components/Btn.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 
 const props = defineProps({
   isHomePage: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 </script>

@@ -353,20 +353,20 @@ const searchResults = reactive([
 
 const filtersAreOpen = defineModel('filtersAreOpen', {
   type: Boolean,
-  default: false,
+  default: () => false,
 })
 const displayType = defineModel('displayType', {
   type: String,
-  default: 'grid',
+  default: () => 'grid',
 })
 const props = defineProps({
   noResults: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   isLoading: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 </script>

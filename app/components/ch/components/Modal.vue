@@ -24,11 +24,11 @@
         </button>
       </header>
 
-      <div v-if="slots.body" :id="'modal-desc-' + uuid" class="modal__body">
+      <div v-if="$slots.body" :id="'modal-desc-' + uuid" class="modal__body">
         <slot name="body"></slot>
       </div>
 
-      <footer v-if="slots.footer" class="modal__footer">
+      <footer v-if="$slots.footer" class="modal__footer">
         <slot name="footer"></slot>
       </footer>
     </div>
@@ -47,8 +47,6 @@
 import SvgIcon from './SvgIcon.vue'
 import { ref, computed, onMounted, onBeforeUnmount, useTemplateRef } from 'vue'
 
-const slots = useSlots()
-
 const isOpen = ref(false)
 const triggerElement = ref(undefined)
 const closeBtn = useTemplateRef('close')
@@ -56,11 +54,11 @@ const closeBtn = useTemplateRef('close')
 const props = defineProps({
   uuid: {
     type: String,
-    default: '',
+    default: () => '',
   },
   title: {
     type: String,
-    default: '',
+    default: () => '',
   },
   layout: {
     type: String,
@@ -69,7 +67,7 @@ const props = defineProps({
   },
   triggerElements: {
     type: String,
-    default: '',
+    default: () => '',
   },
 })
 

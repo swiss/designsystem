@@ -55,7 +55,7 @@ const props = defineProps({
   },
   type: {
     type: String,
-    default: undefined,
+    default: () => undefined,
     validator: (prop) =>
       ['info', 'alert', 'warning', 'error', 'success'].includes(prop),
   },
@@ -77,21 +77,21 @@ const props = defineProps({
   },
   icon: {
     type: String,
-    default: 'warning',
+    default: () => 'WarningCircle',
   },
   isClosed: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   closeBtn: {
     type: Boolean,
-    default: true,
+    default: () => true,
   },
 })
 
 const classes = computed(() => {
   let base = 'alert-banner '
-  if (type) base += `alert-banner--${type} `
+  if (props.type) base += `alert-banner--${props.type} `
   return base
 })
 </script>

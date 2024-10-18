@@ -271,15 +271,15 @@
 import { Navigation, Pagination, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import SvgIcon from '../components/SvgIcon.vue'
-import Card from '../components/Card'
-import Btn from '../components/Btn'
+import Card from '../components/Card.vue'
+import Btn from '../components/Btn.vue'
 import MetaInfo from '../components/MetaInfo.vue'
 import { computed } from 'vue'
 
 const props = defineProps({
   id: {
     type: Number,
-    default: 8463,
+    default: () => 8463,
   },
   breakpoints: {
     type: Object,

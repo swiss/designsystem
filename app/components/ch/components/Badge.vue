@@ -30,7 +30,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: 'gray',
+    default: () => 'gray',
     validator: (prop) =>
       [
         'info',
@@ -52,31 +52,31 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: 'base',
+    default: () => 'base',
     validator: (prop) => ['base', 'sm'].includes(prop),
   },
   icon: {
     type: String,
-    default: undefined,
+    default: () => undefined,
   },
-  highlighCancel: {
+  highlightCancel: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   iconLeft: {
     type: String,
-    default: undefined,
+    default: () => undefined,
   },
   badgeClicked: {
     type: Function,
   },
   clickable: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
   disabled: {
     type: Boolean,
-    default: false,
+    default: () => false,
   },
 })
 
