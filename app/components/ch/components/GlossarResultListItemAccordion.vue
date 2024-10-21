@@ -10,7 +10,7 @@
   </ul>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Accordion from '../../../scripts/Accordion.js'
 import GlossarResultListItem from '../components/GlossarResultListItem.vue'
 import { onMounted } from 'vue'

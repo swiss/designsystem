@@ -27,7 +27,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import MenuMore from '../../../scripts/MenuMore.js'
 import Navy from '../../../scripts/Navy.js'
 import SvgIcon from '../components/SvgIcon.vue'
@@ -55,24 +55,24 @@ const props = defineProps({
 })
 
 const resizeWindow = function () {
-  const topHeader = document.getElementById('top-header-id')
-  const topBar = document.getElementById('top-bar')
+  const topHeader = document.getElementById('top-header-id') as HTMLElement
+  const topBar = document.getElementById('top-bar') as HTMLElement
   initialNavBarOffset.value =
     topHeader.offsetTop + topHeader.clientHeight - topBar?.clientHeight
   handleScroll()
 }
 
 const handleScroll = async function () {
-  const topBar = document.getElementById('top-bar')
-  const navBar = document.getElementById('desktop-navigation-id')
-  const navigation = document.getElementById('main-navigation')
+  const topBar = document.getElementById('top-bar') as HTMLElement
+  const navBar = document.getElementById('desktop-navigation-id') as HTMLElement
+  const navigation = document.getElementById('main-navigation') as HTMLElement
   if (initialNavBarOffset.value < window.scrollY) {
     useStickyPlaceholder.value = true
     await nextTick()
     // Set height on placeholder to avoid jump when navigation is set to sticky
     const stickyPlaceholder = document.getElementById(
       'sticky-desktop-navigation-placeholder',
-    )
+    ) as HTMLElement
     stickyPlaceholder.style.height = `${navigation.clientHeight}px`
 
     navBar.style.top = `${topBar.clientHeight}px`
@@ -102,11 +102,12 @@ onMounted(async () => {
 
   // demo only: force level-0 to open when more button is clicked
   if (!props.isSimplePage) {
-    document
-      .getElementById('more-button')
-      .addEventListener('click', function () {
+    ;(document.getElementById('more-button') as HTMLElement).addEventListener(
+      'click',
+      function () {
         Navy.showLevel(0)
-      })
+      },
+    )
 
     MenuMore.init({
       navigationItem: '#desktop-menu > div > div > .container > nav',

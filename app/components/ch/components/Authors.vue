@@ -17,7 +17,7 @@
       {{ authors[0].prefix ? authors[0].prefix : 'von' }}
 
       <component
-        v-for="(author, index) in authors"
+        v-for="author in authors"
         :is="author.url ? 'a' : 'span'"
         :class="author.url ? 'link' : ''"
         :href="author.url"
@@ -30,13 +30,14 @@
   </aside>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { Author } from '../../../types'
 import SvgIcon from '../components/SvgIcon.vue'
 import { computed } from 'vue'
 
 const props = defineProps({
   authors: {
-    type: Array,
+    type: Array<Author>,
     required: true,
   },
   bare: {

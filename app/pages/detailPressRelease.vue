@@ -230,7 +230,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import DownloadItem from '../components/ch/components/DownloadItem.vue'
 import RelatedTags from '../components/ch/components/RelatedTags.vue'
 import Hero from '../components/ch/sections/Hero.vue'

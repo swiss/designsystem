@@ -4,13 +4,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
 const props = defineProps({
   nItems: {
     type: Number,
     validator: (prop) => {
+      if (typeof prop !== 'number') return false
       return prop > 0 && prop < 6
     },
   },

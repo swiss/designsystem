@@ -177,7 +177,7 @@
   </nav>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import { computed } from 'vue'
 
@@ -185,7 +185,7 @@ const props = defineProps({
   context: {
     type: String,
     required: true,
-    validator: (prop) => ['desktop', 'mobile'].includes(prop),
+    validator: (prop) => ['desktop', 'mobile'].includes(prop as string),
   },
   // Allow disabling active navigation item highlighting for pages like shopping cart
   showActiveNavigation: {

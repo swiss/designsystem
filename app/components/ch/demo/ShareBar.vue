@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import EasyLanguage from '../components/EasyLanguage.vue'
 import Print from '../components/Print.vue'
 import SignLanguage from '../components/SignLanguage.vue'

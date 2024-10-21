@@ -36,7 +36,7 @@ The `Deselect` button and the `Openindicator` are two child components of the `V
 and render directly the child components in the `data` function:
 
 ```html
-<script setup>
+<script setup lang="ts">
   import { h } from 'vue'
   const Deselect = { render: () => h('span', '×') }
   const OpenIndicator = { render: () => h('span') } // replace the default icon

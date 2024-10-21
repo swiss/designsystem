@@ -32,7 +32,7 @@
   </span>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import Popover from '../../../scripts/Popover.js'
 import { computed, onMounted } from 'vue'
@@ -65,7 +65,7 @@ const props = defineProps({
         'purple',
         'pink',
         'white',
-      ].includes(prop),
+      ].includes(prop as string),
   },
   icon: {
     type: Boolean,

@@ -4,6 +4,9 @@ export default {
   title: 'Components/AlertBanner',
   component: AlertBanner,
   argTypes: {
+    isClosed: {
+      table: { category: 'props' },
+    },
     type: {
       table: {
         type: { summary: ['string: info, warning, alert, error, success'] },

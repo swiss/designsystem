@@ -20,7 +20,7 @@
     </div>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 import btn from './Btn.vue'
 import { ref, onMounted } from 'vue'
 

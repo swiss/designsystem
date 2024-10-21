@@ -11,7 +11,7 @@
     </div>
   </li>
 </template>
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import { computed } from 'vue'
 
@@ -26,7 +26,7 @@ const props = defineProps({
   },
   searchTerm: {
     type: String,
-    required: false,
+    default: () => undefined,
   },
 })
 
@@ -38,21 +38,23 @@ const markedDescription = computed(() => {
   return marker(props.description, props.searchTerm)
 })
 
-const highlightTextNodes = function (node, term) {
+const highlightTextNodes = function (node: ChildNode, term?: string) {
+  if (!term) return
   if (node.nodeType === Node.TEXT_NODE) {
     const regex = new RegExp(term, 'gi')
     const span = document.createElement('span')
-    span.innerHTML = node.textContent.replace(
-      regex,
-      (match) => `<span class='highlight-blue'>${match}</span>`,
-    )
+    span.innerHTML =
+      node.textContent?.replace(
+        regex,
+        (match) => `<span class='highlight-blue'>${match}</span>`,
+      ) || ''
     node.replaceWith(...span.childNodes)
   } else if (node.nodeType === Node.ELEMENT_NODE) {
     node.childNodes.forEach((elm) => highlightTextNodes(elm, term))
   }
 }
 
-const marker = function (text, term) {
+const marker = function (text: string, term?: string) {
   if (!term) return text
   const parser = new DOMParser()
   const doc = parser.parseFromString(text, 'text/html')

@@ -17,7 +17,7 @@
   </a>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import MetaInfo from './MetaInfo.vue'
 import { computed } from 'vue'
@@ -33,7 +33,7 @@ const props = defineProps({
   },
   description: {
     type: String,
-    required: true,
+    description: () => undefined,
   },
   url: {
     type: String,
@@ -54,7 +54,8 @@ const props = defineProps({
   headingLevel: {
     type: String,
     default: () => 'h4',
-    validator: (prop) => ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop),
+    validator: (prop) =>
+      ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop as string),
   },
 })
 

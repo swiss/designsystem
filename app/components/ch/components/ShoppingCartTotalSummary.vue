@@ -21,8 +21,8 @@
         value="agb accepted"
         :label="agreementText"
         :onChange="
-          (e) => {
-            agbAccepted = e.target.checked
+          (e: Event) => {
+            agbAccepted = (e.target as HTMLInputElement).checked
           }
         "
       />
@@ -39,7 +39,7 @@
     />
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 import Btn from './Btn.vue'
 import Checkbox from './Checkbox.vue'
 import { ref } from 'vue'

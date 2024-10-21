@@ -24,17 +24,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
 const props = defineProps({
   variant: {
     type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop),
+    validator: (prop) => ['outline', 'negative'].includes(prop as string),
   },
   size: {
     type: String,
-    validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
+    validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
   },
   id: {
     type: String,
@@ -61,7 +61,8 @@ const props = defineProps({
   },
   messageType: {
     type: String,
-    validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+    validator: (prop) =>
+      ['error', 'warning', 'success', 'info'].includes(prop as string),
   },
   required: {
     type: Boolean,

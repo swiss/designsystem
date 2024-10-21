@@ -186,7 +186,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Input from '../../ch/components/Input.vue'
 import Select from '../../ch/components/Select.vue'
 import Radio from '../../ch/components/Radio.vue'

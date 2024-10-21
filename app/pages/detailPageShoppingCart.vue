@@ -29,7 +29,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ShoppingCart from '../components/ch/components/ShoppingCart.vue'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'

@@ -14,7 +14,7 @@
   </a>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ShoppingCartAmountIndicator from './ShoppingCartAmountIndicator.vue'
 import SvgIcon from './SvgIcon.vue'
 import { computed } from 'vue'
@@ -34,7 +34,8 @@ const props = defineProps({
   },
   target: {
     type: String,
-    validator: (prop) => ['_blank', '_parent', '_self', '_top'].includes(prop),
+    validator: (prop) =>
+      ['_blank', '_parent', '_self', '_top'].includes(prop as string),
     default: () => '_self',
   },
   label: {
@@ -48,6 +49,6 @@ const limittedAmount = computed(() => {
 })
 
 const parsedLabel = computed(() => {
-  return props.ariaLabel.replace('<amount>', props.amount)
+  return props.ariaLabel.replace('<amount>', props.amount.toString())
 })
 </script>

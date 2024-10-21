@@ -43,12 +43,12 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from './SvgIcon.vue'
 import { ref, computed, onMounted, onBeforeUnmount, useTemplateRef } from 'vue'
 
 const isOpen = ref(false)
-const triggerElement = ref(undefined)
+const triggerElement = ref(undefined as HTMLElement | undefined)
 const closeBtn = useTemplateRef('close')
 
 const props = defineProps({
@@ -63,7 +63,7 @@ const props = defineProps({
   layout: {
     type: String,
     validator: (prop) =>
-      ['auto', 'xs', 'sm', 'md', 'lg', 'xl', 'xs'].includes(prop),
+      ['auto', 'xs', 'sm', 'md', 'lg', 'xl', 'xs'].includes(prop as string),
   },
   triggerElements: {
     type: String,
@@ -77,13 +77,13 @@ const computedClasses = computed(() => {
   return base
 })
 
-const open = function (e) {
+const open = function (e: Event) {
   isOpen.value = true
 
   document.addEventListener('keyup', keyListener)
 
   if (e) {
-    triggerElement.value = e.currentTarget
+    triggerElement.value = e.currentTarget as HTMLElement
     e.preventDefault()
   }
 
@@ -93,7 +93,7 @@ const open = function (e) {
   })
 }
 
-const close = function (e) {
+const close = function (e: Event) {
   isOpen.value = false
 
   document.removeEventListener('keyup', keyListener)
@@ -108,13 +108,13 @@ const close = function (e) {
   }
 }
 
-const keyListener = function (e) {
+const keyListener = function (e: KeyboardEvent) {
   if (e.key === 'Escape') {
-    close()
+    close(e)
   }
 }
 
-const backdropFocusListener = function (e) {
+const backdropFocusListener = function (e: FocusEvent) {
   closeBtn.value?.focus()
 }
 

@@ -2,7 +2,7 @@
   <InlineSvg v-if="svgSrc" :src="svgSrc" :class="iconClass" />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import InlineSvg from 'vue-inline-svg'
 import { computed, ref, watchEffect } from 'vue'
 
@@ -17,7 +17,7 @@ const props = defineProps({
     default: () => 'base',
     validator: (prop) =>
       ['sm', 'base', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', 'full'].includes(
-        prop,
+        prop as string,
       ),
   },
   spin: {

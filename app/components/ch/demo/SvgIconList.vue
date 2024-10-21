@@ -18,12 +18,12 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import SvgIconListItem from './SvgIconListItem.vue'
 
-let svgIconList = ref([])
-let svgCCIconList = ref([])
+let svgIconList = ref([] as string[])
+let svgCCIconList = ref([] as string[])
 
 let array = import.meta.glob([
   '../../../assets/icons/*.svg',
@@ -31,10 +31,12 @@ let array = import.meta.glob([
 ])
 
 onMounted(() => {
-  array = Object.keys(array).map((key, i) => key.replace(/.*\/(.+)\.svg/, '$1'))
+  const parsedArray = Object.keys(array).map((key, i) =>
+    key.replace(/.*\/(.+)\.svg/, '$1'),
+  )
 
   // Extract CC Icons from the rest
-  svgIconList.value = array.filter((icon) => !icon.startsWith('CC-'))
-  svgCCIconList.value = array.filter((icon) => icon.startsWith('CC-'))
+  svgIconList.value = parsedArray.filter((icon) => !icon.startsWith('CC-'))
+  svgCCIconList.value = parsedArray.filter((icon) => icon.startsWith('CC-'))
 })
 </script>

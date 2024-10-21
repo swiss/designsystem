@@ -65,11 +65,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Navigation, Pagination, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import SvgIcon from '../components/SvgIcon.vue'
-import { computed } from 'vue'
+import { computed, type PropType } from 'vue'
+import type { SwiperOptions } from 'swiper/types'
+import type { SlideshowSlide } from '../../../types'
 
 const props = defineProps({
   id: {
@@ -81,15 +83,15 @@ const props = defineProps({
     default: () => true,
   },
   breakpoints: {
-    type: Object,
+    type: Object as PropType<SwiperOptions['breakpoints']>,
   },
   paginationType: {
-    type: String,
-    validator: (prop) => ['bullets', 'fraction'].includes(prop),
+    type: String as PropType<'bullets' | 'fraction'>,
+    validator: (prop) => ['bullets', 'fraction'].includes(prop as string),
     default: () => 'bullets',
   },
   slides: {
-    type: Array,
+    type: Array<SlideshowSlide>,
     required: true,
   },
 })

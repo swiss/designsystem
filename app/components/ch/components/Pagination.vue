@@ -24,7 +24,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import PaginationItem from './PaginationItem.vue'
 import { computed } from 'vue'
 
@@ -37,7 +37,8 @@ const props = defineProps({
   type: {
     type: String,
     default: () => 'outline',
-    validator: (prop) => ['outline', 'outline-negative'].includes(prop),
+    validator: (prop) =>
+      ['outline', 'outline-negative'].includes(prop as string),
   },
   field: {
     type: Boolean,
@@ -48,7 +49,7 @@ const props = defineProps({
     default: () => '',
   },
   paginationItems: {
-    type: Array,
+    type: Array<{ icon?: string; label?: string; link?: any }>,
     default: () => [],
   },
 })

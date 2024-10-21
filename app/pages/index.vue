@@ -106,7 +106,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import NotificationBanner from '../components/ch/components/NotificationBanner.vue'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
@@ -124,6 +124,7 @@ import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
 import Btn from '../components/ch/components/Btn.vue'
 import { reactive } from 'vue'
 import { useLayoutStore } from '../store/layout'
+import type { SocialsFeed } from '../types'
 
 const layoutStore = useLayoutStore()
 
@@ -135,17 +136,17 @@ const socialSection = reactive({
     {
       type: 'twitter',
       title: 'Press-resleases on Twitter',
-      pofileURL: 'https://twitter.com/swiss_geoportal',
+      profileURL: 'https://twitter.com/swiss_geoportal',
       feedURL:
         '<blockquote class="twitter-tweet"><p lang="de" dir="ltr">[DE] Erfahre alles über die Energie-/Wärmequelle (Leistung und Aktualisierungsdaten) der Heizung in Schweizer Gebäuden dank dem eidgenössischen Gebäude- und Wohnungsregister! <br>Karte: <a href="https://t.co/DuexdeRciJ">https://t.co/DuexdeRciJ</a><br>🔥🏠📊 <a href="https://twitter.com/hashtag/Energieeffizienz?src=hash&amp;ref_src=twsrc%5Etfw">#Energieeffizienz</a> <a href="https://twitter.com/hashtag/BFS?src=hash&amp;ref_src=twsrc%5Etfw">#BFS</a> <a href="https://twitter.com/hashtag/GWR?src=hash&amp;ref_src=twsrc%5Etfw">#GWR</a> <a href="https://twitter.com/StatSchweiz?ref_src=twsrc%5Etfw">@StatSchweiz</a> <a href="https://t.co/ofNwgPulhf">pic.twitter.com/ofNwgPulhf</a></p>&mdash; geo.admin.ch (@swiss_geoportal) <a href="https://twitter.com/swiss_geoportal/status/1636356390708219904?ref_src=twsrc%5Etfw">March 16, 2023</a></blockquote>',
     },
     {
       type: 'youtube',
       title: 'Investigations on Youtube',
-      pofileURL: 'https://www.youtube.com/c/SwissGeoportal',
+      profileURL: 'https://www.youtube.com/c/SwissGeoportal',
       feedURL: 'https://www.youtube.com/embed/BR5zDpPDKFM',
     },
-  ],
+  ] as SocialsFeed[],
 })
 
 const props = defineProps({

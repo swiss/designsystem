@@ -256,7 +256,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Btn from '../components/ch/components/Btn.vue'
 import DownloadItem from '../components/ch/components/DownloadItem.vue'
 import InfoBlock from '../components/ch/components/InfoBlock.vue'

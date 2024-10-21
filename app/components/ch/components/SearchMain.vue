@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from './SvgIcon.vue'
 import Input from './Input.vue'
 

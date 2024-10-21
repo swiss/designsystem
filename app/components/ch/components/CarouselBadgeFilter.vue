@@ -314,7 +314,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Navigation, Pagination, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import badge from '../components/Badge.vue'

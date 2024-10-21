@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from './SvgIcon.vue'
 import { computed } from 'vue'
 

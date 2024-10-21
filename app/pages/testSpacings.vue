@@ -1641,7 +1641,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'

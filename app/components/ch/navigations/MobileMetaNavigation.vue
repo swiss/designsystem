@@ -14,7 +14,7 @@
   </nav>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import { ref, onMounted } from 'vue'
 

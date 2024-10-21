@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Select from '../components/Select.vue'
 import { computed } from 'vue'
 

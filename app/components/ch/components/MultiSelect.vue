@@ -19,7 +19,7 @@
         :name="name"
         v-model="currentSelected"
         :selectable="
-          (option) =>
+          (option: string) =>
             !excluded.includes(option) &&
             (selectLimit
               ? !currentSelected || currentSelected.length < selectLimit
@@ -33,7 +33,7 @@
             :required="
               required && (!currentSelected || currentSelected.length === 0)
             "
-            v-bind="attributes"
+            v-bind="attributes as any"
             v-on="events"
           />
         </template>
@@ -56,13 +56,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import vSelect from 'vue-select'
 import { ref, computed, watch, onMounted, h } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
 const selectId = ref('')
-const currentSelected = ref([])
+const currentSelected = ref([] as string[])
 const Deselect = { render: () => h('span', '×') }
 const OpenIndicator = { render: () => h('span') }
 
@@ -73,12 +73,12 @@ const props = defineProps({
   },
   variant: {
     type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop),
+    validator: (prop) => ['outline', 'negative'].includes(prop as string),
     default: () => 'outline',
   },
   size: {
     type: String,
-    validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
+    validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
     default: () => 'base',
   },
   disabled: {
@@ -104,18 +104,19 @@ const props = defineProps({
   },
   messageType: {
     type: String,
-    validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+    validator: (prop) =>
+      ['error', 'warning', 'success', 'info'].includes(prop as string),
   },
   onChange: {
-    type: Function,
+    type: Function as PropType<(value: string[]) => void>,
     default: () => ({}),
   },
   options: {
-    type: Array,
+    type: Array<string>,
     default: () => [],
   },
   selected: {
-    type: Array,
+    type: Array<string>,
     default: () => [],
   },
   multiple: {
@@ -126,7 +127,7 @@ const props = defineProps({
     type: String,
   },
   excluded: {
-    type: Array,
+    type: Array<string>,
     default: () => [],
   },
   selectLimit: {
@@ -172,7 +173,7 @@ watch(currentSelected, function () {
 
 onMounted(() => {
   // Set initial selected element
-  Object.assign(currentSelected.value, props.selected)
+  currentSelected.value = props.selected
   selectId.value = uuidv4()
 })
 </script>

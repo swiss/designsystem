@@ -73,14 +73,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import TableSortable from '../../../scripts/TableSortable.js'
 import { computed, onMounted } from 'vue'
 
 const props = defineProps({
   variant: {
     type: String,
-    validator: (prop) => ['compact', 'default'].includes(prop),
+    validator: (prop) => ['compact', 'default'].includes(prop as string),
   },
   caption: {
     type: String,
