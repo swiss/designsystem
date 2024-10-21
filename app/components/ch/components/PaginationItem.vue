@@ -12,7 +12,7 @@
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from './SvgIcon.vue'
 import { computed } from 'vue'
 
@@ -20,7 +20,8 @@ const props = defineProps({
   type: {
     type: String,
     default: () => '',
-    validator: (prop) => ['outline', 'outline-negative'].includes(prop),
+    validator: (prop) =>
+      ['outline', 'outline-negative'].includes(prop as string),
   },
   icon: {
     type: String,

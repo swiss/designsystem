@@ -126,7 +126,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import Hero from '../components/ch/sections/Hero.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'

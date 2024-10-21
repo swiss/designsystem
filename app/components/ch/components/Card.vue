@@ -39,7 +39,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useSlots, computed } from 'vue'
 
 const slots = useSlots()
@@ -49,13 +49,13 @@ const props = defineProps({
     type: String,
     validator: (prop) =>
       ['default', 'highlight', 'twitter', 'flat', 'universal', 'list'].includes(
-        prop,
+        prop as string,
       ),
   },
   layout: {
     type: String,
     validator: (prop) =>
-      ['default', 'image-left', 'image-right'].includes(prop),
+      ['default', 'image-left', 'image-right'].includes(prop as string),
   },
 })
 

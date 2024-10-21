@@ -10,10 +10,10 @@
   </p>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
   metainfos: {
-    type: Array,
+    type: Array<string>,
     required: true,
   },
 })

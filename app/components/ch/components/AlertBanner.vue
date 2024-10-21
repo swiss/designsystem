@@ -39,11 +39,15 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import Btn from '../components/Btn.vue'
 import { computed } from 'vue'
 
+const isClosed = defineModel('isClosed', {
+  type: Boolean,
+  default: () => false,
+})
 const props = defineProps({
   title: {
     type: String,
@@ -57,7 +61,7 @@ const props = defineProps({
     type: String,
     default: () => undefined,
     validator: (prop) =>
-      ['info', 'alert', 'warning', 'error', 'success'].includes(prop),
+      ['info', 'alert', 'warning', 'error', 'success'].includes(prop as string),
   },
   lastUpdated: {
     type: String,
@@ -78,10 +82,6 @@ const props = defineProps({
   icon: {
     type: String,
     default: () => 'WarningCircle',
-  },
-  isClosed: {
-    type: Boolean,
-    default: () => false,
   },
   closeBtn: {
     type: Boolean,

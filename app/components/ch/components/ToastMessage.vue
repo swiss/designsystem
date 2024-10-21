@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import notification from './Notification.vue'
 import { ref, onMounted, nextTick } from 'vue'
 
@@ -19,7 +19,7 @@ const showMessage = ref(false)
 const text = ref('')
 const icon = ref('CheckmarkCircle')
 const type = ref('success')
-const showTimeout = ref(null)
+const showTimeout = ref(null as ReturnType<typeof setTimeout> | null)
 
 const props = defineProps({
   triggerName: {
@@ -32,7 +32,7 @@ onMounted(async () => {
   await nextTick()
 
   window.addEventListener('message', (e) => {
-    if (!e.data?.trigger === props.triggerName) return
+    if (!(e.data?.trigger === props.triggerName)) return
 
     const payload = e.data.data
     text.value = payload.text

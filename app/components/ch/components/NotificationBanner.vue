@@ -32,7 +32,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Btn from '../components/Btn.vue'
 import { computed } from 'vue'
 
@@ -49,7 +49,8 @@ const props = defineProps({
   type: {
     type: String,
     default: () => 'info',
-    validator: (prop) => ['info', 'warning', 'error', 'success'].includes(prop),
+    validator: (prop) =>
+      ['info', 'warning', 'error', 'success'].includes(prop as string),
   },
 })
 

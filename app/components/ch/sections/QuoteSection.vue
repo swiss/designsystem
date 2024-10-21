@@ -23,7 +23,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -36,7 +36,7 @@ const props = defineProps({
         'secondary-100',
         'secondary-500',
         'secondary-600',
-      ].includes(prop),
+      ].includes(prop as string),
     default: () => 'secondary-50',
   },
   quote: {

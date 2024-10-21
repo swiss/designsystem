@@ -193,7 +193,7 @@
                           setFormFieldValue(
                             'invoice',
                             'lastName',
-                            e.target.value,
+                            (e.target as HTMLInputElement).value,
                           )
                       "
                       :message="
@@ -214,7 +214,7 @@
                           setFormFieldValue(
                             'invoice',
                             'firstName',
-                            e.target.value,
+                            (e.target as HTMLInputElement).value,
                           )
                       "
                       :message="
@@ -236,7 +236,11 @@
                       :value="formInputFields.invoice.org.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue('invoice', 'org', e.target.value)
+                          setFormFieldValue(
+                            'invoice',
+                            'org',
+                            (e.target as HTMLInputElement).value,
+                          )
                       "
                       :message="
                         formInputFields.invoice.org.touched &&
@@ -254,7 +258,11 @@
                       :value="formInputFields.invoice.street.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue('invoice', 'street', e.target.value)
+                          setFormFieldValue(
+                            'invoice',
+                            'street',
+                            (e.target as HTMLInputElement).value,
+                          )
                       "
                       :message="
                         formInputFields.invoice.street.touched &&
@@ -277,7 +285,7 @@
                           setFormFieldValue(
                             'invoice',
                             'postOffice',
-                            e.target.value,
+                            (e.target as HTMLInputElement).value,
                           )
                       "
                       :message="
@@ -296,7 +304,11 @@
                       :value="formInputFields.invoice.zip.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue('invoice', 'zip', e.target.value)
+                          setFormFieldValue(
+                            'invoice',
+                            'zip',
+                            (e.target as HTMLInputElement).value,
+                          )
                       "
                       :message="
                         formInputFields.invoice.zip.touched &&
@@ -316,7 +328,11 @@
                       :value="formInputFields.invoice.city.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue('invoice', 'city', e.target.value)
+                          setFormFieldValue(
+                            'invoice',
+                            'city',
+                            (e.target as HTMLInputElement).value,
+                          )
                       "
                       :message="
                         formInputFields.invoice.city.touched &&
@@ -361,7 +377,11 @@
                       :value="formInputFields.invoice.phone.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue('invoice', 'phone', e.target.value)
+                          setFormFieldValue(
+                            'invoice',
+                            'phone',
+                            (e.target as HTMLInputElement).value,
+                          )
                       "
                       :message="
                         formInputFields.invoice.phone.touched &&
@@ -379,7 +399,11 @@
                       :value="formInputFields.invoice.email.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue('invoice', 'email', e.target.value)
+                          setFormFieldValue(
+                            'invoice',
+                            'email',
+                            (e.target as HTMLInputElement).value,
+                          )
                       "
                       :message="
                         formInputFields.invoice.email.touched &&
@@ -408,7 +432,7 @@
                       :checked="!showDeliveryAddress"
                       :onChange="
                         (e) => {
-                          e.target.checked
+                          ;(e.target as HTMLInputElement).checked
                             ? (showDeliveryAddress = false)
                             : (showDeliveryAddress = true)
                         }
@@ -434,7 +458,7 @@
                             setFormFieldValue(
                               'delivery',
                               'lastName',
-                              e.target.value,
+                              (e.target as HTMLInputElement).value,
                             )
                         "
                         :message="
@@ -455,7 +479,7 @@
                             setFormFieldValue(
                               'delivery',
                               'firstName',
-                              e.target.value,
+                              (e.target as HTMLInputElement).value,
                             )
                         "
                         :message="
@@ -476,7 +500,11 @@
                         :value="formInputFields.delivery.org.value"
                         :onInput="
                           (e) =>
-                            setFormFieldValue('delivery', 'org', e.target.value)
+                            setFormFieldValue(
+                              'delivery',
+                              'org',
+                              (e.target as HTMLInputElement).value,
+                            )
                         "
                         :message="
                           formInputFields.delivery.org.touched &&
@@ -497,7 +525,7 @@
                             setFormFieldValue(
                               'delivery',
                               'street',
-                              e.target.value,
+                              (e.target as HTMLInputElement).value,
                             )
                         "
                         :message="
@@ -523,7 +551,7 @@
                             setFormFieldValue(
                               'delivery',
                               'postOffice',
-                              e.target.value,
+                              (e.target as HTMLInputElement).value,
                             )
                         "
                         :message="
@@ -542,7 +570,11 @@
                         :value="formInputFields.delivery.zip.value"
                         :onInput="
                           (e) =>
-                            setFormFieldValue('delivery', 'zip', e.target.value)
+                            setFormFieldValue(
+                              'delivery',
+                              'zip',
+                              (e.target as HTMLInputElement).value,
+                            )
                         "
                         :message="
                           formInputFields.delivery.zip.touched &&
@@ -565,7 +597,7 @@
                             setFormFieldValue(
                               'delivery',
                               'city',
-                              e.target.value,
+                              (e.target as HTMLInputElement).value,
                             )
                         "
                         :message="
@@ -611,7 +643,7 @@
                     size="base"
                     label="Nächster Schritt"
                     ariaLabel="Nächster Schritt"
-                    @emitClick="checkFormAndSetNextActiveStep"
+                    type="submit"
                     :fullWidth="isMobile"
                   />
                 </div>
@@ -755,7 +787,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import btn from '../components/Btn.vue'
 import ShoppingCard from '../components/ShoppingCard.vue'
 import SvgIcon from '../components/SvgIcon.vue'
@@ -774,23 +806,26 @@ import Textarea from './Textarea.vue'
 import { reactive, ref, computed, watch, onMounted, nextTick } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
-const activeAccordionIndex = ref(1)
+const accordionIdMap = {
+  1: 'shopping-cart-drawer-overview-button',
+  2: 'shopping-cart-drawer-address-button',
+  3: 'shopping-cart-drawer-checkout-button',
+}
+const activeAccordionIndex = ref(1 as keyof typeof accordionIdMap | null)
 const activeStepIndex = ref(1)
 const step1Confirmed = ref(false)
 const step2Confirmed = ref(false)
 const card1Shown = ref(true)
 const card2Shown = ref(true)
 const card3Shown = ref(true)
-const contentHeight = ref(0)
-const switchTimeOut = ref(null)
-const shoppingCartId = reactive(uuidv4())
+const switchTimeOut = ref(null as ReturnType<typeof setTimeout> | null)
+const shoppingCartId = ref(uuidv4())
 const showDeliveryAddress = ref(false)
 const showConfirmation = ref(false)
 const screenSize = ref(0)
 const formInputFields = reactive({
   invoice: {
     gender: {
-      value: null,
       touched: false,
       valid: false,
       mandatory: true,
@@ -906,7 +941,13 @@ const formInputFields = reactive({
       mandatory: true,
     },
   },
-})
+} as Record<
+  string,
+  Record<
+    string,
+    { value?: string; touched: boolean; valid: boolean; mandatory: boolean }
+  >
+>)
 
 const props = defineProps({
   cartTitle: {
@@ -945,7 +986,7 @@ const canContinue = computed(() => {
   })
 })
 
-const handleAccordionClick = function (index) {
+const handleAccordionClick = function (index: number) {
   if (!card1Shown.value && !card2Shown.value && !card3Shown.value) {
     return
   }
@@ -986,8 +1027,8 @@ const triggerConfirmation = async function () {
   }
 }
 
-const onChange = function (e) {
-  setFormFieldValue('invoice', 'gender', e.target.value)
+const onChange = function (e: Event) {
+  setFormFieldValue('invoice', 'gender', (e.target as HTMLInputElement).value)
 }
 
 const editTriggered = function () {
@@ -995,37 +1036,15 @@ const editTriggered = function () {
   activeStepIndex.value = 1
 }
 
-// const setContentHeight = function () {
-//   if (activeIndex === 1) {
-//     contentHeight =
-//       document.getElementById(getUniqueId('shopping-cart-drawer-overview'))
-//         .scrollHeight + 'px'
-//   } else if (activeIndex === 2) {
-//     contentHeight =
-//       document.getElementById(getUniqueId('shopping-cart-drawer-address'))
-//         .scrollHeight + 'px'
-//   } else if (activeIndex === 3) {
-//     contentHeight =
-//       document.getElementById(getUniqueId('shopping-cart-drawer-checkout'))
-//         .scrollHeight + 'px'
-//   }
-// }
-
 const getUniqueId = function (text = '') {
-  return `${text}-${shoppingCartId}`
+  return `${text}-${shoppingCartId.value}`
 }
 
 const resizeWindow = function () {
   screenSize.value = document.body.clientWidth
 }
 
-const scrollContentIntoView = function (index) {
-  const accordionIdMap = {
-    1: 'shopping-cart-drawer-overview-button',
-    2: 'shopping-cart-drawer-address-button',
-    3: 'shopping-cart-drawer-checkout-button',
-  }
-
+const scrollContentIntoView = function (index: keyof typeof accordionIdMap) {
   const scroolTarget = document.getElementById(
     getUniqueId(accordionIdMap[index]),
   )
@@ -1040,7 +1059,11 @@ const scrollContentIntoView = function (index) {
   }
 }
 
-const setFormFieldValue = function (type, field, value) {
+const setFormFieldValue = function (
+  type: 'invoice' | 'delivery',
+  field: string,
+  value: string,
+) {
   formInputFields[type][field]['value'] = value
   formInputFields[type][field]['touched'] = true
 
@@ -1107,7 +1130,7 @@ const checkFormAndSetNextActiveStep = function () {
 }
 
 watch(activeAccordionIndex, function () {
-  scrollContentIntoView(activeAccordionIndex.value)
+  scrollContentIntoView(activeAccordionIndex.value || 1)
 })
 
 onMounted(() => {

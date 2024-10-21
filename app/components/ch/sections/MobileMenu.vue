@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Navy from '../../../scripts/Navy.js'
 import CarouselNavigation from '../navigations/CarouselNavigation.vue'
 import MainNavigation from '../navigations/MainNavigation.vue'
@@ -60,21 +60,23 @@ const props = defineProps({
 })
 
 const resizeWindow = function () {
-  const topHeader = document.getElementById('top-header-id')
-  const topBar = document.getElementById('top-bar')
+  const topHeader = document.getElementById('top-header-id') as HTMLElement
+  const topBar = document.getElementById('top-bar') as HTMLElement
   initialNavBarOffset.value =
     topHeader.offsetTop + topHeader.clientHeight - topBar?.clientHeight
   handleScroll()
 }
 
 const handleScroll = async function () {
-  const topBar = document.getElementById('top-bar')
-  const navBar = document.getElementById('mobile-menu-id')
+  const topBar = document.getElementById('top-bar') as HTMLElement
+  const navBar = document.getElementById('mobile-menu-id') as HTMLElement
   if (initialNavBarOffset.value < window.scrollY) {
     useStickyPlaceholder.value = true
     await nextTick()
     // Set height on placeholder to avoid jump when navigation is set to sticky
-    const stickyPlaceholder = document.getElementById('stickyPlaceholder')
+    const stickyPlaceholder = document.getElementById(
+      'stickyPlaceholder',
+    ) as HTMLElement
     stickyPlaceholder.style.height = `${navBar.clientHeight}px`
 
     navBar.style.top = `${topBar.clientHeight}px`

@@ -29,19 +29,19 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
 const props = defineProps({
   imagePos: {
     type: String,
     default: () => 'right',
-    validator: (prop) => ['left', 'right'].includes(prop),
+    validator: (prop) => ['left', 'right'].includes(prop as string),
   },
   imageWidth: {
     type: String,
     default: () => undefined,
-    validator: (prop) => ['half', 'fourth'].includes(prop),
+    validator: (prop) => ['half', 'fourth'].includes(prop as string),
   },
   isInlineImage: {
     type: Boolean,
@@ -55,7 +55,6 @@ const props = defineProps({
 
 const computedClasses = computed(() => {
   let base = 'text-image '
-  if (props.type) base += `text-image--${props.type} `
   return base
 })
 

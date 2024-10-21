@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -29,7 +29,8 @@ const props = defineProps({
   headingLevel: {
     type: String,
     default: () => 'h3',
-    validator: (prop) => ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop),
+    validator: (prop) =>
+      ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop as string),
   },
 })
 

@@ -122,7 +122,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Card from '../components/Card.vue'
 import Btn from '../components/Btn.vue'
 import SvgIcon from '../components/SvgIcon.vue'

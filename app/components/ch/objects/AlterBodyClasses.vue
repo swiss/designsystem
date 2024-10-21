@@ -1,5 +1,5 @@
 <template />
-<script setup>
+<script setup lang="ts">
 import { watch, onMounted, onUnmounted } from 'vue'
 import { useLayoutStore } from '../../../store/layout'
 
@@ -21,7 +21,7 @@ const props = defineProps({
 })
 
 const alterMenuClasses = function () {
-  let mobilemenu = document.getElementById('mobile-menu-id')
+  let mobilemenu = document.getElementById('mobile-menu-id') as HTMLElement
   let context =
     window.getComputedStyle(mobilemenu).display === 'none'
       ? 'desktop'

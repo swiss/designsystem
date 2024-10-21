@@ -9,7 +9,7 @@
         :id="id"
         :name="name"
         :required="required"
-        @change="handleChange($event)"
+        @change="handleChange"
       >
         <slot></slot>
       </select>
@@ -31,13 +31,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
 const props = defineProps({
   variant: {
     type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop),
+    validator: (prop) => ['outline', 'negative'].includes(prop as string),
     default: () => 'outline',
   },
   bare: {
@@ -46,7 +46,7 @@ const props = defineProps({
   },
   size: {
     type: String,
-    validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
+    validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
   },
   label: {
     type: String,
@@ -66,14 +66,15 @@ const props = defineProps({
   },
   messageType: {
     type: String,
-    validator: (prop) => ['error', 'warning', 'success', 'info'].includes(prop),
+    validator: (prop) =>
+      ['error', 'warning', 'success', 'info'].includes(prop as string),
   },
   required: {
     type: Boolean,
     default: () => false,
   },
   onSelect: {
-    type: Function,
+    type: Function as PropType<(value: string) => void>,
     default: () => ({}),
   },
 })
@@ -103,8 +104,9 @@ const labelClasses = computed(() => {
   return base
 })
 
-const handleChange = function (e) {
-  props.onSelect(e.target.value)
-  emit('change', e.target.value)
+const handleChange = function (e: Event) {
+  const el = e.target as HTMLSelectElement
+  props.onSelect(el.value)
+  emit('change', el.value)
 }
 </script>

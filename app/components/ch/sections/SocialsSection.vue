@@ -323,14 +323,14 @@
                   src="https://www.linkedin.com/embed/feed/update/urn:li:share:7080107855969705984"
                   height="632"
                   frameborder="0"
-                  allowfullscreen=""
+                  allowfullscreen
                   title="Eingebetteter Beitrag"
                 ></iframe>
               </div>
             </template>
             <template v-slot:footerAction>
               <Btn
-                :to="feed.pofileURL"
+                :to="feed.profileURL"
                 variant="outline"
                 icon-pos="only"
                 icon="ArrowUpRight"
@@ -344,11 +344,12 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Card from '../components/Card.vue'
 import Btn from '../components/Btn.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import { computed, onMounted } from 'vue'
+import type { SocialsFeed } from '../../../types'
 
 const props = defineProps({
   sectionTitle: {
@@ -362,7 +363,7 @@ const props = defineProps({
     default: () => '',
   },
   feeds: {
-    type: Array,
+    type: Array<SocialsFeed>,
     required: true,
     default: () => [],
   },
@@ -379,14 +380,14 @@ const computedClasses = computed(() => {
   return base
 })
 
-const capitalize = function (s) {
+const capitalize = function (s: any) {
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
 onMounted(() => {
-  if (window.twttr) {
-    window.twttr.widgets.load()
+  if ((window as any).twttr) {
+    ;(window as any).twttr.widgets.load()
   }
 })
 </script>

@@ -292,7 +292,7 @@
   </a>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import badge from './Badge.vue'
 import { computed } from 'vue'
 

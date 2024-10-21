@@ -66,7 +66,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Burger from '../components/Burger.vue'
 import Logo from '../components/Logo.vue'
 import SearchMain from '../components/SearchMain.vue'
@@ -116,7 +116,8 @@ const props = defineProps({
   },
   shoppingCartTarget: {
     type: String,
-    validator: (prop) => ['_blank', '_parent', '_self', '_top'].includes(prop),
+    validator: (prop) =>
+      ['_blank', '_parent', '_self', '_top'].includes(prop as string),
     default: () => '_self',
   },
 })

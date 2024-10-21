@@ -100,7 +100,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import Btn from '../components/Btn.vue'
 </script>

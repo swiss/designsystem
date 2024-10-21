@@ -9,7 +9,7 @@
   </figure>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 const videoFile = ref('../../../public/videos/demo.mp4')

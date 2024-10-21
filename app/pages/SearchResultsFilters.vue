@@ -60,7 +60,7 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected="">Option</option>
+                <option selected>Option</option>
                 <option>...</option>
               </Select>
               <Select
@@ -70,7 +70,7 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected="">Option</option>
+                <option selected>Option</option>
                 <option>...</option>
               </Select>
               <Select
@@ -80,7 +80,7 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected="">Option</option>
+                <option selected>Option</option>
                 <option>...</option>
               </Select>
               <Select
@@ -90,7 +90,7 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected="">Option</option>
+                <option selected>Option</option>
                 <option>...</option>
               </Select>
               <Select
@@ -100,7 +100,7 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected="">Option</option>
+                <option selected>Option</option>
                 <option>...</option>
               </Select>
             </div>
@@ -132,7 +132,7 @@
                   id="select-6"
                   name="select-name"
                 >
-                  <option disabled="" selected="">Sortieren</option>
+                  <option disabled selected>Sortieren</option>
                   <option>nach Relevanz</option>
                   <option>by date (increasing)</option>
                   <option>by date (decreasing)</option>
@@ -220,7 +220,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
@@ -236,6 +236,7 @@ import Notification from '../components/ch/components/Notification.vue'
 import Select from '../components/ch/components/Select.vue'
 import { reactive } from 'vue'
 import { useLayoutStore } from '../store/layout'
+import type { SearchResultItem } from '~/types'
 
 const layoutStore = useLayoutStore()
 
@@ -321,7 +322,7 @@ const searchResults = reactive([
     type: 'Blogpost',
     date: '12. April 2022',
   },
-])
+] as SearchResultItem[])
 
 const filtersAreOpen = defineModel('filtersAreOpen', {
   type: Boolean,

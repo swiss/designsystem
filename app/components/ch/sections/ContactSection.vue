@@ -58,7 +58,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Btn from '../components/Btn.vue'
 import Contact from '../components/Contact.vue'
 </script>

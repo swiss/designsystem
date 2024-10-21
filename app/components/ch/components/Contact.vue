@@ -106,7 +106,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Accordion from '../components/Accordion.vue'
 import AccordionItem from '../components/AccordionItem.vue'
 import Btn from '../components/Btn.vue'

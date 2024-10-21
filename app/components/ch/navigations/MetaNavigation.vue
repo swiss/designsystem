@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import { ref, onMounted } from 'vue'

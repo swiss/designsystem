@@ -267,7 +267,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Navigation, Pagination, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import SvgIcon from '../components/SvgIcon.vue'

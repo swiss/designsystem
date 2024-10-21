@@ -62,23 +62,13 @@
           </template>
         </Card>
       </div>
-      <div v-if="isHomePage" class="section__action">
-        <Btn
-          to="#"
-          label="Alle Dienstleistungen ansehen"
-          variant="bare"
-          icon-pos="right"
-          icon="ArrowRight"
-        ></Btn>
-      </div>
     </div>
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Card from '../components/Card.vue'
 import Btn from '../components/Btn.vue'
-import SvgIcon from '../components/SvgIcon.vue'
 import MetaInfo from '../components/MetaInfo.vue'
 
 const props = defineProps({})

@@ -38,6 +38,8 @@
     "@storybook/theming": "^8.3.6",
     "@storybook/vue3": "^8.3.6",
     "@storybook/vue3-vite": "^8.3.6",
+    "@types/uuid": "^10.0.0",
+    "@types/vue-select": "^3.16.8",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vueform/multiselect": "^2.6.10",
     "@whitespace/storybook-addon-html": "^6.1.1",
@@ -52,7 +54,9 @@
     "remark-gfm": "^4.0.0",
     "storybook": "^8.3.6",
     "svg-inline-loader": "^0.8.2",
-    "vite": "^5.4.9"
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9",
+    "vue-tsc": "^2.1.6"
   },
   "readme": "ERROR: No README data found!",
   "_id": "designsystem_app@1.0.0",

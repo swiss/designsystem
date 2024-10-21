@@ -113,13 +113,15 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Navigation, Pagination, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import Card from '../components/Card.vue'
 import Btn from '../components/Btn.vue'
 import { computed } from 'vue'
+import type { PaginationOptions } from 'swiper/types'
+import type { SlideshowSlide } from '../../../types'
 
 const props = defineProps({
   id: {
@@ -130,8 +132,8 @@ const props = defineProps({
     type: Object,
   },
   paginationType: {
-    type: String,
-    validator: (prop) => ['bullets', 'fraction'].includes(prop),
+    type: String as PropType<PaginationOptions['type']>,
+    validator: (prop) => ['bullets', 'fraction'].includes(prop as string),
     default: () => 'bullets',
   },
   loop: {
@@ -139,7 +141,7 @@ const props = defineProps({
     default: () => false,
   },
   slides: {
-    type: Array,
+    type: Array as PropType<SlideshowSlide[]>,
     required: true,
   },
 })

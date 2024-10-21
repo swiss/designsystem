@@ -12,7 +12,7 @@
           size="base"
           :value="inputValue"
           @keypress="restrictChars"
-          @input="inputValue = $event.target.value"
+          @input="inputValue = ($event.target as HTMLInputElement).value"
           class="order__box-amount-input"
           :min="0"
         />
@@ -33,8 +33,8 @@
           :selected="option.selected"
         >
           {{ option.label }}
-        </option></Select
-      >
+        </option>
+      </Select>
     </div>
     <div class="order__box-piece-price-container">
       <p class="order__box-piece-price-title">{{ pricePieceTitle }}</p>
@@ -56,16 +56,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Btn from './Btn.vue'
 import Input from './Input.vue'
 import Select from './Select.vue'
 import { reactive, ref, computed, onMounted } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
+import type { OrderBoxOption } from '../../../types'
 
 const orderBoxId = uuidv4()
-const inputValue = ref(0)
-const selectedValue = reactive({})
+const inputValue = ref(0 as any)
+const selectedValue = reactive({} as OrderBoxOption)
 const pricePiece = ref(0)
 
 const props = defineProps({
@@ -90,7 +91,7 @@ const props = defineProps({
     required: true,
   },
   options: {
-    type: Array,
+    type: Array<OrderBoxOption>,
     required: true,
   },
   buttonLabel: {
@@ -98,7 +99,9 @@ const props = defineProps({
     required: true,
   },
   addToCart: {
-    type: Function,
+    type: Function as PropType<
+      (selectedValue: OrderBoxOption, amount: number) => void
+    >,
     default: () => ({}),
   },
   languageLabel: {
@@ -117,7 +120,8 @@ onMounted(() => {
     selectedValue,
     props.options.find((option) => option.selected),
   )
-  pricePiece.value = props.options.find((option) => option.selected).pricePiece
+  pricePiece.value =
+    props.options.find((option) => option.selected)?.pricePiece || 0
 })
 
 const totalPrice = computed(() => {
@@ -126,10 +130,10 @@ const totalPrice = computed(() => {
   ).toFixed(2)}`
 })
 
-const restrictChars = function (event) {
+const restrictChars = function (event: KeyboardEvent) {
   // Restrict input to numbric input chars
   const regex = /[0-9eE.+\-]/g
-  if (regex.test(String.fromCharCode(event.keyCode))) {
+  if (regex.test(event.key)) {
     return true
   } else {
     event.preventDefault()
@@ -140,9 +144,9 @@ const getUniqueId = function (text = '') {
   return `${text}-${orderBoxId}`
 }
 
-const setSelectedValue = function (value) {
+const setSelectedValue = function (value: string) {
   const newPriceObject = props.options.find((option) => option.value === value)
-  pricePiece.value = newPriceObject.pricePiece
+  pricePiece.value = newPriceObject?.pricePiece || 0
   Object.assign(selectedValue, newPriceObject)
 }
 </script>

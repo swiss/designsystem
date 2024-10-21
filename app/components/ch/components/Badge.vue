@@ -19,7 +19,7 @@
   </component>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import { computed } from 'vue'
 
@@ -48,12 +48,12 @@ const props = defineProps({
         'pink',
         'indigo',
         'negative',
-      ].includes(prop),
+      ].includes(prop as string),
   },
   size: {
     type: String,
     default: () => 'base',
-    validator: (prop) => ['base', 'sm'].includes(prop),
+    validator: (prop) => ['base', 'sm'].includes(prop as string),
   },
   icon: {
     type: String,
@@ -68,7 +68,8 @@ const props = defineProps({
     default: () => undefined,
   },
   badgeClicked: {
-    type: Function,
+    type: Function as PropType<() => void>,
+    default: () => () => {},
   },
   clickable: {
     type: Boolean,

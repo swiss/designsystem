@@ -94,7 +94,7 @@
                   name="select-name"
                   @select="setSorting"
                 >
-                  <option disabled="" selected="">Sortieren</option>
+                  <option disabled selected>Sortieren</option>
                   <option selected value="a-z">Alphabetisch (A-Z)</option>
                   <option value="z-a">Alphabetisch (Z-A)</option>
                 </Select>
@@ -148,7 +148,8 @@
     </footer>
   </div>
 </template>
-<script setup>
+
+<script setup lang="ts">
 import Btn from '../components/ch/components/Btn.vue'
 import CarouselGlossaryFilter from '../components/ch/components/CarouselGlossaryFilter.vue'
 import GlossarResultList from '../components/ch/components/GlossarResultList.vue'
@@ -165,6 +166,7 @@ import TopHeader from '../components/ch/sections/TopHeader.vue'
 import { v4 as uuidv4 } from 'uuid'
 import { reactive, ref, computed, watch, onMounted, nextTick } from 'vue'
 import { useLayoutStore } from '../store/layout'
+import type { GlossaryResultItem, GlossaryResult } from '../types'
 
 const layoutStore = useLayoutStore()
 
@@ -174,7 +176,7 @@ const containerHeight = ref(0)
 const sorting = ref('a-z')
 const screenSize = ref(0)
 const loadedResults = ref(15)
-const carouselId = reactive(uuidv4())
+const carouselId = ref(uuidv4())
 const activeFilter = ref('all')
 const searchTerm = ref('')
 const filters = reactive([
@@ -453,7 +455,7 @@ const resultItems = reactive([
     description:
       'Das Einhorn ist ein mythologisches Tier mit einem Horn auf der Stirn.',
   },
-])
+] as GlossaryResultItem[])
 
 const props = defineProps({
   isLoading: {
@@ -467,11 +469,11 @@ const props = defineProps({
 })
 
 const disabledFilters = computed(() => {
-  const startingLetters = []
+  const startingLetters: string[] = []
   resultItems.forEach((elm) => {
     const start = elm.title.charAt(0)
     if (!startingLetters.includes(start)) {
-      if (!isNaN(elm.title.charAt(0))) {
+      if (!isNaN(Number(start))) {
         startingLetters.push('numbric')
       } else {
         startingLetters.push(start.toLowerCase())
@@ -497,9 +499,9 @@ const foundEntries = computed(() => {
 })
 
 const loadLimitedResults = computed(() => {
-  let result = []
+  const result: GlossaryResult[] = []
   let count = 0
-  const values = Object.values(sortedResultItems.value)
+  const values = sortedResultItems.value
   for (let i = 0; i < values.length; i++) {
     if (count + values[i].results.length <= loadedResults.value) {
       result.push(values[i])
@@ -522,7 +524,7 @@ const loadLimitedResults = computed(() => {
 })
 
 const sortedResultItems = computed(() => {
-  return {
+  return [
     ...limitedResultItems.value.sort((a, b) => {
       const elementA = a.filter
       const elementB = b.filter
@@ -544,7 +546,7 @@ const sortedResultItems = computed(() => {
       }
       return 0
     }),
-  }
+  ]
 })
 
 const limitedResultItems = computed(() => {
@@ -552,33 +554,32 @@ const limitedResultItems = computed(() => {
     if (activeFilter.value === 'all') {
       return elm
     }
+    const start = elm.title.charAt(0)
     if (activeFilter.value === 'numbric') {
-      return !isNaN(elm.title.charAt(0))
+      return !isNaN(Number(start))
     } else {
-      return activeFilter.value === elm.title.charAt(0).toLowerCase()
+      return activeFilter.value === start.toLowerCase()
     }
   })
 
-  let result = []
+  let result: GlossaryResult[] = []
 
   filteredResults.forEach((res) => {
-    if (
-      result.filter((elm) => elm.filter === res.title.charAt(0).toLowerCase())
-        .length > 0
-    ) {
+    const start = res.title.charAt(0)
+    if (result.filter((elm) => elm.filter === start.toLowerCase()).length > 0) {
       const resultIndex = result.findIndex(
-        (elm) => elm.filter === res.title.charAt(0).toLowerCase(),
+        (elm) => elm.filter === start.toLowerCase(),
       )
       result[resultIndex].results.push(res)
     } else {
-      if (!isNaN(res.title.charAt(0))) {
+      if (!isNaN(Number(start))) {
         result.push({
           filter: '0-9',
           results: [res],
         })
       } else {
         result.push({
-          filter: res.title.charAt(0).toLowerCase(),
+          filter: start.toLowerCase(),
           results: [res],
         })
       }
@@ -600,7 +601,7 @@ const limitedResultItems = computed(() => {
   return result.filter((elm) => elm.results.length > 0)
 })
 
-const scroolToTop = function () {
+const scrollToTop = function () {
   if (useStickyPlaceholder.value) {
     const scrollTarget = document.getElementById('glossary-title')
 
@@ -612,9 +613,13 @@ const scroolToTop = function () {
 
 const resizeWindow = function () {
   screenSize.value = document.body.clientWidth
-  const searchContainer = document.getElementById('inner-search-container')
-  const outerSearchContainer = document.getElementById('outer-search-container')
-  const mainHeader = document.getElementById('main-header')
+  const searchContainer = document.getElementById(
+    'inner-search-container',
+  ) as HTMLElement
+  const outerSearchContainer = document.getElementById(
+    'outer-search-container',
+  ) as HTMLElement
+  const mainHeader = document.getElementById('main-header') as HTMLElement
   initialSearchContainerOffset.value =
     outerSearchContainer.offsetTop + mainHeader?.clientHeight - 16
   containerHeight.value = searchContainer.clientHeight
@@ -626,14 +631,18 @@ const setScreenSize = function () {
 }
 
 const handleScroll = async function () {
-  const searchContainer = document.getElementById('search-container')
-  const innerSearchContainer = document.getElementById('inner-search-container')
+  const searchContainer = document.getElementById(
+    'search-container',
+  ) as HTMLElement
+  const innerSearchContainer = document.getElementById(
+    'inner-search-container',
+  ) as HTMLElement
   if (initialSearchContainerOffset.value < window.scrollY) {
     useStickyPlaceholder.value = true
     await nextTick()
     const stickyPlaceholder = document.getElementById(
       'sticky-search-container-placeholder',
-    )
+    ) as HTMLElement
     stickyPlaceholder.style.height = `${containerHeight.value}px`
 
     searchContainer.classList.add('sticky-search-container')
@@ -645,14 +654,14 @@ const handleScroll = async function () {
   }
 }
 
-const setActiveFilter = function (value) {
+const setActiveFilter = function (value: string) {
   activeFilter.value = value
   if (props.useStickySearch) {
-    scroolToTop()
+    scrollToTop()
   }
 }
 
-const setSorting = function (value) {
+const setSorting = function (value: string) {
   sorting.value = value
 }
 
@@ -666,7 +675,7 @@ const handleLoadMore = function () {
 }
 
 watch(searchTerm, function () {
-  scroolToTop()
+  scrollToTop()
 })
 
 onMounted(() => {

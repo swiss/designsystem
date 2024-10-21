@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -16,13 +16,13 @@ const props = defineProps({
     type: String,
     default: () => 'regular',
     validator: (prop) =>
-      ['regular', 'italic', 'bold', 'bold-italic'].includes(prop),
+      ['regular', 'italic', 'bold', 'bold-italic'].includes(prop as string),
   },
   size: {
     type: String,
     default: () => 'base',
     validator: (prop) =>
-      ['3xl', '2xl', 'xl', 'lg', 'base', 'sm', 'xs'].includes(prop),
+      ['3xl', '2xl', 'xl', 'lg', 'base', 'sm', 'xs'].includes(prop as string),
   },
 })
 

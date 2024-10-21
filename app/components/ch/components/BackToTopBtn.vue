@@ -11,14 +11,15 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import { computed } from 'vue'
 
 const props = defineProps({
   type: {
     type: String,
-    validator: (prop) => ['default', 'negative', 'outline'].includes(prop),
+    validator: (prop) =>
+      ['default', 'negative', 'outline'].includes(prop as string),
   },
   target: {
     type: String,

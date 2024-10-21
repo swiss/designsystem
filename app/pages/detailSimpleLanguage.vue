@@ -135,7 +135,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Btn from '../components/ch/components/Btn.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'

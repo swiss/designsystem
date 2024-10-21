@@ -24,7 +24,6 @@
                 "
                 variant="bare"
                 size="sm"
-                icon-pos="right"
                 icon="ChevronDown"
                 iconPos="left"
                 :class="filtersAreOpen ? ' btn--icon-180' : ''"
@@ -158,7 +157,7 @@
                   label="Sortierung"
                   :hideLabel="true"
                 >
-                  <option disabled="" selected="">Sortieren</option>
+                  <option disabled selected>Sortieren</option>
                   <option>nach Relevanz</option>
                   <option>by date (increasing)</option>
                   <option>by date (decreasing)</option>
@@ -245,7 +244,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'

@@ -15,7 +15,7 @@
   </component>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import { computed } from 'vue'
 
@@ -26,7 +26,8 @@ const props = defineProps({
   },
   variant: {
     type: String,
-    validator: (prop) => ['default', 'primary', 'active'].includes(prop),
+    validator: (prop) =>
+      ['default', 'primary', 'active'].includes(prop as string),
   },
   label: {
     type: String,
@@ -35,7 +36,7 @@ const props = defineProps({
   size: {
     type: String,
     default: () => 'base',
-    validator: (prop) => ['base', 'sm'].includes(prop),
+    validator: (prop) => ['base', 'sm'].includes(prop as string),
   },
   icon: {
     type: String,
@@ -56,7 +57,7 @@ const link = computed(() => {
 })
 
 const aria = computed(() => {
-  return props.type === 'button' ? props.label : false
+  return type.value === 'button' ? props.label : false
 })
 
 const classes = computed(() => {

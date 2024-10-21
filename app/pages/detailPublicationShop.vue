@@ -332,7 +332,7 @@
   </client-only>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Btn from '../components/ch/components/Btn.vue'
 import DownloadItem from '../components/ch/components/DownloadItem.vue'
 import InfoBlock from '../components/ch/components/InfoBlock.vue'
@@ -353,6 +353,7 @@ import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 import { reactive, ref, computed, onMounted, nextTick } from 'vue'
 import { useLayoutStore } from '../store/layout'
+import type { OrderBoxOption } from '../types'
 
 const layoutStore = useLayoutStore()
 
@@ -386,8 +387,6 @@ const shoppingCartAmount = ref(0)
 const shoppingCartLink = ref('/shopping-cart')
 const shoppingCartTarget = ref('_self')
 const shoppingCartLabel = ref('Shopping cart')
-const selectionAmount = ref(1)
-const selectionLanguage = ref('de')
 const languageMap = reactive({
   de: 'deutsch',
   fr: 'französisch',
@@ -413,7 +412,7 @@ const resizeWindow = function () {
   }
 }
 
-const addToCart = function (selectedLanguage, amount) {
+const addToCart = function (selectedLanguage: OrderBoxOption, amount: number) {
   // Add amount to shopping cart
   shoppingCartAmount.value += amount
   const translatedLanguage = languageMap[selectedLanguage.value]

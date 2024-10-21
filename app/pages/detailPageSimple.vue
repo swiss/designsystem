@@ -77,7 +77,7 @@
 
             <SlideshowExample
               paginationType="bullets"
-              loop="loop"
+              loop
               :id="1"
               :slides="slides"
             />
@@ -103,7 +103,7 @@
 
             <SlideshowExample
               paginationType="fraction"
-              loop="loop"
+              loop
               :id="2"
               :slides="slides"
             />
@@ -874,7 +874,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import AudioPlayer from '../components/ch/components/AudioPlayer.vue'
 import DownloadItem from '../components/ch/components/DownloadItem.vue'
 import Newsletter from '../components/ch/components/Newsletter.vue'
@@ -904,6 +904,7 @@ import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 import { reactive, ref } from 'vue'
 import { useLayoutStore } from '../store/layout'
+import type { Author } from '../types'
 
 const layoutStore = useLayoutStore()
 
@@ -984,7 +985,7 @@ const authors = reactive([
     name: 'Katja Anna-Beerli',
     img: 'https://picsum.photos/120/120/?image=32',
   },
-])
+] as Author[])
 const tags = reactive([
   { label: 'Datenmodell', url: '#' },
   { label: 'Energie', url: '#' },

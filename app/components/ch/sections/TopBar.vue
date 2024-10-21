@@ -349,7 +349,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import badge from '../components/Badge.vue'
 import Btn from '../components/Btn.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
@@ -394,6 +394,7 @@ const computedAccessibilityIcon = computed(() => {
   if (props.isSignLanguage) {
     return 'SignLanguage'
   }
+  return ''
 })
 
 const computedAccessibilityBadgeLabel = computed(() => {
@@ -403,21 +404,24 @@ const computedAccessibilityBadgeLabel = computed(() => {
   if (props.isSignLanguage) {
     return 'Gebärdensprache schliessen'
   }
+  return ''
 })
 
 const resizeWindow = function () {
-  const topBar = document.getElementById('top-bar-container')
+  const topBar = document.getElementById('top-bar-container') as HTMLElement
   initialTopBarOffset.value = topBar.offsetTop
   handleScroll()
 }
 
 const handleScroll = async function () {
-  const topBar = document.getElementById('top-bar')
+  const topBar = document.getElementById('top-bar') as HTMLElement
   if (window.scrollY > initialTopBarOffset.value) {
     useStickyPlaceholder.value = true
     await nextTick()
     // Set height on placeholder to avoid jump when top bar is set to sticky
-    const stickyPlaceholder = document.getElementById('stickyTopBarPlaceholder')
+    const stickyPlaceholder = document.getElementById(
+      'stickyTopBarPlaceholder',
+    ) as HTMLElement
     stickyPlaceholder.style.height = `${topBar.clientHeight}px`
 
     topBar.classList.add('sticky-top-bar')

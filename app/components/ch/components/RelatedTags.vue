@@ -9,12 +9,12 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import TagItem from './TagItem.vue'
 
 const props = defineProps({
   tags: {
-    type: Array,
+    type: Array<{ label: string; url: string }>,
     required: true,
   },
   bare: {

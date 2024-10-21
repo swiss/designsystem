@@ -451,7 +451,7 @@
   </client-only>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Btn from '../components/ch/components/Btn.vue'
 import Card from '../components/ch/components/Card.vue'
 import Newsletter from '../components/ch/components/Newsletter.vue'

@@ -4,6 +4,9 @@ export default {
   title: 'Components/Notification',
   component: Notification,
   argTypes: {
+    isClosed: {
+      table: { category: 'props' },
+    },
     type: {
       table: {
         type: {
@@ -11,9 +14,7 @@ export default {
         },
       },
       options: ['info', 'warning', 'error', 'success', 'alert', 'hint'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     icon: {
       options: [
@@ -24,9 +25,7 @@ export default {
         'CheckmarkCircle',
         undefined,
       ],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
   },
 }

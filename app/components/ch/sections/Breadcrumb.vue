@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import BreadcrumbNavigation from '../navigations/BreadcrumbNavigation.vue'
 import BreadcrumbNav from '../../../scripts/BreadcrumbNav.js'
 import { onMounted } from 'vue'

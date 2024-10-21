@@ -11,13 +11,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { GlossaryResult } from '../../../types'
 import GlossarResultListItemAccordion from '../components/GlossarResultListItemAccordion.vue'
 import GlossarResultTitle from '../components/GlossarResultTitle.vue'
 
 const props = defineProps({
   resultItems: {
-    type: Array,
+    type: Array<GlossaryResult>,
     default: () => [],
   },
   searchTerm: {

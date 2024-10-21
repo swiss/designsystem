@@ -30,10 +30,11 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import MetaInfo from '../components/MetaInfo.vue'
 import Authors from '../components/Authors.vue'
 import { computed } from 'vue'
+import type { Author } from '../../../types'
 
 const props = defineProps({
   type: {
@@ -47,14 +48,14 @@ const props = defineProps({
         'title-only',
         'sr-only',
         'overview',
-      ].includes(prop),
+      ].includes(prop as string),
   },
   metaInfos: {
-    type: Array,
+    type: Array<string>,
     default: () => [],
   },
   authors: {
-    type: Array,
+    type: Array<Author>,
     default: () => [],
   },
 })

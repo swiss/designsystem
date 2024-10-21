@@ -72,17 +72,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ImageNotAvailable from './ImageNotAvailable.vue'
 import SvgIcon from './SvgIcon.vue'
 import { ref, computed, watch, onMounted } from 'vue'
 
-const inputValue = ref(null)
+const inputValue = ref(0)
 
 const props = defineProps({
   type: {
     type: String,
-    validator: (prop) => ['view', 'edit'].includes(prop),
+    validator: (prop) => ['view', 'edit'].includes(prop as string),
     default: () => 'edit',
   },
   image: {
@@ -104,11 +104,11 @@ const props = defineProps({
     required: true,
   },
   deleteTriggered: {
-    type: Function,
+    type: Function as PropType<(e: Event) => void>,
     default: () => ({}),
   },
   editTriggered: {
-    type: Function,
+    type: Function as PropType<(e: Event) => void>,
     default: () => ({}),
   },
   removeLabel: {

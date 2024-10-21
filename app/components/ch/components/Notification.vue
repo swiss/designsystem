@@ -13,10 +13,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import { computed } from 'vue'
 
+const isClosed = defineModel('isClosed', {
+  type: Boolean,
+  default: () => false,
+})
 const props = defineProps({
   text: {
     type: String,
@@ -26,15 +30,13 @@ const props = defineProps({
     type: String,
     default: () => undefined,
     validator: (prop) =>
-      ['info', 'warning', 'error', 'success', 'alert', 'hint'].includes(prop),
+      ['info', 'warning', 'error', 'success', 'alert', 'hint'].includes(
+        prop as string,
+      ),
   },
   icon: {
     type: String,
     default: () => undefined,
-  },
-  isClosed: {
-    type: Boolean,
-    default: () => false,
   },
   closeBtn: {
     type: Boolean,

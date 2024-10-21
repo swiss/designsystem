@@ -63,7 +63,7 @@
         </template>
         <template v-slot:footerAction>
           <Btn
-            to="item.href"
+            :to="item.href"
             variant="outline"
             icon-pos="only"
             icon="ArrowRight"
@@ -75,15 +75,16 @@
   </ul>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import MetaInfo from '../components/MetaInfo.vue'
 import Btn from '../components/Btn.vue'
 import Card from '../components/Card.vue'
+import type { SearchResultItem } from '../../../types'
 
 const props = defineProps({
   itemList: {
-    type: Array,
+    type: Array<SearchResultItem>,
     required: true,
   },
   displayType: {

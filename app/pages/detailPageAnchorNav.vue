@@ -222,7 +222,7 @@
   </client-only>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Accordion from '../components/ch/components/Accordion.vue'
 import AccordionItem from '../components/ch/components/AccordionItem.vue'
 import Btn from '../components/ch/components/Btn.vue'

@@ -34,7 +34,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Input from './Input.vue'
 import Btn from './Btn.vue'
 import Notification from './Notification.vue'
@@ -43,13 +43,13 @@ import { computed } from 'vue'
 const state = defineModel('state', {
   type: String,
   default: () => '',
-  validator: (prop) => ['default', 'sent'].includes(prop),
+  validator: (prop) => ['default', 'sent'].includes(prop as string),
 })
 
 const props = defineProps({
   type: {
     type: String,
-    validator: (prop) => ['default', 'inline'].includes(prop),
+    validator: (prop) => ['default', 'inline'].includes(prop as string),
   },
   title: {
     type: String,
@@ -79,7 +79,7 @@ const computedClasses = computed(() => {
   return base
 })
 
-const submit = function (e) {
+const submit = function (e: Event) {
   state.value = 'sent'
   e.preventDefault()
 }

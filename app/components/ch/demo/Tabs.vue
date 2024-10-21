@@ -105,12 +105,12 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 let activeIndex = ref(0)
 
-const setActiveIndex = function (index) {
+const setActiveIndex = function (index: number) {
   activeIndex.value = index
 }
 </script>
