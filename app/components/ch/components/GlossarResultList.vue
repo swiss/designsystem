@@ -3,8 +3,8 @@
     <div v-for="(item, index) in resultItems" :key="`item-${index}`">
       <GlossarResultTitle :title="item.filter.toUpperCase()" />
       <GlossarResultListItemAccordion
-        :item="item"
         :id="String(index)"
+        :item="item"
         :searchTerm="searchTerm"
       />
     </div>

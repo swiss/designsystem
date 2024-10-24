@@ -1,15 +1,15 @@
 <template>
   <div
-    class="top-bar"
     id="top-bar-container"
+    class="top-bar"
     :class="isOpen ? 'top-bar--is-open' : ''"
   >
-    <div :class="computedTopBarClass" id="top-bar">
+    <div id="top-bar" :class="computedTopBarClass">
       <div class="container container--flex">
         <button
+          v-if="!isEasyLanguage && !isSignLanguage"
           class="top-bar__btn"
           @click="triggerTopBar()"
-          v-if="!isEasyLanguage && !isSignLanguage"
         >
           <span>Alle Schweizer Bundesbehörden</span>
           <SvgIcon icon="ChevronDown" size="lg" class="top-bar__btn__icon" />
@@ -187,27 +187,27 @@
               <div class="search search--negative search--large">
                 <div class="search__group">
                   <input
-                    type="search"
                     id="search-input"
+                    ref="searchInput"
+                    v-model="filterString"
+                    type="search"
                     label="Ämter filtern"
                     placeholder="Filtern"
                     autocomplete="off"
-                    v-model="filterString"
-                    ref="searchInput"
                   />
                   <Btn
                     v-if="filterString !== ''"
+                    label="Clear search input"
+                    icon="CancelCircle"
+                    icon-pos="only"
+                    variant="bare-negative"
+                    size="lg"
                     @click.native="
                       () => {
                         filterString = ''
                         $refs.searchInput.focus()
                       }
                     "
-                    label="Clear search input"
-                    icon="CancelCircle"
-                    icon-pos="only"
-                    variant="bare-negative"
-                    size="lg"
                   />
                   <div v-else class="btn btn--negative btn--lg btn--icon-only">
                     <SvgIcon icon="Filter" class="icon--lg" />

@@ -1,8 +1,8 @@
 <template>
   <nav
+    id="main-navigation"
     class="main-navigation main-navigation--desktop"
     aria-label="Main"
-    id="main-navigation"
   >
     <ul class="menu-desktop">
       <li>

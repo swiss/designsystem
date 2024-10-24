@@ -2,9 +2,9 @@
   <div class="pagination" :class="!field ? 'pagination--extended' : ''">
     <input
       v-if="field"
+      v-model="currentPage"
       class="pagination__input"
       :class="computedClasses"
-      v-model="currentPage"
       aria-label="pagination input"
     />
     <div v-if="field" class="pagination__text">

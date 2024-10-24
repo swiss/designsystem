@@ -1428,14 +1428,14 @@
                   >Evaluierung 2019 durch das LerNetz.ch</a
                 >&nbsp;<br />PDF, 20 Seiten, 2 MB, Deutsch
               </p>
-              <h3 class="h3" id="doc-1fl3t7rg90" identifier="sectiontitle">
+              <h3 id="doc-1fl3t7rg90" class="h3" identifier="sectiontitle">
                 Abfrage der Daten
               </h3>
               <p id="doc-1fl3t87pf0" identifier="p">
                 Die data.geo.admin.ch STAC - API bietet mehrere
                 Abfrageendpunkte:
               </p>
-              <table summary="" id="doc-1fl3t8mkn0" identifier="table">
+              <table id="doc-1fl3t8mkn0" summary="" identifier="table">
                 <thead>
                   <tr>
                     <th id="Endpunkt">Endpunkt</th>
@@ -1559,7 +1559,7 @@
                   </tr>
                 </tbody>
               </table>
-              <h3 class="h3" id="doc-1fl3tleg70" identifier="sectiontitle">
+              <h3 id="doc-1fl3tleg70" class="h3" identifier="sectiontitle">
                 Beispiel-Abfragen
               </h3>
               <div id="doc-1fl3tlo6v0" identifier="list">
@@ -1634,7 +1634,7 @@
       </div>
     </main>
 
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>

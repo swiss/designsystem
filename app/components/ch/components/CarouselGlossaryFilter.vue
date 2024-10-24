@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel-badge-filter" :id="id">
+  <div :id="id" class="carousel-badge-filter">
     <div class="carousel">
       <swiper
         :speed="500"
@@ -301,11 +301,11 @@
         </swiper-slide>
       </swiper>
       <div class="carousel__fonctions">
-        <button class="carousel__prev" :id="`carousel-prev-${id}`">
+        <button :id="`carousel-prev-${id}`" class="carousel__prev">
           <div class="sr-only">Vorheriger Filter</div>
           <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
         </button>
-        <button class="carousel__next" :id="`carousel-next-${id}`">
+        <button :id="`carousel-next-${id}`" class="carousel__next">
           <div class="sr-only">Nächster Filter</div>
           <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
         </button>

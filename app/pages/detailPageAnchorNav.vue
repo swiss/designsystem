@@ -48,7 +48,7 @@
             class="container container--grid container--reverse-mobile gap--responsive"
           >
             <div class="container__main vertical-spacing">
-              <h2 class="h2" id="einleitung">Einleitung</h2>
+              <h2 id="einleitung" class="h2">Einleitung</h2>
               <p>
                 Über den Kontakt models@geo.admin.ch können die Modelldatei und
                 die Modelldokumentation zur Publikation eingereicht werden.
@@ -70,7 +70,7 @@
                   Image label here —&nbsp;©&nbsp;Photograph Name
                 </figcaption>
               </figure>
-              <h2 class="h2" id="datenmodell-ablage">
+              <h2 id="datenmodell-ablage" class="h2">
                 Datenmodellablage ansehen
               </h2>
               <p>
@@ -110,7 +110,7 @@
                 INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
                 eingepflegt.
               </p>
-              <h2 class="h2" id="dokumente">Weitere Informationen</h2>
+              <h2 id="dokumente" class="h2">Weitere Informationen</h2>
 
               <Accordion id="12345">
                 <AccordionItem
@@ -214,7 +214,7 @@
           </div>
         </section>
       </main>
-      <footer class="footer" id="main-footer">
+      <footer id="main-footer" class="footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>

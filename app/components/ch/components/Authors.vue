@@ -17,11 +17,11 @@
       {{ authors[0].prefix ? authors[0].prefix : 'von' }}
 
       <component
-        v-for="author in authors"
         :is="author.url ? 'a' : 'span'"
+        v-for="author in authors"
+        :key="author.name"
         :class="author.url ? 'link' : ''"
         :href="author.url"
-        :key="author.name"
         class="author__name"
         ><!-- -->{{ author.name
         }}<!-- removing unneeded white space-->

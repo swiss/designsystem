@@ -18,14 +18,14 @@
                 <div class="search search--large search--page-result">
                   <div class="search__group">
                     <input
-                      type="search"
                       id="search-input"
+                      v-model="searchTerm"
+                      type="search"
                       label="GLossar filtern"
                       placeholder="Suchbegriff eingeben"
                       autocomplete="off"
-                      v-model="searchTerm"
                     />
-                    <div class="btn" v-if="isLoading">
+                    <div v-if="isLoading" class="btn">
                       <SvgIcon
                         icon="Spinner"
                         size="lg"
@@ -53,10 +53,10 @@
                 </div>
                 <div class="glossary__filters">
                   <CarouselGlossaryFilter
+                    :id="carouselId"
                     :badgeClicked="setActiveFilter"
                     :activeFilter="activeFilter"
                     :disabledFilters="disabledFilters"
-                    :id="carouselId"
                   />
                   <GlossaryFilter
                     :badgeClicked="setActiveFilter"
@@ -78,8 +78,8 @@
         <div class="container gap--responsive">
           <div class="glossary-results">
             <div
-              class="glossary-results__header"
               v-if="loadLimitedResults.length !== 0 && !isLoading"
+              class="glossary-results__header"
             >
               <div class="glossary-results__header__left">
                 <strong>{{ foundEntries }}</strong
@@ -87,10 +87,10 @@
               </div>
               <div class="glossary-results__header__right">
                 <Select
+                  id="select-6"
                   variant="outline"
                   bare
                   size="sm"
-                  id="select-6"
                   name="select-name"
                   @select="setSorting"
                 >
@@ -127,8 +127,8 @@
             </div>
           </div>
           <div
-            class="load-more-container"
             v-if="loadLimitedResults.length !== 0 && !isLoading"
+            class="load-more-container"
           >
             <Btn
               variant="outline"
@@ -142,7 +142,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>

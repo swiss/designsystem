@@ -6,14 +6,14 @@
         <div class="form">
           <div class="form__group">
             <Input
-              type="text"
               id="text-id-0"
+              type="text"
               label="Input type text"
               placeholder="Placeholder"
             />
           </div>
           <div class="form__group">
-            <Select label="Select" id="select">
+            <Select id="select" label="Select">
               <option disabled selected>Choose your country</option>
               <option>Switzerland</option>
               <option>Swaziland</option>
@@ -59,50 +59,50 @@
         <h2 class="h2 mt-8">Other input types</h2>
         <div class="form">
           <Input
-            type="color"
             id="color-id"
+            type="color"
             label="Input type color"
             placeholder="Placeholder"
           />
           <Input
-            type="date"
             id="date-id"
+            type="date"
             label="Input type date"
             placeholder="Placeholder"
           />
           <Input
-            type="datetime-local"
             id="datetime-local-id"
+            type="datetime-local"
             label="Input type datetime-local"
             placeholder="Placeholder"
           />
           <Input
-            type="email"
             id="email-id"
+            type="email"
             label="Input type email"
             placeholder="Placeholder"
           />
           <Input
-            type="file"
             id="file-id"
+            type="file"
             label="Input type file"
             placeholder="Placeholder"
           />
           <Input
-            type="month"
             id="month-id"
+            type="month"
             label="Input type month"
             placeholder="Placeholder"
           />
           <Input
-            type="number"
             id="number-id"
+            type="number"
             label="Input type number"
             placeholder="Placeholder"
           />
           <Input
-            type="number"
             id="number-id2"
+            type="number"
             label="Input type number with restrictions"
             value="10"
             :min="0"
@@ -110,53 +110,53 @@
             :step="10"
           />
           <Input
-            type="password"
             id="password-id"
+            type="password"
             label="Input type password"
             placeholder="Placeholder"
           />
           <Input
-            type="range"
             id="range-id"
+            type="range"
             :min="0"
             :max="50"
             label="Input type range"
             placeholder="Placeholder"
           />
           <Input
-            type="search"
             id="search-id"
+            type="search"
             label="Input type search"
             placeholder="Placeholder"
           />
           <Input
-            type="tel"
             id="tel-id"
+            type="tel"
             label="Input type tel"
             placeholder="Placeholder"
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
           />
           <Input
-            type="text"
             id="text-id"
+            type="text"
             label="Input type text"
             placeholder="Placeholder"
           />
           <Input
-            type="time"
             id="time-id"
+            type="time"
             label="Input type time"
             placeholder="Placeholder"
           />
           <Input
-            type="url"
             id="url-id"
+            type="url"
             label="Input type url"
             placeholder="Placeholder"
           />
           <Input
-            type="week"
             id="week-id"
+            type="week"
             label="Input type week"
             placeholder="Placeholder"
           />
@@ -165,15 +165,15 @@
           <h2 class="h2 mt-8">required fields example</h2>
           <div class="form__group">
             <Input
-              type="text"
               id="text-id-0"
+              type="text"
               label="Input type text"
               placeholder="Placeholder"
               required
             />
           </div>
           <div class="form__group">
-            <Select label="Select" id="select" required>
+            <Select id="select" label="Select" required>
               <option disabled selected>Choose your country</option>
               <option>Switzerland</option>
               <option>Swaziland</option>

@@ -1,14 +1,14 @@
 <template>
   <div class="container container--grid">
-    <div class="my-16 container__center--md" v-if="!showConfirmation">
+    <div v-if="!showConfirmation" class="my-16 container__center--md">
       <h1 class="h1 shopping__cart-title">{{ cartTitle }}</h1>
       <ul class="accordion">
         <li class="accordion__item">
           <button
+            :id="getUniqueId('shopping-cart-drawer-overview-button')"
             class="accordion__button"
             :class="{ active: activeAccordionIndex === 1 }"
             @click="handleAccordionClick(1)"
-            :id="getUniqueId('shopping-cart-drawer-overview-button')"
           >
             <StepIndicator
               :step="1"
@@ -19,8 +19,8 @@
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
-            class="accordion__drawer"
             :id="getUniqueId('shopping-cart-drawer-overview')"
+            class="accordion__drawer"
             :class="{ active: activeAccordionIndex === 1 }"
           >
             <div class="shopping__cart-accordion-content">
@@ -118,10 +118,10 @@
 
         <li class="accordion__item">
           <button
+            :id="getUniqueId('shopping-cart-drawer-address-button')"
             class="accordion__button"
             :class="{ active: activeAccordionIndex === 2 }"
             @click="handleAccordionClick(2)"
-            :id="getUniqueId('shopping-cart-drawer-address-button')"
           >
             <StepIndicator
               :step="2"
@@ -132,8 +132,8 @@
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
-            class="accordion__drawer"
             :id="getUniqueId('shopping-cart-drawer-address')"
+            class="accordion__drawer"
             :class="{ active: activeAccordionIndex === 2 }"
           >
             <div class="shopping__cart-accordion-content">
@@ -654,18 +654,18 @@
 
         <li class="accordion__item">
           <button
+            :id="getUniqueId('shopping-cart-drawer-checkout-button')"
             class="accordion__button"
             :class="{ active: activeAccordionIndex === 3 }"
             @click="handleAccordionClick(3)"
-            :id="getUniqueId('shopping-cart-drawer-checkout-button')"
           >
             <StepIndicator :step="3" :isActive="activeStepIndex === 3" />
             <h2 class="accordion__title">{{ cartCheckoutTitle }}</h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
-            class="accordion__drawer"
             :id="getUniqueId('shopping-cart-drawer-checkout')"
+            class="accordion__drawer"
             :class="{ active: activeAccordionIndex === 3 }"
           >
             <div class="shopping__cart-accordion-content">

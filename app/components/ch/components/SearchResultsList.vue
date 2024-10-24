@@ -2,7 +2,7 @@
   <ul class="search-results-list">
     <li v-for="(item, key) in itemList" :key="`${key}`">
       <Card :type="displayType === 'grid' ? 'universal' : 'list'">
-        <template v-slot:image v-if="item.image">
+        <template v-if="item.image" v-slot:image>
           <figure>
             <picture>
               <source
@@ -29,7 +29,7 @@
           </p>
         </template>
         <template v-slot:author> </template>
-        <template v-slot:eventInfos v-if="item.isEvent">
+        <template v-if="item.isEvent" v-slot:eventInfos>
           <ul class="flex flex-wrap">
             <li class="flex items-center mb-2 mr-6">
               <SvgIcon icon="Calendar" size="xl" class="-ml-1.5 mr-1" />
@@ -51,7 +51,7 @@
             :metainfos="[item.specifications]"
           />
         </template>
-        <template v-slot:contentIcons v-if="item.hasIcons != false">
+        <template v-if="item.hasIcons != false" v-slot:contentIcons>
           <div class="card__content-icons">
             <SvgIcon icon="Youtube" size="xl" />
             <SvgIcon icon="EasyLanguage" size="xl" />

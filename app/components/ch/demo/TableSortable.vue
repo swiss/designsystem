@@ -1,6 +1,6 @@
 <template>
   <div class="table-wrapper">
-    <table :class="computedClasses" :id="`table-sortable-${id}`">
+    <table :id="`table-sortable-${id}`" :class="computedClasses">
       <caption>
         <br />
         {{

@@ -1,6 +1,6 @@
 <template>
   <div v-if="isSimplePage">
-    <div class="mobile-menu-navigation-bar" id="mobile-menu-id">
+    <div id="mobile-menu-id" class="mobile-menu-navigation-bar">
       <CarouselNavigation :id="carouselNavId" />
     </div>
     <!-- invisible Placeholder to avoid jump when navigation is set to sticky -->

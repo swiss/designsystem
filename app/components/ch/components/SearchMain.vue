@@ -3,8 +3,8 @@
     <div class="search__group">
       <h2 class="sr-only">Suche</h2>
       <Input
-        type="search"
         id="search-main"
+        type="search"
         label="Suche in dieser Website"
         placeholder="Suche"
         autocomplete="off"

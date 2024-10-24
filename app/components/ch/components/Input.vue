@@ -4,9 +4,9 @@
       {{ label }}<span v-if="required" class="form__group__required" />
     </label>
     <input
+      :id="id"
       :type="type"
       :class="classes"
-      :id="id"
       :name="id"
       :placeholder="placeholder"
       :value="value"

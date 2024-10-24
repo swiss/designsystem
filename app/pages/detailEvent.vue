@@ -286,7 +286,7 @@
           </div>
         </section>
       </main>
-      <footer class="footer" id="main-footer">
+      <footer id="main-footer" class="footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>

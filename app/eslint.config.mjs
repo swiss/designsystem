@@ -35,6 +35,7 @@ export default tseslint.config(
       // Vue
       "vue/max-attributes-per-line": "off",
       "vue/html-self-closing": "off",
+      "vue/attributes-order": "warn",
 
       //Typescript
       "@typescript-eslint/consistent-type-imports": "warn",
@@ -47,7 +48,6 @@ export default tseslint.config(
       "no-prototype-builtins": "off",
 
       //Unchecked
-      "vue/attributes-order": "off",
       "vue/no-deprecated-slot-attribute": "off",
       "vue/v-slot-style": "off",
       "vue/attribute-hyphenation": "off",

@@ -1,12 +1,12 @@
 <template>
-  <div :class="classes" v-if="!isClosed">
+  <div v-if="!isClosed" :class="classes">
     <SvgIcon v-if="icon" :icon="icon" class="notification__icon" />
     <div class="notification__content" v-html="text" />
     <button
       v-if="closeBtn"
       class="notification__close"
-      @click="isClosed = true"
       aria-label="Close notification"
+      @click="isClosed = true"
     >
       <SvgIcon icon="Cancel" />
     </button>

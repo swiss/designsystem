@@ -1,5 +1,5 @@
 <template>
-  <div class="top-header" id="top-header-id">
+  <div id="top-header-id" class="top-header">
     <div class="top-header__mobile-title" aria-hidden="true">
       <div class="container container--flex">
         Eidgenössisches Departement für Verteidigung, <br />Bevölkerungsschutz
@@ -58,8 +58,8 @@
           type="outline"
         />
         <Burger
-          @click.native="layoutStore.toggleMobileMenu"
           :isOpen="layoutStore.mobileMenuIsOpen"
+          @click.native="layoutStore.toggleMobileMenu"
         />
       </div>
     </div>

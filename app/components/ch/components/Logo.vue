@@ -281,10 +281,10 @@
       <div class="logo__accronym" v-html="accronym" />
       <div class="logo__title">
         <div v-html="title" />
-        <div class="badge-easy-language" v-if="isEasyLanguage">
+        <div v-if="isEasyLanguage" class="badge-easy-language">
           Inhalte in Leichter Sprache
         </div>
-        <div class="badge-sign-language" v-if="isSignLanguage">
+        <div v-if="isSignLanguage" class="badge-sign-language">
           Inhalte in Gebärdensprache
         </div>
       </div>

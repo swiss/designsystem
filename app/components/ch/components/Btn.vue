@@ -5,8 +5,8 @@
     :type="type"
     :class="classes"
     :aria-label="aria"
-    @click="eventHandler"
     :disabled="disabled || undefined"
+    @click="eventHandler"
   >
     <SvgIcon v-if="icon" :icon="icon" class="btn__icon" />
     <span :class="buttonClasses">

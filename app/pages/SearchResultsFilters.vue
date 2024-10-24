@@ -15,14 +15,14 @@
           <div class="search search--large search--page-result">
             <div class="search__group">
               <input
-                type="search"
                 id="search-input"
+                type="search"
                 label="Ämter filtern"
                 placeholder="Search"
                 value="Search entry here"
                 autocomplete="off"
               />
-              <div class="btn" v-if="isLoading">
+              <div v-if="isLoading" class="btn">
                 <SvgIcon
                   icon="Spinner"
                   size="lg"
@@ -54,9 +54,9 @@
             />
             <div v-if="filtersAreOpen" class="search__filters__drawer">
               <Select
-                variant="outline"
-                size="sm"
                 id="select-1"
+                variant="outline"
+                size="sm"
                 name="select-name"
                 label="Filter name"
               >
@@ -64,9 +64,9 @@
                 <option>...</option>
               </Select>
               <Select
-                variant="outline"
-                size="sm"
                 id="select-2"
+                variant="outline"
+                size="sm"
                 name="select-name"
                 label="Filter name"
               >
@@ -74,9 +74,9 @@
                 <option>...</option>
               </Select>
               <Select
-                variant="outline"
-                size="sm"
                 id="select-3"
+                variant="outline"
+                size="sm"
                 name="select-name"
                 label="Filter name"
               >
@@ -84,9 +84,9 @@
                 <option>...</option>
               </Select>
               <Select
-                variant="outline"
-                size="sm"
                 id="select-4"
+                variant="outline"
+                size="sm"
                 name="select-name"
                 label="Filter name"
               >
@@ -94,9 +94,9 @@
                 <option>...</option>
               </Select>
               <Select
+                id="select-5"
                 variant="outline"
                 size="sm"
-                id="select-5"
                 name="select-name"
                 label="Filter name"
               >
@@ -126,10 +126,10 @@
               </div>
               <div class="search-results__header__right">
                 <Select
+                  id="select-6"
                   variant="outline"
                   bare
                   size="sm"
-                  id="select-6"
                   name="select-name"
                 >
                   <option disabled selected>Sortieren</option>
@@ -213,7 +213,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>

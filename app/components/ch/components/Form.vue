@@ -1,10 +1,10 @@
 <template>
   <form
+    ref="form"
     :action="action ? action : ''"
     :target="target"
     :method="method"
     @submit="handleSubmit"
-    ref="form"
   >
     <slot />
   </form>

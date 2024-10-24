@@ -1,6 +1,6 @@
 <template>
   <div id="desktop-menu" class="desktop-menu">
-    <div class="desktop-menu__overlay hidden" id="desktop-menu__overlay" />
+    <div id="desktop-menu__overlay" class="desktop-menu__overlay hidden" />
     <div>
       <div id="desktop-navigation-id">
         <div class="container container--flex">
@@ -10,8 +10,8 @@
             :showActiveNavigation="showActiveNavigation"
             context="desktop"
           />
-          <div class="desktop-menu__drawer hidden" id="desktop-menu__drawer">
-            <button class="desktop-menu__close" id="desktop-menu-closer">
+          <div id="desktop-menu__drawer" class="desktop-menu__drawer hidden">
+            <button id="desktop-menu-closer" class="desktop-menu__close">
               <span>Schliessen</span>
               <SvgIcon icon="Cancel" />
             </button>

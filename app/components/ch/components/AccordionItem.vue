@@ -1,17 +1,17 @@
 <template>
   <li class="accordion__item">
     <button
+      :id="`accordion-control-${id}`"
       class="accordion__button"
       aria-expanded="false"
       :aria-controls="`content-${id}`"
-      :id="`accordion-control-${id}`"
     >
       <component :is="tag" class="accordion__title">
         {{ title }}
       </component>
       <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
     </button>
-    <div class="accordion__drawer" aria-hidden="true" :id="`content-${id}`">
+    <div :id="`content-${id}`" class="accordion__drawer" aria-hidden="true">
       <div class="accordion__content vertical-spacing">
         <slot />
       </div>
