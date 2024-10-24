@@ -50,7 +50,7 @@
               icon-pos="left"
               icon="ChevronDown"
               :class="filtersAreOpen ? ' btn--icon-180' : ''"
-              @click.native="filtersAreOpen = !filtersAreOpen"
+              @click="filtersAreOpen = !filtersAreOpen"
             />
             <div v-if="filtersAreOpen" class="search__filters__drawer">
               <Select
@@ -145,7 +145,7 @@
                   icon="List"
                   size="sm"
                   label="Display as list"
-                  @click.native="displayType = 'list'"
+                  @click="displayType = 'list'"
                 />
                 <Btn
                   variant="bare"
@@ -153,7 +153,7 @@
                   icon="Apps"
                   size="sm"
                   label="Display as grid"
-                  @click.native="displayType = 'grid'"
+                  @click="displayType = 'grid'"
                 />
               </div>
             </div>

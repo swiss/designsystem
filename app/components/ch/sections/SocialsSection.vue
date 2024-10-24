@@ -310,7 +310,6 @@
                   frameborder="0"
                   allowfullscreen="true"
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen="true"
                 ></iframe>
               </div>
               <div

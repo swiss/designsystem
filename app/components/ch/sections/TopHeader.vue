@@ -59,7 +59,7 @@
         />
         <Burger
           :isOpen="layoutStore.mobileMenuIsOpen"
-          @click.native="layoutStore.toggleMobileMenu"
+          @click="layoutStore.toggleMobileMenu"
         />
       </div>
     </div>

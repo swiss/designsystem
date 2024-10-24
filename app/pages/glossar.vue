@@ -47,7 +47,7 @@
                       icon-pos="only"
                       variant="bare"
                       size="lg"
-                      @emitClick="searchTerm = ''"
+                      @emit-click="searchTerm = ''"
                     />
                   </div>
                 </div>
@@ -136,7 +136,7 @@
               label="Mehr laden"
               :disabled="!canLoadMore"
               :fullWidth="screenSize < 1024"
-              @emitClick="handleLoadMore()"
+              @emit-click="handleLoadMore()"
             />
           </div>
         </div>
@@ -524,8 +524,9 @@ const loadLimitedResults = computed(() => {
 })
 
 const sortedResultItems = computed(() => {
+  const tempLimitedResultsItems = limitedResultItems;
   return [
-    ...limitedResultItems.value.sort((a, b) => {
+    ...tempLimitedResultsItems.value.sort((a, b) => {
       const elementA = a.filter
       const elementB = b.filter
 
