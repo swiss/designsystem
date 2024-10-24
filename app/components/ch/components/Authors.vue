@@ -19,8 +19,8 @@
         :class="author.url ? 'link' : ''"
         :href="author.url"
         class="author__name"
-      ><!-- -->{{ author.name
-      }}<!-- removing unneeded white space-->
+      >
+        {{ author.name }}
       </component>
     </address>
   </aside>
