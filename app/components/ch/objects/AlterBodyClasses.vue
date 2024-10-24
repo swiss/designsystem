@@ -1,4 +1,3 @@
-<template />
 <script setup lang="ts">
 import { watch, onMounted, onUnmounted } from 'vue'
 import { useLayoutStore } from '../../../store/layout'

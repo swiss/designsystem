@@ -43,6 +43,13 @@ export default tseslint.config(
       "vue/no-side-effects-in-computed-properties": "warn",
       "vue/v-on-event-hyphenation": "warn",
       "vue/no-parsing-error": "warn",
+      "vue/no-duplicate-attributes": "warn",
+      "vue/valid-template-root": "warn",
+      "vue/no-v-text-v-html-on-component": "warn",
+      "vue/require-valid-default-prop": "warn",
+      "vue/no-ref-as-operand": "warn",
+      // Unsure about the one below: In RelatedTags line 5 added :key...
+      "vue/require-v-for-key": "warn",
 
       //Typescript
       "@typescript-eslint/consistent-type-imports": "warn",
@@ -54,15 +61,9 @@ export default tseslint.config(
       // Unsure
       "no-prototype-builtins": "off",
       "vue/no-v-html": "off",
+      "vue/require-default-prop": "off",
 
       //Unchecked
-      "vue/no-duplicate-attributes": "off",
-      "vue/require-default-prop": "off",
-      "vue/valid-template-root": "off",
-      "vue/no-v-text-v-html-on-component": "off",
-      "vue/require-valid-default-prop": "off",
-      "vue/no-ref-as-operand": "off",
-      "vue/require-v-for-key": "off",
       "vue/valid-v-else": "off",
       "vue/html-closing-bracket-newline": "off",
       "vue/html-indent": "off",

@@ -1001,7 +1001,7 @@ const handleAccordionClick = function (index: number) {
     if (index === 3) {
       step2Confirmed.value = true
     }
-  } else if (index === 3 && !canContinue) {
+  } else if (index === 3 && !canContinue.value) {
     step2Confirmed.value = false
   }
 }
