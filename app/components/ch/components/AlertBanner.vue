@@ -4,7 +4,9 @@
       <SvgIcon v-if="icon" :icon="icon" class="notification__icon" />
       <div class="alert-banner__grid">
         <div class="alert-banner__header">
-          <h4 class="font--bold">{{ title }}</h4>
+          <h4 class="font--bold">
+            {{ title }}
+          </h4>
           <p>{{ topic }}</p>
           <p>{{ lastUpdated }}</p>
         </div>

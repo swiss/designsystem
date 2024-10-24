@@ -11,7 +11,9 @@
     </header>
     <main id="main-content">
       <Hero type="default">
-        <template v-slot:title> Form Example </template>
+        <template v-slot:title>
+          Form Example
+        </template>
       </Hero>
       <FormDemo />
 

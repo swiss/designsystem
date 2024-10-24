@@ -102,11 +102,15 @@
     <div class="carousel__fonctions">
       <div :id="`carousel-pagination-${id}`" class="carousel__pagination"></div>
       <button :id="`carousel-prev-${id}`" class="carousel__prev">
-        <div class="sr-only">Previous image</div>
+        <div class="sr-only">
+          Previous image
+        </div>
         <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
       </button>
       <button :id="`carousel-next-${id}`" class="carousel__next">
-        <div class="sr-only">Next image</div>
+        <div class="sr-only">
+          Next image
+        </div>
         <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
       </button>
     </div>

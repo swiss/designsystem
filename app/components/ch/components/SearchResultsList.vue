@@ -28,7 +28,8 @@
             {{ item.content }}
           </p>
         </template>
-        <template v-slot:author> </template>
+        <template v-slot:author>
+        </template>
         <template v-if="item.isEvent" v-slot:eventInfos>
           <ul class="flex flex-wrap">
             <li class="flex items-center mb-2 mr-6">

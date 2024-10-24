@@ -15,7 +15,9 @@
       <section class="section-overview">
         <hero type="overview">
           <template v-slot:title>
-            <h1 class="h1 hero__title">Corona</h1>
+            <h1 class="h1 hero__title">
+              Corona
+            </h1>
           </template>
         </hero>
         <div class="container">

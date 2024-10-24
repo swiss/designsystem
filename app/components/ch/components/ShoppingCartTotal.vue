@@ -2,7 +2,9 @@
   <div>
     <div class="shopping__cart-total-container">
       <h3>{{ title }}</h3>
-      <p class="shopping__cart-total">{{ total }}</p>
+      <p class="shopping__cart-total">
+        {{ total }}
+      </p>
     </div>
     <p class="shopping__cart-total-description">
       {{ description }}

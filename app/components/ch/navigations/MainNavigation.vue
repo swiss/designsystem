@@ -38,7 +38,9 @@
               <SvgIcon icon="ArrowLeft" size="lg" />
               <span>Back</span>
             </a>
-            <h2 class="navy__title">Dienstleistungen</h2>
+            <h2 class="navy__title">
+              Dienstleistungen
+            </h2>
             <a href="javascript:alert('link')">Überblick</a>
           </li>
           <li><a href="javascript:alert('link')">Datenmodellablage</a></li>
@@ -59,7 +61,9 @@
                   <SvgIcon icon="ArrowLeft" size="lg" />
                   <span>Back</span>
                 </a>
-                <h2 class="navy__title">Geodienste</h2>
+                <h2 class="navy__title">
+                  Geodienste
+                </h2>
                 <a href="javascript:alert('link')">Überblick</a>
               </li>
               <li>
@@ -82,7 +86,9 @@
                       <SvgIcon icon="ArrowLeft" size="lg" />
                       <span>Back</span>
                     </a>
-                    <h2 class="navy__title">Darstellungsdienste</h2>
+                    <h2 class="navy__title">
+                      Darstellungsdienste
+                    </h2>
                     <a href="javascript:alert('link')">Überblick</a>
                   </li>
                   <li>

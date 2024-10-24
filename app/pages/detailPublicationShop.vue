@@ -68,7 +68,9 @@
               <div class="container__mobile">
                 <!-- mobile only -->
                 <div class="box">
-                  <h2 class="h5">Download</h2>
+                  <h2 class="h5">
+                    Download
+                  </h2>
                   <ul class="download-items">
                     <li>
                       <DownloadItem
@@ -135,7 +137,9 @@
                   languageLabel="Sprache"
                 />
                 <div class="box">
-                  <h2 class="h5">Webviewer</h2>
+                  <h2 class="h5">
+                    Webviewer
+                  </h2>
                   <btn
                     variant="link"
                     to="https://www.google.ch"
@@ -158,7 +162,9 @@
                 tempor.
               </p>
 
-              <h2 class="h2">Details</h2>
+              <h2 class="h2">
+                Details
+              </h2>
 
               <div>
                 <InfoBlock title="Sprache" headingLevel="h3">
@@ -216,7 +222,9 @@
               </div>
 
               <div>
-                <h2 class="h2">Themen</h2>
+                <h2 class="h2">
+                  Themen
+                </h2>
                 <RelatedTags :tags="tags" bare></RelatedTags>
               </div>
             </div>
@@ -224,7 +232,9 @@
               <div id="aside-content" :class="computedAsideContainerClass">
                 <!-- desktop only -->
                 <div class="box">
-                  <h2 class="h5">Download</h2>
+                  <h2 class="h5">
+                    Download
+                  </h2>
                   <ul class="download-items">
                     <li>
                       <DownloadItem
@@ -291,7 +301,9 @@
                   languageLabel="Sprache"
                 />
                 <div class="box">
-                  <h2 class="h5">Webviewer</h2>
+                  <h2 class="h5">
+                    Webviewer
+                  </h2>
                   <btn
                     variant="link"
                     to="https://www.google.ch"

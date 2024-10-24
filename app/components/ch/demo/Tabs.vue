@@ -47,7 +47,9 @@
         activeIndex !== 0 ? 'tab__container--is-hidden' : 'vertical-spacing'
       "
     >
-      <h4 class="h4">Title 1</h4>
+      <h4 class="h4">
+        Title 1
+      </h4>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ipsum nisl,
         ultricies quis aliquet ac, ultrices nec felis. Proin gravida purus et
@@ -69,7 +71,9 @@
         activeIndex !== 1 ? 'tab__container--is-hidden' : 'vertical-spacing'
       "
     >
-      <h4 class="h4">Title 2</h4>
+      <h4 class="h4">
+        Title 2
+      </h4>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ipsum nisl,
         ultricies quis aliquet ac, ultrices nec felis. Proin gravida purus et
@@ -91,7 +95,9 @@
         activeIndex !== 2 ? 'tab__container--is-hidden' : 'vertical-spacing'
       "
     >
-      <h4 class="h4">Title 3</h4>
+      <h4 class="h4">
+        Title 3
+      </h4>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ipsum nisl,
         ultricies quis aliquet ac, ultrices nec felis. Proin gravida purus et

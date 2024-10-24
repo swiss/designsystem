@@ -11,7 +11,9 @@
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
         <div class="container">
-          <h1 id="glossary-title" class="h1">Glossar</h1>
+          <h1 id="glossary-title" class="h1">
+            Glossar
+          </h1>
           <div id="outer-search-container">
             <div id="search-container">
               <div id="inner-search-container">
@@ -93,9 +95,15 @@
                   name="select-name"
                   @select="setSorting"
                 >
-                  <option disabled selected>Sortieren</option>
-                  <option selected value="a-z">Alphabetisch (A-Z)</option>
-                  <option value="z-a">Alphabetisch (Z-A)</option>
+                  <option disabled selected>
+                    Sortieren
+                  </option>
+                  <option selected value="a-z">
+                    Alphabetisch (A-Z)
+                  </option>
+                  <option value="z-a">
+                    Alphabetisch (Z-A)
+                  </option>
                 </Select>
               </div>
             </div>
@@ -105,7 +113,9 @@
               :searchTerm="searchTerm"
             />
             <div v-if="isLoading" class="my-16">
-              <h2 class="sr-only">Resultate werden geladen</h2>
+              <h2 class="sr-only">
+                Resultate werden geladen
+              </h2>
               <SvgIcon icon="Spinner" size="2xl" class="icon--spin" />
             </div>
             <div
@@ -117,7 +127,9 @@
                 <span class="text--bold">{{ searchTerm }}</span> ergab keine
                 Treffer.
               </h2>
-              <h3 class="h4">Tipps zur Suche</h3>
+              <h3 class="h4">
+                Tipps zur Suche
+              </h3>
               <ul class="list list--default">
                 <li>Überprüfen Sie die Schreibweise Ihres Suchbegriffes</li>
                 <li>Verwenden Sie einen anderen bzw. allgemeineren Begriff</li>

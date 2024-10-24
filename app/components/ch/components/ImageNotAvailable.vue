@@ -13,7 +13,9 @@
       />
     </svg>
 
-    <p class="image__not-available-text">{{ text }}</p>
+    <p class="image__not-available-text">
+      {{ text }}
+    </p>
   </div>
 </template>
 

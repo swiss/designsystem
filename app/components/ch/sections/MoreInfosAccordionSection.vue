@@ -2,11 +2,15 @@
   <section class="section section--default">
     <div class="container container--grid gap--responsive">
       <div class="container__center--xs vertical-spacing">
-        <h2 class="h2">Weitere Informationen</h2>
+        <h2 class="h2">
+          Weitere Informationen
+        </h2>
 
         <Accordion id="100">
           <AccordionItem id="10" title="Medienmitteilungen" headingLevel="h3">
-            <h4 class="h5">Title h4</h4>
+            <h4 class="h5">
+              Title h4
+            </h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
               euismod bibendum laoreet. Proin gravida dolor
@@ -27,7 +31,9 @@
               <template v-slot:description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
-              <template v-slot:footerInfo> 22. März 2012 </template>
+              <template v-slot:footerInfo>
+                22. März 2012
+              </template>
               <template v-slot:footerAction>
                 <Btn
                   to="#"
@@ -45,7 +51,9 @@
               <template v-slot:description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
-              <template v-slot:footerInfo> 22. März 2012 </template>
+              <template v-slot:footerInfo>
+                22. März 2012
+              </template>
               <template v-slot:footerAction>
                 <Btn
                   to="#"
@@ -61,7 +69,9 @@
                 Swisstopo Daten sind neu in geo.admin.ch Geo- und
                 Downloaddiensten kostenlos...
               </template>
-              <template v-slot:footerInfo> 22. März 2012 </template>
+              <template v-slot:footerInfo>
+                22. März 2012
+              </template>
               <template v-slot:footerAction>
                 <Btn
                   to="#"

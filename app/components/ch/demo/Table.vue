@@ -8,16 +8,28 @@
       </caption>
       <thead>
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Job</th>
-          <th scope="col">E-mail</th>
-          <th scope="col">Trend</th>
-          <th scope="col" class="text-right">Points</th>
+          <th scope="col">
+            Name
+          </th>
+          <th scope="col">
+            Job
+          </th>
+          <th scope="col">
+            E-mail
+          </th>
+          <th scope="col">
+            Trend
+          </th>
+          <th scope="col" class="text-right">
+            Points
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Jane Cooper</th>
+          <th scope="row">
+            Jane Cooper
+          </th>
           <td>Regional Paradigm Technician</td>
           <td>jane.cooper@example.com</td>
           <td>
@@ -27,10 +39,14 @@
               />
             </svg>
           </td>
-          <td class="text-right">70</td>
+          <td class="text-right">
+            70
+          </td>
         </tr>
         <tr>
-          <th scope="row">Cody Fisher</th>
+          <th scope="row">
+            Cody Fisher
+          </th>
           <td>Product Directives Officer</td>
           <td>cody.fisher@example.com</td>
           <td>
@@ -40,10 +56,14 @@
               ></path>
             </svg>
           </td>
-          <td class="text-right">60</td>
+          <td class="text-right">
+            60
+          </td>
         </tr>
         <tr>
-          <th scope="row">Esther Howard</th>
+          <th scope="row">
+            Esther Howard
+          </th>
           <td>Forward Response Developer</td>
           <td>esther.howard@example.com</td>
           <td>
@@ -53,10 +73,14 @@
               />
             </svg>
           </td>
-          <td class="text-right">50</td>
+          <td class="text-right">
+            50
+          </td>
         </tr>
         <tr>
-          <th scope="row">Jenny Wilson</th>
+          <th scope="row">
+            Jenny Wilson
+          </th>
           <td>Central Security Manager</td>
           <td>jenny.wilson@example.com</td>
           <td>
@@ -66,10 +90,14 @@
               />
             </svg>
           </td>
-          <td class="text-right">40</td>
+          <td class="text-right">
+            40
+          </td>
         </tr>
         <tr>
-          <th scope="row">Kristin Watson</th>
+          <th scope="row">
+            Kristin Watson
+          </th>
           <td>Lead Implementation Liaison</td>
           <td>kristin.watson@example.com</td>
           <td>
@@ -79,10 +107,14 @@
               />
             </svg>
           </td>
-          <td class="text-right">30</td>
+          <td class="text-right">
+            30
+          </td>
         </tr>
         <tr>
-          <th scope="row">Cameron Williamson</th>
+          <th scope="row">
+            Cameron Williamson
+          </th>
           <td>Internal Applications Engineer</td>
           <td>cameron.williamson@example.com</td>
           <td>
@@ -92,13 +124,19 @@
               />
             </svg>
           </td>
-          <td class="text-right">20</td>
+          <td class="text-right">
+            20
+          </td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <th scope="row">Total</th>
-          <td colspan="4" class="text-right">270</td>
+          <th scope="row">
+            Total
+          </th>
+          <td colspan="4" class="text-right">
+            270
+          </td>
         </tr>
       </tfoot>
     </table>

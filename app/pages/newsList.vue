@@ -12,7 +12,9 @@
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
         <div class="container">
-          <h1 class="h1">Aktuell</h1>
+          <h1 class="h1">
+            Aktuell
+          </h1>
           <div
             class="search__filters"
             :class="filtersAreOpen ? 'filters--are-open' : ''"
@@ -49,8 +51,12 @@
                 name="select-name"
                 label="Organisation"
               >
-                <option selected>VBS - Alle</option>
-                <option disabled>(Future tree selector here)</option>
+                <option selected>
+                  VBS - Alle
+                </option>
+                <option disabled>
+                  (Future tree selector here)
+                </option>
               </Select>
               <Select
                 id="select-3"
@@ -59,7 +65,9 @@
                 name="select-name"
                 label="Themen"
               >
-                <option selected>- Alle -</option>
+                <option selected>
+                  - Alle -
+                </option>
                 <option>...</option>
               </Select>
               <Input
@@ -87,7 +95,9 @@
                 name="select-name"
                 label="Inhalts-Typ"
               >
-                <option selected>- Alle -</option>
+                <option selected>
+                  - Alle -
+                </option>
                 <option>Bericht</option>
                 <option>...</option>
               </Select>
@@ -157,7 +167,9 @@
                   label="Sortierung"
                   :hideLabel="true"
                 >
-                  <option disabled selected>Sortieren</option>
+                  <option disabled selected>
+                    Sortieren
+                  </option>
                   <option>nach Relevanz</option>
                   <option>by date (increasing)</option>
                   <option>by date (decreasing)</option>
@@ -182,14 +194,18 @@
                 />
               </div>
             </div>
-            <h2 class="sr-only">News list</h2>
+            <h2 class="sr-only">
+              News list
+            </h2>
             <SearchResultsList
               v-if="!noResults && !isLoading"
               :itemList="searchResults"
               :displayType="displayType"
             />
             <div v-if="isLoading" class="my-16">
-              <h2 class="sr-only">Search is loading</h2>
+              <h2 class="sr-only">
+                Search is loading
+              </h2>
               <SvgIcon icon="Spinner" size="2xl" class="icon--spin" />
             </div>
             <div
@@ -202,14 +218,18 @@
                 Treffer auf der Behördenwebsite
                 <span class="text--bold">«NameNextLogo»</span>
               </h2>
-              <h3 class="h4">Tipps zur Suche</h3>
+              <h3 class="h4">
+                Tipps zur Suche
+              </h3>
               <ul class="list list--default">
                 <li>Überprüfen Sie die Schreibweise Ihres Suchbegriffes</li>
                 <li>Verwenden Sie einen anderen bzw. allgemeineren Begriff</li>
                 <li>Verwenden Sie ggf. weniger Suchbegriffe</li>
                 <li>Wechseln Sie die Behördenwebsite</li>
               </ul>
-              <h3 class="h4">Hinweis</h3>
+              <h3 class="h4">
+                Hinweis
+              </h3>
               <p>
                 Die Suche ist momentan auf die Behördenwebsite "[NameNextLogo]"
                 beschränkt. Eine behördenübergreifende Suche über die Domain

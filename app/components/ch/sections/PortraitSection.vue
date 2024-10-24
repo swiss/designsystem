@@ -1,7 +1,9 @@
 <template>
   <section class="section section--default">
     <div class="container">
-      <h2 class="section__title">Amtsvorsteherin kurz vorgestellt</h2>
+      <h2 class="section__title">
+        Amtsvorsteherin kurz vorgestellt
+      </h2>
       <div class="portrait">
         <picture class="portrait__image">
           <source
@@ -12,7 +14,9 @@
         </picture>
         <div class="portrait__card card card--default">
           <div class="portrait__card__body">
-            <h2 class="text--2xl font--bold">Maria Lupan</h2>
+            <h2 class="text--2xl font--bold">
+              Maria Lupan
+            </h2>
             <a href="javascript:void(0)" class="link link--block">
               @marialupan
             </a>

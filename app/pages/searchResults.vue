@@ -11,7 +11,9 @@
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
         <div class="container">
-          <h1 class="h1">Search Results</h1>
+          <h1 class="h1">
+            Search Results
+          </h1>
           <div class="search search--large search--page-result">
             <div class="search__group">
               <input
@@ -90,7 +92,9 @@
                     role="group"
                     aria-labelledby="radio-group-label-1"
                   >
-                    <div id="radio-group-label-1">Sortierung nach</div>
+                    <div id="radio-group-label-1">
+                      Sortierung nach
+                    </div>
                     <div class="form__group">
                       <Radio
                         id="radio-s0"
@@ -114,7 +118,9 @@
                   :itemList="searchResults"
                 />
                 <div v-if="isLoading" class="my-16">
-                  <h2 class="sr-only">Search is loading</h2>
+                  <h2 class="sr-only">
+                    Search is loading
+                  </h2>
                   <SvgIcon icon="Spinner" size="2xl" class="icon--spin" />
                 </div>
                 <div
@@ -127,7 +133,9 @@
                     keine Treffer auf der Behördenwebsite
                     <span class="text--bold">«NameNextLogo»</span>
                   </h2>
-                  <h3 class="h4">Tipps zur Suche</h3>
+                  <h3 class="h4">
+                    Tipps zur Suche
+                  </h3>
                   <ul class="list list--default">
                     <li>Überprüfen Sie die Schreibweise Ihres Suchbegriffes</li>
                     <li>
@@ -136,7 +144,9 @@
                     <li>Verwenden Sie ggf. weniger Suchbegriffe</li>
                     <li>Wechseln Sie die Behördenwebsite</li>
                   </ul>
-                  <h3 class="h4">Hinweis</h3>
+                  <h3 class="h4">
+                    Hinweis
+                  </h3>
                   <p>
                     Die Suche ist momentan auf die Behördenwebsite
                     "[NameNextLogo]" beschränkt. Eine behördenübergreifende

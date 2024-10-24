@@ -1,15 +1,25 @@
 <template>
   <div class="box total__summary-container">
-    <h3 class="h3 total__sumary-title">{{ title }}</h3>
+    <h3 class="h3 total__sumary-title">
+      {{ title }}
+    </h3>
     <div>
       <div class="container--flex">
-        <p class="total__summary-total-title">{{ subTotalTitle }}</p>
-        <p class="font--bold total__summary-inline-text">{{ subTotal }}</p>
+        <p class="total__summary-total-title">
+          {{ subTotalTitle }}
+        </p>
+        <p class="font--bold total__summary-inline-text">
+          {{ subTotal }}
+        </p>
       </div>
       <hr class="separator separator--md" />
       <div class="container--flex">
-        <p class="total__summary-total-title">{{ totalTitle }}</p>
-        <p class="font--bold total__summary-inline-text">{{ total }}</p>
+        <p class="total__summary-total-title">
+          {{ totalTitle }}
+        </p>
+        <p class="font--bold total__summary-inline-text">
+          {{ total }}
+        </p>
       </div>
     </div>
     <div class="total__summary-agb">

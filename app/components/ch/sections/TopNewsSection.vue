@@ -1,7 +1,9 @@
 <template>
   <section class="section bg--secondary-50">
     <div class="container">
-      <h2 class="section__title">Aktuell</h2>
+      <h2 class="section__title">
+        Aktuell
+      </h2>
       <div class="grid grid--items-5 gap--responsive">
         <Card type="default">
           <template v-slot:metaInfos>

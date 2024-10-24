@@ -2,7 +2,9 @@
   <div class="section bg--secondary-50">
     <div class="container container--grid">
       <div class="container__center--sm">
-        <h2 class="h2">Classical input types</h2>
+        <h2 class="h2">
+          Classical input types
+        </h2>
         <div class="form">
           <div class="form__group">
             <Input
@@ -14,7 +16,9 @@
           </div>
           <div class="form__group">
             <Select id="select" label="Select">
-              <option disabled selected>Choose your country</option>
+              <option disabled selected>
+                Choose your country
+              </option>
               <option>Switzerland</option>
               <option>Swaziland</option>
               <option>Sweden</option>
@@ -56,7 +60,9 @@
             />
           </div>
         </div>
-        <h2 class="h2 mt-8">Other input types</h2>
+        <h2 class="h2 mt-8">
+          Other input types
+        </h2>
         <div class="form">
           <Input
             id="color-id"
@@ -162,7 +168,9 @@
           />
         </div>
         <div class="form">
-          <h2 class="h2 mt-8">required fields example</h2>
+          <h2 class="h2 mt-8">
+            required fields example
+          </h2>
           <div class="form__group">
             <Input
               id="text-id-0"
@@ -174,7 +182,9 @@
           </div>
           <div class="form__group">
             <Select id="select" label="Select" required>
-              <option disabled selected>Choose your country</option>
+              <option disabled selected>
+                Choose your country
+              </option>
               <option>Switzerland</option>
               <option>Swaziland</option>
               <option>Sweden</option>
