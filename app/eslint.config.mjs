@@ -53,6 +53,10 @@ export default tseslint.config(
       "vue/html-closing-bracket-newline": "warn",
       "vue/html-indent": "warn",
       "vue/singleline-html-element-content-newline": "warn",
+      "vue/multi-word-component-names": "off",
+      "vue/html-quotes": "warn",
+      "vue/multiline-html-element-content-newline": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
 
       //Typescript
       "@typescript-eslint/consistent-type-imports": "warn",
@@ -65,15 +69,12 @@ export default tseslint.config(
       "no-prototype-builtins": "off",
       "vue/no-v-html": "off",
       "vue/require-default-prop": "off",
+      "@typescript-eslint/no-unused-expressions": "off",
 
       //Unchecked
-      "vue/multi-word-component-names": "off",
-      "vue/html-quotes": "off",
-      "vue/multiline-html-element-content-newline": "off",
-      "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/no-unused-expressions": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/ban-ts-comment": "off",
+      "vue/component-name-in-template-casing": ["off", "PascalCase", { registeredComponentsOnly: false }],
     }
   },
   /* {

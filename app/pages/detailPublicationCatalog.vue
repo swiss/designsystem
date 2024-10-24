@@ -39,7 +39,7 @@
         <div class="container container--grid gap--responsive">
           <div class="container__main vertical-spacing">
             <Notification
-              text='<p>Aus dieser Reihe gibt es eine aktuellere Version: <a href="#" target="_blank">Ausgabe 2022</a>.</p>'
+              text="<p>Aus dieser Reihe gibt es eine aktuellere Version: <a href=&quot;#&quot; target=&quot;_blank&quot;>Ausgabe 2022</a>.</p>"
               type="warning"
               icon="InfoCircle"
               :closeBtn="false"
@@ -93,7 +93,7 @@
                       :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
-                      class="border-b-0 pb-0"
+                      class="pb-0 border-b-0"
                     />
                   </li>
                 </ul>
@@ -186,7 +186,7 @@
               <RelatedTags :tags="tags" bare></RelatedTags>
             </div>
           </div>
-          <div class="container__aside hidden md:block">
+          <div class="hidden container__aside md:block">
             <div id="aside-content" :class="computedAsideContainerClass">
               <!-- desktop only -->
               <div class="box">
@@ -222,7 +222,7 @@
                       :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
-                      class="border-b-0 pb-0"
+                      class="pb-0 border-b-0"
                     />
                   </li>
                 </ul>

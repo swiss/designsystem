@@ -46,7 +46,7 @@
           <div class="container container--grid gap--responsive">
             <div class="container__main vertical-spacing">
               <Notification
-                text='<p>Aus dieser Reihe gibt es eine aktuellere Version: <a href="#" target="_blank">Ausgabe 2022</a>.</p>'
+                text="<p>Aus dieser Reihe gibt es eine aktuellere Version: <a href=&quot;#&quot; target=&quot;_blank&quot;>Ausgabe 2022</a>.</p>"
                 type="warning"
                 icon="InfoCircle"
                 :closeBtn="false"
