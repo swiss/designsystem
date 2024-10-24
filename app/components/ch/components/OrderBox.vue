@@ -60,7 +60,7 @@
 import Btn from './Btn.vue'
 import Input from './Input.vue'
 import Select from './Select.vue'
-import { reactive, ref, computed, onMounted } from 'vue'
+import { reactive, ref, computed, onMounted, type PropType } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 import type { OrderBoxOption } from '../../../types'
 
@@ -131,8 +131,8 @@ const totalPrice = computed(() => {
 })
 
 const restrictChars = function (event: KeyboardEvent) {
-  // Restrict input to numbric input chars
-  const regex = /[0-9eE.+\-]/g
+  // Restrict input to numeric input chars
+  const regex = /[0-9]/g
   if (regex.test(event.key)) {
     return true
   } else {

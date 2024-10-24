@@ -75,7 +75,7 @@
 <script setup lang="ts">
 import ImageNotAvailable from './ImageNotAvailable.vue'
 import SvgIcon from './SvgIcon.vue'
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted, type PropType } from 'vue'
 
 const inputValue = ref(0)
 
