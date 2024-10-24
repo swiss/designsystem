@@ -23,7 +23,7 @@ defineProps({
 })
 
 const computedClass = computed(() => {
-  let base = 'language-switcher'
+  const base = 'language-switcher'
   return base
 })
 </script>

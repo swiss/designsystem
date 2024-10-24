@@ -10,10 +10,10 @@ function getFocusableElements(element = document) {
 
 const Accordion = {
   init(target) {
-    let buttons = document.querySelectorAll(target)
+    const buttons = document.querySelectorAll(target)
     buttons.forEach((button) => {
-      let content = button.nextElementSibling
-      let focusableElements = getFocusableElements(content)
+      const content = button.nextElementSibling
+      const focusableElements = getFocusableElements(content)
       // make focusable content unfocusable
       focusableElements.forEach((item) => {
         item.tabIndex = -1

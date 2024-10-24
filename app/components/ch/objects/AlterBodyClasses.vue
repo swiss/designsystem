@@ -21,8 +21,8 @@ const props = defineProps({
 })
 
 const alterMenuClasses = function () {
-  let mobilemenu = document.getElementById('mobile-menu-id') as HTMLElement
-  let context =
+  const mobilemenu = document.getElementById('mobile-menu-id') as HTMLElement
+  const context =
     window.getComputedStyle(mobilemenu).display === 'none'
       ? 'desktop'
       : 'mobile'

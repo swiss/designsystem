@@ -507,7 +507,7 @@ const loadLimitedResults = computed(() => {
       result.push(values[i])
       count += values[i].results.length
     } else {
-      let newResults = Object.values(values)[i].results.slice(
+      const newResults = Object.values(values)[i].results.slice(
         0,
         loadedResults.value - count,
       )
@@ -550,7 +550,7 @@ const sortedResultItems = computed(() => {
 })
 
 const limitedResultItems = computed(() => {
-  let filteredResults = resultItems.filter((elm) => {
+  const filteredResults = resultItems.filter((elm) => {
     if (activeFilter.value === 'all') {
       return elm
     }
@@ -562,7 +562,7 @@ const limitedResultItems = computed(() => {
     }
   })
 
-  let result: GlossaryResult[] = []
+  const result: GlossaryResult[] = []
 
   filteredResults.forEach((res) => {
     const start = res.title.charAt(0)
