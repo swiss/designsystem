@@ -70,9 +70,9 @@ export default tseslint.config(
       "vue/no-v-html": "off",
       "vue/require-default-prop": "off",
       "@typescript-eslint/no-unused-expressions": "off",
+      "@typescript-eslint/no-explicit-any": "off",
 
       //Unchecked
-      "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/ban-ts-comment": "off",
       "vue/component-name-in-template-casing": ["off", "PascalCase", { registeredComponentsOnly: false }],
     }

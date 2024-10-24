@@ -12,11 +12,11 @@
           type="number"
           variant="outline"
           size="base"
-          :value="inputValue"
+          :value="inputValue.toString()"
           class="order__box-amount-input"
           :min="0"
           @keypress="restrictChars"
-          @input="inputValue = ($event.target as HTMLInputElement).value"
+          @input="inputValue = parseInt(($event.target as HTMLInputElement).value)"
         />
       </div>
       <Select
@@ -59,7 +59,7 @@
       variant="filled"
       :fullWidth="true"
       :label="buttonLabel"
-      @emit-click="addToCart(selectedValue, parseInt(inputValue))"
+      @emit-click="addToCart(selectedValue, inputValue)"
     />
   </div>
 </template>
@@ -73,7 +73,7 @@ import { v4 as uuidv4 } from 'uuid'
 import type { OrderBoxOption } from '../../../types'
 
 const orderBoxId = uuidv4()
-const inputValue = ref(0 as any)
+const inputValue = ref(0 as number)
 const selectedValue = reactive({} as OrderBoxOption)
 const pricePiece = ref(0)
 
