@@ -158,7 +158,6 @@ const labelClasses = computed(() => {
 })
 
 const getUniqueId = function (text = '') {
-  console.log(text)
   return `${text}-${selectId.value}`
 }
 

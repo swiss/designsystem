@@ -7,10 +7,6 @@
           {{ author.initials }}
         </div>
         <SvgIcon v-else icon="User" class="btn__icon text-secondary-300" />
-
-        <div v-else>
-          <SvgIcon icon="User" class="btn__icon text-secondary-300" />
-        </div>
       </div>
     </div>
     <address class="authors__names">

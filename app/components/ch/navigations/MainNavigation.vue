@@ -101,30 +101,22 @@
                     <a href="javascript:alert('link')">Vector Tiles Service</a>
                   </li>
                   <li>
-                    <a href="javascript:alert('link')"
-                      >Web Integration: iFrame</a
-                    >
+                    <a href="javascript:alert('link')">Web Integration: iFrame</a>
                   </li>
                   <li><a href="javascript:alert('link')">FAQ API</a></li>
                 </ul>
               </li>
               <li><a href="javascript:alert('link')">Download-Dienste</a></li>
               <li>
-                <a href="javascript:alert('link')"
-                  >Linked Data Dienst: GeoDaten semantisch verlinken</a
-                >
+                <a href="javascript:alert('link')">Linked Data Dienst: GeoDaten semantisch verlinken</a>
               </li>
               <li>
-                <a href="javascript:alert('link')"
-                  >Allgemeine Nutzungsbedingungen und Betriebsbestimmungen der
-                  Bundes Geodaten-Infrastruktur BGDI</a
-                >
+                <a href="javascript:alert('link')">Allgemeine Nutzungsbedingungen und Betriebsbestimmungen der
+                  Bundes Geodaten-Infrastruktur BGDI</a>
               </li>
               <li><a href="javascript:alert('link')">Suchdienst CSW</a></li>
               <li>
-                <a href="javascript:alert('link')"
-                  >Konformitätsprüfung Geobasisdienste nach eCH-0056</a
-                >
+                <a href="javascript:alert('link')">Konformitätsprüfung Geobasisdienste nach eCH-0056</a>
               </li>
               <li><a href="javascript:alert('link')">INSPIRE Dienste</a></li>
             </ul>

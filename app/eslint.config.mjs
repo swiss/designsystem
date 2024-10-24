@@ -50,6 +50,8 @@ export default tseslint.config(
       "vue/no-ref-as-operand": "warn",
       // Unsure about the one below: In RelatedTags line 5 added :key...
       "vue/require-v-for-key": "warn",
+      "vue/valid-v-else": "warn",
+      "vue/html-closing-bracket-newline": "warn",
 
       //Typescript
       "@typescript-eslint/consistent-type-imports": "warn",
@@ -64,8 +66,6 @@ export default tseslint.config(
       "vue/require-default-prop": "off",
 
       //Unchecked
-      "vue/valid-v-else": "off",
-      "vue/html-closing-bracket-newline": "off",
       "vue/html-indent": "off",
       "vue/singleline-html-element-content-newline": "off",
       "vue/multi-word-component-names": "off",
