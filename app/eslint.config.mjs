@@ -36,6 +36,13 @@ export default tseslint.config(
       "vue/max-attributes-per-line": "off",
       "vue/html-self-closing": "off",
       "vue/attributes-order": "warn",
+      "vue/no-deprecated-slot-attribute": "off",
+      "vue/v-slot-style": "off",
+      "vue/attribute-hyphenation": "off",
+      "vue/no-deprecated-v-on-native-modifier": "warn",
+      "vue/no-side-effects-in-computed-properties": "warn",
+      "vue/v-on-event-hyphenation": "warn",
+      "vue/no-parsing-error": "warn",
 
       //Typescript
       "@typescript-eslint/consistent-type-imports": "warn",
@@ -46,16 +53,9 @@ export default tseslint.config(
 
       // Unsure
       "no-prototype-builtins": "off",
+      "vue/no-v-html": "off",
 
       //Unchecked
-      "vue/no-deprecated-slot-attribute": "off",
-      "vue/v-slot-style": "off",
-      "vue/attribute-hyphenation": "off",
-      "vue/no-deprecated-v-on-native-modifier": "off",
-      "vue/no-side-effects-in-computed-properties": "off",
-      "vue/v-on-event-hyphenation": "off",
-      "vue/no-v-html": "off",
-      "vue/no-parsing-error": "off",
       "vue/no-duplicate-attributes": "off",
       "vue/require-default-prop": "off",
       "vue/valid-template-root": "off",

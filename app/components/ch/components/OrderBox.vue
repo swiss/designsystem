@@ -51,7 +51,7 @@
       variant="filled"
       :fullWidth="true"
       :label="buttonLabel"
-      @emitClick="addToCart(selectedValue, parseInt(inputValue))"
+      @emit-click="addToCart(selectedValue, parseInt(inputValue))"
     />
   </div>
 </template>

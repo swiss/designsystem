@@ -849,7 +849,7 @@
                   size="base"
                   label="URL Kopieren"
                   class="mt-3"
-                  @click.native="URLIsCopied = !URLIsCopied"
+                  @click="URLIsCopied = !URLIsCopied"
                 />
                 <div aria-live="polite">
                   <Badge

@@ -18,7 +18,7 @@
         icon-pos="right"
         icon="Checkmark"
         label="Einverstanden"
-        @click.native="isClosed = true"
+        @click="isClosed = true"
       />
       <Btn
         variant="bare"
@@ -26,7 +26,7 @@
         icon-pos="right"
         icon="Cancel"
         label=" Weiter ohne Datenerfassung"
-        @click.native="isClosed = true"
+        @click="isClosed = true"
       />
     </div>
   </div>

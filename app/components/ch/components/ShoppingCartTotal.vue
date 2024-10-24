@@ -15,7 +15,7 @@
         :label="nextStepLabel"
         :ariaLabel="nextStepAriaLabel"
         :fullWidth="screenSize < 1024"
-        @emitClick="nextStep"
+        @emit-click="nextStep"
       />
     </div>
   </div>

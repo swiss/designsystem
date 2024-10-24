@@ -104,7 +104,7 @@
                   description="Ermässigungen werden gemäss Gebührenverordnung für statistische Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im nächsten Schritt unter „Nachricht“ angebracht werden."
                   nextStepLabel="Nächster Schritt"
                   nextStepAriaLabel="Nächster Schritt"
-                  @nextStep="overviewNextStepClicked"
+                  @next-step="overviewNextStepClicked"
                 />
               </template>
               <template v-else>
@@ -741,7 +741,7 @@
                     orderButtonText="Jetzt bestellen"
                     orderButtonAriaLabel="Jetzt bestellen"
                     agreementText=" Mit Ihrer Bestellung erklären Sie sich mit unseren <a class='link' href='https://www.google.ch'>Datenschutzbestimmungen und AGB </a> einverstanden"
-                    @nextStep="triggerConfirmation()"
+                    @next-step="triggerConfirmation()"
                   />
                 </div>
               </div>

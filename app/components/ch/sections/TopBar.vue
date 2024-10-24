@@ -202,7 +202,7 @@
                     icon-pos="only"
                     variant="bare-negative"
                     size="lg"
-                    @click.native="
+                    @click="
                       () => {
                         filterString = ''
                         $refs.searchInput.focus()
