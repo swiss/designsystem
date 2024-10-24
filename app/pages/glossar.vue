@@ -82,8 +82,7 @@
               class="glossary-results__header"
             >
               <div class="glossary-results__header__left">
-                <strong>{{ foundEntries }}</strong
-                >Einträge
+                <strong>{{ foundEntries }}</strong>Einträge
               </div>
               <div class="glossary-results__header__right">
                 <Select

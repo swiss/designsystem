@@ -202,10 +202,8 @@
                 </InfoBlock>
 
                 <InfoBlock title="Erhebung, Statistik" headingLevel="h3">
-                  <a href="#"
-                    >Reiseverhalten der Wohnbevölkerung (Modul der
-                    Haushaltsbudgeterhebung HABE)</a
-                  >
+                  <a href="#">Reiseverhalten der Wohnbevölkerung (Modul der
+                    Haushaltsbudgeterhebung HABE)</a>
                 </InfoBlock>
 
                 <InfoBlock

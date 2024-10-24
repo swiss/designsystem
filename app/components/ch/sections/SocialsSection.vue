@@ -258,8 +258,7 @@
                             height: 14px;
                             width: 144px;
                           "
-                        ></div></div
-                    ></a>
+                        ></div></div></a>
                     <p
                       style="
                         color: #c9c8cd;
