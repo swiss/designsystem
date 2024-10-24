@@ -114,7 +114,7 @@ const keyListener = function (e: KeyboardEvent) {
   }
 }
 
-const backdropFocusListener = function (e: FocusEvent) {
+const backdropFocusListener = function () {
   closeBtn.value?.focus()
 }
 

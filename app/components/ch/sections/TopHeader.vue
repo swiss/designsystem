@@ -81,7 +81,7 @@ const layoutStore = useLayoutStore()
 
 const screenSize = ref(0)
 
-const props = defineProps({
+defineProps({
   overrideLogoForPrint: {
     type: String,
     default: () => '',

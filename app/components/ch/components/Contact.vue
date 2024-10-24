@@ -111,7 +111,7 @@ import Accordion from '../components/Accordion.vue'
 import AccordionItem from '../components/AccordionItem.vue'
 import Btn from '../components/Btn.vue'
 
-const props = defineProps({
+defineProps({
   title: String,
   address1: String,
   address2: String,

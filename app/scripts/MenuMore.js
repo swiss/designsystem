@@ -56,7 +56,7 @@ const MenuMore = {
   },
 
   setButtonClickEvent(target, leftValue) {
-    target.addEventListener('click', function (e) {
+    target.addEventListener('click', function () {
       MenuMore.menu.scrollTo({
         top: 0,
         left: leftValue,

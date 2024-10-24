@@ -16,7 +16,7 @@ import type { GlossaryResult } from '../../../types'
 import GlossarResultListItemAccordion from '../components/GlossarResultListItemAccordion.vue'
 import GlossarResultTitle from '../components/GlossarResultTitle.vue'
 
-const props = defineProps({
+defineProps({
   resultItems: {
     type: Array<GlossaryResult>,
     default: () => [],

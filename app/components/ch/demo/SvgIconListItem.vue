@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 
-const props = defineProps({
+defineProps({
   id: {
     type: String,
     required: true,

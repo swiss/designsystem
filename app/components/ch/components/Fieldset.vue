@@ -45,14 +45,6 @@ const props = defineProps({
   },
 })
 
-const classes = computed(() => {
-  let base = 'input '
-  if (props.variant) base += `input--${props.variant} `
-  if (props.size) base += `input--${props.size} `
-  if (props.message) base += `input--${props.messageType} `
-  return base
-})
-
 const legendClasses = computed(() => {
   let base = ''
   if (props.variant === 'negative') base += `text--negative `

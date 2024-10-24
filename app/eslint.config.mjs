@@ -26,14 +26,26 @@ export default tseslint.config(
       }
     },
     rules: {
+      // Eslint
+      "no-constant-condition": "warn",
+
+      // Vue
+      "vue/max-attributes-per-line": "off",
+
+      //Typescript
+      "@typescript-eslint/consistent-type-imports": "warn",
+
+      // Fixed but open issues which cannot be fixed
       "no-unused-vars": "off",
-      "no-constant-condition": "error",
+
+      // Unsure
       "no-prototype-builtins": "off",
+
+      //Unchecked
       "prefer-const": "off",
       "no-undef": "off",
       "no-irregular-whitespace": "off",
       "no-useless-escape": "off",
-
       "vue/html-self-closing": "off",
       "vue/attributes-order": "off",
       "vue/no-deprecated-slot-attribute": "off",
@@ -52,11 +64,16 @@ export default tseslint.config(
       "vue/no-ref-as-operand": "off",
       "vue/require-v-for-key": "off",
       "vue/valid-v-else": "off",
-
+      "vue/html-closing-bracket-newline": "off",
+      "vue/html-indent": "off",
+      "vue/singleline-html-element-content-newline": "off",
+      "vue/multi-word-component-names": "off",
+      "vue/html-quotes": "off",
+      "vue/multiline-html-element-content-newline": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-unused-expressions": "off",
       "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/consistent-type-imports": "warn",
+      "@typescript-eslint/ban-ts-comment": "off",
     }
   },
   /* {

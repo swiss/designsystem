@@ -52,20 +52,20 @@ const Popover = {
       document.addEventListener('click', handleClickOutside)
     }
 
-    button.addEventListener('click', (event) => {
+    button.addEventListener('click', () => {
       popover.classList.contains('popover--active')
         ? closePopover()
         : openPopover()
     })
 
-    backdrop.addEventListener('click', (event) => {
+    backdrop.addEventListener('click', () => {
       popover.classList.contains('popover--active')
         ? closePopover()
         : openPopover()
     })
 
     if (popoverClose) {
-      popoverClose.addEventListener('click', (event) => {
+      popoverClose.addEventListener('click', () => {
         closePopover()
       })
     }

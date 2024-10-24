@@ -104,11 +104,11 @@ const props = defineProps({
     required: true,
   },
   deleteTriggered: {
-    type: Function as PropType<(e: Event) => void>,
+    type: Function as PropType<() => void>,
     default: () => ({}),
   },
   editTriggered: {
-    type: Function as PropType<(e: Event) => void>,
+    type: Function as PropType<() => void>,
     default: () => ({}),
   },
   removeLabel: {

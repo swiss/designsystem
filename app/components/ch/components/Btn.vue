@@ -93,7 +93,7 @@ const aria = computed(() => {
     base = props.ariaLabel
   } else {
     base =
-      (props.iconPos === 'only' && type.value === 'button') || 'a'
+      (props.iconPos === 'only' && type.value === 'button')
         ? props.label
         : false
   }

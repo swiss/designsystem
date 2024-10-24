@@ -71,5 +71,5 @@ import Card from '../components/Card.vue'
 import Btn from '../components/Btn.vue'
 import MetaInfo from '../components/MetaInfo.vue'
 
-const props = defineProps({})
+defineProps({})
 </script>

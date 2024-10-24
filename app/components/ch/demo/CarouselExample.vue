@@ -123,7 +123,7 @@ import { computed } from 'vue'
 import type { PaginationOptions } from 'swiper/types'
 import type { SlideshowSlide } from '../../../types'
 
-const props = defineProps({
+defineProps({
   id: {
     type: Number,
     default: () => 1,

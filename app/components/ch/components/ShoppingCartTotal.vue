@@ -26,7 +26,7 @@ import { ref, onMounted } from 'vue'
 
 const screenSize = ref(0)
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: () => 'Total:',

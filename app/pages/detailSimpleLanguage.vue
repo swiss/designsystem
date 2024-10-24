@@ -144,7 +144,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 
-const props = defineProps({
+defineProps({
   isEasyLanguage: {
     type: Boolean,
     default: () => false,

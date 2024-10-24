@@ -949,7 +949,7 @@ const formInputFields = reactive({
   >
 >)
 
-const props = defineProps({
+defineProps({
   cartTitle: {
     type: String,
     default: () => 'Shopping cart',
@@ -1081,6 +1081,8 @@ const setFormFieldValue = function (
   }
 }
 
+/* -> Unused. Maybe still necessary?
+
 const validateFields = function () {
   const keys = Object.keys(formInputFields)
   const keysToValidate = ['invoice']
@@ -1128,6 +1130,8 @@ const checkFormAndSetNextActiveStep = function () {
     step2Confirmed.value = true
   }
 }
+
+*/
 
 watch(activeAccordionIndex, function () {
   scrollContentIntoView(activeAccordionIndex.value || 1)

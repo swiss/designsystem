@@ -18,9 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import SvgIcon from './SvgIcon.vue'
-
-const props = defineProps({
+defineProps({
   text: {
     type: String,
     default: () => 'Image not available',

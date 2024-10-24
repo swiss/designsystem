@@ -225,7 +225,6 @@
 <script setup lang="ts">
 import Accordion from '../components/ch/components/Accordion.vue'
 import AccordionItem from '../components/ch/components/AccordionItem.vue'
-import Btn from '../components/ch/components/Btn.vue'
 import Card from '../components/ch/components/Card.vue'
 import SvgIcon from '../components/ch/components/SvgIcon.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
