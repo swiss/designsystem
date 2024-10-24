@@ -158,7 +158,8 @@ const labelClasses = computed(() => {
 })
 
 const getUniqueId = function (text = '') {
-  return `${text}-${selectId}`
+  console.log(text)
+  return `${text}-${selectId.value}`
 }
 
 watch(currentSelected, function () {

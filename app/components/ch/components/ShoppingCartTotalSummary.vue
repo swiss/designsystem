@@ -84,7 +84,7 @@ defineProps({
 const emit = defineEmits(['nextStep'])
 
 const orderClicked = function () {
-  if (!agbAccepted) return
+  if (!agbAccepted.value) return
   emit('nextStep')
 }
 </script>

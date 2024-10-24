@@ -19,6 +19,6 @@
 import SvgIcon from './SvgIcon.vue'
 
 function handleClick() {
-  window.open('?path=/story/pages-detail-easy-language--example')
+  window.open('?path=/story/pages-easy-sign-language-detail-easy-language--example')
 }
 </script>

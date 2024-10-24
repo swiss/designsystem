@@ -323,7 +323,7 @@ import SvgIcon from '../components/SvgIcon.vue'
 defineProps({
   id: {
     type: String,
-    default: () => 1,
+    default: () => '1',
   },
   badgeClicked: {
     type: Function,
