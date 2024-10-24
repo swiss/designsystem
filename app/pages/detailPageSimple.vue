@@ -396,7 +396,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-01.html"
-                  >(Haager-) Übereinkommen vom 5. Oktober 1961 über die
+                >(Haager-) Übereinkommen vom 5. Oktober 1961 über die
                   Zuständigkeit der Behörden und das anzuwendende Recht auf dem
                   Gebiet des Schutzes von Minderjährigen</a>
 
@@ -406,7 +406,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-011.html"
-                  >(Haager) Übereinkommen vom 19. Oktober 1996 über die
+                >(Haager) Übereinkommen vom 19. Oktober 1996 über die
                   Zuständigkeit, das anzuwendende Recht, die Anerkennung,
                   Vollstreckung und Zusammenarbeit auf dem Gebiet der
                   elterlichen Verantwortung und der Massnahmen zum Schutz von
@@ -418,7 +418,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-01.html"
-                  >Europäisches Übereinkommen vom 20. Mai 1980 über die
+                >Europäisches Übereinkommen vom 20. Mai 1980 über die
                   Anerkennung und Vollstreckung von Entscheidungen über das
                   Sorgerecht für Kinder und die Wiederherstellung des
                   Sorgerechts</a>
@@ -429,7 +429,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-02.html"
-                  >(Haager-) Übereinkommen vom 25. Oktober 1980 über die
+                >(Haager-) Übereinkommen vom 25. Oktober 1980 über die
                   zivilrechtlichen Aspekte internationaler Kindesentführung</a>
 
                 <p>(SR 0.211.230.02)</p>
@@ -438,7 +438,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-221-311.html"
-                  >(Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz von
+                >(Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz von
                   Kindern und die Zusammenarbeit auf dem Gebiet der
                   internationalen Adoption</a>
 
@@ -448,7 +448,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-232-1.html"
-                  >(Haager) Übereinkommen vom 13. Januar 2000 über den
+                >(Haager) Übereinkommen vom 13. Januar 2000 über den
                   internationalen Schutz von Erwachsenen</a>
 
                 <p>(SR 0.211.232.1)</p>
@@ -467,7 +467,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-01.html"
-                  >(Haager-) Übereinkommen vom 5. Oktober 1961 über die
+                >(Haager-) Übereinkommen vom 5. Oktober 1961 über die
                   Zuständigkeit der Behörden und das anzuwendende Recht auf dem
                   Gebiet des Schutzes von Minderjährigen</a>
 
@@ -477,7 +477,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-011.html"
-                  >(Haager) Übereinkommen vom 19. Oktober 1996 über die
+                >(Haager) Übereinkommen vom 19. Oktober 1996 über die
                   Zuständigkeit, das anzuwendende Recht, die Anerkennung,
                   Vollstreckung und Zusammenarbeit auf dem Gebiet der
                   elterlichen Verantwortung und der Massnahmen zum Schutz von
@@ -489,7 +489,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-01.html"
-                  >Europäisches Übereinkommen vom 20. Mai 1980 über die
+                >Europäisches Übereinkommen vom 20. Mai 1980 über die
                   Anerkennung und Vollstreckung von Entscheidungen über das
                   Sorgerecht für Kinder und die Wiederherstellung des
                   Sorgerechts</a>
@@ -500,7 +500,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-02.html"
-                  >(Haager-) Übereinkommen vom 25. Oktober 1980 über die
+                >(Haager-) Übereinkommen vom 25. Oktober 1980 über die
                   zivilrechtlichen Aspekte internationaler Kindesentführung</a>
 
                 <p>(SR 0.211.230.02)</p>
@@ -509,7 +509,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-221-311.html"
-                  >(Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz von
+                >(Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz von
                   Kindern und die Zusammenarbeit auf dem Gebiet der
                   internationalen Adoption</a>
 
@@ -519,7 +519,7 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-232-1.html"
-                  >(Haager) Übereinkommen vom 13. Januar 2000 über den
+                >(Haager) Übereinkommen vom 13. Januar 2000 über den
                   internationalen Schutz von Erwachsenen</a>
 
                 <p>(SR 0.211.232.1)</p>

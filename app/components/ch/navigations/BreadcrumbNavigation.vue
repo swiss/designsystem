@@ -127,7 +127,7 @@
               href="javascript:alert('link')"
               class="active"
               aria-current="true"
-              >Geodienste: Informationen zugänglich machen und vernetzen</a>
+            >Geodienste: Informationen zugänglich machen und vernetzen</a>
           </li>
           <li>
             <a href="javascript:alert('link')">Datenbezug: einfach und direkt</a>
@@ -159,7 +159,7 @@
               href="javascript:alert('link')"
               class="active"
               aria-current="true"
-              >Darstellungsdienste</a>
+            >Darstellungsdienste</a>
           </li>
           <li>
             <a href="javascript:alert('link')">Linked Data Dienst: GeoDaten semantisch verlinken</a>
@@ -194,7 +194,7 @@
               href="javascript:alert('link')"
               class="active"
               aria-current="page"
-              >Web Map Services</a>
+            >Web Map Services</a>
           </li>
           <li><a href="javascript:alert('link')">Web tiling Services</a></li>
           <li><a href="javascript:alert('link')">Vector Tiles Service</a></li>

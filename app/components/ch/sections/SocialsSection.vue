@@ -47,7 +47,7 @@
                   class="instagram-media"
                   :data-instgrm-permalink="
                     feed.feedURL +
-                    '?utm_source=ig_embed&amp;utm_campaign=loading'
+                      '?utm_source=ig_embed&amp;utm_campaign=loading'
                   "
                   data-instgrm-version="14"
                   style="
@@ -68,7 +68,7 @@
                     <a
                       :href="
                         feed.feedURL +
-                        '?utm_source=ig_embed&amp;utm_campaign=loading'
+                          '?utm_source=ig_embed&amp;utm_campaign=loading'
                       "
                       style="
                         background: #ffffff;
@@ -277,7 +277,7 @@
                       <a
                         :href="
                           feed.feedURL +
-                          '?utm_source=ig_embed&amp;utm_campaign=loading'
+                            '?utm_source=ig_embed&amp;utm_campaign=loading'
                         "
                         style="
                           color: #c9c8cd;
