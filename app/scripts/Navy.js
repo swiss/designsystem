@@ -16,17 +16,17 @@ const Navy = {
 
   resizeDrawerHeight(target) {
     if (!target) return
-    let paddingTop = parseInt(
+    const paddingTop = parseInt(
       window
         .getComputedStyle(Navy.drawer, null)
         .getPropertyValue('padding-top'),
     )
-    let paddingBottom = parseInt(
+    const paddingBottom = parseInt(
       window
         .getComputedStyle(Navy.drawer, null)
         .getPropertyValue('padding-bottom'),
     )
-    let newHeight = paddingTop + paddingBottom + target.offsetHeight + 'px'
+    const newHeight = paddingTop + paddingBottom + target.offsetHeight + 'px'
     Navy.drawer.style.height = newHeight
   },
 
@@ -44,7 +44,7 @@ const Navy = {
     // focus handling
     function passFocus() {
       // get first link of the current slide, set focus on it:
-      let firstLink = Navy.drawer.querySelector(
+      const firstLink = Navy.drawer.querySelector(
         `.navy__level-${Navy.currentLevel} ul > li a`,
       )
       firstLink == document.activeElement ? firstLink.blur() : firstLink.focus()
@@ -61,11 +61,11 @@ const Navy = {
   },
 
   parseTree(ul, level) {
-    let nextButtons = ul.querySelectorAll(':scope > li > .navy__has-children')
+    const nextButtons = ul.querySelectorAll(':scope > li > .navy__has-children')
     if (nextButtons.length === 0) return
 
-    let backButtons = ul.querySelectorAll(':scope > li > ul > li > .navy__back')
-    let submenus = ul.querySelectorAll(':scope > li > ul')
+    const backButtons = ul.querySelectorAll(':scope > li > ul > li > .navy__back')
+    const submenus = ul.querySelectorAll(':scope > li > ul')
 
     ;[].forEach.call(nextButtons, function (btn) {
       btn.relatedMenu = btn.nextElementSibling
@@ -117,7 +117,7 @@ const Navy = {
     Navy.buildSlides(target)
 
     // inject navigations in the first slide:
-    let navs = document.querySelectorAll(navigationItems)
+    const navs = document.querySelectorAll(navigationItems)
     navs.forEach(function (nav) {
       Navy.level[0].appendChild(nav)
 
@@ -130,7 +130,7 @@ const Navy = {
   setDrawerXPosition(btn) {
     if (btn === undefined) return
 
-    let btnCoord = btn.getBoundingClientRect()
+    const btnCoord = btn.getBoundingClientRect()
     let leftPos = 0
 
     if (btn.offsetLeft + Navy.drawer.clientWidth > Navy.nav.clientWidth) {

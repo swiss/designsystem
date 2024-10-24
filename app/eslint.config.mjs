@@ -28,6 +28,7 @@ export default tseslint.config(
     rules: {
       // Eslint
       "no-constant-condition": "warn",
+      "prefer-const": "warn",
 
       // Vue
       "vue/max-attributes-per-line": "off",
@@ -42,7 +43,6 @@ export default tseslint.config(
       "no-prototype-builtins": "off",
 
       //Unchecked
-      "prefer-const": "off",
       "no-undef": "off",
       "no-irregular-whitespace": "off",
       "no-useless-escape": "off",

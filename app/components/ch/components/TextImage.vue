@@ -54,7 +54,7 @@ const props = defineProps({
 })
 
 const computedClasses = computed(() => {
-  let base = 'text-image '
+  const base = 'text-image '
   return base
 })
 

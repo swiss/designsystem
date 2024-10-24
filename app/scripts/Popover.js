@@ -15,7 +15,7 @@ const Popover = {
     const backdrop = wrapper.querySelector('.popover-backdrop')
     const popover = wrapper.querySelector('.popover')
     const popoverClose = wrapper.querySelector('.popover__close')
-    let focusableElements = getFocusableElements(popover)
+    const focusableElements = getFocusableElements(popover)
 
     focusableElements.forEach((item) => {
       item.tabIndex = -1

@@ -287,7 +287,7 @@ defineProps({
 })
 
 const computedClasses = computed(() => {
-  let base = 'carousel carousel--cards'
+  const base = 'carousel carousel--cards'
   return base
 })
 </script>

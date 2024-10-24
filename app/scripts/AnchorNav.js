@@ -8,7 +8,7 @@ const AnchorNav = {
     window.onscroll = () => {
       const scrollPos =
         document.documentElement.scrollTop || document.body.scrollTop
-      for (let s in sections) {
+      for (const s in sections) {
         // if a section pops in the viewport, the current active class is removed
         // and applied to this new appearing section:
         if (
@@ -16,7 +16,7 @@ const AnchorNav = {
           sections[s].offsetTop <= scrollPos - scrollOffset
         ) {
           const id = sections[s].id
-          let currentItem = document.querySelector('main .menu__item--active')
+          const currentItem = document.querySelector('main .menu__item--active')
           if (currentItem) currentItem.classList.remove('menu__item--active')
           document
             .querySelector(`a[href*=${id}]`)

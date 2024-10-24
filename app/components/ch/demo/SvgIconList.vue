@@ -22,10 +22,10 @@
 import { ref, onMounted } from 'vue'
 import SvgIconListItem from './SvgIconListItem.vue'
 
-let svgIconList = ref([] as string[])
-let svgCCIconList = ref([] as string[])
+const svgIconList = ref([] as string[])
+const svgCCIconList = ref([] as string[])
 
-let array = import.meta.glob([
+const array = import.meta.glob([
   '../../../assets/icons/*.svg',
   '../../../assets/icons/logos/*.svg',
 ])
