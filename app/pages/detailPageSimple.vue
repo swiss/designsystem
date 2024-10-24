@@ -88,7 +88,7 @@
               «fraction». Über den Kontakt models@geo.admin.ch können die
               INTERLIS-Modelldatei und die Modelldokumentation (als PDF
               Dokument) zur Publikation eingereicht werden.
-              <Popover id="1" label="Extra infos in a popover">
+              <Popover id="1" label="Extra infos in a popover ">
                 <p>Popover content</p>
                 <a href="#">Link</a>
               </Popover>
