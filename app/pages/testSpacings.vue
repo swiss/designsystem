@@ -39,7 +39,7 @@
                     <img
                       alt="News - Inondations Juillet 2021 - Visites map.geo.admin.ch"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/30/b70ac970-1bb4-480e-af71-c1ed6ca4f246.png"
-                  /></picture>
+                    /></picture>
                   <figcaption></figcaption>
                 </figure>
                 <div></div>
@@ -70,7 +70,7 @@
                   href="https://wms.geo.admin.ch"
                   target="_blank"
                   class="link--external"
-                  >https://wms.geo.admin.ch/?SERVICE=WMS&amp;REQUEST=GetMap&amp;VERSION=1.3.0&amp;LAYERS=ch.bafu.bundesinventare-bln&amp;STYLES=default&amp;CRS=EPSG:2056&amp;BBOX=2550000,1060000,2660000,1140000&amp;WIDTH=800&amp;HEIGHT=582&amp;FORMAT=image/png</a>
+                >https://wms.geo.admin.ch/?SERVICE=WMS&amp;REQUEST=GetMap&amp;VERSION=1.3.0&amp;LAYERS=ch.bafu.bundesinventare-bln&amp;STYLES=default&amp;CRS=EPSG:2056&amp;BBOX=2550000,1060000,2660000,1140000&amp;WIDTH=800&amp;HEIGHT=582&amp;FORMAT=image/png</a>
               </p>
               <p id="doc-1flo6kihj0" identifier="p">
                 Der Bedarf an Informationen über mögliche Gefahren und aktuelle
@@ -89,7 +89,7 @@
                   href="https://s.geo.admin.ch/91ef58c0c3"
                   target="_blank"
                   class="link"
-                  >https://s.geo.admin.ch/91ef58c0c3</a>
+                >https://s.geo.admin.ch/91ef58c0c3</a>
               </p>
               <p id="doc-1flo6kihn0" identifier="p">
                 Durch die zeitgerechte Erhebung und Bereitstellung von Geodaten
@@ -109,18 +109,18 @@
                   <li>
                     <!---->
                     <span><a
-                        href="https://www.hydrodaten.admin.ch/fr"
-                        target="_blank"
-                        class="link"
-                        >www.hydrodaten.admin.ch</a></span>
+                      href="https://www.hydrodaten.admin.ch/fr"
+                      target="_blank"
+                      class="link"
+                    >www.hydrodaten.admin.ch</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://www.meteoschweiz.admin.ch/home/messwerte.html"
-                        target="_blank"
-                        >www.meteoschweiz.admin.ch/home/messwerte.html
-                      </a></span>
+                      href="https://www.meteoschweiz.admin.ch/home/messwerte.html"
+                      target="_blank"
+                    >www.meteoschweiz.admin.ch/home/messwerte.html
+                    </a></span>
                   </li>
                 </ul>
               </div>
@@ -136,19 +136,19 @@
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f3426ce2"
-                        target="_blank"
-                        class="link"
-                        >Niederschlagsummen</a></span>
+                      href="https://s.geo.admin.ch/91f3426ce2"
+                      target="_blank"
+                      class="link"
+                    >Niederschlagsummen</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f342c08b"
-                        target="_blank"
-                        class="link"
-                        >Windgeschwindigkeit
-                      </a></span>
+                      href="https://s.geo.admin.ch/91f342c08b"
+                      target="_blank"
+                      class="link"
+                    >Windgeschwindigkeit
+                    </a></span>
                   </li>
                 </ul>
               </div>
@@ -160,43 +160,43 @@
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f33d9c51"
-                        target="_blank"
-                        >Warnkarte Nationale Gewässer </a>/
+                      href="https://s.geo.admin.ch/91f33d9c51"
+                      target="_blank"
+                    >Warnkarte Nationale Gewässer </a>/
                       <a
                         href="https://s.geo.admin.ch/654a699a56"
                         target="_blank"
-                        >Fliessgewässer</a>
+                      >Fliessgewässer</a>
                       /
                       <a
                         href="https://s.geo.admin.ch/65bca53013"
                         target="_blank"
-                        >Gefahrenstufen</a></span>
+                      >Gefahrenstufen</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/65319a667b"
-                        target="_blank"
-                        class="link"
-                        >Abflüsse und Wasserstände</a></span>
+                      href="https://s.geo.admin.ch/65319a667b"
+                      target="_blank"
+                      class="link"
+                    >Abflüsse und Wasserstände</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/6536df0550"
-                        target="_blank"
-                        class="link"
-                        >Hydrologische Stationen mit Vorhersagen</a></span>
+                      href="https://s.geo.admin.ch/6536df0550"
+                      target="_blank"
+                      class="link"
+                    >Hydrologische Stationen mit Vorhersagen</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f340d80f"
-                        target="_blank"
-                        class="link"
-                        >Gefährdungskarte Oberflächenabfluss
-                      </a></span>
+                      href="https://s.geo.admin.ch/91f340d80f"
+                      target="_blank"
+                      class="link"
+                    >Gefährdungskarte Oberflächenabfluss
+                    </a></span>
                   </li>
                   <li>
                     <!---->
@@ -204,23 +204,23 @@
                       <a
                         href="https://s.geo.admin.ch/91f34152d2"
                         target="_blank"
-                        >Überschwemmungsgebiete Aquaprotect 50-100</a></span>
+                      >Überschwemmungsgebiete Aquaprotect 50-100</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f341a9f0"
-                        target="_blank"
-                        class="link"
-                        >Murgang Silvaprotect</a></span>
+                      href="https://s.geo.admin.ch/91f341a9f0"
+                      target="_blank"
+                      class="link"
+                    >Murgang Silvaprotect</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f341feec"
-                        target="_blank"
-                        class="link"
-                        >Hangmuren Silvaprotect</a></span>
+                      href="https://s.geo.admin.ch/91f341feec"
+                      target="_blank"
+                      class="link"
+                    >Hangmuren Silvaprotect</a></span>
                   </li>
                 </ul>
               </div>
@@ -875,7 +875,7 @@
                             href="https://www.swisstopo.admin.ch/de/swisstopo/rechtsgrundlagen/rechtliche-fachpublikationen.detail.publication.html/swisstopo-internet/de/documents/dkw-documents/rechtliche_grundlagen/leitfadende.pdf.html"
                             target="_blank"
                             class="link"
-                            >Leitfaden </a>(externe Seite, Inhalt wird in neuem Fenster
+                          >Leitfaden </a>(externe Seite, Inhalt wird in neuem Fenster
                           geöffnet.
                         </p>
                       </div>
@@ -1040,11 +1040,11 @@
                   <li>
                     <!---->
                     <span><a
-                        href="/de/zeitplan-weisung-zur-einfhrung-der-minimalen-geodatenmodelle"
-                        target="_blank"
-                        class="link"
-                        >Zeitplan für die Einführung der «Minimalen
-                        Geodatenmodelle»</a></span>
+                      href="/de/zeitplan-weisung-zur-einfhrung-der-minimalen-geodatenmodelle"
+                      target="_blank"
+                      class="link"
+                    >Zeitplan für die Einführung der «Minimalen
+                      Geodatenmodelle»</a></span>
                   </li>
                 </ul>
               </div>
@@ -1058,7 +1058,7 @@
                     <img
                       alt="EDU Material"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/849b748b-d000-43b0-9d99-b10184fe4054.jpeg"
-                  /></picture>
+                    /></picture>
                   <figcaption></figcaption>
                 </figure>
                 <div></div>
@@ -1078,7 +1078,7 @@
                   target="_blank"
                   href="https://cms.ch.ch/fileservice/sdweb-docs-prod-files/files/2021/12/09/bb782ff3-1728-4237-ba83-2359211dc9ec.docx"
                   class="link"
-                  >Kennenlernen von map.geo.admin.ch</a>&nbsp;(Microsoft Word Dokument)
+                >Kennenlernen von map.geo.admin.ch</a>&nbsp;(Microsoft Word Dokument)
               </p>
               <h3 id="doc-1fle9h0hr0" identifier="sectiontitle" class="h3">
                 Stadt-Land-Unterschiede
@@ -1089,7 +1089,7 @@
                     <img
                       alt="EDU City-Land"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/dc1bae9d-5c80-4629-ae2f-47aca13411c6.jpeg"
-                  /></picture>
+                    /></picture>
                   <figcaption></figcaption>
                 </figure>
                 <div></div>
@@ -1107,7 +1107,7 @@
                   target="_blank"
                   href="https://cms.ch.ch/fileservice/sdweb-docs-prod-files/files/2021/12/09/9dde250c-1b1f-4b0a-9c3b-f89cd1977491.docx"
                   class="link"
-                  >Stadt Land Unterschiede</a>&nbsp;(Microsoft Word Dokument)
+                >Stadt Land Unterschiede</a>&nbsp;(Microsoft Word Dokument)
               </p>
               <h3 id="doc-1fle9ke7h0" identifier="sectiontitle" class="h3">
                 Verständnis für die Umwelt
@@ -1118,7 +1118,7 @@
                     <img
                       alt="EDU Understanding"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/eac5d749-b4c4-4482-a2dc-2cbfffbfe43d.jpeg"
-                  /></picture>
+                    /></picture>
                   <figcaption></figcaption>
                 </figure>
                 <div></div>
@@ -1137,7 +1137,7 @@
                   target="_blank"
                   href="https://cms.ch.ch/fileservice/sdweb-docs-prod-files/files/2021/12/09/8ecf76ef-9a3b-4a99-a3d3-60e34ebf2884.docx"
                   class="link"
-                  >Verständnis für die Umwelt</a>&nbsp;(Microsoft Word Dokument)
+                >Verständnis für die Umwelt</a>&nbsp;(Microsoft Word Dokument)
               </p>
               <h3 id="doc-1fle9o3q00" identifier="sectiontitle" class="h3">
                 www.sCHoolmaps.ch - Ein Projekt zur Förderung digitaler Karten
@@ -1149,7 +1149,7 @@
                     <img
                       alt="EDU sCHoolmaps"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/27029001-f5ef-43d3-9a89-2ad54b09fa0d.jpeg"
-                  /></picture>
+                    /></picture>
                   <figcaption></figcaption>
                 </figure>
                 <div></div>
@@ -1159,7 +1159,7 @@
                   href="https://www.schoolmaps.ch/2017/11/17/kurzeinstieg-in-schoolmaps-ch-arbeitsblatt-der-kommschau-2017/"
                   target="_blank"
                   class="link"
-                  >sCHoolmaps.ch</a>
+                >sCHoolmaps.ch</a>
                 – Das Geoportal Bund geo.admin.ch (swisstopo), das BAKOM und die
                 Beratungsstelle für digitale Medien der PH FHNW – imedias
                 starteten im Schuljahr 2015/16 das Projekt sCHoolmaps.ch.
@@ -1178,7 +1178,7 @@
                   href="http://www.schoolmaps.ch/category/1_unterrichtsideen/"
                   target="_blank"
                   class="link"
-                  >Mehr Informationen</a>
+                >Mehr Informationen</a>
               </p>
               <h3 id="doc-1fle9s08k0" identifier="sectiontitle" class="h3">
                 Kurzeinstieg für Lehrpersonen in sCHoolmaps.ch
@@ -1188,7 +1188,7 @@
                   target="_blank"
                   href="https://cms.ch.ch/fileservice/sdweb-docs-prod-files/files/2021/12/09/12d6acf0-f787-4ef2-b821-9a4bf8a432d4.pdf"
                   class="link"
-                  >sCHoolmaps.ch in Kürze für Lehrpersonen</a>&nbsp;<br />Hier finden Sie einen Schnellzugang zu den
+                >sCHoolmaps.ch in Kürze für Lehrpersonen</a>&nbsp;<br />Hier finden Sie einen Schnellzugang zu den
                 Unterrichtseinheiten auf sCHoolmaps.ch.PDF, 1 Seiten, 39 KB
               </p>
               <ul
@@ -1233,35 +1233,35 @@
                             <li>
                               <!---->
                               <span><a
-                                  href="http://www.imedias.ch/"
-                                  target="_blank"
-                                  class="link"
-                                  >Beratungsstelle für digitale Medien -
-                                  imedias</a></span>
+                                href="http://www.imedias.ch/"
+                                target="_blank"
+                                class="link"
+                              >Beratungsstelle für digitale Medien -
+                                imedias</a></span>
                             </li>
                             <li>
                               <!---->
                               <span><a
-                                  href="http://www.educa.ch/"
-                                  target="_blank"
-                                  class="link"
-                                  >Der schweizerische Bildungsserver educa.ch</a></span>
+                                href="http://www.educa.ch/"
+                                target="_blank"
+                                class="link"
+                              >Der schweizerische Bildungsserver educa.ch</a></span>
                             </li>
                             <li>
                               <!---->
                               <span><a
-                                  href="https://www.bakom.admin.ch/bakom/de/home/digital-und-internet/strategie-digitale-schweiz.html"
-                                  target="_blank"
-                                  class="link"
-                                  >Bundesamt für Kommunikation BAKOM</a></span>
+                                href="https://www.bakom.admin.ch/bakom/de/home/digital-und-internet/strategie-digitale-schweiz.html"
+                                target="_blank"
+                                class="link"
+                              >Bundesamt für Kommunikation BAKOM</a></span>
                             </li>
                             <li>
                               <!---->
                               <span><a
-                                  href="http://www.schoolmaps.ch/category/1_unterrichtsideen/"
-                                  target="_blank"
-                                  class="link"
-                                  >sCHoolmaps.ch</a></span>
+                                href="http://www.schoolmaps.ch/category/1_unterrichtsideen/"
+                                target="_blank"
+                                class="link"
+                              >sCHoolmaps.ch</a></span>
                             </li>
                           </ul>
                         </div>
@@ -1304,17 +1304,17 @@
                             <li>
                               <!---->
                               <span><a
-                                  href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/230_1456924493664.download/Hilfedokument.docx"
-                                  >Hilfe<br /></a>DOCX, 9 Seiten, 20 MB, Deutsch
+                                href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/230_1456924493664.download/Hilfedokument.docx"
+                              >Hilfe<br /></a>DOCX, 9 Seiten, 20 MB, Deutsch
                               </span>
                             </li>
                             <li>
                               <!---->
                               <span><a
-                                  href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/231_1456924518857.download/Ortsnamenspiel.docx"
-                                  target="_blank"
-                                  class="link"
-                                  >Ortsnamenspiel<br /></a>Welche der nachstehend aufgeführten Ortschaften
+                                href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/231_1456924518857.download/Ortsnamenspiel.docx"
+                                target="_blank"
+                                class="link"
+                              >Ortsnamenspiel<br /></a>Welche der nachstehend aufgeführten Ortschaften
                                 gibt es wirklich in der Schweiz? Nur einer der
                                 drei Namen ist richtig. Bitte ankreuzen und den
                                 dazugehörigen Kanton eintragen. Strassen- oder
@@ -1325,19 +1325,19 @@
                             <li>
                               <!---->
                               <span><a
-                                  href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/232_1456924550363.download/Stadt-Land-Fluss-Spiel.docx"
-                                  target="_blank"
-                                  class="link"
-                                  >Stadt-Land-Fluss Spiel<br /></a>DOCX, 1 Seiten, 114 KB, Deutsch
+                                href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/232_1456924550363.download/Stadt-Land-Fluss-Spiel.docx"
+                                target="_blank"
+                                class="link"
+                              >Stadt-Land-Fluss Spiel<br /></a>DOCX, 1 Seiten, 114 KB, Deutsch
                               </span>
                             </li>
                             <li>
                               <!---->
                               <span><a
-                                  href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/233_1456924592456.download/LehrerundSch%C3%BClermeinungen.pdf"
-                                  target="_blank"
-                                  class="link"
-                                  >Lehrer und Schülerfeedback<br /></a>Zusammenfassung der Meinung von Lehrpersonen
+                                href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/233_1456924592456.download/LehrerundSch%C3%BClermeinungen.pdf"
+                                target="_blank"
+                                class="link"
+                              >Lehrer und Schülerfeedback<br /></a>Zusammenfassung der Meinung von Lehrpersonen
                                 und Schüler/Innen über den Kartenviewer
                                 map.geo.admin.ch und seinen Einsatz im
                                 Unterricht.PDF, 5 Seiten, 699 KB, Deutsch</span>
@@ -1357,7 +1357,7 @@
                   target="_blank"
                   href="https://cms.ch.ch/fileservice/sdweb-docs-prod-files/files/2021/12/09/4008397e-f7ed-431d-b44f-257714efb7e0.pdf"
                   class="link"
-                  >Evaluierung 2019 durch das LerNetz.ch</a>&nbsp;<br />PDF, 20 Seiten, 2 MB, Deutsch
+                >Evaluierung 2019 durch das LerNetz.ch</a>&nbsp;<br />PDF, 20 Seiten, 2 MB, Deutsch
               </p>
               <h3 id="doc-1fl3t7rg90" class="h3" identifier="sectiontitle">
                 Abfrage der Daten
@@ -1500,47 +1500,47 @@
                   <li>
                     <!---->
                     <span><a
-                        href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2"
-                        target="_blank"
-                        class="link"
-                        >Abfrage der Beschreibung des Datensatzes
-                        swissBUILDINGS3D 2.0</a></span>
+                      href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2"
+                      target="_blank"
+                      class="link"
+                    >Abfrage der Beschreibung des Datensatzes
+                      swissBUILDINGS3D 2.0</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2/items"
-                        target="_blank"
-                        class="link"
-                        >Abfrage der Items des Datensatzes swissBUILDINGS3D
-                        2.0</a></span>
+                      href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2/items"
+                      target="_blank"
+                      class="link"
+                    >Abfrage der Items des Datensatzes swissBUILDINGS3D
+                      2.0</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2/items/swissbuildings3d_2_2018-07_1091-13"
-                        target="_blank"
-                        class="link"
-                        >Abfrage eines bestimmten Items des Datensatzes
-                        swissBUILDINGS3D 2.0</a></span>
+                      href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2/items/swissbuildings3d_2_2018-07_1091-13"
+                      target="_blank"
+                      class="link"
+                    >Abfrage eines bestimmten Items des Datensatzes
+                      swissBUILDINGS3D 2.0</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2/items?bbox=7.43,46.95,7.69,47.10"
-                        target="_blank"
-                        class="link"
-                        >Abfrage der Items des Datensatzes swissBUILDINGS3D 2.0
-                        in einer Bbox</a></span>
+                      href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2/items?bbox=7.43,46.95,7.69,47.10"
+                      target="_blank"
+                      class="link"
+                    >Abfrage der Items des Datensatzes swissBUILDINGS3D 2.0
+                      in einer Bbox</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2/items?datetime=2018-01-01/2018-12-31"
-                        target="_blank"
-                        class="link"
-                        >Abfrage der Items des Datensatzes swissBUILDINGS3D 2.0
-                        innerhalb eines bestimmten Datumsbereichs</a></span>
+                      href="https://data.geo.admin.ch/api/stac/v0.9/collections/ch.swisstopo.swissbuildings3d_2/items?datetime=2018-01-01/2018-12-31"
+                      target="_blank"
+                      class="link"
+                    >Abfrage der Items des Datensatzes swissBUILDINGS3D 2.0
+                      innerhalb eines bestimmten Datumsbereichs</a></span>
                   </li>
                 </ul>
               </div>

@@ -62,7 +62,7 @@
                   href="https://s.geo.admin.ch/91ef58c0c3"
                   target="_blank"
                   class="link"
-                  >https://s.geo.admin.ch/91ef58c0c3</a>
+                >https://s.geo.admin.ch/91ef58c0c3</a>
               </p>
               <p id="doc-1flo6kihn0" identifier="p">
                 Durch die zeitgerechte Erhebung und Bereitstellung von Geodaten
@@ -82,18 +82,18 @@
                   <li>
                     <!---->
                     <span><a
-                        href="https://www.hydrodaten.admin.ch/fr"
-                        target="_blank"
-                        class="link"
-                        >www.hydrodaten.admin.ch</a></span>
+                      href="https://www.hydrodaten.admin.ch/fr"
+                      target="_blank"
+                      class="link"
+                    >www.hydrodaten.admin.ch</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://www.meteoschweiz.admin.ch/home/messwerte.html"
-                        target="_blank"
-                        >www.meteoschweiz.admin.ch/home/messwerte.html
-                      </a></span>
+                      href="https://www.meteoschweiz.admin.ch/home/messwerte.html"
+                      target="_blank"
+                    >www.meteoschweiz.admin.ch/home/messwerte.html
+                    </a></span>
                   </li>
                 </ul>
               </div>
@@ -109,19 +109,19 @@
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f3426ce2"
-                        target="_blank"
-                        class="link"
-                        >Niederschlagsummen</a></span>
+                      href="https://s.geo.admin.ch/91f3426ce2"
+                      target="_blank"
+                      class="link"
+                    >Niederschlagsummen</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f342c08b"
-                        target="_blank"
-                        class="link"
-                        >Windgeschwindigkeit
-                      </a></span>
+                      href="https://s.geo.admin.ch/91f342c08b"
+                      target="_blank"
+                      class="link"
+                    >Windgeschwindigkeit
+                    </a></span>
                   </li>
                 </ul>
               </div>
@@ -133,43 +133,43 @@
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f33d9c51"
-                        target="_blank"
-                        >Warnkarte Nationale Gewässer </a>/
+                      href="https://s.geo.admin.ch/91f33d9c51"
+                      target="_blank"
+                    >Warnkarte Nationale Gewässer </a>/
                       <a
                         href="https://s.geo.admin.ch/654a699a56"
                         target="_blank"
-                        >Fliessgewässer</a>
+                      >Fliessgewässer</a>
                       /
                       <a
                         href="https://s.geo.admin.ch/65bca53013"
                         target="_blank"
-                        >Gefahrenstufen</a></span>
+                      >Gefahrenstufen</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/65319a667b"
-                        target="_blank"
-                        class="link"
-                        >Abflüsse und Wasserstände</a></span>
+                      href="https://s.geo.admin.ch/65319a667b"
+                      target="_blank"
+                      class="link"
+                    >Abflüsse und Wasserstände</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/6536df0550"
-                        target="_blank"
-                        class="link"
-                        >Hydrologische Stationen mit Vorhersagen</a></span>
+                      href="https://s.geo.admin.ch/6536df0550"
+                      target="_blank"
+                      class="link"
+                    >Hydrologische Stationen mit Vorhersagen</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f340d80f"
-                        target="_blank"
-                        class="link"
-                        >Gefährdungskarte Oberflächenabfluss
-                      </a></span>
+                      href="https://s.geo.admin.ch/91f340d80f"
+                      target="_blank"
+                      class="link"
+                    >Gefährdungskarte Oberflächenabfluss
+                    </a></span>
                   </li>
                   <li>
                     <!---->
@@ -177,23 +177,23 @@
                       <a
                         href="https://s.geo.admin.ch/91f34152d2"
                         target="_blank"
-                        >Überschwemmungsgebiete Aquaprotect 50-100</a></span>
+                      >Überschwemmungsgebiete Aquaprotect 50-100</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f341a9f0"
-                        target="_blank"
-                        class="link"
-                        >Murgang Silvaprotect</a></span>
+                      href="https://s.geo.admin.ch/91f341a9f0"
+                      target="_blank"
+                      class="link"
+                    >Murgang Silvaprotect</a></span>
                   </li>
                   <li>
                     <!---->
                     <span><a
-                        href="https://s.geo.admin.ch/91f341feec"
-                        target="_blank"
-                        class="link"
-                        >Hangmuren Silvaprotect</a></span>
+                      href="https://s.geo.admin.ch/91f341feec"
+                      target="_blank"
+                      class="link"
+                    >Hangmuren Silvaprotect</a></span>
                   </li>
                 </ul>
               </div>

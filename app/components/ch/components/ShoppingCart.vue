@@ -155,7 +155,7 @@
                   messageType="error"
                   :message="
                     formInputFields.invoice.gender.touched &&
-                    !formInputFields.invoice.gender.valid
+                      !formInputFields.invoice.gender.valid
                       ? 'Bitte wählen Sie eine Anrede aus.'
                       : ''
                   "
@@ -198,7 +198,7 @@
                       "
                       :message="
                         formInputFields.invoice.lastName.touched &&
-                        !formInputFields.invoice.lastName.valid
+                          !formInputFields.invoice.lastName.valid
                           ? 'Bitte geben Sie einen Namen an.'
                           : ''
                       "
@@ -219,7 +219,7 @@
                       "
                       :message="
                         formInputFields.invoice.firstName.touched &&
-                        !formInputFields.invoice.firstName.valid
+                          !formInputFields.invoice.firstName.valid
                           ? 'Bitte geben Sie einen Vornamen an.'
                           : ''
                       "
@@ -244,7 +244,7 @@
                       "
                       :message="
                         formInputFields.invoice.org.touched &&
-                        !formInputFields.invoice.org.valid
+                          !formInputFields.invoice.org.valid
                           ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe.'
                           : ''
                       "
@@ -266,7 +266,7 @@
                       "
                       :message="
                         formInputFields.invoice.street.touched &&
-                        !formInputFields.invoice.street.valid
+                          !formInputFields.invoice.street.valid
                           ? 'Bitte geben Sie eine Strasse und Hausnummer an.'
                           : ''
                       "
@@ -290,7 +290,7 @@
                       "
                       :message="
                         formInputFields.invoice.postOffice.touched &&
-                        !formInputFields.invoice.postOffice.valid
+                          !formInputFields.invoice.postOffice.valid
                           ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe.'
                           : ''
                       "
@@ -312,7 +312,7 @@
                       "
                       :message="
                         formInputFields.invoice.zip.touched &&
-                        !formInputFields.invoice.zip.valid
+                          !formInputFields.invoice.zip.valid
                           ? 'Bitte geben Sie eine Postleitzahl an.'
                           : ''
                       "
@@ -336,7 +336,7 @@
                       "
                       :message="
                         formInputFields.invoice.city.touched &&
-                        !formInputFields.invoice.city.valid
+                          !formInputFields.invoice.city.valid
                           ? 'Bitte geben Sie eine Ortschaft an.'
                           : ''
                       "
@@ -351,7 +351,7 @@
                       messageType="error"
                       :message="
                         formInputFields.invoice.country.touched &&
-                        !formInputFields.invoice.country.valid
+                          !formInputFields.invoice.country.valid
                           ? 'Bitte geben Sie ein Land an.'
                           : ''
                       "
@@ -385,7 +385,7 @@
                       "
                       :message="
                         formInputFields.invoice.phone.touched &&
-                        !formInputFields.invoice.phone.valid
+                          !formInputFields.invoice.phone.valid
                           ? 'Bitte geben Sie eine gültige Telefonnummer an.'
                           : ''
                       "
@@ -407,7 +407,7 @@
                       "
                       :message="
                         formInputFields.invoice.email.touched &&
-                        !formInputFields.invoice.email.valid
+                          !formInputFields.invoice.email.valid
                           ? 'Bitte geben Sie eine gültige E-Mail Adresse an.'
                           : ''
                       "
@@ -463,7 +463,7 @@
                         "
                         :message="
                           formInputFields.delivery.lastName.touched &&
-                          !formInputFields.delivery.lastName.valid
+                            !formInputFields.delivery.lastName.valid
                             ? 'Bitte geben Sie einen Namen an.'
                             : ''
                         "
@@ -484,7 +484,7 @@
                         "
                         :message="
                           formInputFields.delivery.firstName.touched &&
-                          !formInputFields.delivery.firstName.valid
+                            !formInputFields.delivery.firstName.valid
                             ? 'Bitte geben Sie einen Vornamen an.'
                             : ''
                         "
@@ -508,7 +508,7 @@
                         "
                         :message="
                           formInputFields.delivery.org.touched &&
-                          !formInputFields.delivery.org.valid
+                            !formInputFields.delivery.org.valid
                             ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe.'
                             : ''
                         "
@@ -530,7 +530,7 @@
                         "
                         :message="
                           formInputFields.delivery.street.touched &&
-                          !formInputFields.delivery.street.valid
+                            !formInputFields.delivery.street.valid
                             ? 'Bitte geben Sie eine Strasse und Hausnummer an.'
                             : ''
                         "
@@ -556,7 +556,7 @@
                         "
                         :message="
                           formInputFields.delivery.postOffice.touched &&
-                          !formInputFields.delivery.postOffice.valid
+                            !formInputFields.delivery.postOffice.valid
                             ? 'Die Eingabe ist ungültig. Bitte überprüfen Sie Ihre Eingabe.'
                             : ''
                         "
@@ -578,7 +578,7 @@
                         "
                         :message="
                           formInputFields.delivery.zip.touched &&
-                          !formInputFields.delivery.zip.valid
+                            !formInputFields.delivery.zip.valid
                             ? 'Bitte geben Sie eine Postleitzahl an.'
                             : ''
                         "
@@ -602,7 +602,7 @@
                         "
                         :message="
                           formInputFields.delivery.city.touched &&
-                          !formInputFields.delivery.city.valid
+                            !formInputFields.delivery.city.valid
                             ? 'Bitte geben Sie eine Ortschaft an.'
                             : ''
                         "
@@ -617,7 +617,7 @@
                         messageType="error"
                         :message="
                           formInputFields.delivery.country.touched &&
-                          !formInputFields.delivery.country.valid
+                            !formInputFields.delivery.country.valid
                             ? 'Bitte geben Sie ein Land an.'
                             : ''
                         "
