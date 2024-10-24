@@ -30,9 +30,7 @@
         <template #search="{ attributes, events }">
           <input
             class="vs__search"
-            :required="
-              required && (!currentSelected || currentSelected.length === 0)
-            "
+            :required="required && (!currentSelected || currentSelected.length === 0)"
             v-bind="attributes as any"
             v-on="events"
           />
@@ -58,7 +56,7 @@
 
 <script setup lang="ts">
 import vSelect from 'vue-select'
-import { ref, computed, watch, onMounted, h } from 'vue'
+import { ref, computed, watch, onMounted, h, type PropType } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
 const selectId = ref('')

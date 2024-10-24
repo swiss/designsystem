@@ -30,7 +30,7 @@ export const WithVerticalSpacing = {
               </picture>
 
               <figcaption>
-                Image label here — © Photograph Name
+                Image label here — ©  Photograph Name
               </figcaption>
             </figure>
 
@@ -75,7 +75,7 @@ export const WithoutVerticalSpacing = {
               </picture>
 
               <figcaption>
-                Image label here — © Photograph Name
+                Image label here — © Photograph Name
               </figcaption>
             </figure>
 

@@ -29,24 +29,24 @@ export default tseslint.config(
       // Eslint
       "no-constant-condition": "warn",
       "prefer-const": "warn",
+      "no-irregular-whitespace": "warn",
+      "no-useless-escape": "warn",
 
       // Vue
       "vue/max-attributes-per-line": "off",
+      "vue/html-self-closing": "off",
 
       //Typescript
       "@typescript-eslint/consistent-type-imports": "warn",
 
       // Fixed but open issues which cannot be fixed
       "no-unused-vars": "off",
+      "no-undef": "off",
 
       // Unsure
       "no-prototype-builtins": "off",
 
       //Unchecked
-      "no-undef": "off",
-      "no-irregular-whitespace": "off",
-      "no-useless-escape": "off",
-      "vue/html-self-closing": "off",
       "vue/attributes-order": "off",
       "vue/no-deprecated-slot-attribute": "off",
       "vue/v-slot-style": "off",

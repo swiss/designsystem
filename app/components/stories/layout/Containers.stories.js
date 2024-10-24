@@ -48,10 +48,10 @@ export const CenteredSubContainers = {
     template: `
       <section>
         <div class="container container--grid gap--responsive">
-          <div class="container__full">container\_\_full</div>
-          <div class="container__center--md">container\_\_center--md</div>
-          <div class="container__center--sm">container\_\_center--sm</div>
-          <div class="container__center--xs">container\_\_center--xs</div>
+          <div class="container__full">container__full</div>
+          <div class="container__center--md">container__center--md</div>
+          <div class="container__center--sm">container__center--sm</div>
+          <div class="container__center--xs">container__center--xs</div>
         </div>
       </section>`,
   }),
@@ -62,8 +62,8 @@ export const MainAsideSubContainers = {
     template: `
       <section>
         <div class="container container--grid ${args.extraClasses} gap--responsive">
-          <div class="container__main">container\_\_main</div>
-          <div class="container__aside">container\_\_aside</div>
+          <div class="container__main">container__main</div>
+          <div class="container__aside">container__aside</div>
         </div>
       </section>`,
   }),
