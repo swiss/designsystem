@@ -34,8 +34,8 @@
       :label="orderButtonText"
       :ariaLabel="orderButtonAriaLabel"
       :fullWidth="true"
-      @emitClick="orderClicked"
       :disabled="!agbAccepted"
+      @emitClick="orderClicked"
     />
   </div>
 </template>

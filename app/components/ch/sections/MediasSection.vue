@@ -242,10 +242,10 @@
         </swiper>
         <div class="carousel__fonctions">
           <div
-            class="carousel__pagination"
             :id="`carousel-pagination-${id}`"
+            class="carousel__pagination"
           ></div>
-          <button class="carousel__prev" :id="`carousel-prev-${id}`">
+          <button :id="`carousel-prev-${id}`" class="carousel__prev">
             <div class="sr-only">Previous image</div>
             <SvgIcon
               icon="ChevronLeft"
@@ -253,7 +253,7 @@
               aria-hidden="true"
             />
           </button>
-          <button class="carousel__next" :id="`carousel-next-${id}`">
+          <button :id="`carousel-next-${id}`" class="carousel__next">
             <div class="sr-only">Next image</div>
             <SvgIcon
               icon="ChevronRight"

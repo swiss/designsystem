@@ -4,8 +4,8 @@
       {{ label }}
     </label>
     <textarea
-      :class="classes"
       :id="id"
+      :class="classes"
       :name="id"
       :rows="rows"
       :cols="cols"

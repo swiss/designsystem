@@ -75,53 +75,53 @@
     </div>
 
     <div
+      id="tab-1"
       tabindex="0"
       role="tabpanel"
-      id="tab-1"
       aria-labelledby="tab-1"
       class="tab__container"
     ></div>
 
     <div
+      id="tab-2"
       tabindex="0"
       role="tabpanel"
-      id="tab-2"
       aria-labelledby="tab-2"
       class="tab__container tab__container--is-hidden"
     ></div>
 
     <div
+      id="tab-3"
       tabindex="0"
       role="tabpanel"
-      id="tab-3"
       aria-labelledby="tab-3"
       class="tab__container tab__container--is-hidden"
     ></div>
     <div
+      id="tab-4"
       tabindex="0"
       role="tabpanel"
-      id="tab-4"
       aria-labelledby="tab-4"
       class="tab__container tab__container--is-hidden"
     ></div>
     <div
+      id="tab-5"
       tabindex="0"
       role="tabpanel"
-      id="tab-5"
       aria-labelledby="tab-5"
       class="tab__container tab__container--is-hidden"
     ></div>
     <div
+      id="tab-6"
       tabindex="0"
       role="tabpanel"
-      id="tab-6"
       aria-labelledby="tab-6"
       class="tab__container tab__container--is-hidden"
     ></div>
     <div
+      id="tab-7"
       tabindex="0"
       role="tabpanel"
-      id="tab-7"
       aria-labelledby="tab-7"
       class="tab__container tab__container--is-hidden"
     ></div>

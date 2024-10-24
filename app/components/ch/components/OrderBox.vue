@@ -5,25 +5,25 @@
       <!-- Add full-width class for single amount input -->
       <div class="form__group__input order__box-input-amount-container">
         <Input
-          :label="amountInputLabel"
           :id="getUniqueId('input')"
+          :label="amountInputLabel"
           type="number"
           variant="outline"
           size="base"
           :value="inputValue"
-          @keypress="restrictChars"
-          @input="inputValue = ($event.target as HTMLInputElement).value"
           class="order__box-amount-input"
           :min="0"
+          @keypress="restrictChars"
+          @input="inputValue = ($event.target as HTMLInputElement).value"
         />
       </div>
       <Select
+        :id="getUniqueId('select')"
         class="order__box-input-language-container"
         variant="outline"
         :bare="false"
         size="base"
         :label="languageLabel"
-        :id="getUniqueId('select')"
         @select="setSelectedValue"
       >
         <option

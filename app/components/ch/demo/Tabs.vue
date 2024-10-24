@@ -38,9 +38,9 @@
     </div>
 
     <div
+      id="tab-1"
       tabindex="0"
       role="tabpanel"
-      id="tab-1"
       aria-labelledby="tab-1"
       class="tab__container"
       :class="
@@ -60,9 +60,9 @@
     </div>
 
     <div
+      id="tab-2"
       tabindex="0"
       role="tabpanel"
-      id="tab-2"
       aria-labelledby="tab-2"
       class="tab__container"
       :class="
@@ -82,9 +82,9 @@
     </div>
 
     <div
+      id="tab-3"
       tabindex="0"
       role="tabpanel"
-      id="tab-3"
       aria-labelledby="tab-3"
       class="tab__container"
       :class="

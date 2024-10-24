@@ -8,8 +8,8 @@
         :alt="image.alt"
       />
       <ImageNotAvailable
-        class="shopping__card-image-not-available"
         v-else
+        class="shopping__card-image-not-available"
         text="Kein Bild verfügbar"
       />
     </div>
@@ -27,8 +27,8 @@
 
     <div v-if="type === 'edit'" class="shopping__card-amount-input">
       <input
-        type="number"
         v-model="inputValue"
+        type="number"
         class="input--outline text--base"
       />
     </div>

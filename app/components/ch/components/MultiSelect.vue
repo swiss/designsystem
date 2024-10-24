@@ -10,6 +10,7 @@
     <div :class="selectWrapperClasses">
       <v-select
         :id="getUniqueId('multi-select')"
+        v-model="currentSelected"
         :multiple="multiple"
         :placeholder="placeholder"
         :class="selectClasses"
@@ -17,7 +18,6 @@
         :components="{ Deselect, OpenIndicator }"
         :options="options"
         :name="name"
-        v-model="currentSelected"
         :selectable="
           (option: string) =>
             !excluded.includes(option) &&

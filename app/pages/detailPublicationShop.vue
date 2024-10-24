@@ -324,7 +324,7 @@
         <RelatedPublicationsSection />
       </main>
       <ToastMessage triggerName="trigger-toast-message" />
-      <footer class="footer" id="main-footer">
+      <footer id="main-footer" class="footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>

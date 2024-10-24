@@ -1,9 +1,9 @@
 <template>
   <div class="form__group__radio">
     <input
+      :id="id"
       type="radio"
       :class="classes"
-      :id="id"
       :name="name"
       :value="value"
       :checked="checked"

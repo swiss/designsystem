@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" v-if="!isClosed">
+  <div v-if="!isClosed" :class="classes">
     <div class="alert-banner__wrapper">
       <SvgIcon v-if="icon" :icon="icon" class="notification__icon" />
       <div class="alert-banner__grid">
@@ -30,8 +30,8 @@
       <button
         v-if="closeBtn"
         class="alert-banner__close"
-        @click="isClosed = true"
         aria-label="Close alert banner"
+        @click="isClosed = true"
       >
         <SvgIcon icon="Cancel" />
       </button>

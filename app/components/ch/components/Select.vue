@@ -5,8 +5,8 @@
     </label>
     <div :class="selectWrapperClasses">
       <select
-        :class="selectClasses"
         :id="id"
+        :class="selectClasses"
         :name="name"
         :required="required"
         @change="handleChange"

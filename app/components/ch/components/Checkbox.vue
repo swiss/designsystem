@@ -1,14 +1,14 @@
 <template>
   <div class="form__group__checkbox">
     <input
+      :id="id"
       type="checkbox"
       :class="classes"
-      :id="id"
       :name="name"
       :value="value"
       :required="required"
-      @change="onChange"
       :checked="checked"
+      @change="onChange"
     />
     <label v-if="label" :for="id" :class="labelClasses">
       <span v-html="label"></span

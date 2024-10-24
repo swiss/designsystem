@@ -1,5 +1,5 @@
 <template>
-  <nav class="carousel-navigation" :id="id">
+  <nav :id="id" class="carousel-navigation">
     <ul class="carousel">
       <swiper
         :speed="500"
@@ -49,11 +49,11 @@
         </swiper-slide>
       </swiper>
       <div class="carousel__fonctions">
-        <button class="carousel__prev" :id="`carousel-prev-${id}`">
+        <button :id="`carousel-prev-${id}`" class="carousel__prev">
           <div class="sr-only">Vorherige Navigations Elemente</div>
           <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
         </button>
-        <button class="carousel__next" :id="`carousel-next-${id}`">
+        <button :id="`carousel-next-${id}`" class="carousel__next">
           <div class="sr-only">Nächste Navigations Elemente</div>
           <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
         </button>

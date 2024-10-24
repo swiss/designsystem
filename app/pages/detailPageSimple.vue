@@ -29,7 +29,7 @@
           Vorteil für einen Benutzer liegt darin, dass die Modelldateien und
           evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
           müssen.
-          <a href="#" class="link" id="share-link">Diese Seite teilen</a>
+          <a id="share-link" href="#" class="link">Diese Seite teilen</a>
         </template>
         <template v-slot:image>
           <figure>
@@ -76,9 +76,9 @@
             </p>
 
             <SlideshowExample
+              :id="1"
               paginationType="bullets"
               loop
-              :id="1"
               :slides="slides"
             />
 
@@ -102,9 +102,9 @@
             </p>
 
             <SlideshowExample
+              :id="2"
               paginationType="fraction"
               loop
-              :id="2"
               :slides="slides"
             />
 
@@ -835,11 +835,11 @@
             <hr class="separator" />
             <div class="pt-3">
               <Input
+                id="my-id"
                 type="outline"
                 size="base"
                 label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"
-                id="my-id"
                 :hideLabel="true"
                 :readonly="true"
               />
@@ -867,7 +867,7 @@
         </Card>
       </template>
     </Modal>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
