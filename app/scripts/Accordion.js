@@ -19,7 +19,7 @@ const Accordion = {
         item.tabIndex = -1
       })
 
-      button.addEventListener('click', (event) => {
+      button.addEventListener('click', () => {
         if (button.classList.contains('active')) {
           // close drawer
           button.classList.remove('active')

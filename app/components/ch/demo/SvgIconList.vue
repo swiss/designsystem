@@ -31,7 +31,7 @@ let array = import.meta.glob([
 ])
 
 onMounted(() => {
-  const parsedArray = Object.keys(array).map((key, i) =>
+  const parsedArray = Object.keys(array).map((key) =>
     key.replace(/.*\/(.+)\.svg/, '$1'),
   )
 

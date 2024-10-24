@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   isOpen: {
     type: Boolean,
     default: false,

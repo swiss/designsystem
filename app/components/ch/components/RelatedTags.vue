@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import TagItem from './TagItem.vue'
 
-const props = defineProps({
+defineProps({
   tags: {
     type: Array<{ label: string; url: string }>,
     required: true,

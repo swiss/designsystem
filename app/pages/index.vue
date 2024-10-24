@@ -126,7 +126,7 @@ const socialSection = reactive({
   ] as SocialsFeed[],
 })
 
-const props = defineProps({
+defineProps({
   isIntranet: {
     type: Boolean,
     default: () => false,

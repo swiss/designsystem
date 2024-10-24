@@ -21,7 +21,7 @@
 import SvgIcon from './SvgIcon.vue'
 import Input from './Input.vue'
 
-const props = defineProps({
+defineProps({
   isOpen: {
     type: Boolean,
     default: () => false,

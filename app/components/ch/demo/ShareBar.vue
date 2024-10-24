@@ -23,7 +23,7 @@ import Print from '../components/Print.vue'
 import SignLanguage from '../components/SignLanguage.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 
-const props = defineProps({
+defineProps({
   showEasyIcons: {
     type: Boolean,
     default: () => true,

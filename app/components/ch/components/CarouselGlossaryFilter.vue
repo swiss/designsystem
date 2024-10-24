@@ -320,7 +320,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import badge from '../components/Badge.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 
-const props = defineProps({
+defineProps({
   id: {
     type: String,
     default: () => 1,

@@ -815,7 +815,7 @@
       <template v-slot:body>
         <Card type="default">
           <template v-slot:description>
-            <div class="flex flex-wrap gap-6 justify-center">
+            <div class="flex flex-wrap justify-center gap-6">
               <a href="#" class="link" title="Share on Facebook">
                 <SvgIcon size="2xl" icon="Facebook" label="Facebook" />
               </a>
@@ -997,7 +997,7 @@ const tags = reactive([
   { label: 'Datenmodell', url: '#' },
 ])
 
-const props = defineProps({
+defineProps({
   isIntranet: {
     type: Boolean,
     default: () => false,

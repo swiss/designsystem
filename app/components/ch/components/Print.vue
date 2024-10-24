@@ -17,7 +17,6 @@
 
 <script setup lang="ts">
 import SvgIcon from './SvgIcon.vue'
-import MetaInfo from './MetaInfo.vue'
 
 function handleClick() {
   window.print()

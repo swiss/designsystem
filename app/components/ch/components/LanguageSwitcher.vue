@@ -15,7 +15,7 @@
 import Select from '../components/Select.vue'
 import { computed } from 'vue'
 
-const props = defineProps({
+defineProps({
   type: {
     type: String,
     default: () => 'negative',

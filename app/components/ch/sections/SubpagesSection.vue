@@ -125,9 +125,8 @@
 <script setup lang="ts">
 import Card from '../components/Card.vue'
 import Btn from '../components/Btn.vue'
-import SvgIcon from '../components/SvgIcon.vue'
 
-const props = defineProps({
+defineProps({
   isHomePage: {
     type: Boolean,
     default: () => false,

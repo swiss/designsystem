@@ -1,5 +1,5 @@
 import remarkGfm from 'remark-gfm'
-import { StorybookConfig } from '@storybook/vue3-vite'
+import type { StorybookConfig } from '@storybook/vue3-vite'
 
 const config: StorybookConfig = {
   stories: ['../components/**/*.mdx', '../components/**/*.stories.@(js|ts)'],

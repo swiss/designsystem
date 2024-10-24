@@ -67,7 +67,7 @@ import { Navigation, Pagination, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import SvgIcon from '../components/SvgIcon.vue'
 
-const props = defineProps({
+defineProps({
   id: {
     type: String,
     default: () => 1,

@@ -287,7 +287,7 @@ const searchResults = reactive([
   },
 ])
 
-const props = defineProps({
+defineProps({
   noResults: {
     type: Boolean,
     default: () => false,

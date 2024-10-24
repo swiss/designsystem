@@ -31,15 +31,15 @@
         <template v-slot:author> </template>
         <template v-slot:eventInfos v-if="item.isEvent">
           <ul class="flex flex-wrap">
-            <li class="flex items-center mr-6 mb-2">
+            <li class="flex items-center mb-2 mr-6">
               <SvgIcon icon="Calendar" size="xl" class="-ml-1.5 mr-1" />
               <div>10-12 Mai 2022</div>
             </li>
-            <li class="flex items-center mr-6 mb-2">
+            <li class="flex items-center mb-2 mr-6">
               <SvgIcon icon="Clock" size="xl" class="-ml-1.5 mr-1" />
               <div>9 bis 11 Uhr</div>
             </li>
-            <li class="flex items-center mr-6 mb-2">
+            <li class="flex items-center mb-2 mr-6">
               <SvgIcon icon="MapMarker" size="xl" class="-ml-1.5 mr-1" />
               <div>Zürich</div>
             </li>
@@ -82,7 +82,7 @@ import Btn from '../components/Btn.vue'
 import Card from '../components/Card.vue'
 import type { SearchResultItem } from '../../../types'
 
-const props = defineProps({
+defineProps({
   itemList: {
     type: Array<SearchResultItem>,
     required: true,

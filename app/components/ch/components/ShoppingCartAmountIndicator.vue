@@ -1,6 +1,6 @@
 <template>
   <div class="shopping__cart-amount-indicator">
-    {{ limittedAmount }}
+    {{ limitedAmount }}
   </div>
 </template>
 
@@ -14,7 +14,7 @@ const props = defineProps({
   },
 })
 
-const limittedAmount = computed(() => {
+const limitedAmount = computed(() => {
   return props.amount > 9 ? '9+' : props.amount
 })
 </script>

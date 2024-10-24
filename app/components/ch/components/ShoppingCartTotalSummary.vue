@@ -46,7 +46,7 @@ import { ref } from 'vue'
 
 const agbAccepted = ref(false)
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: () => 'Total',

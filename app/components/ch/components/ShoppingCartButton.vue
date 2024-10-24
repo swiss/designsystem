@@ -44,10 +44,6 @@ const props = defineProps({
   },
 })
 
-const limittedAmount = computed(() => {
-  return props.amount > 9 ? '9+' : props.amount
-})
-
 const parsedLabel = computed(() => {
   return props.ariaLabel.replace('<amount>', props.amount.toString())
 })

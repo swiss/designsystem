@@ -293,7 +293,6 @@
 </template>
 
 <script setup lang="ts">
-import badge from './Badge.vue'
 import { computed } from 'vue'
 
 const props = defineProps({

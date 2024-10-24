@@ -276,7 +276,7 @@ import Btn from '../components/Btn.vue'
 import MetaInfo from '../components/MetaInfo.vue'
 import { computed } from 'vue'
 
-const props = defineProps({
+defineProps({
   id: {
     type: Number,
     default: () => 8463,
