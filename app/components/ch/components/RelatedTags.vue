@@ -2,7 +2,7 @@
   <div>
     <hr v-if="!bare" class="separator separator--xl" />
     <ul class="list list--flex list--wrap">
-      <li v-for="(tag, index) in tags" :key="tag.label">
+      <li v-for="(tag, index) in tags" :key="index">
         <TagItem :key="tag.label + index" :label="tag.label" :to="tag.url" />
       </li>
     </ul>

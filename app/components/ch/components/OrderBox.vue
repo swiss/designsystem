@@ -1,6 +1,8 @@
 <template>
   <div class="box">
-    <h2 class="h5 order__box-title">{{ title }}</h2>
+    <h2 class="h5 order__box-title">
+      {{ title }}
+    </h2>
     <div class="order__box-input-container">
       <!-- Add full-width class for single amount input -->
       <div class="form__group__input order__box-input-amount-container">
@@ -37,14 +39,20 @@
       </Select>
     </div>
     <div class="order__box-piece-price-container">
-      <p class="order__box-piece-price-title">{{ pricePieceTitle }}</p>
+      <p class="order__box-piece-price-title">
+        {{ pricePieceTitle }}
+      </p>
       <p class="order__box-piece-price">
         {{ `${currencyPrefix} ${pricePiece}` }}
       </p>
     </div>
     <div class="order__box-total-price-container">
-      <p class="order__box-total-price-title">{{ totalPriceTitle }}</p>
-      <p class="order__box-total-price">{{ totalPrice }}</p>
+      <p class="order__box-total-price-title">
+        {{ totalPriceTitle }}
+      </p>
+      <p class="order__box-total-price">
+        {{ totalPrice }}
+      </p>
     </div>
     <Btn
       class="order__box-order-button"

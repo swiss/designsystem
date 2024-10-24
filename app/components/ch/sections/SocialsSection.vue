@@ -4,7 +4,9 @@
       <div :class="computedClasses">
         <div class="grid socials__grid gap--responsive">
           <div class="socials__info">
-            <h2 class="section__title">{{ sectionTitle }}</h2>
+            <h2 class="section__title">
+              {{ sectionTitle }}
+            </h2>
 
             <p v-html="sectionDesc"></p>
           </div>

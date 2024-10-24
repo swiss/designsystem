@@ -1,7 +1,9 @@
 <template>
   <div class="section section--default">
     <div class="container">
-      <h2 class="section__title">Medienmitteilungen</h2>
+      <h2 class="section__title">
+        Medienmitteilungen
+      </h2>
       <div :class="computedClasses">
         <swiper
           :speed="500"
@@ -246,7 +248,9 @@
             class="carousel__pagination"
           ></div>
           <button :id="`carousel-prev-${id}`" class="carousel__prev">
-            <div class="sr-only">Previous image</div>
+            <div class="sr-only">
+              Previous image
+            </div>
             <SvgIcon
               icon="ChevronLeft"
               role="presentation"
@@ -254,7 +258,9 @@
             />
           </button>
           <button :id="`carousel-next-${id}`" class="carousel__next">
-            <div class="sr-only">Next image</div>
+            <div class="sr-only">
+              Next image
+            </div>
             <SvgIcon
               icon="ChevronRight"
               role="presentation"

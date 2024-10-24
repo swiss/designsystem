@@ -1,6 +1,8 @@
 <template>
   <div :class="classes">
-    <component :is="tag" class="info-block__title">{{ title }}</component>
+    <component :is="tag" class="info-block__title">
+      {{ title }}
+    </component>
     <div>
       <slot />
     </div>

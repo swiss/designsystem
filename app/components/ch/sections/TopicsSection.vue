@@ -1,7 +1,9 @@
 <template>
   <section class="section bg--secondary-50">
     <div class="container">
-      <h2 class="section__title">Schwerpunktthemen</h2>
+      <h2 class="section__title">
+        Schwerpunktthemen
+      </h2>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template v-slot:image>
@@ -198,7 +200,9 @@
       </div>
     </div>
     <div class="container">
-      <h2 class="section__title">Andere Themen</h2>
+      <h2 class="section__title">
+        Andere Themen
+      </h2>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template v-slot:image>

@@ -50,11 +50,15 @@
       </swiper>
       <div class="carousel__fonctions">
         <button :id="`carousel-prev-${id}`" class="carousel__prev">
-          <div class="sr-only">Vorherige Navigations Elemente</div>
+          <div class="sr-only">
+            Vorherige Navigations Elemente
+          </div>
           <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
         </button>
         <button :id="`carousel-next-${id}`" class="carousel__next">
-          <div class="sr-only">Nächste Navigations Elemente</div>
+          <div class="sr-only">
+            Nächste Navigations Elemente
+          </div>
           <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
         </button>
       </div>

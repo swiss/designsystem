@@ -1,7 +1,9 @@
 <template>
   <div class="container container--grid">
     <div v-if="!showConfirmation" class="my-16 container__center--md">
-      <h1 class="h1 shopping__cart-title">{{ cartTitle }}</h1>
+      <h1 class="h1 shopping__cart-title">
+        {{ cartTitle }}
+      </h1>
       <ul class="accordion">
         <li class="accordion__item">
           <button
@@ -15,7 +17,9 @@
               :isConfirmed="step1Confirmed"
               :isActive="activeStepIndex === 1"
             />
-            <h2 class="accordion__title">{{ cartOverviewTitle }}</h2>
+            <h2 class="accordion__title">
+              {{ cartOverviewTitle }}
+            </h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
@@ -128,7 +132,9 @@
               :isConfirmed="step2Confirmed"
               :isActive="activeStepIndex === 2"
             />
-            <h2 class="accordion__title">{{ cartAddressTitle }}</h2>
+            <h2 class="accordion__title">
+              {{ cartAddressTitle }}
+            </h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
@@ -359,12 +365,24 @@
                         (e) => setFormFieldValue('invoice', 'country', e)
                       "
                     >
-                      <option selected disabled>Land auswählen</option>
-                      <option value="CH">Schweiz</option>
-                      <option value="DE">Deutschland</option>
-                      <option value="AT">Österreich</option>
-                      <option value="FR">Frankreich</option>
-                      <option value="IT">Italien</option>
+                      <option selected disabled>
+                        Land auswählen
+                      </option>
+                      <option value="CH">
+                        Schweiz
+                      </option>
+                      <option value="DE">
+                        Deutschland
+                      </option>
+                      <option value="AT">
+                        Österreich
+                      </option>
+                      <option value="FR">
+                        Frankreich
+                      </option>
+                      <option value="IT">
+                        Italien
+                      </option>
                     </Select>
                   </div>
                   <div class="shopping__cart-order-form-input-group">
@@ -625,12 +643,24 @@
                           (e) => setFormFieldValue('delivery', 'country', e)
                         "
                       >
-                        <option selected disabled>Land auswählen</option>
-                        <option value="CH">Schweiz</option>
-                        <option value="DE">Deutschland</option>
-                        <option value="AT">Österreich</option>
-                        <option value="FR">Frankreich</option>
-                        <option value="IT">Italien</option>
+                        <option selected disabled>
+                          Land auswählen
+                        </option>
+                        <option value="CH">
+                          Schweiz
+                        </option>
+                        <option value="DE">
+                          Deutschland
+                        </option>
+                        <option value="AT">
+                          Österreich
+                        </option>
+                        <option value="FR">
+                          Frankreich
+                        </option>
+                        <option value="IT">
+                          Italien
+                        </option>
                       </Select>
                     </div>
                   </div>
@@ -660,7 +690,9 @@
             @click="handleAccordionClick(3)"
           >
             <StepIndicator :step="3" :isActive="activeStepIndex === 3" />
-            <h2 class="accordion__title">{{ cartCheckoutTitle }}</h2>
+            <h2 class="accordion__title">
+              {{ cartCheckoutTitle }}
+            </h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div

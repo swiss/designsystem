@@ -67,7 +67,9 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">Carousel with few images</h2>
+            <h2 class="h2">
+              Carousel with few images
+            </h2>
             <p>
               To display a few images as a carousel, set the pagination type to
               «bullets». Über den Kontakt models@geo.admin.ch können die
@@ -82,7 +84,9 @@
               :slides="slides"
             />
 
-            <h2 class="h2">Carousel with more than 5 images</h2>
+            <h2 class="h2">
+              Carousel with more than 5 images
+            </h2>
             <p>
               To display a more images in a carousel, set the pagination type to
               «fraction». Über den Kontakt models@geo.admin.ch können die
@@ -126,7 +130,9 @@
               </figcaption>
             </figure>
 
-            <h2 class="h2">Audio player</h2>
+            <h2 class="h2">
+              Audio player
+            </h2>
             <p>
               Use a default audio element wrapped into an audio player class.
               Die Datenmodellablage ist moderiert und die Erfassung neuer
@@ -141,7 +147,9 @@
               type="audio/mp3"
             />
 
-            <h2 class="h2">Datenmodellablage ansehen</h2>
+            <h2 class="h2">
+              Datenmodellablage ansehen
+            </h2>
             <p>
               Der Modellkatalog kann unter
               <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
@@ -337,7 +345,9 @@
               </li>
             </ol>
 
-            <h2 class="h2">Datenmodellablage ansehen</h2>
+            <h2 class="h2">
+              Datenmodellablage ansehen
+            </h2>
             <p>
               Der Modellkatalog kann unter
               <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
@@ -352,7 +362,9 @@
             </p>
 
             <TextImage>
-              <template v-slot:title> Modelldokumentation </template>
+              <template v-slot:title>
+                Modelldokumentation
+              </template>
               <template v-slot:description>
                 Über den Kontakt models@geo.admin.ch können die
                 Modelldokumentation zur Publikation eingereicht werden. Über den
@@ -372,7 +384,9 @@
               </template>
             </TextImage>
 
-            <h2 class="h2">Modellkatalog ansehen</h2>
+            <h2 class="h2">
+              Modellkatalog ansehen
+            </h2>
             <p>
               Ein neues «minimales Geodatenmodell» in der Datenmodellablage
               publizieren. Für die Publikation der «minimalen Geodatenmodelle»
@@ -390,7 +404,9 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">Bare Link Liste mit Beschreibung</h2>
+            <h2 class="h2">
+              Bare Link Liste mit Beschreibung
+            </h2>
             <ul class="list list--bare list--loose list--indented">
               <li>
                 <a
@@ -461,7 +477,9 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">Doted Link Liste mit Beschreibung</h2>
+            <h2 class="h2">
+              Doted Link Liste mit Beschreibung
+            </h2>
             <ul class="list list--default list--loose list--indented">
               <li>
                 <a
@@ -532,7 +550,9 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">Studien</h2>
+            <h2 class="h2">
+              Studien
+            </h2>
             <ul class="list">
               <li>
                 <DownloadItem
@@ -564,7 +584,9 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">Card link list</h2>
+            <h2 class="h2">
+              Card link list
+            </h2>
             <ul class="list">
               <li>
                 <Card type="flat">
@@ -575,7 +597,9 @@
                       dem Gebiet des Schutzes von Minderjährigen
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.231.01) </template>
+                  <template v-slot:footerInfo>
+                    (SR 0.211.231.01)
+                  </template>
                   <template v-slot:footerAction>
                     <Btn
                       to="#"
@@ -598,7 +622,9 @@
                       von Kindern
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.231.011) </template>
+                  <template v-slot:footerInfo>
+                    (SR 0.211.231.011)
+                  </template>
                   <template v-slot:footerAction>
                     <Btn
                       to="#"
@@ -620,7 +646,9 @@
                       Sorgerechts
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.230.01) </template>
+                  <template v-slot:footerInfo>
+                    (SR 0.211.230.01)
+                  </template>
                   <template v-slot:footerAction>
                     <Btn
                       to="#"
@@ -640,7 +668,9 @@
                       zivilrechtlichen Aspekte internationaler Kindesentführung
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.230.02) </template>
+                  <template v-slot:footerInfo>
+                    (SR 0.211.230.02)
+                  </template>
                   <template v-slot:footerAction>
                     <Btn
                       to="#"
@@ -661,7 +691,9 @@
                       internationalen Adoption
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.221.311) </template>
+                  <template v-slot:footerInfo>
+                    (SR 0.211.221.311)
+                  </template>
                   <template v-slot:footerAction>
                     <Btn
                       to="#"
@@ -681,7 +713,9 @@
                       internationalen Schutz von Erwachsenen
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.232.1) </template>
+                  <template v-slot:footerInfo>
+                    (SR 0.211.232.1)
+                  </template>
                   <template v-slot:footerAction>
                     <Btn
                       to="#"
@@ -701,7 +735,9 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">Large table example</h2>
+            <h2 class="h2">
+              Large table example
+            </h2>
             <TableSortable
               caption="This table could be even larger with a .container__full class on the parent."
               :displayCaption="true"
@@ -713,7 +749,9 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">Carousel with few images</h2>
+            <h2 class="h2">
+              Carousel with few images
+            </h2>
             <p>
               To display a few images as a carousel, set the pagination type to
               «bullets». Über den Kontakt models@geo.admin.ch können die
@@ -784,7 +822,9 @@
               eingepflegt.
             </p>
             <div>
-              <h2 class="h2">Themen</h2>
+              <h2 class="h2">
+                Themen
+              </h2>
               <RelatedTags :tags="tags" bare></RelatedTags>
             </div>
           </div>

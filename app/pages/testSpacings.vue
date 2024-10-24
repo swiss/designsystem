@@ -128,7 +128,9 @@
                 Mehr Datensätze zum Thema Niederschlag/Wind, sowie
                 Abflüsse/Wasserstand/Hochwassergefahr:
               </p>
-              <p id="doc-1flo6lam10" identifier="p">METEOSCHWEIZ</p>
+              <p id="doc-1flo6lam10" identifier="p">
+                METEOSCHWEIZ
+              </p>
               <div id="doc-1flo6li5j0" identifier="list">
                 <!---->
                 <!---->
@@ -152,7 +154,9 @@
                   </li>
                 </ul>
               </div>
-              <p id="doc-1flo6lvv30" identifier="p">BAFU</p>
+              <p id="doc-1flo6lvv30" identifier="p">
+                BAFU
+              </p>
               <div id="doc-1flo6m5ib0" identifier="list">
                 <!---->
                 <!---->
@@ -256,7 +260,9 @@
               <ul id="doc-1fkn0ad130" identifier="faq-teaser" class="accordion">
                 <li class="accordion__item">
                   <button aria-controls="0" class="accordion__button">
-                    <h3 class="accordion__title">Was sind Geodaten?</h3>
+                    <h3 class="accordion__title">
+                      Was sind Geodaten?
+                    </h3>
                     <svg
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -312,7 +318,9 @@
                 </li>
                 <li class="accordion__item">
                   <button aria-controls="1" class="accordion__button">
-                    <h3 class="accordion__title">Was sind Geoinformationen?</h3>
+                    <h3 class="accordion__title">
+                      Was sind Geoinformationen?
+                    </h3>
                     <svg
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -349,7 +357,9 @@
                 </li>
                 <li class="accordion__item">
                   <button aria-controls="2" class="accordion__button">
-                    <h3 class="accordion__title">Was sind Geobasisdaten?</h3>
+                    <h3 class="accordion__title">
+                      Was sind Geobasisdaten?
+                    </h3>
                     <svg
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1271,7 +1281,9 @@
                 </li>
                 <li class="accordion__item">
                   <button aria-controls="1" class="accordion__button">
-                    <h3 class="accordion__title">Arbeitsmaterialien</h3>
+                    <h3 class="accordion__title">
+                      Arbeitsmaterialien
+                    </h3>
                     <svg
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1369,15 +1381,21 @@
               <table id="doc-1fl3t8mkn0" summary="" identifier="table">
                 <thead>
                   <tr>
-                    <th id="Endpunkt">Endpunkt</th>
-                    <th id="Beschreibung">Beschreibung</th>
+                    <th id="Endpunkt">
+                      Endpunkt
+                    </th>
+                    <th id="Beschreibung">
+                      Beschreibung
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">
                       <div slot="default">
-                        <p id="doc-1fl3tbq840" identifier="p">/</p>
+                        <p id="doc-1fl3tbq840" identifier="p">
+                          /
+                        </p>
                       </div>
                     </th>
                     <!----><!---->
@@ -1392,7 +1410,9 @@
                   <tr>
                     <th scope="row">
                       <div slot="default">
-                        <p id="doc-1fl3tbuqk0" identifier="p">/conformance</p>
+                        <p id="doc-1fl3tbuqk0" identifier="p">
+                          /conformance
+                        </p>
                       </div>
                     </th>
                     <!----><!---->
@@ -1407,7 +1427,9 @@
                   <tr>
                     <th scope="row">
                       <div slot="default">
-                        <p id="doc-1fl3tc5fb2" identifier="p">/collections</p>
+                        <p id="doc-1fl3tc5fb2" identifier="p">
+                          /collections
+                        </p>
                       </div>
                     </th>
                     <!----><!---->
@@ -1473,7 +1495,9 @@
                   <tr>
                     <th scope="row">
                       <div slot="default">
-                        <p id="doc-1fl3tdju52" identifier="p">/search</p>
+                        <p id="doc-1fl3tdju52" identifier="p">
+                          /search
+                        </p>
                       </div>
                     </th>
                     <!----><!---->

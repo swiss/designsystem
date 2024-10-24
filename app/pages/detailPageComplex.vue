@@ -134,7 +134,9 @@
                   Image label here —&nbsp;©&nbsp;Photograph Name
                 </figcaption>
               </figure>
-              <h2 class="h2">Datenmodellablage ansehen</h2>
+              <h2 class="h2">
+                Datenmodellablage ansehen
+              </h2>
               <p>
                 Der Modellkatalog kann unter
                 <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
@@ -238,7 +240,9 @@
         <section class="section section--default">
           <div class="container container--grid gap--responsive">
             <div class="container__center--xs vertical-spacing">
-              <h2 class="h2">Table within .container__center--xs</h2>
+              <h2 class="h2">
+                Table within .container__center--xs
+              </h2>
               <TableSortable
                 id="1"
                 caption="This table is larger than its container"
@@ -251,7 +255,9 @@
         <section class="section section--default">
           <div class="container container--grid gap--responsive">
             <div class="container__center--sm vertical-spacing">
-              <h2 class="h2">Table within .container__center--sm</h2>
+              <h2 class="h2">
+                Table within .container__center--sm
+              </h2>
               <TableSortable
                 id="2"
                 caption="This table is larger than its container"
@@ -264,7 +270,9 @@
         <section class="section section--default">
           <div class="container container--grid gap--responsive">
             <div class="container__center--md vertical-spacing">
-              <h2 class="h2">Table within .container__center--md</h2>
+              <h2 class="h2">
+                Table within .container__center--md
+              </h2>
               <TableSortable
                 id="3"
                 caption="This table has the width of its container"
@@ -277,7 +285,9 @@
         <section class="section section--default">
           <div class="container container--grid gap--responsive">
             <div class="container__full vertical-spacing">
-              <h2 class="h2">Table within .container__full</h2>
+              <h2 class="h2">
+                Table within .container__full
+              </h2>
               <TableSortable
                 id="4"
                 caption="This table has the width of its container"

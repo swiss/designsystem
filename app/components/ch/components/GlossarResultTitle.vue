@@ -1,5 +1,7 @@
 <template>
-  <h2 class="glossar-result__title">{{ title }}</h2>
+  <h2 class="glossar-result__title">
+    {{ title }}
+  </h2>
 </template>
 <script setup lang="ts">
 defineProps({

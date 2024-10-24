@@ -39,7 +39,9 @@
             />
           </picture>
         </template>
-        <template v-slot:title> Was uns als VE ausmacht </template>
+        <template v-slot:title>
+          Was uns als VE ausmacht
+        </template>
         <template v-slot:description>
           Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz
           und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen

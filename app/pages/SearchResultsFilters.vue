@@ -11,7 +11,9 @@
     <main id="main-content">
       <section class="section section--default bg--secondary-50">
         <div class="container">
-          <h1 class="h1">Search Results</h1>
+          <h1 class="h1">
+            Search Results
+          </h1>
           <div class="search search--large search--page-result">
             <div class="search__group">
               <input
@@ -60,7 +62,9 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected>Option</option>
+                <option selected>
+                  Option
+                </option>
                 <option>...</option>
               </Select>
               <Select
@@ -70,7 +74,9 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected>Option</option>
+                <option selected>
+                  Option
+                </option>
                 <option>...</option>
               </Select>
               <Select
@@ -80,7 +86,9 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected>Option</option>
+                <option selected>
+                  Option
+                </option>
                 <option>...</option>
               </Select>
               <Select
@@ -90,7 +98,9 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected>Option</option>
+                <option selected>
+                  Option
+                </option>
                 <option>...</option>
               </Select>
               <Select
@@ -100,7 +110,9 @@
                 name="select-name"
                 label="Filter name"
               >
-                <option selected>Option</option>
+                <option selected>
+                  Option
+                </option>
                 <option>...</option>
               </Select>
             </div>
@@ -132,7 +144,9 @@
                   size="sm"
                   name="select-name"
                 >
-                  <option disabled selected>Sortieren</option>
+                  <option disabled selected>
+                    Sortieren
+                  </option>
                   <option>nach Relevanz</option>
                   <option>by date (increasing)</option>
                   <option>by date (decreasing)</option>
@@ -157,14 +171,18 @@
                 />
               </div>
             </div>
-            <h2 class="sr-only">Results list</h2>
+            <h2 class="sr-only">
+              Results list
+            </h2>
             <SearchResultsList
               v-if="!noResults && !isLoading"
               :itemList="searchResults"
               :displayType="displayType"
             />
             <div v-if="isLoading" class="my-16">
-              <h2 class="sr-only">Search is loading</h2>
+              <h2 class="sr-only">
+                Search is loading
+              </h2>
               <SvgIcon icon="Spinner" size="2xl" class="icon--spin" />
             </div>
             <div
@@ -177,14 +195,18 @@
                 Treffer auf der Behördenwebsite
                 <span class="text--bold">«NameNextLogo»</span>
               </h2>
-              <h3 class="h4">Tipps zur Suche</h3>
+              <h3 class="h4">
+                Tipps zur Suche
+              </h3>
               <ul class="list list--default">
                 <li>Überprüfen Sie die Schreibweise Ihres Suchbegriffes</li>
                 <li>Verwenden Sie einen anderen bzw. allgemeineren Begriff</li>
                 <li>Verwenden Sie ggf. weniger Suchbegriffe</li>
                 <li>Wechseln Sie die Behördenwebsite</li>
               </ul>
-              <h3 class="h4">Hinweis</h3>
+              <h3 class="h4">
+                Hinweis
+              </h3>
               <p>
                 Die Suche ist momentan auf die Behördenwebsite "[NameNextLogo]"
                 beschränkt. Eine behördenübergreifende Suche über die Domain

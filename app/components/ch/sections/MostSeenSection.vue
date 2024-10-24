@@ -1,8 +1,12 @@
 <template>
   <section class="section section--default">
     <div class="container">
-      <h2 class="section__title">Meist gesehen</h2>
-      <h3 class="section__subtitle">Top Karten</h3>
+      <h2 class="section__title">
+        Meist gesehen
+      </h2>
+      <h3 class="section__subtitle">
+        Top Karten
+      </h3>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template v-slot:image>
@@ -19,7 +23,9 @@
               sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerInfo> Dienstleistungen & Produkte </template>
+          <template v-slot:footerInfo>
+            Dienstleistungen & Produkte
+          </template>
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -43,7 +49,9 @@
               ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerInfo> Dienstleistungen & Produkte </template>
+          <template v-slot:footerInfo>
+            Dienstleistungen & Produkte
+          </template>
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -68,7 +76,9 @@
               dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerInfo> Dienstleistungen & Produkte </template>
+          <template v-slot:footerInfo>
+            Dienstleistungen & Produkte
+          </template>
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -81,7 +91,9 @@
         </Card>
       </div>
 
-      <h3 class="section__subtitle">Top Themen</h3>
+      <h3 class="section__subtitle">
+        Top Themen
+      </h3>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template v-slot:title>
