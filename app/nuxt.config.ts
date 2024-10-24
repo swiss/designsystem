@@ -55,6 +55,18 @@ export default defineNuxtConfig({
     },
   },
 
+  // Alias configuration. Disabling the default aliases.
+  alias: {
+    '~': './void',
+    '~/*': './void',
+    '@': './void',
+    '@/*': './void',
+    '~~': './void',
+    '~~/*': './void',
+    '@@': './void',
+    '@@/*': './void',
+  },
+
   // Future backward compatibility is guaranteed with the following setting
   compatibilityDate: '2024-10-31',
 })
