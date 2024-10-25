@@ -236,7 +236,7 @@ import Notification from '../components/ch/components/Notification.vue'
 import Select from '../components/ch/components/Select.vue'
 import { reactive } from 'vue'
 import { useLayoutStore } from '../store/layout'
-import type { SearchResultItem } from '~/types'
+import type { SearchResultItem } from '../types'
 
 const layoutStore = useLayoutStore()
 
