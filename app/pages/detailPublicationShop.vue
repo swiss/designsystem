@@ -56,12 +56,12 @@
                   <source
                     srcset="/images/publication-cover.png"
                     media="(min-width: 800px)"
-                  />
+                  >
                   <img
                     src="/images/publication-cover.png"
                     alt="publication cover"
                     class="h-full m-auto shadow-xl"
-                  />
+                  >
                 </picture>
               </figure>
 
@@ -225,7 +225,7 @@
                 <h2 class="h2">
                   Themen
                 </h2>
-                <RelatedTags :tags="tags" bare></RelatedTags>
+                <RelatedTags :tags="tags" bare />
               </div>
             </div>
             <div class="hidden container__aside md:block">

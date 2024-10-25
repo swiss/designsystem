@@ -11,7 +11,7 @@
         :required="required"
         @change="handleChange"
       >
-        <slot></slot>
+        <slot />
       </select>
       <div class="select__icon">
         <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">

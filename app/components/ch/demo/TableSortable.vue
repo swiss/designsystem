@@ -2,7 +2,7 @@
   <div class="table-wrapper">
     <table :id="`table-sortable-${id}`" :class="computedClasses">
       <caption>
-        <br />
+        <br>
         {{
           caption
         }}
@@ -13,13 +13,13 @@
           <th scope="col">
             <button class="table__sorter">
               Name
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true" />
             </button>
           </th>
           <th scope="col" aria-sort="ascending">
             <button class="table__sorter">
               Job
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true" />
             </button>
           </th>
           <th scope="col">
@@ -28,7 +28,7 @@
           <th scope="col" class="text-right">
             <button class="table__sorter">
               ID
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true" />
             </button>
           </th>
         </tr>

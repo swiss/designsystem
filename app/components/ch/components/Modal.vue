@@ -25,11 +25,11 @@
       </header>
 
       <div v-if="$slots.body" :id="'modal-desc-' + uuid" class="modal__body">
-        <slot name="body"></slot>
+        <slot name="body" />
       </div>
 
       <footer v-if="$slots.footer" class="modal__footer">
-        <slot name="footer"></slot>
+        <slot name="footer" />
       </footer>
     </div>
     <div
@@ -39,7 +39,7 @@
       aria-label="close"
       @click="close"
       @focus="backdropFocusListener"
-    ></div>
+    />
   </div>
 </template>
 

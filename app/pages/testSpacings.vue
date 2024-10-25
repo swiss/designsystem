@@ -39,10 +39,10 @@
                     <img
                       alt="News - Inondations Juillet 2021 - Visites map.geo.admin.ch"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/30/b70ac970-1bb4-480e-af71-c1ed6ca4f246.png"
-                    /></picture>
-                  <figcaption></figcaption>
+                    ></picture>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@
                 hatte.
               </p>
               <p id="doc-1g3oarrh80" identifier="p">
-                Beispiel für einen langeren Link:<br /><a
+                Beispiel für einen langeren Link:<br><a
                   href="https://wms.geo.admin.ch"
                   target="_blank"
                   class="link--external"
@@ -271,7 +271,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -287,7 +287,7 @@
                           Zeitbezug die Ausdehnung und Eigenschaften bestimmter
                           Räume und Objekte beschreiben, insbesondere deren
                           Lage, Beschaffenheit, Nutzung und
-                          Rechtsverhältnisse.<br />“In der Botschaft zum
+                          Rechtsverhältnisse.<br>“In der Botschaft zum
                           Bundesgesetz über Geoinformation, Kap. 2.1.2 (BBl 2006
                           7817) wird dazu ausgeführt: „Geodaten sind Daten mit
                           Raumbezug. Der Raumbezug wird durch Koordinaten,
@@ -329,7 +329,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -368,7 +368,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -416,7 +416,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -455,7 +455,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -468,9 +468,9 @@
                         <p id="doc-1fkmvsrhb1" identifier="p">
                           Art. 5 Abs. 1 GeoIG (SR 510.62): «Der Bundesrat legt
                           in einem Katalog die Geobasisdaten des Bundesrechts
-                          fest.» <br />Art. 1 Abs. 2 GeoIV (SR 510.620): «Der
+                          fest.» <br>Art. 1 Abs. 2 GeoIV (SR 510.620): «Der
                           Anhang 1 enthält den Katalog der Geobasisdaten.»
-                          <br />In der Botschaft zum Bundesgesetz über
+                          <br>In der Botschaft zum Bundesgesetz über
                           Geoinformation, Kap. 2.2.1 (BBl 2006 7817) wird dazu
                           ausgeführt: „Der Katalog der Geobasisdaten des
                           Bundesrechts (Geobasisdatenkatalog des Bundesrechts)
@@ -515,7 +515,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -567,7 +567,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -614,7 +614,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -653,7 +653,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -749,7 +749,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -812,7 +812,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -853,7 +853,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -875,7 +875,7 @@
                           anwendbar zu erklären.» Zur Unterstützung der Kantone
                           bei der Umsetzung des GeoIG (SR 510.62) in ihrem
                           Zuständigkeitsbereich liegt ein entsprechender
-                          Leitfaden1) vor.<br /><br /><sup>1) </sup>Leitfaden
+                          Leitfaden1) vor.<br><br><sup>1) </sup>Leitfaden
                           für die Einführung des neuen Geoinformationsrechts
                           durch die Kantone (D. Kettiger):
                         </p>
@@ -906,7 +906,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -948,7 +948,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -1004,7 +1004,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -1068,10 +1068,10 @@
                     <img
                       alt="EDU Material"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/849b748b-d000-43b0-9d99-b10184fe4054.jpeg"
-                    /></picture>
-                  <figcaption></figcaption>
+                    ></picture>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
               <p id="doc-1fle96oba0" identifier="p">
                 Die Schülerinnen und Schüler lernen in der ersten
@@ -1099,10 +1099,10 @@
                     <img
                       alt="EDU City-Land"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/dc1bae9d-5c80-4629-ae2f-47aca13411c6.jpeg"
-                    /></picture>
-                  <figcaption></figcaption>
+                    ></picture>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
               <p id="doc-1fle9hjg40" identifier="p">
                 Die Schülerinnen und Schüler lernen in der zweiten
@@ -1128,10 +1128,10 @@
                     <img
                       alt="EDU Understanding"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/eac5d749-b4c4-4482-a2dc-2cbfffbfe43d.jpeg"
-                    /></picture>
-                  <figcaption></figcaption>
+                    ></picture>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
               <p id="doc-1fle9kupv0" identifier="p">
                 Im Zusammenhang einer Exkursion sammeln die Schülerinnen und
@@ -1159,10 +1159,10 @@
                     <img
                       alt="EDU sCHoolmaps"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/27029001-f5ef-43d3-9a89-2ad54b09fa0d.jpeg"
-                    /></picture>
-                  <figcaption></figcaption>
+                    ></picture>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
               <p id="doc-1fle9oj7i0" identifier="p">
                 <a
@@ -1198,7 +1198,7 @@
                   target="_blank"
                   href="https://cms.ch.ch/fileservice/sdweb-docs-prod-files/files/2021/12/09/12d6acf0-f787-4ef2-b821-9a4bf8a432d4.pdf"
                   class="link"
-                >sCHoolmaps.ch in Kürze für Lehrpersonen</a>&nbsp;<br />Hier finden Sie einen Schnellzugang zu den
+                >sCHoolmaps.ch in Kürze für Lehrpersonen</a>&nbsp;<br>Hier finden Sie einen Schnellzugang zu den
                 Unterrichtseinheiten auf sCHoolmaps.ch.PDF, 1 Seiten, 39 KB
               </p>
               <ul
@@ -1219,7 +1219,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -1292,7 +1292,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -1317,7 +1317,7 @@
                               <!---->
                               <span><a
                                 href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/230_1456924493664.download/Hilfedokument.docx"
-                              >Hilfe<br /></a>DOCX, 9 Seiten, 20 MB, Deutsch
+                              >Hilfe<br></a>DOCX, 9 Seiten, 20 MB, Deutsch
                               </span>
                             </li>
                             <li>
@@ -1326,7 +1326,7 @@
                                 href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/231_1456924518857.download/Ortsnamenspiel.docx"
                                 target="_blank"
                                 class="link"
-                              >Ortsnamenspiel<br /></a>Welche der nachstehend aufgeführten Ortschaften
+                              >Ortsnamenspiel<br></a>Welche der nachstehend aufgeführten Ortschaften
                                 gibt es wirklich in der Schweiz? Nur einer der
                                 drei Namen ist richtig. Bitte ankreuzen und den
                                 dazugehörigen Kanton eintragen. Strassen- oder
@@ -1340,7 +1340,7 @@
                                 href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/232_1456924550363.download/Stadt-Land-Fluss-Spiel.docx"
                                 target="_blank"
                                 class="link"
-                              >Stadt-Land-Fluss Spiel<br /></a>DOCX, 1 Seiten, 114 KB, Deutsch
+                              >Stadt-Land-Fluss Spiel<br></a>DOCX, 1 Seiten, 114 KB, Deutsch
                               </span>
                             </li>
                             <li>
@@ -1349,7 +1349,7 @@
                                 href="https://www.geo.admin.ch/content/geo-internet/de/research-and-education/teachingmaterial-basic-education/_jcr_content/contentPar/tabs/items/arbeitsmaterialien/tabPar/downloadlist/downloadItems/233_1456924592456.download/LehrerundSch%C3%BClermeinungen.pdf"
                                 target="_blank"
                                 class="link"
-                              >Lehrer und Schülerfeedback<br /></a>Zusammenfassung der Meinung von Lehrpersonen
+                              >Lehrer und Schülerfeedback<br></a>Zusammenfassung der Meinung von Lehrpersonen
                                 und Schüler/Innen über den Kartenviewer
                                 map.geo.admin.ch und seinen Einsatz im
                                 Unterricht.PDF, 5 Seiten, 699 KB, Deutsch</span>
@@ -1369,7 +1369,7 @@
                   target="_blank"
                   href="https://cms.ch.ch/fileservice/sdweb-docs-prod-files/files/2021/12/09/4008397e-f7ed-431d-b44f-257714efb7e0.pdf"
                   class="link"
-                >Evaluierung 2019 durch das LerNetz.ch</a>&nbsp;<br />PDF, 20 Seiten, 2 MB, Deutsch
+                >Evaluierung 2019 durch das LerNetz.ch</a>&nbsp;<br>PDF, 20 Seiten, 2 MB, Deutsch
               </p>
               <h3 id="doc-1fl3t7rg90" class="h3" identifier="sectiontitle">
                 Abfrage der Daten
@@ -1507,7 +1507,7 @@
                           Liefert eine Liste von Items, die den
                           Abfrageparametern entsprechen. Ähnlich wie
                           /collections/{collectionId}/items, führt jedoch die
-                          Filterung über alle Collections durch<em></em>
+                          Filterung über alle Collections durch<em />
                         </p>
                       </div>
                     </td>

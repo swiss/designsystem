@@ -26,7 +26,7 @@
                       label="GLossar filtern"
                       placeholder="Suchbegriff eingeben"
                       autocomplete="off"
-                    />
+                    >
                     <div v-if="isLoading" class="btn">
                       <SvgIcon
                         icon="Spinner"

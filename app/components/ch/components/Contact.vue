@@ -2,12 +2,12 @@
   <div class="space-y-4">
     <address>
       <strong>{{ title }}</strong>
-      <br v-if="title" />
-      {{ address1 }}<br v-if="address1" />
-      {{ address2 }}<br v-if="address2" />
-      {{ address3 }}<br v-if="address3" />
-      {{ street }}<br />
-      {{ country }} – {{ zip }} {{ city }}<br />
+      <br v-if="title">
+      {{ address1 }}<br v-if="address1">
+      {{ address2 }}<br v-if="address2">
+      {{ address3 }}<br v-if="address3">
+      {{ street }}<br>
+      {{ country }} – {{ zip }} {{ city }}<br>
     </address>
     <ul
       v-if="phone || fax || email || contactForm || website || mapLink"

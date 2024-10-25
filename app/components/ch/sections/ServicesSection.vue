@@ -76,7 +76,7 @@
           variant="bare"
           icon-pos="right"
           icon="ArrowRight"
-        ></Btn>
+        />
       </div>
     </div>
   </section>

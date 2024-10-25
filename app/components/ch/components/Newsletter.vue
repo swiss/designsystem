@@ -1,7 +1,7 @@
 <template>
   <div :class="computedClasses">
-    <h3 class="newsletter__title h3" v-text="title"></h3>
-    <p class="newsletter__text" v-html="text"></p>
+    <h3 class="newsletter__title h3" v-text="title" />
+    <p class="newsletter__text" v-html="text" />
     <form
       v-if="state !== 'sent'"
       action="page.php"

@@ -34,7 +34,6 @@ export default tseslint.config(
 
       // Vue
       "vue/max-attributes-per-line": "off",
-      "vue/html-self-closing": "off",
       "vue/attributes-order": "warn",
       "vue/no-deprecated-slot-attribute": "off",
       "vue/v-slot-style": "off",
@@ -73,6 +72,7 @@ export default tseslint.config(
       "@typescript-eslint/no-explicit-any": "off",
 
       //Unchecked
+      "vue/html-self-closing": "warn",
       "@typescript-eslint/ban-ts-comment": "off",
       "vue/component-name-in-template-casing": ["off", "PascalCase", { registeredComponentsOnly: false }],
     }

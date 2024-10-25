@@ -7,7 +7,7 @@
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="universal">
           <template v-slot:image>
-            <img src="/images/publication-cover.png" alt="cat" />
+            <img src="/images/publication-cover.png" alt="cat">
           </template>
           <template v-slot:metaInfos>
             <MetaInfo :metainfos="['Bericht', '03. März 2000']" />
@@ -36,7 +36,7 @@
         </Card>
         <Card type="universal">
           <template v-slot:image>
-            <img src="/images/publication-cover.png" alt="cat" />
+            <img src="/images/publication-cover.png" alt="cat">
           </template>
           <template v-slot:metaInfos>
             <MetaInfo :metainfos="['Bericht', '03. März 2000']" />

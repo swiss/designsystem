@@ -23,7 +23,7 @@
                 placeholder="Search"
                 value="Search entry here"
                 autocomplete="off"
-              />
+              >
               <div v-if="isLoading" class="btn">
                 <SvgIcon
                   icon="Spinner"
@@ -117,7 +117,7 @@
               </Select>
             </div>
           </div>
-          <div class="filters__active"></div>
+          <div class="filters__active" />
         </div>
       </section>
       <section class="section section--default">
@@ -152,7 +152,7 @@
                   <option>by date (decreasing)</option>
                   <option>...</option>
                 </Select>
-                <div class="separator separator--vertical"></div>
+                <div class="separator separator--vertical" />
                 <Btn
                   variant="bare"
                   icon-pos="only"

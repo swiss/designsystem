@@ -20,8 +20,8 @@
               <source
                 srcset="https://picsum.photos/1200/900"
                 media="(min-width: 800px)"
-              />
-              <img src="https://picsum.photos/900/600" alt="cat" />
+              >
+              <img src="https://picsum.photos/900/600" alt="cat">
             </picture>
           </template>
           <template v-slot:title>
@@ -127,8 +127,8 @@
                   <source
                     srcset="https://picsum.photos/1600/900"
                     media="(min-width: 800px)"
-                  />
-                  <img src="https://picsum.photos/1600/900" alt="cat" />
+                  >
+                  <img src="https://picsum.photos/1600/900" alt="cat">
                 </picture>
                 <figcaption>
                   Image label here —&nbsp;©&nbsp;Photograph Name
@@ -306,8 +306,8 @@
                     <source
                       srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
-                    />
-                    <img src="https://picsum.photos/800/600" alt="cat" />
+                    >
+                    <img src="https://picsum.photos/800/600" alt="cat">
                   </picture>
                 </figure>
                 <div>
@@ -331,8 +331,8 @@
                     <source
                       srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
-                    />
-                    <img src="https://picsum.photos/1600/900" alt="cat" />
+                    >
+                    <img src="https://picsum.photos/1600/900" alt="cat">
                   </picture>
                 </figure>
                 <div>
@@ -407,8 +407,8 @@
                     <source
                       srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
-                    />
-                    <img src="https://picsum.photos/800/600" alt="cat" />
+                    >
+                    <img src="https://picsum.photos/800/600" alt="cat">
                   </picture>
                 </figure>
                 <div>
@@ -432,8 +432,8 @@
                     <source
                       srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
-                    />
-                    <img src="https://picsum.photos/1600/900" alt="cat" />
+                    >
+                    <img src="https://picsum.photos/1600/900" alt="cat">
                   </picture>
                 </figure>
                 <div>

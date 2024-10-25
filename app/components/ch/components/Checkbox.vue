@@ -9,9 +9,9 @@
       :required="required"
       :checked="checked"
       @change="onChange"
-    />
+    >
     <label v-if="label" :for="id" :class="labelClasses">
-      <span v-html="label"></span><span v-if="required" class="sr-only">required</span>
+      <span v-html="label" /><span v-if="required" class="sr-only">required</span>
     </label>
 
     <div

@@ -37,23 +37,23 @@
               <source
                 srcset="https://picsum.photos/1282/721/?image=29"
                 media="(min-width: 1800px)"
-              />
+              >
               <source
                 srcset="https://picsum.photos/1192/670/?image=28"
                 media="(min-width: 1024px)"
-              />
+              >
               <source
                 srcset="https://picsum.photos/800/450/?image=29"
                 media="(min-width: 768px)"
-              />
+              >
               <source
                 srcset="https://picsum.photos/680/382/?image=28"
                 media="(min-width: 480px)"
-              />
+              >
               <img
                 src="https://picsum.photos/480/270/?image=29"
                 alt="ratio is 16/9"
-              />
+              >
             </picture>
             <figcaption>
               Datenmodelle als http-Ressource nutzbar zu machen. Der Vorteil für
@@ -122,8 +122,8 @@
                 <source
                   srcset="https://picsum.photos/1600/900"
                   media="(min-width: 800px)"
-                />
-                <img src="https://picsum.photos/1600/900" alt="cat" />
+                >
+                <img src="https://picsum.photos/1600/900" alt="cat">
               </picture>
               <figcaption>
                 Image label here —&nbsp;©&nbsp;Photograph Name
@@ -211,8 +211,8 @@
                     <source
                       srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
-                    />
-                    <img src="https://picsum.photos/800/600" alt="cat" />
+                    >
+                    <img src="https://picsum.photos/800/600" alt="cat">
                   </picture>
                 </figure>
               </template>
@@ -377,8 +377,8 @@
                     <source
                       srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
-                    />
-                    <img src="https://picsum.photos/800/600" alt="cat" />
+                    >
+                    <img src="https://picsum.photos/800/600" alt="cat">
                   </picture>
                 </figure>
               </template>
@@ -825,7 +825,7 @@
               <h2 class="h2">
                 Themen
               </h2>
-              <RelatedTags :tags="tags" bare></RelatedTags>
+              <RelatedTags :tags="tags" bare />
             </div>
           </div>
         </div>
@@ -860,7 +860,7 @@
                 <SvgIcon size="2xl" icon="Phone" label="Whatsapp" />
               </a>
             </div>
-            <hr class="separator" />
+            <hr class="separator">
             <div class="pt-3">
               <Input
                 id="my-id"

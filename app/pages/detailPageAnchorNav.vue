@@ -33,8 +33,8 @@
                 <source
                   srcset="https://picsum.photos/1600/900"
                   media="(min-width: 800px)"
-                />
-                <img src="https://picsum.photos/1600/1200" alt="cat" />
+                >
+                <img src="https://picsum.photos/1600/1200" alt="cat">
               </picture>
               <figcaption>
                 Datenmodelle als http-Ressource nutzbar zu machen.
@@ -65,8 +65,8 @@
                   <source
                     srcset="https://picsum.photos/1600/900"
                     media="(min-width: 800px)"
-                  />
-                  <img src="https://picsum.photos/1600/900" alt="cat" />
+                  >
+                  <img src="https://picsum.photos/1600/900" alt="cat">
                 </picture>
                 <figcaption>
                   Image label here —&nbsp;©&nbsp;Photograph Name
@@ -92,8 +92,8 @@
                   <source
                     srcset="https://picsum.photos/1600/900"
                     media="(min-width: 800px)"
-                  />
-                  <img src="https://picsum.photos/1600/1200" alt="cat" />
+                  >
+                  <img src="https://picsum.photos/1600/1200" alt="cat">
                 </picture>
                 <figcaption>
                   Datenmodelle als http-Ressource nutzbar zu machen.

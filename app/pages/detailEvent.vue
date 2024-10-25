@@ -36,8 +36,8 @@
                   <source
                     srcset="https://picsum.photos/1600/900"
                     media="(min-width: 800px)"
-                  />
-                  <img src="https://picsum.photos/1600/900" alt="cat" />
+                  >
+                  <img src="https://picsum.photos/1600/900" alt="cat">
                 </picture>
               </figure>
 
@@ -72,7 +72,7 @@
                     </div>
                   </div>
                   <div class="hours">
-                    Friday 18:00 – 21:00<br />
+                    Friday 18:00 – 21:00<br>
                     Saturday 10:00 – 17:00
                   </div>
                 </div>
@@ -257,7 +257,7 @@
                 <h2 class="h2">
                   Themen
                 </h2>
-                <RelatedTags :tags="tags" bare></RelatedTags>
+                <RelatedTags :tags="tags" bare />
               </div>
             </div>
             <div class="container__aside hidden md:block">
@@ -292,7 +292,7 @@
                     </div>
                   </div>
                   <div class="hours">
-                    Friday 18:00 – 21:00<br />
+                    Friday 18:00 – 21:00<br>
                     Saturday 10:00 – 17:00
                   </div>
                 </div>

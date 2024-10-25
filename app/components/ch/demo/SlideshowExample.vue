@@ -34,13 +34,13 @@
               :height="slide.source.height"
               :width="slide.source.width"
               :media="slide.source.media"
-            />
+            >
             <img
               :src="slide.image.src"
               :alt="slide.image.alt"
               :height="slide.image.height"
               :width="slide.image.width"
-            />
+            >
           </picture>
           <figcaption v-if="slide.caption">
             <span v-if="slide.caption.title">{{ slide.caption.title }}</span>
@@ -56,7 +56,7 @@
       </swiper-slide>
     </swiper>
     <div class="carousel__fonctions">
-      <div :id="`carousel-pagination-${id}`" class="carousel__pagination"></div>
+      <div :id="`carousel-pagination-${id}`" class="carousel__pagination" />
       <button :id="`carousel-prev-${id}`" class="carousel__prev">
         <div class="sr-only">
           Previous image

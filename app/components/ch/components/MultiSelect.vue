@@ -33,7 +33,7 @@
             :required="required && (!currentSelected || currentSelected.length === 0)"
             v-bind="attributes as any"
             v-on="events"
-          />
+          >
         </template>
       </v-select>
       <div class="select__icon">

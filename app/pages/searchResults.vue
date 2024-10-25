@@ -23,7 +23,7 @@
                 placeholder="Search"
                 value="Search entry here"
                 autocomplete="off"
-              />
+              >
               <div v-if="isLoading" class="btn">
                 <SvgIcon
                   icon="Spinner"

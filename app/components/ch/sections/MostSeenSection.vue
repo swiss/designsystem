@@ -10,7 +10,7 @@
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template v-slot:image>
-            <img src="https://picsum.photos/775/350" alt="cat" />
+            <img src="https://picsum.photos/775/350" alt="cat">
           </template>
           <template v-slot:title>
             <h3>Wandern</h3>
@@ -38,7 +38,7 @@
         </Card>
         <Card type="default">
           <template v-slot:image>
-            <img src="https://picsum.photos/775/350" alt="cat" />
+            <img src="https://picsum.photos/775/350" alt="cat">
           </template>
           <template v-slot:title>
             <h3>Historische Karten</h3>
@@ -64,7 +64,7 @@
         </Card>
         <Card type="default">
           <template v-slot:image>
-            <img src="https://picsum.photos/775/350" alt="cat" />
+            <img src="https://picsum.photos/775/350" alt="cat">
           </template>
           <template v-slot:title>
             <h3>PLZ und Ortschaften</h3>

@@ -24,7 +24,7 @@
           <div class="grid grid--responsive-cols-3 gap--responsive">
             <div class="card card--default card--clickable">
               <div class="card__image">
-                <img src="https://picsum.photos/775/350" alt="image" />
+                <img src="https://picsum.photos/775/350" alt="image">
               </div>
               <div class="card__content">
                 <div class="card__body">
@@ -51,7 +51,7 @@
                       >
                         <path
                           d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                        ></path>
+                        />
                       </svg>
                       <span class="btn__text">Weiterlesen</span>
                     </a>
@@ -61,7 +61,7 @@
             </div>
             <div class="card card--default card--clickable">
               <div class="card__image">
-                <img src="https://picsum.photos/775/350" alt="image" />
+                <img src="https://picsum.photos/775/350" alt="image">
               </div>
               <div class="card__content">
                 <div class="card__body">
@@ -82,7 +82,7 @@
                       >
                         <path
                           d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                        ></path>
+                        />
                       </svg>
                       <span class="btn__text">Weiterlesen</span>
                     </a>
@@ -92,7 +92,7 @@
             </div>
             <div class="card card--default card--clickable">
               <div class="card__image">
-                <img src="https://picsum.photos/775/350" alt="image" />
+                <img src="https://picsum.photos/775/350" alt="image">
               </div>
               <div class="card__content">
                 <div class="card__body">
@@ -113,7 +113,7 @@
                       >
                         <path
                           d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                        ></path>
+                        />
                       </svg>
                       <span class="btn__text">Weiterlesen</span>
                     </a>

@@ -3,26 +3,26 @@
     <div v-if="isInlineImage" :class="computedGridClasses">
       <div class="text-image__text">
         <h2 v-if="$slots.title" class="h2">
-          <slot name="title"></slot>
+          <slot name="title" />
         </h2>
         <div v-if="$slots.description">
-          <slot name="description"></slot>
+          <slot name="description" />
         </div>
       </div>
       <div v-if="$slots.image" class="text-image__image">
-        <slot name="image"></slot>
+        <slot name="image" />
       </div>
     </div>
     <div v-else class="grid gap--responsive">
       <div v-if="$slots.image" class="text-image__image">
-        <slot name="image"></slot>
+        <slot name="image" />
       </div>
       <div class="text-image__text">
         <h2 v-if="$slots.title" class="h2">
-          <slot name="title"></slot>
+          <slot name="title" />
         </h2>
         <div v-if="$slots.description">
-          <slot name="description"></slot>
+          <slot name="description" />
         </div>
       </div>
     </div>

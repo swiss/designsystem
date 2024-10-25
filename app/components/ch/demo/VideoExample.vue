@@ -2,7 +2,7 @@
   <figure>
     <div class="ratio ratio--16/9">
       <video controls :src="videoFile">
-        <track default kind="captions" srclang="en" :src="vttFile" />
+        <track default kind="captions" srclang="en" :src="vttFile">
       </video>
     </div>
     <figcaption>Video label — © Author Name</figcaption>

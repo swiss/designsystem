@@ -9,8 +9,8 @@
                 v-if="item.image.source"
                 :srcset="item.image.source.srcset"
                 :media="item.image.source.media"
-              />
-              <img :src="item.image.src" :alt="item.image.alt" />
+              >
+              <img :src="item.image.src" :alt="item.image.alt">
             </picture>
           </figure>
         </template>
@@ -28,8 +28,7 @@
             {{ item.content }}
           </p>
         </template>
-        <template v-slot:author>
-        </template>
+        <template v-slot:author />
         <template v-if="item.isEvent" v-slot:eventInfos>
           <ul class="flex flex-wrap">
             <li class="flex items-center mb-2 mr-6">

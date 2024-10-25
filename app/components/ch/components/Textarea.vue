@@ -13,7 +13,7 @@
       :minlength="minlength"
       :placeholder="placeholder"
       :required="required"
-    ></textarea>
+    />
     <div
       v-if="message"
       class="badge badge--sm"

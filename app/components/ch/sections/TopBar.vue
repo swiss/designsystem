@@ -65,7 +65,7 @@
           </nav>
         </div>
 
-        <div class="separator separator--negative separator--xl"></div>
+        <div class="separator separator--negative separator--xl" />
 
         <div>
           <h3 class="top-bar__main-title">
@@ -202,7 +202,7 @@
                     label="Ämter filtern"
                     placeholder="Filtern"
                     autocomplete="off"
-                  />
+                  >
                   <Btn
                     v-if="filterString !== ''"
                     label="Clear search input"

@@ -15,7 +15,7 @@
               dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo></template>
+          <template v-slot:footerInfo />
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -39,7 +39,7 @@
               dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo></template>
+          <template v-slot:footerInfo />
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -63,7 +63,7 @@
               dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo></template>
+          <template v-slot:footerInfo />
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -84,7 +84,7 @@
               clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo></template>
+          <template v-slot:footerInfo />
           <template v-slot:footerAction>
             <Btn
               to="#"
@@ -106,7 +106,7 @@
               clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo></template>
+          <template v-slot:footerInfo />
           <template v-slot:footerAction>
             <Btn
               to="#"

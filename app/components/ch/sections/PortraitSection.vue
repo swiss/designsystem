@@ -9,8 +9,8 @@
           <source
             srcset="https://picsum.photos/1100/600"
             media="(min-width: 800px)"
-          />
-          <img src="https://picsum.photos/550/300" alt="cat" />
+          >
+          <img src="https://picsum.photos/550/300" alt="cat">
         </picture>
         <div class="portrait__card card card--default">
           <div class="portrait__card__body">

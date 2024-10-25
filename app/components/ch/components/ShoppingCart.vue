@@ -791,12 +791,12 @@
           class="shopping__cart-confirmation-badge"
           icon="ConfirmationBadge"
           size="2xl"
-        ></SvgIcon>
+        />
         <SvgIcon
           class="shopping__cart-confirmation-checkmark"
           icon="CheckmarkBold"
           size="xl"
-        ></SvgIcon>
+        />
       </div>
       <h1 class="h1 shopping__cart-confirmation-title">
         Ihre Bestellung ist bei uns eingetroffen

@@ -163,7 +163,7 @@
                 <div class="search-results__occurences">
                   <strong>4</strong> Suchergebnisse
                 </div>
-                <div class="separator separator--vertical"></div>
+                <div class="separator separator--vertical" />
                 <Btn
                   label="Abo erstellen"
                   variant="bare"
@@ -190,7 +190,7 @@
                   <option>by date (decreasing)</option>
                   <option>...</option>
                 </Select>
-                <div class="separator separator--vertical"></div>
+                <div class="separator separator--vertical" />
                 <Btn
                   variant="bare"
                   icon-pos="only"
