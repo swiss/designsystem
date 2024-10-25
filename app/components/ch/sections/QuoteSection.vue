@@ -15,8 +15,8 @@
             v-if="image.source"
             :srcset="image.source.srcset"
             :media="image.source.media"
-          >
-          <img :src="image.src" :alt="image.alt" class="shadow-2xl">
+          />
+          <img :src="image.src" :alt="image.alt" class="shadow-2xl" />
         </picture>
       </figure>
     </div>

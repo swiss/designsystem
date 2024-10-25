@@ -2,7 +2,7 @@
   <div id="top-header-id" class="top-header">
     <div class="top-header__mobile-title" aria-hidden="true">
       <div class="container container--flex">
-        Eidgenössisches Departement für Verteidigung, <br>Bevölkerungsschutz
+        Eidgenössisches Departement für Verteidigung, <br />Bevölkerungsschutz
         und Sport
       </div>
     </div>

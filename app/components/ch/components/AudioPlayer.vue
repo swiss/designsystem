@@ -1,7 +1,7 @@
 <template>
   <div class="audio-player">
     <audio controls :src="url" :type="type" :aria-label="title">
-      Your browser cannot play this audio document directly<br>
+      Your browser cannot play this audio document directly<br />
       You can <a :href="url">open the document in a separate tab </a> and
       download it.
     </audio>

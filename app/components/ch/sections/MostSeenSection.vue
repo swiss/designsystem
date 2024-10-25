@@ -1,16 +1,12 @@
 <template>
   <section class="section section--default">
     <div class="container">
-      <h2 class="section__title">
-        Meist gesehen
-      </h2>
-      <h3 class="section__subtitle">
-        Top Karten
-      </h3>
+      <h2 class="section__title">Meist gesehen</h2>
+      <h3 class="section__subtitle">Top Karten</h3>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template #image>
-            <img src="https://picsum.photos/775/350" alt="cat">
+            <img src="https://picsum.photos/775/350" alt="cat" />
           </template>
           <template #title>
             <h3>Wandern</h3>
@@ -23,9 +19,7 @@
               sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template #footerInfo>
-            Dienstleistungen & Produkte
-          </template>
+          <template #footerInfo> Dienstleistungen & Produkte </template>
           <template #footerAction>
             <Btn
               to="#"
@@ -38,7 +32,7 @@
         </Card>
         <Card type="default">
           <template #image>
-            <img src="https://picsum.photos/775/350" alt="cat">
+            <img src="https://picsum.photos/775/350" alt="cat" />
           </template>
           <template #title>
             <h3>Historische Karten</h3>
@@ -49,9 +43,7 @@
               ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template #footerInfo>
-            Dienstleistungen & Produkte
-          </template>
+          <template #footerInfo> Dienstleistungen & Produkte </template>
           <template #footerAction>
             <Btn
               to="#"
@@ -64,7 +56,7 @@
         </Card>
         <Card type="default">
           <template #image>
-            <img src="https://picsum.photos/775/350" alt="cat">
+            <img src="https://picsum.photos/775/350" alt="cat" />
           </template>
           <template #title>
             <h3>PLZ und Ortschaften</h3>
@@ -76,9 +68,7 @@
               dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template #footerInfo>
-            Dienstleistungen & Produkte
-          </template>
+          <template #footerInfo> Dienstleistungen & Produkte </template>
           <template #footerAction>
             <Btn
               to="#"
@@ -91,9 +81,7 @@
         </Card>
       </div>
 
-      <h3 class="section__subtitle">
-        Top Themen
-      </h3>
+      <h3 class="section__subtitle">Top Themen</h3>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
           <template #title>

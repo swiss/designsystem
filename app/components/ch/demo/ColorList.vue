@@ -3,9 +3,7 @@
     <ul>
       <li v-for="(color, key) in colors" :key="`${key}`" class="flex">
         <ul v-if="typeof color == 'object'" class="storybook-color-list">
-          <h3 class="storybook-color-list__title">
-            {{ key }} colors
-          </h3>
+          <h3 class="storybook-color-list__title">{{ key }} colors</h3>
           <li
             v-for="(subvalue, subkey) in color"
             :key="`${key}-${subkey}`"

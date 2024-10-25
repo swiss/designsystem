@@ -119,21 +119,28 @@
         </a>
         <ul>
           <li>
-            <a href="javascript:alert('link')">Datenmodellablage: Model Repository für Geobasisdaten des
-              Bundesrechts</a>
+            <a href="javascript:alert('link')"
+              >Datenmodellablage: Model Repository für Geobasisdaten des
+              Bundesrechts</a
+            >
           </li>
           <li>
             <a
               href="javascript:alert('link')"
               class="active"
               aria-current="true"
-            >Geodienste: Informationen zugänglich machen und vernetzen</a>
+              >Geodienste: Informationen zugänglich machen und vernetzen</a
+            >
           </li>
           <li>
-            <a href="javascript:alert('link')">Datenbezug: einfach und direkt</a>
+            <a href="javascript:alert('link')"
+              >Datenbezug: einfach und direkt</a
+            >
           </li>
           <li>
-            <a href="javascript:alert('link')">Beratung und Koordination: Umsetzen der Strategie</a>
+            <a href="javascript:alert('link')"
+              >Beratung und Koordination: Umsetzen der Strategie</a
+            >
           </li>
           <li><a href="javascript:alert('link')">RSS und Social Media</a></li>
         </ul>
@@ -159,17 +166,24 @@
               href="javascript:alert('link')"
               class="active"
               aria-current="true"
-            >Darstellungsdienste</a>
+              >Darstellungsdienste</a
+            >
           </li>
           <li>
-            <a href="javascript:alert('link')">Linked Data Dienst: GeoDaten semantisch verlinken</a>
+            <a href="javascript:alert('link')"
+              >Linked Data Dienst: GeoDaten semantisch verlinken</a
+            >
           </li>
           <li>
-            <a href="javascript:alert('link')">Nutzungsbedingungen und Betriebsbestimmungen der Infrastruktur</a>
+            <a href="javascript:alert('link')"
+              >Nutzungsbedingungen und Betriebsbestimmungen der Infrastruktur</a
+            >
           </li>
           <li><a href="javascript:alert('link')">Suchdienst CSW</a></li>
           <li>
-            <a href="javascript:alert('link')">Konformitätsprüfung Geobasisdienste</a>
+            <a href="javascript:alert('link')"
+              >Konformitätsprüfung Geobasisdienste</a
+            >
           </li>
           <li><a href="javascript:alert('link')">INSPIRE Dienste</a></li>
         </ul>
@@ -194,7 +208,8 @@
               href="javascript:alert('link')"
               class="active"
               aria-current="page"
-            >Web Map Services</a>
+              >Web Map Services</a
+            >
           </li>
           <li><a href="javascript:alert('link')">Web tiling Services</a></li>
           <li><a href="javascript:alert('link')">Vector Tiles Service</a></li>

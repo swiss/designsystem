@@ -11,9 +11,7 @@
     </header>
     <main id="main-content">
       <Hero type="default">
-        <template #title>
-          Form Example
-        </template>
+        <template #title> Form Example </template>
       </Hero>
       <FormDemo />
 

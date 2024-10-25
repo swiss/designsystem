@@ -16,7 +16,9 @@
           class="order__box-amount-input"
           :min="0"
           @keypress="restrictChars"
-          @input="inputValue = parseInt(($event.target as HTMLInputElement).value)"
+          @input="
+            inputValue = parseInt(($event.target as HTMLInputElement).value)
+          "
         />
       </div>
       <Select

@@ -20,28 +20,26 @@
             <source
               srcset="https://picsum.photos/1282/961/?image=29"
               media="(min-width: 1800px)"
-            >
+            />
             <source
               srcset="https://picsum.photos/1192/894/?image=29"
               media="(min-width: 1024px)"
-            >
+            />
             <source
               srcset="https://picsum.photos/800/600/?image=29"
               media="(min-width: 768px)"
-            >
+            />
             <source
               srcset="https://picsum.photos/680/510/?image=29"
               media="(min-width: 480px)"
-            >
+            />
             <img
               src="https://picsum.photos/480/360/?image=29"
               alt="ratio is 4/3"
-            >
+            />
           </picture>
         </template>
-        <template #title>
-          Was uns als VE ausmacht
-        </template>
+        <template #title> Was uns als VE ausmacht </template>
         <template #description>
           Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz
           und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen

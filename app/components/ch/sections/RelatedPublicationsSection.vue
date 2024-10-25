@@ -1,13 +1,11 @@
 <template>
   <section class="section bg--secondary-50">
     <div class="container">
-      <h2 class="section__title">
-        Das könnte Sie auch interessieren
-      </h2>
+      <h2 class="section__title">Das könnte Sie auch interessieren</h2>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="universal">
           <template #image>
-            <img src="/images/publication-cover.png" alt="cat">
+            <img src="/images/publication-cover.png" alt="cat" />
           </template>
           <template #metaInfos>
             <MetaInfo :metainfos="['Bericht', '03. März 2000']" />
@@ -36,7 +34,7 @@
         </Card>
         <Card type="universal">
           <template #image>
-            <img src="/images/publication-cover.png" alt="cat">
+            <img src="/images/publication-cover.png" alt="cat" />
           </template>
           <template #metaInfos>
             <MetaInfo :metainfos="['Bericht', '03. März 2000']" />

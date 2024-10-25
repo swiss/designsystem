@@ -49,7 +49,7 @@ const props = defineProps({
         'sr-only',
         'overview',
       ].includes(prop as string),
-      default: () => undefined,
+    default: () => undefined,
   },
   metaInfos: {
     type: Array<string>,

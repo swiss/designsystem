@@ -30,10 +30,12 @@
         <template #search="{ attributes, events }">
           <input
             class="vs__search"
-            :required="required && (!currentSelected || currentSelected.length === 0)"
+            :required="
+              required && (!currentSelected || currentSelected.length === 0)
+            "
             v-bind="attributes as any"
             v-on="events"
-          >
+          />
         </template>
       </VSelect>
       <div class="select__icon">

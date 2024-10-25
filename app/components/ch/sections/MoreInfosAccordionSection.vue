@@ -2,15 +2,11 @@
   <section class="section section--default">
     <div class="container container--grid gap--responsive">
       <div class="container__center--xs vertical-spacing">
-        <h2 class="h2">
-          Weitere Informationen
-        </h2>
+        <h2 class="h2">Weitere Informationen</h2>
 
         <Accordion id="100">
           <AccordionItem id="10" title="Medienmitteilungen" headingLevel="h3">
-            <h4 class="h5">
-              Title h4
-            </h4>
+            <h4 class="h5">Title h4</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
               euismod bibendum laoreet. Proin gravida dolor
@@ -31,9 +27,7 @@
               <template #description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
-              <template #footerInfo>
-                22. März 2012
-              </template>
+              <template #footerInfo> 22. März 2012 </template>
               <template #footerAction>
                 <Btn
                   to="#"
@@ -51,9 +45,7 @@
               <template #description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
-              <template #footerInfo>
-                22. März 2012
-              </template>
+              <template #footerInfo> 22. März 2012 </template>
               <template #footerAction>
                 <Btn
                   to="#"
@@ -69,9 +61,7 @@
                 Swisstopo Daten sind neu in geo.admin.ch Geo- und
                 Downloaddiensten kostenlos...
               </template>
-              <template #footerInfo>
-                22. März 2012
-              </template>
+              <template #footerInfo> 22. März 2012 </template>
               <template #footerAction>
                 <Btn
                   to="#"
@@ -119,8 +109,8 @@
                 <source
                   srcset="https://picsum.photos/1600/900"
                   media="(min-width: 800px)"
-                >
-                <img src="https://picsum.photos/1600/1200" alt="cat">
+                />
+                <img src="https://picsum.photos/1600/1200" alt="cat" />
               </picture>
               <figcaption>
                 Datenmodelle als http-Ressource nutzbar zu machen. Der Vorteil

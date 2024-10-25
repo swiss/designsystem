@@ -2,7 +2,7 @@
   <aside :class="computedClasses">
     <div v-if="authorsWithImages.length" class="disc-images" aria-hidden="true">
       <div v-for="author in authors" :key="author.name" class="disc-image">
-        <img v-if="author.img" :src="author.img" :title="author.name">
+        <img v-if="author.img" :src="author.img" :title="author.name" />
         <div v-else-if="author.initials">
           {{ author.initials }}
         </div>

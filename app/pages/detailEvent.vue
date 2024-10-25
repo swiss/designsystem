@@ -36,43 +36,29 @@
                   <source
                     srcset="https://picsum.photos/1600/900"
                     media="(min-width: 800px)"
-                  >
-                  <img src="https://picsum.photos/1600/900" alt="cat">
+                  />
+                  <img src="https://picsum.photos/1600/900" alt="cat" />
                 </picture>
               </figure>
 
               <div class="container__mobile">
                 <!-- mobile only -->
                 <div class="box">
-                  <h2 class="sr-only">
-                    Event Date
-                  </h2>
+                  <h2 class="sr-only">Event Date</h2>
                   <div class="date" lang="de">
                     <div class="date__wrapper">
-                      <div class="date__day">
-                        10
-                      </div>
-                      <div class="date__month">
-                        Apr
-                      </div>
+                      <div class="date__day">10</div>
+                      <div class="date__month">Apr</div>
                     </div>
-                    <div class="date__separator">
-                      –
-                    </div>
+                    <div class="date__separator">–</div>
                     <div class="date__wrapper">
-                      <div class="date__day">
-                        11
-                      </div>
-                      <div class="date__month">
-                        Apr
-                      </div>
-                      <div class="date__year">
-                        2023
-                      </div>
+                      <div class="date__day">11</div>
+                      <div class="date__month">Apr</div>
+                      <div class="date__year">2023</div>
                     </div>
                   </div>
                   <div class="hours">
-                    Friday 18:00 – 21:00<br>
+                    Friday 18:00 – 21:00<br />
                     Saturday 10:00 – 17:00
                   </div>
                 </div>
@@ -109,9 +95,7 @@
                 tempor.
               </p>
 
-              <h2 class="h2">
-                Veranstaltungsdetails
-              </h2>
+              <h2 class="h2">Veranstaltungsdetails</h2>
 
               <div>
                 <InfoBlock title="Teilnahme&shy;bedingungen" headingLevel="h3">
@@ -153,45 +137,31 @@
                     </caption>
                     <tbody>
                       <tr>
-                        <th scope="row">
-                          Children under 12
-                        </th>
+                        <th scope="row">Children under 12</th>
                         <td>Free</td>
                       </tr>
                       <tr>
-                        <th scope="row">
-                          Students under 18, with ID
-                        </th>
+                        <th scope="row">Students under 18, with ID</th>
                         <td>CHF 10.–</td>
                       </tr>
                       <tr>
-                        <th scope="row">
-                          AHV
-                        </th>
+                        <th scope="row">AHV</th>
                         <td>CHF 10.–</td>
                       </tr>
                       <tr>
-                        <th scope="row">
-                          Adults
-                        </th>
+                        <th scope="row">Adults</th>
                         <td>CHF 15.–</td>
                       </tr>
                       <tr>
-                        <th scope="row">
-                          Families
-                        </th>
+                        <th scope="row">Families</th>
                         <td>CHF 30.–</td>
                       </tr>
                       <tr>
-                        <th scope="row">
-                          Handicapped visitors
-                        </th>
+                        <th scope="row">Handicapped visitors</th>
                         <td>Free</td>
                       </tr>
                       <tr>
-                        <th scope="row">
-                          Swiss Museums pass
-                        </th>
+                        <th scope="row">Swiss Museums pass</th>
                         <td>Free</td>
                       </tr>
                     </tbody>
@@ -226,9 +196,7 @@
               </div>
 
               <div>
-                <h2 class="h2">
-                  FAQ
-                </h2>
+                <h2 class="h2">FAQ</h2>
                 <Accordion id="100">
                   <AccordionItem
                     id="10"
@@ -254,9 +222,7 @@
               </div>
 
               <div>
-                <h2 class="h2">
-                  Themen
-                </h2>
+                <h2 class="h2">Themen</h2>
                 <RelatedTags :tags="tags" bare />
               </div>
             </div>
@@ -264,35 +230,21 @@
               <div id="aside-content" :class="computedAsideContainerClass">
                 <!-- desktop only -->
                 <div class="box">
-                  <h2 class="sr-only">
-                    Event Date
-                  </h2>
+                  <h2 class="sr-only">Event Date</h2>
                   <div class="date" lang="de">
                     <div class="date__wrapper">
-                      <div class="date__day">
-                        10
-                      </div>
-                      <div class="date__month">
-                        Apr
-                      </div>
+                      <div class="date__day">10</div>
+                      <div class="date__month">Apr</div>
                     </div>
-                    <div class="date__separator">
-                      –
-                    </div>
+                    <div class="date__separator">–</div>
                     <div class="date__wrapper">
-                      <div class="date__day">
-                        11
-                      </div>
-                      <div class="date__month">
-                        Apr
-                      </div>
-                      <div class="date__year">
-                        2023
-                      </div>
+                      <div class="date__day">11</div>
+                      <div class="date__month">Apr</div>
+                      <div class="date__year">2023</div>
                     </div>
                   </div>
                   <div class="hours">
-                    Friday 18:00 – 21:00<br>
+                    Friday 18:00 – 21:00<br />
                     Saturday 10:00 – 17:00
                   </div>
                 </div>

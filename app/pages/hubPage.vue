@@ -11,9 +11,7 @@
     </header>
     <main id="main-content">
       <Hero type="hub">
-        <template #title>
-          Unsere Dienstleistungen
-        </template>
+        <template #title> Unsere Dienstleistungen </template>
         <template #description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           tincidunt enim id orci facilisis placerat. Proin odio mauris,

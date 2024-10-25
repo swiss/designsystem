@@ -6,7 +6,7 @@
       class="pagination__input"
       :class="computedClasses"
       aria-label="pagination input"
-    >
+    />
     <div v-if="field" class="pagination__text">
       {{ totalPages }}
     </div>

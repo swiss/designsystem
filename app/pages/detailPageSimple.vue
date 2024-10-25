@@ -37,23 +37,23 @@
               <source
                 srcset="https://picsum.photos/1282/721/?image=29"
                 media="(min-width: 1800px)"
-              >
+              />
               <source
                 srcset="https://picsum.photos/1192/670/?image=28"
                 media="(min-width: 1024px)"
-              >
+              />
               <source
                 srcset="https://picsum.photos/800/450/?image=29"
                 media="(min-width: 768px)"
-              >
+              />
               <source
                 srcset="https://picsum.photos/680/382/?image=28"
                 media="(min-width: 480px)"
-              >
+              />
               <img
                 src="https://picsum.photos/480/270/?image=29"
                 alt="ratio is 16/9"
-              >
+              />
             </picture>
             <figcaption>
               Datenmodelle als http-Ressource nutzbar zu machen. Der Vorteil für
@@ -67,9 +67,7 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              Carousel with few images
-            </h2>
+            <h2 class="h2">Carousel with few images</h2>
             <p>
               To display a few images as a carousel, set the pagination type to
               «bullets». Über den Kontakt models@geo.admin.ch können die
@@ -84,9 +82,7 @@
               :slides="slides"
             />
 
-            <h2 class="h2">
-              Carousel with more than 5 images
-            </h2>
+            <h2 class="h2">Carousel with more than 5 images</h2>
             <p>
               To display a more images in a carousel, set the pagination type to
               «fraction». Über den Kontakt models@geo.admin.ch können die
@@ -122,17 +118,15 @@
                 <source
                   srcset="https://picsum.photos/1600/900"
                   media="(min-width: 800px)"
-                >
-                <img src="https://picsum.photos/1600/900" alt="cat">
+                />
+                <img src="https://picsum.photos/1600/900" alt="cat" />
               </picture>
               <figcaption>
                 Image label here —&nbsp;©&nbsp;Photograph Name
               </figcaption>
             </figure>
 
-            <h2 class="h2">
-              Audio player
-            </h2>
+            <h2 class="h2">Audio player</h2>
             <p>
               Use a default audio element wrapped into an audio player class.
               Die Datenmodellablage ist moderiert und die Erfassung neuer
@@ -147,9 +141,7 @@
               type="audio/mp3"
             />
 
-            <h2 class="h2">
-              Datenmodellablage ansehen
-            </h2>
+            <h2 class="h2">Datenmodellablage ansehen</h2>
             <p>
               Der Modellkatalog kann unter
               <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
@@ -211,8 +203,8 @@
                     <source
                       srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
-                    >
-                    <img src="https://picsum.photos/800/600" alt="cat">
+                    />
+                    <img src="https://picsum.photos/800/600" alt="cat" />
                   </picture>
                 </figure>
               </template>
@@ -345,9 +337,7 @@
               </li>
             </ol>
 
-            <h2 class="h2">
-              Datenmodellablage ansehen
-            </h2>
+            <h2 class="h2">Datenmodellablage ansehen</h2>
             <p>
               Der Modellkatalog kann unter
               <a href="#">models.geo.admin.ch</a> angesehen werden. Ein neues
@@ -362,9 +352,7 @@
             </p>
 
             <TextImage>
-              <template #title>
-                Modelldokumentation
-              </template>
+              <template #title> Modelldokumentation </template>
               <template #description>
                 Über den Kontakt models@geo.admin.ch können die
                 Modelldokumentation zur Publikation eingereicht werden. Über den
@@ -377,16 +365,14 @@
                     <source
                       srcset="https://picsum.photos/1600/1200"
                       media="(min-width: 1024px)"
-                    >
-                    <img src="https://picsum.photos/800/600" alt="cat">
+                    />
+                    <img src="https://picsum.photos/800/600" alt="cat" />
                   </picture>
                 </figure>
               </template>
             </TextImage>
 
-            <h2 class="h2">
-              Modellkatalog ansehen
-            </h2>
+            <h2 class="h2">Modellkatalog ansehen</h2>
             <p>
               Ein neues «minimales Geodatenmodell» in der Datenmodellablage
               publizieren. Für die Publikation der «minimalen Geodatenmodelle»
@@ -404,17 +390,16 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              Bare Link Liste mit Beschreibung
-            </h2>
+            <h2 class="h2">Bare Link Liste mit Beschreibung</h2>
             <ul class="list list--bare list--loose list--indented">
               <li>
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-01.html"
-                >(Haager-) Übereinkommen vom 5. Oktober 1961 über die
+                  >(Haager-) Übereinkommen vom 5. Oktober 1961 über die
                   Zuständigkeit der Behörden und das anzuwendende Recht auf dem
-                  Gebiet des Schutzes von Minderjährigen</a>
+                  Gebiet des Schutzes von Minderjährigen</a
+                >
 
                 <p>(SR 0.211.231.01)</p>
               </li>
@@ -422,11 +407,12 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-011.html"
-                >(Haager) Übereinkommen vom 19. Oktober 1996 über die
+                  >(Haager) Übereinkommen vom 19. Oktober 1996 über die
                   Zuständigkeit, das anzuwendende Recht, die Anerkennung,
                   Vollstreckung und Zusammenarbeit auf dem Gebiet der
                   elterlichen Verantwortung und der Massnahmen zum Schutz von
-                  Kindern</a>
+                  Kindern</a
+                >
 
                 <p>(SR 0.211.231.011)</p>
               </li>
@@ -434,10 +420,11 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-01.html"
-                >Europäisches Übereinkommen vom 20. Mai 1980 über die
+                  >Europäisches Übereinkommen vom 20. Mai 1980 über die
                   Anerkennung und Vollstreckung von Entscheidungen über das
                   Sorgerecht für Kinder und die Wiederherstellung des
-                  Sorgerechts</a>
+                  Sorgerechts</a
+                >
 
                 <p>(SR 0.211.230.01)</p>
               </li>
@@ -445,8 +432,9 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-02.html"
-                >(Haager-) Übereinkommen vom 25. Oktober 1980 über die
-                  zivilrechtlichen Aspekte internationaler Kindesentführung</a>
+                  >(Haager-) Übereinkommen vom 25. Oktober 1980 über die
+                  zivilrechtlichen Aspekte internationaler Kindesentführung</a
+                >
 
                 <p>(SR 0.211.230.02)</p>
               </li>
@@ -454,9 +442,10 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-221-311.html"
-                >(Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz von
+                  >(Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz von
                   Kindern und die Zusammenarbeit auf dem Gebiet der
-                  internationalen Adoption</a>
+                  internationalen Adoption</a
+                >
 
                 <p>(SR 0.211.221.311)</p>
               </li>
@@ -464,8 +453,9 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-232-1.html"
-                >(Haager) Übereinkommen vom 13. Januar 2000 über den
-                  internationalen Schutz von Erwachsenen</a>
+                  >(Haager) Übereinkommen vom 13. Januar 2000 über den
+                  internationalen Schutz von Erwachsenen</a
+                >
 
                 <p>(SR 0.211.232.1)</p>
               </li>
@@ -477,17 +467,16 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              Doted Link Liste mit Beschreibung
-            </h2>
+            <h2 class="h2">Doted Link Liste mit Beschreibung</h2>
             <ul class="list list--default list--loose list--indented">
               <li>
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-01.html"
-                >(Haager-) Übereinkommen vom 5. Oktober 1961 über die
+                  >(Haager-) Übereinkommen vom 5. Oktober 1961 über die
                   Zuständigkeit der Behörden und das anzuwendende Recht auf dem
-                  Gebiet des Schutzes von Minderjährigen</a>
+                  Gebiet des Schutzes von Minderjährigen</a
+                >
 
                 <p>(SR 0.211.231.01)</p>
               </li>
@@ -495,11 +484,12 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-231-011.html"
-                >(Haager) Übereinkommen vom 19. Oktober 1996 über die
+                  >(Haager) Übereinkommen vom 19. Oktober 1996 über die
                   Zuständigkeit, das anzuwendende Recht, die Anerkennung,
                   Vollstreckung und Zusammenarbeit auf dem Gebiet der
                   elterlichen Verantwortung und der Massnahmen zum Schutz von
-                  Kindern</a>
+                  Kindern</a
+                >
 
                 <p>(SR 0.211.231.011)</p>
               </li>
@@ -507,10 +497,11 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-01.html"
-                >Europäisches Übereinkommen vom 20. Mai 1980 über die
+                  >Europäisches Übereinkommen vom 20. Mai 1980 über die
                   Anerkennung und Vollstreckung von Entscheidungen über das
                   Sorgerecht für Kinder und die Wiederherstellung des
-                  Sorgerechts</a>
+                  Sorgerechts</a
+                >
 
                 <p>(SR 0.211.230.01)</p>
               </li>
@@ -518,8 +509,9 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-230-02.html"
-                >(Haager-) Übereinkommen vom 25. Oktober 1980 über die
-                  zivilrechtlichen Aspekte internationaler Kindesentführung</a>
+                  >(Haager-) Übereinkommen vom 25. Oktober 1980 über die
+                  zivilrechtlichen Aspekte internationaler Kindesentführung</a
+                >
 
                 <p>(SR 0.211.230.02)</p>
               </li>
@@ -527,9 +519,10 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-221-311.html"
-                >(Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz von
+                  >(Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz von
                   Kindern und die Zusammenarbeit auf dem Gebiet der
-                  internationalen Adoption</a>
+                  internationalen Adoption</a
+                >
 
                 <p>(SR 0.211.221.311)</p>
               </li>
@@ -537,8 +530,9 @@
                 <a
                   class="link"
                   href="/rhf/de/home/zivilrecht/rechtsgrundlagen/sr-0-211-232-1.html"
-                >(Haager) Übereinkommen vom 13. Januar 2000 über den
-                  internationalen Schutz von Erwachsenen</a>
+                  >(Haager) Übereinkommen vom 13. Januar 2000 über den
+                  internationalen Schutz von Erwachsenen</a
+                >
 
                 <p>(SR 0.211.232.1)</p>
               </li>
@@ -550,9 +544,7 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              Studien
-            </h2>
+            <h2 class="h2">Studien</h2>
             <ul class="list">
               <li>
                 <DownloadItem
@@ -584,9 +576,7 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              Card link list
-            </h2>
+            <h2 class="h2">Card link list</h2>
             <ul class="list">
               <li>
                 <Card type="flat">
@@ -597,9 +587,7 @@
                       dem Gebiet des Schutzes von Minderjährigen
                     </h3>
                   </template>
-                  <template #footerInfo>
-                    (SR 0.211.231.01)
-                  </template>
+                  <template #footerInfo> (SR 0.211.231.01) </template>
                   <template #footerAction>
                     <Btn
                       to="#"
@@ -622,9 +610,7 @@
                       von Kindern
                     </h3>
                   </template>
-                  <template #footerInfo>
-                    (SR 0.211.231.011)
-                  </template>
+                  <template #footerInfo> (SR 0.211.231.011) </template>
                   <template #footerAction>
                     <Btn
                       to="#"
@@ -646,9 +632,7 @@
                       Sorgerechts
                     </h3>
                   </template>
-                  <template #footerInfo>
-                    (SR 0.211.230.01)
-                  </template>
+                  <template #footerInfo> (SR 0.211.230.01) </template>
                   <template #footerAction>
                     <Btn
                       to="#"
@@ -668,9 +652,7 @@
                       zivilrechtlichen Aspekte internationaler Kindesentführung
                     </h3>
                   </template>
-                  <template #footerInfo>
-                    (SR 0.211.230.02)
-                  </template>
+                  <template #footerInfo> (SR 0.211.230.02) </template>
                   <template #footerAction>
                     <Btn
                       to="#"
@@ -691,9 +673,7 @@
                       internationalen Adoption
                     </h3>
                   </template>
-                  <template #footerInfo>
-                    (SR 0.211.221.311)
-                  </template>
+                  <template #footerInfo> (SR 0.211.221.311) </template>
                   <template #footerAction>
                     <Btn
                       to="#"
@@ -713,9 +693,7 @@
                       internationalen Schutz von Erwachsenen
                     </h3>
                   </template>
-                  <template #footerInfo>
-                    (SR 0.211.232.1)
-                  </template>
+                  <template #footerInfo> (SR 0.211.232.1) </template>
                   <template #footerAction>
                     <Btn
                       to="#"
@@ -735,9 +713,7 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              Large table example
-            </h2>
+            <h2 class="h2">Large table example</h2>
             <TableSortable
               caption="This table could be even larger with a .container__full class on the parent."
               :displayCaption="true"
@@ -749,9 +725,7 @@
       <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__center--xs vertical-spacing">
-            <h2 class="h2">
-              Carousel with few images
-            </h2>
+            <h2 class="h2">Carousel with few images</h2>
             <p>
               To display a few images as a carousel, set the pagination type to
               «bullets». Über den Kontakt models@geo.admin.ch können die
@@ -822,9 +796,7 @@
               eingepflegt.
             </p>
             <div>
-              <h2 class="h2">
-                Themen
-              </h2>
+              <h2 class="h2">Themen</h2>
               <RelatedTags :tags="tags" bare />
             </div>
           </div>
@@ -860,7 +832,7 @@
                 <SvgIcon size="2xl" icon="Phone" label="Whatsapp" />
               </a>
             </div>
-            <hr class="separator">
+            <hr class="separator" />
             <div class="pt-3">
               <Input
                 id="my-id"

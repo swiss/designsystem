@@ -16,15 +16,13 @@
         <div class="container">
           <Hero type="overview">
             <template #title>
-              <h1 class="h1 hero__title">
-                Corona
-              </h1>
+              <h1 class="h1 hero__title">Corona</h1>
             </template>
           </Hero>
           <div class="grid grid--responsive-cols-3 gap--responsive">
             <div class="card card--default card--clickable">
               <div class="card__image">
-                <img src="https://picsum.photos/775/350" alt="image">
+                <img src="https://picsum.photos/775/350" alt="image" />
               </div>
               <div class="card__content">
                 <div class="card__body">
@@ -61,7 +59,7 @@
             </div>
             <div class="card card--default card--clickable">
               <div class="card__image">
-                <img src="https://picsum.photos/775/350" alt="image">
+                <img src="https://picsum.photos/775/350" alt="image" />
               </div>
               <div class="card__content">
                 <div class="card__body">
@@ -92,7 +90,7 @@
             </div>
             <div class="card card--default card--clickable">
               <div class="card__image">
-                <img src="https://picsum.photos/775/350" alt="image">
+                <img src="https://picsum.photos/775/350" alt="image" />
               </div>
               <div class="card__content">
                 <div class="card__body">

@@ -110,9 +110,7 @@
               werden.
             </p>
 
-            <h2 class="h2">
-              Weiterführende Artikel
-            </h2>
+            <h2 class="h2">Weiterführende Artikel</h2>
             <ul>
               <li>
                 <a href="http://www.admin.ch">
@@ -158,9 +156,7 @@
               </li>
             </ul>
 
-            <h2 class="h2">
-              Dokumente und Dateien
-            </h2>
+            <h2 class="h2">Dokumente und Dateien</h2>
 
             <ul class="download-items">
               <li>
@@ -187,33 +183,27 @@
               </li>
             </ul>
 
-            <h2 class="h2">
-              Kontakt für Rückfragen
-            </h2>
+            <h2 class="h2">Kontakt für Rückfragen</h2>
             <address>
-              <strong>Staatssekretariat für Wirtschaft SECO</strong><br>
-              Holzikofenweg 36<br>
-              CH-3003 Bern<br>
-              Tel. +41 58 462 56 56<br>
+              <strong>Staatssekretariat für Wirtschaft SECO</strong><br />
+              Holzikofenweg 36<br />
+              CH-3003 Bern<br />
+              Tel. +41 58 462 56 56<br />
               <a href="mailto:medien@seco.admin.ch">medien@seco.admin.ch</a>
             </address>
 
-            <h2 class="h2">
-              Herausgeber
-            </h2>
+            <h2 class="h2">Herausgeber</h2>
 
             <p>
-              Staatssekretariat für Wirtschaft<br>
+              Staatssekretariat für Wirtschaft<br />
               <a href="http://www.seco.admin.ch "> www.seco.admin.ch </a>
             </p>
             <p>
-              Name de Amtes <br><a href="www.amtsurl.ch">www.amtsurl.ch</a>
+              Name de Amtes <br /><a href="www.amtsurl.ch">www.amtsurl.ch</a>
             </p>
 
             <div>
-              <h2 class="h2">
-                Themen
-              </h2>
+              <h2 class="h2">Themen</h2>
               <RelatedTags :tags="tags" bare />
             </div>
           </div>

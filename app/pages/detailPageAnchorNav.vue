@@ -33,8 +33,8 @@
                 <source
                   srcset="https://picsum.photos/1600/900"
                   media="(min-width: 800px)"
-                >
-                <img src="https://picsum.photos/1600/1200" alt="cat">
+                />
+                <img src="https://picsum.photos/1600/1200" alt="cat" />
               </picture>
               <figcaption>
                 Datenmodelle als http-Ressource nutzbar zu machen.
@@ -48,9 +48,7 @@
             class="container container--grid container--reverse-mobile gap--responsive"
           >
             <div class="container__main vertical-spacing">
-              <h2 id="einleitung" class="h2">
-                Einleitung
-              </h2>
+              <h2 id="einleitung" class="h2">Einleitung</h2>
               <p>
                 Über den Kontakt models@geo.admin.ch können die Modelldatei und
                 die Modelldokumentation zur Publikation eingereicht werden.
@@ -65,8 +63,8 @@
                   <source
                     srcset="https://picsum.photos/1600/900"
                     media="(min-width: 800px)"
-                  >
-                  <img src="https://picsum.photos/1600/900" alt="cat">
+                  />
+                  <img src="https://picsum.photos/1600/900" alt="cat" />
                 </picture>
                 <figcaption>
                   Image label here —&nbsp;©&nbsp;Photograph Name
@@ -92,8 +90,8 @@
                   <source
                     srcset="https://picsum.photos/1600/900"
                     media="(min-width: 800px)"
-                  >
-                  <img src="https://picsum.photos/1600/1200" alt="cat">
+                  />
+                  <img src="https://picsum.photos/1600/1200" alt="cat" />
                 </picture>
                 <figcaption>
                   Datenmodelle als http-Ressource nutzbar zu machen.
@@ -112,9 +110,7 @@
                 INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
                 eingepflegt.
               </p>
-              <h2 id="dokumente" class="h2">
-                Weitere Informationen
-              </h2>
+              <h2 id="dokumente" class="h2">Weitere Informationen</h2>
 
               <Accordion id="12345">
                 <AccordionItem
@@ -122,18 +118,14 @@
                   title="Medienmitteilungen"
                   headingLevel="h3"
                 >
-                  <h3 class="h5">
-                    Title
-                  </h3>
+                  <h3 class="h5">Title</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aenean euismod bibendum laoreet. Proin gravida dolor
                   </p>
                 </AccordionItem>
                 <AccordionItem id="11" title="Interviews" headingLevel="h3">
-                  <h3 class="h5">
-                    Title
-                  </h3>
+                  <h3 class="h5">Title</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aenean euismod bibendum laoreet. Proin gravida dolor
@@ -144,18 +136,14 @@
                   title="Dokumente und Downloads"
                   headingLevel="h3"
                 >
-                  <h3 class="h5">
-                    Title
-                  </h3>
+                  <h3 class="h5">Title</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aenean euismod bibendum laoreet. Proin gravida dolor
                   </p>
                 </AccordionItem>
                 <AccordionItem id="13" title="Reden" headingLevel="h3">
-                  <h3 class="h5">
-                    Title
-                  </h3>
+                  <h3 class="h5">Title</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aenean euismod bibendum laoreet. Proin gravida dolor
@@ -166,9 +154,7 @@
                   title="Gesetze und Verordnungen"
                   headingLevel="h3"
                 >
-                  <h3 class="h5">
-                    Title
-                  </h3>
+                  <h3 class="h5">Title</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aenean euismod bibendum laoreet. Proin gravida dolor

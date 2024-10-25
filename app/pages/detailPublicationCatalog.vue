@@ -39,7 +39,7 @@
         <div class="container container--grid gap--responsive">
           <div class="container__main vertical-spacing">
             <Notification
-              text="<p>Aus dieser Reihe gibt es eine aktuellere Version: <a href=&quot;#&quot; target=&quot;_blank&quot;>Ausgabe 2022</a>.</p>"
+              text='<p>Aus dieser Reihe gibt es eine aktuellere Version: <a href="#" target="_blank">Ausgabe 2022</a>.</p>'
               type="warning"
               icon="InfoCircle"
               :closeBtn="false"
@@ -49,21 +49,19 @@
                 <source
                   srcset="/images/publication-cover.png"
                   media="(min-width: 800px)"
-                >
+                />
                 <img
                   src="/images/publication-cover.png"
                   alt="publication cover"
                   class="h-full m-auto shadow-xl"
-                >
+                />
               </picture>
             </figure>
 
             <div class="container__mobile">
               <!-- mobile only -->
               <div class="box">
-                <h2 class="h5">
-                  Download
-                </h2>
+                <h2 class="h5">Download</h2>
                 <ul class="download-items">
                   <li>
                     <DownloadItem
@@ -99,9 +97,7 @@
                 </ul>
               </div>
               <div class="box">
-                <h2 class="h5">
-                  Druckexemplar bestellen
-                </h2>
+                <h2 class="h5">Druckexemplar bestellen</h2>
                 <Btn
                   to="#"
                   variant="filled"
@@ -122,9 +118,7 @@
               tempor.
             </p>
 
-            <h2 class="h2">
-              Details
-            </h2>
+            <h2 class="h2">Details</h2>
 
             <div>
               <InfoBlock title="Sprache" headingLevel="h3">
@@ -166,8 +160,10 @@
               </InfoBlock>
 
               <InfoBlock title="Erhebung, Statistik" headingLevel="h3">
-                <a href="#">Reiseverhalten der Wohnbevölkerung (Modul der
-                  Haushaltsbudgeterhebung HABE)</a>
+                <a href="#"
+                  >Reiseverhalten der Wohnbevölkerung (Modul der
+                  Haushaltsbudgeterhebung HABE)</a
+                >
               </InfoBlock>
 
               <InfoBlock
@@ -180,9 +176,7 @@
             </div>
 
             <div>
-              <h2 class="h2">
-                Themen
-              </h2>
+              <h2 class="h2">Themen</h2>
               <RelatedTags :tags="tags" bare />
             </div>
           </div>
@@ -190,9 +184,7 @@
             <div id="aside-content" :class="computedAsideContainerClass">
               <!-- desktop only -->
               <div class="box">
-                <h2 class="h5">
-                  Download
-                </h2>
+                <h2 class="h5">Download</h2>
                 <ul class="download-items">
                   <li>
                     <DownloadItem
@@ -228,9 +220,7 @@
                 </ul>
               </div>
               <div class="box">
-                <h2 class="h5">
-                  Druckexemplar bestellen
-                </h2>
+                <h2 class="h5">Druckexemplar bestellen</h2>
                 <Btn
                   to="#"
                   variant="filled"

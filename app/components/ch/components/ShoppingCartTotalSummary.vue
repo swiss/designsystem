@@ -12,7 +12,7 @@
           {{ subTotal }}
         </p>
       </div>
-      <hr class="separator separator--md">
+      <hr class="separator separator--md" />
       <div class="container--flex">
         <p class="total__summary-total-title">
           {{ totalTitle }}

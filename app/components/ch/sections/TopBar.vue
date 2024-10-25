@@ -39,9 +39,7 @@
           </button>
         </div>
         <div>
-          <h3 class="top-bar__main-title">
-            Wo befinde ich mich?
-          </h3>
+          <h3 class="top-bar__main-title">Wo befinde ich mich?</h3>
           <nav
             aria-label="breadcrumb"
             aria-current="location"
@@ -74,9 +72,7 @@
 
           <div class="top-bar__grid">
             <div class="top-bar__grid__box-1">
-              <h4 class="top-bar__title">
-                Regierung
-              </h4>
+              <h4 class="top-bar__title">Regierung</h4>
               <ul class="menu">
                 <li class="menu__item menu__item--negative menu__item--brim">
                   <a href="javascript:void(0)" class="menu__item__flex">
@@ -106,9 +102,7 @@
             </div>
 
             <div class="top-bar__grid__box-3">
-              <h4 class="top-bar__title">
-                Departemente
-              </h4>
+              <h4 class="top-bar__title">Departemente</h4>
               <ul class="menu">
                 <li class="menu__item menu__item--negative menu__item--brim">
                   <a href="javascript:void(0)" class="menu__item__flex">
@@ -189,9 +183,7 @@
             </div>
 
             <div class="top-bar__grid__box-4">
-              <h4 class="top-bar__title">
-                Weitere Bundes-Websites
-              </h4>
+              <h4 class="top-bar__title">Weitere Bundes-Websites</h4>
               <div class="search search--negative search--large">
                 <div class="search__group">
                   <input
@@ -202,7 +194,7 @@
                     label="Ämter filtern"
                     placeholder="Filtern"
                     autocomplete="off"
-                  >
+                  />
                   <Btn
                     v-if="filterString !== ''"
                     label="Clear search input"

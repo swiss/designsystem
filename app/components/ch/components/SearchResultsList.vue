@@ -9,8 +9,8 @@
                 v-if="item.image.source"
                 :srcset="item.image.source.srcset"
                 :media="item.image.source.media"
-              >
-              <img :src="item.image.src" :alt="item.image.alt">
+              />
+              <img :src="item.image.src" :alt="item.image.alt" />
             </picture>
           </figure>
         </template>

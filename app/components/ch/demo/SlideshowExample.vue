@@ -34,23 +34,25 @@
               :height="slide.source.height"
               :width="slide.source.width"
               :media="slide.source.media"
-            >
+            />
             <img
               :src="slide.image.src"
               :alt="slide.image.alt"
               :height="slide.image.height"
               :width="slide.image.width"
-            >
+            />
           </picture>
           <figcaption v-if="slide.caption">
             <span v-if="slide.caption.title">{{ slide.caption.title }}</span>
             <span v-if="slide.caption.title && slide.caption.description">
-              —&nbsp;</span>
+              —&nbsp;</span
+            >
             <span v-if="slide.caption.description">{{
               slide.caption.description
             }}</span>
             <span v-if="slide.caption.copyright">
-              —&nbsp;©&nbsp;{{ slide.caption.copyright }}</span>
+              —&nbsp;©&nbsp;{{ slide.caption.copyright }}</span
+            >
           </figcaption>
         </figure>
       </SwiperSlide>
@@ -58,15 +60,11 @@
     <div class="carousel__fonctions">
       <div :id="`carousel-pagination-${id}`" class="carousel__pagination" />
       <button :id="`carousel-prev-${id}`" class="carousel__prev">
-        <div class="sr-only">
-          Previous image
-        </div>
+        <div class="sr-only">Previous image</div>
         <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
       </button>
       <button :id="`carousel-next-${id}`" class="carousel__next">
-        <div class="sr-only">
-          Next image
-        </div>
+        <div class="sr-only">Next image</div>
         <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
       </button>
     </div>

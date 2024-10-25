@@ -6,7 +6,7 @@
         v-if="image && image.src && image.alt"
         :src="image.src"
         :alt="image.alt"
-      >
+      />
       <ImageNotAvailable
         v-else
         class="shopping__card-image-not-available"
@@ -30,7 +30,7 @@
         v-model="inputValue"
         type="number"
         class="input--outline text--base"
-      >
+      />
     </div>
 
     <!-- Price mobile only -->

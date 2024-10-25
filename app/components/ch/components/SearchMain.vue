@@ -1,9 +1,7 @@
 <template>
   <div class="search search--main">
     <div class="search__group">
-      <h2 class="sr-only">
-        Suche
-      </h2>
+      <h2 class="sr-only">Suche</h2>
       <Input
         id="search-main"
         type="search"

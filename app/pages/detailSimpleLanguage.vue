@@ -50,7 +50,7 @@
                   <img
                     src="https://picsum.photos/1600/1200"
                     alt="placeholder"
-                  >
+                  />
                 </picture>
               </figure>
               <figure v-if="isSignLanguage">
@@ -94,7 +94,7 @@
                   <img
                     src="https://picsum.photos/1600/1200"
                     alt="placeholder"
-                  >
+                  />
                 </picture>
               </figure>
             </div>

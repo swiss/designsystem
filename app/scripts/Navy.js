@@ -47,10 +47,8 @@ const Navy = {
       const firstLink = Navy.drawer.querySelector(
         `.navy__level-${Navy.currentLevel} ul > li a`,
       )
-      if (firstLink == document.activeElement)
-        firstLink.blur()
-      else
-        firstLink.focus()
+      if (firstLink == document.activeElement) firstLink.blur()
+      else firstLink.focus()
     }
 
     // set focus on submenu items if mainmenu btn is unfocused
@@ -67,7 +65,9 @@ const Navy = {
     const nextButtons = ul.querySelectorAll(':scope > li > .navy__has-children')
     if (nextButtons.length === 0) return
 
-    const backButtons = ul.querySelectorAll(':scope > li > ul > li > .navy__back')
+    const backButtons = ul.querySelectorAll(
+      ':scope > li > ul > li > .navy__back',
+    )
     const submenus = ul.querySelectorAll(':scope > li > ul')
 
     ;[].forEach.call(nextButtons, function (btn) {

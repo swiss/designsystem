@@ -18,7 +18,7 @@
       :readonly="readonly"
       :required="required"
       @input.stop="onInput"
-    >
+    />
     <div
       v-if="message"
       class="badge badge--sm"

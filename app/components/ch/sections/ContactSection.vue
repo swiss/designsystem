@@ -2,9 +2,7 @@
   <section class="section bg--secondary-50">
     <div class="container container--grid">
       <div class="container__center--md">
-        <h2 class="section__title">
-          Hauptadresse Geoportal
-        </h2>
+        <h2 class="section__title">Hauptadresse Geoportal</h2>
         <div class="grid grid--responsive-cols-2 gap--responsive">
           <Contact
             title="Geoportal"

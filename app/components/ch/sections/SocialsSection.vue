@@ -48,7 +48,7 @@
                   class="instagram-media"
                   :data-instgrm-permalink="
                     feed.feedURL +
-                      '?utm_source=ig_embed&amp;utm_campaign=loading'
+                    '?utm_source=ig_embed&amp;utm_campaign=loading'
                   "
                   data-instgrm-version="14"
                   style="
@@ -69,7 +69,7 @@
                     <a
                       :href="
                         feed.feedURL +
-                          '?utm_source=ig_embed&amp;utm_campaign=loading'
+                        '?utm_source=ig_embed&amp;utm_campaign=loading'
                       "
                       style="
                         background: #ffffff;
@@ -124,8 +124,7 @@
                           height: 50px;
                           margin: 0 auto 12px;
                           width: 50px;
-                        "
-                      />
+                        " />
                       <div style="padding-top: 8px">
                         <div
                           style="
@@ -259,7 +258,8 @@
                             height: 14px;
                             width: 144px;
                           "
-                        /></div></a>
+                        /></div
+                    ></a>
                     <p
                       style="
                         color: #c9c8cd;
@@ -278,7 +278,7 @@
                       <a
                         :href="
                           feed.feedURL +
-                            '?utm_source=ig_embed&amp;utm_campaign=loading'
+                          '?utm_source=ig_embed&amp;utm_campaign=loading'
                         "
                         style="
                           color: #c9c8cd;
