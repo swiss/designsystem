@@ -11,8 +11,8 @@
     "build-storybook": "storybook build",
     "chromatic": "chromatic --project-token=a59f72b20002",
     "check": "pnpm check:format && pnpm check:ts:vue",
-    "check:format": "prettier --check \"./**/*.{ts,js,vue,mdx,md}\"",
-    "check:format:write": "prettier --write \"./**/*.{ts,js,vue,mdx,md}\"",
+    "check:format": "prettier --check \"./**/*.{ts,js,vue,mdx,md,css,postcss}\"",
+    "check:format:write": "prettier --write \"./**/*.{ts,js,vue,mdx,md,css,postcss}\"",
     "check:ts:vue": "nuxi typecheck",
     "check:lint": "eslint .",
     "check:lint:fix": "eslint . --fix"
