@@ -1,6 +1,6 @@
 <template>
   <div :class="computedClasses">
-    <swiper
+    <Swiper
       :breakpoints="breakpoints"
       :speed="500"
       :autoHeight="true"
@@ -26,7 +26,7 @@
       :slides-per-view="1"
       :space-between="16"
     >
-      <swiper-slide v-for="(slide, index) in slides" :key="`slide-${index}`">
+      <SwiperSlide v-for="(slide, index) in slides" :key="`slide-${index}`">
         <figure>
           <picture>
             <source
@@ -53,8 +53,8 @@
               —&nbsp;©&nbsp;{{ slide.caption.copyright }}</span>
           </figcaption>
         </figure>
-      </swiper-slide>
-    </swiper>
+      </SwiperSlide>
+    </Swiper>
     <div class="carousel__fonctions">
       <div :id="`carousel-pagination-${id}`" class="carousel__pagination" />
       <button :id="`carousel-prev-${id}`" class="carousel__prev">

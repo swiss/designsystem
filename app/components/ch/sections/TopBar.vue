@@ -16,7 +16,7 @@
         </button>
         <div v-else />
         <div class="top-bar__right">
-          <badge
+          <Badge
             v-if="isEasyLanguage || isSignLanguage"
             icon="Cancel"
             :iconLeft="computedAccessibilityIcon"
@@ -358,7 +358,7 @@
 </template>
 
 <script setup lang="ts">
-import badge from '../components/Badge.vue'
+import Badge from '../components/Badge.vue'
 import Btn from '../components/Btn.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'

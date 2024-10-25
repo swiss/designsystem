@@ -667,7 +667,7 @@
                 </div>
 
                 <div class="shopping__cart__action-container">
-                  <btn
+                  <Btn
                     class="shopping__cart-button"
                     variant="outline-negative"
                     size="base"
@@ -807,7 +807,7 @@
           Wir werden dir eine E-Mail mit der Bestellbestätigung zukommen lassen.
         </p>
       </div>
-      <btn
+      <Btn
         class="shopping__cart-confirmation-action"
         variant="outline-negative"
         size="base"
@@ -820,7 +820,7 @@
 </template>
 
 <script setup lang="ts">
-import btn from '../components/Btn.vue'
+import Btn from '../components/Btn.vue'
 import ShoppingCard from '../components/ShoppingCard.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import Checkbox from './Checkbox.vue'

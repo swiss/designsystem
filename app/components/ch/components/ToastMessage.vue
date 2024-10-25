@@ -1,6 +1,6 @@
 <template>
   <div class="toast__message" :class="showMessage ? 'active' : ''">
-    <notification
+    <Notification
       class="toast__message-notification"
       :closeBtn="false"
       :isClosed="false"
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import notification from './Notification.vue'
+import Notification from './Notification.vue'
 import { ref, onMounted, nextTick } from 'vue'
 
 const showMessage = ref(false)

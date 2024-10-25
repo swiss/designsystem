@@ -1,6 +1,6 @@
 <template>
   <div class="badge-filter">
-    <badge
+    <Badge
       label="Alle"
       size="base"
       :color="activeFilter === 'all' ? 'negative' : 'gray'"
@@ -8,7 +8,7 @@
       :badgeClicked="() => badgeClicked('all')"
       :disabled="disabledFilters.includes('all')"
     />
-    <badge
+    <Badge
       label="0-9"
       size="base"
       :color="activeFilter === 'numbric' ? 'negative' : 'gray'"
@@ -16,7 +16,7 @@
       :badgeClicked="() => badgeClicked('numbric')"
       :disabled="disabledFilters.includes('numbric')"
     />
-    <badge
+    <Badge
       label="A"
       size="base"
       :color="activeFilter === 'a' ? 'negative' : 'gray'"
@@ -24,7 +24,7 @@
       :badgeClicked="() => badgeClicked('a')"
       :disabled="disabledFilters.includes('a')"
     />
-    <badge
+    <Badge
       label="B"
       size="base"
       :color="activeFilter === 'b' ? 'negative' : 'gray'"
@@ -32,7 +32,7 @@
       :badgeClicked="() => badgeClicked('b')"
       :disabled="disabledFilters.includes('b')"
     />
-    <badge
+    <Badge
       label="C"
       size="base"
       :color="activeFilter === 'c' ? 'negative' : 'gray'"
@@ -40,7 +40,7 @@
       :badgeClicked="() => badgeClicked('c')"
       :disabled="disabledFilters.includes('c')"
     />
-    <badge
+    <Badge
       label="D"
       size="base"
       :color="activeFilter === 'd' ? 'negative' : 'gray'"
@@ -48,7 +48,7 @@
       :badgeClicked="() => badgeClicked('d')"
       :disabled="disabledFilters.includes('d')"
     />
-    <badge
+    <Badge
       label="E"
       size="base"
       :color="activeFilter === 'e' ? 'negative' : 'gray'"
@@ -56,7 +56,7 @@
       :badgeClicked="() => badgeClicked('e')"
       :disabled="disabledFilters.includes('e')"
     />
-    <badge
+    <Badge
       label="F"
       size="base"
       :color="activeFilter === 'f' ? 'negative' : 'gray'"
@@ -64,7 +64,7 @@
       :badgeClicked="() => badgeClicked('f')"
       :disabled="disabledFilters.includes('f')"
     />
-    <badge
+    <Badge
       label="G"
       size="base"
       :color="activeFilter === 'g' ? 'negative' : 'gray'"
@@ -72,7 +72,7 @@
       :badgeClicked="() => badgeClicked('g')"
       :disabled="disabledFilters.includes('g')"
     />
-    <badge
+    <Badge
       label="H"
       size="base"
       :color="activeFilter === 'h' ? 'negative' : 'gray'"
@@ -80,7 +80,7 @@
       :badgeClicked="() => badgeClicked('h')"
       :disabled="disabledFilters.includes('h')"
     />
-    <badge
+    <Badge
       label="I"
       size="base"
       :color="activeFilter === 'i' ? 'negative' : 'gray'"
@@ -88,7 +88,7 @@
       :badgeClicked="() => badgeClicked('i')"
       :disabled="disabledFilters.includes('i')"
     />
-    <badge
+    <Badge
       label="J"
       size="base"
       :color="activeFilter === 'j' ? 'negative' : 'gray'"
@@ -96,7 +96,7 @@
       :badgeClicked="() => badgeClicked('j')"
       :disabled="disabledFilters.includes('j')"
     />
-    <badge
+    <Badge
       label="K"
       size="base"
       :color="activeFilter === 'k' ? 'negative' : 'gray'"
@@ -104,7 +104,7 @@
       :badgeClicked="() => badgeClicked('k')"
       :disabled="disabledFilters.includes('k')"
     />
-    <badge
+    <Badge
       label="L"
       size="base"
       :color="activeFilter === 'l' ? 'negative' : 'gray'"
@@ -112,7 +112,7 @@
       :badgeClicked="() => badgeClicked('l')"
       :disabled="disabledFilters.includes('l')"
     />
-    <badge
+    <Badge
       label="M"
       size="base"
       :color="activeFilter === 'm' ? 'negative' : 'gray'"
@@ -120,7 +120,7 @@
       :badgeClicked="() => badgeClicked('m')"
       :disabled="disabledFilters.includes('m')"
     />
-    <badge
+    <Badge
       label="N"
       size="base"
       :color="activeFilter === 'n' ? 'negative' : 'gray'"
@@ -128,7 +128,7 @@
       :badgeClicked="() => badgeClicked('n')"
       :disabled="disabledFilters.includes('n')"
     />
-    <badge
+    <Badge
       label="O"
       size="base"
       :color="activeFilter === 'o' ? 'negative' : 'gray'"
@@ -136,7 +136,7 @@
       :badgeClicked="() => badgeClicked('o')"
       :disabled="disabledFilters.includes('o')"
     />
-    <badge
+    <Badge
       label="P"
       size="base"
       :color="activeFilter === 'p' ? 'negative' : 'gray'"
@@ -144,7 +144,7 @@
       :badgeClicked="() => badgeClicked('p')"
       :disabled="disabledFilters.includes('p')"
     />
-    <badge
+    <Badge
       label="Q"
       size="base"
       :color="activeFilter === 'q' ? 'negative' : 'gray'"
@@ -152,7 +152,7 @@
       :badgeClicked="() => badgeClicked('q')"
       :disabled="disabledFilters.includes('q')"
     />
-    <badge
+    <Badge
       label="R"
       size="base"
       :color="activeFilter === 'r' ? 'negative' : 'gray'"
@@ -160,7 +160,7 @@
       :badgeClicked="() => badgeClicked('r')"
       :disabled="disabledFilters.includes('r')"
     />
-    <badge
+    <Badge
       label="S"
       size="base"
       :color="activeFilter === 's' ? 'negative' : 'gray'"
@@ -168,7 +168,7 @@
       :badgeClicked="() => badgeClicked('s')"
       :disabled="disabledFilters.includes('s')"
     />
-    <badge
+    <Badge
       label="T"
       size="base"
       :color="activeFilter === 't' ? 'negative' : 'gray'"
@@ -176,7 +176,7 @@
       :badgeClicked="() => badgeClicked('t')"
       :disabled="disabledFilters.includes('t')"
     />
-    <badge
+    <Badge
       label="U"
       size="base"
       :color="activeFilter === 'u' ? 'negative' : 'gray'"
@@ -184,7 +184,7 @@
       :badgeClicked="() => badgeClicked('u')"
       :disabled="disabledFilters.includes('u')"
     />
-    <badge
+    <Badge
       label="V"
       size="base"
       :color="activeFilter === 'v' ? 'negative' : 'gray'"
@@ -192,7 +192,7 @@
       :badgeClicked="() => badgeClicked('v')"
       :disabled="disabledFilters.includes('v')"
     />
-    <badge
+    <Badge
       label="W"
       size="base"
       :color="activeFilter === 'w' ? 'negative' : 'gray'"
@@ -200,7 +200,7 @@
       :badgeClicked="() => badgeClicked('w')"
       :disabled="disabledFilters.includes('w')"
     />
-    <badge
+    <Badge
       label="X"
       size="base"
       :color="activeFilter === 'x' ? 'negative' : 'gray'"
@@ -208,7 +208,7 @@
       :badgeClicked="() => badgeClicked('x')"
       :disabled="disabledFilters.includes('x')"
     />
-    <badge
+    <Badge
       label="Y"
       size="base"
       :color="activeFilter === 'y' ? 'negative' : 'gray'"
@@ -216,7 +216,7 @@
       :badgeClicked="() => badgeClicked('y')"
       :disabled="disabledFilters.includes('y')"
     />
-    <badge
+    <Badge
       label="Z"
       size="base"
       :color="activeFilter === 'z' ? 'negative' : 'gray'"
@@ -227,7 +227,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import badge from '../components/Badge.vue'
+import Badge from '../components/Badge.vue'
 
 defineProps({
   badgeClicked: {

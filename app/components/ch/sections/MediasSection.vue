@@ -5,7 +5,7 @@
         Medienmitteilungen
       </h2>
       <div :class="computedClasses">
-        <swiper
+        <Swiper
           :speed="500"
           :autoHeight="false"
           :loop="false"
@@ -60,7 +60,7 @@
             bulletActiveClass: 'carousel__bullet--active',
           }"
         >
-          <swiper-slide>
+          <SwiperSlide>
             <Card type="universal">
               <template v-slot:metaInfos>
                 <MetaInfo :metainfos="['Aktualisiert am 10. Februar 23']" />
@@ -88,8 +88,8 @@
                 />
               </template>
             </Card>
-          </swiper-slide>
-          <swiper-slide>
+          </SwiperSlide>
+          <SwiperSlide>
             <Card type="universal">
               <template v-slot:metaInfos>
                 <MetaInfo :metainfos="['18. Mai 23']" />
@@ -119,8 +119,8 @@
                 />
               </template>
             </Card>
-          </swiper-slide>
-          <swiper-slide>
+          </SwiperSlide>
+          <SwiperSlide>
             <Card type="universal">
               <template v-slot:metaInfos>
                 <MetaInfo :metainfos="['18. März 23']" />
@@ -180,8 +180,8 @@
                 />
               </template>
             </Card>
-          </swiper-slide>
-          <swiper-slide>
+          </SwiperSlide>
+          <SwiperSlide>
             <Card type="universal">
               <template v-slot:metaInfos>
                 <MetaInfo :metainfos="['10. Februar 23']" />
@@ -209,8 +209,8 @@
                 />
               </template>
             </Card>
-          </swiper-slide>
-          <swiper-slide>
+          </SwiperSlide>
+          <SwiperSlide>
             <Card type="universal">
               <template v-slot:metaInfos>
                 <MetaInfo :metainfos="['18. Mai 23']" />
@@ -240,8 +240,8 @@
                 />
               </template>
             </Card>
-          </swiper-slide>
-        </swiper>
+          </SwiperSlide>
+        </Swiper>
         <div class="carousel__fonctions">
           <div
             :id="`carousel-pagination-${id}`"

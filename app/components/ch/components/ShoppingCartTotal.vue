@@ -10,7 +10,7 @@
       {{ description }}
     </p>
     <div class="shopping__cart__action-container">
-      <btn
+      <Btn
         class="shopping__cart-button"
         variant="outline-negative"
         size="base"
@@ -23,7 +23,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import btn from './Btn.vue'
+import Btn from './Btn.vue'
 import { ref, onMounted } from 'vue'
 
 const screenSize = ref(0)

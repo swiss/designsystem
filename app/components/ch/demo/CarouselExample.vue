@@ -1,6 +1,6 @@
 <template>
   <div :class="computedClasses">
-    <swiper
+    <Swiper
       :speed="500"
       :autoHeight="false"
       :loop="loop"
@@ -58,7 +58,7 @@
         bulletActiveClass: 'carousel__bullet--active',
       }"
     >
-      <swiper-slide v-for="(slide, index) in slides" :key="`slide-${index}`">
+      <SwiperSlide v-for="(slide, index) in slides" :key="`slide-${index}`">
         <Card type="default">
           <template v-slot:image>
             <picture>
@@ -97,8 +97,8 @@
             />
           </template>
         </Card>
-      </swiper-slide>
-    </swiper>
+      </SwiperSlide>
+    </Swiper>
     <div class="carousel__fonctions">
       <div :id="`carousel-pagination-${id}`" class="carousel__pagination" />
       <button :id="`carousel-prev-${id}`" class="carousel__prev">

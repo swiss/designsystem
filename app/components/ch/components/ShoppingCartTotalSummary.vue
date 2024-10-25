@@ -37,7 +37,7 @@
         "
       />
     </div>
-    <btn
+    <Btn
       class="shopping__cart-button"
       variant="outline-negative"
       size="base"

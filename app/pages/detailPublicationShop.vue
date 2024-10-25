@@ -1,5 +1,5 @@
 <template>
-  <client-only>
+  <ClientOnly>
     <div>
       <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
       <header id="main-header">
@@ -140,7 +140,7 @@
                   <h2 class="h5">
                     Webviewer
                   </h2>
-                  <btn
+                  <Btn
                     variant="link"
                     to="https://www.google.ch"
                     label="Publikation im Browser betrachten"
@@ -304,7 +304,7 @@
                   <h2 class="h5">
                     Webviewer
                   </h2>
-                  <btn
+                  <Btn
                     variant="link"
                     to="https://www.google.ch"
                     label="Publikation im Browser betrachten"
@@ -339,7 +339,7 @@
         <FooterNavigation />
       </footer>
     </div>
-  </client-only>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

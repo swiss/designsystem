@@ -1,7 +1,7 @@
 <template>
   <nav :id="id" class="carousel-navigation">
     <ul class="carousel">
-      <swiper
+      <Swiper
         :speed="500"
         :autoHeight="false"
         :loop="false"
@@ -19,35 +19,35 @@
         :simulateTouch="true"
         :slideToClickedSlide="false"
       >
-        <swiper-slide>
+        <SwiperSlide>
           <li>
             <a href="javascript:alert('link')">
               <span>Alle</span>
             </a>
           </li>
-        </swiper-slide>
-        <swiper-slide>
+        </SwiperSlide>
+        <SwiperSlide>
           <li>
             <a href="javascript:alert('link)" class="active">
               <span>Corona</span>
             </a>
           </li>
-        </swiper-slide>
-        <swiper-slide>
+        </SwiperSlide>
+        <SwiperSlide>
           <li>
             <a href="javascript:alert('link')">
               <span>Bürgerrecht</span>
             </a>
           </li>
-        </swiper-slide>
-        <swiper-slide>
+        </SwiperSlide>
+        <SwiperSlide>
           <li>
             <a href="javascript:alert('link')">
               <span>Ukraine</span>
             </a>
           </li>
-        </swiper-slide>
-      </swiper>
+        </SwiperSlide>
+      </Swiper>
       <div class="carousel__fonctions">
         <button :id="`carousel-prev-${id}`" class="carousel__prev">
           <div class="sr-only">

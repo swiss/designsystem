@@ -13,13 +13,13 @@
     </header>
     <main id="main-content">
       <section class="section-overview">
-        <hero type="overview">
+        <Hero type="overview">
           <template v-slot:title>
             <h1 class="h1 hero__title">
               Corona
             </h1>
           </template>
-        </hero>
+        </Hero>
         <div class="container">
           <div class="grid grid--responsive-cols-3 gap--responsive">
             <div class="card card--default card--clickable">

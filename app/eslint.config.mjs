@@ -55,10 +55,12 @@ export default tseslint.config(
       "vue/multi-word-component-names": "off",
       "vue/html-quotes": "warn",
       "vue/multiline-html-element-content-newline": "warn",
-      "@typescript-eslint/no-unused-vars": "warn",
+      "vue/html-self-closing": "warn",
+      "vue/component-name-in-template-casing": ["warn", "PascalCase", { registeredComponentsOnly: false }],
 
       //Typescript
       "@typescript-eslint/consistent-type-imports": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
 
       // Fixed but open issues which cannot be fixed
       "no-unused-vars": "off",
@@ -70,19 +72,7 @@ export default tseslint.config(
       "vue/require-default-prop": "off",
       "@typescript-eslint/no-unused-expressions": "off",
       "@typescript-eslint/no-explicit-any": "off",
-
-      //Unchecked
-      "vue/html-self-closing": "warn",
       "@typescript-eslint/ban-ts-comment": "off",
-      "vue/component-name-in-template-casing": ["off", "PascalCase", { registeredComponentsOnly: false }],
     }
   },
-  /* {
-    files: ['*.vue', '***.vue'],
-    languageOptions: {
-      parserOptions: {
-        parser: '@typescript-eslint/parser'
-      }
-    }
-  }, */
 )

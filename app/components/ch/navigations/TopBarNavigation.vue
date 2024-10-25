@@ -21,19 +21,19 @@
       <li>
         <a href="#">
           <span>Leichte Sprache</span>
-          <svg-icon size="lg" icon="EasyLanguage" />
+          <SvgIcon size="lg" icon="EasyLanguage" />
         </a>
       </li>
       <li>
         <a href="#">
           <span>Gebärdensprache</span>
-          <svg-icon size="lg" icon="SignLanguage" />
+          <SvgIcon size="lg" icon="SignLanguage" />
         </a>
       </li>
       <li>
         <a href="#" class="desktop-only">
           <span>Anmelden </span>
-          <svg-icon icon="User" size="lg" />
+          <SvgIcon icon="User" size="lg" />
         </a>
       </li>
     </ul>

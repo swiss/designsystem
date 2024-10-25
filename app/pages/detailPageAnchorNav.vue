@@ -1,5 +1,5 @@
 <template>
-  <client-only>
+  <ClientOnly>
     <div>
       <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
       <header id="main-header">
@@ -233,7 +233,7 @@
         <FooterNavigation />
       </footer>
     </div>
-  </client-only>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

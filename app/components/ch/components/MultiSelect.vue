@@ -8,7 +8,7 @@
       {{ label }}
     </label>
     <div :class="selectWrapperClasses">
-      <v-select
+      <VSelect
         :id="getUniqueId('multi-select')"
         v-model="currentSelected"
         :multiple="multiple"
@@ -35,7 +35,7 @@
             v-on="events"
           >
         </template>
-      </v-select>
+      </VSelect>
       <div class="select__icon">
         <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
           <path
@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import vSelect from 'vue-select'
+import { default as VSelect } from 'vue-select'
 import { ref, computed, watch, onMounted, h, type PropType } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
