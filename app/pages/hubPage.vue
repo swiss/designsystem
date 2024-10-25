@@ -11,10 +11,10 @@
     </header>
     <main id="main-content">
       <Hero type="hub">
-        <template v-slot:title>
+        <template #title>
           Unsere Dienstleistungen
         </template>
-        <template v-slot:description>
+        <template #description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           tincidunt enim id orci facilisis placerat. Proin odio mauris,
           venenatis non placerat at, finibus non tortor. Mauris sodales ultrices

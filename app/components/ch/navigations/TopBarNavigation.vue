@@ -50,6 +50,7 @@ defineProps({
   },
   context: {
     type: String,
+    default: () => undefined,
   },
 })
 </script>

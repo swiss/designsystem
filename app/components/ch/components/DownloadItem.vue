@@ -30,10 +30,12 @@ const props = defineProps({
   filename: {
     type: String,
     required: false,
+    default: () => undefined,
   },
   description: {
     type: String,
     description: () => undefined,
+    default: () => undefined,
   },
   url: {
     type: String,
@@ -46,6 +48,7 @@ const props = defineProps({
   size: {
     type: String,
     required: false,
+    default: () => undefined,
   },
   date: {
     type: String,

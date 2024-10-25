@@ -19,6 +19,7 @@ const props = defineProps({
   },
   icon: {
     type: String,
+    default: () => undefined,
   },
   borderTop: {
     type: Boolean,

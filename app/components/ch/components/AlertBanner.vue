@@ -76,10 +76,12 @@ const props = defineProps({
   introLink: {
     type: String,
     required: false,
+    default: () => undefined,
   },
   link: {
     type: Object,
     required: false,
+    default: () => undefined,
   },
   icon: {
     type: String,

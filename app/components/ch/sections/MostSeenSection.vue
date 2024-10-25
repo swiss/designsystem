@@ -9,13 +9,13 @@
       </h3>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <img src="https://picsum.photos/775/350" alt="cat">
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Wandern</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
               ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
@@ -23,10 +23,10 @@
               sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerInfo>
+          <template #footerInfo>
             Dienstleistungen & Produkte
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -37,22 +37,22 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <img src="https://picsum.photos/775/350" alt="cat">
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Historische Karten</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
               ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerInfo>
+          <template #footerInfo>
             Dienstleistungen & Produkte
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -63,23 +63,23 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <img src="https://picsum.photos/775/350" alt="cat">
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>PLZ und Ortschaften</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
               ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
               dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerInfo>
+          <template #footerInfo>
             Dienstleistungen & Produkte
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -96,16 +96,16 @@
       </h3>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
-          <template v-slot:title>
+          <template #title>
             <h3>Are</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
               ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -117,16 +117,16 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:title>
+          <template #title>
             <h3>Energie</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
               ipsum dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -138,17 +138,17 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:title>
+          <template #title>
             <h3>Luftfahrt</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
               ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
               dolor sit amet, consetetur sadipscing elitr, sed
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"

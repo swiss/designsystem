@@ -93,17 +93,21 @@ const props = defineProps({
   },
   label: {
     type: String,
+    default: () => undefined,
   },
   name: {
     type: String,
+    default: () => undefined,
   },
   message: {
     type: String,
+    default: () => undefined,
   },
   messageType: {
     type: String,
     validator: (prop) =>
       ['error', 'warning', 'success', 'info'].includes(prop as string),
+    default: () => undefined,
   },
   onChange: {
     type: Function as PropType<(value: string[]) => void>,
@@ -123,6 +127,7 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
+    default: () => undefined,
   },
   excluded: {
     type: Array<string>,
@@ -130,6 +135,7 @@ const props = defineProps({
   },
   selectLimit: {
     type: Number,
+    default: () => undefined,
   },
 })
 

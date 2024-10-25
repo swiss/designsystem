@@ -14,7 +14,7 @@
     <main id="main-content">
       <section class="section-overview">
         <Hero type="overview">
-          <template v-slot:title>
+          <template #title>
             <h1 class="h1 hero__title">
               Corona
             </h1>

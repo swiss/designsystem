@@ -50,6 +50,7 @@ const props = defineProps({
   type: {
     type: String,
     validator: (prop) => ['default', 'inline'].includes(prop as string),
+    default: () => undefined,
   },
   title: {
     type: String,

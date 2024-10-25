@@ -3,10 +3,10 @@
     <div class="container">
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="highlight">
-          <template v-slot:title>
+          <template #title>
             <h3>Datenmodellablage</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               At vero eos et ac-cusam et justo duo dolores et ea rebum Stet
@@ -15,8 +15,8 @@
               dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo />
-          <template v-slot:footerAction>
+          <template #footerInfo />
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -27,10 +27,10 @@
           </template>
         </Card>
         <Card type="highlight">
-          <template v-slot:title>
+          <template #title>
             <h3>Geodienste</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               At vero eos et ac-cusam et justo duo dolores et ea rebum Stet
@@ -39,8 +39,8 @@
               dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo />
-          <template v-slot:footerAction>
+          <template #footerInfo />
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -51,10 +51,10 @@
           </template>
         </Card>
         <Card type="highlight">
-          <template v-slot:title>
+          <template #title>
             <h3>Datenbezug</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               At vero eos et ac-cusam et justo duo dolores et ea rebum Stet
@@ -63,8 +63,8 @@
               dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo />
-          <template v-slot:footerAction>
+          <template #footerInfo />
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -75,17 +75,17 @@
           </template>
         </Card>
         <Card type="highlight">
-          <template v-slot:title>
+          <template #title>
             <h3>Beratung und Koordination</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               At vero eos et ac-cusam et justo duo dolores et ea rebum Stet
               clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo />
-          <template v-slot:footerAction>
+          <template #footerInfo />
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -96,18 +96,18 @@
           </template>
         </Card>
         <Card type="highlight">
-          <template v-slot:title>
+          <template #title>
             <h3>Geodienste</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               At vero eos et ac-cusam et justo duo dolores et ea rebum Stet
               clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerInfo />
-          <template v-slot:footerAction>
+          <template #footerInfo />
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"

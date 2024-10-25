@@ -62,23 +62,23 @@
         >
           <SwiperSlide>
             <Card type="universal">
-              <template v-slot:metaInfos>
+              <template #metaInfos>
                 <MetaInfo :metainfos="['Aktualisiert am 10. Februar 23']" />
               </template>
-              <template v-slot:title>
+              <template #title>
                 <h3>
                   Rückerstattungsaktion der US-amerikanischen
                   Konsumentenschutzbehörde
                 </h3>
               </template>
-              <template v-slot:description>
+              <template #description>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Aenean euismod bibendum laoreet. Proin gravida dolor sit amet
                   lacus accumsan et
                 </p>
               </template>
-              <template v-slot:footerAction>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -91,25 +91,25 @@
           </SwiperSlide>
           <SwiperSlide>
             <Card type="universal">
-              <template v-slot:metaInfos>
+              <template #metaInfos>
                 <MetaInfo :metainfos="['18. Mai 23']" />
               </template>
-              <template v-slot:title>
+              <template #title>
                 <h3>Hier kommt der Titel der Medienmitteilungen</h3>
               </template>
-              <template v-slot:description>
+              <template #description>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Aenean euismod bibendum laoreet. Proin gravida dolor sit amet
                   lacus accumsan et
                 </p>
               </template>
-              <template v-slot:contentIcons>
+              <template #contentIcons>
                 <div class="card__content-icons">
                   <SvgIcon icon="Youtube" size="xl" />
                 </div>
               </template>
-              <template v-slot:footerAction>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -122,10 +122,10 @@
           </SwiperSlide>
           <SwiperSlide>
             <Card type="universal">
-              <template v-slot:metaInfos>
+              <template #metaInfos>
                 <MetaInfo :metainfos="['18. März 23']" />
               </template>
-              <template v-slot:image>
+              <template #image>
                 <picture>
                   <source
                     srcset="https://picsum.photos/760/428/?image=17"
@@ -165,12 +165,12 @@
                   >
                 </picture>
               </template>
-              <template v-slot:title>
+              <template #title>
                 <h3>
                   Hier kommt der Titel der Medien&shy;mitteilungen und so weiter
                 </h3>
               </template>
-              <template v-slot:footerAction>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -183,23 +183,23 @@
           </SwiperSlide>
           <SwiperSlide>
             <Card type="universal">
-              <template v-slot:metaInfos>
+              <template #metaInfos>
                 <MetaInfo :metainfos="['10. Februar 23']" />
               </template>
-              <template v-slot:title>
+              <template #title>
                 <h3>
                   Rückerstattungsaktion der US-amerikanischen
                   Konsumentenschutzbehörde
                 </h3>
               </template>
-              <template v-slot:description>
+              <template #description>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Aenean euismod bibendum laoreet. Proin gravida dolor sit amet
                   lacus accumsan et
                 </p>
               </template>
-              <template v-slot:footerAction>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -212,25 +212,25 @@
           </SwiperSlide>
           <SwiperSlide>
             <Card type="universal">
-              <template v-slot:metaInfos>
+              <template #metaInfos>
                 <MetaInfo :metainfos="['18. Mai 23']" />
               </template>
-              <template v-slot:title>
+              <template #title>
                 <h3>Hier kommt der Titel der Medienmitteilungen</h3>
               </template>
-              <template v-slot:description>
+              <template #description>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Aenean euismod bibendum laoreet. Proin gravida dolor sit amet
                   lacus accumsan et
                 </p>
               </template>
-              <template v-slot:contentIcons>
+              <template #contentIcons>
                 <div class="card__content-icons">
                   <SvgIcon icon="Youtube" size="xl" />
                 </div>
               </template>
-              <template v-slot:footerAction>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -289,6 +289,7 @@ defineProps({
   },
   breakpoints: {
     type: Object,
+    default: () => undefined,
   },
 })
 

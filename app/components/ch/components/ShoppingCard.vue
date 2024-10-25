@@ -86,10 +86,8 @@ const props = defineProps({
     default: () => 'edit',
   },
   image: {
-    type: Object, // {
-    //   src: String,
-    //   alt: String,
-    // },
+    type: Object,
+    default: () => undefined,
   },
   title: {
     type: String,

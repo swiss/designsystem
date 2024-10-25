@@ -25,10 +25,10 @@
     </header>
     <main id="main-content">
       <Hero type="default" :meta-infos="metaInfos" :authors="authors">
-        <template v-slot:title>
+        <template #title>
           Rückerstattungsaktion der US-amerikanischen Konsumentenschutzbehörde
         </template>
-        <template v-slot:description>
+        <template #description>
           Bern, 10.02.2022 — Die US-amerikanische Konsumentenschutzbehörde
           Federal Trade Commission FTC hat das SECO im Juli 2022 über eine
           Rückerstattungsaktion informiert, die in den kommenden Monaten
@@ -37,7 +37,7 @@
           getäuscht worden sind, sollen einen Teil ihres bezahlten Geldes
           zurückerhalten.
         </template>
-        <template v-slot:image>
+        <template #image>
           <figure>
             <div class="ratio ratio--16/9">
               <iframe

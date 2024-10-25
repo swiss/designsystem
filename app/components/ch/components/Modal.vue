@@ -64,6 +64,7 @@ const props = defineProps({
     type: String,
     validator: (prop) =>
       ['auto', 'xs', 'sm', 'md', 'lg', 'xl', 'xs'].includes(prop as string),
+    default: () => undefined,
   },
   triggerElements: {
     type: String,

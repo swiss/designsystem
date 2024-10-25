@@ -34,11 +34,11 @@
           :meta-infos="['Studie', 'publiziert am 03. März 2000']"
           :authors="authors"
         >
-          <template v-slot:title>
+          <template #title>
             Benachteiligungserfahrungen bei der Gesundheitsversorgung in der
             Schweiz
           </template>
-          <template v-slot:subtitle>
+          <template #subtitle>
             Erkenntnisse aus dem International Health Policy Survey 2020
           </template>
         </Hero>

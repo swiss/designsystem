@@ -15,7 +15,7 @@
       </header>
       <main id="main-content">
         <Hero type="main-image">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/1200/900"
@@ -24,16 +24,16 @@
               <img src="https://picsum.photos/900/600" alt="cat">
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und
             Sport
           </template>
-          <template v-slot:description>
+          <template #description>
             Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz
             und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen
             Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
           </template>
-          <template v-slot:cta>
+          <template #cta>
             <Btn
               to="#"
               variant="outline"
@@ -54,10 +54,10 @@
           <div class="container">
             <div class="grid grid--responsive-cols-4 gap--responsive">
               <Card type="default">
-                <template v-slot:title>
+                <template #title>
                   <h3>Card example</h3>
                 </template>
-                <template v-slot:description>
+                <template #description>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -66,10 +66,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template v-slot:title>
+                <template #title>
                   <h3>Card example</h3>
                 </template>
-                <template v-slot:description>
+                <template #description>
                   <p>
                     Sed onsetetur sadipscing elitr ipsum dolor sit amet,
                     consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
@@ -78,10 +78,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template v-slot:title>
+                <template #title>
                   <h3>Card example</h3>
                 </template>
-                <template v-slot:description>
+                <template #description>
                   <p>
                     Consetetur sadipscing elitr sadipscing elitr, sed Lorem
                     ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
@@ -91,10 +91,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template v-slot:title>
+                <template #title>
                   <h3>Card example</h3>
                 </template>
-                <template v-slot:description>
+                <template #description>
                   <p>
                     Vonsetetur sadipscing elitr, onsetetur sadipscing elitr sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -183,10 +183,10 @@
                   <!--template v-slot:image>
                   <img src="https://picsum.photos/775/350" alt="cat">
                 </template-->
-                  <template v-slot:title>
+                  <template #title>
                     <h3>Side notes, can be sticky</h3>
                   </template>
-                  <template v-slot:description>
+                  <template #description>
                     <p>
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -195,7 +195,7 @@
                       consetetur sadipscing elitr, sed
                     </p>
                   </template>
-                  <template v-slot:footerAction>
+                  <template #footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -356,10 +356,10 @@
           <div class="container">
             <div class="grid grid--responsive-cols-3 gap--responsive">
               <Card type="default">
-                <template v-slot:title>
+                <template #title>
                   <h3>Card example</h3>
                 </template>
-                <template v-slot:description>
+                <template #description>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -369,10 +369,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template v-slot:title>
+                <template #title>
                   <h3>Card example</h3>
                 </template>
-                <template v-slot:description>
+                <template #description>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -382,10 +382,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template v-slot:title>
+                <template #title>
                   <h3>Card example</h3>
                 </template>
-                <template v-slot:description>
+                <template #description>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed

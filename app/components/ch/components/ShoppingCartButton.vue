@@ -31,6 +31,7 @@ const props = defineProps({
   },
   href: {
     type: String,
+    default: () => undefined,
   },
   target: {
     type: String,

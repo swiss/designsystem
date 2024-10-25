@@ -16,11 +16,11 @@
             :key="feed.title + i"
             :type="feed.type == 'twitter' ? 'twitter' : 'default'"
           >
-            <template v-slot:header>
+            <template #header>
               <SvgIcon :icon="capitalize(feed.type)" size="xl" class="mr-2" />
               <div>{{ feed.title }}</div>
             </template>
-            <template v-slot:description>
+            <template #description>
               <div
                 v-if="feed.type == 'twitter'"
                 class="socials__twitter"
@@ -327,7 +327,7 @@
                 />
               </div>
             </template>
-            <template v-slot:footerAction>
+            <template #footerAction>
               <Btn
                 :to="feed.profileURL"
                 variant="outline"

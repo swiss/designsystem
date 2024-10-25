@@ -23,11 +23,13 @@ const props = defineProps({
   to: {
     type: String,
     required: false,
+    default: () => undefined,
   },
   variant: {
     type: String,
     validator: (prop) =>
       ['default', 'primary', 'active'].includes(prop as string),
+    default: () => undefined,
   },
   label: {
     type: String,

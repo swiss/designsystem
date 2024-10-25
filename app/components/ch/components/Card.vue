@@ -51,11 +51,13 @@ const props = defineProps({
       ['default', 'highlight', 'twitter', 'flat', 'universal', 'list'].includes(
         prop as string,
       ),
+    default: () => undefined,
   },
   layout: {
     type: String,
     validator: (prop) =>
       ['default', 'image-left', 'image-right'].includes(prop as string),
+    default: () => undefined,
   },
 })
 

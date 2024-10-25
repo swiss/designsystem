@@ -109,6 +109,7 @@ defineProps({
   },
   shoppingCartLink: {
     type: String,
+    default: () => undefined,
   },
   shoppingCartLabel: {
     type: String,

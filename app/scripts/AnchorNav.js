@@ -12,7 +12,7 @@ const AnchorNav = {
         // if a section pops in the viewport, the current active class is removed
         // and applied to this new appearing section:
         if (
-          sections.hasOwnProperty(s) &&
+          Object.prototype.hasOwnProperty.call(sections, s) &&
           sections[s].offsetTop <= scrollPos - scrollOffset
         ) {
           const id = sections[s].id

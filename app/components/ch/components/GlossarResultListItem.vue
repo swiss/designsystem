@@ -38,7 +38,7 @@ const markedDescription = computed(() => {
   return marker(props.description, props.searchTerm)
 })
 
-const highlightTextNodes = function (node: ChildNode, term?: string) {
+const highlightTextNodes = function (node: HTMLElement, term?: string) {
   if (!term) return
   if (node.nodeType === Node.TEXT_NODE) {
     const regex = new RegExp(term, 'gi')
@@ -50,7 +50,7 @@ const highlightTextNodes = function (node: ChildNode, term?: string) {
       ) || ''
     node.replaceWith(...span.childNodes)
   } else if (node.nodeType === Node.ELEMENT_NODE) {
-    node.childNodes.forEach((elm) => highlightTextNodes(elm, term))
+    node.childNodes.forEach((elm) => highlightTextNodes(elm as HTMLElement, term))
   }
 }
 
@@ -59,7 +59,7 @@ const marker = function (text: string, term?: string) {
   const parser = new DOMParser()
   const doc = parser.parseFromString(text, 'text/html')
 
-  doc.body.childNodes.forEach((elm) => highlightTextNodes(elm, term))
+  doc.body.childNodes.forEach((elm) => highlightTextNodes(elm as HTMLElement, term))
   return doc.body.innerHTML
 }
 </script>

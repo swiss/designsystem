@@ -681,9 +681,11 @@ const handleLoadMore = function () {
   if (loadedResults.value >= foundEntries.value) {
     return
   }
-  loadedResults.value + 15 < foundEntries.value
-    ? (loadedResults.value += 15)
-    : (loadedResults.value = foundEntries.value)
+  
+  if (loadedResults.value + 15 < foundEntries.value)
+    (loadedResults.value += 15)
+  else
+    (loadedResults.value = foundEntries.value)
 }
 
 watch(searchTerm, function () {

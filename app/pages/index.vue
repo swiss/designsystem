@@ -15,7 +15,7 @@
     </header>
     <main id="main-content">
       <Hero type="main-image">
-        <template v-slot:image>
+        <template #image>
           <picture>
             <source
               srcset="https://picsum.photos/1282/961/?image=29"
@@ -39,15 +39,15 @@
             >
           </picture>
         </template>
-        <template v-slot:title>
+        <template #title>
           Was uns als VE ausmacht
         </template>
-        <template v-slot:description>
+        <template #description>
           Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz
           und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen
           Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
         </template>
-        <template v-slot:cta>
+        <template #cta>
           <Btn
             to="#"
             variant="outline"

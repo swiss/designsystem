@@ -6,10 +6,10 @@
       </h2>
       <div class="grid grid--items-5 gap--responsive">
         <Card type="default">
-          <template v-slot:metaInfos>
+          <template #metaInfos>
             <MetaInfo :metainfos="['Veranstaltung']" />
           </template>
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=28"
@@ -49,17 +49,17 @@
               >
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Geo.Hackmin</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Hatten Sie schon immer eine Idee, die sie mit Geodaten umsetzen
               wollten? Wollten Sie schon immer ein Problem mit Hilfe von Karten
               und Luftbildern lösen?
             </p>
           </template>
-          <template v-slot:eventInfos>
+          <template #eventInfos>
             <ul class="flex flex-wrap">
               <li class="flex items-center mr-6 mb-2">
                 <SvgIcon icon="Calendar" size="xl" class="-ml-1.5 mr-1" />
@@ -75,7 +75,7 @@
               </li>
             </ul>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -86,10 +86,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:metaInfos>
+          <template #metaInfos>
             <MetaInfo :metainfos="['Dienstleistungen']" />
           </template>
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=18"
@@ -129,12 +129,12 @@
               >
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>
               Daten und Dienste online kostenlos als Open Government Data (OGD)
             </h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
               aliquyam erat, sed diam voluptua. At vero eos et ac-cusam et justo
@@ -142,7 +142,7 @@
               takimata sanctus est Lorem ipsum dolor sit amet. Lorem
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -153,10 +153,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:metaInfos>
+          <template #metaInfos>
             <MetaInfo :metainfos="['Dossier']" />
           </template>
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=10"
@@ -196,12 +196,12 @@
               >
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>
               Daten und Dienste online kostenlos als Open Government Data (OGD)
             </h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
               aliquyam erat, sed diam voluptua. At vero eos et ac-cusam et justo
@@ -209,7 +209,7 @@
               takimata sanctus est Lorem ipsum dolor sit amet.
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -220,10 +220,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:metaInfos>
+          <template #metaInfos>
             <MetaInfo :metainfos="['Bericht']" />
           </template>
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=25"
@@ -263,22 +263,22 @@
               >
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Jahresabschlussbericht zu Covid-Massnahmen 2022</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
               aliquyam erat, sed diam voluptua. At vero eos et ac-cusam et justo
               duo dolores et ea rebum.
             </p>
           </template>
-          <template v-slot:contentIcons>
+          <template #contentIcons>
             <div class="card__content-icons">
               <SvgIcon icon="Youtube" size="xl" />
             </div>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -289,10 +289,10 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:metaInfos>
+          <template #metaInfos>
             <MetaInfo :metainfos="['Studie']" />
           </template>
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=11"
@@ -332,20 +332,20 @@
               >
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Auswirkungen von Corona auf die Schweizer Gesellschaft</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
               aliquyam erat, sed diam voluptua. At vero eos et ac-cusam et justo
               duo dolores et ea rebum.
             </p>
           </template>
-          <template v-slot:specifications>
+          <template #specifications>
             <MetaInfo :metainfos="['PDF', '2.2Mb', '102 Seiten']" />
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"

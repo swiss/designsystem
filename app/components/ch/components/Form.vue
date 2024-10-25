@@ -26,9 +26,11 @@ const form = useTemplateRef<HTMLFormElement>('form')
 const props = defineProps({
   submitFunction: {
     type: Function as PropType<(e: Event) => void>,
+    default: () => undefined,
   },
   action: {
     type: String,
+    default: () => undefined,
   },
   method: {
     type: String,

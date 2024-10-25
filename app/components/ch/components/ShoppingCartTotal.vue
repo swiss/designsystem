@@ -39,6 +39,7 @@ defineProps({
   },
   description: {
     type: String,
+    default: () => undefined,
   },
   nextStepLabel: {
     type: String,

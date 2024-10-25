@@ -15,10 +15,10 @@
       </header>
       <main id="main-content">
         <Hero type="default">
-          <template v-slot:title>
+          <template #title>
             Web Mapping Services WMS: Verfügbare Dienste und Daten
           </template>
-          <template v-slot:description>
+          <template #description>
             Das Konzept des INTERLIS Model Repository sieht vor, Datenmodelle
             als http-Ressource nutzbar zu machen. Dabei werden die
             INTERLIS-Modelldateien auf einem Webserver abgelegt, und können
@@ -27,7 +27,7 @@
             evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
             müssen.
           </template>
-          <template v-slot:image>
+          <template #image>
             <figure>
               <picture>
                 <source
@@ -179,10 +179,10 @@
             <div class="container__aside">
               <div id="aside-content" :class="computedAsideContainerClass">
                 <Card type="default">
-                  <template v-slot:title>
+                  <template #title>
                     <h2>Inhaltverzeichnis</h2>
                   </template>
-                  <template v-slot:description>
+                  <template #description>
                     <ul class="menu text--sm">
                       <li>
                         <a

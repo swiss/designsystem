@@ -23,6 +23,7 @@ const props = defineProps({
   to: {
     type: String,
     required: false,
+    default: () => undefined,
   },
   variant: {
     type: String,
@@ -36,6 +37,7 @@ const props = defineProps({
         'link',
         'link-negative',
       ].includes(prop as string),
+    default: () => undefined,
   },
   disabled: {
     type: Boolean,
@@ -44,6 +46,7 @@ const props = defineProps({
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
+    default: () => undefined,
   },
   icon: {
     type: String,
@@ -53,6 +56,7 @@ const props = defineProps({
     type: String,
     validator: (prop) =>
       ['none', 'only', 'left', 'right'].includes(prop as string),
+    default: () => undefined,
   },
   label: {
     type: String,
@@ -61,6 +65,7 @@ const props = defineProps({
   ariaLabel: {
     type: String,
     required: false,
+    default: () => undefined,
   },
   fullWidth: {
     type: Boolean,

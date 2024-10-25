@@ -92,6 +92,7 @@ const props = defineProps({
   },
   breakpoints: {
     type: Object as PropType<SwiperOptions['breakpoints']>,
+    default: () => undefined,
   },
   paginationType: {
     type: String as PropType<'bullets' | 'fraction'>,

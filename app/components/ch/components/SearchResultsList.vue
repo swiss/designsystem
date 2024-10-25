@@ -2,7 +2,7 @@
   <ul class="search-results-list">
     <li v-for="(item, key) in itemList" :key="`${key}`">
       <Card :type="displayType === 'grid' ? 'universal' : 'list'">
-        <template v-if="item.image" v-slot:image>
+        <template v-if="item.image" #image>
           <figure>
             <picture>
               <source
@@ -15,21 +15,21 @@
           </figure>
         </template>
 
-        <template v-slot:metaInfos>
+        <template #metaInfos>
           <MetaInfo
             :metainfos="item.date ? [item.type, item.date] : [item.type]"
           />
         </template>
-        <template v-slot:title>
+        <template #title>
           <h3>{{ item.title }}</h3>
         </template>
-        <template v-slot:description>
+        <template #description>
           <p>
             {{ item.content }}
           </p>
         </template>
-        <template v-slot:author />
-        <template v-if="item.isEvent" v-slot:eventInfos>
+        <template #author />
+        <template v-if="item.isEvent" #eventInfos>
           <ul class="flex flex-wrap">
             <li class="flex items-center mb-2 mr-6">
               <SvgIcon icon="Calendar" size="xl" class="-ml-1.5 mr-1" />
@@ -45,23 +45,23 @@
             </li>
           </ul>
         </template>
-        <template v-slot:specifications>
+        <template #specifications>
           <MetaInfo
             v-if="item.specifications"
             :metainfos="[item.specifications]"
           />
         </template>
-        <template v-if="item.hasIcons != false" v-slot:contentIcons>
+        <template v-if="item.hasIcons != false" #contentIcons>
           <div class="card__content-icons">
             <SvgIcon icon="Youtube" size="xl" />
             <SvgIcon icon="EasyLanguage" size="xl" />
             <SvgIcon icon="SignLanguage" size="xl" />
           </div>
         </template>
-        <template v-slot:footerInfo>
+        <template #footerInfo>
           <MetaInfo v-if="item.topics" :metainfos="item.topics" />
         </template>
-        <template v-slot:footerAction>
+        <template #footerAction>
           <Btn
             :to="item.href"
             variant="outline"

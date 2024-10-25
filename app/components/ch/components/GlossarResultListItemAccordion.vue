@@ -27,6 +27,7 @@ const props = defineProps({
   searchTerm: {
     type: String,
     required: false,
+    default: () => undefined,
   },
 })
 

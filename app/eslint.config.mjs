@@ -26,53 +26,14 @@ export default tseslint.config(
       }
     },
     rules: {
-      // Eslint
-      "no-constant-condition": "warn",
-      "prefer-const": "warn",
-      "no-irregular-whitespace": "warn",
-      "no-useless-escape": "warn",
-
-      // Vue
       "vue/max-attributes-per-line": "off",
-      "vue/attributes-order": "warn",
-      "vue/no-deprecated-slot-attribute": "off",
-      "vue/v-slot-style": "off",
       "vue/attribute-hyphenation": "off",
-      "vue/no-deprecated-v-on-native-modifier": "warn",
-      "vue/no-side-effects-in-computed-properties": "warn",
-      "vue/v-on-event-hyphenation": "warn",
-      "vue/no-parsing-error": "warn",
-      "vue/no-duplicate-attributes": "warn",
-      "vue/valid-template-root": "warn",
-      "vue/no-v-text-v-html-on-component": "warn",
-      "vue/require-valid-default-prop": "warn",
-      "vue/no-ref-as-operand": "warn",
-      "vue/require-v-for-key": "warn",
-      "vue/valid-v-else": "warn",
-      "vue/html-closing-bracket-newline": "warn",
-      "vue/html-indent": "warn",
-      "vue/singleline-html-element-content-newline": "warn",
       "vue/multi-word-component-names": "off",
-      "vue/html-quotes": "warn",
-      "vue/multiline-html-element-content-newline": "warn",
-      "vue/html-self-closing": "warn",
       "vue/component-name-in-template-casing": ["warn", "PascalCase", { registeredComponentsOnly: false }],
-
-      //Typescript
-      "@typescript-eslint/consistent-type-imports": "warn",
-      "@typescript-eslint/no-unused-vars": "warn",
-
-      // Fixed but open issues which cannot be fixed
-      "no-unused-vars": "off",
-      "no-undef": "off",
-
-      // Unsure
-      "no-prototype-builtins": "off",
       "vue/no-v-html": "off",
-      "vue/require-default-prop": "off",
-      "@typescript-eslint/no-unused-expressions": "off",
       "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/ban-ts-comment": "off",
+      // Wants to delete attributes in PropType definitions which would lead to a whole bunch of ts problems -> keep on 'off'
+      "no-unused-vars": "off",
     }
   },
 )

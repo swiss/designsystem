@@ -31,22 +31,28 @@ const props = defineProps({
   variant: {
     type: String,
     validator: (prop) => ['outline', 'negative'].includes(prop as string),
+    default: () => undefined,
   },
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
+    default: () => undefined,
   },
   id: {
     type: String,
+    default: () => undefined,
   },
   name: {
     type: String,
+    default: () => undefined,
   },
   label: {
     type: String,
+    default: () => undefined,
   },
   placeholder: {
     type: String,
+    default: () => undefined,
   },
   rows: {
     type: Number,
@@ -58,11 +64,13 @@ const props = defineProps({
   },
   message: {
     type: String,
+    default: () => undefined,
   },
   messageType: {
     type: String,
     validator: (prop) =>
       ['error', 'warning', 'success', 'info'].includes(prop as string),
+    default: () => undefined,
   },
   required: {
     type: Boolean,
@@ -74,9 +82,11 @@ const props = defineProps({
   },
   maxlength: {
     type: Number,
+    default: () => undefined,
   },
   minlength: {
     type: Number,
+    default: () => undefined,
   },
 })
 

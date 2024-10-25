@@ -25,16 +25,16 @@
 
           <AccordionItem id="11" title="Interviews" headingLevel="h3">
             <Card type="flat">
-              <template v-slot:title>
+              <template #title>
                 <h4>Flat Card example</h4>
               </template>
-              <template v-slot:description>
+              <template #description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
-              <template v-slot:footerInfo>
+              <template #footerInfo>
                 22. März 2012
               </template>
-              <template v-slot:footerAction>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -45,16 +45,16 @@
               </template>
             </Card>
             <Card type="flat">
-              <template v-slot:title>
+              <template #title>
                 <h4>Flat Card example</h4>
               </template>
-              <template v-slot:description>
+              <template #description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
-              <template v-slot:footerInfo>
+              <template #footerInfo>
                 22. März 2012
               </template>
-              <template v-slot:footerAction>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -65,14 +65,14 @@
               </template>
             </Card>
             <Card type="flat">
-              <template v-slot:title>
+              <template #title>
                 Swisstopo Daten sind neu in geo.admin.ch Geo- und
                 Downloaddiensten kostenlos...
               </template>
-              <template v-slot:footerInfo>
+              <template #footerInfo>
                 22. März 2012
               </template>
-              <template v-slot:footerAction>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"

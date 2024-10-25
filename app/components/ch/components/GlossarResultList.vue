@@ -24,6 +24,7 @@ defineProps({
   searchTerm: {
     type: String,
     required: false,
+    default: () => undefined,
   },
 })
 </script>

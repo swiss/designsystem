@@ -107,6 +107,7 @@ const props = defineProps({
   variant: {
     type: String,
     validator: (prop) => ['compact', 'default'].includes(prop as string),
+    default: () => undefined,
   },
   caption: {
     type: String,

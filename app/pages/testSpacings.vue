@@ -1392,7 +1392,7 @@
                 <tbody>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tbq840" identifier="p">
                           /
                         </p>
@@ -1400,7 +1400,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tbdtl0" identifier="p">
                           Liefert die API-Capabilities
                         </p>
@@ -1409,7 +1409,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tbuqk0" identifier="p">
                           /conformance
                         </p>
@@ -1417,7 +1417,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tcmh90" identifier="p">
                           Info über die Standards, mit denen die API konform ist
                         </p>
@@ -1426,7 +1426,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tc5fb2" identifier="p">
                           /collections
                         </p>
@@ -1434,7 +1434,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tcqq00" identifier="p">
                           Verfügbare Datensätze auflisten (Collections)
                         </p>
@@ -1443,7 +1443,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tc8nm2" identifier="p">
                           /collections/{collectionId}
                         </p>
@@ -1451,7 +1451,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tct1d0" identifier="p">
                           Liefert Metadaten der einzelnen Collection (JSON)
                         </p>
@@ -1460,7 +1460,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3td9on2" identifier="p">
                           /collections/{collectionId}/items
                         </p>
@@ -1468,7 +1468,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3td9on4" identifier="p">
                           Liefert die Items in der Collection (GeoJSON)
                         </p>
@@ -1477,7 +1477,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tde2m2" identifier="p">
                           /collections/{collectionId}/items/{featureId}
                         </p>
@@ -1485,7 +1485,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tde2m4" identifier="p">
                           Liefert ein einzelnes Item (GeoJSON)
                         </p>
@@ -1494,7 +1494,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tdju52" identifier="p">
                           /search
                         </p>
@@ -1502,7 +1502,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tdju54" identifier="p">
                           Liefert eine Liste von Items, die den
                           Abfrageparametern entsprechen. Ähnlich wie

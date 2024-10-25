@@ -60,7 +60,7 @@
     >
       <SwiperSlide v-for="(slide, index) in slides" :key="`slide-${index}`">
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 :srcset="slide.source.srcset"
@@ -76,18 +76,18 @@
               >
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>{{ slide.title }}</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               {{ slide.description }}
             </p>
           </template>
-          <template v-slot:footerInfo>
+          <template #footerInfo>
             {{ slide.footerInfo }}
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -134,6 +134,7 @@ defineProps({
   },
   breakpoints: {
     type: Object,
+    default: () => undefined,
   },
   paginationType: {
     type: String as PropType<PaginationOptions['type']>,

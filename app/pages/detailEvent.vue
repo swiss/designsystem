@@ -24,7 +24,7 @@
       </header>
       <main id="main-content">
         <Hero type="default" :meta-infos="['Veranstaltung']">
-          <template v-slot:title>
+          <template #title>
             Symposium Extremhochwasser in der Schweiz
           </template>
         </Hero>

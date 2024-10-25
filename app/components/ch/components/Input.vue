@@ -63,6 +63,7 @@ const props = defineProps({
   },
   message: {
     type: String,
+    default: () => undefined,
   },
   onInput: {
     type: Function as PropType<(event: Event) => void>,
@@ -77,9 +78,11 @@ const props = defineProps({
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
+    default: () => undefined,
   },
   label: {
     type: String,
+    default: () => undefined,
   },
   hideLabel: {
     type: Boolean,
@@ -87,27 +90,35 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
+    default: () => undefined,
   },
   value: {
     type: String,
+    default: () => undefined,
   },
   id: {
     type: String,
+    default: () => undefined,
   },
   min: {
     type: Number,
+    default: () => undefined,
   },
   max: {
     type: Number,
+    default: () => undefined,
   },
   step: {
     type: Number,
+    default: () => undefined,
   },
   pattern: {
     type: String,
+    default: () => undefined,
   },
   autocomplete: {
     type: String,
+    default: () => undefined,
   },
   readonly: {
     type: Boolean,

@@ -47,7 +47,10 @@ const Navy = {
       const firstLink = Navy.drawer.querySelector(
         `.navy__level-${Navy.currentLevel} ul > li a`,
       )
-      firstLink == document.activeElement ? firstLink.blur() : firstLink.focus()
+      if (firstLink == document.activeElement)
+        firstLink.blur()
+      else
+        firstLink.focus()
     }
 
     // set focus on submenu items if mainmenu btn is unfocused
