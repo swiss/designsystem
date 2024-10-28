@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as TagItemStories from './TagItem.stories'
+
+<Meta of={TagItemStories} />
+
+# TagItem
+
+## Example
+
+TagItems are similar to [badges](?path=/docs/components-badge--example), but they are bigger and interactive. They ensure to have the recommended minimal height of 44px for clickability.
+
+<Canvas of={TagItemStories.Example} />
+
+<Controls of={TagItemStories.Example} />
+
+## List
+
+Wrap TagItems into `ul.list--flex.list--wrap li` to display them as an horizontal list.
+You can add a `hr.separator` element on top to separate the list from the rest of the content.
+
+<Canvas of={TagItemStories.List} />
+
+## Filters
+
+A list of TagItems can be used as a filter feature.
+Attribute a `.tag-item--active` class to the selected element.
+A `button` element is recommended in place of a `a` link.
+
+<Canvas of={TagItemStories.Filters} />

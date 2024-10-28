@@ -1,5 +1,5 @@
 <template>
-  <div class="top-header" id="top-header-id">
+  <div id="top-header-id" class="top-header">
     <div class="top-header__mobile-title" aria-hidden="true">
       <div class="container container--flex">
         Eidgenössisches Departement für Verteidigung, <br />Bevölkerungsschutz
@@ -30,7 +30,7 @@
       <div v-if="!isEasyLanguage && !isSignLanguage" class="top-header__right">
         <MetaNavigation :isFreebrand="isFreebrand" />
         <div class="top-header__container-flex">
-          <SearchMain :isMenuV2="isMenuV2" @toggleSearch="toggleSearch" />
+          <SearchMain :isMenuV2="isMenuV2" @toggle-search="toggleSearch" />
           <div class="top-header__shopping-cart-button-desktop">
             <ShoppingCartButton
               :amount="shoppingCartAmount"
@@ -50,6 +50,7 @@
             :ariaLabel="shoppingCartAriaLabel"
             :target="shoppingCartTarget"
             :href="shoppingCartLink"
+            :label="shoppingCartLabel"
           />
         </div>
         <LanguageSwitcher
@@ -57,107 +58,95 @@
           type="outline"
         />
         <Burger
-          @click.native="toggleMobileMenu()"
           :isOpen="getMobileMenuIsOpen()"
+          @click="layoutStore.toggleMobileMenu"
         />
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import Burger from '~/components/ch/components/Burger.vue'
-import Logo from '~/components/ch/components/Logo.vue'
-import SearchMain from '~/components/ch/components/SearchMain.vue'
-import Input from '../components/Input.vue'
-import LanguageSwitcher from '../components/LanguageSwitcher'
+<script setup lang="ts">
+import Burger from '../components/Burger.vue'
+import Logo from '../components/Logo.vue'
+import SearchMain from '../components/SearchMain.vue'
+import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import ShoppingCartButton from '../components/ShoppingCartButton.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import MetaNavigation from '../navigations/MetaNavigation.vue'
+import { ref, onMounted } from 'vue'
+import { useLayoutStore } from '../../../store/layout'
 
-export default {
-  name: 'topHeader',
-  props: {
-    overrideLogoForPrint: {
-      type: String,
-      default: '',
-    },
-    isEasyLanguage: {
-      type: Boolean,
-      default: false,
-    },
-    isSignLanguage: {
-      type: Boolean,
-      default: false,
-    },
-    isFreebrand: {
-      type: Boolean,
-      default: false,
-    },
-    shoppingCartAriaLabel: {
-      type: String,
-      default: 'Shopping cart: There are <amount> items in your shopping cart.',
-    },
-    shoppingCartAmount: {
-      type: Number,
-      default: 0,
-    },
-    shoppingCartLink: {
-      type: String,
-    },
-    shoppingCartLabel: {
-      type: String,
-      default: 'Shopping cart',
-    },
-    shoppingCartTarget: {
-      type: String,
-      validator: (prop) =>
-        ['_blank', '_parent', '_self', '_top'].includes(prop),
-      default: '_self',
-    },
-    isMenuV2: {
-      type: Boolean,
-      default: false,
-    },
+const layoutStore = useLayoutStore()
+
+const screenSize = ref(0)
+
+const props = defineProps({
+  overrideLogoForPrint: {
+    type: String,
+    default: () => '',
   },
-  data() {
-    return {
-      screenSize: 0,
-      searchActive: false,
-    }
+  isEasyLanguage: {
+    type: Boolean,
+    default: () => false,
   },
-  components: {
-    Logo,
-    Burger,
-    SearchMain,
-    MetaNavigation,
-    LanguageSwitcher,
-    ShoppingCartButton,
-    SvgIcon,
-    Input,
+  isSignLanguage: {
+    type: Boolean,
+    default: () => false,
   },
-  created() {
-    this.resizeWindow()
-    window.addEventListener('resize', this.resizeWindow)
+  isFreebrand: {
+    type: Boolean,
+    default: () => false,
   },
-  methods: {
-    toggleSearch() {
-      // Toggles v2 search input bellow top header
-      this.emitter.emit('top-header-search-toggle')
-    },
-    toggleMobileMenu() {
-      this.$store.dispatch('layout/toggleMobileMenu')
-    },
-    getMobileMenuIsOpen() {
-      /* Disable menu animation for new mobile menu */
-      if (this.isMenuV2) {
-        return false
-      }
-      return this.$store.getters['layout/getMobileMenuIsOpen']
-    },
-    resizeWindow() {
-      this.screenSize = document.body.clientWidth
-    },
+  shoppingCartAriaLabel: {
+    type: String,
+    default: () =>
+      'Shopping cart: There are <amount> items in your shopping cart.',
   },
+  shoppingCartAmount: {
+    type: Number,
+    default: () => 0,
+  },
+  shoppingCartLink: {
+    type: String,
+    default: () => undefined,
+  },
+  shoppingCartLabel: {
+    type: String,
+    default: () => 'Shopping cart',
+  },
+  shoppingCartTarget: {
+    type: String,
+    validator: (prop) =>
+      ['_blank', '_parent', '_self', '_top'].includes(prop as string),
+    default: () => '_self',
+  },
+  isMenuV2: {
+    type: Boolean,
+    default: () => false,
+  },
+})
+const emit = defineEmits(['top-header-search-toggle'])
+
+function toggleSearch() {
+  // Toggles v2 search input bellow top header
+  emit('top-header-search-toggle')
 }
+
+function getMobileMenuIsOpen() {
+  /* Disable menu animation for new mobile menu */
+  if (props.isMenuV2) {
+    return false
+  }
+  return layoutStore.mobileMenuIsOpen
+}
+
+function resizeWindow() {
+  screenSize.value = document.body.clientWidth
+}
+
+onMounted(() => {
+  resizeWindow()
+  window.addEventListener('resize', resizeWindow)
+})
 </script>

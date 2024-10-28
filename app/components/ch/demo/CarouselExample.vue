@@ -1,70 +1,66 @@
 <template>
-  <div
-    :class="computedClasses"
-  >
-    <swiper
+  <div :class="computedClasses">
+    <Swiper
       :speed="500"
       :autoHeight="false"
       :loop="loop"
       :slidesPerView="1"
       :spaceBetween="20"
       :slidesPerGroup="1"
-      :breakpoints= "{
+      :breakpoints="{
         480: {
           slidesPerView: 1,
           slidesPerGroup: 1,
-          spaceBetween: 28
+          spaceBetween: 28,
         },
         640: {
           slidesPerView: 1,
           slidesPerGroup: 1,
-          spaceBetween: 36
+          spaceBetween: 36,
         },
         768: {
           slidesPerView: 2,
           slidesPerGroup: 2,
-          spaceBetween: 36
+          spaceBetween: 36,
         },
         1024: {
           slidesPerView: 3,
           slidesPerGroup: 3,
-          spaceBetween: 40
+          spaceBetween: 40,
         },
         1280: {
           slidesPerView: 3,
           slidesPerGroup: 3,
-          spaceBetween: 48
+          spaceBetween: 48,
         },
         1800: {
           slidesPerView: 3,
           slidesPerGroup: 3,
-          spaceBetween: 64
+          spaceBetween: 64,
         },
       }"
       :keyboard="{
         enabled: true,
         onlyInViewport: false,
       }"
+      :modules="[Navigation, Pagination, A11y]"
       :navigation="{
         nextEl: `#carousel-next-${id}`,
-        prevEl: `#carousel-prev-${id}`
+        prevEl: `#carousel-prev-${id}`,
       }"
       :simulateTouch="true"
       :slideToClickedSlide="false"
       :pagination="{
-          type: paginationType,
-          el: `#carousel-pagination-${id}`,
-          clickable: true,
-          bulletClass: 'carousel__bullet',
-          bulletActiveClass: 'carousel__bullet--active'
+        type: paginationType,
+        el: `#carousel-pagination-${id}`,
+        clickable: true,
+        bulletClass: 'carousel__bullet',
+        bulletActiveClass: 'carousel__bullet--active',
       }"
     >
-      <swiper-slide
-        v-for="(slide, index) in slides"
-        :key="`slide-${index}`"
-      >
+      <SwiperSlide v-for="(slide, index) in slides" :key="`slide-${index}`">
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <img
                 :src="slide.image.src"
@@ -74,18 +70,18 @@
               />
             </picture>
           </template>
-          <template v-slot:title>
-            <h3>{{slide.title}}</h3>
+          <template #title>
+            <h3>{{ slide.title }}</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
-              {{ slide.description  }}
+              {{ slide.description }}
             </p>
           </template>
-          <template v-slot:footerInfo>
+          <template #footerInfo>
             {{ slide.footerInfo }}
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -95,86 +91,58 @@
             />
           </template>
         </Card>
-      </swiper-slide>
-    </swiper>
+      </SwiperSlide>
+    </Swiper>
     <div class="carousel__fonctions">
-      <div class="carousel__pagination" :id="`carousel-pagination-${id}`"></div>
-      <button
-        class="carousel__prev"
-        :id="`carousel-prev-${id}`"
-      >
+      <div :id="`carousel-pagination-${id}`" class="carousel__pagination" />
+      <button :id="`carousel-prev-${id}`" class="carousel__prev">
         <div class="sr-only">Previous image</div>
-        <SvgIcon
-          icon="ChevronLeft"
-          role="presentation"
-          aria-hidden="true"
-        />
+        <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
       </button>
-      <button
-        class="carousel__next"
-        :id="`carousel-next-${id}`"
-      >
+      <button :id="`carousel-next-${id}`" class="carousel__next">
         <div class="sr-only">Next image</div>
-        <SvgIcon
-          icon="ChevronRight"
-          role="presentation"
-          aria-hidden="true"
-        />
+        <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
       </button>
     </div>
   </div>
 </template>
 
-<script>
-import { Navigation, Pagination, A11y } from 'swiper'
-import { SwiperCore, Swiper, SwiperSlide } from 'swiper-vue2'
-
+<script setup lang="ts">
+import { Navigation, Pagination, A11y } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
 import SvgIcon from '../components/SvgIcon.vue'
-import Card from '../components/Card'
-import Btn from '../components/Btn'
+import Card from '../components/Card.vue'
+import Btn from '../components/Btn.vue'
+import { computed, type PropType } from 'vue'
+import type { PaginationOptions } from 'swiper/types'
+import type { SlideshowSlide } from '../../../types'
 
-SwiperCore.use([Navigation, Pagination])
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-    SvgIcon,
-    Card,
-    Btn
+defineProps({
+  id: {
+    type: Number,
+    default: () => 1,
   },
-  props: {
-    id: {
-      type: Number,
-      default: 1
-    },
-    breakpoints: {
-      type: Object
-    },
-    paginationType: {
-      type: String,
-      validator: (prop) => [
-        'bullets',
-        'fraction'
-      ].includes(prop),
-      default: 'bullets'
-    },
-    loop: {
-      type: Boolean,
-      default: false
-    },
-    slides: {
-      type: Array,
-      required: true
-    }
+  breakpoints: {
+    type: Object,
+    default: () => undefined,
   },
-
-  computed: {
-    computedClasses () {
-      let base = 'carousel carousel--cards'
-      return base
-    },
+  paginationType: {
+    type: String as PropType<PaginationOptions['type']>,
+    validator: (prop) => ['bullets', 'fraction'].includes(prop as string),
+    default: () => 'bullets',
   },
+  loop: {
+    type: Boolean,
+    default: () => false,
+  },
+  slides: {
+    type: Array as PropType<SlideshowSlide[]>,
+    required: true,
+  },
+})
 
-}
+const computedClasses = computed(() => {
+  const base = 'carousel carousel--cards'
+  return base
+})
 </script>

@@ -1,0 +1,59 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as CheckboxStories from './Checkbox.stories'
+
+<Meta of={CheckboxStories} />
+
+# Input Checkbox
+
+## Example
+
+<Canvas of={CheckboxStories.Example} />
+
+<Controls of={CheckboxStories.Example} />
+
+## Checkbox negative type
+
+- `input--negative` for standard checkboxes on dark background
+
+<Canvas
+  of={CheckboxStories.NegativeCheckbox}
+  className="storybook-bg-negative"
+/>
+
+## Input disabled state
+
+- `input--disabled` or `disabled state on the input` to add the disabled style
+
+<Canvas of={CheckboxStories.DisabledInput} />
+
+## Sizes
+
+For size variations, the following css classes are built:
+
+- `input--sm` for small inputs
+- `input--base` for standard size
+- `input--lg` for large inputs
+
+<Canvas of={CheckboxStories.SizesCheckbox} />
+
+## Required checkbox
+
+If the field is mandatory:
+
+- a `required` attribute is added to the input element
+- an asterisk is displayed right after the label. This can be done by adding a `text--asterisk` class on the label element.
+- the word “required“ is added to the legend for screen readers. This can be done by wrapping the word into a `.sr-only` element.
+
+<Canvas of={CheckboxStories.RequiredCheckbox} />
+
+## Messages
+
+If the field has error, an `input--error` class is added to the input element. Additionally
+a `badge badge--sm badge--error` element wraps the error message, right after the input element:
+
+<Canvas of={CheckboxStories.MessagesCheckbox} />
+
+## Multiple Checkboxes
+
+It's recommanded to wrap related checkboxes in a `fieldset` element, with a `legend` element as a title.
+Check the [Fieldset documentation](/docs/components-form-fieldset--example-radio) for more information.

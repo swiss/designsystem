@@ -1,5 +1,5 @@
 <template>
-  <a class="download-item" :href="url" download>
+  <a class="download-item" :href="url" :download="filename || true">
     <SvgIcon icon="Download" size="xl" class="download-item__icon" />
     <div>
       <component :is="tag" class="download-item__title">
@@ -17,67 +17,66 @@
   </a>
 </template>
 
-<script>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
 import MetaInfo from './MetaInfo.vue'
-export default {
-  name: 'DownloadItem',
-  components: {
-    SvgIcon,
-    MetaInfo,
+import { computed } from 'vue'
+
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
   },
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    filename: {
-      type: String,
-      required: false,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    url: {
-      type: String,
-      required: true,
-    },
-    type: {
-      type: String,
-      required: true,
-    },
-    size: {
-      type: String,
-      required: false,
-    },
-    date: {
-      type: String,
-      required: true,
-    },
-    headingLevel: {
-      type: String,
-      default: 'h4',
-      validator: (prop) => ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop),
-    },
+  filename: {
+    type: String,
+    required: false,
+    default: () => undefined,
   },
-  computed: {
-    tag() {
-      return this.headingLevel
-    },
-    metaInfos() {
-      const infos = []
-      if (this.type) {
-        infos.push(this.type)
-      }
-      if (this.date) {
-        infos.push(this.date)
-      }
-      if (this.size) {
-        infos.push(this.size)
-      }
-      return infos
-    },
+  description: {
+    type: String,
+    description: () => undefined,
+    default: () => undefined,
   },
-}
+  url: {
+    type: String,
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  },
+  size: {
+    type: String,
+    required: false,
+    default: () => undefined,
+  },
+  date: {
+    type: String,
+    required: true,
+  },
+  headingLevel: {
+    type: String,
+    default: () => 'h4',
+    validator: (prop) =>
+      ['h2', 'h3', 'h4', 'h5', 'div'].includes(prop as string),
+  },
+})
+
+const tag = computed(() => {
+  return props.headingLevel
+})
+
+const metaInfos = computed(() => {
+  const infos = []
+  if (props.type) {
+    infos.push(props.type)
+  }
+  if (props.date) {
+    infos.push(props.date)
+  }
+  if (props.size) {
+    infos.push(props.size)
+  }
+  return infos
+})
 </script>

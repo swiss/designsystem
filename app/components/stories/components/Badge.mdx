@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import Badge from '../../ch/components/Badge.vue'
+import * as BadgeStories from './Badge.stories'
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+## Example
+
+Badges are used to attach an extra information to a text, a label or a title. If you need interactive element, use the [tagItem](?path=/docs/components-tagitem--example) instead.
+
+<Canvas of={BadgeStories.Example} />
+
+<Controls of={BadgeStories.Example} />
+
+## Colors
+
+For color variations, the following css classes are built:
+
+- `badge--info`
+- `badge--error`
+- `badge--warning`
+- `badge--success`
+
+and
+
+- `badge--gray`
+- `badge--red`
+- `badge--yellow`
+- `badge--orange`
+- `badge--green`
+- `badge--blue`
+- `badge--indigo`
+- `badge--purple`
+- `badge--pink`
+
+<Canvas of={BadgeStories.ColorsStates} />
+
+<Canvas of={BadgeStories.ColorsOther} />
+
+## Sizes
+
+For size variations, the following css classes are built:
+
+- `badge--base` default value
+- `badge--sm` for small badges
+
+<Canvas of={BadgeStories.Sizes} />
+
+## Icons
+
+For icon variations, the following css classes are built:
+
+- `badge--icon` for icon
+
+<Canvas of={BadgeStories.Icons} />
