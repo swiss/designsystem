@@ -187,7 +187,8 @@
                 />
               </div>
               <figcaption>
-                Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal
+                Geoinformation - Alles findet irgendwo statt — © Swiss
+                Geoportal
               </figcaption>
             </figure>
 

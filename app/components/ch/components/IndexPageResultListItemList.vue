@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import IndexPageResultListItem from '../components/IndexPageResultListItem.vue';
+import IndexPageResultListItem from '../components/IndexPageResultListItem.vue'
 
 export default {
   name: 'IndexPageResultListItemList',

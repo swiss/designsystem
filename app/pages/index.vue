@@ -108,7 +108,6 @@
 <script setup lang="ts">
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import NotificationBanner from '../components/ch/components/NotificationBanner.vue'
-import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'

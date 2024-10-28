@@ -292,10 +292,10 @@ export default {
     handleHeaderPlaceholder() {
       const header = document.getElementById('mobile-menu-header')
       const titleContainer = document.getElementById(
-        `mobile-menu-v2-header-title-container__level-${this.currentLevel}`
+        `mobile-menu-v2-header-title-container__level-${this.currentLevel}`,
       )
       const currentLevel = document.getElementById(
-        `mobile-menu-v2__level-${this.currentLevel}`
+        `mobile-menu-v2__level-${this.currentLevel}`,
       )
       currentLevel.style.borderTopWidth = `${titleContainer.clientHeight}px`
       header.style.height = `${titleContainer.clientHeight}px`
@@ -320,7 +320,7 @@ export default {
         'show-level-4',
         'show-level-5',
         'show-level-6',
-        'show-level-7'
+        'show-level-7',
       )
       document.body.classList.add(`show-level-${level}`)
 

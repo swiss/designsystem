@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import IndexPageResultListItemList from '../components/IndexPageResultListItemList.vue';
-import IndexPageResultTitle from '../components/IndexPageResultTitle.vue';
+import IndexPageResultListItemList from '../components/IndexPageResultListItemList.vue'
+import IndexPageResultTitle from '../components/IndexPageResultTitle.vue'
 
 export default {
   name: 'IndexPageResultList',

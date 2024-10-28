@@ -542,7 +542,7 @@ export default {
       this.screenSize = document.body.clientWidth
       const searchContainer = document.getElementById('inner-search-container')
       const outerSearchContainer = document.getElementById(
-        'outer-search-container'
+        'outer-search-container',
       )
       const mainHeader = document.getElementById('main-header')
       this.initialSearchContainerOffset =
@@ -556,13 +556,13 @@ export default {
     async handleScroll() {
       const searchContainer = document.getElementById('search-container')
       const innerSearchContainer = document.getElementById(
-        'inner-search-container'
+        'inner-search-container',
       )
       if (this.initialSearchContainerOffset < window.scrollY) {
         this.useStickyPlaceholder = true
         await this.$nextTick()
         const stickyPlaceholder = document.getElementById(
-          'sticky-search-container-placeholder'
+          'sticky-search-container-placeholder',
         )
         stickyPlaceholder.style.height = `${this.containerHeight}px`
 
@@ -635,7 +635,7 @@ export default {
         } else {
           let newResults = Object.values(values)[i].results.slice(
             0,
-            this.loadedResults - count
+            this.loadedResults - count,
           )
           if (newResults.length > 0) {
             result.push({
@@ -691,11 +691,11 @@ export default {
       filteredResults.forEach((res) => {
         if (
           result.filter(
-            (elm) => elm.filter === res.title.charAt(0).toLowerCase()
+            (elm) => elm.filter === res.title.charAt(0).toLowerCase(),
           ).length > 0
         ) {
           const resultIndex = result.findIndex(
-            (elm) => elm.filter === res.title.charAt(0).toLowerCase()
+            (elm) => elm.filter === res.title.charAt(0).toLowerCase(),
           )
           result[resultIndex].results.push(res)
         } else {

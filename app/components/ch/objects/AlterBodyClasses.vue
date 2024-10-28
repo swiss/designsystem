@@ -51,13 +51,13 @@ const alterMenuClasses = function () {
     }
     layoutStore.openMobileMenu()
   } else {
-    if (this.isFreebrand) {
+    if (props.isFreebrand) {
       // TODO: Add mobile menu v2 for freebrand use cases once approved
       document.body.classList.remove(
         'body--mobile-menu-is-open-top-bar-disabled',
       )
     } else {
-      if (this.UsesMenuV2) {
+      if (props.UsesMenuV2) {
         document.body.classList.remove('body--mobile-menu-v2-is-open')
       } else {
         document.body.classList.remove('body--mobile-menu-is-open')

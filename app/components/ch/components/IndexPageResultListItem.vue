@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import Btn from './Btn.vue';
-import Metainfo from './MetaInfo.vue';
+import Btn from './Btn.vue'
+import Metainfo from './MetaInfo.vue'
 
 export default {
   name: 'IndexPageResultListItem',
@@ -77,12 +77,12 @@ export default {
         const span = document.createElement('span')
         span.innerHTML = node.textContent.replace(
           regex,
-          (match) => `<span class='highlight-blue'>${match}</span>`
+          (match) => `<span class='highlight-blue'>${match}</span>`,
         )
         node.replaceWith(...span.childNodes)
       } else if (node.nodeType === Node.ELEMENT_NODE) {
         node.childNodes.forEach((elm) =>
-          this.highlightTextNodes(elm, searchterm)
+          this.highlightTextNodes(elm, searchterm),
         )
       }
     },
@@ -92,7 +92,7 @@ export default {
       const doc = parser.parseFromString(text, 'text/html')
 
       doc.body.childNodes.forEach((elm) =>
-        this.highlightTextNodes(elm, searchterm)
+        this.highlightTextNodes(elm, searchterm),
       )
       return doc.body.innerHTML
     },

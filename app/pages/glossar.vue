@@ -76,7 +76,7 @@
                       icon-pos="left"
                       icon="ChevronDown"
                       :class="filtersAreOpen ? ' btn--icon-180' : ''"
-                      @click.native="toggleFilterSection()"
+                      @click="toggleFilterSection()"
                     />
                     <div
                       v-if="filtersAreOpen"
@@ -89,7 +89,7 @@
                         name="select-name"
                         label="Filter name"
                       >
-                        <option selected="">Option</option>
+                        <option selected>Option</option>
                         <option>...</option>
                       </Select>
                       <Select
@@ -99,7 +99,7 @@
                         name="select-name"
                         label="Filter name"
                       >
-                        <option selected="">Option</option>
+                        <option selected>Option</option>
                         <option>...</option>
                       </Select>
                       <Select
@@ -109,7 +109,7 @@
                         name="select-name"
                         label="Filter name"
                       >
-                        <option selected="">Option</option>
+                        <option selected>Option</option>
                         <option>...</option>
                       </Select>
                       <Select
@@ -119,7 +119,7 @@
                         name="select-name"
                         label="Filter name"
                       >
-                        <option selected="">Option</option>
+                        <option selected>Option</option>
                         <option>...</option>
                       </Select>
                       <Select
@@ -129,7 +129,7 @@
                         name="select-name"
                         label="Filter name"
                       >
-                        <option selected="">Option</option>
+                        <option selected>Option</option>
                         <option>...</option>
                       </Select>
                     </div>
@@ -678,9 +678,9 @@ const limitedResultItems = computed(() => {
 })
 
 const toggleFilterSection = async function () {
-  this.filtersAreOpen = !this.filtersAreOpen
+  filtersAreOpen.value = !filtersAreOpen.value
   await nextTick()
-  this.resizeWindow()
+  resizeWindow()
 }
 
 const scrollToTop = function () {
