@@ -26,7 +26,7 @@
               : true)
         "
       >
-        <!-- Workarround for required validation -->
+        <!-- Workaround for required validation -->
         <template #search="{ attributes, events }">
           <input
             class="vs__search"

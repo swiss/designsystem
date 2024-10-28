@@ -649,7 +649,7 @@
                     size="base"
                     label="Nächster Schritt"
                     ariaLabel="Nächster Schritt"
-                    type="submit"
+                    @emitClick="checkFormAndSetNextActiveStep"
                     :fullWidth="isMobile"
                   />
                 </div>
@@ -1089,8 +1089,6 @@ const setFormFieldValue = function (
   }
 }
 
-/* -> Unused. Maybe still necessary?
-
 const validateFields = function () {
   const keys = Object.keys(formInputFields)
   const keysToValidate = ['invoice']
@@ -1138,8 +1136,6 @@ const checkFormAndSetNextActiveStep = function () {
     step2Confirmed.value = true
   }
 }
-
-*/
 
 watch(activeAccordionIndex, function () {
   scrollContentIntoView(activeAccordionIndex.value || 1)

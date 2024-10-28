@@ -39,6 +39,7 @@ const markedDescription = computed(() => {
 })
 
 const highlightTextNodes = function (node: HTMLElement, term?: string) {
+  /* TODO: This doesn't work if link in text is the same as word before */
   if (!term) return
   if (node.nodeType === Node.TEXT_NODE) {
     const regex = new RegExp(term, 'gi')

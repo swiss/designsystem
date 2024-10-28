@@ -74,7 +74,7 @@ const handleSubmit = function (e: Event) {
     } else if (props.submitFunction) {
       props.submitFunction(e)
     }
-    window.postMessage({ trigger: 'emitSubmit', data: e })
+    window.postMessage({ trigger: 'emitSubmit' })
   } else {
     // Prevent action from executing
     e.preventDefault()
