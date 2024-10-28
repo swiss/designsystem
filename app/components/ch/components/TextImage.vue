@@ -2,26 +2,26 @@
   <div :class="computedClasses">
     <div v-if="isInlineImage" :class="computedGridClasses">
       <div class="text-image__text">
-        <h2 v-if="$slots.title" class="h2">
+        <h2 v-if="slots.title" class="h2">
           <slot name="title" />
         </h2>
-        <div v-if="$slots.description">
+        <div v-if="slots.description">
           <slot name="description" />
         </div>
       </div>
-      <div v-if="$slots.image" class="text-image__image">
+      <div v-if="slots.image" class="text-image__image">
         <slot name="image" />
       </div>
     </div>
     <div v-else class="grid gap--responsive">
-      <div v-if="$slots.image" class="text-image__image">
+      <div v-if="slots.image" class="text-image__image">
         <slot name="image" />
       </div>
       <div class="text-image__text">
-        <h2 v-if="$slots.title" class="h2">
+        <h2 v-if="slots.title" class="h2">
           <slot name="title" />
         </h2>
-        <div v-if="$slots.description">
+        <div v-if="slots.description">
           <slot name="description" />
         </div>
       </div>
@@ -30,7 +30,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, useSlots } from 'vue'
+
+const slots = useSlots()
 
 const props = defineProps({
   imagePos: {

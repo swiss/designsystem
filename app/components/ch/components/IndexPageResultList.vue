@@ -3,33 +3,28 @@
     <div v-for="(item, index) in resultItems" :key="`item-${index}`">
       <IndexPageResultTitle :title="item.filter.toUpperCase()" />
       <IndexPageResultListItemList
-        :item="item"
         :id="String(index)"
+        :item="item"
         :searchTerm="searchTerm"
       />
     </div>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import type { PropType } from 'vue'
 import IndexPageResultListItemList from '../components/IndexPageResultListItemList.vue'
 import IndexPageResultTitle from '../components/IndexPageResultTitle.vue'
+import type { GlossaryResult } from '../../../types'
 
-export default {
-  name: 'IndexPageResultList',
-  components: {
-    IndexPageResultTitle,
-    IndexPageResultListItemList,
+defineProps({
+  resultItems: {
+    type: Array as PropType<GlossaryResult[]>,
+    default: () => [],
   },
-  props: {
-    resultItems: {
-      type: Array,
-      default: () => [],
-    },
-    searchTerm: {
-      type: String,
-      required: false,
-    },
+  searchTerm: {
+    type: String,
+    default: () => undefined,
   },
-}
+})
 </script>

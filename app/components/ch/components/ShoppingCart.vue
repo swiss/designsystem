@@ -649,8 +649,8 @@
                     size="base"
                     label="Nächster Schritt"
                     ariaLabel="Nächster Schritt"
-                    @emitClick="checkFormAndSetNextActiveStep"
                     :fullWidth="isMobile"
+                    @emit-click="checkFormAndSetNextActiveStep"
                   />
                 </div>
               </Form>
@@ -1023,14 +1023,14 @@ const overviewNextStepClicked = function () {
 const triggerConfirmation = async function () {
   showConfirmation.value = true
   await nextTick()
-  const scroolTarget = document.getElementById('main-header')
+  const scrollTarget = document.getElementById('main-header')
 
-  if (scroolTarget) {
+  if (scrollTarget) {
     if (switchTimeOut.value) {
       clearTimeout(switchTimeOut.value)
     }
     switchTimeOut.value = setTimeout(() => {
-      scroolTarget.scrollIntoView({ behavior: 'smooth' })
+      scrollTarget.scrollIntoView({ behavior: 'smooth' })
     }, 200)
   }
 }
@@ -1053,16 +1053,16 @@ const resizeWindow = function () {
 }
 
 const scrollContentIntoView = function (index: keyof typeof accordionIdMap) {
-  const scroolTarget = document.getElementById(
+  const scrollTarget = document.getElementById(
     getUniqueId(accordionIdMap[index]),
   )
 
-  if (scroolTarget) {
+  if (scrollTarget) {
     if (switchTimeOut.value) {
       clearTimeout(switchTimeOut.value)
     }
     switchTimeOut.value = setTimeout(() => {
-      scroolTarget.scrollIntoView({ behavior: 'smooth' })
+      scrollTarget.scrollIntoView({ behavior: 'smooth' })
     }, 200)
   }
 }

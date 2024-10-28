@@ -1,5 +1,5 @@
 <template>
-  <h1 v-if="$slots.title && type == 'sr-only'" class="sr-only">
+  <h1 v-if="slots.title && type == 'sr-only'" class="sr-only">
     <slot name="type" />
     <slot name="date" />
     <slot name="title" />
@@ -9,21 +9,21 @@
     <div class="container container--grid gap--responsive">
       <div class="hero__content">
         <MetaInfo v-if="metaInfos.length" :metainfos="metaInfos" />
-        <h1 v-if="$slots.title" class="hero__title">
+        <h1 v-if="slots.title" class="hero__title">
           <slot name="title" />
         </h1>
-        <h2 v-if="$slots.subtitle" class="hero__subtitle">
+        <h2 v-if="slots.subtitle" class="hero__subtitle">
           <slot name="subtitle" />
         </h2>
-        <div v-if="$slots.description" class="hero__description">
+        <div v-if="slots.description" class="hero__description">
           <slot name="description" />
         </div>
-        <div v-if="$slots.cta" class="hero__cta">
+        <div v-if="slots.cta" class="hero__cta">
           <slot name="cta" />
         </div>
         <Authors v-if="authors.length" :authors="authors" />
       </div>
-      <div v-if="$slots.image" class="hero__image">
+      <div v-if="slots.image" class="hero__image">
         <slot name="image" />
       </div>
     </div>
@@ -33,8 +33,10 @@
 <script setup lang="ts">
 import MetaInfo from '../components/MetaInfo.vue'
 import Authors from '../components/Authors.vue'
-import { computed } from 'vue'
+import { computed, useSlots } from 'vue'
 import type { Author } from '../../../types'
+
+const slots = useSlots()
 
 const props = defineProps({
   type: {

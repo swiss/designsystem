@@ -83,9 +83,9 @@
                       class="glossary__filters__drawer"
                     >
                       <Select
-                        variant="outline"
-                        size="sm"
                         id="select-1"
+                        variant="outline"
+                        size="sm"
                         name="select-name"
                         label="Filter name"
                       >
@@ -93,9 +93,9 @@
                         <option>...</option>
                       </Select>
                       <Select
-                        variant="outline"
-                        size="sm"
                         id="select-2"
+                        variant="outline"
+                        size="sm"
                         name="select-name"
                         label="Filter name"
                       >
@@ -103,9 +103,9 @@
                         <option>...</option>
                       </Select>
                       <Select
-                        variant="outline"
-                        size="sm"
                         id="select-3"
+                        variant="outline"
+                        size="sm"
                         name="select-name"
                         label="Filter name"
                       >
@@ -113,9 +113,9 @@
                         <option>...</option>
                       </Select>
                       <Select
-                        variant="outline"
-                        size="sm"
                         id="select-4"
+                        variant="outline"
+                        size="sm"
                         name="select-name"
                         label="Filter name"
                       >
@@ -123,9 +123,9 @@
                         <option>...</option>
                       </Select>
                       <Select
+                        id="select-5"
                         variant="outline"
                         size="sm"
-                        id="select-5"
                         name="select-name"
                         label="Filter name"
                       >

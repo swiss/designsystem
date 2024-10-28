@@ -17,7 +17,7 @@ const props = defineProps({
     type: Boolean,
     default: () => false,
   },
-  UsesMenuV2: {
+  usesMenuV2: {
     type: Boolean,
     default: false,
   },
@@ -43,7 +43,7 @@ const alterMenuClasses = function () {
       // TODO: Add mobile menu v2 for freebrand use cases once approved
       document.body.classList.add('body--mobile-menu-is-open-top-bar-disabled')
     } else {
-      if (props.UsesMenuV2) {
+      if (props.usesMenuV2) {
         document.body.classList.add('body--mobile-menu-v2-is-open')
       } else {
         document.body.classList.add('body--mobile-menu-is-open')
@@ -57,7 +57,7 @@ const alterMenuClasses = function () {
         'body--mobile-menu-is-open-top-bar-disabled',
       )
     } else {
-      if (props.UsesMenuV2) {
+      if (props.usesMenuV2) {
         document.body.classList.remove('body--mobile-menu-v2-is-open')
       } else {
         document.body.classList.remove('body--mobile-menu-is-open')

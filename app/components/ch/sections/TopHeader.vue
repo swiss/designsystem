@@ -30,7 +30,7 @@
       <div v-if="!isEasyLanguage && !isSignLanguage" class="top-header__right">
         <MetaNavigation :isFreebrand="isFreebrand" />
         <div class="top-header__container-flex">
-          <SearchMain :isMenuV2="isMenuV2" @toggleSearch="toggleSearch" />
+          <SearchMain :isMenuV2="isMenuV2" @toggle-search="toggleSearch" />
           <div class="top-header__shopping-cart-button-desktop">
             <ShoppingCartButton
               :amount="shoppingCartAmount"
@@ -70,7 +70,6 @@
 import Burger from '../components/Burger.vue'
 import Logo from '../components/Logo.vue'
 import SearchMain from '../components/SearchMain.vue'
-import Input from '../components/Input.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import ShoppingCartButton from '../components/ShoppingCartButton.vue'
 import SvgIcon from '../components/SvgIcon.vue'
@@ -81,7 +80,6 @@ import { useLayoutStore } from '../../../store/layout'
 const layoutStore = useLayoutStore()
 
 const screenSize = ref(0)
-const searchActive = ref(false)
 
 const props = defineProps({
   overrideLogoForPrint: {

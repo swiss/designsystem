@@ -1,10 +1,10 @@
 <template>
-  <div class="search search--main" id="search-main-wrapper">
+  <div id="search-main-wrapper" class="search search--main">
     <div class="search__group">
       <h2 class="sr-only">Suche</h2>
       <Input
-        :class="isMenuV2 ? 'search--desktop' : ''"
         id="search-main"
+        :class="isMenuV2 ? 'search--desktop' : ''"
         type="search"
         label="Suche in dieser Website"
         placeholder="Suche"
