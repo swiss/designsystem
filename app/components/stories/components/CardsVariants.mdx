@@ -1,0 +1,71 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as CardsVariantsStories from './CardsVariants.stories'
+
+<Meta of={CardsVariantsStories} />
+
+# Card Variants
+
+## Article or news card, with mandatory image
+
+This is the default Card variant, built with the following content types:
+
+- article type (optional)
+- date (optional)
+- image
+- title
+- short description
+- link
+- topic (optional)
+
+Use this `default` card variant when you don't have an image for every article or news item.
+
+<Story of={CardsVariantsStories.ArticleOrNewsItem} />
+
+## Article or news card, with optional image
+
+This is the default Card variant, built with the following content types:
+
+- article type (optional)
+- date (optional)
+- image (optional)
+- title
+- short description
+- link
+- topic (optional)
+
+Use this `universal` card variant when you have an image for every article or news item.
+
+<Story of={CardsVariantsStories.NewsItemOptionalImage} />
+
+## Teaser for events
+
+Card variant for events, built with the following content types:
+
+- article type (optional)
+- date (optional)
+- image (optional)
+- title
+- short description
+- link
+- Begin/end date
+- hour
+- place
+- topic (optional)
+
+<Story of={CardsVariantsStories.EventItem} />
+
+## Teaser for Social medias
+
+Card variant for social medias, built with the following content:
+
+- header (gray background)
+- the feed or iframe and its link
+- a link to the social media
+
+<Canvas of={CardsVariantsStories.SharingItem} />
+
+## Teaser for Hub pages
+
+A Hub page is a collection of teasers, pointing to the subpages. Each teaser is a card with the `highlight` variant. You can check the <a href="?path=/story/pages-hub-page--example">complete example of a Hub Page</a>
+
+<Canvas of={CardsVariantsStories.HubPageItem} />

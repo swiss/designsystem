@@ -3,7 +3,7 @@
     <button
       aria-label="Print document"
       class="btn btn--bare"
-      onClick="window.print()"
+      @click="handleClick"
     >
       <SvgIcon
         aria-hidden="true"
@@ -15,13 +15,10 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import SvgIcon from './SvgIcon.vue'
-import MetaInfo from './MetaInfo.vue'
-export default {
-  name: 'Print',
-  components: {
-    SvgIcon,
-  },
+
+function handleClick() {
+  window.print()
 }
 </script>

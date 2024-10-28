@@ -1,6 +1,10 @@
 <template>
   <!-- Use different menu items for mobile menu demo -->
-  <nav v-if="isMobileMenu" class="top-bar-navigation--mobile" aria-label="Top bar">
+  <nav
+    v-if="isMobileMenu"
+    class="top-bar-navigation--mobile"
+    aria-label="Top bar"
+  >
     <ul>
       <li>
         <a href="#">
@@ -17,40 +21,36 @@
       <li>
         <a href="#">
           <span>Leichte Sprache</span>
-          <svg-icon size="lg" icon="EasyLanguage" />
+          <SvgIcon size="lg" icon="EasyLanguage" />
         </a>
       </li>
       <li>
         <a href="#">
           <span>Gebärdensprache</span>
-          <svg-icon size="lg" icon="SignLanguage" />
+          <SvgIcon size="lg" icon="SignLanguage" />
         </a>
       </li>
       <li>
         <a href="#" class="desktop-only">
           <span>Anmelden </span>
-          <svg-icon icon="User" size="lg" />
+          <SvgIcon icon="User" size="lg" />
         </a>
       </li>
     </ul>
   </nav>
 </template>
 
-<script>
-import SvgIcon from '../components/SvgIcon.vue';
-export default {
-  name: 'TopbarNavigation',
-  components: {
-    SvgIcon,
+<script setup lang="ts">
+import SvgIcon from '../components/SvgIcon.vue'
+
+defineProps({
+  isMobileMenu: {
+    type: Boolean,
+    default: () => false,
   },
-  props: {
-    isMobileMenu: {
-      type: Boolean,
-      default: false,
-    },
-    context: {
-      type: String,
-    },
+  context: {
+    type: String,
+    default: () => undefined,
   },
-}
+})
 </script>

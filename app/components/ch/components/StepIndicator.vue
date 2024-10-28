@@ -9,38 +9,32 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import SvgIcon from './SvgIcon.vue'
+import { computed } from 'vue'
 
-export default {
-  name: 'StepIndicator',
-  components: {
-    SvgIcon,
+const props = defineProps({
+  step: {
+    type: Number,
+    required: true,
   },
-  props: {
-    step: {
-      type: Number,
-      required: true,
-    },
-    isConfirmed: {
-      type: Boolean,
-      default: false,
-    },
-    isActive: {
-      type: Boolean,
-      default: false,
-    },
+  isConfirmed: {
+    type: Boolean,
+    default: () => false,
   },
-  computed: {
-    colorClasses() {
-      let base = 'step__indicator-step--'
-      if (this.isConfirmed) {
-        base += 'confirmed'
-      } else if (this.isActive) {
-        base += 'active'
-      }
-      return base
-    },
+  isActive: {
+    type: Boolean,
+    default: () => false,
   },
-}
+})
+
+const colorClasses = computed(() => {
+  let base = 'step__indicator-step--'
+  if (props.isConfirmed) {
+    base += 'confirmed'
+  } else if (props.isActive) {
+    base += 'active'
+  }
+  return base
+})
 </script>
