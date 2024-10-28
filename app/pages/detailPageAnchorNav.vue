@@ -1,7 +1,7 @@
 <template>
-  <ClientOnly>
+  <client-only>
     <div>
-      <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
+      <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
       <header id="main-header">
         <a href="#main-content" class="skip-to-content">Skip to main content</a>
         <TopBar :isOpen="false" />
@@ -15,10 +15,10 @@
       </header>
       <main id="main-content">
         <Hero type="default">
-          <template #title>
+          <template v-slot:title>
             Web Mapping Services WMS: Verfügbare Dienste und Daten
           </template>
-          <template #description>
+          <template v-slot:description>
             Das Konzept des INTERLIS Model Repository sieht vor, Datenmodelle
             als http-Ressource nutzbar zu machen. Dabei werden die
             INTERLIS-Modelldateien auf einem Webserver abgelegt, und können
@@ -27,7 +27,7 @@
             evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
             müssen.
           </template>
-          <template #image>
+          <template v-slot:image>
             <figure>
               <picture>
                 <source
@@ -48,7 +48,7 @@
             class="container container--grid container--reverse-mobile gap--responsive"
           >
             <div class="container__main vertical-spacing">
-              <h2 id="einleitung" class="h2">Einleitung</h2>
+              <h2 class="h2" id="einleitung">Einleitung</h2>
               <p>
                 Über den Kontakt models@geo.admin.ch können die Modelldatei und
                 die Modelldokumentation zur Publikation eingereicht werden.
@@ -70,7 +70,7 @@
                   Image label here —&nbsp;©&nbsp;Photograph Name
                 </figcaption>
               </figure>
-              <h2 id="datenmodell-ablage" class="h2">
+              <h2 class="h2" id="datenmodell-ablage">
                 Datenmodellablage ansehen
               </h2>
               <p>
@@ -110,7 +110,7 @@
                 INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
                 eingepflegt.
               </p>
-              <h2 id="dokumente" class="h2">Weitere Informationen</h2>
+              <h2 class="h2" id="dokumente">Weitere Informationen</h2>
 
               <Accordion id="12345">
                 <AccordionItem
@@ -165,10 +165,10 @@
             <div class="container__aside">
               <div id="aside-content" :class="computedAsideContainerClass">
                 <Card type="default">
-                  <template #title>
+                  <template v-slot:title>
                     <h2>Inhaltverzeichnis</h2>
                   </template>
-                  <template #description>
+                  <template v-slot:description>
                     <ul class="menu text--sm">
                       <li>
                         <a
@@ -214,21 +214,23 @@
           </div>
         </section>
       </main>
-      <footer id="main-footer" class="footer">
+      <footer class="footer" id="main-footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>
     </div>
-  </ClientOnly>
+  </client-only>
 </template>
 
-<script setup lang="ts">
-import Accordion from '../components/ch/components/Accordion.vue'
-import AccordionItem from '../components/ch/components/AccordionItem.vue'
-import Card from '../components/ch/components/Card.vue'
-import SvgIcon from '../components/ch/components/SvgIcon.vue'
-import ShareBar from '../components/ch/demo/ShareBar.vue'
-import Hero from '../components/ch/sections/Hero.vue'
+<script>
+import Accordion from '~/components/ch/components/Accordion.vue'
+import AccordionItem from '~/components/ch/components/AccordionItem.vue'
+import Btn from '~/components/ch/components/Btn'
+import Card from '~/components/ch/components/Card'
+import SvgIcon from '~/components/ch/components/SvgIcon'
+import ShareBar from '~/components/ch/demo/ShareBar.vue'
+import Hero from '~/components/ch/sections/Hero'
+import QuoteSection from '~/components/ch/sections/QuoteSection'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -237,36 +239,62 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-import AnchorNav from '../scripts/AnchorNav.js'
-import { ref, computed, onMounted, nextTick } from 'vue'
-import { useLayoutStore } from '../store/layout'
 
-const layoutStore = useLayoutStore()
+import AnchorNav from '~/scripts/AnchorNav.js'
 
-const screenHeight = ref(0)
-const asideContainerHeight = ref(0)
+export default {
+  name: 'detailPageAnchorNav',
+  components: {
+    AlterBodyClasses,
+    TopBar,
+    TopHeader,
+    Breadcrumb,
+    DesktopMenu,
+    MobileMenu,
+    FooterInformation,
+    FooterNavigation,
+    Card,
+    Btn,
+    SvgIcon,
+    Hero,
+    QuoteSection,
+    ShareBar,
+    Accordion,
+    AccordionItem,
+  },
+  data() {
+    return {
+      screenHeight: 0,
+      asideContainerHeight: 0,
+    }
+  },
+  methods: {
+    getMobileMenuIsOpen() {
+      return this.$store.getters['layout/getMobileMenuIsOpen']
+    },
+    resizeWindow() {
+      this.screenHeight = document.body.clientHeight
 
-const computedAsideContainerClass = computed(() => {
-  if (screenHeight.value > asideContainerHeight.value) {
-    return 'sticky sticky--top'
-  } else {
-    return ''
-  }
-})
-
-const resizeWindow = function () {
-  screenHeight.value = document.body.clientHeight
-
-  const asideContainer = document.getElementById('aside-content')
-  if (asideContainer) {
-    asideContainerHeight.value = asideContainer.clientHeight
-  }
+      const asideContainer = document.getElementById('aside-content')
+      if (asideContainer) {
+        this.asideContainerHeight = asideContainer.clientHeight
+      }
+    },
+  },
+  async mounted() {
+    await this.$nextTick()
+    AnchorNav.setCurrentMenuItem()
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
+  },
+  computed: {
+    computedAsideContainerClass() {
+      if (this.screenHeight > this.asideContainerHeight) {
+        return 'sticky sticky--top'
+      } else {
+        return ''
+      }
+    },
+  },
 }
-
-onMounted(async () => {
-  await nextTick()
-  AnchorNav.setCurrentMenuItem()
-  resizeWindow()
-  window.addEventListener('resize', resizeWindow)
-})
 </script>

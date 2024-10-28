@@ -23,26 +23,35 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'
-import { ref, onMounted } from 'vue'
 
-const screenSize = ref(0)
-
-defineProps({
-  isFreebrand: {
-    type: Boolean,
-    default: () => false,
+export default {
+  name: 'MetaNavigation',
+  components: {
+    SvgIcon,
+    LanguageSwitcher,
   },
-})
-
-const resizeWindow = function () {
-  screenSize.value = document.body.clientWidth
+  props: {
+    isFreebrand: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      screenSize: 0,
+    }
+  },
+  created() {
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
+  },
+  methods: {
+    resizeWindow() {
+      this.screenSize = document.body.clientWidth
+    },
+  },
 }
-
-onMounted(() => {
-  resizeWindow()
-  window.addEventListener('resize', resizeWindow)
-})
 </script>

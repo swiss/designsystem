@@ -5,13 +5,13 @@
     </label>
     <div :class="selectWrapperClasses">
       <select
-        :id="id"
         :class="selectClasses"
+        :id="id"
         :name="name"
         :required="required"
-        @change="handleChange"
+        @change="handleChange($event)"
       >
-        <slot />
+        <slot></slot>
       </select>
       <div class="select__icon">
         <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
@@ -31,88 +31,80 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { computed, type PropType } from 'vue'
-
-const props = defineProps({
-  variant: {
-    type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => 'outline',
+<script>
+export default {
+  name: 'Select',
+  props: {
+    variant: {
+      type: String,
+      validator: (prop) => ['outline', 'negative'].includes(prop),
+      default: 'outline',
+    },
+    bare: {
+      type: Boolean,
+      default: false,
+    },
+    size: {
+      type: String,
+      validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
+    },
+    label: {
+      type: String,
+    },
+    hideLabel: {
+      type: Boolean,
+      default: false,
+    },
+    id: {
+      type: String,
+    },
+    name: {
+      type: String,
+    },
+    message: {
+      type: String,
+    },
+    messageType: {
+      type: String,
+      validator: (prop) =>
+        ['error', 'warning', 'success', 'info'].includes(prop),
+    },
+    required: {
+      type: Boolean,
+      default: false,
+    },
+    onSelect: {
+      type: Function,
+      default: () => ({}),
+    },
   },
-  bare: {
-    type: Boolean,
-    default: () => false,
+  methods: {
+    handleChange(e) {
+      this.$emit('select', e.target.value)
+      this.onSelect(e)
+    },
   },
-  size: {
-    type: String,
-    validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
-    default: () => undefined,
+  computed: {
+    selectWrapperClasses() {
+      let base = 'select '
+      if (this.bare) base += `select--bare `
+      return base
+    },
+    selectClasses() {
+      let base = ''
+      if (this.variant) base += `input--${this.variant} `
+      if (this.size) base += `input--${this.size} `
+      if (this.message) base += `input--${this.messageType} `
+      return base
+    },
+    labelClasses() {
+      let base = ''
+      if (this.variant === 'negative') base += `text--negative `
+      if (this.size) base += `text--${this.size} `
+      if (this.hideLabel) base += `sr-only `
+      if (this.required) base += `text--asterisk `
+      return base
+    },
   },
-  label: {
-    type: String,
-    default: () => undefined,
-  },
-  hideLabel: {
-    type: Boolean,
-    default: () => false,
-  },
-  id: {
-    type: String,
-    default: () => undefined,
-  },
-  name: {
-    type: String,
-    default: () => undefined,
-  },
-  message: {
-    type: String,
-    default: () => undefined,
-  },
-  messageType: {
-    type: String,
-    validator: (prop) =>
-      ['error', 'warning', 'success', 'info'].includes(prop as string),
-    default: () => undefined,
-  },
-  required: {
-    type: Boolean,
-    default: () => false,
-  },
-  onSelect: {
-    type: Function as PropType<(value: string) => void>,
-    default: () => ({}),
-  },
-})
-
-const emit = defineEmits(['change'])
-
-const selectWrapperClasses = computed(() => {
-  let base = 'select '
-  if (props.bare) base += `select--bare `
-  return base
-})
-
-const selectClasses = computed(() => {
-  let base = ''
-  if (props.variant) base += `input--${props.variant} `
-  if (props.size) base += `input--${props.size} `
-  if (props.message) base += `input--${props.messageType} `
-  return base
-})
-
-const labelClasses = computed(() => {
-  let base = ''
-  if (props.variant === 'negative') base += `text--negative `
-  if (props.size) base += `text--${props.size} `
-  if (props.hideLabel) base += `sr-only `
-  if (props.required) base += `text--asterisk `
-  return base
-})
-
-const handleChange = function (e: Event) {
-  const el = e.target as HTMLSelectElement
-  props.onSelect(el.value)
-  emit('change', el.value)
 }
 </script>

@@ -1,11 +1,11 @@
 <template>
-  <div id="search-main-wrapper" class="search search--main">
+  <div class="search search--main" id="search-main-wrapper">
     <div class="search__group">
       <h2 class="sr-only">Suche</h2>
       <Input
-        id="search-main"
         :class="isMenuV2 ? 'search--desktop' : ''"
         type="search"
+        id="search-main"
         label="Suche in dieser Website"
         placeholder="Suche"
         autocomplete="off"
@@ -18,24 +18,30 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import SvgIcon from './SvgIcon.vue'
-import Input from './Input.vue'
+<script>
+import Input from './Input.vue';
+import SvgIcon from './SvgIcon.vue';
 
-defineProps({
-  isOpen: {
-    type: Boolean,
-    default: () => false,
+export default {
+  components: {
+    SvgIcon,
+    Input,
   },
-  isMenuV2: {
-    type: Boolean,
-    default: () => false,
+  name: 'SearchMain',
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false,
+    },
+    isMenuV2: {
+      type: Boolean,
+      default: false,
+    },
   },
-})
-
-const emit = defineEmits(['toggleSearch'])
-
-function toggleSearch() {
-  emit('toggleSearch')
+  methods: {
+    toggleSearch() {
+      this.$emit('toggleSearch')
+    },
+  },
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <ul :id="`accordion-${id}`" class="accordion">
+  <ul class="accordion" :id="`accordion-${id}`">
     <GlossarResultListItem
       v-for="(listItem, itemIndex) in item.results"
       :key="`listItem-${itemIndex}`"
@@ -10,28 +10,29 @@
   </ul>
 </template>
 
-<script setup lang="ts">
-import Accordion from '../../../scripts/Accordion.js'
-import GlossarResultListItem from '../components/GlossarResultListItem.vue'
-import { onMounted } from 'vue'
+<script>
+import Accordion from '../../../scripts/Accordion.js';
+import GlossarResultListItem from '../components/GlossarResultListItem.vue';
 
-const props = defineProps({
-  item: {
-    type: Object,
-    required: true,
+export default {
+  name: 'GlossarResultListItemAccordion',
+  components: { GlossarResultListItem },
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+    id: {
+      type: String,
+      required: true,
+    },
+    searchTerm: {
+      type: String,
+      required: false,
+    },
   },
-  id: {
-    type: String,
-    required: true,
+  mounted() {
+    Accordion.init(`#accordion-${this.id} button`)
   },
-  searchTerm: {
-    type: String,
-    required: false,
-    default: () => undefined,
-  },
-})
-
-onMounted(() => {
-  Accordion.init(`#accordion-${props.id} button`)
-})
+}
 </script>

@@ -1,22 +1,24 @@
 <template>
   <section class="section bg--secondary-100">
     <div class="container">
-      <h2 v-if="isHomePage" class="section__title">
+      <h2
+        v-if="isHomePage"
+        class="section__title"
+      >
         Unsere top Dienstleistungen
       </h2>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
-          <template #title>
+          <template v-slot:title>
             <h3>Datenmodellablage</h3>
           </template>
-          <template #description>
+          <template v-slot:description>
             <p>
-              At vero eos et ac-cusam et justo duo, sadipscing elitr, sed diam
-              At vero eos et ac-cusam et justo duo dolores et ea rebum Stet
-              clita kasd gubergren.
+              At vero eos et ac-cusam et justo duo, sadipscing elitr,
+              sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template #footerAction>
+          <template v-slot:footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -27,17 +29,16 @@
           </template>
         </Card>
         <Card type="default">
-          <template #title>
+          <template v-slot:title>
             <h3>Geodienste</h3>
           </template>
-          <template #description>
+          <template v-slot:description>
             <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-              sadipscing elitr, sed diam. At vero eos et ac-cusam et justo duo
-              dolores et ea rebum Stet clita kasd gubergren.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sadipscing elitr,
+              sed diam. At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template #footerAction>
+          <template v-slot:footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -48,17 +49,16 @@
           </template>
         </Card>
         <Card type="default">
-          <template #title>
+          <template v-slot:title>
             <h3>Datenbezug</h3>
           </template>
-          <template #description>
+          <template v-slot:description>
             <p>
-              Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam At
-              vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita
-              kasd gubergren.
+              Ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam At vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template #footerAction>
+          <template v-slot:footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -69,27 +69,33 @@
           </template>
         </Card>
       </div>
-      <div v-if="isHomePage" class="section__action">
-        <Btn
-          to="#"
-          label="Alle Dienstleistungen ansehen"
-          variant="bare"
-          icon-pos="right"
-          icon="ArrowRight"
-        />
+      <div
+        v-if="isHomePage"
+        class="section__action"
+      >
+        <Btn to="#" label="Alle Dienstleistungen ansehen" variant="bare" icon-pos="right" icon="ArrowRight"></Btn>
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
-import Card from '../components/Card.vue'
-import Btn from '../components/Btn.vue'
+<script>
+import Card from '~/components/ch/components/Card.vue';
+import Btn from "~/components/ch/components/Btn";
+import SvgIcon from '../components/SvgIcon.vue';
 
-defineProps({
-  isHomePage: {
-    type: Boolean,
-    default: () => false,
+export default {
+  name: 'ServicesSection',
+  components: {
+    Card,
+    Btn,
+    SvgIcon,
   },
-})
+  props: {
+    isHomePage: {
+      type: Boolean,
+      default: false
+    }
+  },
+};
 </script>

@@ -1,29 +1,37 @@
 <template>
   <ul
     :id="`accordion-${id}`"
-    class="accordion"
+    class="accordion "
     :class="spaced ? 'accordion--spaced' : ''"
   >
     <slot />
-  </ul>
+</ul>
 </template>
 
-<script setup lang="ts">
+<script>
 import Accordion from '../../../scripts/Accordion.js'
-import { onMounted } from 'vue'
 
-const props = defineProps({
-  id: {
-    type: String,
-    required: true,
+export default {
+  name: 'Accordion',
+  components: {
+    Accordion
   },
-  spaced: {
-    type: Boolean,
-    default: () => false,
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    spaced: {
+      type: Boolean,
+      default: false
+    }
   },
-})
 
-onMounted(() => {
-  Accordion.init(`#accordion-${props.id} button`)
-})
+  mounted () {
+    Accordion.init (
+      `#accordion-${this.id} button`
+    )
+  }
+}
 </script>
+

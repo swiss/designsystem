@@ -7,10 +7,12 @@
           <p>
             In vitae risus porttitor, imperdiet urna quis, venenatis mi. Aliquam
             mattis nibh orci, a pellentesque diam rutrum vel. In vitae risus
-            porttitor, imperdiet urna quis, venenatis mi. Aliquam mattis nibh
-            orci, a pellentesque diam rutrum vel.
+            porttitor, imperdiet urna quis, venenatis mi. Aliquam mattis nibh orci,
+            a pellentesque diam rutrum vel.
           </p>
-          <p>© Geoportal</p>
+          <p>
+            © Geoportal
+          </p>
         </div>
         <div class="footer-information__entry">
           <h3>Bleiben sie informiert</h3>
@@ -37,12 +39,8 @@
             </a>
           </div>
 
-          <Btn
-            label="News abonnieren"
-            icon="ArrowRight"
-            icon-pos="right"
-            variant="outline-negative"
-          />
+          <Btn label="News abonnieren" icon="ArrowRight" icon-pos="right" variant="outline-negative" />
+
         </div>
         <div class="footer-information__entry footer-information__entry--big">
           <h3>Weitere Informationen</h3>
@@ -100,7 +98,14 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import SvgIcon from '../components/SvgIcon.vue'
 import Btn from '../components/Btn.vue'
+
+export default {
+  components: {
+    SvgIcon,
+    Btn
+  },
+}
 </script>

@@ -223,24 +223,26 @@
   </nav>
 </template>
 
-<script setup lang="ts">
+<script>
 import SvgIcon from '../components/SvgIcon.vue'
-import { computed } from 'vue'
 
-const props = defineProps({
-  isSimplePage: {
-    type: Boolean,
-    default: () => false,
+export default {
+  name: 'BreadcrumbNavigation',
+  components: {
+    SvgIcon,
   },
-  context: {
-    type: String,
-    default: () => '',
+  props: {
+    isSimplePage: {
+      type: Boolean,
+      default: false,
+    },
   },
-})
-
-const breadcrumbNavigationClass = computed(() => {
-  let base = `breadcrumb-navigation `
-  if (props.context) base += `breadcrumb-navigation--${props.context} `
-  return base
-})
+  computed: {
+    breadcrumbNavigationClass() {
+      let base = `breadcrumb-navigation `
+      if (this.context) base += `breadcrumb-navigation--${this.context} `
+      return base
+    },
+  },
+}
 </script>

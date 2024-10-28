@@ -9,23 +9,25 @@
   </ul>
 </template>
 
-<script setup lang="ts">
-import type { GlossaryResult } from '../../../types'
-import IndexPageResultListItem from '../components/IndexPageResultListItem.vue'
-import type { PropType } from 'vue'
+<script>
+import IndexPageResultListItem from '../components/IndexPageResultListItem.vue';
 
-defineProps({
-  item: {
-    type: Object as PropType<GlossaryResult>,
-    required: true,
+export default {
+  name: 'IndexPageResultListItemList',
+  components: { IndexPageResultListItem },
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+    id: {
+      type: String,
+      required: true,
+    },
+    searchTerm: {
+      type: String,
+      required: false,
+    },
   },
-  id: {
-    type: String,
-    required: true,
-  },
-  searchTerm: {
-    type: String,
-    default: () => undefined,
-  },
-})
+}
 </script>

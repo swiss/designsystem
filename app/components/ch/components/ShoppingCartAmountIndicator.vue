@@ -1,20 +1,22 @@
 <template>
   <div class="shopping__cart-amount-indicator">
-    {{ limitedAmount }}
+    {{ limittedAmount }}
   </div>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue'
-
-const props = defineProps({
-  amount: {
-    type: Number,
-    required: true,
+<script>
+export default {
+  name: 'ShoppingCartAmountIndicator',
+  props: {
+    amount: {
+      type: Number,
+      required: true,
+    },
   },
-})
-
-const limitedAmount = computed(() => {
-  return props.amount > 9 ? '9+' : props.amount
-})
+  computed: {
+    limittedAmount() {
+      return this.amount > 9 ? '9+' : this.amount
+    },
+  },
+}
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <nav :id="id" class="carousel-navigation">
+  <nav class="carousel-navigation" :id="id">
     <ul class="carousel">
-      <Swiper
+      <swiper
         :speed="500"
         :autoHeight="false"
         :loop="false"
@@ -11,7 +11,6 @@
           enabled: true,
           onlyInViewport: false,
         }"
-        :modules="[Navigation, Pagination, A11y]"
         :navigation="{
           nextEl: `#carousel-next-${id}`,
           prevEl: `#carousel-prev-${id}`,
@@ -19,41 +18,41 @@
         :simulateTouch="true"
         :slideToClickedSlide="false"
       >
-        <SwiperSlide>
+        <swiper-slide>
           <li>
             <a href="javascript:alert('link')">
               <span>Alle</span>
             </a>
           </li>
-        </SwiperSlide>
-        <SwiperSlide>
+        </swiper-slide>
+        <swiper-slide>
           <li>
             <a href="javascript:alert('link)" class="active">
               <span>Corona</span>
             </a>
           </li>
-        </SwiperSlide>
-        <SwiperSlide>
+        </swiper-slide>
+        <swiper-slide>
           <li>
             <a href="javascript:alert('link')">
               <span>Bürgerrecht</span>
             </a>
           </li>
-        </SwiperSlide>
-        <SwiperSlide>
+        </swiper-slide>
+        <swiper-slide>
           <li>
             <a href="javascript:alert('link')">
               <span>Ukraine</span>
             </a>
           </li>
-        </SwiperSlide>
-      </Swiper>
+        </swiper-slide>
+      </swiper>
       <div class="carousel__fonctions">
-        <button :id="`carousel-prev-${id}`" class="carousel__prev">
+        <button class="carousel__prev" :id="`carousel-prev-${id}`">
           <div class="sr-only">Vorherige Navigations Elemente</div>
           <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
         </button>
-        <button :id="`carousel-next-${id}`" class="carousel__next">
+        <button class="carousel__next" :id="`carousel-next-${id}`">
           <div class="sr-only">Nächste Navigations Elemente</div>
           <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
         </button>
@@ -62,15 +61,26 @@
   </nav>
 </template>
 
-<script setup lang="ts">
-import { Navigation, Pagination, A11y } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/vue'
+<script>
+import { Navigation, Pagination } from 'swiper'
+import { Swiper, SwiperCore, SwiperSlide } from 'swiper-vue2'
 import SvgIcon from '../components/SvgIcon.vue'
 
-defineProps({
-  id: {
-    type: String,
-    default: () => '1',
+SwiperCore.use([Navigation, Pagination])
+
+export default {
+  name: 'CarouselNavigation',
+  components: { SvgIcon, Swiper, SwiperSlide },
+  data() {
+    return {
+    }
   },
-})
+  props: {
+    id: {
+      type: String,
+      default: 1,
+    },
+  },
+  methods: {},
+}
 </script>

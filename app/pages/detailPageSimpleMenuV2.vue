@@ -4,23 +4,19 @@
       :isMobileMenuOpen="getMobileMenuIsOpen()"
       :isIntranet="isIntranet"
       :isFreebrand="isFreebrand"
-      :usesMenuV2="true"
+      :UsesMenuV2="true"
     />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar v-if="!isFreebrand" :isOpen="false" />
-      <TopHeader
-        :isFreebrand="isFreebrand"
-        :isMenuV2="true"
-        @top-header-search-toggle="onTopHeaderSearchToggle"
-      />
+      <TopHeader :isFreebrand="isFreebrand" :isMenuV2="true" />
       <DesktopMenu :showActiveNavigation="true" />
       <MobileMenuV2 />
       <div class="search--mobile" :class="searchActive ? 'active' : ''">
-        <div id="search-mobile-group" class="top-header-search__group">
+        <div class="top-header-search__group" id="search-mobile-group">
           <Input
-            id="search-mobile"
             type="search"
+            id="search-mobile"
             label="Suche in dieser Website"
             placeholder="Suche"
             autocomplete="off"
@@ -43,10 +39,10 @@
     </header>
     <main id="main-content">
       <Hero type="default" :meta-infos="metaInfos" :authors="authors">
-        <template #title>
+        <template v-slot:title>
           Web Mapping Services WMS: Verfügbare Dienste und Daten
         </template>
-        <template #description>
+        <template v-slot:description>
           Das Konzept des INTERLIS Model Repository sieht vor, Datenmodelle als
           http-Ressource nutzbar zu machen. Dabei werden die
           INTERLIS-Modelldateien auf einem Webserver abgelegt, und können
@@ -54,9 +50,9 @@
           Vorteil für einen Benutzer liegt darin, dass die Modelldateien und
           evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
           müssen.
-          <a id="share-link" href="#" class="link">Diese Seite teilen</a>
+          <a href="#" class="link" id="share-link">Diese Seite teilen</a>
         </template>
-        <template #image>
+        <template v-slot:image>
           <figure>
             <picture>
               <source
@@ -101,9 +97,9 @@
             </p>
 
             <SlideshowExample
-              :id="1"
               paginationType="bullets"
-              loop
+              loop="loop"
+              :id="1"
               :slides="slides"
             />
 
@@ -127,9 +123,9 @@
             </p>
 
             <SlideshowExample
-              :id="2"
               paginationType="fraction"
-              loop
+              loop="loop"
+              :id="2"
               :slides="slides"
             />
 
@@ -191,8 +187,7 @@
                 />
               </div>
               <figcaption>
-                Geoinformation - Alles findet irgendwo statt — © Swiss
-                Geoportal
+                Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal
               </figcaption>
             </figure>
 
@@ -210,11 +205,11 @@
             </p>
 
             <TextImage type="default">
-              <template #title>
+              <template v-slot:title>
                 Ein neues «minimales Geodatenmodell» in der Datenmodellablage
                 publizieren
               </template>
-              <template #description>
+              <template v-slot:description>
                 Über den Kontakt models@geo.admin.ch können die
                 INTERLIS-Modelldatei und die Modelldokumentation (als PDF
                 Dokument) zur Publikation eingereicht werden. Über den Kontakt
@@ -222,7 +217,7 @@
                 Modelldokumentation (als PDF Dokument) zur Publikation
                 eingereicht werden.
               </template>
-              <template #image>
+              <template v-slot:image>
                 <figure>
                   <picture>
                     <source
@@ -377,14 +372,14 @@
             </p>
 
             <TextImage>
-              <template #title> Modelldokumentation </template>
-              <template #description>
+              <template v-slot:title> Modelldokumentation </template>
+              <template v-slot:description>
                 Über den Kontakt models@geo.admin.ch können die
                 Modelldokumentation zur Publikation eingereicht werden. Über den
                 Kontakt models@geo.admin.ch können die zur Publikation
                 eingereicht werden.
               </template>
-              <template #image>
+              <template v-slot:image>
                 <figure>
                   <picture>
                     <source
@@ -605,15 +600,15 @@
             <ul class="list">
               <li>
                 <Card type="flat">
-                  <template #title>
+                  <template v-slot:title>
                     <h3>
                       (Haager-) Übereinkommen vom 5. Oktober 1961 über die
                       Zuständigkeit der Behörden und das anzuwendende Recht auf
                       dem Gebiet des Schutzes von Minderjährigen
                     </h3>
                   </template>
-                  <template #footerInfo> (SR 0.211.231.01) </template>
-                  <template #footerAction>
+                  <template v-slot:footerInfo> (SR 0.211.231.01) </template>
+                  <template v-slot:footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -626,7 +621,7 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template #title>
+                  <template v-slot:title>
                     <h3>
                       (Haager) Übereinkommen vom 19. Oktober 1996 über die
                       Zuständigkeit, das anzuwendende Recht, die Anerkennung,
@@ -635,8 +630,8 @@
                       von Kindern
                     </h3>
                   </template>
-                  <template #footerInfo> (SR 0.211.231.011) </template>
-                  <template #footerAction>
+                  <template v-slot:footerInfo> (SR 0.211.231.011) </template>
+                  <template v-slot:footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -649,7 +644,7 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template #title>
+                  <template v-slot:title>
                     <h3>
                       Europäisches Übereinkommen vom 20. Mai 1980 über die
                       Anerkennung und Vollstreckung von Entscheidungen über das
@@ -657,8 +652,8 @@
                       Sorgerechts
                     </h3>
                   </template>
-                  <template #footerInfo> (SR 0.211.230.01) </template>
-                  <template #footerAction>
+                  <template v-slot:footerInfo> (SR 0.211.230.01) </template>
+                  <template v-slot:footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -671,14 +666,14 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template #title>
+                  <template v-slot:title>
                     <h3>
                       (Haager-) Übereinkommen vom 25. Oktober 1980 über die
                       zivilrechtlichen Aspekte internationaler Kindesentführung
                     </h3>
                   </template>
-                  <template #footerInfo> (SR 0.211.230.02) </template>
-                  <template #footerAction>
+                  <template v-slot:footerInfo> (SR 0.211.230.02) </template>
+                  <template v-slot:footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -691,15 +686,15 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template #title>
+                  <template v-slot:title>
                     <h3>
                       (Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz
                       von Kindern und die Zusammenarbeit auf dem Gebiet der
                       internationalen Adoption
                     </h3>
                   </template>
-                  <template #footerInfo> (SR 0.211.221.311) </template>
-                  <template #footerAction>
+                  <template v-slot:footerInfo> (SR 0.211.221.311) </template>
+                  <template v-slot:footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -712,14 +707,14 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template #title>
+                  <template v-slot:title>
                     <h3>
                       (Haager) Übereinkommen vom 13. Januar 2000 über den
                       internationalen Schutz von Erwachsenen
                     </h3>
                   </template>
-                  <template #footerInfo> (SR 0.211.232.1) </template>
-                  <template #footerAction>
+                  <template v-slot:footerInfo> (SR 0.211.232.1) </template>
+                  <template v-slot:footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -837,9 +832,9 @@
       triggerElements=".share-bar__share-button, #share-link"
       layout="xs"
     >
-      <template #body>
+      <template v-slot:body>
         <Card type="default">
-          <template #description>
+          <template v-slot:description>
             <div class="flex flex-wrap gap-6 justify-center">
               <a href="#" class="link" title="Share on Facebook">
                 <SvgIcon size="2xl" icon="Facebook" label="Facebook" />
@@ -860,11 +855,11 @@
             <hr class="separator" />
             <div class="pt-3">
               <Input
-                id="my-id"
                 type="outline"
                 size="base"
                 label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"
+                id="my-id"
                 :hideLabel="true"
                 :readonly="true"
               />
@@ -874,7 +869,7 @@
                   size="base"
                   label="URL Kopieren"
                   class="mt-3"
-                  @click="URLIsCopied = !URLIsCopied"
+                  @click.native="URLIsCopied = !URLIsCopied"
                 />
                 <div aria-live="polite">
                   <Badge
@@ -892,25 +887,26 @@
         </Card>
       </template>
     </Modal>
-    <footer id="main-footer" class="footer">
+    <footer class="footer" id="main-footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
   </div>
 </template>
 
-<script setup lang="ts">
-import AudioPlayer from '../components/ch/components/AudioPlayer.vue'
-import DownloadItem from '../components/ch/components/DownloadItem.vue'
-import Newsletter from '../components/ch/components/Newsletter.vue'
-import RelatedTags from '../components/ch/components/RelatedTags.vue'
-import TextImage from '../components/ch/components/TextImage.vue'
-import SlideshowExample from '../components/ch/demo/SlideshowExample.vue'
-import TableSortable from '../components/ch/demo/TableSortable.vue'
-import ContactSection from '../components/ch/sections/ContactSection.vue'
-import Hero from '../components/ch/sections/Hero.vue'
-import MoreInfosAccordionSection from '../components/ch/sections/MoreInfosAccordionSection.vue'
-import QuoteSection from '../components/ch/sections/QuoteSection.vue'
+<script>
+import AudioPlayer from '~/components/ch/components/AudioPlayer'
+import DownloadItem from '~/components/ch/components/DownloadItem.vue'
+import Newsletter from '~/components/ch/components/Newsletter.vue'
+import RelatedTags from '~/components/ch/components/RelatedTags.vue'
+import TextImage from '~/components/ch/components/TextImage'
+import SlideshowExample from '~/components/ch/demo/SlideshowExample.vue'
+import TableSortable from '~/components/ch/demo/TableSortable.vue'
+import Tabs from '~/components/ch/demo/Tabs.vue'
+import ContactSection from '~/components/ch/sections/ContactSection'
+import Hero from '~/components/ch/sections/Hero'
+import MoreInfosAccordionSection from '~/components/ch/sections/MoreInfosAccordionSection'
+import QuoteSection from '~/components/ch/sections/QuoteSection'
 import Badge from '../components/ch/components/Badge.vue'
 import Btn from '../components/ch/components/Btn.vue'
 import Card from '../components/ch/components/Card.vue'
@@ -924,146 +920,175 @@ import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
+import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import MobileMenuV2 from '../components/ch/sections/MobileMenuV2.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-import { reactive, ref, onMounted, nextTick } from 'vue'
-import { useLayoutStore } from '../store/layout'
-import type { Author } from '../types'
 
-const screenSize = ref(0)
-const URLIsCopied = ref(false)
-const slides = reactive([
-  {
-    image: {
-      src: 'https://picsum.photos/1024/768/?image=29',
-      width: '1024',
-      height: '768',
-      alt: 'image name',
-    },
-    source: {
-      srcset: 'https://picsum.photos/2048/1152/?image=29',
-      width: '2048',
-      height: '1152',
-      media: '(min-width: 1024px)',
-    },
-    caption: {
-      title: 'Image one title',
-      description: 'Image one description',
-      copyright: 'Photograph name',
-    },
+export default {
+  name: 'detailPageSimpleMenuV2',
+  components: {
+    MobileMenuV2,
+    AlterBodyClasses,
+    TopBar,
+    TopHeader,
+    Breadcrumb,
+    DesktopMenu,
+    MobileMenu,
+    FooterInformation,
+    FooterNavigation,
+    Hero,
+    QuoteSection,
+    ContactSection,
+    MoreInfosAccordionSection,
+    TextImage,
+    AudioPlayer,
+    SlideshowExample,
+    Tabs,
+    RelatedTags,
+    DownloadItem,
+    Newsletter,
+    ShareBar,
+    Card,
+    Btn,
+    SvgIcon,
+    Modal,
+    Badge,
+    Input,
+    Popover,
+    TableSortable,
   },
-  {
-    image: {
-      src: 'https://picsum.photos/1024/768/?image=28',
-      width: '1024',
-      height: '768',
-      alt: 'image name',
-    },
-    source: {
-      srcset: 'https://picsum.photos/2048/1152/?image=28',
-      width: '2048',
-      height: '1152',
-      media: '(min-width: 1024px)',
-    },
-    caption: {
-      title: 'Image two, title without description',
-      copyright: 'Photograph name',
-    },
-  },
-  {
-    image: {
-      src: 'https://picsum.photos/1024/768/?image=1045',
-      width: '1024',
-      height: '768',
-      alt: 'image name',
-    },
-    source: {
-      srcset: 'https://picsum.photos/2048/1152/?image=1045',
-      width: '2048',
-      height: '1152',
-      media: '(min-width: 1024px)',
-    },
-    caption: {
-      description: 'Image three, description only',
-      copyright: 'Photograph name',
-    },
-  },
-])
-const metaInfos = reactive(['Webartikel', '23. Februar 2022'])
-const authors = reactive([
-  {
-    name: 'Maria Muster',
-    img: 'https://picsum.photos/120/120/?image=29',
-  },
-  {
-    name: 'Jean-Jaques Langerename',
-    img: 'https://picsum.photos/120/120/?image=30',
-    url: '#',
-  },
-  {
-    name: 'Hans Höllman',
-    img: 'https://picsum.photos/120/120/?image=31',
-  },
-  {
-    name: 'Katja Anna-Beerli',
-    img: 'https://picsum.photos/120/120/?image=32',
-  },
-] as Author[])
-const tags = reactive([
-  { label: 'Datenmodell', url: '#' },
-  { label: 'Energie', url: '#' },
-  { label: 'INTERLIS', url: '#' },
-  { label: 'GKG/KOGIS', url: '#' },
-  { label: 'Energie', url: '#' },
-  { label: 'INTERLIS', url: '#' },
-  { label: 'GKG/KOGIS', url: '#' },
-  { label: 'Datenmodell', url: '#' },
-])
-const searchActive = ref(false)
-
-defineProps({
-  isIntranet: {
-    type: Boolean,
-    default: false,
-  },
-  isFreebrand: {
-    type: Boolean,
-    default: false,
-  },
-})
-
-const resizeWindow = function () {
-  screenSize.value = document.body.clientWidth
-  if (screenSize.value > 1024) {
-    searchActive.value = false
-  }
-}
-
-const getMobileMenuIsOpen = function () {
-  return useLayoutStore().mobileMenuIsOpen
-}
-
-async function onTopHeaderSearchToggle() {
-  searchActive.value = !searchActive.value
-  if (searchActive.value) {
-    await nextTick()
-    document.getElementById('search-mobile')!.focus()
-  }
-}
-
-onMounted(async () => {
-  await nextTick()
-  document.addEventListener('click', (event) => {
-    if (
-      !(event.target as HTMLElement).closest(
-        '#search-mobile-group, #search-main-wrapper',
-      )
-    ) {
-      searchActive.value = false
+  data: function () {
+    return {
+      screenSize: 0,
+      URLIsCopied: false,
+      slides: [
+        {
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=29',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=29',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: {
+            title: 'Image one title',
+            description: 'Image one description',
+            copyright: 'Photograph name',
+          },
+        },
+        {
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=28',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=28',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: {
+            title: 'Image two, title without description',
+            copyright: 'Photograph name',
+          },
+        },
+        {
+          image: {
+            src: 'https://picsum.photos/1024/768/?image=1045',
+            width: '1024',
+            height: '768',
+            alt: 'image name',
+          },
+          source: {
+            srcset: 'https://picsum.photos/2048/1152/?image=1045',
+            width: '2048',
+            height: '1152',
+            media: '(min-width: 1024px)',
+          },
+          caption: {
+            description: 'Image three, description only',
+            copyright: 'Photograph name',
+          },
+        },
+      ],
+      metaInfos: ['Webartikel', '23. Februar 2022'],
+      authors: [
+        {
+          name: 'Maria Muster',
+          img: 'https://picsum.photos/120/120/?image=29',
+        },
+        {
+          name: 'Jean-Jaques Langerename',
+          img: 'https://picsum.photos/120/120/?image=30',
+          url: '#',
+        },
+        {
+          name: 'Hans Höllman',
+          img: 'https://picsum.photos/120/120/?image=31',
+        },
+        {
+          name: 'Katja Anna-Beerli',
+          img: 'https://picsum.photos/120/120/?image=32',
+        },
+      ],
+      tags: [
+        { label: 'Datenmodell', url: '#' },
+        { label: 'Energie', url: '#' },
+        { label: 'INTERLIS', url: '#' },
+        { label: 'GKG/KOGIS', url: '#' },
+        { label: 'Energie', url: '#' },
+        { label: 'INTERLIS', url: '#' },
+        { label: 'GKG/KOGIS', url: '#' },
+        { label: 'Datenmodell', url: '#' },
+      ],
+      searchActive: false,
     }
-  })
+  },
+  async mounted() {
+    await this.$nextTick()
+    this.emitter.on('top-header-search-toggle', async () => {
+      this.searchActive = !this.searchActive
+      if (this.searchActive) {
+        await this.$nextTick()
+        document.getElementById('search-mobile').focus()
+      }
+    })
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('#search-mobile-group, #search-main-wrapper')) {
+        this.searchActive = false
+      }
+    })
 
-  window.addEventListener('resize', resizeWindow)
-})
+    window.addEventListener('resize', this.resizeWindow)
+  },
+  props: {
+    isIntranet: {
+      type: Boolean,
+      default: false,
+    },
+    isFreebrand: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    resizeWindow() {
+      this.screenSize = document.body.clientWidth
+      if (this.screenSize > 1024) {
+        this.searchActive = false
+      }
+    },
+    getMobileMenuIsOpen() {
+      return this.$store.getters['layout/getMobileMenuIsOpen']
+    },
+  },
+}
 </script>

@@ -1,33 +1,30 @@
 <template>
   <div class="box">
-    <h2 class="h5 order__box-title">
-      {{ title }}
-    </h2>
+    <h2 class="h5 order__box-title">{{ title }}</h2>
     <div class="order__box-input-container">
       <!-- Add full-width class for single amount input -->
       <div class="form__group__input order__box-input-amount-container">
         <Input
-          :id="getUniqueId('input')"
           :label="amountInputLabel"
+          :id="getUniqueId('input')"
           type="number"
           variant="outline"
           size="base"
-          :value="inputValue.toString()"
+          :value="defaultAmount"
+          @keypress="restrictChars($event)"
+          v-on:input="inputValue = $event.target.value"
+          v-model="inputValue"
           class="order__box-amount-input"
           :min="0"
-          @keypress="restrictChars"
-          @input="
-            inputValue = parseInt(($event.target as HTMLInputElement).value)
-          "
         />
       </div>
       <Select
-        :id="getUniqueId('select')"
         class="order__box-input-language-container"
         variant="outline"
         :bare="false"
         size="base"
         :label="languageLabel"
+        :id="getUniqueId('select')"
         @select="setSelectedValue"
       >
         <option
@@ -37,126 +34,122 @@
           :selected="option.selected"
         >
           {{ option.label }}
-        </option>
-      </Select>
+        </option></Select
+      >
     </div>
     <div class="order__box-piece-price-container">
-      <p class="order__box-piece-price-title">
-        {{ pricePieceTitle }}
-      </p>
+      <p class="order__box-piece-price-title">{{ pricePieceTitle }}</p>
       <p class="order__box-piece-price">
-        {{ `${currencyPrefix} ${pricePiece}` }}
+        {{ `${curencyPrefix} ${pricePiece}` }}
       </p>
     </div>
     <div class="order__box-total-price-container">
-      <p class="order__box-total-price-title">
-        {{ totalPriceTitle }}
-      </p>
-      <p class="order__box-total-price">
-        {{ totalPrice }}
-      </p>
+      <p class="order__box-total-price-title">{{ totalPriceTitle }}</p>
+      <p class="order__box-total-price">{{ totalPrice }}</p>
     </div>
     <Btn
       class="order__box-order-button"
       variant="filled"
       :fullWidth="true"
       :label="buttonLabel"
-      @emit-click="addToCart(selectedValue, inputValue)"
+      @emitClick="addToCart(selectedValue, parseInt(inputValue))"
     />
   </div>
 </template>
 
-<script setup lang="ts">
-import Btn from './Btn.vue'
-import Input from './Input.vue'
-import Select from './Select.vue'
-import { reactive, ref, computed, onMounted, type PropType } from 'vue'
-import { v4 as uuidv4 } from 'uuid'
-import type { OrderBoxOption } from '../../../types'
+<script>
+import Btn from '~/components/ch/components/Btn'
+import Input from '~/components/ch/components/Input.vue'
+import Select from '~/components/ch/components/Select.vue'
+const { v4: uuidv4 } = require('uuid')
 
-const orderBoxId = uuidv4()
-const inputValue = ref(0 as number)
-const selectedValue = reactive({} as OrderBoxOption)
-const pricePiece = ref(0)
-
-const props = defineProps({
-  defaultAmount: {
-    type: Number,
-    default: () => 1,
+export default {
+  name: 'OrderBox',
+  components: {
+    Btn,
+    Select,
+    Input,
   },
-  amountInputLabel: {
-    type: String,
-    required: true,
+  data() {
+    return {
+      orderBoxId: uuidv4(),
+      inputValue: this.defaultAmount,
+      selectedValue: this.options.find((option) => option.selected).value,
+      pricePiece: 0,
+    }
   },
-  title: {
-    type: String,
-    required: true,
+  props: {
+    defaultAmount: {
+      type: Number,
+      default: 1,
+    },
+    amountInputLabel: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    totalPriceTitle: {
+      type: String,
+      required: true,
+    },
+    pricePieceTitle: {
+      type: String,
+      required: true,
+    },
+    options: {
+      type: Array,
+      required: true,
+    },
+    buttonLabel: {
+      type: String,
+      required: true,
+    },
+    addToCart: {
+      type: Function,
+      default: () => ({}),
+    },
+    languageLabel: {
+      type: String,
+      required: true,
+    },
+    curencyPrefix: {
+      type: String,
+      required: true,
+    },
   },
-  totalPriceTitle: {
-    type: String,
-    required: true,
+  created() {
+    this.pricePiece = this.options.find((option) => option.selected).pricePiece
   },
-  pricePieceTitle: {
-    type: String,
-    required: true,
+  methods: {
+    restrictChars($event) {
+      // Restrict input to numbric input chars
+      // eslint-disable-next-line no-useless-escape
+      const regex = /[0-9eE.+\-]/g
+      if (regex.test(String.fromCharCode($event.keyCode))) {
+        return true
+      } else {
+        $event.preventDefault()
+      }
+    },
+    getUniqueId(text = '') {
+      return `${text}-${this.orderBoxId}`
+    },
+    setSelectedValue(value) {
+      this.selectedValue = value
+      this.pricePiece = this.options.find(
+        (option) => option.value === value
+      ).pricePiece
+    },
   },
-  options: {
-    type: Array<OrderBoxOption>,
-    required: true,
+  computed: {
+    totalPrice() {
+      return `${this.curencyPrefix} ${(
+        this.pricePiece * this.inputValue
+      ).toFixed(2)}`
+    },
   },
-  buttonLabel: {
-    type: String,
-    required: true,
-  },
-  addToCart: {
-    type: Function as PropType<
-      (selectedValue: OrderBoxOption, amount: number) => void
-    >,
-    default: () => ({}),
-  },
-  languageLabel: {
-    type: String,
-    required: true,
-  },
-  currencyPrefix: {
-    type: String,
-    required: true,
-  },
-})
-
-onMounted(() => {
-  inputValue.value = props.defaultAmount
-  Object.assign(
-    selectedValue,
-    props.options.find((option) => option.selected),
-  )
-  pricePiece.value =
-    props.options.find((option) => option.selected)?.pricePiece || 0
-})
-
-const totalPrice = computed(() => {
-  return `${props.currencyPrefix} ${(
-    pricePiece.value * inputValue.value
-  ).toFixed(2)}`
-})
-
-const restrictChars = function (event: KeyboardEvent) {
-  // Restrict input to numeric input chars
-  const regex = /[0-9]/g
-  if (regex.test(event.key)) {
-    return true
-  } else {
-    event.preventDefault()
-  }
-}
-
-const getUniqueId = function (text = '') {
-  return `${text}-${orderBoxId}`
-}
-
-const setSelectedValue = function (value: string) {
-  const newPriceObject = props.options.find((option) => option.value === value)
-  pricePiece.value = newPriceObject?.pricePiece || 0
-  Object.assign(selectedValue, newPriceObject)
 }
 </script>

@@ -11,19 +11,25 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import Select from '../components/Select.vue'
-import { computed } from 'vue'
 
-defineProps({
-  type: {
-    type: String,
-    default: () => 'negative',
+export default {
+  name: 'LanguageSwitcher',
+  components: {
+    Select,
   },
-})
-
-const computedClass = computed(() => {
-  const base = 'language-switcher'
-  return base
-})
+  props: {
+    type: {
+      type: String,
+      default: 'negative',
+    },
+  },
+  computed: {
+    computedClass() {
+      let base = 'language-switcher'
+      return base
+    },
+  },
+}
 </script>

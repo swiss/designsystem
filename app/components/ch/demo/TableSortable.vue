@@ -1,11 +1,8 @@
 <template>
   <div class="table-wrapper">
-    <table :id="`table-sortable-${id}`" :class="computedClasses">
+    <table :class="computedClasses" :id="`table-sortable-${id}`">
       <caption>
-        <br />
-        {{
-          caption
-        }}
+        {{ caption }}
         <span class="sr-only">, column headers with buttons are sortable.</span>
       </caption>
       <thead>
@@ -13,20 +10,22 @@
           <th scope="col">
             <button class="table__sorter">
               Name
-              <span aria-hidden="true" />
+              <span aria-hidden="true"></span>
             </button>
           </th>
           <th scope="col" aria-sort="ascending">
             <button class="table__sorter">
               Job
-              <span aria-hidden="true" />
+              <span aria-hidden="true"></span>
             </button>
           </th>
-          <th scope="col">E-mail</th>
+          <th scope="col">
+            E-mail
+          </th>
           <th scope="col" class="text-right">
             <button class="table__sorter">
               ID
-              <span aria-hidden="true" />
+              <span aria-hidden="true"></span>
             </button>
           </th>
         </tr>
@@ -73,43 +72,51 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import TableSortable from '../../../scripts/TableSortable.js'
-import { computed, onMounted } from 'vue'
 
-const props = defineProps({
-  variant: {
-    type: String,
-    validator: (prop) => ['compact', 'default'].includes(prop as string),
-    default: () => undefined,
+export default {
+  name: 'TableSortable',
+  props: {
+    variant: {
+      type: String,
+      validator: (prop) => [
+        'compact',
+        'default',
+      ].includes(prop)
+    },
+    caption: {
+      type: String,
+      default: ''
+    },
+    displayCaption: {
+      type: Boolean,
+      default: true
+    },
+    zebra: {
+      type: Boolean,
+      default: false
+    },
+    id: {
+      type: String,
+      default: 'default'
+    }
   },
-  caption: {
-    type: String,
-    default: () => '',
-  },
-  displayCaption: {
-    type: Boolean,
-    default: () => true,
-  },
-  zebra: {
-    type: Boolean,
-    default: () => false,
-  },
-  id: {
-    type: String,
-    default: () => 'default',
-  },
-})
 
-const computedClasses = computed(() => {
-  let base = 'table table--sortable '
-  if (props.variant) base += `table--${props.variant} `
-  if (props.displayCaption) base += `table--caption `
-  if (props.zebra) base += `table--zebra `
-  return base
-})
+  computed: {
+    computedClasses () {
+      let base = 'table table--sortable '
+      if (this.variant) base += `table--${this.variant} `
+      if (this.displayCaption) base += `table--caption `
+      if (this.zebra) base += `table--zebra `
+      return base
+    }
+  },
 
-onMounted(() => {
-  new TableSortable(`table-sortable-${props.id}`)
-})
+  mounted () {
+    new TableSortable(`table-sortable-${this.id}`);
+  },
+}
 </script>
+
+

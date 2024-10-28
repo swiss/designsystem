@@ -1,0 +1,59 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import store from '@/.storybook/store'
+import detailSimpleLanguage from '../../../pages/detailSimpleLanguage.vue'
+
+<Meta
+  title="Pages/Easy & Sign Language/Detail Easy Language"
+  component={detailSimpleLanguage}
+  argTypes={{
+    useStickyNavigation: { control: { type: 'boolean' } },
+  }}
+/>
+
+export const Template = (args, { argTypes, viewMode }) => {
+  if (viewMode === 'docs') {
+    return {
+      props: Object.keys(argTypes),
+      components: { detailSimpleLanguage },
+      store: store,
+      template: '<detailSimpleLanguage :isEasyLanguage="true" />',
+    }
+  } else {
+    return {
+      props: Object.keys(argTypes),
+      components: { detailSimpleLanguage },
+      store: store,
+      template:
+        '<detailSimpleLanguage :isEasyLanguage="true" :useStickyNavigation="useStickyNavigation" />',
+    }
+  }
+}
+
+# Detailpage easy language example
+
+Please use full width view in order to see the sticky navigation working correctly.
+
+<a href="?path=/story/pages-easy-sign-language-detail-easy-language--example">
+  Go to the Canvas Tab
+</a>
+
+---
+
+<a
+  href="?id=pages-easy-sign-language-detail-easy-language--example"
+  target="_blank"
+>
+  Open in full width in a new tab
+</a>
+
+<Canvas>
+  <Story
+    name="Example"
+    args={{
+      useStickyNavigation: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+

@@ -8,8 +8,8 @@
         :alt="image.alt"
       />
       <ImageNotAvailable
-        v-else
         class="shopping__card-image-not-available"
+        v-else
         text="Kein Bild verfügbar"
       />
     </div>
@@ -27,8 +27,8 @@
 
     <div v-if="type === 'edit'" class="shopping__card-amount-input">
       <input
-        v-model="inputValue"
         type="number"
+        v-model="inputValue"
         class="input--outline text--base"
       />
     </div>
@@ -72,68 +72,80 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import ImageNotAvailable from './ImageNotAvailable.vue'
 import SvgIcon from './SvgIcon.vue'
-import { ref, computed, watch, onMounted, type PropType } from 'vue'
-
-const inputValue = ref(0)
-
-const props = defineProps({
-  type: {
-    type: String,
-    validator: (prop) => ['view', 'edit'].includes(prop as string),
-    default: () => 'edit',
+export default {
+  name: 'ShoppingCard',
+  components: {
+    SvgIcon,
+    ImageNotAvailable,
   },
-  image: {
-    type: Object as PropType<{ src: string; alt: string }>,
-    default: () => undefined,
+  props: {
+    type: {
+      type: String,
+      validator: (prop) => ['view', 'edit'].includes(prop),
+      default: 'edit',
+    },
+    image: {
+      type: Object, // {
+      //   src: String,
+      //   alt: String,
+      // },
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    itemPrice: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: String,
+      required: true,
+    },
+    deleteTriggered: {
+      type: Function,
+      default: () => ({}),
+    },
+    editTriggered: {
+      type: Function,
+      default: () => ({}),
+    },
+    removeLabel: {
+      type: String,
+      default: 'Remove',
+    },
+    editLabel: {
+      type: String,
+      default: 'Edit',
+    },
+    amount: {
+      type: Number,
+      default: 1,
+    },
   },
-  title: {
-    type: String,
-    required: true,
+  data() {
+    return {
+      inputValue: null,
+    }
   },
-  itemPrice: {
-    type: String,
-    required: true,
+  watch: {
+    // Keep amount synced / "computed"
+    value() {
+      this.inputValue = this.amount
+    },
   },
-  price: {
-    type: String,
-    required: true,
+  created() {
+    this.inputValue = this.amount
   },
-  deleteTriggered: {
-    type: Function as PropType<() => void>,
-    default: () => ({}),
+  computed: {
+    computedClasses() {
+      let base = ''
+      base += `shopping__card--${this.type} `
+      return base
+    },
   },
-  editTriggered: {
-    type: Function as PropType<() => void>,
-    default: () => ({}),
-  },
-  removeLabel: {
-    type: String,
-    default: () => 'Remove',
-  },
-  editLabel: {
-    type: String,
-    default: () => 'Edit',
-  },
-  amount: {
-    type: Number,
-    default: () => 1,
-  },
-})
-
-const computedClasses = computed(() => {
-  let base = ''
-  base += `shopping__card--${props.type} `
-  return base
-})
-
-watch(props, function () {
-  inputValue.value = props.amount
-})
-
-onMounted(() => {
-  inputValue.value = props.amount
-})
+}
 </script>

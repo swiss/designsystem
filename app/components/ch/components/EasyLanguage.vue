@@ -3,7 +3,7 @@
     <button
       aria-label="Einfache Sprache öffnen"
       class="btn btn--bare"
-      @click="handleClick"
+      onClick="window.open('?path=/story/pages-detail-easy-language--example')"
     >
       <SvgIcon
         aria-hidden="true"
@@ -15,12 +15,12 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import SvgIcon from './SvgIcon.vue'
-
-function handleClick() {
-  window.open(
-    '?path=/story/pages-easy-sign-language-detail-easy-language--example',
-  )
+<script>
+import SvgIcon from './SvgIcon.vue';
+export default {
+  name: 'Print',
+  components: {
+    SvgIcon,
+  },
 }
 </script>

@@ -1,5 +1,8 @@
 <template>
-  <span :id="`popover-wrapper-${id}`" class="popover-wrapper">
+  <span
+    :id="`popover-wrapper-${id}`"
+    class="popover-wrapper"
+  >
     <button
       :id="`popover-button-${id}`"
       class="popover-button"
@@ -7,17 +10,22 @@
       aria-haspopup="dialog"
       aria-expanded="false"
     >
-      <span v-if="label" class="popover-button__label">
+      <span
+        v-if="label"
+        class="popover-button__label"
+      >
         {{ label }}
       </span>
-      <SvgIcon
-        v-if="icon"
+      <SvgIcon v-if="icon"
         icon="HelpCircle"
         size="lg"
         class="popover-button__icon"
       />
     </button>
-    <span class="popover-backdrop" aria-hidden="true" />
+    <span
+      class="popover-backdrop"
+      aria-hidden="true"
+    />
     <span
       :id="`popover-${id}`"
       :class="computedClasses"
@@ -25,33 +33,38 @@
       role="tooltip"
     >
       <span class="popover__close" aria-hidden="true">
-        <SvgIcon icon="Cancel" size="lg" />
+        <SvgIcon
+          icon="Cancel"
+          size="lg"
+        />
       </span>
       <slot />
     </span>
   </span>
 </template>
 
-<script setup lang="ts">
-import SvgIcon from '../components/SvgIcon.vue'
+<script>
+import SvgIcon from '../components/SvgIcon.vue';
 import Popover from '../../../scripts/Popover.js'
-import { computed, onMounted } from 'vue'
 
-const props = defineProps({
-  id: {
-    type: String,
-    required: true,
+export default {
+  name: 'popover',
+  components: {
+    SvgIcon
   },
-  label: {
-    type: String,
-    required: false,
-    default: () => undefined,
-  },
-  color: {
-    type: String,
-    default: () => 'white',
-    validator: (prop) =>
-      [
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    label: {
+      type: String,
+      required: false,
+    },
+    color: {
+      type: String,
+      default: 'white',
+      validator: (prop) => [
         'info',
         'error',
         'warning',
@@ -66,21 +79,26 @@ const props = defineProps({
         'purple',
         'pink',
         'white',
-      ].includes(prop as string),
+      ].includes(prop)
+    },
+    icon: {
+      type: Boolean,
+      default: true
+    },
   },
-  icon: {
-    type: Boolean,
-    default: () => true,
+
+  computed: {
+    computedClasses () {
+      let base = 'popover '
+      if (this.color) base += `popover--${this.color} `
+      return base
+    },
   },
-})
 
-const computedClasses = computed(() => {
-  let base = 'popover '
-  if (props.color) base += `popover--${props.color} `
-  return base
-})
-
-onMounted(() => {
-  Popover.init(`#popover-wrapper-${props.id}`)
-})
+  mounted () {
+    Popover.init (
+      `#popover-wrapper-${this.id}`
+    )
+  }
+};
 </script>

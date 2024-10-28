@@ -1,28 +1,24 @@
 <template>
-  <div
-    id="top-bar-container"
-    class="top-bar"
-    :class="isOpen ? 'top-bar--is-open' : ''"
-  >
-    <div id="top-bar" :class="computedTopBarClass">
+  <div class="top-bar" id="top-bar-container" :class="isOpen ? 'top-bar--is-open' : ''">
+    <div :class="computedTopBarClass" id="top-bar">
       <div class="container container--flex">
         <button
-          v-if="!isEasyLanguage && !isSignLanguage"
           class="top-bar__btn"
           @click="triggerTopBar()"
+          v-if="!isEasyLanguage && !isSignLanguage"
         >
           <span>Alle Schweizer Bundesbehörden</span>
           <SvgIcon icon="ChevronDown" size="lg" class="top-bar__btn__icon" />
         </button>
         <div v-else />
         <div class="top-bar__right">
-          <Badge
+          <badge
             v-if="isEasyLanguage || isSignLanguage"
             icon="Cancel"
             :iconLeft="computedAccessibilityIcon"
             :label="computedAccessibilityBadgeLabel"
             size="base"
-            :highlightCancel="true"
+            :highlighCancel="true"
           />
           <TopBarNavigation v-if="!isEasyLanguage && !isSignLanguage" />
           <LanguageSwitcher type="negative" />
@@ -63,7 +59,7 @@
           </nav>
         </div>
 
-        <div class="separator separator--negative separator--xl" />
+        <div class="separator separator--negative separator--xl"></div>
 
         <div>
           <h3 class="top-bar__main-title">
@@ -187,27 +183,25 @@
               <div class="search search--negative search--large">
                 <div class="search__group">
                   <input
-                    id="search-input"
-                    ref="searchInput"
-                    v-model="filterString"
                     type="search"
+                    id="search-input"
                     label="Ämter filtern"
                     placeholder="Filtern"
                     autocomplete="off"
+                    v-model="filterString"
+                    ref="searchInput"
                   />
                   <Btn
                     v-if="filterString !== ''"
+                    @click.native="
+                      filterString = ''
+                      $refs.searchInput.focus()
+                    "
                     label="Clear search input"
                     icon="CancelCircle"
                     icon-pos="only"
                     variant="bare-negative"
                     size="lg"
-                    @click="
-                      () => {
-                        filterString = ''
-                        $refs.searchInput.focus()
-                      }
-                    "
                   />
                   <div v-else class="btn btn--negative btn--lg btn--icon-only">
                     <SvgIcon icon="Filter" class="icon--lg" />
@@ -349,98 +343,103 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import Badge from '../components/Badge.vue'
-import Btn from '../components/Btn.vue'
-import LanguageSwitcher from '../components/LanguageSwitcher.vue'
-import SvgIcon from '../components/SvgIcon.vue'
-import TopBarNavigation from '../navigations/TopBarNavigation.vue'
-import { ref, computed, onMounted, nextTick } from 'vue'
+<script>
+import badge from '../components/Badge'
+import Btn from '../components/Btn'
+import LanguageSwitcher from '../components/LanguageSwitcher'
+import SvgIcon from '../components/SvgIcon'
+import TopBarNavigation from '../navigations/TopBarNavigation'
 
-const filterString = ref('')
-const useStickyPlaceholder = ref(false)
-const initialTopBarOffset = ref(0)
-
-const isOpen = defineModel('isOpen', {
-  type: Boolean,
-  default: () => false,
-})
-const props = defineProps({
-  isEasyLanguage: {
-    type: Boolean,
-    default: () => false,
+export default {
+  name: 'TopBar',
+  components: {
+    TopBarNavigation,
+    SvgIcon,
+    Btn,
+    LanguageSwitcher,
+    badge,
   },
-  isSignLanguage: {
-    type: Boolean,
-    default: () => false,
+  data: function () {
+    return {
+      isSearchInputFocused: false,
+      filterString: '',
+      useStickyPlaceholder: false,
+      initialTopBarOffset: 0,
+    }
   },
-  isSticky: {
-    type: Boolean,
-    default: () => false,
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false,
+    },
+    isEasyLanguage: {
+      type: Boolean,
+      default: false,
+    },
+    isSignLanguage: {
+      type: Boolean,
+      default: false,
+    },
+    isSticky: {
+      type: Boolean,
+      default: false,
+    },
   },
-})
+  mounted() {
+    if (this.isSticky) {
+      window.addEventListener('scroll', this.handleScroll)
+      this.resizeWindow()
+      window.addEventListener('resize', this.resizeWindow)
+    }
+  },
+  methods: {
+    resizeWindow() {
+      const topBar = document.getElementById('top-bar-container')
+      this.initialTopBarOffset = topBar.offsetTop
+      this.handleScroll()
+    },
+    handleScroll() {
+      const topBar = document.getElementById('top-bar')
+      if (window.scrollY > this.initialTopBarOffset) {
+        this.useStickyPlaceholder = true
+        // Set height on placeholder to avoid jump when top bar is set to sticky
+        const stickyPlaceholder = document.getElementById('stickyTopBarPlaceholder')
+        stickyPlaceholder.style.height = `${topBar.clientHeight}px`
 
-const computedTopBarClass = computed(() => {
-  let base = `top-bar__bar`
-  if (props.isEasyLanguage) base += `--easy-language `
-  if (props.isSignLanguage) base += `--sign-language `
-  return base
-})
-
-const computedAccessibilityIcon = computed(() => {
-  if (props.isEasyLanguage) {
-    return 'EasyLanguage'
-  }
-  if (props.isSignLanguage) {
-    return 'SignLanguage'
-  }
-  return ''
-})
-
-const computedAccessibilityBadgeLabel = computed(() => {
-  if (props.isEasyLanguage) {
-    return 'Leichte Sprache schliessen'
-  }
-  if (props.isSignLanguage) {
-    return 'Gebärdensprache schliessen'
-  }
-  return ''
-})
-
-const resizeWindow = function () {
-  const topBar = document.getElementById('top-bar-container') as HTMLElement
-  initialTopBarOffset.value = topBar.offsetTop
-  handleScroll()
+        topBar.classList.add('sticky-top-bar')
+      } else {
+        this.useStickyPlaceholder = false
+        topBar.classList.remove('sticky-top-bar')
+      }
+    },
+    triggerTopBar() {
+      this.isOpen = !this.isOpen
+      this.emitter.emit('top-bar-drawer-change')
+    },
+  },
+  computed: {
+    computedTopBarClass() {
+      let base = `top-bar__bar`
+      if (this.isEasyLanguage) base += `--easy-language `
+      if (this.isSignLanguage) base += `--sign-language `
+      return base
+    },
+    computedAccessibilityIcon() {
+      if (this.isEasyLanguage) {
+        return 'EasyLanguage'
+      }
+      if (this.isSignLanguage) {
+        return 'SignLanguage'
+      }
+    },
+    computedAccessibilityBadgeLabel() {
+      if (this.isEasyLanguage) {
+        return 'Leichte Sprache schliessen'
+      }
+      if (this.isSignLanguage) {
+        return 'Gebärdensprache schliessen'
+      }
+    },
+  },
 }
-
-const handleScroll = async function () {
-  const topBar = document.getElementById('top-bar') as HTMLElement
-  if (window.scrollY > initialTopBarOffset.value) {
-    useStickyPlaceholder.value = true
-    await nextTick()
-    // Set height on placeholder to avoid jump when top bar is set to sticky
-    const stickyPlaceholder = document.getElementById(
-      'stickyTopBarPlaceholder',
-    ) as HTMLElement
-    stickyPlaceholder.style.height = `${topBar.clientHeight}px`
-
-    topBar.classList.add('sticky-top-bar')
-  } else {
-    useStickyPlaceholder.value = false
-    topBar.classList.remove('sticky-top-bar')
-  }
-}
-
-const triggerTopBar = function () {
-  isOpen.value = !isOpen.value
-  window.postMessage({ trigger: 'top-bar-drawer-change' })
-}
-
-onMounted(() => {
-  if (props.isSticky) {
-    window.addEventListener('scroll', handleScroll)
-    resizeWindow()
-    window.addEventListener('resize', resizeWindow)
-  }
-})
 </script>

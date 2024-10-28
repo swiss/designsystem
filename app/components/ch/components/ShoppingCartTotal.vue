@@ -2,67 +2,68 @@
   <div>
     <div class="shopping__cart-total-container">
       <h3>{{ title }}</h3>
-      <p class="shopping__cart-total">
-        {{ total }}
-      </p>
+      <p class="shopping__cart-total">{{ total }}</p>
     </div>
     <p class="shopping__cart-total-description">
       {{ description }}
     </p>
     <div class="shopping__cart__action-container">
-      <Btn
+      <btn
         class="shopping__cart-button"
         variant="outline-negative"
         size="base"
         :label="nextStepLabel"
         :ariaLabel="nextStepAriaLabel"
+        @emitClick="nextStep"
         :fullWidth="screenSize < 1024"
-        @emit-click="nextStep"
       />
     </div>
   </div>
 </template>
-<script setup lang="ts">
-import Btn from './Btn.vue'
-import { ref, onMounted } from 'vue'
-
-const screenSize = ref(0)
-
-defineProps({
-  title: {
-    type: String,
-    default: () => 'Total:',
+<script>
+import btn from './Btn.vue'
+export default {
+  name: 'ShoppingCartTotal',
+  components: {
+    btn,
   },
-  total: {
-    type: String,
-    required: true,
+  props: {
+    title: {
+      type: String,
+      default: 'Total:',
+    },
+    total: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+    },
+    nextStepLabel: {
+      type: String,
+      default: 'Next step',
+    },
+    nextStepAriaLabel: {
+      type: String,
+      default: 'Go to next step',
+    },
   },
-  description: {
-    type: String,
-    default: () => undefined,
+  data() {
+    return {
+      screenSize: 0,
+    }
   },
-  nextStepLabel: {
-    type: String,
-    default: () => 'Next step',
+  mounted() {
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
   },
-  nextStepAriaLabel: {
-    type: String,
-    default: () => 'Go to next step',
+  methods: {
+    nextStep() {
+      this.$emit('nextStep')
+    },
+    resizeWindow() {
+      this.screenSize = document.body.clientWidth
+    },
   },
-})
-
-const emit = defineEmits(['nextStep'])
-
-const nextStep = function () {
-  emit('nextStep')
 }
-
-const resizeWindow = function () {
-  screenSize.value = document.body.clientWidth
-}
-
-onMounted(() => {
-  resizeWindow()
-  window.addEventListener('resize', resizeWindow)
-})
 </script>

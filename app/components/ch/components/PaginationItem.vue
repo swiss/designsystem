@@ -1,46 +1,55 @@
 <template>
-  <button
-    type="button"
-    :class="computedClasses"
-    :aria-label="label"
-    :disabled="disabled"
-  >
-    <SvgIcon v-if="icon" :icon="icon" class="btn__icon" />
-    <span v-if="label" class="btn__text">
+  <button type="button" :class="computedClasses" :aria-label="label" :disabled="disabled">
+    <SvgIcon
+      v-if="this.icon"
+      :icon="this.icon"
+      class="btn__icon"
+    />
+    <span
+      v-if="this.label"
+      class="btn__text"
+    >
       {{ label }}
     </span>
   </button>
 </template>
 
-<script setup lang="ts">
-import SvgIcon from './SvgIcon.vue'
-import { computed } from 'vue'
+<script>
 
-const props = defineProps({
-  type: {
-    type: String,
-    default: () => '',
-    validator: (prop) =>
-      ['outline', 'outline-negative'].includes(prop as string),
-  },
-  icon: {
-    type: String,
-    default: () => '',
-  },
-  label: {
-    type: String,
-    default: () => '',
-  },
-  disabled: {
-    type: Boolean,
-    default: () => false,
-  },
-})
+import SvgIcon from "~/components/ch/components/SvgIcon";
 
-const computedClasses = computed(() => {
-  let base = 'btn '
-  if (props.type) base += `btn--${props.type} `
-  if (props.icon) base += `btn--icon-only `
-  return base
-})
+export default {
+  name: 'pagination',
+  components: {
+    SvgIcon
+  },
+  props: {
+    type: {
+      type: String,
+      validator: (prop) => [
+        'outline',
+        'outline-negative',
+      ].includes(prop)
+    },
+    icon: {
+      type: String,
+    },
+    label: {
+      type: String,
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  computed: {
+    computedClasses () {
+      let base = 'btn '
+      if (this.type) base += `btn--${this.type} `
+      if (this.icon) base += `btn--icon-only `
+      return base
+    }
+  }
+}
 </script>

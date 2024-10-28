@@ -1,41 +1,55 @@
 <template>
-  <div :class="classes">
-    {{ label }}
-  </div>
+<div :class="classes">
+  {{ label }}
+</div>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue'
+<script>
 
-const props = defineProps({
-  label: {
-    type: String,
-    required: true,
+export default {
+  name: 'fonts',
+  props: {
+    label: {
+      type: String,
+      required: true,
+    },
+    textStyle: {
+      type: String,
+      default: 'regular',
+      validator: (prop) => [
+        'regular',
+        'italic',
+        'bold',
+        'bold-italic',
+      ].includes(prop)
+    },
+    size: {
+      type: String,
+      default: 'base',
+      validator: (prop) => [
+        '3xl',
+        '2xl',
+        'xl',
+        'lg',
+        'base',
+        'sm',
+        'xs'
+      ].includes(prop)
+    },
   },
-  textStyle: {
-    type: String,
-    default: () => 'regular',
-    validator: (prop) =>
-      ['regular', 'italic', 'bold', 'bold-italic'].includes(prop as string),
-  },
-  size: {
-    type: String,
-    default: () => 'base',
-    validator: (prop) =>
-      ['3xl', '2xl', 'xl', 'lg', 'base', 'sm', 'xs'].includes(prop as string),
-  },
-})
-
-const classes = computed(() => {
-  let base = ''
-  if (props.textStyle) base += `font--${props.textStyle} `
-  if (props.size) {
-    if (props.size.startsWith('h')) {
-      base += `${props.size} `
-    } else {
-      base += `text--${props.size} `
+  computed: {
+    classes () {
+      let base = ''
+      if (this.textStyle) base += `font--${this.textStyle} `
+      if (this.size) {
+        if(this.size.startsWith('h')) {
+          base += `${this.size} `
+        } else {
+          base += `text--${this.size} `
+        }
+      }
+      return base
     }
   }
-  return base
-})
+};
 </script>

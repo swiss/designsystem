@@ -1,10 +1,15 @@
 <template>
-  <div>
-    <h2>Links!</h2>
-    <p>Content</p>
-  </div>
+<div>
+  <h2>Links!</h2>
+  <p>Content </p>
+</div>
 </template>
 
-<script setup lang="ts">
-defineProps({})
+<script>
+
+export default {
+  name: 'Links',
+  props: {},
+  computed: {}
+};
 </script>

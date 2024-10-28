@@ -1,7 +1,7 @@
 <template>
-  <ClientOnly>
+  <client-only>
     <div>
-      <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
+      <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
       <header id="main-header">
         <a href="#main-content" class="skip-to-content">Skip to main content</a>
         <TopBar :isOpen="false" />
@@ -15,7 +15,7 @@
       </header>
       <main id="main-content">
         <Hero type="main-image">
-          <template #image>
+          <template v-slot:image>
             <picture>
               <source
                 srcset="https://picsum.photos/1200/900"
@@ -24,16 +24,16 @@
               <img src="https://picsum.photos/900/600" alt="cat" />
             </picture>
           </template>
-          <template #title>
+          <template v-slot:title>
             Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und
             Sport
           </template>
-          <template #description>
+          <template v-slot:description>
             Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz
             und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen
             Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd.
           </template>
-          <template #cta>
+          <template v-slot:cta>
             <Btn
               to="#"
               variant="outline"
@@ -54,10 +54,10 @@
           <div class="container">
             <div class="grid grid--responsive-cols-4 gap--responsive">
               <Card type="default">
-                <template #title>
+                <template v-slot:title>
                   <h3>Card example</h3>
                 </template>
-                <template #description>
+                <template v-slot:description>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -66,10 +66,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template #title>
+                <template v-slot:title>
                   <h3>Card example</h3>
                 </template>
-                <template #description>
+                <template v-slot:description>
                   <p>
                     Sed onsetetur sadipscing elitr ipsum dolor sit amet,
                     consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
@@ -78,10 +78,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template #title>
+                <template v-slot:title>
                   <h3>Card example</h3>
                 </template>
-                <template #description>
+                <template v-slot:description>
                   <p>
                     Consetetur sadipscing elitr sadipscing elitr, sed Lorem
                     ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem
@@ -91,10 +91,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template #title>
+                <template v-slot:title>
                   <h3>Card example</h3>
                 </template>
-                <template #description>
+                <template v-slot:description>
                   <p>
                     Vonsetetur sadipscing elitr, onsetetur sadipscing elitr sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -181,10 +181,10 @@
                   <!--template v-slot:image>
                   <img src="https://picsum.photos/775/350" alt="cat">
                 </template-->
-                  <template #title>
+                  <template v-slot:title>
                     <h3>Side notes, can be sticky</h3>
                   </template>
-                  <template #description>
+                  <template v-slot:description>
                     <p>
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -193,7 +193,7 @@
                       consetetur sadipscing elitr, sed
                     </p>
                   </template>
-                  <template #footerAction>
+                  <template v-slot:footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -346,10 +346,10 @@
           <div class="container">
             <div class="grid grid--responsive-cols-3 gap--responsive">
               <Card type="default">
-                <template #title>
+                <template v-slot:title>
                   <h3>Card example</h3>
                 </template>
-                <template #description>
+                <template v-slot:description>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -359,10 +359,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template #title>
+                <template v-slot:title>
                   <h3>Card example</h3>
                 </template>
-                <template #description>
+                <template v-slot:description>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -372,10 +372,10 @@
                 </template>
               </Card>
               <Card type="default">
-                <template #title>
+                <template v-slot:title>
                   <h3>Card example</h3>
                 </template>
-                <template #description>
+                <template v-slot:description>
                   <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -443,22 +443,23 @@
           </div>
         </section>
       </main>
-      <footer id="main-footer" class="footer">
+      <footer class="footer" id="main-footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>
     </div>
-  </ClientOnly>
+  </client-only>
 </template>
 
-<script setup lang="ts">
-import Btn from '../components/ch/components/Btn.vue'
-import Card from '../components/ch/components/Card.vue'
-import Newsletter from '../components/ch/components/Newsletter.vue'
-import ShareBar from '../components/ch/demo/ShareBar.vue'
-import TableSortable from '../components/ch/demo/TableSortable.vue'
-import Hero from '../components/ch/sections/Hero.vue'
-import QuoteSection from '../components/ch/sections/QuoteSection.vue'
+<script>
+import Btn from '~/components/ch/components/Btn'
+import Card from '~/components/ch/components/Card'
+import Newsletter from '~/components/ch/components/Newsletter.vue'
+import SvgIcon from '~/components/ch/components/SvgIcon'
+import ShareBar from '~/components/ch/demo/ShareBar.vue'
+import TableSortable from '~/components/ch/demo/TableSortable.vue'
+import Hero from '~/components/ch/sections/Hero'
+import QuoteSection from '~/components/ch/sections/QuoteSection'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -467,34 +468,59 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-import { ref, computed, onMounted, nextTick } from 'vue'
-import { useLayoutStore } from '../store/layout'
 
-const layoutStore = useLayoutStore()
+export default {
+  name: 'detailPageComplex',
+  components: {
+    AlterBodyClasses,
+    TopBar,
+    TopHeader,
+    Breadcrumb,
+    DesktopMenu,
+    MobileMenu,
+    FooterInformation,
+    FooterNavigation,
+    Card,
+    Btn,
+    SvgIcon,
+    Hero,
+    QuoteSection,
+    Newsletter,
+    ShareBar,
+    TableSortable,
+  },
+  data() {
+    return {
+      screenHeight: 0,
+      asideContainerHeight: 0,
+    }
+  },
+  async mounted() {
+    await this.$nextTick()
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
+  },
+  methods: {
+    getMobileMenuIsOpen() {
+      return this.$store.getters['layout/getMobileMenuIsOpen']
+    },
+    resizeWindow() {
+      this.screenHeight = document.body.clientHeight
 
-const screenHeight = ref(0)
-const asideContainerHeight = ref(0)
-
-const computedAsideContainerClass = computed(() => {
-  if (screenHeight.value > asideContainerHeight.value) {
-    return 'sticky sticky--top'
-  } else {
-    return ''
-  }
-})
-
-const resizeWindow = function () {
-  screenHeight.value = document.body.clientHeight
-
-  const asideContainer = document.getElementById('aside-content')
-  if (asideContainer) {
-    asideContainerHeight.value = asideContainer.clientHeight
-  }
+      const asideContainer = document.getElementById('aside-content')
+      if (asideContainer) {
+        this.asideContainerHeight = asideContainer.clientHeight
+      }
+    },
+  },
+  computed: {
+    computedAsideContainerClass() {
+      if (this.screenHeight > this.asideContainerHeight) {
+        return 'sticky sticky--top'
+      } else {
+        return ''
+      }
+    },
+  },
 }
-
-onMounted(async () => {
-  await nextTick()
-  resizeWindow()
-  window.addEventListener('resize', resizeWindow)
-})
 </script>

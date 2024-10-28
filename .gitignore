@@ -1,6 +1,8 @@
 node_modules
 node_modules/.bin/acorn
 dist/*
+app/storybook-static/*
+app/.nuxt-storybook/*
 
 .idea/
 .DS_Store

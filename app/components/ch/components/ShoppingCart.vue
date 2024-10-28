@@ -1,30 +1,26 @@
 <template>
   <div class="container container--grid">
-    <div v-if="!showConfirmation" class="my-16 container__center--md">
-      <h1 class="h1 shopping__cart-title">
-        {{ cartTitle }}
-      </h1>
+    <div class="container__center--md my-16" v-if="!showConfirmation">
+      <h1 class="h1 shopping__cart-title">{{ cartTitle }}</h1>
       <ul class="accordion">
         <li class="accordion__item">
           <button
-            :id="getUniqueId('shopping-cart-drawer-overview-button')"
             class="accordion__button"
             :class="{ active: activeAccordionIndex === 1 }"
             @click="handleAccordionClick(1)"
+            :id="getUniqueId('shopping-cart-drawer-overview-button')"
           >
             <StepIndicator
               :step="1"
               :isConfirmed="step1Confirmed"
               :isActive="activeStepIndex === 1"
             />
-            <h2 class="accordion__title">
-              {{ cartOverviewTitle }}
-            </h2>
+            <h2 class="accordion__title">{{ cartOverviewTitle }}</h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
-            :id="getUniqueId('shopping-cart-drawer-overview')"
             class="accordion__drawer"
+            :id="getUniqueId('shopping-cart-drawer-overview')"
             :class="{ active: activeAccordionIndex === 1 }"
           >
             <div class="shopping__cart-accordion-content">
@@ -108,38 +104,36 @@
                   description="Ermässigungen werden gemäss Gebührenverordnung für statistische Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im nächsten Schritt unter „Nachricht“ angebracht werden."
                   nextStepLabel="Nächster Schritt"
                   nextStepAriaLabel="Nächster Schritt"
-                  @next-step="overviewNextStepClicked"
+                  @nextStep="overviewNextStepClicked"
                 />
               </template>
-              <template v-else>
-                <p class="shopping__cart-empty-text">
+              <template v-else
+                ><p class="shopping__cart-empty-text">
                   Es befinden sich keine Produkte im Warenkorb
-                </p>
-              </template>
+                </p></template
+              >
             </div>
           </div>
         </li>
 
         <li class="accordion__item">
           <button
-            :id="getUniqueId('shopping-cart-drawer-address-button')"
             class="accordion__button"
             :class="{ active: activeAccordionIndex === 2 }"
             @click="handleAccordionClick(2)"
+            :id="getUniqueId('shopping-cart-drawer-address-button')"
           >
             <StepIndicator
               :step="2"
               :isConfirmed="step2Confirmed"
               :isActive="activeStepIndex === 2"
             />
-            <h2 class="accordion__title">
-              {{ cartAddressTitle }}
-            </h2>
+            <h2 class="accordion__title">{{ cartAddressTitle }}</h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
-            :id="getUniqueId('shopping-cart-drawer-address')"
             class="accordion__drawer"
+            :id="getUniqueId('shopping-cart-drawer-address')"
             :class="{ active: activeAccordionIndex === 2 }"
           >
             <div class="shopping__cart-accordion-content">
@@ -193,13 +187,12 @@
                       label="Name"
                       placeholder="Name"
                       messageType="error"
-                      :value="formInputFields.invoice.lastName.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue(
                             'invoice',
                             'lastName',
-                            (e.target as HTMLInputElement).value,
+                            e.target.value
                           )
                       "
                       :message="
@@ -214,13 +207,12 @@
                       label="Vorname"
                       placeholder="Vorname"
                       messageType="error"
-                      :value="formInputFields.invoice.firstName.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue(
                             'invoice',
                             'firstName',
-                            (e.target as HTMLInputElement).value,
+                            e.target.value
                           )
                       "
                       :message="
@@ -239,14 +231,9 @@
                       label="Organisation"
                       placeholder="Organisation"
                       messageType="error"
-                      :value="formInputFields.invoice.org.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue(
-                            'invoice',
-                            'org',
-                            (e.target as HTMLInputElement).value,
-                          )
+                          setFormFieldValue('invoice', 'org', e.target.value)
                       "
                       :message="
                         formInputFields.invoice.org.touched &&
@@ -261,14 +248,9 @@
                       label="Strasse / Nr."
                       placeholder="Strasse & Hausnummer"
                       messageType="error"
-                      :value="formInputFields.invoice.street.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue(
-                            'invoice',
-                            'street',
-                            (e.target as HTMLInputElement).value,
-                          )
+                          setFormFieldValue('invoice', 'street', e.target.value)
                       "
                       :message="
                         formInputFields.invoice.street.touched &&
@@ -285,13 +267,12 @@
                       label="Postfach"
                       placeholder="Postfach"
                       messageType="error"
-                      :value="formInputFields.invoice.postOffice.value"
                       :onInput="
                         (e) =>
                           setFormFieldValue(
                             'invoice',
                             'postOffice',
-                            (e.target as HTMLInputElement).value,
+                            e.target.value
                           )
                       "
                       :message="
@@ -307,14 +288,9 @@
                       label="Postleitzahl"
                       placeholder="Postleitzahl"
                       messageType="error"
-                      :value="formInputFields.invoice.zip.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue(
-                            'invoice',
-                            'zip',
-                            (e.target as HTMLInputElement).value,
-                          )
+                          setFormFieldValue('invoice', 'zip', e.target.value)
                       "
                       :message="
                         formInputFields.invoice.zip.touched &&
@@ -331,14 +307,9 @@
                       label="Ort"
                       placeholder="Ort"
                       messageType="error"
-                      :value="formInputFields.invoice.city.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue(
-                            'invoice',
-                            'city',
-                            (e.target as HTMLInputElement).value,
-                          )
+                          setFormFieldValue('invoice', 'city', e.target.value)
                       "
                       :message="
                         formInputFields.invoice.city.touched &&
@@ -362,7 +333,12 @@
                           : ''
                       "
                       :onSelect="
-                        (e) => setFormFieldValue('invoice', 'country', e)
+                        (e) =>
+                          setFormFieldValue(
+                            'invoice',
+                            'country',
+                            e.target.value
+                          )
                       "
                     >
                       <option selected disabled>Land auswählen</option>
@@ -380,14 +356,9 @@
                       label="Telefon"
                       placeholder="+41 (0)58 555 55 44"
                       messageType="error"
-                      :value="formInputFields.invoice.phone.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue(
-                            'invoice',
-                            'phone',
-                            (e.target as HTMLInputElement).value,
-                          )
+                          setFormFieldValue('invoice', 'phone', e.target.value)
                       "
                       :message="
                         formInputFields.invoice.phone.touched &&
@@ -402,14 +373,9 @@
                       label="E-Mail"
                       placeholder="E-Mail Addresse"
                       messageType="error"
-                      :value="formInputFields.invoice.email.value"
                       :onInput="
                         (e) =>
-                          setFormFieldValue(
-                            'invoice',
-                            'email',
-                            (e.target as HTMLInputElement).value,
-                          )
+                          setFormFieldValue('invoice', 'email', e.target.value)
                       "
                       :message="
                         formInputFields.invoice.email.touched &&
@@ -438,7 +404,7 @@
                       :checked="!showDeliveryAddress"
                       :onChange="
                         (e) => {
-                          ;(e.target as HTMLInputElement).checked
+                          e.target.checked
                             ? (showDeliveryAddress = false)
                             : (showDeliveryAddress = true)
                         }
@@ -458,13 +424,12 @@
                         label="Name"
                         placeholder="Name"
                         messageType="error"
-                        :value="formInputFields.delivery.lastName.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'lastName',
-                              (e.target as HTMLInputElement).value,
+                              e.target.value
                             )
                         "
                         :message="
@@ -479,13 +444,12 @@
                         label="Vorname"
                         placeholder="Vorname"
                         messageType="error"
-                        :value="formInputFields.delivery.firstName.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'firstName',
-                              (e.target as HTMLInputElement).value,
+                              e.target.value
                             )
                         "
                         :message="
@@ -503,14 +467,9 @@
                         label="Organisation"
                         placeholder="Organisation"
                         messageType="error"
-                        :value="formInputFields.delivery.org.value"
                         :onInput="
                           (e) =>
-                            setFormFieldValue(
-                              'delivery',
-                              'org',
-                              (e.target as HTMLInputElement).value,
-                            )
+                            setFormFieldValue('delivery', 'org', e.target.value)
                         "
                         :message="
                           formInputFields.delivery.org.touched &&
@@ -525,13 +484,12 @@
                         label="Strasse / Nr."
                         placeholder="Strasse  & Hausnummer"
                         messageType="error"
-                        :value="formInputFields.delivery.street.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'street',
-                              (e.target as HTMLInputElement).value,
+                              e.target.value
                             )
                         "
                         :message="
@@ -551,13 +509,12 @@
                         label="Postfach"
                         placeholder="Postfach"
                         messageType="error"
-                        :value="formInputFields.delivery.postOffice.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'postOffice',
-                              (e.target as HTMLInputElement).value,
+                              e.target.value
                             )
                         "
                         :message="
@@ -573,14 +530,9 @@
                         label="Postleitzahl"
                         placeholder="Postleitzahl"
                         messageType="error"
-                        :value="formInputFields.delivery.zip.value"
                         :onInput="
                           (e) =>
-                            setFormFieldValue(
-                              'delivery',
-                              'zip',
-                              (e.target as HTMLInputElement).value,
-                            )
+                            setFormFieldValue('delivery', 'zip', e.target.value)
                         "
                         :message="
                           formInputFields.delivery.zip.touched &&
@@ -597,13 +549,12 @@
                         label="Ort"
                         placeholder="Ort"
                         messageType="error"
-                        :value="formInputFields.delivery.city.value"
                         :onInput="
                           (e) =>
                             setFormFieldValue(
                               'delivery',
                               'city',
-                              (e.target as HTMLInputElement).value,
+                              e.target.value
                             )
                         "
                         :message="
@@ -628,7 +579,12 @@
                             : ''
                         "
                         :onSelect="
-                          (e) => setFormFieldValue('delivery', 'country', e)
+                          (e) =>
+                            setFormFieldValue(
+                              'delivery',
+                              'country',
+                              e.target.value
+                            )
                         "
                       >
                         <option selected disabled>Land auswählen</option>
@@ -643,14 +599,14 @@
                 </div>
 
                 <div class="shopping__cart__action-container">
-                  <Btn
+                  <btn
                     class="shopping__cart-button"
                     variant="outline-negative"
                     size="base"
                     label="Nächster Schritt"
                     ariaLabel="Nächster Schritt"
+                    @emitClick="checkFormAndSetNextActiveStep"
                     :fullWidth="isMobile"
-                    @emit-click="checkFormAndSetNextActiveStep"
                   />
                 </div>
               </Form>
@@ -660,20 +616,18 @@
 
         <li class="accordion__item">
           <button
-            :id="getUniqueId('shopping-cart-drawer-checkout-button')"
             class="accordion__button"
             :class="{ active: activeAccordionIndex === 3 }"
             @click="handleAccordionClick(3)"
+            :id="getUniqueId('shopping-cart-drawer-checkout-button')"
           >
             <StepIndicator :step="3" :isActive="activeStepIndex === 3" />
-            <h2 class="accordion__title">
-              {{ cartCheckoutTitle }}
-            </h2>
+            <h2 class="accordion__title">{{ cartCheckoutTitle }}</h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
-            :id="getUniqueId('shopping-cart-drawer-checkout')"
             class="accordion__drawer"
+            :id="getUniqueId('shopping-cart-drawer-checkout')"
             :class="{ active: activeAccordionIndex === 3 }"
           >
             <div class="shopping__cart-accordion-content">
@@ -749,7 +703,7 @@
                     orderButtonText="Jetzt bestellen"
                     orderButtonAriaLabel="Jetzt bestellen"
                     agreementText=" Mit Ihrer Bestellung erklären Sie sich mit unseren <a class='link' href='https://www.google.ch'>Datenschutzbestimmungen und AGB </a> einverstanden"
-                    @next-step="triggerConfirmation()"
+                    @nextStep="triggerConfirmation()"
                   />
                 </div>
               </div>
@@ -767,12 +721,12 @@
           class="shopping__cart-confirmation-badge"
           icon="ConfirmationBadge"
           size="2xl"
-        />
+        ></SvgIcon>
         <SvgIcon
           class="shopping__cart-confirmation-checkmark"
           icon="CheckmarkBold"
           size="xl"
-        />
+        ></SvgIcon>
       </div>
       <h1 class="h1 shopping__cart-confirmation-title">
         Ihre Bestellung ist bei uns eingetroffen
@@ -783,7 +737,7 @@
           Wir werden dir eine E-Mail mit der Bestellbestätigung zukommen lassen.
         </p>
       </div>
-      <Btn
+      <btn
         class="shopping__cart-confirmation-action"
         variant="outline-negative"
         size="base"
@@ -795,8 +749,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import Btn from '../components/Btn.vue'
+<script>
+import btn from '../components/Btn.vue'
 import ShoppingCard from '../components/ShoppingCard.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import Checkbox from './Checkbox.vue'
@@ -806,343 +760,371 @@ import Form from './Form.vue'
 import Input from './Input.vue'
 import Notification from './Notification.vue'
 import Radio from './Radio.vue'
-import Select from './Select.vue'
+import Select from './Select'
 import ShoppingCartTotal from './ShoppingCartTotal.vue'
 import ShoppingCartTotalSummary from './ShoppingCartTotalSummary.vue'
 import StepIndicator from './StepIndicator.vue'
-import Textarea from './Textarea.vue'
-import { reactive, ref, computed, watch, onMounted, nextTick } from 'vue'
-import { v4 as uuidv4 } from 'uuid'
+import Textarea from './Textarea'
+const { v4: uuidv4 } = require('uuid')
 
-const accordionIdMap = {
-  1: 'shopping-cart-drawer-overview-button',
-  2: 'shopping-cart-drawer-address-button',
-  3: 'shopping-cart-drawer-checkout-button',
-}
-const activeAccordionIndex = ref(1 as keyof typeof accordionIdMap | null)
-const activeStepIndex = ref(1)
-const step1Confirmed = ref(false)
-const step2Confirmed = ref(false)
-const card1Shown = ref(true)
-const card2Shown = ref(true)
-const card3Shown = ref(true)
-const switchTimeOut = ref(null as ReturnType<typeof setTimeout> | null)
-const shoppingCartId = ref(uuidv4())
-const showDeliveryAddress = ref(false)
-const showConfirmation = ref(false)
-const screenSize = ref(0)
-const formInputFields = reactive({
-  invoice: {
-    gender: {
-      touched: false,
-      valid: false,
-      mandatory: true,
+export default {
+  name: 'ShoppingCart',
+  components: {
+    SvgIcon,
+    btn,
+    ShoppingCard,
+    StepIndicator,
+    Notification,
+    Form,
+    Fieldset,
+    Radio,
+    Input,
+    Textarea,
+    Checkbox,
+    Contact,
+    ShoppingCartTotal,
+    ShoppingCartTotalSummary,
+    Select,
+  },
+  props: {
+    cartTitle: {
+      type: String,
+      default: 'Shopping cart',
     },
-    firstName: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
+    cartOverviewTitle: {
+      type: String,
+      default: 'Shopping cart',
     },
-    lastName: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
+    cartAddressTitle: {
+      type: String,
+      default: 'Billing address & delivery address',
     },
-    org: {
-      value: '',
-      touched: false,
-      valid: true,
-      mandatory: false,
-    },
-    street: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    zip: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    postOffice: {
-      value: '',
-      touched: false,
-      valid: true,
-      mandatory: false,
-    },
-    city: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    country: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    email: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    phone: {
-      value: '',
-      touched: false,
-      valid: true,
-      mandatory: false,
+    cartCheckoutTitle: {
+      type: String,
+      default: 'Submit order',
     },
   },
-  delivery: {
-    firstName: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    lastName: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    org: {
-      value: '',
-      touched: false,
-      valid: true,
-      mandatory: false,
-    },
-    street: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    zip: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    postOffice: {
-      value: '',
-      touched: false,
-      valid: true,
-      mandatory: false,
-    },
-    city: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-    country: {
-      value: '',
-      touched: false,
-      valid: false,
-      mandatory: true,
-    },
-  },
-} as Record<
-  string,
-  Record<
-    string,
-    { value?: string; touched: boolean; valid: boolean; mandatory: boolean }
-  >
->)
-
-defineProps({
-  cartTitle: {
-    type: String,
-    default: () => 'Shopping cart',
-  },
-  cartOverviewTitle: {
-    type: String,
-    default: () => 'Shopping cart',
-  },
-  cartAddressTitle: {
-    type: String,
-    default: () => 'Billing address & delivery address',
-  },
-  cartCheckoutTitle: {
-    type: String,
-    default: () => 'Submit order',
-  },
-})
-
-const isMobile = computed(() => {
-  return screenSize.value < 1024
-})
-
-const canContinue = computed(() => {
-  const keysToValidate = ['invoice']
-  if (showDeliveryAddress.value) {
-    keysToValidate.push('delivery')
-  }
-
-  return keysToValidate.every((key) => {
-    const fields = Object.keys(formInputFields[key])
-    return fields.every((field) => {
-      return formInputFields[key][field]['valid']
-    })
-  })
-})
-
-const handleAccordionClick = function (index: number) {
-  if (!card1Shown.value && !card2Shown.value && !card3Shown.value) {
-    return
-  }
-  if (activeAccordionIndex.value === index) {
-    activeAccordionIndex.value = null
-  } else if (index === 1 || index === 2 || (index === 3 && canContinue)) {
-    activeAccordionIndex.value = index
-    activeStepIndex.value = index
-    if (index === 2) {
-      step1Confirmed.value = true
+  data() {
+    return {
+      activeAccordionIndex: 1,
+      activeStepIndex: 1,
+      step1Confirmed: false,
+      step2Confirmed: false,
+      card1Shown: true,
+      card2Shown: true,
+      card3Shown: true,
+      contentHeight: 0,
+      switchTimeOut: null,
+      shoppingCartId: uuidv4(),
+      showDeliveryAddress: false,
+      showConfirmation: false,
+      screenSize: 0,
+      formInputFields: {
+        invoice: {
+          gender: {
+            value: null,
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          firstName: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          lastName: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          org: {
+            value: '',
+            touched: false,
+            valid: true,
+            mandatory: false,
+          },
+          street: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          zip: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          postOffice: {
+            value: '',
+            touched: false,
+            valid: true,
+            mandatory: false,
+          },
+          city: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          country: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          email: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          phone: {
+            value: '',
+            touched: false,
+            valid: true,
+            mandatory: false,
+          },
+        },
+        delivery: {
+          firstName: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          lastName: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          org: {
+            value: '',
+            touched: false,
+            valid: true,
+            mandatory: false,
+          },
+          street: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          zip: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          postOffice: {
+            value: '',
+            touched: false,
+            valid: true,
+            mandatory: false,
+          },
+          city: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+          country: {
+            value: '',
+            touched: false,
+            valid: false,
+            mandatory: true,
+          },
+        },
+      },
     }
-    if (index === 3) {
-      step2Confirmed.value = true
-    }
-  } else if (index === 3 && !canContinue.value) {
-    step2Confirmed.value = false
-  }
-}
-
-const overviewNextStepClicked = function () {
-  activeAccordionIndex.value = 2
-  activeStepIndex.value = 2
-  step1Confirmed.value = true
-}
-
-const triggerConfirmation = async function () {
-  showConfirmation.value = true
-  await nextTick()
-  const scrollTarget = document.getElementById('main-header')
-
-  if (scrollTarget) {
-    if (switchTimeOut.value) {
-      clearTimeout(switchTimeOut.value)
-    }
-    switchTimeOut.value = setTimeout(() => {
-      scrollTarget.scrollIntoView({ behavior: 'smooth' })
-    }, 200)
-  }
-}
-
-const onChange = function (e: Event) {
-  setFormFieldValue('invoice', 'gender', (e.target as HTMLInputElement).value)
-}
-
-const editTriggered = function () {
-  activeAccordionIndex.value = 1
-  activeStepIndex.value = 1
-}
-
-const getUniqueId = function (text = '') {
-  return `${text}-${shoppingCartId.value}`
-}
-
-const resizeWindow = function () {
-  screenSize.value = document.body.clientWidth
-}
-
-const scrollContentIntoView = function (index: keyof typeof accordionIdMap) {
-  const scrollTarget = document.getElementById(
-    getUniqueId(accordionIdMap[index]),
-  )
-
-  if (scrollTarget) {
-    if (switchTimeOut.value) {
-      clearTimeout(switchTimeOut.value)
-    }
-    switchTimeOut.value = setTimeout(() => {
-      scrollTarget.scrollIntoView({ behavior: 'smooth' })
-    }, 200)
-  }
-}
-
-const setFormFieldValue = function (
-  type: 'invoice' | 'delivery',
-  field: string,
-  value: string,
-) {
-  formInputFields[type][field]['value'] = value
-  formInputFields[type][field]['touched'] = true
-
-  if (formInputFields[type][field]['mandatory'] === false) {
-    formInputFields[type][field]['valid'] = true
-  } else {
-    if (
-      formInputFields[type][field]['value'] &&
-      formInputFields[type][field]['value'].trim() !== ''
-    ) {
-      formInputFields[type][field]['valid'] = true
-    } else {
-      formInputFields[type][field]['valid'] = false
-    }
-  }
-}
-
-const validateFields = function () {
-  const keys = Object.keys(formInputFields)
-  const keysToValidate = ['invoice']
-  if (showDeliveryAddress.value) {
-    keysToValidate.push('delivery')
-  }
-  keys.forEach((key) => {
-    const fields = Object.keys(formInputFields[key])
-    if (keysToValidate.includes(key)) {
-      fields.forEach((field) => {
-        if (formInputFields[key][field]['mandatory'] === false) {
-          formInputFields[key][field]['valid'] = true
-        } else {
-          if (
-            formInputFields[key][field]['value'] &&
-            formInputFields[key][field]['value'].trim() !== ''
-          ) {
-            formInputFields[key][field]['valid'] = true
-          } else {
-            formInputFields[key][field]['valid'] = false
-          }
+  },
+  mounted() {
+    this.resizeWindow()
+    window.addEventListener('resize', this.resizeWindow)
+  },
+  watch: {
+    activeAccordionIndex() {
+      this.scrollContentIntoView(this.activeAccordionIndex)
+    },
+  },
+  methods: {
+    handleAccordionClick(index) {
+      if (!this.card1Shown && !this.card2Shown && !this.card3Shown) {
+        return
+      }
+      if (this.activeAccordionIndex === index) {
+        this.activeAccordionIndex = null
+      } else if (
+        index === 1 ||
+        index === 2 ||
+        (index === 3 && this.canContinue)
+      ) {
+        this.activeAccordionIndex = index
+        this.activeStepIndex = index
+        if (index === 2) {
+          this.step1Confirmed = true
         }
-        formInputFields[key][field]['touched'] = true
+        if (index === 3) {
+          this.step2Confirmed = true
+        }
+      } else if (index === 3 && !this.canContinue) {
+        this.step2Confirmed = false
+      }
+    },
+    overviewNextStepClicked() {
+      this.activeAccordionIndex = 2
+      this.activeStepIndex = 2
+      this.step1Confirmed = true
+    },
+    async triggerConfirmation() {
+      this.showConfirmation = true
+      await this.$nextTick()
+      const scroolTarget = document.getElementById('main-header')
+
+      if (scroolTarget) {
+        if (this.switchTimeOut) {
+          clearTimeout(this.switchTimeOut)
+        }
+        this.switchTimeOut = setTimeout(() => {
+          scroolTarget.scrollIntoView({ behavior: 'smooth' })
+        }, 200)
+      }
+    },
+    onChange(e) {
+      this.setFormFieldValue('invoice', 'gender', e.target.value)
+    },
+    editTriggered() {
+      this.activeAccordionIndex = 1
+      this.activeStepIndex = 1
+    },
+    setContentHeight() {
+      if (this.activeIndex === 1) {
+        this.contentHeight =
+          document.getElementById(
+            this.getUniqueId('shopping-cart-drawer-overview')
+          ).scrollHeight + 'px'
+      } else if (this.activeIndex === 2) {
+        this.contentHeight =
+          document.getElementById(
+            this.getUniqueId('shopping-cart-drawer-address')
+          ).scrollHeight + 'px'
+      } else if (this.activeIndex === 3) {
+        this.contentHeight =
+          document.getElementById(
+            this.getUniqueId('shopping-cart-drawer-checkout')
+          ).scrollHeight + 'px'
+      }
+    },
+    getUniqueId(text = '') {
+      return `${text}-${this.shoppingCartId}`
+    },
+    resizeWindow() {
+      this.screenSize = document.body.clientWidth
+    },
+    scrollContentIntoView(index) {
+      const accordionIdMap = {
+        1: 'shopping-cart-drawer-overview-button',
+        2: 'shopping-cart-drawer-address-button',
+        3: 'shopping-cart-drawer-checkout-button',
+      }
+
+      const scroolTarget = document.getElementById(
+        this.getUniqueId(accordionIdMap[index])
+      )
+
+      if (scroolTarget) {
+        if (this.switchTimeOut) {
+          clearTimeout(this.switchTimeOut)
+        }
+        this.switchTimeOut = setTimeout(() => {
+          scroolTarget.scrollIntoView({ behavior: 'smooth' })
+        }, 200)
+      }
+    },
+    setFormFieldValue(type, field, value) {
+      this.formInputFields[type][field]['value'] = value
+      this.formInputFields[type][field]['touched'] = true
+
+      if (this.formInputFields[type][field]['mandatory'] === false) {
+        this.formInputFields[type][field]['valid'] = true
+      } else {
+        if (
+          this.formInputFields[type][field]['value'] &&
+          this.formInputFields[type][field]['value'].trim() !== ''
+        ) {
+          this.formInputFields[type][field]['valid'] = true
+        } else {
+          this.formInputFields[type][field]['valid'] = false
+        }
+      }
+    },
+    validateFields() {
+      const keys = Object.keys(this.formInputFields)
+      const keysToValidate = ['invoice']
+      if (this.showDeliveryAddress) {
+        keysToValidate.push('delivery')
+      }
+      keys.forEach((key) => {
+        const fields = Object.keys(this.formInputFields[key])
+        if (keysToValidate.includes(key)) {
+          fields.forEach((field) => {
+            if (this.formInputFields[key][field]['mandatory'] === false) {
+              this.formInputFields[key][field]['valid'] = true
+            } else {
+              if (
+                this.formInputFields[key][field]['value'] &&
+                this.formInputFields[key][field]['value'].trim() !== ''
+              ) {
+                this.formInputFields[key][field]['valid'] = true
+              } else {
+                this.formInputFields[key][field]['valid'] = false
+              }
+            }
+            this.formInputFields[key][field]['touched'] = true
+          })
+        }
       })
-    }
-  })
+    },
+    checkFormAndSetNextActiveStep() {
+      this.validateFields()
+      const keysToValidate = ['invoice']
+      if (this.showDeliveryAddress) {
+        keysToValidate.push('delivery')
+      }
+
+      const allFieldsValid = keysToValidate.every((key) => {
+        const fields = Object.keys(this.formInputFields[key])
+        return fields.every((field) => {
+          return this.formInputFields[key][field]['valid']
+        })
+      })
+      if (allFieldsValid) {
+        this.activeAccordionIndex = 3
+        this.activeStepIndex = 3
+        this.step2Confirmed = true
+      }
+    },
+  },
+  computed: {
+    isMobile() {
+      return this.screenSize < 1024
+    },
+    canContinue() {
+      const keysToValidate = ['invoice']
+      if (this.showDeliveryAddress) {
+        keysToValidate.push('delivery')
+      }
+
+      return keysToValidate.every((key) => {
+        const fields = Object.keys(this.formInputFields[key])
+        return fields.every((field) => {
+          return this.formInputFields[key][field]['valid']
+        })
+      })
+    },
+  },
 }
-
-const checkFormAndSetNextActiveStep = function () {
-  validateFields()
-  const keysToValidate = ['invoice']
-  if (showDeliveryAddress.value) {
-    keysToValidate.push('delivery')
-  }
-
-  const allFieldsValid = keysToValidate.every((key) => {
-    const fields = Object.keys(formInputFields[key])
-    return fields.every((field) => {
-      return formInputFields[key][field]['valid']
-    })
-  })
-  if (allFieldsValid) {
-    activeAccordionIndex.value = 3
-    activeStepIndex.value = 3
-    step2Confirmed.value = true
-  }
-}
-
-watch(activeAccordionIndex, function () {
-  scrollContentIntoView(activeAccordionIndex.value || 1)
-})
-
-onMounted(() => {
-  resizeWindow()
-  window.addEventListener('resize', resizeWindow)
-})
 </script>

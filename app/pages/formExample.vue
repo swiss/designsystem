@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
+    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar />
@@ -11,20 +11,26 @@
     </header>
     <main id="main-content">
       <Hero type="default">
-        <template #title> Form Example </template>
+        <template v-slot:title>
+          Form Example
+        </template>
       </Hero>
       <FormDemo />
 
-      <BackToTopBtn fixed type="outline" target="main-header" />
+      <BackToTopBtn
+        fixed
+        type="outline"
+        target="main-header"
+      />
     </main>
-    <footer id="main-footer" class="footer">
+    <footer class="footer" id="main-footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
@@ -35,8 +41,26 @@ import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import FormDemo from '../components/ch/sections/FormDemo.vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
-import Hero from '../components/ch/sections/Hero.vue'
-import { useLayoutStore } from '../store/layout'
-
-const layoutStore = useLayoutStore()
+import Hero from "~/components/ch/sections/Hero";
+export default {
+  name: 'Index',
+  components: {
+    AlterBodyClasses,
+    TopBar,
+    TopHeader,
+    Breadcrumb,
+    DesktopMenu,
+    MobileMenu,
+    FooterInformation,
+    FooterNavigation,
+    FormDemo,
+    BackToTopBtn,
+    Hero
+  },
+  methods: {
+    getMobileMenuIsOpen() {
+      return this.$store.getters['layout/getMobileMenuIsOpen']
+    },
+  },
+}
 </script>
