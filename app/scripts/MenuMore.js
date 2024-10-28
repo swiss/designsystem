@@ -50,13 +50,12 @@ const MenuMore = {
   },
 
   setButtonVisibility(btn, isVisible) {
-    btn && isVisible
-      ? btn.classList.remove('hidden')
-      : btn.classList.add('hidden')
+    if (btn && isVisible) btn.classList.remove('hidden')
+    else btn.classList.add('hidden')
   },
 
   setButtonClickEvent(target, leftValue) {
-    target.addEventListener('click', function (e) {
+    target.addEventListener('click', function () {
       MenuMore.menu.scrollTo({
         top: 0,
         left: leftValue,

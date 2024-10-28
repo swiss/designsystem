@@ -4,7 +4,7 @@
       <h2 class="section__title">Schwerpunktthemen</h2>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=11"
@@ -44,17 +44,17 @@
               />
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Dossier 1</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               At vero eos et ac-cusam et justo duo, sadipscing elitr, sed diam
               At vero eos et ac-cusam et justo duo dolores et ea rebum Stet
               clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -65,7 +65,7 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=18"
@@ -105,17 +105,17 @@
               />
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Dossier 2</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sadipscing elitr, sed diam. At vero eos et ac-cusam et justo duo
               dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -126,7 +126,7 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=19"
@@ -166,17 +166,17 @@
               />
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Dossier 3</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam At
               vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita
               kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -194,14 +194,14 @@
           variant="bare"
           icon-pos="right"
           icon="ArrowRight"
-        ></Btn>
+        />
       </div>
     </div>
     <div class="container">
       <h2 class="section__title">Andere Themen</h2>
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=11"
@@ -241,17 +241,17 @@
               />
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Dossier 1</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               At vero eos et ac-cusam et justo duo, sadipscing elitr, sed diam
               At vero eos et ac-cusam et justo duo dolores et ea rebum Stet
               clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -262,7 +262,7 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=18"
@@ -302,17 +302,17 @@
               />
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Dossier 2</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
               sadipscing elitr, sed diam. At vero eos et ac-cusam et justo duo
               dolores et ea rebum Stet clita kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -323,7 +323,7 @@
           </template>
         </Card>
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <source
                 srcset="https://picsum.photos/760/428/?image=19"
@@ -363,17 +363,17 @@
               />
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>Dossier 3</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam At
               vero eos et ac-cusam et justo duo dolores et ea rebum Stet clita
               kasd gubergren.
             </p>
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -391,7 +391,7 @@
           variant="bare"
           icon-pos="right"
           icon="ArrowRight"
-        ></Btn>
+        />
       </div>
     </div>
   </section>
@@ -400,9 +400,8 @@
 <script setup lang="ts">
 import Card from '../components/Card.vue'
 import Btn from '../components/Btn.vue'
-import SvgIcon from '../components/SvgIcon.vue'
 
-const props = defineProps({
+defineProps({
   isHomePage: {
     type: Boolean,
     default: () => false,

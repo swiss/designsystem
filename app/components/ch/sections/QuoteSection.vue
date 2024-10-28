@@ -41,12 +41,15 @@ const props = defineProps({
   },
   quote: {
     type: String,
+    default: () => undefined,
   },
   author: {
     type: String,
+    default: () => undefined,
   },
   image: {
     type: Object,
+    default: () => undefined,
   },
 })
 

@@ -1,5 +1,5 @@
 <template>
-  <ul class="accordion" :id="`accordion-${id}`">
+  <ul :id="`accordion-${id}`" class="accordion">
     <GlossarResultListItem
       v-for="(listItem, itemIndex) in item.results"
       :key="`listItem-${itemIndex}`"
@@ -27,6 +27,7 @@ const props = defineProps({
   searchTerm: {
     type: String,
     required: false,
+    default: () => undefined,
   },
 })
 

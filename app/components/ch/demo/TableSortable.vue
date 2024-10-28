@@ -1,6 +1,6 @@
 <template>
   <div class="table-wrapper">
-    <table :class="computedClasses" :id="`table-sortable-${id}`">
+    <table :id="`table-sortable-${id}`" :class="computedClasses">
       <caption>
         <br />
         {{
@@ -13,20 +13,20 @@
           <th scope="col">
             <button class="table__sorter">
               Name
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true" />
             </button>
           </th>
           <th scope="col" aria-sort="ascending">
             <button class="table__sorter">
               Job
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true" />
             </button>
           </th>
           <th scope="col">E-mail</th>
           <th scope="col" class="text-right">
             <button class="table__sorter">
               ID
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true" />
             </button>
           </th>
         </tr>
@@ -81,6 +81,7 @@ const props = defineProps({
   variant: {
     type: String,
     validator: (prop) => ['compact', 'default'].includes(prop as string),
+    default: () => undefined,
   },
   caption: {
     type: String,

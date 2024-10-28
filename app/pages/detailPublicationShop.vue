@@ -1,5 +1,5 @@
 <template>
-  <client-only>
+  <ClientOnly>
     <div>
       <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
       <header id="main-header">
@@ -34,11 +34,11 @@
           :meta-infos="['Studie', 'publiziert am 03. März 2000']"
           :authors="authors"
         >
-          <template v-slot:title>
+          <template #title>
             Benachteiligungserfahrungen bei der Gesundheitsversorgung in der
             Schweiz
           </template>
-          <template v-slot:subtitle>
+          <template #subtitle>
             Erkenntnisse aus dem International Health Policy Survey 2020
           </template>
         </Hero>
@@ -136,7 +136,7 @@
                 />
                 <div class="box">
                   <h2 class="h5">Webviewer</h2>
-                  <btn
+                  <Btn
                     variant="link"
                     to="https://www.google.ch"
                     label="Publikation im Browser betrachten"
@@ -219,7 +219,7 @@
 
               <div>
                 <h2 class="h2">Themen</h2>
-                <RelatedTags :tags="tags" bare></RelatedTags>
+                <RelatedTags :tags="tags" bare />
               </div>
             </div>
             <div class="hidden container__aside md:block">
@@ -294,7 +294,7 @@
                 />
                 <div class="box">
                   <h2 class="h5">Webviewer</h2>
-                  <btn
+                  <Btn
                     variant="link"
                     to="https://www.google.ch"
                     label="Publikation im Browser betrachten"
@@ -324,12 +324,12 @@
         <RelatedPublicationsSection />
       </main>
       <ToastMessage triggerName="trigger-toast-message" />
-      <footer class="footer" id="main-footer">
+      <footer id="main-footer" class="footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>
     </div>
-  </client-only>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

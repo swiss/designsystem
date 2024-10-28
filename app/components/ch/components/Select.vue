@@ -5,13 +5,13 @@
     </label>
     <div :class="selectWrapperClasses">
       <select
-        :class="selectClasses"
         :id="id"
+        :class="selectClasses"
         :name="name"
         :required="required"
         @change="handleChange"
       >
-        <slot></slot>
+        <slot />
       </select>
       <div class="select__icon">
         <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, type PropType } from 'vue'
 
 const props = defineProps({
   variant: {
@@ -47,9 +47,11 @@ const props = defineProps({
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
+    default: () => undefined,
   },
   label: {
     type: String,
+    default: () => undefined,
   },
   hideLabel: {
     type: Boolean,
@@ -57,17 +59,21 @@ const props = defineProps({
   },
   id: {
     type: String,
+    default: () => undefined,
   },
   name: {
     type: String,
+    default: () => undefined,
   },
   message: {
     type: String,
+    default: () => undefined,
   },
   messageType: {
     type: String,
     validator: (prop) =>
       ['error', 'warning', 'success', 'info'].includes(prop as string),
+    default: () => undefined,
   },
   required: {
     type: Boolean,

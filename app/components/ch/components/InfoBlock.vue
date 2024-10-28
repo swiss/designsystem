@@ -1,6 +1,8 @@
 <template>
   <div :class="classes">
-    <component :is="tag" class="info-block__title" v-html="title" />
+    <component :is="tag" class="info-block__title">
+      {{ title }}
+    </component>
     <div>
       <slot />
     </div>
@@ -17,6 +19,7 @@ const props = defineProps({
   },
   icon: {
     type: String,
+    default: () => undefined,
   },
   borderTop: {
     type: Boolean,

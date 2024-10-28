@@ -1,18 +1,19 @@
 <template>
   <div class="form__group__checkbox">
     <input
+      :id="id"
       type="checkbox"
       :class="classes"
-      :id="id"
       :name="name"
       :value="value"
       :required="required"
-      @change="onChange"
       :checked="checked"
+      @change="onChange"
     />
     <label v-if="label" :for="id" :class="labelClasses">
-      <span v-html="label"></span
-      ><span v-if="required" class="sr-only">required</span>
+      <span v-html="label" /><span v-if="required" class="sr-only"
+        >required</span
+      >
     </label>
 
     <div
@@ -26,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, type PropType } from 'vue'
 
 const props = defineProps({
   variant: {
@@ -37,26 +38,33 @@ const props = defineProps({
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
+    default: () => undefined,
   },
   label: {
     type: String,
+    default: () => undefined,
   },
   value: {
     type: String,
+    default: () => undefined,
   },
   id: {
     type: String,
+    default: () => undefined,
   },
   name: {
     type: String,
+    default: () => undefined,
   },
   message: {
     type: String,
+    default: () => undefined,
   },
   messageType: {
     type: String,
     validator: (prop) =>
       ['error', 'warning', 'success', 'info'].includes(prop as string),
+    default: () => undefined,
   },
   required: {
     type: Boolean,

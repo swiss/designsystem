@@ -1,22 +1,22 @@
 <template>
   <div
-    class="top-bar"
     id="top-bar-container"
+    class="top-bar"
     :class="isOpen ? 'top-bar--is-open' : ''"
   >
-    <div :class="computedTopBarClass" id="top-bar">
+    <div id="top-bar" :class="computedTopBarClass">
       <div class="container container--flex">
         <button
+          v-if="!isEasyLanguage && !isSignLanguage"
           class="top-bar__btn"
           @click="triggerTopBar()"
-          v-if="!isEasyLanguage && !isSignLanguage"
         >
           <span>Alle Schweizer Bundesbehörden</span>
           <SvgIcon icon="ChevronDown" size="lg" class="top-bar__btn__icon" />
         </button>
         <div v-else />
         <div class="top-bar__right">
-          <badge
+          <Badge
             v-if="isEasyLanguage || isSignLanguage"
             icon="Cancel"
             :iconLeft="computedAccessibilityIcon"
@@ -63,7 +63,7 @@
           </nav>
         </div>
 
-        <div class="separator separator--negative separator--xl"></div>
+        <div class="separator separator--negative separator--xl" />
 
         <div>
           <h3 class="top-bar__main-title">
@@ -187,27 +187,27 @@
               <div class="search search--negative search--large">
                 <div class="search__group">
                   <input
-                    type="search"
                     id="search-input"
+                    ref="searchInput"
+                    v-model="filterString"
+                    type="search"
                     label="Ämter filtern"
                     placeholder="Filtern"
                     autocomplete="off"
-                    v-model="filterString"
-                    ref="searchInput"
                   />
                   <Btn
                     v-if="filterString !== ''"
-                    @click.native="
-                      () => {
-                        filterString = ''
-                        $refs.searchInput.focus()
-                      }
-                    "
                     label="Clear search input"
                     icon="CancelCircle"
                     icon-pos="only"
                     variant="bare-negative"
                     size="lg"
+                    @click="
+                      () => {
+                        filterString = ''
+                        $refs.searchInput.focus()
+                      }
+                    "
                   />
                   <div v-else class="btn btn--negative btn--lg btn--icon-only">
                     <SvgIcon icon="Filter" class="icon--lg" />
@@ -350,7 +350,7 @@
 </template>
 
 <script setup lang="ts">
-import badge from '../components/Badge.vue'
+import Badge from '../components/Badge.vue'
 import Btn from '../components/Btn.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'

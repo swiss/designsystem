@@ -1,6 +1,6 @@
 <template>
   <div :class="computedClasses">
-    <swiper
+    <Swiper
       :speed="500"
       :autoHeight="false"
       :loop="loop"
@@ -58,9 +58,9 @@
         bulletActiveClass: 'carousel__bullet--active',
       }"
     >
-      <swiper-slide v-for="(slide, index) in slides" :key="`slide-${index}`">
+      <SwiperSlide v-for="(slide, index) in slides" :key="`slide-${index}`">
         <Card type="default">
-          <template v-slot:image>
+          <template #image>
             <picture>
               <img
                 :src="slide.image.src"
@@ -70,18 +70,18 @@
               />
             </picture>
           </template>
-          <template v-slot:title>
+          <template #title>
             <h3>{{ slide.title }}</h3>
           </template>
-          <template v-slot:description>
+          <template #description>
             <p>
               {{ slide.description }}
             </p>
           </template>
-          <template v-slot:footerInfo>
+          <template #footerInfo>
             {{ slide.footerInfo }}
           </template>
-          <template v-slot:footerAction>
+          <template #footerAction>
             <Btn
               to="#"
               variant="outline"
@@ -91,15 +91,15 @@
             />
           </template>
         </Card>
-      </swiper-slide>
-    </swiper>
+      </SwiperSlide>
+    </Swiper>
     <div class="carousel__fonctions">
-      <div class="carousel__pagination" :id="`carousel-pagination-${id}`"></div>
-      <button class="carousel__prev" :id="`carousel-prev-${id}`">
+      <div :id="`carousel-pagination-${id}`" class="carousel__pagination" />
+      <button :id="`carousel-prev-${id}`" class="carousel__prev">
         <div class="sr-only">Previous image</div>
         <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
       </button>
-      <button class="carousel__next" :id="`carousel-next-${id}`">
+      <button :id="`carousel-next-${id}`" class="carousel__next">
         <div class="sr-only">Next image</div>
         <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
       </button>
@@ -113,17 +113,18 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import Card from '../components/Card.vue'
 import Btn from '../components/Btn.vue'
-import { computed } from 'vue'
+import { computed, type PropType } from 'vue'
 import type { PaginationOptions } from 'swiper/types'
 import type { SlideshowSlide } from '../../../types'
 
-const props = defineProps({
+defineProps({
   id: {
     type: Number,
     default: () => 1,
   },
   breakpoints: {
     type: Object,
+    default: () => undefined,
   },
   paginationType: {
     type: String as PropType<PaginationOptions['type']>,
@@ -141,7 +142,7 @@ const props = defineProps({
 })
 
 const computedClasses = computed(() => {
-  let base = 'carousel carousel--cards'
+  const base = 'carousel carousel--cards'
   return base
 })
 </script>

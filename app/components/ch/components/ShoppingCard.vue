@@ -8,8 +8,8 @@
         :alt="image.alt"
       />
       <ImageNotAvailable
-        class="shopping__card-image-not-available"
         v-else
+        class="shopping__card-image-not-available"
         text="Kein Bild verfügbar"
       />
     </div>
@@ -27,8 +27,8 @@
 
     <div v-if="type === 'edit'" class="shopping__card-amount-input">
       <input
-        type="number"
         v-model="inputValue"
+        type="number"
         class="input--outline text--base"
       />
     </div>
@@ -75,7 +75,7 @@
 <script setup lang="ts">
 import ImageNotAvailable from './ImageNotAvailable.vue'
 import SvgIcon from './SvgIcon.vue'
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted, type PropType } from 'vue'
 
 const inputValue = ref(0)
 
@@ -86,10 +86,8 @@ const props = defineProps({
     default: () => 'edit',
   },
   image: {
-    type: Object, // {
-    //   src: String,
-    //   alt: String,
-    // },
+    type: Object,
+    default: () => undefined,
   },
   title: {
     type: String,
@@ -104,11 +102,11 @@ const props = defineProps({
     required: true,
   },
   deleteTriggered: {
-    type: Function as PropType<(e: Event) => void>,
+    type: Function as PropType<() => void>,
     default: () => ({}),
   },
   editTriggered: {
-    type: Function as PropType<(e: Event) => void>,
+    type: Function as PropType<() => void>,
     default: () => ({}),
   },
   removeLabel: {

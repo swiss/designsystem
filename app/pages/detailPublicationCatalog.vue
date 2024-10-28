@@ -27,11 +27,11 @@
         :meta-infos="['Studie', 'publiziert am 03. März 2000']"
         :authors="authors"
       >
-        <template v-slot:title>
+        <template #title>
           Benachteiligungserfahrungen bei der Gesundheitsversorgung in der
           Schweiz
         </template>
-        <template v-slot:subtitle>
+        <template #subtitle>
           Erkenntnisse aus dem International Health Policy Survey 2020
         </template>
       </Hero>
@@ -91,7 +91,7 @@
                       :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
-                      class="border-b-0 pb-0"
+                      class="pb-0 border-b-0"
                     />
                   </li>
                 </ul>
@@ -177,10 +177,10 @@
 
             <div>
               <h2 class="h2">Themen</h2>
-              <RelatedTags :tags="tags" bare></RelatedTags>
+              <RelatedTags :tags="tags" bare />
             </div>
           </div>
-          <div class="container__aside hidden md:block">
+          <div class="hidden container__aside md:block">
             <div id="aside-content" :class="computedAsideContainerClass">
               <!-- desktop only -->
               <div class="box">
@@ -214,7 +214,7 @@
                       :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
-                      class="border-b-0 pb-0"
+                      class="pb-0 border-b-0"
                     />
                   </li>
                 </ul>
@@ -249,7 +249,7 @@
 
       <RelatedPublicationsSection />
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>

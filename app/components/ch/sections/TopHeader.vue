@@ -1,5 +1,5 @@
 <template>
-  <div class="top-header" id="top-header-id">
+  <div id="top-header-id" class="top-header">
     <div class="top-header__mobile-title" aria-hidden="true">
       <div class="container container--flex">
         Eidgenössisches Departement für Verteidigung, <br />Bevölkerungsschutz
@@ -58,8 +58,8 @@
           type="outline"
         />
         <Burger
-          @click.native="layoutStore.toggleMobileMenu"
           :isOpen="getMobileMenuIsOpen()"
+          @click="layoutStore.toggleMobileMenu"
         />
       </div>
     </div>
@@ -111,6 +111,7 @@ const props = defineProps({
   },
   shoppingCartLink: {
     type: String,
+    default: () => undefined,
   },
   shoppingCartLabel: {
     type: String,
@@ -136,7 +137,7 @@ function toggleSearch() {
 
 function getMobileMenuIsOpen() {
   /* Disable menu animation for new mobile menu */
-  if (this.isMenuV2) {
+  if (props.isMenuV2) {
     return false
   }
   return layoutStore.mobileMenuIsOpen

@@ -1,5 +1,5 @@
 <template>
-  <client-only>
+  <ClientOnly>
     <div>
       <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
       <header id="main-header">
@@ -15,10 +15,10 @@
       </header>
       <main id="main-content">
         <Hero type="default">
-          <template v-slot:title>
+          <template #title>
             Web Mapping Services WMS: Verfügbare Dienste und Daten
           </template>
-          <template v-slot:description>
+          <template #description>
             Das Konzept des INTERLIS Model Repository sieht vor, Datenmodelle
             als http-Ressource nutzbar zu machen. Dabei werden die
             INTERLIS-Modelldateien auf einem Webserver abgelegt, und können
@@ -27,7 +27,7 @@
             evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
             müssen.
           </template>
-          <template v-slot:image>
+          <template #image>
             <figure>
               <picture>
                 <source
@@ -48,7 +48,7 @@
             class="container container--grid container--reverse-mobile gap--responsive"
           >
             <div class="container__main vertical-spacing">
-              <h2 class="h2" id="einleitung">Einleitung</h2>
+              <h2 id="einleitung" class="h2">Einleitung</h2>
               <p>
                 Über den Kontakt models@geo.admin.ch können die Modelldatei und
                 die Modelldokumentation zur Publikation eingereicht werden.
@@ -70,7 +70,7 @@
                   Image label here —&nbsp;©&nbsp;Photograph Name
                 </figcaption>
               </figure>
-              <h2 class="h2" id="datenmodell-ablage">
+              <h2 id="datenmodell-ablage" class="h2">
                 Datenmodellablage ansehen
               </h2>
               <p>
@@ -110,7 +110,7 @@
                 INTERLIS-Modelldatei wird in jedem Fall in die Datenmodellablage
                 eingepflegt.
               </p>
-              <h2 class="h2" id="dokumente">Weitere Informationen</h2>
+              <h2 id="dokumente" class="h2">Weitere Informationen</h2>
 
               <Accordion id="12345">
                 <AccordionItem
@@ -165,10 +165,10 @@
             <div class="container__aside">
               <div id="aside-content" :class="computedAsideContainerClass">
                 <Card type="default">
-                  <template v-slot:title>
+                  <template #title>
                     <h2>Inhaltverzeichnis</h2>
                   </template>
-                  <template v-slot:description>
+                  <template #description>
                     <ul class="menu text--sm">
                       <li>
                         <a
@@ -214,18 +214,17 @@
           </div>
         </section>
       </main>
-      <footer class="footer" id="main-footer">
+      <footer id="main-footer" class="footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>
     </div>
-  </client-only>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
 import Accordion from '../components/ch/components/Accordion.vue'
 import AccordionItem from '../components/ch/components/AccordionItem.vue'
-import Btn from '../components/ch/components/Btn.vue'
 import Card from '../components/ch/components/Card.vue'
 import SvgIcon from '../components/ch/components/SvgIcon.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'

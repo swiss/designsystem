@@ -4,8 +4,8 @@
       <h2 class="sr-only">Suche</h2>
       <Input
         :class="isMenuV2 ? 'search--desktop' : ''"
-        type="search"
         id="search-main"
+        type="search"
         label="Suche in dieser Website"
         placeholder="Suche"
         autocomplete="off"
@@ -22,7 +22,7 @@
 import SvgIcon from './SvgIcon.vue'
 import Input from './Input.vue'
 
-const props = defineProps({
+defineProps({
   isOpen: {
     type: Boolean,
     default: () => false,

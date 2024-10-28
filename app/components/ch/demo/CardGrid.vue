@@ -14,6 +14,7 @@ const props = defineProps({
       if (typeof prop !== 'number') return false
       return prop > 0 && prop < 6
     },
+    default: () => undefined,
   },
 })
 

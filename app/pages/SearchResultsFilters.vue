@@ -15,14 +15,14 @@
           <div class="search search--large search--page-result">
             <div class="search__group">
               <input
-                type="search"
                 id="search-input"
+                type="search"
                 label="Ämter filtern"
                 placeholder="Search"
                 value="Search entry here"
                 autocomplete="off"
               />
-              <div class="btn" v-if="isLoading">
+              <div v-if="isLoading" class="btn">
                 <SvgIcon
                   icon="Spinner"
                   size="lg"
@@ -50,13 +50,13 @@
               icon-pos="left"
               icon="ChevronDown"
               :class="filtersAreOpen ? ' btn--icon-180' : ''"
-              @click.native="filtersAreOpen = !filtersAreOpen"
+              @click="filtersAreOpen = !filtersAreOpen"
             />
             <div v-if="filtersAreOpen" class="search__filters__drawer">
               <Select
-                variant="outline"
-                size="sm"
                 id="select-1"
+                variant="outline"
+                size="sm"
                 name="select-name"
                 label="Filter name"
               >
@@ -64,9 +64,9 @@
                 <option>...</option>
               </Select>
               <Select
-                variant="outline"
-                size="sm"
                 id="select-2"
+                variant="outline"
+                size="sm"
                 name="select-name"
                 label="Filter name"
               >
@@ -74,9 +74,9 @@
                 <option>...</option>
               </Select>
               <Select
-                variant="outline"
-                size="sm"
                 id="select-3"
+                variant="outline"
+                size="sm"
                 name="select-name"
                 label="Filter name"
               >
@@ -84,9 +84,9 @@
                 <option>...</option>
               </Select>
               <Select
-                variant="outline"
-                size="sm"
                 id="select-4"
+                variant="outline"
+                size="sm"
                 name="select-name"
                 label="Filter name"
               >
@@ -94,9 +94,9 @@
                 <option>...</option>
               </Select>
               <Select
+                id="select-5"
                 variant="outline"
                 size="sm"
-                id="select-5"
                 name="select-name"
                 label="Filter name"
               >
@@ -105,7 +105,7 @@
               </Select>
             </div>
           </div>
-          <div class="filters__active"></div>
+          <div class="filters__active" />
         </div>
       </section>
       <section class="section section--default">
@@ -126,10 +126,10 @@
               </div>
               <div class="search-results__header__right">
                 <Select
+                  id="select-6"
                   variant="outline"
                   bare
                   size="sm"
-                  id="select-6"
                   name="select-name"
                 >
                   <option disabled selected>Sortieren</option>
@@ -138,14 +138,14 @@
                   <option>by date (decreasing)</option>
                   <option>...</option>
                 </Select>
-                <div class="separator separator--vertical"></div>
+                <div class="separator separator--vertical" />
                 <Btn
                   variant="bare"
                   icon-pos="only"
                   icon="List"
                   size="sm"
                   label="Display as list"
-                  @click.native="displayType = 'list'"
+                  @click="displayType = 'list'"
                 />
                 <Btn
                   variant="bare"
@@ -153,7 +153,7 @@
                   icon="Apps"
                   size="sm"
                   label="Display as grid"
-                  @click.native="displayType = 'grid'"
+                  @click="displayType = 'grid'"
                 />
               </div>
             </div>
@@ -213,7 +213,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
@@ -236,7 +236,7 @@ import Notification from '../components/ch/components/Notification.vue'
 import Select from '../components/ch/components/Select.vue'
 import { reactive } from 'vue'
 import { useLayoutStore } from '../store/layout'
-import type { SearchResultItem } from '~/types'
+import type { SearchResultItem } from '../types'
 
 const layoutStore = useLayoutStore()
 
@@ -332,7 +332,7 @@ const displayType = defineModel('displayType', {
   type: String,
   default: () => 'grid',
 })
-const props = defineProps({
+defineProps({
   noResults: {
     type: Boolean,
     default: () => false,

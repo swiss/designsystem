@@ -1,7 +1,7 @@
 <template>
-  <div class="carousel-badge-filter" :id="id">
+  <div :id="id" class="carousel-badge-filter">
     <div class="carousel">
-      <swiper
+      <Swiper
         :speed="500"
         :autoHeight="false"
         :loop="false"
@@ -19,8 +19,8 @@
         :simulateTouch="true"
         :slideToClickedSlide="false"
       >
-        <swiper-slide>
-          <badge
+        <SwiperSlide>
+          <Badge
             label="Alle"
             size="base"
             :color="activeFilter === 'all' ? 'negative' : 'gray'"
@@ -28,9 +28,9 @@
             :badgeClicked="() => badgeClicked('all')"
             :disabled="disabledFilters.includes('all')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="0-9"
             size="base"
             :color="activeFilter === 'numbric' ? 'negative' : 'gray'"
@@ -38,9 +38,9 @@
             :badgeClicked="() => badgeClicked('numbric')"
             :disabled="disabledFilters.includes('numbric')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="A"
             size="base"
             :color="activeFilter === 'a' ? 'negative' : 'gray'"
@@ -48,9 +48,9 @@
             :badgeClicked="() => badgeClicked('a')"
             :disabled="disabledFilters.includes('a')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="B"
             size="base"
             :color="activeFilter === 'b' ? 'negative' : 'gray'"
@@ -58,9 +58,9 @@
             :badgeClicked="() => badgeClicked('b')"
             :disabled="disabledFilters.includes('b')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="C"
             size="base"
             :color="activeFilter === 'c' ? 'negative' : 'gray'"
@@ -68,9 +68,9 @@
             :badgeClicked="() => badgeClicked('c')"
             :disabled="disabledFilters.includes('c')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="D"
             size="base"
             :color="activeFilter === 'd' ? 'negative' : 'gray'"
@@ -78,9 +78,9 @@
             :badgeClicked="() => badgeClicked('d')"
             :disabled="disabledFilters.includes('d')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="E"
             size="base"
             :color="activeFilter === 'e' ? 'negative' : 'gray'"
@@ -88,9 +88,9 @@
             :badgeClicked="() => badgeClicked('e')"
             :disabled="disabledFilters.includes('e')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="F"
             size="base"
             :color="activeFilter === 'f' ? 'negative' : 'gray'"
@@ -98,9 +98,9 @@
             :badgeClicked="() => badgeClicked('f')"
             :disabled="disabledFilters.includes('f')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="G"
             size="base"
             :color="activeFilter === 'g' ? 'negative' : 'gray'"
@@ -108,9 +108,9 @@
             :badgeClicked="() => badgeClicked('g')"
             :disabled="disabledFilters.includes('g')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="H"
             size="base"
             :color="activeFilter === 'h' ? 'negative' : 'gray'"
@@ -118,9 +118,9 @@
             :badgeClicked="() => badgeClicked('h')"
             :disabled="disabledFilters.includes('h')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="I"
             size="base"
             :color="activeFilter === 'i' ? 'negative' : 'gray'"
@@ -128,9 +128,9 @@
             :badgeClicked="() => badgeClicked('i')"
             :disabled="disabledFilters.includes('i')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="J"
             size="base"
             :color="activeFilter === 'j' ? 'negative' : 'gray'"
@@ -138,9 +138,9 @@
             :badgeClicked="() => badgeClicked('j')"
             :disabled="disabledFilters.includes('j')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="K"
             size="base"
             :color="activeFilter === 'k' ? 'negative' : 'gray'"
@@ -148,9 +148,9 @@
             :badgeClicked="() => badgeClicked('k')"
             :disabled="disabledFilters.includes('k')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="L"
             size="base"
             :color="activeFilter === 'l' ? 'negative' : 'gray'"
@@ -158,9 +158,9 @@
             :badgeClicked="() => badgeClicked('l')"
             :disabled="disabledFilters.includes('l')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="M"
             size="base"
             :color="activeFilter === 'm' ? 'negative' : 'gray'"
@@ -168,9 +168,9 @@
             :badgeClicked="() => badgeClicked('m')"
             :disabled="disabledFilters.includes('m')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="N"
             size="base"
             :color="activeFilter === 'n' ? 'negative' : 'gray'"
@@ -178,9 +178,9 @@
             :badgeClicked="() => badgeClicked('n')"
             :disabled="disabledFilters.includes('n')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="O"
             size="base"
             :color="activeFilter === 'o' ? 'negative' : 'gray'"
@@ -188,9 +188,9 @@
             :badgeClicked="() => badgeClicked('o')"
             :disabled="disabledFilters.includes('o')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="P"
             size="base"
             :color="activeFilter === 'p' ? 'negative' : 'gray'"
@@ -198,9 +198,9 @@
             :badgeClicked="() => badgeClicked('p')"
             :disabled="disabledFilters.includes('p')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="Q"
             size="base"
             :color="activeFilter === 'q' ? 'negative' : 'gray'"
@@ -208,9 +208,9 @@
             :badgeClicked="() => badgeClicked('q')"
             :disabled="disabledFilters.includes('q')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="R"
             size="base"
             :color="activeFilter === 'r' ? 'negative' : 'gray'"
@@ -218,9 +218,9 @@
             :badgeClicked="() => badgeClicked('r')"
             :disabled="disabledFilters.includes('r')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="S"
             size="base"
             :color="activeFilter === 's' ? 'negative' : 'gray'"
@@ -228,9 +228,9 @@
             :badgeClicked="() => badgeClicked('s')"
             :disabled="disabledFilters.includes('s')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="T"
             size="base"
             :color="activeFilter === 't' ? 'negative' : 'gray'"
@@ -238,9 +238,9 @@
             :badgeClicked="() => badgeClicked('t')"
             :disabled="disabledFilters.includes('t')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="U"
             size="base"
             :color="activeFilter === 'u' ? 'negative' : 'gray'"
@@ -248,9 +248,9 @@
             :badgeClicked="() => badgeClicked('u')"
             :disabled="disabledFilters.includes('u')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="V"
             size="base"
             :color="activeFilter === 'v' ? 'negative' : 'gray'"
@@ -258,9 +258,9 @@
             :badgeClicked="() => badgeClicked('v')"
             :disabled="disabledFilters.includes('v')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="W"
             size="base"
             :color="activeFilter === 'w' ? 'negative' : 'gray'"
@@ -268,9 +268,9 @@
             :badgeClicked="() => badgeClicked('w')"
             :disabled="disabledFilters.includes('w')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="X"
             size="base"
             :color="activeFilter === 'x' ? 'negative' : 'gray'"
@@ -278,9 +278,9 @@
             :badgeClicked="() => badgeClicked('x')"
             :disabled="disabledFilters.includes('x')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="Y"
             size="base"
             :color="activeFilter === 'y' ? 'negative' : 'gray'"
@@ -288,9 +288,9 @@
             :badgeClicked="() => badgeClicked('y')"
             :disabled="disabledFilters.includes('y')"
           />
-        </swiper-slide>
-        <swiper-slide>
-          <badge
+        </SwiperSlide>
+        <SwiperSlide>
+          <Badge
             label="Z"
             size="base"
             :color="activeFilter === 'z' ? 'negative' : 'gray'"
@@ -298,14 +298,14 @@
             :badgeClicked="() => badgeClicked('z')"
             :disabled="disabledFilters.includes('z')"
           />
-        </swiper-slide>
-      </swiper>
+        </SwiperSlide>
+      </Swiper>
       <div class="carousel__fonctions">
-        <button class="carousel__prev" :id="`carousel-prev-${id}`">
+        <button :id="`carousel-prev-${id}`" class="carousel__prev">
           <div class="sr-only">Vorheriger Filter</div>
           <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
         </button>
-        <button class="carousel__next" :id="`carousel-next-${id}`">
+        <button :id="`carousel-next-${id}`" class="carousel__next">
           <div class="sr-only">Nächster Filter</div>
           <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
         </button>
@@ -317,13 +317,13 @@
 <script setup lang="ts">
 import { Navigation, Pagination, A11y } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import badge from '../components/Badge.vue'
+import Badge from '../components/Badge.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 
-const props = defineProps({
+defineProps({
   id: {
     type: String,
-    default: () => 1,
+    default: () => '1',
   },
   badgeClicked: {
     type: Function,

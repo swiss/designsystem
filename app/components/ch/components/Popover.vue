@@ -45,6 +45,7 @@ const props = defineProps({
   label: {
     type: String,
     required: false,
+    default: () => undefined,
   },
   color: {
     type: String,

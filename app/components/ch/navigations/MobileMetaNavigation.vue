@@ -20,7 +20,7 @@ import { ref, onMounted } from 'vue'
 
 const screenSize = ref(0)
 
-const props = defineProps({
+defineProps({
   isFreebrand: {
     type: Boolean,
     default: () => false,

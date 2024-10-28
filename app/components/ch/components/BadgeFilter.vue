@@ -229,7 +229,7 @@
 <script setup lang="ts">
 import Badge from '../components/Badge.vue'
 
-const props = defineProps({
+defineProps({
   badgeClicked: {
     type: Function,
     default: () => {},

@@ -1,16 +1,16 @@
 <template>
   <div :class="computedClasses">
-    <h3 v-text="title" class="newsletter__title h3"></h3>
-    <p v-html="text" class="newsletter__text"></p>
+    <h3 class="newsletter__title h3" v-text="title" />
+    <p class="newsletter__text" v-html="text" />
     <form
       v-if="state !== 'sent'"
-      @submit="submit"
       action="page.php"
       class="newsletter__form"
+      @submit="submit"
     >
       <Input
-        :type="'email'"
         :id="'newsletter-address'"
+        :type="'email'"
         :label="inputLabel"
         :autocomplete="'true'"
         class="newsletter__input"
@@ -50,6 +50,7 @@ const props = defineProps({
   type: {
     type: String,
     validator: (prop) => ['default', 'inline'].includes(prop as string),
+    default: () => undefined,
   },
   title: {
     type: String,

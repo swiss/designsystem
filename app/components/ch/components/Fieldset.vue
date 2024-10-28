@@ -26,12 +26,15 @@ const props = defineProps({
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
+    default: () => undefined,
   },
   legend: {
     type: String,
+    default: () => undefined,
   },
   message: {
     type: String,
+    default: () => undefined,
   },
   messageType: {
     type: String,
@@ -43,14 +46,6 @@ const props = defineProps({
     type: Boolean,
     default: () => false,
   },
-})
-
-const classes = computed(() => {
-  let base = 'input '
-  if (props.variant) base += `input--${props.variant} `
-  if (props.size) base += `input--${props.size} `
-  if (props.message) base += `input--${props.messageType} `
-  return base
 })
 
 const legendClasses = computed(() => {

@@ -7,24 +7,20 @@
           {{ author.initials }}
         </div>
         <SvgIcon v-else icon="User" class="btn__icon text-secondary-300" />
-
-        <div v-else>
-          <SvgIcon icon="User" class="btn__icon text-secondary-300" />
-        </div>
       </div>
     </div>
     <address class="authors__names">
       {{ authors[0].prefix ? authors[0].prefix : 'von' }}
 
       <component
-        v-for="author in authors"
         :is="author.url ? 'a' : 'span'"
+        v-for="author in authors"
+        :key="author.name"
         :class="author.url ? 'link' : ''"
         :href="author.url"
-        :key="author.name"
         class="author__name"
-        ><!-- -->{{ author.name
-        }}<!-- removing unneeded white space-->
+      >
+        {{ author.name }}
       </component>
     </address>
   </aside>

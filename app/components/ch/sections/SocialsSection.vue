@@ -4,9 +4,11 @@
       <div :class="computedClasses">
         <div class="grid socials__grid gap--responsive">
           <div class="socials__info">
-            <h2 class="section__title">{{ sectionTitle }}</h2>
+            <h2 class="section__title">
+              {{ sectionTitle }}
+            </h2>
 
-            <p v-html="sectionDesc"></p>
+            <p v-html="sectionDesc" />
           </div>
 
           <Card
@@ -14,11 +16,11 @@
             :key="feed.title + i"
             :type="feed.type == 'twitter' ? 'twitter' : 'default'"
           >
-            <template v-slot:header>
+            <template #header>
               <SvgIcon :icon="capitalize(feed.type)" size="xl" class="mr-2" />
               <div>{{ feed.title }}</div>
             </template>
-            <template v-slot:description>
+            <template #description>
               <div
                 v-if="feed.type == 'twitter'"
                 class="socials__twitter"
@@ -35,8 +37,7 @@
                   :src="feed.feedURL"
                   title="YouTube video player"
                   allowfullscreen
-                >
-                </iframe>
+                />
               </div>
               <div
                 v-else-if="feed.type == 'instagram'"
@@ -104,7 +105,7 @@
                               margin-bottom: 6px;
                               width: 100px;
                             "
-                          ></div>
+                          />
                           <div
                             style="
                               background-color: #f4f4f4;
@@ -113,18 +114,17 @@
                               height: 14px;
                               width: 60px;
                             "
-                          ></div>
+                          />
                         </div>
                       </div>
-                      <div style="padding: 19% 0"></div>
+                      <div style="padding: 19% 0" />
                       <div
                         style="
                           display: block;
                           height: 50px;
                           margin: 0 auto 12px;
                           width: 50px;
-                        "
-                      ></div>
+                        " />
                       <div style="padding-top: 8px">
                         <div
                           style="
@@ -139,7 +139,7 @@
                           Sieh dir diesen Beitrag auf Instagram an
                         </div>
                       </div>
-                      <div style="padding: 12.5% 0"></div>
+                      <div style="padding: 12.5% 0" />
                       <div
                         style="
                           display: flex;
@@ -157,7 +157,7 @@
                               width: 12.5px;
                               transform: translateX(0px) translateY(7px);
                             "
-                          ></div>
+                          />
                           <div
                             style="
                               background-color: #f4f4f4;
@@ -169,7 +169,7 @@
                               margin-right: 14px;
                               margin-left: 2px;
                             "
-                          ></div>
+                          />
                           <div
                             style="
                               background-color: #f4f4f4;
@@ -178,7 +178,7 @@
                               width: 12.5px;
                               transform: translateX(9px) translateY(-18px);
                             "
-                          ></div>
+                          />
                         </div>
                         <div style="margin-left: 8px">
                           <div
@@ -189,7 +189,7 @@
                               height: 20px;
                               width: 20px;
                             "
-                          ></div>
+                          />
                           <div
                             style="
                               width: 0;
@@ -200,7 +200,7 @@
                               transform: translateX(16px) translateY(-4px)
                                 rotate(30deg);
                             "
-                          ></div>
+                          />
                         </div>
                         <div style="margin-left: auto">
                           <div
@@ -210,7 +210,7 @@
                               border-right: 8px solid transparent;
                               transform: translateY(16px);
                             "
-                          ></div>
+                          />
                           <div
                             style="
                               background-color: #f4f4f4;
@@ -219,7 +219,7 @@
                               width: 16px;
                               transform: translateY(-4px);
                             "
-                          ></div>
+                          />
                           <div
                             style="
                               width: 0;
@@ -228,7 +228,7 @@
                               border-left: 8px solid transparent;
                               transform: translateY(-4px) translateX(8px);
                             "
-                          ></div>
+                          />
                         </div>
                       </div>
                       <div
@@ -249,7 +249,7 @@
                             margin-bottom: 6px;
                             width: 224px;
                           "
-                        ></div>
+                        />
                         <div
                           style="
                             background-color: #f4f4f4;
@@ -258,7 +258,7 @@
                             height: 14px;
                             width: 144px;
                           "
-                        ></div></div
+                        /></div
                     ></a>
                     <p
                       style="
@@ -290,7 +290,7 @@
                           text-decoration: none;
                         "
                         target="_blank"
-                      ></a>
+                      />
                     </p>
                   </div>
                 </blockquote>
@@ -310,8 +310,7 @@
                   frameborder="0"
                   allowfullscreen="true"
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen="true"
-                ></iframe>
+                />
               </div>
               <div
                 v-else-if="feed.type == 'linkedIn'"
@@ -325,10 +324,10 @@
                   frameborder="0"
                   allowfullscreen
                   title="Eingebetteter Beitrag"
-                ></iframe>
+                />
               </div>
             </template>
-            <template v-slot:footerAction>
+            <template #footerAction>
               <Btn
                 :to="feed.profileURL"
                 variant="outline"
@@ -380,7 +379,7 @@ const computedClasses = computed(() => {
   return base
 })
 
-const capitalize = function (s: any) {
+const capitalize = function (s: string) {
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }

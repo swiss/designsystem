@@ -1,6 +1,6 @@
 <template>
   <div :class="computedClasses">
-    <swiper
+    <Swiper
       :breakpoints="breakpoints"
       :speed="500"
       :autoHeight="false"
@@ -26,7 +26,7 @@
       :slides-per-view="1"
       :space-between="16"
     >
-      <swiper-slide v-for="(slide, index) in slides" :key="`slide-${index}`">
+      <SwiperSlide v-for="(slide, index) in slides" :key="`slide-${index}`">
         <figure>
           <picture>
             <img
@@ -49,15 +49,15 @@
             >
           </figcaption>
         </figure>
-      </swiper-slide>
-    </swiper>
+      </SwiperSlide>
+    </Swiper>
     <div class="carousel__fonctions">
-      <div class="carousel__pagination" :id="`carousel-pagination-${id}`"></div>
-      <button class="carousel__prev" :id="`carousel-prev-${id}`">
+      <div :id="`carousel-pagination-${id}`" class="carousel__pagination" />
+      <button :id="`carousel-prev-${id}`" class="carousel__prev">
         <div class="sr-only">Previous image</div>
         <SvgIcon icon="ChevronLeft" role="presentation" aria-hidden="true" />
       </button>
-      <button class="carousel__next" :id="`carousel-next-${id}`">
+      <button :id="`carousel-next-${id}`" class="carousel__next">
         <div class="sr-only">Next image</div>
         <SvgIcon icon="ChevronRight" role="presentation" aria-hidden="true" />
       </button>
@@ -84,6 +84,7 @@ const props = defineProps({
   },
   breakpoints: {
     type: Object as PropType<SwiperOptions['breakpoints']>,
+    default: () => undefined,
   },
   paginationType: {
     type: String as PropType<'bullets' | 'fraction'>,

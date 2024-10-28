@@ -15,7 +15,7 @@
     </header>
     <main id="main-content">
       <Hero type="main-image">
-        <template v-slot:image>
+        <template #image>
           <picture>
             <source
               srcset="https://picsum.photos/1282/961/?image=29"
@@ -59,9 +59,8 @@
             />
           </picture>
         </template>
-        <template v-slot:title> Was uns als VE ausmacht </template>
-        <template v-slot:title> Was uns als VE ausmacht </template>
-        <template v-slot:description>
+        <template #title> Was uns als VE ausmacht </template>
+        <template #description>
           Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz
           und Sport (VBS) beschäftigt sich hauptsächlich mit militärischen
           Fragen. Geleitet wird es seit Anfang 2019 von Viola Amherd. Das
@@ -69,7 +68,7 @@
           Sport (VBS) beschäftigt sich hauptsächlich mit militärischen Fragen.
           Geleitet wird es seit Anfang 2019 von Viola Amherd.
         </template>
-        <template v-slot:cta>
+        <template #cta>
           <Btn
             to="#"
             variant="outline"
@@ -99,7 +98,7 @@
       <BackToTopBtn fixed type="outline" target="main-header" />
       <BackToTopBtn fixed type="outline" target="main-header" />
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
@@ -149,7 +148,7 @@ const socialSection = reactive({
   ] as SocialsFeed[],
 })
 
-const props = defineProps({
+defineProps({
   isIntranet: {
     type: Boolean,
     default: () => false,

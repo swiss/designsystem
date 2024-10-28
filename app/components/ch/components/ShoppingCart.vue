@@ -1,26 +1,30 @@
 <template>
   <div class="container container--grid">
-    <div class="my-16 container__center--md" v-if="!showConfirmation">
-      <h1 class="h1 shopping__cart-title">{{ cartTitle }}</h1>
+    <div v-if="!showConfirmation" class="my-16 container__center--md">
+      <h1 class="h1 shopping__cart-title">
+        {{ cartTitle }}
+      </h1>
       <ul class="accordion">
         <li class="accordion__item">
           <button
+            :id="getUniqueId('shopping-cart-drawer-overview-button')"
             class="accordion__button"
             :class="{ active: activeAccordionIndex === 1 }"
             @click="handleAccordionClick(1)"
-            :id="getUniqueId('shopping-cart-drawer-overview-button')"
           >
             <StepIndicator
               :step="1"
               :isConfirmed="step1Confirmed"
               :isActive="activeStepIndex === 1"
             />
-            <h2 class="accordion__title">{{ cartOverviewTitle }}</h2>
+            <h2 class="accordion__title">
+              {{ cartOverviewTitle }}
+            </h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
-            class="accordion__drawer"
             :id="getUniqueId('shopping-cart-drawer-overview')"
+            class="accordion__drawer"
             :class="{ active: activeAccordionIndex === 1 }"
           >
             <div class="shopping__cart-accordion-content">
@@ -104,7 +108,7 @@
                   description="Ermässigungen werden gemäss Gebührenverordnung für statistische Dienstleistungen (Art. 19 und 22) gewährt. Ansprüche können im nächsten Schritt unter „Nachricht“ angebracht werden."
                   nextStepLabel="Nächster Schritt"
                   nextStepAriaLabel="Nächster Schritt"
-                  @nextStep="overviewNextStepClicked"
+                  @next-step="overviewNextStepClicked"
                 />
               </template>
               <template v-else>
@@ -118,22 +122,24 @@
 
         <li class="accordion__item">
           <button
+            :id="getUniqueId('shopping-cart-drawer-address-button')"
             class="accordion__button"
             :class="{ active: activeAccordionIndex === 2 }"
             @click="handleAccordionClick(2)"
-            :id="getUniqueId('shopping-cart-drawer-address-button')"
           >
             <StepIndicator
               :step="2"
               :isConfirmed="step2Confirmed"
               :isActive="activeStepIndex === 2"
             />
-            <h2 class="accordion__title">{{ cartAddressTitle }}</h2>
+            <h2 class="accordion__title">
+              {{ cartAddressTitle }}
+            </h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
-            class="accordion__drawer"
             :id="getUniqueId('shopping-cart-drawer-address')"
+            class="accordion__drawer"
             :class="{ active: activeAccordionIndex === 2 }"
           >
             <div class="shopping__cart-accordion-content">
@@ -637,7 +643,7 @@
                 </div>
 
                 <div class="shopping__cart__action-container">
-                  <btn
+                  <Btn
                     class="shopping__cart-button"
                     variant="outline-negative"
                     size="base"
@@ -654,18 +660,20 @@
 
         <li class="accordion__item">
           <button
+            :id="getUniqueId('shopping-cart-drawer-checkout-button')"
             class="accordion__button"
             :class="{ active: activeAccordionIndex === 3 }"
             @click="handleAccordionClick(3)"
-            :id="getUniqueId('shopping-cart-drawer-checkout-button')"
           >
             <StepIndicator :step="3" :isActive="activeStepIndex === 3" />
-            <h2 class="accordion__title">{{ cartCheckoutTitle }}</h2>
+            <h2 class="accordion__title">
+              {{ cartCheckoutTitle }}
+            </h2>
             <SvgIcon icon="ChevronDown" size="xl" class="accordion__arrow" />
           </button>
           <div
-            class="accordion__drawer"
             :id="getUniqueId('shopping-cart-drawer-checkout')"
+            class="accordion__drawer"
             :class="{ active: activeAccordionIndex === 3 }"
           >
             <div class="shopping__cart-accordion-content">
@@ -741,7 +749,7 @@
                     orderButtonText="Jetzt bestellen"
                     orderButtonAriaLabel="Jetzt bestellen"
                     agreementText=" Mit Ihrer Bestellung erklären Sie sich mit unseren <a class='link' href='https://www.google.ch'>Datenschutzbestimmungen und AGB </a> einverstanden"
-                    @nextStep="triggerConfirmation()"
+                    @next-step="triggerConfirmation()"
                   />
                 </div>
               </div>
@@ -759,12 +767,12 @@
           class="shopping__cart-confirmation-badge"
           icon="ConfirmationBadge"
           size="2xl"
-        ></SvgIcon>
+        />
         <SvgIcon
           class="shopping__cart-confirmation-checkmark"
           icon="CheckmarkBold"
           size="xl"
-        ></SvgIcon>
+        />
       </div>
       <h1 class="h1 shopping__cart-confirmation-title">
         Ihre Bestellung ist bei uns eingetroffen
@@ -775,7 +783,7 @@
           Wir werden dir eine E-Mail mit der Bestellbestätigung zukommen lassen.
         </p>
       </div>
-      <btn
+      <Btn
         class="shopping__cart-confirmation-action"
         variant="outline-negative"
         size="base"
@@ -788,7 +796,7 @@
 </template>
 
 <script setup lang="ts">
-import btn from '../components/Btn.vue'
+import Btn from '../components/Btn.vue'
 import ShoppingCard from '../components/ShoppingCard.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import Checkbox from './Checkbox.vue'
@@ -949,7 +957,7 @@ const formInputFields = reactive({
   >
 >)
 
-const props = defineProps({
+defineProps({
   cartTitle: {
     type: String,
     default: () => 'Shopping cart',
@@ -1001,7 +1009,7 @@ const handleAccordionClick = function (index: number) {
     if (index === 3) {
       step2Confirmed.value = true
     }
-  } else if (index === 3 && !canContinue) {
+  } else if (index === 3 && !canContinue.value) {
     step2Confirmed.value = false
   }
 }
@@ -1081,6 +1089,8 @@ const setFormFieldValue = function (
   }
 }
 
+/* -> Unused. Maybe still necessary?
+
 const validateFields = function () {
   const keys = Object.keys(formInputFields)
   const keysToValidate = ['invoice']
@@ -1128,6 +1138,8 @@ const checkFormAndSetNextActiveStep = function () {
     step2Confirmed.value = true
   }
 }
+
+*/
 
 watch(activeAccordionIndex, function () {
   scrollContentIntoView(activeAccordionIndex.value || 1)

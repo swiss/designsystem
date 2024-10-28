@@ -38,11 +38,8 @@ export const WithRadio = {
     setup: () => ({ args }),
     template: `
       <Fieldset v-bind="args">
-        <template>
-          <span>hi</span>
           <Radio id="radio-0" name="radio-group-1" label="Label for value one" value="value-1" :variant="args.variant" :size="args.size" :required="args.required" />
           <Radio id="radio-1" name="radio-group-1" label="Label for value two" value="value-2" :variant="args.variant" :size="args.size" :required="args.required" />
-        </template>
       </Fieldset>
     `,
   }),

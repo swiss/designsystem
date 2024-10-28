@@ -1,9 +1,9 @@
 <template>
   <div class="form__group__radio">
     <input
+      :id="id"
       type="radio"
       :class="classes"
-      :id="id"
       :name="name"
       :value="value"
       :checked="checked"
@@ -11,8 +11,8 @@
       @change="onChange"
     />
     <label v-if="label" :for="id" :class="labelClasses">
-      <span v-html="label"></span
-      ><span v-if="required" class="sr-only">required</span>
+      <span v-html="label" />
+      <span v-if="required" class="sr-only">required</span>
     </label>
     <div
       v-if="message"
@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, type PropType } from 'vue'
 
 const props = defineProps({
   variant: {
@@ -36,21 +36,27 @@ const props = defineProps({
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
+    default: () => undefined,
   },
   label: {
     type: String,
+    default: () => undefined,
   },
   value: {
     type: String,
+    default: () => undefined,
   },
   id: {
     type: String,
+    default: () => undefined,
   },
   name: {
     type: String,
+    default: () => undefined,
   },
   message: {
     type: String,
+    default: () => undefined,
   },
   checked: {
     type: Boolean,
@@ -59,6 +65,7 @@ const props = defineProps({
     type: String,
     validator: (prop) =>
       ['error', 'warning', 'success', 'info'].includes(prop as string),
+    default: () => undefined,
   },
   required: {
     type: Boolean,

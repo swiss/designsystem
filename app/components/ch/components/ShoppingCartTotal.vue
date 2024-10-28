@@ -2,31 +2,33 @@
   <div>
     <div class="shopping__cart-total-container">
       <h3>{{ title }}</h3>
-      <p class="shopping__cart-total">{{ total }}</p>
+      <p class="shopping__cart-total">
+        {{ total }}
+      </p>
     </div>
     <p class="shopping__cart-total-description">
       {{ description }}
     </p>
     <div class="shopping__cart__action-container">
-      <btn
+      <Btn
         class="shopping__cart-button"
         variant="outline-negative"
         size="base"
         :label="nextStepLabel"
         :ariaLabel="nextStepAriaLabel"
-        @emitClick="nextStep"
         :fullWidth="screenSize < 1024"
+        @emit-click="nextStep"
       />
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import btn from './Btn.vue'
+import Btn from './Btn.vue'
 import { ref, onMounted } from 'vue'
 
 const screenSize = ref(0)
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: () => 'Total:',
@@ -37,6 +39,7 @@ const props = defineProps({
   },
   description: {
     type: String,
+    default: () => undefined,
   },
   nextStepLabel: {
     type: String,

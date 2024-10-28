@@ -40,9 +40,9 @@
                       alt="News - Inondations Juillet 2021 - Visites map.geo.admin.ch"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/30/b70ac970-1bb4-480e-af71-c1ed6ca4f246.png"
                   /></picture>
-                  <figcaption></figcaption>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
             </div>
           </div>
@@ -298,7 +298,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -354,7 +354,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -391,7 +391,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -439,7 +439,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -478,7 +478,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -538,7 +538,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -590,7 +590,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -637,7 +637,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -676,7 +676,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -776,7 +776,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -839,7 +839,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -880,7 +880,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -934,7 +934,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -976,7 +976,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -1032,7 +1032,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -1100,9 +1100,9 @@
                       alt="EDU Material"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/849b748b-d000-43b0-9d99-b10184fe4054.jpeg"
                   /></picture>
-                  <figcaption></figcaption>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
               <p id="doc-1fle96oba0" identifier="p">
                 Die Schülerinnen und Schüler lernen in der ersten
@@ -1132,9 +1132,9 @@
                       alt="EDU City-Land"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/dc1bae9d-5c80-4629-ae2f-47aca13411c6.jpeg"
                   /></picture>
-                  <figcaption></figcaption>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
               <p id="doc-1fle9hjg40" identifier="p">
                 Die Schülerinnen und Schüler lernen in der zweiten
@@ -1162,9 +1162,9 @@
                       alt="EDU Understanding"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/eac5d749-b4c4-4482-a2dc-2cbfffbfe43d.jpeg"
                   /></picture>
-                  <figcaption></figcaption>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
               <p id="doc-1fle9kupv0" identifier="p">
                 Im Zusammenhang einer Exkursion sammeln die Schülerinnen und
@@ -1194,9 +1194,9 @@
                       alt="EDU sCHoolmaps"
                       src="https://livingdocs-ch-ch-prod.imgix.net/2021/11/26/27029001-f5ef-43d3-9a89-2ad54b09fa0d.jpeg"
                   /></picture>
-                  <figcaption></figcaption>
+                  <figcaption />
                 </figure>
-                <div></div>
+                <div />
               </div>
               <p id="doc-1fle9oj7i0" identifier="p">
                 <a
@@ -1256,7 +1256,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -1339,7 +1339,7 @@
                       <path
                         xmlns="http://www.w3.org/2000/svg"
                         d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z"
-                      ></path>
+                      />
                     </svg>
                   </button>
                   <div
@@ -1428,14 +1428,14 @@
                   >Evaluierung 2019 durch das LerNetz.ch</a
                 >&nbsp;<br />PDF, 20 Seiten, 2 MB, Deutsch
               </p>
-              <h3 class="h3" id="doc-1fl3t7rg90" identifier="sectiontitle">
+              <h3 id="doc-1fl3t7rg90" class="h3" identifier="sectiontitle">
                 Abfrage der Daten
               </h3>
               <p id="doc-1fl3t87pf0" identifier="p">
                 Die data.geo.admin.ch STAC - API bietet mehrere
                 Abfrageendpunkte:
               </p>
-              <table summary="" id="doc-1fl3t8mkn0" identifier="table">
+              <table id="doc-1fl3t8mkn0" summary="" identifier="table">
                 <thead>
                   <tr>
                     <th id="Endpunkt">Endpunkt</th>
@@ -1445,13 +1445,13 @@
                 <tbody>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tbq840" identifier="p">/</p>
                       </div>
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tbdtl0" identifier="p">
                           Liefert die API-Capabilities
                         </p>
@@ -1460,13 +1460,13 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tbuqk0" identifier="p">/conformance</p>
                       </div>
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tcmh90" identifier="p">
                           Info über die Standards, mit denen die API konform ist
                         </p>
@@ -1475,13 +1475,13 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tc5fb2" identifier="p">/collections</p>
                       </div>
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tcqq00" identifier="p">
                           Verfügbare Datensätze auflisten (Collections)
                         </p>
@@ -1490,7 +1490,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tc8nm2" identifier="p">
                           /collections/{collectionId}
                         </p>
@@ -1498,7 +1498,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tct1d0" identifier="p">
                           Liefert Metadaten der einzelnen Collection (JSON)
                         </p>
@@ -1507,7 +1507,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3td9on2" identifier="p">
                           /collections/{collectionId}/items
                         </p>
@@ -1515,7 +1515,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3td9on4" identifier="p">
                           Liefert die Items in der Collection (GeoJSON)
                         </p>
@@ -1524,7 +1524,7 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tde2m2" identifier="p">
                           /collections/{collectionId}/items/{featureId}
                         </p>
@@ -1532,7 +1532,7 @@
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tde2m4" identifier="p">
                           Liefert ein einzelnes Item (GeoJSON)
                         </p>
@@ -1541,25 +1541,25 @@
                   </tr>
                   <tr>
                     <th scope="row">
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tdju52" identifier="p">/search</p>
                       </div>
                     </th>
                     <!----><!---->
                     <td>
-                      <div slot="default">
+                      <div>
                         <p id="doc-1fl3tdju54" identifier="p">
                           Liefert eine Liste von Items, die den
                           Abfrageparametern entsprechen. Ähnlich wie
                           /collections/{collectionId}/items, führt jedoch die
-                          Filterung über alle Collections durch<em></em>
+                          Filterung über alle Collections durch<em />
                         </p>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <h3 class="h3" id="doc-1fl3tleg70" identifier="sectiontitle">
+              <h3 id="doc-1fl3tleg70" class="h3" identifier="sectiontitle">
                 Beispiel-Abfragen
               </h3>
               <div id="doc-1fl3tlo6v0" identifier="list">
@@ -1634,7 +1634,7 @@
       </div>
     </main>
 
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>

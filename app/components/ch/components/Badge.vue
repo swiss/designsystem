@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
-import { computed } from 'vue'
+import { computed, type PropType } from 'vue'
 
 const props = defineProps({
   label: {

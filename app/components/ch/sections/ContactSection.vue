@@ -29,8 +29,7 @@
               height="330"
               frameborder="0"
               style="border: 0"
-            >
-            </iframe>
+            />
             <ul class="list list--icon list--loose">
               <li>
                 <Btn

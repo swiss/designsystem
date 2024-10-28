@@ -15,14 +15,14 @@
           <div class="search search--large search--page-result">
             <div class="search__group">
               <input
-                type="search"
                 id="search-input"
+                type="search"
                 label="Ämter filtern"
                 placeholder="Search"
                 value="Search entry here"
                 autocomplete="off"
               />
-              <div class="btn" v-if="isLoading">
+              <div v-if="isLoading" class="btn">
                 <SvgIcon
                   icon="Spinner"
                   size="lg"
@@ -74,9 +74,9 @@
               </div>
 
               <div
+                id="tab-1"
                 tabindex="0"
                 role="tabpanel"
-                id="tab-1"
                 aria-labelledby="tab-1"
                 class="tab__container"
               >
@@ -163,9 +163,9 @@
               </div>
 
               <div
+                id="tab-1"
                 tabindex="0"
                 role="tabpanel"
-                id="tab-1"
                 aria-labelledby="tab-1"
                 class="tab__container"
               >
@@ -176,7 +176,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
@@ -287,7 +287,7 @@ const searchResults = reactive([
   },
 ])
 
-const props = defineProps({
+defineProps({
   noResults: {
     type: Boolean,
     default: () => false,

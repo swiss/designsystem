@@ -27,22 +27,22 @@
                 icon="ChevronDown"
                 iconPos="left"
                 :class="filtersAreOpen ? ' btn--icon-180' : ''"
-                @click.native="filtersAreOpen = !filtersAreOpen"
+                @click="filtersAreOpen = !filtersAreOpen"
               />
             </div>
             <div v-if="filtersAreOpen" class="search__filters__drawer">
               <Input
+                id="select-1"
                 type="text"
                 variant="outline"
                 size="sm"
-                id="select-1"
                 name="select-name"
                 label="Stichwortfilter"
               />
               <Select
+                id="select-2"
                 variant="outline"
                 size="sm"
-                id="select-2"
                 name="select-name"
                 label="Organisation"
               >
@@ -50,9 +50,9 @@
                 <option disabled>(Future tree selector here)</option>
               </Select>
               <Select
+                id="select-3"
                 variant="outline"
                 size="sm"
-                id="select-3"
                 name="select-name"
                 label="Themen"
               >
@@ -60,27 +60,27 @@
                 <option>...</option>
               </Select>
               <Input
+                id="date-start"
                 type="date"
                 variant="outline"
                 size="sm"
-                id="date-start"
                 name="select-name"
                 value="2022-05-01"
                 label="Zeitraum | Startdatum"
               />
               <Input
+                id="date-start"
                 type="date"
                 variant="outline"
                 size="sm"
-                id="date-start"
                 name="select-name"
                 value="2022-06-01"
                 label="Zeitraum | Enddatum"
               />
               <Select
+                id="select-5"
                 variant="outline"
                 size="sm"
-                id="select-5"
                 name="select-name"
                 label="Veranstaltungs-Typ"
               >
@@ -93,9 +93,9 @@
                 <option>Workshop</option>
               </Select>
               <Select
+                id="select-6"
                 variant="outline"
                 size="sm"
-                id="select-6"
                 name="select-name"
                 label="Austragungsort"
               >
@@ -149,7 +149,7 @@
                 <div class="search-results__occurences">
                   <strong>4</strong> Suchergebnisse
                 </div>
-                <div class="separator separator--vertical"></div>
+                <div class="separator separator--vertical" />
                 <Btn
                   label="Abo erstellen"
                   variant="bare"
@@ -160,10 +160,10 @@
               </div>
               <div class="search-results__header__right">
                 <Select
+                  id="select-7"
                   variant="outline"
                   bare
                   size="sm"
-                  id="select-7"
                   name="select-name"
                   label="Sortierung"
                   :hideLabel="true"
@@ -174,14 +174,14 @@
                   <option>by date (decreasing)</option>
                   <option>...</option>
                 </Select>
-                <div class="separator separator--vertical"></div>
+                <div class="separator separator--vertical" />
                 <Btn
                   variant="bare"
                   icon-pos="only"
                   icon="List"
                   size="sm"
                   label="Display as list"
-                  @click.native="displayType = 'list'"
+                  @click="displayType = 'list'"
                 />
                 <Btn
                   variant="bare"
@@ -189,7 +189,7 @@
                   icon="Apps"
                   size="sm"
                   label="Display as grid"
-                  @click.native="displayType = 'grid'"
+                  @click="displayType = 'grid'"
                 />
               </div>
             </div>
@@ -248,7 +248,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
@@ -365,7 +365,7 @@ const displayType = defineModel('displayType', {
   type: String,
   default: () => 'grid',
 })
-const props = defineProps({
+defineProps({
   noResults: {
     type: Boolean,
     default: () => false,

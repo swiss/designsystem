@@ -21,14 +21,14 @@
 
           <AccordionItem id="11" title="Interviews" headingLevel="h3">
             <Card type="flat">
-              <template v-slot:title>
+              <template #title>
                 <h4>Flat Card example</h4>
               </template>
-              <template v-slot:description>
+              <template #description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
-              <template v-slot:footerInfo> 22. März 2012 </template>
-              <template v-slot:footerAction>
+              <template #footerInfo> 22. März 2012 </template>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -39,14 +39,14 @@
               </template>
             </Card>
             <Card type="flat">
-              <template v-slot:title>
+              <template #title>
                 <h4>Flat Card example</h4>
               </template>
-              <template v-slot:description>
+              <template #description>
                 <p>Digitale Karten und Geoinformation im Unterricht</p>
               </template>
-              <template v-slot:footerInfo> 22. März 2012 </template>
-              <template v-slot:footerAction>
+              <template #footerInfo> 22. März 2012 </template>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -57,12 +57,12 @@
               </template>
             </Card>
             <Card type="flat">
-              <template v-slot:title>
+              <template #title>
                 Swisstopo Daten sind neu in geo.admin.ch Geo- und
                 Downloaddiensten kostenlos...
               </template>
-              <template v-slot:footerInfo> 22. März 2012 </template>
-              <template v-slot:footerAction>
+              <template #footerInfo> 22. März 2012 </template>
+              <template #footerAction>
                 <Btn
                   to="#"
                   variant="outline"
@@ -144,5 +144,4 @@ import AccordionItem from '../components/AccordionItem.vue'
 import Btn from '../components/Btn.vue'
 import Card from '../components/Card.vue'
 import DownloadItem from '../components/DownloadItem.vue'
-import SvgIcon from '../components/SvgIcon.vue'
 </script>

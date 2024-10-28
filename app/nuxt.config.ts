@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 // https://nuxt.com/docs/api/nuxt-config
 export default defineNuxtConfig({
   // Disable server-side rendering

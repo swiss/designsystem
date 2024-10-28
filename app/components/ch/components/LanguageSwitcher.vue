@@ -15,7 +15,7 @@
 import Select from '../components/Select.vue'
 import { computed } from 'vue'
 
-const props = defineProps({
+defineProps({
   type: {
     type: String,
     default: () => 'negative',
@@ -23,7 +23,7 @@ const props = defineProps({
 })
 
 const computedClass = computed(() => {
-  let base = 'language-switcher'
+  const base = 'language-switcher'
   return base
 })
 </script>

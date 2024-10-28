@@ -14,11 +14,11 @@
     <main id="main-content">
       <section class="section-overview">
         <div class="container">
-          <hero type="overview">
-            <template v-slot:title>
+          <Hero type="overview">
+            <template #title>
               <h1 class="h1 hero__title">Corona</h1>
             </template>
-          </hero>
+          </Hero>
           <div class="grid grid--responsive-cols-3 gap--responsive">
             <div class="card card--default card--clickable">
               <div class="card__image">
@@ -49,7 +49,7 @@
                       >
                         <path
                           d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                        ></path>
+                        />
                       </svg>
                       <span class="btn__text">Weiterlesen</span>
                     </a>
@@ -80,7 +80,7 @@
                       >
                         <path
                           d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                        ></path>
+                        />
                       </svg>
                       <span class="btn__text">Weiterlesen</span>
                     </a>
@@ -111,7 +111,7 @@
                       >
                         <path
                           d="m16.444 19.204 4.066-7.044-4.066-7.044-.65.375 3.633 6.294h-15.187v.75h15.187l-3.633 6.294z"
-                        ></path>
+                        />
                       </svg>
                       <span class="btn__text">Weiterlesen</span>
                     </a>
@@ -133,7 +133,7 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 
-const props = defineProps({
+defineProps({
   useStickyNavigation: {
     type: Boolean,
     default: () => false,

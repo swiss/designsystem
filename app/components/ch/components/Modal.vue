@@ -25,11 +25,11 @@
       </header>
 
       <div v-if="$slots.body" :id="'modal-desc-' + uuid" class="modal__body">
-        <slot name="body"></slot>
+        <slot name="body" />
       </div>
 
       <footer v-if="$slots.footer" class="modal__footer">
-        <slot name="footer"></slot>
+        <slot name="footer" />
       </footer>
     </div>
     <div
@@ -39,7 +39,7 @@
       aria-label="close"
       @click="close"
       @focus="backdropFocusListener"
-    ></div>
+    />
   </div>
 </template>
 
@@ -64,6 +64,7 @@ const props = defineProps({
     type: String,
     validator: (prop) =>
       ['auto', 'xs', 'sm', 'md', 'lg', 'xl', 'xs'].includes(prop as string),
+    default: () => undefined,
   },
   triggerElements: {
     type: String,
@@ -114,7 +115,7 @@ const keyListener = function (e: KeyboardEvent) {
   }
 }
 
-const backdropFocusListener = function (e: FocusEvent) {
+const backdropFocusListener = function () {
   closeBtn.value?.focus()
 }
 

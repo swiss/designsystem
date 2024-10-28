@@ -1,15 +1,25 @@
 <template>
   <div class="box total__summary-container">
-    <h3 class="h3 total__sumary-title">{{ title }}</h3>
+    <h3 class="h3 total__sumary-title">
+      {{ title }}
+    </h3>
     <div>
       <div class="container--flex">
-        <p class="total__summary-total-title">{{ subTotalTitle }}</p>
-        <p class="font--bold total__summary-inline-text">{{ subTotal }}</p>
+        <p class="total__summary-total-title">
+          {{ subTotalTitle }}
+        </p>
+        <p class="font--bold total__summary-inline-text">
+          {{ subTotal }}
+        </p>
       </div>
       <hr class="separator separator--md" />
       <div class="container--flex">
-        <p class="total__summary-total-title">{{ totalTitle }}</p>
-        <p class="font--bold total__summary-inline-text">{{ total }}</p>
+        <p class="total__summary-total-title">
+          {{ totalTitle }}
+        </p>
+        <p class="font--bold total__summary-inline-text">
+          {{ total }}
+        </p>
       </div>
     </div>
     <div class="total__summary-agb">
@@ -27,15 +37,15 @@
         "
       />
     </div>
-    <btn
+    <Btn
       class="shopping__cart-button"
       variant="outline-negative"
       size="base"
       :label="orderButtonText"
       :ariaLabel="orderButtonAriaLabel"
       :fullWidth="true"
-      @emitClick="orderClicked"
       :disabled="!agbAccepted"
+      @emit-click="orderClicked"
     />
   </div>
 </template>
@@ -46,7 +56,7 @@ import { ref } from 'vue'
 
 const agbAccepted = ref(false)
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: () => 'Total',
@@ -84,7 +94,7 @@ const props = defineProps({
 const emit = defineEmits(['nextStep'])
 
 const orderClicked = function () {
-  if (!agbAccepted) return
+  if (!agbAccepted.value) return
   emit('nextStep')
 }
 </script>

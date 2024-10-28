@@ -8,8 +8,9 @@
       {{ label }}
     </label>
     <div :class="selectWrapperClasses">
-      <v-select
+      <VSelect
         :id="getUniqueId('multi-select')"
+        v-model="currentSelected"
         :multiple="multiple"
         :placeholder="placeholder"
         :class="selectClasses"
@@ -17,7 +18,6 @@
         :components="{ Deselect, OpenIndicator }"
         :options="options"
         :name="name"
-        v-model="currentSelected"
         :selectable="
           (option: string) =>
             !excluded.includes(option) &&
@@ -37,7 +37,7 @@
             v-on="events"
           />
         </template>
-      </v-select>
+      </VSelect>
       <div class="select__icon">
         <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
           <path
@@ -57,8 +57,8 @@
 </template>
 
 <script setup lang="ts">
-import vSelect from 'vue-select'
-import { ref, computed, watch, onMounted, h } from 'vue'
+import { default as VSelect } from 'vue-select'
+import { ref, computed, watch, onMounted, h, type PropType } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 
 const selectId = ref('')
@@ -95,17 +95,21 @@ const props = defineProps({
   },
   label: {
     type: String,
+    default: () => undefined,
   },
   name: {
     type: String,
+    default: () => undefined,
   },
   message: {
     type: String,
+    default: () => undefined,
   },
   messageType: {
     type: String,
     validator: (prop) =>
       ['error', 'warning', 'success', 'info'].includes(prop as string),
+    default: () => undefined,
   },
   onChange: {
     type: Function as PropType<(value: string[]) => void>,
@@ -125,6 +129,7 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
+    default: () => undefined,
   },
   excluded: {
     type: Array<string>,
@@ -132,6 +137,7 @@ const props = defineProps({
   },
   selectLimit: {
     type: Number,
+    default: () => undefined,
   },
 })
 
@@ -160,7 +166,7 @@ const labelClasses = computed(() => {
 })
 
 const getUniqueId = function (text = '') {
-  return `${text}-${selectId}`
+  return `${text}-${selectId.value}`
 }
 
 watch(currentSelected, function () {

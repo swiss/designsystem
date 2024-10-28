@@ -1,5 +1,5 @@
 <template>
-  <client-only>
+  <ClientOnly>
     <div>
       <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
       <header id="main-header">
@@ -24,7 +24,7 @@
       </header>
       <main id="main-content">
         <Hero type="default" :meta-infos="['Veranstaltung']">
-          <template v-slot:title>
+          <template #title>
             Symposium Extremhochwasser in der Schweiz
           </template>
         </Hero>
@@ -223,7 +223,7 @@
 
               <div>
                 <h2 class="h2">Themen</h2>
-                <RelatedTags :tags="tags" bare></RelatedTags>
+                <RelatedTags :tags="tags" bare />
               </div>
             </div>
             <div class="container__aside hidden md:block">
@@ -286,12 +286,12 @@
           </div>
         </section>
       </main>
-      <footer class="footer" id="main-footer">
+      <footer id="main-footer" class="footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>
     </div>
-  </client-only>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

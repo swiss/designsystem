@@ -111,20 +111,59 @@ import Accordion from '../components/Accordion.vue'
 import AccordionItem from '../components/AccordionItem.vue'
 import Btn from '../components/Btn.vue'
 
-const props = defineProps({
-  title: String,
-  address1: String,
-  address2: String,
-  address3: String,
-  street: String,
-  zip: String,
-  city: String,
-  country: String,
-  phone: String,
-  fax: String,
-  email: String,
-  website: String,
-  mapLink: String,
+defineProps({
+  title: {
+    type: String,
+    default: () => undefined,
+  },
+  address1: {
+    type: String,
+    default: () => undefined,
+  },
+  address2: {
+    type: String,
+    default: () => undefined,
+  },
+  address3: {
+    type: String,
+    default: () => undefined,
+  },
+  street: {
+    type: String,
+    default: () => undefined,
+  },
+  zip: {
+    type: String,
+    default: () => undefined,
+  },
+  city: {
+    type: String,
+    default: () => undefined,
+  },
+  country: {
+    type: String,
+    default: () => undefined,
+  },
+  phone: {
+    type: String,
+    default: () => undefined,
+  },
+  fax: {
+    type: String,
+    default: () => undefined,
+  },
+  email: {
+    type: String,
+    default: () => undefined,
+  },
+  website: {
+    type: String,
+    default: () => undefined,
+  },
+  mapLink: {
+    type: String,
+    default: () => undefined,
+  },
   openingHours: Boolean,
   contactForm: Boolean,
 })

@@ -11,13 +11,13 @@
     </header>
     <main id="main-content">
       <Hero type="default">
-        <template v-slot:title> Form Example </template>
+        <template #title> Form Example </template>
       </Hero>
       <FormDemo />
 
       <BackToTopBtn fixed type="outline" target="main-header" />
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>

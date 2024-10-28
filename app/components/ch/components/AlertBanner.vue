@@ -1,10 +1,12 @@
 <template>
-  <div :class="classes" v-if="!isClosed">
+  <div v-if="!isClosed" :class="classes">
     <div class="alert-banner__wrapper">
       <SvgIcon v-if="icon" :icon="icon" class="notification__icon" />
       <div class="alert-banner__grid">
         <div class="alert-banner__header">
-          <h4 class="font--bold">{{ title }}</h4>
+          <h4 class="font--bold">
+            {{ title }}
+          </h4>
           <p>{{ topic }}</p>
           <p>{{ lastUpdated }}</p>
         </div>
@@ -30,8 +32,8 @@
       <button
         v-if="closeBtn"
         class="alert-banner__close"
-        @click="isClosed = true"
         aria-label="Close alert banner"
+        @click="isClosed = true"
       >
         <SvgIcon icon="Cancel" />
       </button>
@@ -74,10 +76,12 @@ const props = defineProps({
   introLink: {
     type: String,
     required: false,
+    default: () => undefined,
   },
   link: {
     type: Object,
     required: false,
+    default: () => undefined,
   },
   icon: {
     type: String,

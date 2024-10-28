@@ -18,10 +18,10 @@
     </header>
     <main id="main-content">
       <Hero type="default" :meta-infos="metaInfos" :authors="authors">
-        <template v-slot:title>
+        <template #title>
           Web Mapping Services WMS: Verfügbare Dienste und Daten
         </template>
-        <template v-slot:description>
+        <template #description>
           Das Konzept des INTERLIS Model Repository sieht vor, Datenmodelle als
           http-Ressource nutzbar zu machen. Dabei werden die
           INTERLIS-Modelldateien auf einem Webserver abgelegt, und können
@@ -29,9 +29,9 @@
           Vorteil für einen Benutzer liegt darin, dass die Modelldateien und
           evtl. weitere importierte Datenmodelle nicht lokal vorhanden sein
           müssen.
-          <a href="#" class="link" id="share-link">Diese Seite teilen</a>
+          <a id="share-link" href="#" class="link">Diese Seite teilen</a>
         </template>
-        <template v-slot:image>
+        <template #image>
           <figure>
             <picture>
               <source
@@ -76,9 +76,9 @@
             </p>
 
             <SlideshowExample
+              :id="1"
               paginationType="bullets"
               loop
-              :id="1"
               :slides="slides"
             />
 
@@ -102,9 +102,9 @@
             </p>
 
             <SlideshowExample
+              :id="2"
               paginationType="fraction"
               loop
-              :id="2"
               :slides="slides"
             />
 
@@ -185,11 +185,11 @@
             </p>
 
             <TextImage type="default">
-              <template v-slot:title>
+              <template #title>
                 Ein neues «minimales Geodatenmodell» in der Datenmodellablage
                 publizieren
               </template>
-              <template v-slot:description>
+              <template #description>
                 Über den Kontakt models@geo.admin.ch können die
                 INTERLIS-Modelldatei und die Modelldokumentation (als PDF
                 Dokument) zur Publikation eingereicht werden. Über den Kontakt
@@ -197,7 +197,7 @@
                 Modelldokumentation (als PDF Dokument) zur Publikation
                 eingereicht werden.
               </template>
-              <template v-slot:image>
+              <template #image>
                 <figure>
                   <picture>
                     <source
@@ -352,14 +352,14 @@
             </p>
 
             <TextImage>
-              <template v-slot:title> Modelldokumentation </template>
-              <template v-slot:description>
+              <template #title> Modelldokumentation </template>
+              <template #description>
                 Über den Kontakt models@geo.admin.ch können die
                 Modelldokumentation zur Publikation eingereicht werden. Über den
                 Kontakt models@geo.admin.ch können die zur Publikation
                 eingereicht werden.
               </template>
-              <template v-slot:image>
+              <template #image>
                 <figure>
                   <picture>
                     <source
@@ -580,15 +580,15 @@
             <ul class="list">
               <li>
                 <Card type="flat">
-                  <template v-slot:title>
+                  <template #title>
                     <h3>
                       (Haager-) Übereinkommen vom 5. Oktober 1961 über die
                       Zuständigkeit der Behörden und das anzuwendende Recht auf
                       dem Gebiet des Schutzes von Minderjährigen
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.231.01) </template>
-                  <template v-slot:footerAction>
+                  <template #footerInfo> (SR 0.211.231.01) </template>
+                  <template #footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -601,7 +601,7 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template v-slot:title>
+                  <template #title>
                     <h3>
                       (Haager) Übereinkommen vom 19. Oktober 1996 über die
                       Zuständigkeit, das anzuwendende Recht, die Anerkennung,
@@ -610,8 +610,8 @@
                       von Kindern
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.231.011) </template>
-                  <template v-slot:footerAction>
+                  <template #footerInfo> (SR 0.211.231.011) </template>
+                  <template #footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -624,7 +624,7 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template v-slot:title>
+                  <template #title>
                     <h3>
                       Europäisches Übereinkommen vom 20. Mai 1980 über die
                       Anerkennung und Vollstreckung von Entscheidungen über das
@@ -632,8 +632,8 @@
                       Sorgerechts
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.230.01) </template>
-                  <template v-slot:footerAction>
+                  <template #footerInfo> (SR 0.211.230.01) </template>
+                  <template #footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -646,14 +646,14 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template v-slot:title>
+                  <template #title>
                     <h3>
                       (Haager-) Übereinkommen vom 25. Oktober 1980 über die
                       zivilrechtlichen Aspekte internationaler Kindesentführung
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.230.02) </template>
-                  <template v-slot:footerAction>
+                  <template #footerInfo> (SR 0.211.230.02) </template>
+                  <template #footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -666,15 +666,15 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template v-slot:title>
+                  <template #title>
                     <h3>
                       (Haager-) Übereinkommen vom 29. Mai 1993 über den Schutz
                       von Kindern und die Zusammenarbeit auf dem Gebiet der
                       internationalen Adoption
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.221.311) </template>
-                  <template v-slot:footerAction>
+                  <template #footerInfo> (SR 0.211.221.311) </template>
+                  <template #footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -687,14 +687,14 @@
               </li>
               <li>
                 <Card type="flat">
-                  <template v-slot:title>
+                  <template #title>
                     <h3>
                       (Haager) Übereinkommen vom 13. Januar 2000 über den
                       internationalen Schutz von Erwachsenen
                     </h3>
                   </template>
-                  <template v-slot:footerInfo> (SR 0.211.232.1) </template>
-                  <template v-slot:footerAction>
+                  <template #footerInfo> (SR 0.211.232.1) </template>
+                  <template #footerAction>
                     <Btn
                       to="#"
                       variant="outline"
@@ -797,7 +797,7 @@
             </p>
             <div>
               <h2 class="h2">Themen</h2>
-              <RelatedTags :tags="tags" bare></RelatedTags>
+              <RelatedTags :tags="tags" bare />
             </div>
           </div>
         </div>
@@ -812,10 +812,10 @@
       triggerElements=".share-bar__share-button, #share-link"
       layout="xs"
     >
-      <template v-slot:body>
+      <template #body>
         <Card type="default">
-          <template v-slot:description>
-            <div class="flex flex-wrap gap-6 justify-center">
+          <template #description>
+            <div class="flex flex-wrap justify-center gap-6">
               <a href="#" class="link" title="Share on Facebook">
                 <SvgIcon size="2xl" icon="Facebook" label="Facebook" />
               </a>
@@ -835,11 +835,11 @@
             <hr class="separator" />
             <div class="pt-3">
               <Input
+                id="my-id"
                 type="outline"
                 size="base"
                 label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"
-                id="my-id"
                 :hideLabel="true"
                 :readonly="true"
               />
@@ -849,7 +849,7 @@
                   size="base"
                   label="URL Kopieren"
                   class="mt-3"
-                  @click.native="URLIsCopied = !URLIsCopied"
+                  @click="URLIsCopied = !URLIsCopied"
                 />
                 <div aria-live="polite">
                   <Badge
@@ -867,7 +867,7 @@
         </Card>
       </template>
     </Modal>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
@@ -997,7 +997,7 @@ const tags = reactive([
   { label: 'Datenmodell', url: '#' },
 ])
 
-const props = defineProps({
+defineProps({
   isIntranet: {
     type: Boolean,
     default: () => false,

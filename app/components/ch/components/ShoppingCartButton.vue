@@ -31,6 +31,7 @@ const props = defineProps({
   },
   href: {
     type: String,
+    default: () => undefined,
   },
   target: {
     type: String,
@@ -42,10 +43,6 @@ const props = defineProps({
     type: String,
     required: true,
   },
-})
-
-const limittedAmount = computed(() => {
-  return props.amount > 9 ? '9+' : props.amount
 })
 
 const parsedLabel = computed(() => {

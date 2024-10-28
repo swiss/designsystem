@@ -18,14 +18,14 @@
                 <div class="search search--large search--page-result">
                   <div class="search__group">
                     <input
-                      type="search"
                       id="search-input"
+                      v-model="searchTerm"
+                      type="search"
                       label="GLossar filtern"
                       placeholder="Suchbegriff eingeben"
                       autocomplete="off"
-                      v-model="searchTerm"
                     />
-                    <div class="btn" v-if="isLoading">
+                    <div v-if="isLoading" class="btn">
                       <SvgIcon
                         icon="Spinner"
                         size="lg"
@@ -47,16 +47,16 @@
                       icon-pos="only"
                       variant="bare"
                       size="lg"
-                      @emitClick="searchTerm = ''"
+                      @emit-click="searchTerm = ''"
                     />
                   </div>
                 </div>
                 <div class="glossary__filters">
                   <CarouselBadgeFilter
+                    :id="carouselId"
                     :badgeClicked="setActiveFilter"
                     :activeFilter="activeFilter"
                     :disabledFilters="disabledFilters"
-                    :id="carouselId"
                   />
                   <BadgeFilter
                     :badgeClicked="setActiveFilter"
@@ -149,8 +149,8 @@
         <div class="container gap--responsive">
           <div class="glossary-results">
             <div
-              class="glossary-results__header"
               v-if="loadLimitedResults.length !== 0 && !isLoading"
+              class="glossary-results__header"
             >
               <div class="glossary-results__header__left">
                 <strong>{{ foundEntries }}</strong
@@ -158,10 +158,10 @@
               </div>
               <div class="glossary-results__header__right">
                 <Select
+                  id="select-6"
                   variant="outline"
                   bare
                   size="sm"
-                  id="select-6"
                   name="select-name"
                   @select="setSorting"
                 >
@@ -198,8 +198,8 @@
             </div>
           </div>
           <div
-            class="load-more-container"
             v-if="loadLimitedResults.length !== 0 && !isLoading"
+            class="load-more-container"
           >
             <Btn
               variant="outline"
@@ -207,13 +207,13 @@
               label="Mehr laden"
               :disabled="!canLoadMore"
               :fullWidth="screenSize < 1024"
-              @emitClick="handleLoadMore()"
+              @emit-click="handleLoadMore()"
             />
           </div>
         </div>
       </section>
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
@@ -582,7 +582,7 @@ const loadLimitedResults = computed(() => {
       result.push(values[i])
       count += values[i].results.length
     } else {
-      let newResults = Object.values(values)[i].results.slice(
+      const newResults = Object.values(values)[i].results.slice(
         0,
         loadedResults.value - count,
       )
@@ -599,8 +599,9 @@ const loadLimitedResults = computed(() => {
 })
 
 const sortedResultItems = computed(() => {
+  const tempLimitedResultsItems = limitedResultItems
   return [
-    ...limitedResultItems.value.sort((a, b) => {
+    ...tempLimitedResultsItems.value.sort((a, b) => {
       const elementA = a.filter
       const elementB = b.filter
 
@@ -625,7 +626,7 @@ const sortedResultItems = computed(() => {
 })
 
 const limitedResultItems = computed(() => {
-  let filteredResults = resultItems.filter((elm) => {
+  const filteredResults = resultItems.filter((elm) => {
     if (activeFilter.value === 'all') {
       return elm
     }
@@ -637,7 +638,7 @@ const limitedResultItems = computed(() => {
     }
   })
 
-  let result: GlossaryResult[] = []
+  const result: GlossaryResult[] = []
 
   filteredResults.forEach((res) => {
     const start = res.title.charAt(0)
@@ -750,9 +751,9 @@ const handleLoadMore = function () {
   if (loadedResults.value >= foundEntries.value) {
     return
   }
-  loadedResults.value + 15 < foundEntries.value
-    ? (loadedResults.value += 15)
-    : (loadedResults.value = foundEntries.value)
+
+  if (loadedResults.value + 15 < foundEntries.value) loadedResults.value += 15
+  else loadedResults.value = foundEntries.value
 }
 
 watch(searchTerm, function () {

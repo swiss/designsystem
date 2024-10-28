@@ -1,10 +1,10 @@
 <template>
   <form
+    ref="form"
     :action="action ? action : ''"
     :target="target"
     :method="method"
     @submit="handleSubmit"
-    ref="form"
   >
     <slot />
   </form>
@@ -26,9 +26,11 @@ const form = useTemplateRef<HTMLFormElement>('form')
 const props = defineProps({
   submitFunction: {
     type: Function as PropType<(e: Event) => void>,
+    default: () => undefined,
   },
   action: {
     type: String,
+    default: () => undefined,
   },
   method: {
     type: String,
