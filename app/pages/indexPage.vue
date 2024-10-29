@@ -258,7 +258,7 @@ const activeFilter = ref('all')
 const searchTerm = ref('')
 const filtersAreOpen = ref(false)
 const filters = ref([
-  'numbric',
+  'numeric',
   'a',
   'b',
   'c',
@@ -507,7 +507,7 @@ const disabledFilters = computed(() => {
     const start = elm.title.charAt(0)
     if (!startingLetters.includes(start)) {
       if (!isNaN(Number(start))) {
-        startingLetters.push('numbric')
+        startingLetters.push('numeric')
       } else {
         startingLetters.push(start.toLowerCase())
       }
@@ -586,7 +586,7 @@ const limitedResultItems = computed(() => {
     if (activeFilter.value === 'all') {
       return elm
     }
-    if (activeFilter.value === 'numbric') {
+    if (activeFilter.value === 'numeric') {
       return !isNaN(Number(start))
     } else {
       return activeFilter.value === start.toLowerCase()

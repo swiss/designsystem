@@ -11,10 +11,10 @@
     <Badge
       label="0-9"
       size="base"
-      :color="activeFilter === 'numbric' ? 'negative' : 'gray'"
+      :color="activeFilter === 'numeric' ? 'negative' : 'gray'"
       clickable
-      :badgeClicked="() => badgeClicked('numbric')"
-      :disabled="disabledFilters.includes('numbric')"
+      :badgeClicked="() => badgeClicked('numeric')"
+      :disabled="disabledFilters.includes('numeric')"
     />
     <Badge
       label="A"

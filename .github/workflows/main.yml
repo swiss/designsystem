@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - chore/upgrade-vue-3
 
 jobs:
   deploy:
