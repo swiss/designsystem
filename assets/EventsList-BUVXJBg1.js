@@ -1,0 +1,10 @@
+import{ae as t,af as n,ag as r}from"./index-CiR8XFvN.js";import{u as e}from"./index-CqrWAbSl.js";import{E as m,W as p,a,b as h}from"./EventsList.stories-BHYnheMr.js";import"./iframe-C_6v4lE6.js";import"../sb-preview/runtime.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./index-D-8MO0q_.js";import"./index-CxISiSMm.js";import"./index-DrFu-skq.js";import"./vue.esm-bundler-8gVuwTo0.js";import"./AlterBodyClasses-0FdskjBc.js";import"./TopHeader-Ddc83UXP.js";import"./Logo-DP4E4Y6c.js";import"./SvgIcon-EQn76wAw.js";import"./Input-BG4Sdj6p.js";import"./LanguageSwitcher-DEqsIW4F.js";import"./Select-By2N4Zx3.js";import"./pinia-D7GAMojH.js";import"./TopBar-JYYLP_rr.js";import"./Badge-CuM8jHAy.js";import"./Btn-BAlml3cB.js";import"./TopBarNavigation-PBHPcVnR.js";import"./DesktopMenu-DEXidaEK.js";import"./MainNavigation-CVuKiMkP.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";import"./MobileMenu-CpKco8J5.js";import"./swiper-vue-CK8r6Ueo.js";import"./v4-DvF23Exx.js";import"./FooterInformation-CfRGR4ME.js";import"./FooterNavigation-3I5JfM3u.js";import"./SearchResultsList-cvVBHrbA.js";import"./MetaInfo-CBlTXnbi.js";import"./Card-E99-G_sC.js";import"./Pagination-VzK3iTLn.js";import"./Notification-B0JhPup2.js";import"./TagItem-knBQIMMR.js";import"./Breadcrumb-BH_qJt7r.js";function s(o){const i={h1:"h1",hr:"hr",...e(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(n,{of:m}),`
+`,t.jsx(i.h1,{id:"events-list",children:"Events List"}),`
+`,t.jsx("a",{href:"?path=/story/pages-events-list--with-results",children:"Go to the Canvas Tab"}),`
+`,t.jsx(i.hr,{}),`
+`,t.jsx("a",{href:"?id=pages-events-list--with-results&args=&viewMode=story",target:"_blank",children:"Open page in full width in a new tab"}),`
+`,t.jsx(r,{of:p}),`
+`,t.jsx(i.h1,{id:"show-filters",children:"Show filters"}),`
+`,t.jsx(r,{of:a}),`
+`,t.jsx(i.h1,{id:"loading-example",children:"Loading example"}),`
+`,t.jsx(r,{of:h})]})}function Q(o={}){const{wrapper:i}={...e(),...o.components};return i?t.jsx(i,{...o,children:t.jsx(s,{...o})}):s(o)}export{Q as default};
