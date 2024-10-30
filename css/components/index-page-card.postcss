@@ -61,19 +61,19 @@
 }
 
 .index-page__card-image {
+  @apply grid grid-cols-2;
   @apply relative;
-  @apply h-[200px] w-full;
-
-  @apply flex items-center justify-start;
+  @apply w-full;
 
   img {
-    @apply max-w-full max-h-full;
+    @apply w-full max-h-[400px];
+    @apply object-contain;
   }
 
   @screen md {
-    @apply h-[200px];
+    @apply flex;
     @apply max-w-[200px];
-    @apply items-center justify-end;
+    @apply items-start justify-end;
   }
 }
 

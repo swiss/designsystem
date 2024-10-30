@@ -326,6 +326,19 @@
     @apply no-underline text-inherit; /* override general styling for links in main */
   }
 
+  /* Remove hover effect for clickable card */
+  a::after,
+  .btn::after {
+    content: '';
+    @apply border-opacity-0;
+  }
+
+  /* Remove hover effect for clickable card */
+  a::after,
+  .btn::after {
+    @apply border-0;
+  }
+
   @media screen(sm) {
     @apply grid gap-x-6;
     grid-template-columns: 4fr 1fr;
