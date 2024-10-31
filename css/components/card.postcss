@@ -176,7 +176,7 @@
     @apply absolute w-full h-full object-cover;
   }
 
-  svg {
+  svg:not(.pdf-preview-loading svg) {
     @apply absolute z-10;
     @apply top-1/2 left-1/2;
     @apply -translate-x-1/2 -translate-y-1/2;
