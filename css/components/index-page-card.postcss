@@ -52,7 +52,8 @@
   /* Hover shadow effect */
   &:hover,
   &:focus-within {
-    
+    @apply shadow-xl;
+
     /* Title hover interaction color */
     .index-page__card-title {
       @apply text-primary-700;
@@ -61,28 +62,29 @@
     a::after,
     .btn::after {
       content: '';
-      /* @apply border-opacity-90; */
+      @apply border-opacity-90;
     }
   }
 }
 
 .index-page__card-image {
   @apply relative;
-  @apply w-full;
+  @apply h-[150px] w-full;
 
-  @apply grid grid-cols-2;
+  @apply flex items-center justify-start;
 
   img {
-    @apply w-full max-h-[400px] object-contain;
+    @apply max-w-full max-h-full;
   }
 
   @screen md {
+    @apply h-[200px];
     @apply max-w-[200px];
-    @apply flex items-start justify-end;
+    @apply items-center justify-end;
   }
 }
 
-.index-page__card-details-container {
+.index-page__card-details-continer {
   @apply space-y-3;
   @apply md:mr-4;
 }
@@ -92,10 +94,4 @@
   @apply text-lg xl:text-xl 3xl:text-2xl;
   @apply font-bold leading-snug;
   @apply transition-colors duration-200 ease-in-out;
-}
-
-.index-page__card-footer__action {
-  @apply h-0 !important;
-  @apply m-0 !important;
-  @apply p-0 !important;
 }
