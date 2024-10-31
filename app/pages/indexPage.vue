@@ -302,7 +302,7 @@ const resultItems = reactive([
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
     metaInfos: ['Blogpost', '23. januar 2022'],
     footerInfos: ['PDF', '4.1 MB', '10. Oktober 2023'],
-    image: 'https://picsum.photos/400/200',
+    image: 'https://picsum.photos/300/400',
     footerAction: 'https://www.google.ch',
   },
   {

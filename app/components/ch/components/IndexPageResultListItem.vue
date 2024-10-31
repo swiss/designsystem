@@ -6,7 +6,7 @@
     <div v-if="image" class="index-page__card-image">
       <img :src="image" />
     </div>
-    <div class="index-page__card-details-continer">
+    <div class="index-page__card-details-container">
       <div v-if="metaInfos.length > 0" class="index-page__header">
         <Metainfo :metainfos="metaInfos" />
       </div>
