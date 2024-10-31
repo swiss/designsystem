@@ -78,9 +78,7 @@ export const Example = {
   render: (args) => ({
     components: { Card, MetaInfo, SvgIcon },
     template: `
-      <div style="${
-        args.layout !== 'list' ? 'max-width: 600px; margin: auto' : ''
-      }">
+      <div style="${args.layout !== 'list' ? 'max-width: 600px; margin: auto' : ''}">
         <Card :type="type" :layout="layout"
           :has-icon="${args.image == 'WithIcon'}">
           <template v-if="${args.image != 'NoImage'}" v-slot:image>
@@ -122,18 +120,13 @@ export const Example = {
             </p>
           </template>
           <template v-slot:author>
-          </template>
-          <template v-slot:author>
             <!-- display author here if needed -->
           </template>
           <template v-slot:eventInfos>
             <!-- display eventInfos if needed -->
           </template>
           <template v-slot:specifications>
-            <MetaInfo
-              v-if="${args.contentSpecs == 'WithContentSpecs'}"
-              :metainfos="['PDF', '2.34mb']"
-            />
+            <MetaInfo v-if="${args.contentSpecs == 'WithContentSpecs'}" :metainfos="['PDF', '2.34mb']" />
           </template>
           <template v-slot:contentIcons>
             <div
@@ -145,9 +138,7 @@ export const Example = {
               <SvgIcon icon="SignLanguage" size="xl" />
             </div>
           </template>
-          <template v-if="${
-            args.footerInfo == 'WithFooterInfo'
-          }" v-slot:footerInfo>
+          <template v-if="${args.footerInfo == 'WithFooterInfo'}" v-slot:footerInfo>
             <div>Energie, Datenmodell, Nachhaltigkeit</div>
           </template>
           <template
