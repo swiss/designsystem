@@ -33,6 +33,11 @@ export const ForceLink = {
 }
 
 export const NegativeLink = {
+  parameters: {
+    backgrounds: {
+      default: 'Dark',
+    },
+  },
   render: () => ({
     template: `
       <a class="link link--negative">Negative Link</a>

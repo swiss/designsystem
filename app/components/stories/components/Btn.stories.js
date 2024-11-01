@@ -182,6 +182,11 @@ export const ButtonLinks = {
 }
 
 export const NegativeButtonLinks = {
+  parameters: {
+    backgrounds: {
+      default: 'Dark',
+    },
+  },
   render: () => ({
     template: `
       <div>

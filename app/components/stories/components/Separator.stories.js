@@ -27,6 +27,11 @@ export const SeparatorSpacings = {
 }
 
 export const SeparatorNegative = {
+  parameters: {
+    backgrounds: {
+      default: 'Dark',
+    },
+  },
   render: () => ({
     template: `
       <div class="text--negative">

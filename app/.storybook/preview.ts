@@ -59,5 +59,13 @@ export default {
         ],
       },
     },
+    backgrounds: {
+      values: [
+        { name: 'Light', value: 'var(--color-white, #fff)' },
+        { name: 'Dark', value: 'var(--color-secondary-600, #5f755f)' },
+      ],
+      // 👇 Specify which background is shown by default
+      default: 'Light',
+    },
   },
 }

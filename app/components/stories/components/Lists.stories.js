@@ -79,6 +79,11 @@ export const LooseVariant = {
 }
 
 export const NegativeList = {
+  parameters: {
+    backgrounds: {
+      default: 'Dark',
+    },
+  },
   render: () => ({
     template: `
       <ul class="list list--default list--negative">
