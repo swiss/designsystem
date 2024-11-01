@@ -41,12 +41,41 @@
 
       .header {
         padding: 16px 12px 12px;
-        width: 100%
+        width: 100%;
       }
 
       .header img {
         margin-right: 8px;
         width: 34px;
+      }
+
+      .logo-flag {
+        display: block;
+        width: 150px;
+        height: auto;
+      }
+
+      .logo-full {
+        display: none;
+      }
+
+      .first-col {
+        min-width: 42px;
+      }
+
+      .second-col {
+        width: 100%;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .logo-flag {
+          display: none !important;
+        }
+        .logo-full {
+          display: block !important;
+          width: 250px !important;
+          height: auto !important;
+        }
       }
 
       .header__text {
@@ -99,8 +128,19 @@
   <body>
     <table class="header">
       <tr>
-        <td><img src="https://swiss.github.io/designsystem/images/logo-flag-mail.png" alt="Logo" /></td>
-        <td class="header__text">Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport</td>
+        <td class="first-col">
+          <img
+            src="https://swiss.github.io/designsystem/images/logo-mail.png"
+            alt="Logo"
+            class="logo-full"
+          />
+          <img
+            src="https://swiss.github.io/designsystem/images/logo-flag-mail.png"
+            alt="Logo"
+            class="logo-flag"
+          />
+        </td>
+        <td class="header__text second-col">Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und Sport</td>
       </tr>
     </table>
 
@@ -236,7 +276,7 @@
       <div class="list-item__title">E-Mail:</div>
       <div class="list-item__text">daniel.erismann@efs.admin.ch</div>
     </div>
-    
+
     <table class="footer">
       <tr>
         <td>Bundesamt für Statistik</td>
