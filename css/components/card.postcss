@@ -100,7 +100,8 @@
   }
 
   a::after,
-  btn::after {
+  .btn::after {
+    content: '';
     @apply border-opacity-0;
   }
 }
@@ -112,6 +113,11 @@
   @apply border-b border-secondary-200;
   .card__footer__action {
     @apply mt-4;
+  }
+
+  a::after,
+  .btn::after {
+    @apply border-0;
   }
 }
 
