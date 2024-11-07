@@ -51,7 +51,7 @@ const props = defineProps({
     >,
     validator: (prop) =>
       ['default', 'highlight', 'twitter', 'flat', 'universal', 'list'].includes(
-        prop as string,
+        prop as string
       ),
     default: () => undefined,
   },
@@ -72,7 +72,7 @@ const computedClasses = computed(() => {
           ? 'card--list '
           : 'card--list-without-image '
         : `card--${props.type} `
-  if (props.layout && props.layout !== 'default')
+  if (props.layout && props.layout !== 'default' && slots.image)
     base += `card--${props.layout} `
   if (slots.footerAction) base += `card--clickable `
   return base

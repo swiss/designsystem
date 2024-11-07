@@ -293,7 +293,7 @@ const resultItems = reactive([
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
     metaInfos: ['Blogpost', '10. August 2021'],
     footerInfos: ['PDF', '5.4 MB', '16. Oktober 2021'],
-    image: 'https://picsum.photos/400/200',
+    image: 'https://picsum.photos/600/900',
     footerAction: 'https://www.google.ch',
   },
   {
@@ -302,7 +302,7 @@ const resultItems = reactive([
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
     metaInfos: ['Blogpost', '23. januar 2022'],
     footerInfos: ['PDF', '4.1 MB', '10. Oktober 2023'],
-    image: 'https://picsum.photos/400/200',
+    image: 'https://picsum.photos/300/400',
     footerAction: 'https://www.google.ch',
   },
   {
@@ -319,7 +319,7 @@ const resultItems = reactive([
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
     metaInfos: ['Blogpost', '30. Dezember 2019'],
     footerInfos: ['PDF', '1.8 MB', '30. Dezember 2019'],
-    image: 'https://picsum.photos/400/200',
+    image: 'https://picsum.photos/600/900',
     footerAction: 'https://www.google.ch',
   },
   {
@@ -436,7 +436,7 @@ const resultItems = reactive([
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
     metaInfos: ['Blogpost', '05. Februar 2022'],
     footerInfos: ['PDF', '4.3 MB', '10. Februar 2022'],
-    image: 'https://picsum.photos/400/200',
+    image: 'https://picsum.photos/600/900',
     footerAction: 'https://www.google.ch',
   },
   {
@@ -472,7 +472,7 @@ const resultItems = reactive([
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam',
     metaInfos: ['Blogpost', '10. Juli 2022'],
     footerInfos: ['PDF', '4.5 MB', '15. Juli 2022'],
-    image: 'https://picsum.photos/400/200',
+    image: 'https://picsum.photos/600/900',
     footerAction: 'https://www.google.ch',
   },
   {
@@ -599,7 +599,7 @@ const limitedResultItems = computed(() => {
     const start = res.title.charAt(0)
     if (result.filter((elm) => elm.filter === start.toLowerCase()).length > 0) {
       const resultIndex = result.findIndex(
-        (elm) => elm.filter === start.toLowerCase(),
+        (elm) => elm.filter === start.toLowerCase()
       )
       result[resultIndex].results.push(res)
     } else {
@@ -651,10 +651,10 @@ function scrollToTop() {
 function resizeWindow() {
   screenSize.value = document.body.clientWidth
   const searchContainer = document.getElementById(
-    'inner-search-container',
+    'inner-search-container'
   ) as HTMLElement
   const outerSearchContainer = document.getElementById(
-    'outer-search-container',
+    'outer-search-container'
   ) as HTMLElement
   const mainHeader = document.getElementById('main-header') as HTMLElement
   initialSearchContainerOffset.value =
@@ -669,16 +669,16 @@ function setScreenSize() {
 
 async function handleScroll() {
   const searchContainer = document.getElementById(
-    'search-container',
+    'search-container'
   ) as HTMLElement
   const innerSearchContainer = document.getElementById(
-    'inner-search-container',
+    'inner-search-container'
   ) as HTMLElement
   if (initialSearchContainerOffset.value < window.scrollY) {
     useStickyPlaceholder.value = true
     await nextTick()
     const stickyPlaceholder = document.getElementById(
-      'sticky-search-container-placeholder',
+      'sticky-search-container-placeholder'
     ) as HTMLElement
     stickyPlaceholder.style.height = `${containerHeight.value}px`
 
@@ -718,7 +718,7 @@ watch(
   () => searchTerm,
   () => {
     scrollToTop()
-  },
+  }
 )
 
 onMounted(() => {
