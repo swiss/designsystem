@@ -67,8 +67,12 @@ export default {
       let base = 'card '
       if (this.type)
         base +=
-          this.type === 'list' ? this.$slots.image ? 'card--list ' : 'card--list-without-image ' : `card--${this.type} `
-      if (this.layout && this.layout !== 'default')
+          this.type === 'list'
+            ? this.$slots.image
+              ? 'card--list '
+              : 'card--list-without-image '
+            : `card--${this.type} `
+      if (this.layout && this.layout !== 'default' && this.$slots.image)
         base += `card--${this.layout} `
       if (this.$slots.footerAction) base += `card--clickable `
       return base
