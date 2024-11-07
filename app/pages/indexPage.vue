@@ -599,7 +599,7 @@ const limitedResultItems = computed(() => {
     const start = res.title.charAt(0)
     if (result.filter((elm) => elm.filter === start.toLowerCase()).length > 0) {
       const resultIndex = result.findIndex(
-        (elm) => elm.filter === start.toLowerCase()
+        (elm) => elm.filter === start.toLowerCase(),
       )
       result[resultIndex].results.push(res)
     } else {
@@ -651,10 +651,10 @@ function scrollToTop() {
 function resizeWindow() {
   screenSize.value = document.body.clientWidth
   const searchContainer = document.getElementById(
-    'inner-search-container'
+    'inner-search-container',
   ) as HTMLElement
   const outerSearchContainer = document.getElementById(
-    'outer-search-container'
+    'outer-search-container',
   ) as HTMLElement
   const mainHeader = document.getElementById('main-header') as HTMLElement
   initialSearchContainerOffset.value =
@@ -669,16 +669,16 @@ function setScreenSize() {
 
 async function handleScroll() {
   const searchContainer = document.getElementById(
-    'search-container'
+    'search-container',
   ) as HTMLElement
   const innerSearchContainer = document.getElementById(
-    'inner-search-container'
+    'inner-search-container',
   ) as HTMLElement
   if (initialSearchContainerOffset.value < window.scrollY) {
     useStickyPlaceholder.value = true
     await nextTick()
     const stickyPlaceholder = document.getElementById(
-      'sticky-search-container-placeholder'
+      'sticky-search-container-placeholder',
     ) as HTMLElement
     stickyPlaceholder.style.height = `${containerHeight.value}px`
 
@@ -718,7 +718,7 @@ watch(
   () => searchTerm,
   () => {
     scrollToTop()
-  }
+  },
 )
 
 onMounted(() => {

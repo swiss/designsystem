@@ -51,7 +51,7 @@ const props = defineProps({
     >,
     validator: (prop) =>
       ['default', 'highlight', 'twitter', 'flat', 'universal', 'list'].includes(
-        prop as string
+        prop as string,
       ),
     default: () => undefined,
   },
