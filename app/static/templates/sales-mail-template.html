@@ -61,6 +61,7 @@
       .first-col-flag {
         display: block;
         height: auto;
+        min-width: 34px;
         width: 34px;
         margin-right: 8px;
       }
@@ -69,7 +70,6 @@
         display: none;
         height: auto;
         width: 0px;
-        mso-hide: all;
       }
 
       .second-col {
@@ -102,13 +102,19 @@
       }
 
       .footer {
-        background: #1f2937;
         color: #ffffff;
         font-weight: 400;
         line-height: 150% /*24px*/;
-        margin-top: 16px;
-        padding: 12px;
         width: 100%;
+      }
+
+      .footer-spacer {
+        height: 16px
+      }
+
+      .footer-content {
+        background: #1f2937;
+        padding: 12px;
       }
 
       @media only screen and (min-width: 768px) {
@@ -145,7 +151,6 @@
           display: block !important;
           min-width: 274px !important; /* 250px logo with + 24px margin right */
           margin-right: 24px;
-          mso-hide: all;
         }
 
         .info-block {
@@ -158,8 +163,11 @@
           padding: 24px 0;
         }
 
-        .footer {
-          margin-top: 24px;
+        .footer-spacer {
+          height: 24px;
+        }
+
+        .footer-content {
           padding: 18px 36px;
         }
       }
@@ -195,8 +203,11 @@
           margin: 0 48px;
         }
 
-        .footer {
-          margin-top: 40px;
+        .footer-spacer {
+          height: 40px;
+        }
+
+        .footer-content {
           padding: 20px 48px;
         }
       }
@@ -212,14 +223,12 @@
             alt="Logo"
           />
         </td>
-        <!--[if !mso]>-->
         <td class="first-col-full">
           <img
             src="https://swiss.github.io/designsystem/images/logo-mail.png"
             alt="Logo"
           />
         </td>
-        <!--<![endif]-->
         <td class="header__text second-col">
           Eidgenössisches Departement für Verteidigung, Bevölkerungsschutz und
           Sport
@@ -377,7 +386,8 @@
     </div>
 
     <table class="footer">
-      <tr>
+      <tr class="footer-spacer"></tr>
+      <tr class="footer-content">
         <td>Bundesamt für Statistik</td>
       </tr>
     </table>
