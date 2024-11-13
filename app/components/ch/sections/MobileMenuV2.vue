@@ -58,63 +58,65 @@
           class="mobile-menu-v2__level mobile-menu-v2__level-0"
           id="mobile-menu-v2__level-0"
         >
-          <ul class="mobile-menu-v2-navigation">
-            <li>
-              <a href="javascript:alert('link')">
-                <span>News</span>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link)">
-                <span>Geodaten</span>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')">
-                <span>Karten</span>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')">
-                <span>Geoportale</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                role="button"
-                aria-current="true"
-                class="mobile-menu-v2-navigation-item__has-children active"
-                @click="showLevel(1)"
-              >
-                <span>Dienstleistungen</span>
-                <SvgIcon icon="ArrowRight" size="lg" />
-              </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')"> Forschung und Lehre </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')"> Über geo.admin.ch </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')"> test1 </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')"> test2 </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')"> test3 </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')"> Extra mainmenu example </a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')">
-                Try to limit mainmenus to 5
-              </a>
-            </li>
-          </ul>
+          <nav aria-label="Main">
+            <ul class="mobile-menu-v2-navigation">
+              <li>
+                <a href="javascript:alert('link')">
+                  <span>News</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link)">
+                  <span>Geodaten</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')">
+                  <span>Karten</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')">
+                  <span>Geoportale</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  role="button"
+                  aria-current="true"
+                  class="mobile-menu-v2-navigation-item__has-children active"
+                  @click="showLevel(1)"
+                >
+                  <span>Dienstleistungen</span>
+                  <SvgIcon icon="ArrowRight" size="lg" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')"> Forschung und Lehre </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')"> Über geo.admin.ch </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')"> test1 </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')"> test2 </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')"> test3 </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')"> Extra mainmenu example </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')">
+                  Try to limit mainmenus to 5
+                </a>
+              </li>
+            </ul>
+          </nav>
           <MetaNavigationMobile />
           <TopBarNavigation :isMobileMenu="true" />
         </div>
@@ -123,31 +125,39 @@
           class="mobile-menu-v2__level mobile-menu-v2__level-1"
           id="mobile-menu-v2__level-1"
         >
-          <ul class="mobile-menu-v2-navigation">
-            <li>
-              <a href="javascript:alert('link')">Überblick</a>
-            </li>
-            <li><a href="javascript:alert('link')">Datenmodellablage</a></li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                role="button"
-                aria-current="true"
-                class="mobile-menu-v2-navigation-item__has-children active"
-                @click="showLevel(2)"
-                ><span>Geodienste</span> <SvgIcon icon="ArrowRight" size="lg"
-              /></a>
-            </li>
-            <li><a href="javascript:alert('link')">Geodatenmodelle</a></li>
-            <li><a href="javascript:alert('link')">FAQ</a></li>
-            <li>
-              <a href="javascript:alert('link')">Koordinatenreferenzsysteme</a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')">Geografische Bezeichnungen</a>
-            </li>
-            <li><a href="javascript:alert('link')">Verwaltungseinheiten</a></li>
-          </ul>
+          <nav aria-label="Main">
+            <ul class="mobile-menu-v2-navigation">
+              <li>
+                <a href="javascript:alert('link')">Überblick</a>
+              </li>
+              <li><a href="javascript:alert('link')">Datenmodellablage</a></li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  role="button"
+                  aria-current="true"
+                  class="mobile-menu-v2-navigation-item__has-children active"
+                  @click="showLevel(2)"
+                  ><span>Geodienste</span> <SvgIcon icon="ArrowRight" size="lg"
+                /></a>
+              </li>
+              <li><a href="javascript:alert('link')">Geodatenmodelle</a></li>
+              <li><a href="javascript:alert('link')">FAQ</a></li>
+              <li>
+                <a href="javascript:alert('link')"
+                  >Koordinatenreferenzsysteme</a
+                >
+              </li>
+              <li>
+                <a href="javascript:alert('link')"
+                  >Geografische Bezeichnungen</a
+                >
+              </li>
+              <li>
+                <a href="javascript:alert('link')">Verwaltungseinheiten</a>
+              </li>
+            </ul>
+          </nav>
           <MetaNavigationMobile />
           <TopBarNavigation :isMobileMenu="true" />
         </div>
@@ -156,40 +166,42 @@
           class="mobile-menu-v2__level mobile-menu-v2__level-2"
           id="mobile-menu-v2__level-2"
         >
-          <ul class="mobile-menu-v2-navigation">
-            <li>
-              <a href="javascript:alert('link')">Überblick</a>
-            </li>
-            <li>
-              <a
-                href="javascript:void(0)"
-                aria-current="true"
-                class="mobile-menu-v2-navigation-item__has-children"
-                @click="showLevel(3)"
-                ><span>Darstellungsdienste</span>
-                <SvgIcon icon="ArrowRight" size="lg"
-              /></a>
-            </li>
-            <li><a href="javascript:alert('link')">Download-Dienste</a></li>
-            <li>
-              <a href="javascript:alert('link')" class="active"
-                >Linked Data Dienst: GeoDaten semantisch verlinken</a
-              >
-            </li>
-            <li>
-              <a href="javascript:alert('link')"
-                >Allgemeine Nutzungsbedingungen und Betriebsbestimmungen der
-                Bundes Geodaten-Infrastruktur BGDI</a
-              >
-            </li>
-            <li><a href="javascript:alert('link')">Suchdienst CSW</a></li>
-            <li>
-              <a href="javascript:alert('link')"
-                >Konformitätsprüfung Geobasisdienste nach eCH-0056</a
-              >
-            </li>
-            <li><a href="javascript:alert('link')">INSPIRE Dienste</a></li>
-          </ul>
+          <nav aria-label="Main">
+            <ul class="mobile-menu-v2-navigation">
+              <li>
+                <a href="javascript:alert('link')">Überblick</a>
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  aria-current="true"
+                  class="mobile-menu-v2-navigation-item__has-children"
+                  @click="showLevel(3)"
+                  ><span>Darstellungsdienste</span>
+                  <SvgIcon icon="ArrowRight" size="lg"
+                /></a>
+              </li>
+              <li><a href="javascript:alert('link')">Download-Dienste</a></li>
+              <li>
+                <a href="javascript:alert('link')" class="active"
+                  >Linked Data Dienst: GeoDaten semantisch verlinken</a
+                >
+              </li>
+              <li>
+                <a href="javascript:alert('link')"
+                  >Allgemeine Nutzungsbedingungen und Betriebsbestimmungen der
+                  Bundes Geodaten-Infrastruktur BGDI</a
+                >
+              </li>
+              <li><a href="javascript:alert('link')">Suchdienst CSW</a></li>
+              <li>
+                <a href="javascript:alert('link')"
+                  >Konformitätsprüfung Geobasisdienste nach eCH-0056</a
+                >
+              </li>
+              <li><a href="javascript:alert('link')">INSPIRE Dienste</a></li>
+            </ul>
+          </nav>
           <MetaNavigationMobile />
           <TopBarNavigation :isMobileMenu="true" />
         </div>
@@ -198,22 +210,28 @@
           class="mobile-menu-v2__level mobile-menu-v2__level-3"
           id="mobile-menu-v2__level-3"
         >
-          <ul class="mobile-menu-v2-navigation">
-            <li>
-              <a href="javascript:alert('link')">Überblick</a>
-            </li>
-            <li>
-              <a href="javascript:alert('link')" aria-current="page">
-                Web Map Services
-              </a>
-            </li>
-            <li><a href="javascript:alert('link')">Web tiling Services</a></li>
-            <li><a href="javascript:alert('link')">Vector Tiles Service</a></li>
-            <li>
-              <a href="javascript:alert('link')">Web Integration: iFrame</a>
-            </li>
-            <li><a href="javascript:alert('link')">FAQ API</a></li>
-          </ul>
+          <nav aria-label="Main">
+            <ul class="mobile-menu-v2-navigation">
+              <li>
+                <a href="javascript:alert('link')">Überblick</a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')" aria-current="page">
+                  Web Map Services
+                </a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')">Web tiling Services</a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')">Vector Tiles Service</a>
+              </li>
+              <li>
+                <a href="javascript:alert('link')">Web Integration: iFrame</a>
+              </li>
+              <li><a href="javascript:alert('link')">FAQ API</a></li>
+            </ul>
+          </nav>
           <MetaNavigationMobile />
           <TopBarNavigation :isMobileMenu="true" />
         </div>
