@@ -10,7 +10,6 @@
     v-else
     id="mobile-menu-id"
     class="mobile-menu-v2"
-    :class="isOpen ? 'mobile-menu-v2--is-open' : ''"
   >
     <div class="mobile-menu-v2-header" id="mobile-menu-header">
       <div
@@ -264,17 +263,6 @@ export default {
     isSimplePage: {
       type: Boolean,
       default: false,
-    },
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  watch: {
-    isOpen() {
-      if (this.isOpen) {
-        this.scroolToTop()
-      }
     },
   },
   data() {

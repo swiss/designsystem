@@ -67,10 +67,6 @@ export default {
       type: String,
       default: undefined,
     },
-    highlighCancel: {
-      type: Boolean,
-      default: false,
-    },
     iconLeft: {
       type: String,
       default: undefined,

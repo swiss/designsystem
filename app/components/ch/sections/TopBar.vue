@@ -1,5 +1,9 @@
 <template>
-  <div class="top-bar" id="top-bar-container" :class="isOpen ? 'top-bar--is-open' : ''">
+  <div
+    class="top-bar"
+    id="top-bar-container"
+    :class="isOpen ? 'top-bar--is-open' : ''"
+  >
     <div :class="computedTopBarClass" id="top-bar">
       <div class="container container--flex">
         <button
@@ -18,7 +22,6 @@
             :iconLeft="computedAccessibilityIcon"
             :label="computedAccessibilityBadgeLabel"
             size="base"
-            :highlighCancel="true"
           />
           <TopBarNavigation v-if="!isEasyLanguage && !isSignLanguage" />
           <LanguageSwitcher type="negative" />
@@ -403,7 +406,9 @@ export default {
       if (window.scrollY > this.initialTopBarOffset) {
         this.useStickyPlaceholder = true
         // Set height on placeholder to avoid jump when top bar is set to sticky
-        const stickyPlaceholder = document.getElementById('stickyTopBarPlaceholder')
+        const stickyPlaceholder = document.getElementById(
+          'stickyTopBarPlaceholder'
+        )
         stickyPlaceholder.style.height = `${topBar.clientHeight}px`
 
         topBar.classList.add('sticky-top-bar')
