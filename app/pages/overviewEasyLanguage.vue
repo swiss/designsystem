@@ -2,7 +2,11 @@
   <div>
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
-      <TopBar :isOpen="false" :isEasyLanguage="true" :isSticky="useStickyNavigation" />
+      <TopBar
+        :isOpen="false"
+        :isEasyLanguage="true"
+        :isSticky="useStickyNavigation"
+      />
       <TopHeader :isEasyLanguage="true" />
       <DesktopMenu :isSimplePage="true" :isSticky="useStickyNavigation" />
       <MobileMenu :isSimplePage="true" :isSticky="useStickyNavigation" />

@@ -13,12 +13,12 @@
     </header>
     <main id="main-content">
       <section class="section-overview">
+        <hero type="overview">
+          <template v-slot:title>
+            <h1 class="h1 hero__title">Corona</h1>
+          </template>
+        </hero>
         <div class="container">
-          <hero type="overview">
-            <template v-slot:title>
-              <h1 class="h1 hero__title">Corona</h1>
-            </template>
-          </hero>
           <div class="grid grid--responsive-cols-3 gap--responsive">
             <div class="card card--default card--clickable">
               <div class="card__image">
