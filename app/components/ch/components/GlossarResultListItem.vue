@@ -11,61 +11,60 @@
     </div>
   </li>
 </template>
-<script>
+<script setup lang="ts">
 import SvgIcon from '../components/SvgIcon.vue'
+import { computed } from 'vue'
 
-export default {
-  name: 'GlossarResultListItem',
-  components: { SvgIcon },
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    searchTerm: {
-      type: String,
-      required: false,
-    },
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
   },
-  methods: {
-    /* TODO: This doesn't work if link in text is the same as word before */
-    highlightTextNodes(node, searchterm) {
-      if (node.nodeType === Node.TEXT_NODE) {
-        const regex = new RegExp(searchterm, 'gi')
-        const span = document.createElement('span')
-        span.innerHTML = node.textContent.replace(
-          regex,
-          (match) => `<span class='highlight-blue'>${match}</span>`
-        )
-        node.replaceWith(...span.childNodes)
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        node.childNodes.forEach((elm) =>
-          this.highlightTextNodes(elm, searchterm)
-        )
-      }
-    },
-    marker(text, searchterm) {
-      if (!searchterm) return text
-      const parser = new DOMParser()
-      const doc = parser.parseFromString(text, 'text/html')
+  description: {
+    type: String,
+    required: true,
+  },
+  searchTerm: {
+    type: String,
+    default: () => undefined,
+  },
+})
 
-      doc.body.childNodes.forEach((elm) =>
-        this.highlightTextNodes(elm, searchterm)
-      )
-      return doc.body.innerHTML
-    },
-  },
-  computed: {
-    markedTitle() {
-      return this.marker(this.title, this.searchTerm)
-    },
-    markedDescription() {
-      return this.marker(this.description, this.searchTerm)
-    },
-  },
+const markedTitle = computed(() => {
+  return marker(props.title, props.searchTerm)
+})
+
+const markedDescription = computed(() => {
+  return marker(props.description, props.searchTerm)
+})
+
+const highlightTextNodes = function (node: HTMLElement, term?: string) {
+  /* TODO: This doesn't work if link in text is the same as word before */
+  if (!term) return
+  if (node.nodeType === Node.TEXT_NODE) {
+    const regex = new RegExp(term, 'gi')
+    const span = document.createElement('span')
+    span.innerHTML =
+      node.textContent?.replace(
+        regex,
+        (match) => `<span class='highlight-blue'>${match}</span>`,
+      ) || ''
+    node.replaceWith(...span.childNodes)
+  } else if (node.nodeType === Node.ELEMENT_NODE) {
+    node.childNodes.forEach((elm) =>
+      highlightTextNodes(elm as HTMLElement, term),
+    )
+  }
+}
+
+const marker = function (text: string, term?: string) {
+  if (!term) return text
+  const parser = new DOMParser()
+  const doc = parser.parseFromString(text, 'text/html')
+
+  doc.body.childNodes.forEach((elm) =>
+    highlightTextNodes(elm as HTMLElement, term),
+  )
+  return doc.body.innerHTML
 }
 </script>

@@ -1,0 +1,20 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as DetailPublicationShopStories from './DetailPublicationShop.stories'
+
+<Meta of={DetailPublicationShopStories} />
+
+# Publication page example
+
+<a href="?path=/story/pages-publication-shop--example">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a href="?id=pages-publication-shop--example" target="_blank">
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas>
+  <Story of={DetailPublicationShopStories.Example} />
+</Canvas>

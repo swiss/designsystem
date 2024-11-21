@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as NotificationBannerStories from './NotificationBanner.stories'
+
+<Meta of={NotificationBannerStories} />
+
+# Notification Banner
+
+Use this component for cookie consent banner.
+
+## Accessibility
+
+The links in the cookie banner should be the first focusable elements in the page, before the skip link and before the website’s main navigation. Therefore, put the notification banner component at the top of the DOM.
+
+## Example
+
+<Controls />
+
+<Canvas of={NotificationBannerStories.Example} />

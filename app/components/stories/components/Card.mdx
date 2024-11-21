@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import Card from '../../ch/components/Card.vue'
+import MetaInfo from '../../ch/components/MetaInfo.vue'
+import SvgIcon from '../../ch/components/SvgIcon.vue'
+import * as CardStories from './Card.stories'
+
+<Meta of={CardStories} />
+
+# Card
+
+## Example
+
+<Canvas of={CardStories.Example} />
+
+<Controls of={CardStories.Example} />
+
+# Variations
+
+## Default card
+
+Use this card for news, pages or articles teasers. Display them in a grid or carousels. With the `card--default` display, an image is mandatory.
+
+More infos about card layouts can be found in the [Cards and Grids](?path=/docs/components-card-cards-and-grids--one-card) section.
+
+Additional information can be included, like meta informations above the title, content specifications after the description, or categories at the bottom of the card.
+
+<Canvas of={CardStories.DefaultCard} />
+
+## Univeral card
+
+With the `card--universal` display, using an image is not mandatory. This layout resolves the problem of having a card without image right after a card with an image.
+
+<Canvas of={CardStories.UniversalCard} />
+
+## Social card
+
+Social Cards are used to display social media posts. They have a distinct header where the logo of the social media platform is displayed. More information can be found in the [Socials section](?path=/docs/sections-content-socials--example-with-1-card) component.
+
+<Canvas of={CardStories.SocialCard} />

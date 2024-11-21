@@ -1,24 +1,16 @@
 <template>
-  <div
-    :open="isOpen"
-    :class="computedClasses"
-    :aria-modal="isOpen"
-  >
+  <div :open="isOpen" :class="computedClasses" :aria-modal="isOpen">
     <div
       class="modal__content"
       role="dialog"
-      :aria-labelledby="'modal-title-'+uuid"
-      :aria-describedby="'modal-desc-'+uuid"
+      :aria-labelledby="'modal-title-' + uuid"
+      :aria-describedby="'modal-desc-' + uuid"
     >
       <header
         :class="{ 'modal__header--with-title': title }"
         class="modal__header"
       >
-        <h4
-          v-if="title"
-          :id="'modal-title-'+uuid"
-          class="h4"
-        >
+        <h4 v-if="title" :id="'modal-title-' + uuid" class="h4">
           {{ title }}
         </h4>
         <button
@@ -32,21 +24,14 @@
         </button>
       </header>
 
-			<div
-        v-if="$slots.body"
-        :id="'modal-desc-'+uuid"
-        class="modal__body"
-      >
-        <slot name="body"></slot>
+      <div v-if="slots.body" :id="'modal-desc-' + uuid" class="modal__body">
+        <slot name="body" />
       </div>
 
-			<footer
-        v-if="$slots.footer"
-        class="modal__footer"
-      >
-        <slot name="footer"></slot>
-			</footer>
-		</div>
+      <footer v-if="slots.footer" class="modal__footer">
+        <slot name="footer" />
+      </footer>
+    </div>
     <div
       ref="backdrop"
       tabindex="0"
@@ -54,106 +39,104 @@
       aria-label="close"
       @click="close"
       @focus="backdropFocusListener"
-    ></div>
-	</div>
+    />
+  </div>
 </template>
 
-<script>
-import SvgIcon from './SvgIcon.vue';
+<script setup lang="ts">
+import SvgIcon from './SvgIcon.vue'
+import {
+  ref,
+  computed,
+  onMounted,
+  onBeforeUnmount,
+  useTemplateRef,
+  useSlots,
+} from 'vue'
 
-export default {
-  name: 'Modal',
-  components: {
-    SvgIcon
-  },
-  props: {
-    uuid: {
-      type: String,
-      default: ""
-    },
-    title: {
-      type: String,
-      default: ""
-    },
-    layout: {
-      type: String,
-      validator: (prop) => [
-        'auto',
-        'xs',
-        'sm',
-        'md',
-        'lg',
-        'xl',
-        'xs'
-      ].includes(prop),
-    },
-    triggerElements: {
-      type: String,
-      default: ""
-    }
-  },
-  data() {
-    return {
-      isOpen: false,
-      triggerElement: undefined
-    }
-  },
-  computed: {
-    computedClasses () {
-      let base = 'modal '
-      if (this.layout) base += `modal--${this.layout} `
-      return base
-    }
-  },
-  mounted () {
-    document.querySelectorAll(this.triggerElements).forEach(item => {
-      item.addEventListener("click", this.open);
-    });
-  },
-  beforeDestroy() {
-    document.querySelectorAll(this.triggerElements).forEach(item => {
-      item.removeEventListener("click", this.open);
-    });
-  },
-  methods: {
-    open(e) {
-      this.isOpen = true;
+const isOpen = ref(false)
+const triggerElement = ref(undefined as HTMLElement | undefined)
+const closeBtn = useTemplateRef('close')
 
-      document.addEventListener('keyup', this.keyListener);
+const slots = useSlots()
 
-      if (e) {
-        this.triggerElement = e.currentTarget;
-        e.preventDefault();
-      }
-
-      requestAnimationFrame(() => { // because the focus() won't work directly after the change of  display:block
-        this.$refs.close.focus();
-      })
+const props = defineProps({
+  uuid: {
+    type: String,
+    default: () => '',
   },
-    close(e) {
-      this.isOpen = false;
-
-      document.removeEventListener('keyup', this.keyListener);
-
-      if (this.triggerElement) {
-        this.triggerElement.focus();
-        this.triggerElement = undefined;
-      }
-
-      if (e) {
-        e.preventDefault();
-      }
-    },
-    keyListener(e) {
-      if(e.key === 'Escape') {
-        this.close();
-      }
-    },
-    backdropFocusListener(e) {
-      this.$refs.close.focus();
-    }
+  title: {
+    type: String,
+    default: () => '',
   },
+  layout: {
+    type: String,
+    validator: (prop) =>
+      ['auto', 'xs', 'sm', 'md', 'lg', 'xl', 'xs'].includes(prop as string),
+    default: () => undefined,
+  },
+  triggerElements: {
+    type: String,
+    default: () => '',
+  },
+})
+
+const computedClasses = computed(() => {
+  let base = 'modal '
+  if (props.layout) base += `modal--${props.layout} `
+  return base
+})
+
+const open = function (e: Event) {
+  isOpen.value = true
+
+  document.addEventListener('keyup', keyListener)
+
+  if (e) {
+    triggerElement.value = e.currentTarget as HTMLElement
+    e.preventDefault()
+  }
+
+  requestAnimationFrame(() => {
+    // because the focus() won't work directly after the change of  display:block
+    closeBtn.value?.focus()
+  })
 }
+
+const close = function (e: Event) {
+  isOpen.value = false
+
+  document.removeEventListener('keyup', keyListener)
+
+  if (triggerElement.value) {
+    triggerElement.value.focus()
+    triggerElement.value = undefined
+  }
+
+  if (e) {
+    e.preventDefault()
+  }
+}
+
+const keyListener = function (e: KeyboardEvent) {
+  if (e.key === 'Escape') {
+    close(e)
+  }
+}
+
+const backdropFocusListener = function () {
+  closeBtn.value?.focus()
+}
+
+onMounted(() => {
+  document.querySelectorAll(props.triggerElements).forEach((item) => {
+    item.addEventListener('click', open)
+  })
+})
+
+onBeforeUnmount(() => {
+  document.querySelectorAll(props.triggerElements).forEach((item) => {
+    item.removeEventListener('click', open)
+  })
+})
 </script>
-
-

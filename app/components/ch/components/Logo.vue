@@ -281,10 +281,10 @@
       <div class="logo__accronym" v-html="accronym" />
       <div class="logo__title">
         <div v-html="title" />
-        <div class="badge-easy-language" v-if="isEasyLanguage">
+        <div v-if="isEasyLanguage" class="badge-easy-language">
           Inhalte in Leichter Sprache
         </div>
-        <div class="badge-sign-language" v-if="isSignLanguage">
+        <div v-if="isSignLanguage" class="badge-sign-language">
           Inhalte in Gebärdensprache
         </div>
       </div>
@@ -292,51 +292,44 @@
   </a>
 </template>
 
-<script>
-import badge from './Badge.vue';
+<script setup lang="ts">
+import { computed } from 'vue'
 
-export default {
-  name: 'Logo',
-  components: {
-    badge,
+const props = defineProps({
+  title: {
+    type: String,
+    required: false,
+    default: () => '',
   },
-  props: {
-    title: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    accronym: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    link: {
-      type: String,
-      required: false,
-      default: '/',
-    },
-    isFreebrand: {
-      type: Boolean,
-      default: false,
-    },
-    isEasyLanguage: {
-      type: Boolean,
-      default: false,
-    },
-    isSignLanguage: {
-      type: Boolean,
-      default: false,
-    },
+  accronym: {
+    type: String,
+    required: false,
+    default: () => '',
   },
-  computed: {
-    computedLogoClass() {
-      if (this.isFreebrand) {
-        return 'logo__freebrand'
-      } else {
-        return 'logo__flag'
-      }
-    },
+  link: {
+    type: String,
+    required: false,
+    default: () => '/',
   },
-}
+  isFreebrand: {
+    type: Boolean,
+    default: () => false,
+  },
+  isEasyLanguage: {
+    type: Boolean,
+    default: () => false,
+  },
+  isSignLanguage: {
+    type: Boolean,
+    default: () => false,
+  },
+})
+
+const computedLogoClass = computed(() => {
+  if (props.isFreebrand) {
+    return 'logo__freebrand'
+  } else {
+    return 'logo__flag'
+  }
+})
 </script>

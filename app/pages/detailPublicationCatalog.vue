@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+    <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
@@ -27,11 +27,11 @@
         :meta-infos="['Studie', 'publiziert am 03. März 2000']"
         :authors="authors"
       >
-        <template v-slot:title>
+        <template #title>
           Benachteiligungserfahrungen bei der Gesundheitsversorgung in der
           Schweiz
         </template>
-        <template v-slot:subtitle>
+        <template #subtitle>
           Erkenntnisse aus dem International Health Policy Survey 2020
         </template>
       </Hero>
@@ -47,11 +47,11 @@
             <figure class="ratio ratio--1/1 bg--secondary-50">
               <picture class="p-8">
                 <source
-                  srcset="images/publication-cover.png"
+                  srcset="/images/publication-cover.png"
                   media="(min-width: 800px)"
                 />
                 <img
-                  src="images/publication-cover.png"
+                  src="/images/publication-cover.png"
                   alt="publication cover"
                   class="h-full m-auto shadow-xl"
                 />
@@ -68,7 +68,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'Deutsch'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                     />
@@ -78,7 +78,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'Französisch'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                     />
@@ -88,10 +88,10 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'English'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
-                      class="border-b-0 pb-0"
+                      class="pb-0 border-b-0"
                     />
                   </li>
                 </ul>
@@ -177,10 +177,10 @@
 
             <div>
               <h2 class="h2">Themen</h2>
-              <RelatedTags :tags="tags" bare></RelatedTags>
+              <RelatedTags :tags="tags" bare />
             </div>
           </div>
-          <div class="container__aside hidden md:block">
+          <div class="hidden container__aside md:block">
             <div id="aside-content" :class="computedAsideContainerClass">
               <!-- desktop only -->
               <div class="box">
@@ -191,7 +191,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'Deutsch'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                     />
@@ -201,7 +201,7 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'Französisch'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
                     />
@@ -211,10 +211,10 @@
                       headingLevel="h2"
                       :filename="'dummy.pdf'"
                       :title="'English'"
-                      :url="'../../../static/documents/dummy.pdf'"
+                      :url="'/documents/dummy.pdf'"
                       :type="'PDF'"
                       :date="'524 kB'"
-                      class="border-b-0 pb-0"
+                      class="pb-0 border-b-0"
                     />
                   </li>
                 </ul>
@@ -249,27 +249,21 @@
 
       <RelatedPublicationsSection />
     </main>
-    <footer class="footer" id="main-footer">
+    <footer id="main-footer" class="footer">
       <FooterInformation />
       <FooterNavigation />
     </footer>
   </div>
 </template>
 
-<script>
-import Accordion from '~/components/ch/components/Accordion.vue'
-import AccordionItem from '~/components/ch/components/AccordionItem.vue'
-import Authors from '~/components/ch/components/Authors.vue'
-import Btn from '~/components/ch/components/Btn'
-import Card from '~/components/ch/components/Card'
-import Contact from '~/components/ch/components/Contact'
-import DownloadItem from '~/components/ch/components/DownloadItem.vue'
-import InfoBlock from '~/components/ch/components/InfoBlock.vue'
-import Notification from '~/components/ch/components/Notification.vue'
-import RelatedTags from '~/components/ch/components/RelatedTags.vue'
-import SvgIcon from '~/components/ch/components/SvgIcon'
-import ShareBar from '~/components/ch/demo/ShareBar.vue'
-import Hero from '~/components/ch/sections/Hero'
+<script setup lang="ts">
+import Btn from '../components/ch/components/Btn.vue'
+import DownloadItem from '../components/ch/components/DownloadItem.vue'
+import InfoBlock from '../components/ch/components/InfoBlock.vue'
+import Notification from '../components/ch/components/Notification.vue'
+import RelatedTags from '../components/ch/components/RelatedTags.vue'
+import ShareBar from '../components/ch/demo/ShareBar.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -279,88 +273,57 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import RelatedPublicationsSection from '../components/ch/sections/RelatedPublicationsSection.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
+import { reactive, ref, computed, onMounted, nextTick } from 'vue'
+import { useLayoutStore } from '../store/layout'
 
-export default {
-  name: 'detailPageSimple',
-  components: {
-    AlterBodyClasses,
-    TopBar,
-    TopHeader,
-    Breadcrumb,
-    DesktopMenu,
-    MobileMenu,
-    FooterInformation,
-    FooterNavigation,
-    Card,
-    Btn,
-    SvgIcon,
-    Hero,
-    ShareBar,
-    Contact,
-    InfoBlock,
-    DownloadItem,
-    Accordion,
-    AccordionItem,
-    RelatedTags,
-    Authors,
-    Notification,
-    RelatedPublicationsSection,
-  },
-  data: function () {
-    return {
-      tags: [
-        { label: 'Datenmodell', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Datenmodell', url: '#' },
-      ],
-      authors: [
-        {
-          name: 'Maria Muster',
-          img: 'https://picsum.photos/120/120/?image=29',
-          url: '#',
-          prefix: ' ',
-        },
-        {
-          name: 'Katja Anna-Beerli',
-          img: 'https://picsum.photos/120/120/?image=30',
-          url: '#',
-        },
-      ],
-      screenHeight: 0,
-      asideContainerHeight: 0,
-    }
-  },
-  async mounted() {
-    await this.$nextTick()
-    this.resizeWindow()
-    window.addEventListener('resize', this.resizeWindow)
-  },
-  methods: {
-    getMobileMenuIsOpen() {
-      return this.$store.getters['layout/getMobileMenuIsOpen']
-    },
-    resizeWindow() {
-      this.screenHeight = document.body.clientHeight
+const layoutStore = useLayoutStore()
 
-      const asideContainer = document.getElementById('aside-content')
-      if (asideContainer) {
-        this.asideContainerHeight = asideContainer.clientHeight
-      }
-    },
+const tags = reactive([
+  { label: 'Datenmodell', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Datenmodell', url: '#' },
+])
+const authors = reactive([
+  {
+    name: 'Maria Muster',
+    img: 'https://picsum.photos/120/120/?image=29',
+    url: '#',
+    prefix: ' ',
   },
-  computed: {
-    computedAsideContainerClass() {
-      if (this.screenHeight > this.asideContainerHeight) {
-        return 'sticky sticky--top'
-      } else {
-        return ''
-      }
-    },
+  {
+    name: 'Katja Anna-Beerli',
+    img: 'https://picsum.photos/120/120/?image=30',
+    url: '#',
   },
+])
+const screenHeight = ref(0)
+const asideContainerHeight = ref(0)
+
+const computedAsideContainerClass = computed(() => {
+  if (screenHeight.value > asideContainerHeight.value) {
+    return 'sticky sticky--top'
+  } else {
+    return ''
+  }
+})
+
+const resizeWindow = function () {
+  screenHeight.value = document.body.clientHeight
+
+  const asideContainer = document.getElementById('aside-content')
+  if (asideContainer) {
+    asideContainerHeight.value = asideContainer.clientHeight
+  }
 }
+
+onMounted(async () => {
+  await nextTick()
+  resizeWindow()
+  window.addEventListener('resize', resizeWindow)
+})
 </script>

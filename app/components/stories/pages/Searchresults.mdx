@@ -1,0 +1,56 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import searchResults from '../../../pages/searchResults.vue'
+import * as SearchresultsStories from './Searchresults.stories'
+
+<Meta of={SearchresultsStories} />
+
+# Search results
+
+<Canvas of={SearchresultsStories.WithResults} />
+
+<a href="?path=/story/pages-search-results--example">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a
+  href="?id=pages-search-results--with-results&args=&viewMode=story"
+  target="_blank"
+>
+  {'Open page in full width in a new tab'}
+</a>
+
+# No results
+
+<Canvas of={SearchresultsStories.WithoutResults} />
+
+<a href="?path=/story/pages-search-results--example">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a
+  href="?id=pages-search-results--without-results&args=&viewMode=story"
+  target="_blank"
+>
+  {'Open page in full width in a new tab'}
+</a>
+
+# Loading example
+
+<a href="?path=/story/pages-search-results--example">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a
+  href="?id=pages-search-results--when-loading&args=&viewMode=story"
+  target="_blank"
+>
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas of={SearchresultsStories.WhenLoading} />

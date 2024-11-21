@@ -8,92 +8,82 @@
       }
     "
   >
-    <SvgIcon
-      v-if="this.iconLeft"
-      :icon="this.iconLeft"
-      class="badge__icon-left"
-    />
+    <SvgIcon v-if="iconLeft" :icon="iconLeft" class="badge__icon-left" />
     <span class="badge__text">{{ label }}</span>
     <SvgIcon
-      v-if="this.icon"
-      :icon="this.icon"
-      :class="`icon--${this.icon}`"
+      v-if="icon"
+      :icon="icon"
+      :class="`icon--${icon}`"
       class="badge__icon"
     />
   </component>
 </template>
 
-<script>
-import SvgIcon from '../components/SvgIcon.vue'
+<script setup lang="ts">
+import { computed, type PropType } from 'vue';
+import SvgIcon from '../components/SvgIcon.vue';
 
-export default {
-  name: 'badge',
-  components: {
-    SvgIcon,
+const props = defineProps({
+  label: {
+    type: String,
+    required: true,
   },
-  props: {
-    label: {
-      type: String,
-      required: true,
-    },
-    color: {
-      type: String,
-      default: 'gray',
-      validator: (prop) =>
-        [
-          'info',
-          'error',
-          'warning',
-          'success',
-          'gray',
-          'red',
-          'yellow',
-          'orange',
-          'green',
-          'blue',
-          'indigo',
-          'purple',
-          'pink',
-          'indigo',
-          'negative',
-        ].includes(prop),
-    },
-    size: {
-      type: String,
-      default: 'base',
-      validator: (prop) => ['base', 'sm'].includes(prop),
-    },
-    icon: {
-      type: String,
-      default: undefined,
-    },
-    iconLeft: {
-      type: String,
-      default: undefined,
-    },
-    badgeClicked: {
-      type: Function,
-    },
-    clickable: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
+  color: {
+    type: String,
+    default: () => 'gray',
+    validator: (prop) =>
+      [
+        'info',
+        'error',
+        'warning',
+        'success',
+        'gray',
+        'red',
+        'yellow',
+        'orange',
+        'green',
+        'blue',
+        'indigo',
+        'purple',
+        'pink',
+        'indigo',
+        'negative',
+      ].includes(prop as string),
   },
+  size: {
+    type: String,
+    default: () => 'base',
+    validator: (prop) => ['base', 'sm'].includes(prop as string),
+  },
+  icon: {
+    type: String,
+    default: () => undefined,
+  },
+  iconLeft: {
+    type: String,
+    default: () => undefined,
+  },
+  badgeClicked: {
+    type: Function as PropType<() => void>,
+    default: () => () => {},
+  },
+  clickable: {
+    type: Boolean,
+    default: () => false,
+  },
+  disabled: {
+    type: Boolean,
+    default: () => false,
+  },
+})
 
-  computed: {
-    classes() {
-      let base = 'badge '
-      if (this.color) base += `badge--${this.color} `
-      if (this.size) base += `badge--${this.size} `
-      if (this.icon) base += `badge--icon `
-      if (this.clickable && !this.disabled) base += `badge--clickable`
-      if (this.disabled) base += ` badge--disabled`
-      return base
-    },
-  },
-}
+const classes = computed(() => {
+  let base = 'badge '
+  if (props.color) base += `badge--${props.color} `
+  if (props.size) base += `badge--${props.size} `
+  if (props.icon) base += `badge--icon `
+  if (props.clickable && !props.disabled) base += `badge--clickable`
+  if (props.disabled) base += ` badge--disabled`
+  return base
+})
 </script>
