@@ -242,7 +242,7 @@ import CarouselNavigation from '../navigations/CarouselNavigation.vue'
 import MetaNavigationMobile from '../navigations/MobileMetaNavigation.vue'
 import TopBarNavigation from '../navigations/TopBarNavigation.vue'
 import { v4 as uuidv4 } from 'uuid'
-import { reactive, ref, watch, onMounted, nextTick } from 'vue'
+import { reactive, ref, onMounted, nextTick } from 'vue'
 
 const carouselNavId = ref('')
 const useStickyPlaceholder = ref(false)
