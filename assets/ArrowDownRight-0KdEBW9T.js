@@ -1,0 +1,1 @@
+const e="data:image/svg+xml,%3csvg%20enable-background='new%200%200%2024%2024'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='m10.3%2020%207.9-2.1%202.1-7.9-.7-.2-1.9%207-10.8-10.7-.5.6%2010.7%2010.7-7%201.9z'/%3e%3c/svg%3e";export{e as default};
