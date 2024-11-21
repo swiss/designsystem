@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as NotificationStories from './Notification.stories'
+
+<Meta of={NotificationStories} />
+
+# Notification
+
+## Example
+
+<Canvas of={NotificationStories.Example} />
+
+<Controls of={NotificationStories.Example} />
+
+## Notification types
+
+For type variations, the following css classes are built:
+
+- `notification--info` for information
+- `notification--warning` for warnings
+- `notification--error` for errors
+- `notification--success` for success messages
+
+For really important notifications, for example when the population is facing a danger (flooding, landslides, earthquakes, etc) you can use the `notification--alert` variant.
+For this specific use case, the [Alert Banner component](?path=/docs/components-alertbanner--example) is recommended.
+
+<Canvas of={NotificationStories.NotificationTypes} />
+
+## Icons
+
+With the class `notification__icon` an icon can be placed in the notification
+
+<Canvas of={NotificationStories.NotificationTypesWithIcons} />
+
+## Complex content
+
+Place more complex content within the `notification__content` element
+
+<Canvas of={NotificationStories.ComplexContent} />

@@ -16,8 +16,4 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MailTemplatePreview',
-}
-</script>
+<script setup lang="ts"></script>

@@ -11,50 +11,51 @@
           </figcaption>
         </div>
         <picture v-if="image" class="quote__image">
-          <source v-if="image.source"
+          <source
+            v-if="image.source"
             :srcset="image.source.srcset"
             :media="image.source.media"
           />
-          <img :src="image.src" :alt="image.alt"  class="shadow-2xl" />
+          <img :src="image.src" :alt="image.alt" class="shadow-2xl" />
         </picture>
       </figure>
     </div>
   </section>
 </template>
 
-<script>
+<script setup lang="ts">
+import { computed } from 'vue'
 
-export default {
-  name: 'QuoteSection',
-  props: {
-    background: {
-      type: String,
-      validator: (prop) => [
+const props = defineProps({
+  background: {
+    type: String,
+    validator: (prop) =>
+      [
         'white',
         'secondary-50',
         'secondary-100',
         'secondary-500',
         'secondary-600',
-      ].includes(prop),
-      default: 'secondary-50',
-    },
-    quote: {
-      type: String,
-    },
-    author: {
-      type: String,
-    },
-    image: {
-      type: Object
-    },
+      ].includes(prop as string),
+    default: () => 'secondary-50',
   },
-  computed: {
-    computedSectionClasses () {
-      let base = 'section '
-      if (this.background) base += `bg--${this.background} `
-      return base
-    },
+  quote: {
+    type: String,
+    default: () => undefined,
   },
+  author: {
+    type: String,
+    default: () => undefined,
+  },
+  image: {
+    type: Object,
+    default: () => undefined,
+  },
+})
 
-}
+const computedSectionClasses = computed(() => {
+  let base = 'section '
+  if (props.background) base += `bg--${props.background} `
+  return base
+})
 </script>

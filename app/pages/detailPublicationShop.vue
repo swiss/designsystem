@@ -1,7 +1,7 @@
 <template>
-  <client-only>
+  <ClientOnly>
     <div>
-      <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+      <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
       <header id="main-header">
         <a href="#main-content" class="skip-to-content">Skip to main content</a>
         <TopBar :isOpen="false" />
@@ -34,11 +34,11 @@
           :meta-infos="['Studie', 'publiziert am 03. März 2000']"
           :authors="authors"
         >
-          <template v-slot:title>
+          <template #title>
             Benachteiligungserfahrungen bei der Gesundheitsversorgung in der
             Schweiz
           </template>
-          <template v-slot:subtitle>
+          <template #subtitle>
             Erkenntnisse aus dem International Health Policy Survey 2020
           </template>
         </Hero>
@@ -54,11 +54,11 @@
               <figure class="ratio ratio--1/1 bg--secondary-50">
                 <picture class="p-8">
                   <source
-                    srcset="images/publication-cover.png"
+                    srcset="/images/publication-cover.png"
                     media="(min-width: 800px)"
                   />
                   <img
-                    src="images/publication-cover.png"
+                    src="/images/publication-cover.png"
                     alt="publication cover"
                     class="h-full m-auto shadow-xl"
                   />
@@ -75,7 +75,7 @@
                         headingLevel="h2"
                         :filename="'dummy.pdf'"
                         :title="'Deutsch'"
-                        :url="'../../../static/documents/dummy.pdf'"
+                        :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
                       />
@@ -85,7 +85,7 @@
                         headingLevel="h2"
                         :filename="'dummy.pdf'"
                         :title="'Französisch'"
-                        :url="'../../../static/documents/dummy.pdf'"
+                        :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
                       />
@@ -95,10 +95,10 @@
                         headingLevel="h2"
                         :filename="'dummy.pdf'"
                         :title="'English'"
-                        :url="'../../../static/documents/dummy.pdf'"
+                        :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
-                        class="border-b-0 pb-0"
+                        class="pb-0 border-b-0"
                       />
                     </li>
                   </ul>
@@ -107,7 +107,7 @@
                   title="Bestellung gedruckte Version in DE, IT, FR"
                   totalPriceTitle="Total (exklusiv MwSt.)"
                   pricePieceTitle="Pro Stück"
-                  curencyPrefix="CHF"
+                  currencyPrefix="CHF"
                   :options="[
                     {
                       label: 'Deutsch',
@@ -136,7 +136,7 @@
                 />
                 <div class="box">
                   <h2 class="h5">Webviewer</h2>
-                  <btn
+                  <Btn
                     variant="link"
                     to="https://www.google.ch"
                     label="Publikation im Browser betrachten"
@@ -219,10 +219,10 @@
 
               <div>
                 <h2 class="h2">Themen</h2>
-                <RelatedTags :tags="tags" bare></RelatedTags>
+                <RelatedTags :tags="tags" bare />
               </div>
             </div>
-            <div class="container__aside hidden md:block">
+            <div class="hidden container__aside md:block">
               <div id="aside-content" :class="computedAsideContainerClass">
                 <!-- desktop only -->
                 <div class="box">
@@ -233,7 +233,7 @@
                         headingLevel="h2"
                         :filename="'dummy.pdf'"
                         :title="'Deutsch'"
-                        :url="'../../../static/documents/dummy.pdf'"
+                        :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
                       />
@@ -243,7 +243,7 @@
                         headingLevel="h2"
                         :filename="'dummy.pdf'"
                         :title="'Französisch'"
-                        :url="'../../../static/documents/dummy.pdf'"
+                        :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
                       />
@@ -253,10 +253,10 @@
                         headingLevel="h2"
                         :filename="'dummy.pdf'"
                         :title="'English'"
-                        :url="'../../../static/documents/dummy.pdf'"
+                        :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'524 kB'"
-                        class="border-b-0 pb-0"
+                        class="pb-0 border-b-0"
                       />
                     </li>
                   </ul>
@@ -265,7 +265,7 @@
                   title="Bestellung gedruckte Version in DE, IT, FR"
                   totalPriceTitle="Total (exklusiv MwSt.)"
                   pricePieceTitle="Pro Stück"
-                  curencyPrefix="CHF"
+                  currencyPrefix="CHF"
                   :options="[
                     {
                       label: 'Deutsch',
@@ -294,7 +294,7 @@
                 />
                 <div class="box">
                   <h2 class="h5">Webviewer</h2>
-                  <btn
+                  <Btn
                     variant="link"
                     to="https://www.google.ch"
                     label="Publikation im Browser betrachten"
@@ -324,32 +324,24 @@
         <RelatedPublicationsSection />
       </main>
       <ToastMessage triggerName="trigger-toast-message" />
-      <footer class="footer" id="main-footer">
+      <footer id="main-footer" class="footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>
     </div>
-  </client-only>
+  </ClientOnly>
 </template>
 
-<script>
-import Accordion from '~/components/ch/components/Accordion.vue'
-import AccordionItem from '~/components/ch/components/AccordionItem.vue'
-import Authors from '~/components/ch/components/Authors.vue'
-import Btn from '~/components/ch/components/Btn'
-import Card from '~/components/ch/components/Card'
-import Contact from '~/components/ch/components/Contact'
-import DownloadItem from '~/components/ch/components/DownloadItem.vue'
-import InfoBlock from '~/components/ch/components/InfoBlock.vue'
-import Notification from '~/components/ch/components/Notification.vue'
-import RelatedTags from '~/components/ch/components/RelatedTags.vue'
-import SvgIcon from '~/components/ch/components/SvgIcon'
-import ToastMessage from '~/components/ch/components/ToastMessage'
-import ShareBar from '~/components/ch/demo/ShareBar.vue'
-import Hero from '~/components/ch/sections/Hero'
-import Input from '../components/ch/components/Input.vue'
+<script setup lang="ts">
+import Btn from '../components/ch/components/Btn.vue'
+import DownloadItem from '../components/ch/components/DownloadItem.vue'
+import InfoBlock from '../components/ch/components/InfoBlock.vue'
+import Notification from '../components/ch/components/Notification.vue'
+import RelatedTags from '../components/ch/components/RelatedTags.vue'
+import ToastMessage from '../components/ch/components/ToastMessage.vue'
+import ShareBar from '../components/ch/demo/ShareBar.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import OrderBox from '../components/ch/components/OrderBox.vue'
-import Select from '../components/ch/components/Select'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -359,116 +351,85 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import RelatedPublicationsSection from '../components/ch/sections/RelatedPublicationsSection.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
+import { reactive, ref, computed, onMounted, nextTick } from 'vue'
+import { useLayoutStore } from '../store/layout'
+import type { OrderBoxOption } from '../types'
 
-export default {
-  name: 'detailPagePublicationShop',
-  components: {
-    ToastMessage,
-    AlterBodyClasses,
-    TopBar,
-    TopHeader,
-    Breadcrumb,
-    DesktopMenu,
-    MobileMenu,
-    FooterInformation,
-    FooterNavigation,
-    Card,
-    Btn,
-    SvgIcon,
-    Hero,
-    ShareBar,
-    Contact,
-    InfoBlock,
-    DownloadItem,
-    Accordion,
-    AccordionItem,
-    RelatedTags,
-    Authors,
-    Notification,
-    RelatedPublicationsSection,
-    Input,
-    Select,
-    OrderBox,
-  },
-  data: function () {
-    return {
-      tags: [
-        { label: 'Datenmodell', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Datenmodell', url: '#' },
-      ],
-      authors: [
-        {
-          name: 'Maria Muster',
-          img: 'https://picsum.photos/120/120/?image=29',
-          url: '#',
-          prefix: ' ',
-        },
-        {
-          name: 'Katja Anna-Beerli',
-          img: 'https://picsum.photos/120/120/?image=30',
-          url: '#',
-        },
-      ],
-      shoppingCartAriaLabel:
-        'Shopping cart: There are <amount> items in your shopping cart.',
-      shoppingCartAmount: 0,
-      shoppingCartLink: '/shopping-cart',
-      shoppingCartTarget: '_self',
-      shoppingCartLabel: 'Shopping cart',
-      selectionAmount: 1,
-      selectionLanguage: 'de',
-      languageMap: {
-        de: 'deutsch',
-        fr: 'französisch',
-        it: 'italienisch',
-      },
-      screenHeight: 0,
-      asideContainerHeight: 0,
-    }
-  },
-  async mounted() {
-    await this.$nextTick()
-    this.resizeWindow()
-    window.addEventListener('resize', this.resizeWindow)
-  },
-  methods: {
-    resizeWindow() {
-      this.screenHeight = document.body.clientHeight
+const layoutStore = useLayoutStore()
 
-      const asideContainer = document.getElementById('aside-content')
-      if (asideContainer) {
-        this.asideContainerHeight = asideContainer.clientHeight
-      }
-    },
-    getMobileMenuIsOpen() {
-      return this.$store.getters['layout/getMobileMenuIsOpen']
-    },
-    addToCart(selectedLanguage, amount) {
-      // Add amount to shopping cart
-      this.shoppingCartAmount += amount
-      const translatedLanguage = this.languageMap[selectedLanguage]
+const tags = reactive([
+  { label: 'Datenmodell', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Datenmodell', url: '#' },
+])
+const authors = reactive([
+  {
+    name: 'Maria Muster',
+    img: 'https://picsum.photos/120/120/?image=29',
+    url: '#',
+    prefix: ' ',
+  },
+  {
+    name: 'Katja Anna-Beerli',
+    img: 'https://picsum.photos/120/120/?image=30',
+    url: '#',
+  },
+])
+const shoppingCartAriaLabel = ref(
+  'Shopping cart: There are <amount> items in your shopping cart.',
+)
+const shoppingCartAmount = ref(0)
+const shoppingCartLink = ref('/shopping-cart')
+const shoppingCartTarget = ref('_self')
+const shoppingCartLabel = ref('Shopping cart')
+const languageMap = reactive({
+  de: 'deutsch',
+  fr: 'französisch',
+  it: 'italienisch',
+})
+const screenHeight = ref(0)
+const asideContainerHeight = ref(0)
 
-      this.emitter.emit('trigger-toast-message', {
-        text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${amount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
-        icon: 'CheckmarkCircle',
-        type: 'success',
-      })
-    },
-  },
-  computed: {
-    computedAsideContainerClass() {
-      if (this.screenHeight > this.asideContainerHeight) {
-        return 'sticky sticky--top'
-      } else {
-        return ''
-      }
-    },
-  },
+const computedAsideContainerClass = computed(() => {
+  if (screenHeight.value > asideContainerHeight.value) {
+    return 'sticky sticky--top'
+  } else {
+    return ''
+  }
+})
+
+const resizeWindow = function () {
+  screenHeight.value = document.body.clientHeight
+
+  const asideContainer = document.getElementById('aside-content')
+  if (asideContainer) {
+    asideContainerHeight.value = asideContainer.clientHeight
+  }
 }
+
+const addToCart = function (selectedLanguage: OrderBoxOption, amount: number) {
+  // Add amount to shopping cart
+  shoppingCartAmount.value += amount
+  const translatedLanguage = languageMap[selectedLanguage.value]
+
+  window.postMessage({
+    trigger: 'trigger-toast-message',
+    data: {
+      text: `<p class="text--bold">Der Artikel wurde dem Warenkorb hinzugefügt:</p><p>${amount}x ${translatedLanguage}e Ausgabe "Auswirkungen von Corona auf die Schweizer Gesellschaft"</p>`,
+      icon: 'CheckmarkCircle',
+      type: 'success',
+    },
+  })
+}
+
+onMounted(async () => {
+  await nextTick()
+  resizeWindow()
+  window.addEventListener('resize', resizeWindow)
+})
 </script>

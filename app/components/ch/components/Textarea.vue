@@ -4,8 +4,8 @@
       {{ label }}
     </label>
     <textarea
-      :class="classes"
       :id="id"
+      :class="classes"
       :name="id"
       :rows="rows"
       :cols="cols"
@@ -13,8 +13,7 @@
       :minlength="minlength"
       :placeholder="placeholder"
       :required="required"
-    >
-    </textarea>
+    />
     <div
       v-if="message"
       class="badge badge--sm"
@@ -25,78 +24,86 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Textarea',
-  props: {
-    variant: {
-      type: String,
-      validator: (prop) => ['outline', 'negative'].includes(prop),
-    },
-    size: {
-      type: String,
-      validator: (prop) => ['sm', 'base', 'lg'].includes(prop),
-    },
-    id: {
-      type: String,
-    },
-    name: {
-      type: String,
-    },
-    label: {
-      type: String,
-    },
-    placeholder: {
-      type: String,
-    },
-    rows: {
-      type: Number,
-      default: 4,
-    },
-    cols: {
-      type: Number,
-      default: 50,
-    },
-    message: {
-      type: String,
-    },
-    messageType: {
-      type: String,
-      validator: (prop) =>
-        ['error', 'warning', 'success', 'info'].includes(prop),
-    },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    resizable: {
-      type: Boolean,
-      default: true,
-    },
-    maxlength: {
-      type: Number,
-    },
-    minlength: {
-      type: Number,
-    },
-  },
+<script setup lang="ts">
+import { computed } from 'vue'
 
-  computed: {
-    classes() {
-      let base = ''
-      if (this.variant) base += `input--${this.variant} `
-      if (this.size) base += `input--${this.size} `
-      if (this.messageType) base += `input--${this.messageType} `
-      if (!this.resizable) base += 'textarea--static'
-      return base
-    },
-    labelClasses() {
-      let base = ''
-      if (this.variant === 'negative') base += `text--negative `
-      if (this.size) base += `text--${this.size} `
-      if (this.required) base += `text--asterisk `
-      return base
-    },
+const props = defineProps({
+  variant: {
+    type: String,
+    validator: (prop) => ['outline', 'negative'].includes(prop as string),
+    default: () => undefined,
   },
-}
+  size: {
+    type: String,
+    validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
+    default: () => undefined,
+  },
+  id: {
+    type: String,
+    default: () => undefined,
+  },
+  name: {
+    type: String,
+    default: () => undefined,
+  },
+  label: {
+    type: String,
+    default: () => undefined,
+  },
+  placeholder: {
+    type: String,
+    default: () => undefined,
+  },
+  rows: {
+    type: Number,
+    default: () => 4,
+  },
+  cols: {
+    type: Number,
+    default: () => 50,
+  },
+  message: {
+    type: String,
+    default: () => undefined,
+  },
+  messageType: {
+    type: String,
+    validator: (prop) =>
+      ['error', 'warning', 'success', 'info'].includes(prop as string),
+    default: () => undefined,
+  },
+  required: {
+    type: Boolean,
+    default: () => false,
+  },
+  resizable: {
+    type: Boolean,
+    default: () => true,
+  },
+  maxlength: {
+    type: Number,
+    default: () => undefined,
+  },
+  minlength: {
+    type: Number,
+    default: () => undefined,
+  },
+})
+
+const classes = computed(() => {
+  let base = ''
+  if (props.variant) base += `input--${props.variant} `
+  if (props.size) base += `input--${props.size} `
+  if (props.messageType) base += `input--${props.messageType} `
+  if (!props.resizable) base += 'textarea--public'
+  return base
+})
+
+const labelClasses = computed(() => {
+  let base = ''
+  if (props.variant === 'negative') base += `text--negative `
+  if (props.size) base += `text--${props.size} `
+  if (props.required) base += `text--asterisk `
+  return base
+})
 </script>

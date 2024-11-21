@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as DateBoxStories from './DateBox.stories.js'
+
+<Meta of={DateBoxStories} />
+
+# Date box
+
+This component displays the date of an event. It is used in the <a href="?path=/docs/pages-detail-page-event--example">Detail Event Page</a>
+
+## Use Case 1
+
+1 Event that goes over at least 2 days and you can't book single days, but only all\*\*
+
+<Canvas of={DateBoxStories.UseCaseOneExampleOne} />
+
+Display the year of the first date only if it is different from the year of the second date:
+
+<Canvas of={DateBoxStories.UseCaseOneExampleTwo} />
+
+## Use Case 2
+
+1 Event within range 00:00 - 24:00
+
+<Canvas of={DateBoxStories.UseCaseTwo} />
+
+## Use Case 3
+
+1 event, different dates, different time-slots, different locations
+
+<Canvas of={DateBoxStories.UseCaseThreeExampleOne} />
+
+<Canvas of={DateBoxStories.UseCaseThreeExampleTwo} />

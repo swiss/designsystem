@@ -1,12 +1,6 @@
 <template>
-  <button
-    class="burger"
-    title="Toggle mobile menu"
-  >
-    <span
-      class="burger__icon"
-      :class="isOpen ? 'burger--is-open' : ''"
-    >
+  <button class="burger" title="Toggle mobile menu">
+    <span class="burger__icon" :class="isOpen ? 'burger--is-open' : ''">
       <span class="burger__bar" />
       <span class="burger__bar" />
       <span class="burger__bar" />
@@ -14,15 +8,11 @@
   </button>
 </template>
 
-<script>
-
-export default {
-	name: 'Burger',
-	props: {
-		isOpen: {
-			type: Boolean,
-			default: false,
-		}
-	}
-}
+<script setup lang="ts">
+defineProps({
+  isOpen: {
+    type: Boolean,
+    default: false,
+  },
+})
 </script>

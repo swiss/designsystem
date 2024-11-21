@@ -135,9 +135,8 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import Btn from '../components/ch/components/Btn.vue'
-import TextImage from '../components/ch/components/TextImage.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -145,35 +144,18 @@ import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 
-export default {
-  name: 'DetailEasyLanguage',
-  components: {
-    TopBar,
-    TopHeader,
-    Breadcrumb,
-    Btn,
-    ShareBar,
-    TextImage,
-    DesktopMenu,
-    MobileMenu,
+defineProps({
+  isEasyLanguage: {
+    type: Boolean,
+    default: () => false,
   },
-  data() {
-    return {}
+  isSignLanguage: {
+    type: Boolean,
+    default: () => false,
   },
-  props: {
-    isEasyLanguage: {
-      type: Boolean,
-      default: false,
-    },
-    isSignLanguage: {
-      type: Boolean,
-      default: false,
-    },
-    useStickyNavigation: {
-      type: Boolean,
-      default: false,
-    }
+  useStickyNavigation: {
+    type: Boolean,
+    default: () => false,
   },
-  methods: {},
-}
+})
 </script>

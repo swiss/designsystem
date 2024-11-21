@@ -1,33 +1,30 @@
 <template>
   <div class="glossar-result__list">
     <div v-for="(item, index) in resultItems" :key="`item-${index}`">
-      <GlossarResultTitle :title="item.filter.toUpperCase()"/>
-      <GlossarResultListItemAccordion :item="item" :id="String(index)" :searchTerm="searchTerm" />
+      <GlossarResultTitle :title="item.filter.toUpperCase()" />
+      <GlossarResultListItemAccordion
+        :id="String(index)"
+        :item="item"
+        :searchTerm="searchTerm"
+      />
     </div>
   </div>
 </template>
 
-<script>
-import GlossarResultListItem from '../components/GlossarResultListItem.vue';
-import GlossarResultListItemAccordion from '../components/GlossarResultListItemAccordion.vue';
-import GlossarResultTitle from '../components/GlossarResultTitle.vue';
+<script setup lang="ts">
+import type { GlossaryResult } from '../../../types'
+import GlossarResultListItemAccordion from '../components/GlossarResultListItemAccordion.vue'
+import GlossarResultTitle from '../components/GlossarResultTitle.vue'
 
-export default {
-  name: 'GlossarResultList',
-  components: {
-    GlossarResultListItem,
-    GlossarResultTitle,
-    GlossarResultListItemAccordion,
+defineProps({
+  resultItems: {
+    type: Array<GlossaryResult>,
+    default: () => [],
   },
-  props: {
-    resultItems: {
-      type: Array,
-      default: () => [],
-    },
-    searchTerm: {
-      type: String,
-      required: false,
-    },
+  searchTerm: {
+    type: String,
+    required: false,
+    default: () => undefined,
   },
-}
+})
 </script>
