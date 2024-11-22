@@ -12859,6 +12859,7 @@ main ol:not([class]) > :not([hidden]) ~ :not([hidden]){
 }
 .info-block__title{
   margin-bottom: 1rem;
+  overflow-wrap: break-word;
   padding-right: 0.25rem;
   font-family: Font-Bold, Hind, Fallback-font;
   font-weight: 400;
