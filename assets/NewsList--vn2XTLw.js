@@ -1,0 +1,10 @@
+import{ae as t,af as n,ag as r}from"./index-JG4blpuO.js";import{u as e}from"./index-DbC4WVoY.js";import{N as m,W as p,S as a,a as h}from"./NewsList.stories-DqukGTZu.js";import"./iframe-Cx-Qd_Dr.js";import"../sb-preview/runtime.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./index-D-8MO0q_.js";import"./index-pVbLjA8_.js";import"./index-DrFu-skq.js";import"./vue.esm-bundler-8gVuwTo0.js";import"./AlterBodyClasses-Bg7yzX-w.js";import"./TopHeader-Cqd8d6WL.js";import"./Logo-DP4E4Y6c.js";import"./SvgIcon-BjII9Y0z.js";import"./Input-BG4Sdj6p.js";import"./LanguageSwitcher-DEqsIW4F.js";import"./Select-By2N4Zx3.js";import"./pinia-C9w1FlR-.js";import"./TopBar-BzyqVDG8.js";import"./Badge-BB5zLuKy.js";import"./Btn-DJ0m0bXS.js";import"./TopBarNavigation-BNlBDFUu.js";import"./DesktopMenu-HDzeBh-T.js";import"./MainNavigation-BsCpbzAK.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";import"./MobileMenu-BrK0uzRV.js";import"./swiper-vue-CK8r6Ueo.js";import"./v4-Ch9TGLTe.js";import"./FooterInformation-D3fGZ8OL.js";import"./FooterNavigation-3I5JfM3u.js";import"./SearchResultsList-DRSVfbZJ.js";import"./MetaInfo-CBlTXnbi.js";import"./Card-CvXM943v.js";import"./Pagination-LGbIdShE.js";import"./Notification-DeLq4jZJ.js";import"./TagItem-B1ml9yOS.js";import"./Breadcrumb-oB7rsZnj.js";function s(o){const i={h1:"h1",hr:"hr",...e(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(n,{of:m}),`
+`,t.jsx(i.h1,{id:"news-list",children:"News List"}),`
+`,t.jsx("a",{href:"?path=/story/pages-news-list--with-results",children:"Go to the Canvas Tab"}),`
+`,t.jsx(i.hr,{}),`
+`,t.jsx("a",{href:"?id=pages-news-list--with-results&args=&viewMode=story",target:"_blank",children:"Open page in full width in a new tab"}),`
+`,t.jsx(r,{of:p}),`
+`,t.jsx(i.h1,{id:"show-filters",children:"Show filters"}),`
+`,t.jsx(r,{of:a}),`
+`,t.jsx(i.h1,{id:"loading-example",children:"Loading example"}),`
+`,t.jsx(r,{of:h})]})}function Q(o={}){const{wrapper:i}={...e(),...o.components};return i?t.jsx(i,{...o,children:t.jsx(s,{...o})}):s(o)}export{Q as default};
