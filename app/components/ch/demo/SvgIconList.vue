@@ -2,63 +2,41 @@
   <div>
     <ul class="storybook-icon-list">
       <li
-        v-for="item in $options.svgIconList"
-        :key="item.id"
+        v-for="item in svgIconList"
+        :key="item"
         class="storybook-icon-list__item"
       >
-        <svg-icon-list-item
-          :icon="item.icon"
-          :id="item.id"
-        />
+        <SvgIconListItem :id="item" />
       </li>
     </ul>
     <h2>CC Icons</h2>
     <ul class="storybook-icon-cc-list">
-      <li
-        v-for="item in $options.svgCCIconList"
-        :key="item.id"
-      >
-        <svg-icon-list-item
-          :id="item.id"
-          autoWidth
-        />
+      <li v-for="item in svgCCIconList" :key="item">
+        <SvgIconListItem :id="item" autoWidth />
       </li>
     </ul>
   </div>
 </template>
 
-<script>
-
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import SvgIconListItem from './SvgIconListItem.vue'
 
-const svgContext = require.context(
-	'!svg-inline-loader?' +
-	'removeTags=true' + // remove title tags, etc.
-	'&removeSVGTagAttrs=true' + // enable removing attributes
-	'&removingTagAttrs=fill' + // remove fill attributes
-	'!../../../assets/icons', // search this directory
-	true, // search subdirectories
-	/\w+\.svg$/i // only include SVG files
-)
+const svgIconList = ref([] as string[])
+const svgCCIconList = ref([] as string[])
 
-let icons = []
-let CCIcons = []
-let array = svgContext.keys()
-for (let i = 0; i < array.length; ++i) {
-  icons[i] = {}
-  icons[i].id = array[i].replace(/^\.\/(.*)\.\w+$/, '$1')
-}
+const array = import.meta.glob([
+  '../../../assets/icons/*.svg',
+  '../../../assets/icons/logos/*.svg',
+])
 
-// Extract CC Icons from the rest
-CCIcons = icons.filter(icon => icon.id.startsWith('CC-'))
-icons = icons.filter(icon => !icon.id.startsWith('CC-'))
+onMounted(() => {
+  const parsedArray = Object.keys(array).map((key) =>
+    key.replace(/.*\/(.+)\.svg/, '$1'),
+  )
 
-export default {
-	name: 'SvgIconList',
-  components: {
-    SvgIconListItem
-  },
-	svgIconList: icons,
-  svgCCIconList: CCIcons,
-}
+  // Extract CC Icons from the rest
+  svgIconList.value = parsedArray.filter((icon) => !icon.startsWith('CC-'))
+  svgCCIconList.value = parsedArray.filter((icon) => icon.startsWith('CC-'))
+})
 </script>
