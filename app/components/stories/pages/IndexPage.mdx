@@ -1,0 +1,59 @@
+import { Meta, Canvas } from '@storybook/blocks'
+import * as IndexPageStories from './IndexPage.stories'
+
+<Meta of={IndexPageStories} />
+
+# Index Page
+
+<a href="?path=/story/pages-index-page--with-results-sticky">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a
+  href="?id=pages-index-page--with-results&args=&viewMode=story"
+  target="_blank"
+>
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas of={IndexPageStories.WithResults} />
+
+# Index Page with sticky search
+
+Please use full width view in order to see the sticky search working correctly.
+
+<a href="?path=/story/pages-index-page--with-results-sticky">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a
+  href="?id=pages-index-page--with-results-sticky&args=&viewMode=story"
+  target="_blank"
+>
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas of={IndexPageStories.WithStickyResults} />
+
+# Index Page with sticky search and filters
+
+Please use full width view in order to see the sticky search working correctly.
+
+<a href="?path=/story/pages-index-page--with-results-sticky-and-filters">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a
+  href="?id=pages-index-page--with-results-sticky-and-filters&args=&viewMode=story"
+  target="_blank"
+>
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas of={IndexPageStories.WithResultsStickyAndFilters} />

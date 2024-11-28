@@ -1,8 +1,8 @@
 <template>
   <nav
+    id="main-navigation"
     class="main-navigation main-navigation--desktop"
     aria-label="Main"
-    id="main-navigation"
   >
     <ul class="menu-desktop">
       <li>
@@ -29,13 +29,4 @@
   </nav>
 </template>
 
-<script>
-import SvgIcon from '../components/SvgIcon.vue';
-export default {
-  name: 'MainNavigationSimple',
-  components: {
-    SvgIcon,
-  },
-  props: {},
-}
-</script>
+<script setup lang="ts"></script>

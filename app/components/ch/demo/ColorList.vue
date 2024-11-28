@@ -1,59 +1,32 @@
 <template>
   <div>
     <ul>
-      <li
-        v-for="(value, key) in colors"
-        :key="`${key}`"
-        class="flex"
-      >
-        <ul
-          v-if="typeof value == 'object'"
-          class="storybook-color-list"
-        >
-          <h3
-            class="storybook-color-list__title"
-          >
-            {{ key }} colors
-          </h3>
+      <li v-for="(color, key) in colors" :key="`${key}`" class="flex">
+        <ul v-if="typeof color == 'object'" class="storybook-color-list">
+          <h3 class="storybook-color-list__title">{{ key }} colors</h3>
           <li
-            v-for="(subvalue, subkey) in value"
+            v-for="(subvalue, subkey) in color"
             :key="`${key}-${subkey}`"
             class="storybook-color-list__item"
           >
-            <ColorListItem
-              :name="`${key}-${subkey}`"
-              :color="subvalue"
-            />
+            <ColorListItem :name="`${key}-${subkey}`" :color="subvalue" />
           </li>
         </ul>
 
-        <ColorListItem
-          v-else
-          :name="key"
-          :color="value"
-        />
+        <ColorListItem v-else :name="key" :color="color" />
       </li>
     </ul>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import ColorListItem from './ColorListItem.vue'
 import tailwindConfig from '../../../tailwind.config.js'
+import { reactive, onMounted } from 'vue'
 
+const colors = reactive({} as Record<string, string | Record<string, string>>)
 
-export default {
-	name: 'ColorList',
-  components: {
-    ColorListItem
-  },
-  data: function () {
-    return {
-      colors: {}
-    }
-  },
-  mounted() {
-    this.colors = tailwindConfig.theme.colors
-  }
-}
+onMounted(() => {
+  Object.assign(colors, tailwindConfig.theme?.colors)
+})
 </script>

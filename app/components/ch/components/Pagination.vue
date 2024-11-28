@@ -1,19 +1,13 @@
 <template>
-  <div
-    class="pagination"
-    :class="!field ? 'pagination--extended' : '' "
-  >
+  <div class="pagination" :class="!field ? 'pagination--extended' : ''">
     <input
       v-if="field"
+      v-model="currentPage"
       class="pagination__input"
       :class="computedClasses"
-      v-model="currentPage"
       aria-label="pagination input"
     />
-    <div
-      v-if="field"
-      class="pagination__text"
-    >
+    <div v-if="field" class="pagination__text">
       {{ totalPages }}
     </div>
     <ul class="pagination_items">
@@ -23,52 +17,46 @@
           :label="item.label"
           :link="item.link"
           :type="type"
-          :disabled="index===0 && currentPage==='1'"
+          :disabled="index === 0 && currentPage === '1'"
         />
       </li>
     </ul>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import PaginationItem from './PaginationItem.vue'
+import { computed } from 'vue'
 
-import PaginationItem from "~/components/ch/components/PaginationItem";
+const currentPage = defineModel('currentPage', {
+  type: String,
+  required: true,
+})
 
-export default {
-  name: 'pagination',
-  components: {
-    PaginationItem
+const props = defineProps({
+  type: {
+    type: String,
+    default: () => 'outline',
+    validator: (prop) =>
+      ['outline', 'outline-negative'].includes(prop as string),
   },
-  props: {
-    type: {
-      type: String,
-      default: 'outline',
-      validator: (prop) => [
-        'outline',
-        'outline-negative',
-      ].includes(prop)
-    },
-    field: {
-      type: Boolean,
-      default: true
-    },
-    currentPage: {
-      type: String
-    },
-    totalPages: {
-      type: String
-    },
-    paginationItems: {
-      type: Array
-    }
+  field: {
+    type: Boolean,
+    default: () => true,
   },
+  totalPages: {
+    type: String,
+    default: () => '',
+  },
+  paginationItems: {
+    type: Array<{ icon?: string; label?: string; link?: any }>,
+    default: () => [],
+  },
+})
 
-  computed: {
-    computedClasses () {
-      let base = 'input input--base '
-      if (this.type) base += `input--${this.type} `
-      return base
-    }
-  }
-}
+const computedClasses = computed(() => {
+  let base = 'input input--base '
+  if (props.type) base += `input--${props.type} `
+  return base
+})
 </script>

@@ -17,20 +17,16 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import EasyLanguage from '../components/EasyLanguage.vue'
 import Print from '../components/Print.vue'
 import SignLanguage from '../components/SignLanguage.vue'
 import SvgIcon from '../components/SvgIcon.vue'
-export default {
-  name: 'ShareBar',
-  props: {
-    showEasyIcons: {
-      type: Boolean,
-      default: true,
-    },
+
+defineProps({
+  showEasyIcons: {
+    type: Boolean,
+    default: () => true,
   },
-  computed: {},
-  components: { Print, SvgIcon, EasyLanguage, SignLanguage },
-}
+})
 </script>

@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas } from '@storybook/blocks'
+import * as ColorsStories from './Colors.stories'
+
+<Meta of={ColorsStories} />
+
+# Text colors
+
+Text colors should be automatically defined. You can force them with specific classes though:
+
+<Canvas of={ColorsStories.TextColors} />
+
+# Negative color
+
+<Canvas of={ColorsStories.NegativeColor} className="storybook-bg-negative" />
+
+# All text color variants
+
+Colors have a complete spectrum based on Tailwind configuration. Use them with precaution and be sure the contrast fit the accessibility recommendations.
+
+<Canvas of={ColorsStories.AllColorVariantsDefault} />
+
+<Canvas of={ColorsStories.AllColorVariantsPrimary} />
+
+# Flexible Colors for future projects
+
+For future projects, if you generate the CSS by your own, it's possible to use not only the mentioned colors above, but the whole palette of colors declared in the Tailwind config and all its variations.
+
+<Canvas of={ColorsStories.FlexibleColors} />

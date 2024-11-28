@@ -1,7 +1,7 @@
 <template>
-  <client-only>
+  <ClientOnly>
     <div>
-      <AlterBodyClasses :isMobileMenuOpen="getMobileMenuIsOpen()" />
+      <AlterBodyClasses :isMobileMenuOpen="layoutStore.mobileMenuIsOpen" />
       <header id="main-header">
         <a href="#main-content" class="skip-to-content">Skip to main content</a>
         <TopBar :isOpen="false" />
@@ -24,7 +24,7 @@
       </header>
       <main id="main-content">
         <Hero type="default" :meta-infos="['Veranstaltung']">
-          <template v-slot:title>
+          <template #title>
             Symposium Extremhochwasser in der Schweiz
           </template>
         </Hero>
@@ -69,8 +69,8 @@
                     zip="3012"
                     city="Bern"
                     country="CH"
-                    mapLink="www.google.com/maps"
-                    website="www.cerny.ch"
+                    mapLink="https://www.google.com/maps"
+                    website="https://www.cerny.ch"
                   />
                 </div>
                 <div class="box">
@@ -175,7 +175,7 @@
                         headingLevel="h3"
                         :filename="'dummy.pdf'"
                         title="Programm"
-                        :url="'../../../static/documents/dummy.pdf'"
+                        :url="'../../../public/documents/dummy.pdf'"
                         :type="'PDF'"
                         :date="'22.01.2022'"
                       />
@@ -186,7 +186,7 @@
                         :filename="'image.png'"
                         title="Handouts"
                         description=""
-                        :url="'../../../static/images/html-structure.png'"
+                        :url="'../../../public/images/html-structure.png'"
                         :type="'PNG'"
                         :date="'22.01.2022'"
                       />
@@ -223,7 +223,7 @@
 
               <div>
                 <h2 class="h2">Themen</h2>
-                <RelatedTags :tags="tags" bare></RelatedTags>
+                <RelatedTags :tags="tags" bare />
               </div>
             </div>
             <div class="container__aside hidden md:block">
@@ -255,8 +255,8 @@
                     zip="3012"
                     city="Bern"
                     country="CH"
-                    mapLink="www.google.com/maps"
-                    website="www.cerny.ch"
+                    mapLink="https://www.google.com/maps"
+                    website="https://www.cerny.ch"
                   />
                 </div>
                 <div class="box">
@@ -286,27 +286,25 @@
           </div>
         </section>
       </main>
-      <footer class="footer" id="main-footer">
+      <footer id="main-footer" class="footer">
         <FooterInformation />
         <FooterNavigation />
       </footer>
     </div>
-  </client-only>
+  </ClientOnly>
 </template>
 
-<script>
-import Accordion from '~/components/ch/components/Accordion.vue'
-import AccordionItem from '~/components/ch/components/AccordionItem.vue'
-import Authors from '~/components/ch/components/Authors.vue'
-import Btn from '~/components/ch/components/Btn'
-import Card from '~/components/ch/components/Card'
-import Contact from '~/components/ch/components/Contact'
-import DownloadItem from '~/components/ch/components/DownloadItem.vue'
-import InfoBlock from '~/components/ch/components/InfoBlock.vue'
-import RelatedTags from '~/components/ch/components/RelatedTags.vue'
-import SvgIcon from '~/components/ch/components/SvgIcon'
-import ShareBar from '~/components/ch/demo/ShareBar.vue'
-import Hero from '~/components/ch/sections/Hero'
+<script setup lang="ts">
+import Accordion from '../components/ch/components/Accordion.vue'
+import AccordionItem from '../components/ch/components/AccordionItem.vue'
+import Authors from '../components/ch/components/Authors.vue'
+import Btn from '../components/ch/components/Btn.vue'
+import Contact from '../components/ch/components/Contact.vue'
+import DownloadItem from '../components/ch/components/DownloadItem.vue'
+import InfoBlock from '../components/ch/components/InfoBlock.vue'
+import RelatedTags from '../components/ch/components/RelatedTags.vue'
+import ShareBar from '../components/ch/demo/ShareBar.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
@@ -315,85 +313,57 @@ import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-export default {
-  name: 'detailPageEvent',
-  components: {
-    AlterBodyClasses,
-    TopBar,
-    TopHeader,
-    Breadcrumb,
-    DesktopMenu,
-    MobileMenu,
-    FooterInformation,
-    FooterNavigation,
-    Card,
-    Btn,
-    SvgIcon,
-    Hero,
-    ShareBar,
-    Contact,
-    InfoBlock,
-    DownloadItem,
-    Accordion,
-    AccordionItem,
-    RelatedTags,
-    Authors,
-  },
-  data: function () {
-    return {
-      tags: [
-        { label: 'Datenmodell', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Energie', url: '#' },
-        { label: 'INTERLIS', url: '#' },
-        { label: 'GKG/KOGIS', url: '#' },
-        { label: 'Datenmodell', url: '#' },
-      ],
-      authors: [
-        {
-          name: 'Maria Muster',
-          img: 'https://picsum.photos/120/120/?image=29',
-          url: '#',
-          prefix: ' ',
-        },
-        {
-          name: 'Katja Anna-Beerli',
-          img: 'https://picsum.photos/120/120/?image=30',
-          url: '#',
-        },
-      ],
-      screenHeight: 0,
-      asideContainerHeight: 0,
-    }
-  },
-  async mounted() {
-    await this.$nextTick()
-    this.resizeWindow()
-    window.addEventListener('resize', this.resizeWindow)
-  },
-  methods: {
-    getMobileMenuIsOpen() {
-      return this.$store.getters['layout/getMobileMenuIsOpen']
-    },
-    resizeWindow() {
-      this.screenHeight = document.body.clientHeight
+import { reactive, ref, computed, onMounted, nextTick } from 'vue'
+import { useLayoutStore } from '../store/layout'
 
-      const asideContainer = document.getElementById('aside-content')
-      if (asideContainer) {
-        this.asideContainerHeight = asideContainer.clientHeight
-      }
-    },
+const layoutStore = useLayoutStore()
+
+const tags = reactive([
+  { label: 'Datenmodell', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Energie', url: '#' },
+  { label: 'INTERLIS', url: '#' },
+  { label: 'GKG/KOGIS', url: '#' },
+  { label: 'Datenmodell', url: '#' },
+])
+const authors = reactive([
+  {
+    name: 'Maria Muster',
+    img: 'https://picsum.photos/120/120/?image=29',
+    url: '#',
+    prefix: ' ',
   },
-  computed: {
-    computedAsideContainerClass() {
-      if (this.screenHeight > this.asideContainerHeight) {
-        return 'sticky sticky--top'
-      } else {
-        return ''
-      }
-    },
+  {
+    name: 'Katja Anna-Beerli',
+    img: 'https://picsum.photos/120/120/?image=30',
+    url: '#',
   },
+])
+const screenHeight = ref(0)
+const asideContainerHeight = ref(0)
+
+const computedAsideContainerClass = computed(() => {
+  if (screenHeight.value > asideContainerHeight.value) {
+    return 'sticky sticky--top'
+  } else {
+    return ''
+  }
+})
+
+const resizeWindow = function () {
+  screenHeight.value = document.body.clientHeight
+
+  const asideContainer = document.getElementById('aside-content')
+  if (asideContainer) {
+    asideContainerHeight.value = asideContainer.clientHeight
+  }
 }
+
+onMounted(async () => {
+  await nextTick()
+  resizeWindow()
+  window.addEventListener('resize', resizeWindow)
+})
 </script>

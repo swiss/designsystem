@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as FormsStories from './Forms.stories'
+
+<Meta of={FormsStories} />
+
+# Homepage example
+
+<a href="?path=/story/pages-form-example--example">{'Go to the Canvas Tab'}</a>
+
+---
+
+<a href="?id=pages-form-example--example" target="_blank">
+  {'Open page in full width in a new tab'}
+</a>
+
+<Canvas of={FormsStories.Example} />

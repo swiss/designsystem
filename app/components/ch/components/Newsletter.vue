@@ -1,11 +1,16 @@
 <template>
-<div :class="computedClasses">
-    <h3 v-text="title" class="newsletter__title h3"></h3>
-    <p v-html="text" class="newsletter__text"></p>
-    <form v-if="mutableState!=='sent'" @submit="submit" action="page.php" class="newsletter__form">
+  <div :class="computedClasses">
+    <h3 class="newsletter__title h3" v-text="title" />
+    <p class="newsletter__text" v-html="text" />
+    <form
+      v-if="state !== 'sent'"
+      action="page.php"
+      class="newsletter__form"
+      @submit="submit"
+    >
       <Input
-        :type="'email'"
         :id="'newsletter-address'"
+        :type="'email'"
         :label="inputLabel"
         :autocomplete="'true'"
         class="newsletter__input"
@@ -19,84 +24,64 @@
       />
     </form>
     <Notification
-    v-else
-    :icon="'CheckmarkCircle'"
-    :text="successText"
-    :type="'success'"
-    :closeBtn="false"
-    class="newsletter__notification"
-  />
+      v-else
+      :icon="'CheckmarkCircle'"
+      :text="successText"
+      :type="'success'"
+      :closeBtn="false"
+      class="newsletter__notification"
+    />
   </div>
 </template>
 
-<script>
-import Input from './Input.vue';
-import Btn from './Btn.vue';
+<script setup lang="ts">
+import Input from './Input.vue'
+import Btn from './Btn.vue'
+import Notification from './Notification.vue'
+import { computed } from 'vue'
 
-import Notification from './Notification.vue';
+const state = defineModel('state', {
+  type: String,
+  default: () => '',
+  validator: (prop) => ['default', 'sent'].includes(prop as string),
+})
 
-export default {
-  name: 'newsletter',
-  components: {
-    Input,
-    Btn,
-    Notification,
+const props = defineProps({
+  type: {
+    type: String,
+    validator: (prop) => ['default', 'inline'].includes(prop as string),
+    default: () => undefined,
   },
-  props: {
-    type: {
-      type: String,
-      validator: (prop) => [
-        'default',
-        'inline',
-      ].includes(prop)
-    },
-    state: {
-      type: String,
-      default: undefined,
-      validator: (prop) => [
-        'default',
-        'sent'
-      ].includes(prop)
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    text: {
-      type: String,
-      required: true,
-    },
-    inputLabel: {
-      type: String,
-      required: true,
-    },
-    buttonLabel: {
-      type: String,
-      required: true,
-    },
-    successText: {
-      type: String,
-      required: true,
-    }
+  title: {
+    type: String,
+    required: true,
   },
-  computed: {
-    computedClasses () {
-      let base = 'newsletter '
-      if (this.type) base += `newsletter--${this.type} `
-      return base
-    },
+  text: {
+    type: String,
+    required: true,
   },
-  data() {
-    return {
-      mutableState: this.state
-    }
+  inputLabel: {
+    type: String,
+    required: true,
   },
-  methods: {
-    submit(e) {
-      this.mutableState='sent';
-      e.preventDefault();
-    }
+  buttonLabel: {
+    type: String,
+    required: true,
   },
-};
+  successText: {
+    type: String,
+    required: true,
+  },
+})
+
+const computedClasses = computed(() => {
+  let base = 'newsletter '
+  if (props.type) base += `newsletter--${props.type} `
+  return base
+})
+
+const submit = function (e: Event) {
+  state.value = 'sent'
+  e.preventDefault()
+}
 </script>
-

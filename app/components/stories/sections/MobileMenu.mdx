@@ -1,0 +1,21 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import MobileMenu from '../../ch/sections/MobileMenu.vue'
+import * as MobileMenuStories from './MobileMenu.stories'
+
+<Meta of={MobileMenuStories} />
+
+# Mobile Menu
+
+<Canvas className="storybook-demo-mobile-menu" of={MobileMenuStories.Example} />
+
+<Controls of={MobileMenuStories.Example} />
+
+<a href="?path=/story/sections-header-mobilemenu--example">
+  {'Go to the Canvas Tab'}
+</a>
+
+---
+
+<a href="?id=sections-header-mobilemenu--example" target="_blank">
+  {'Open page in full width in a new tab'}
+</a>

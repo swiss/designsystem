@@ -14,46 +14,38 @@
   </a>
 </template>
 
-<script>
+<script setup lang="ts">
 import ShoppingCartAmountIndicator from './ShoppingCartAmountIndicator.vue'
 import SvgIcon from './SvgIcon.vue'
-export default {
-  components: {
-    ShoppingCartAmountIndicator,
-    SvgIcon,
+import { computed } from 'vue'
+
+const props = defineProps({
+  amount: {
+    type: Number,
+    required: true,
   },
-  name: 'ShoppingCartButton',
-  props: {
-    amount: {
-      type: Number,
-      required: true,
-    },
-    ariaLabel: {
-      type: String,
-      default:
-        'Shopping cart: There are <amount> items in your shopping cart.',
-    },
-    href: {
-      type: String,
-    },
-    target: {
-      type: String,
-      validator: (prop) =>
-        ['_blank', '_parent', '_self', '_top'].includes(prop),
-      default: '_self',
-    },
-    label: {
-      type: String,
-      required: true,
-    },
+  ariaLabel: {
+    type: String,
+    default: () =>
+      'Shopping cart: There are <amount> items in your shopping cart.',
   },
-  computed: {
-    limittedAmount() {
-      return this.amount > 9 ? '9+' : this.amount
-    },
-    parsedLabel() {
-      return this.ariaLabel.replace('<amount>', this.amount)
-    },
+  href: {
+    type: String,
+    default: () => undefined,
   },
-}
+  target: {
+    type: String,
+    validator: (prop) =>
+      ['_blank', '_parent', '_self', '_top'].includes(prop as string),
+    default: () => '_self',
+  },
+  label: {
+    type: String,
+    required: true,
+  },
+})
+
+const parsedLabel = computed(() => {
+  return props.ariaLabel.replace('<amount>', props.amount.toString())
+})
 </script>

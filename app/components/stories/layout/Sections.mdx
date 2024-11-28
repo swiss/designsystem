@@ -1,0 +1,32 @@
+import { Meta, Canvas } from '@storybook/blocks'
+import * as SectionsStories from './Sections.stories'
+
+<Meta of={SectionsStories} />
+
+# Sections
+
+The main content is inserted into the `<main#main-content>` element. It is seperated logically within different `<section>` elements. Sections can be rythmed vertically with spacings and background colors. Use a `div.container` to constraint your content horizontally
+
+<Canvas of={SectionsStories.MainContentExample} />
+
+# Titles
+
+Use `.section__title` or `.section__subtitle` within a `.container` to style titles for sections.
+After section's content, a `.section__action` wraps a potential link, inviting to discover more about the topic:
+
+<Canvas of={SectionsStories.Titles} />
+
+# Dark sections
+
+If you define a dark background (`.bg--secondary-[variant]` where `variant ≥ 500`) the `.section__title` will turn automatically to white. In other contexts, you can force negative color with `.section__title--negative`.
+
+<Canvas of={SectionsStories.DarkSections} />
+
+# Paddings for sections
+
+- `.section.section--default` and
+- `.section.bg--secondary-[color-variant]` add top and bottom paddings to the section.
+- consecutive sections with the same background color removes the double spacing automatically.
+- consecutive `.container` elements adds a top padding to the second container.
+
+<Canvas of={SectionsStories.Paddings} />
