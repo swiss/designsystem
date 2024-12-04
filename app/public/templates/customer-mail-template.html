@@ -67,7 +67,7 @@
       }
 
       .first-col-full {
-        display: none;
+        display: none !important;
         height: auto;
         width: 0px;
       }
@@ -109,10 +109,10 @@
       }
 
       .footer-spacer {
-        height: 16px
+        height: 16px;
       }
 
-      .footer-content {
+      .footer-content td {
         background: #1f2937;
         padding: 12px;
       }
@@ -163,11 +163,11 @@
           padding: 24px 0;
         }
 
-        .footer-spacer {
+        .footer-spacer td {
           height: 24px;
         }
 
-        .footer-content {
+        .footer-content td {
           padding: 18px 36px;
         }
       }
@@ -207,7 +207,7 @@
           height: 40px;
         }
 
-        .footer-content {
+        .footer-content td {
           padding: 20px 48px;
         }
       }
@@ -382,7 +382,9 @@
     </div>
 
     <table class="footer">
-      <tr class="footer-spacer"></tr>
+      <tr class="footer-spacer">
+        <td></td>
+      </tr>
       <tr class="footer-content">
         <td>Bundesamt für Statistik</td>
       </tr>
