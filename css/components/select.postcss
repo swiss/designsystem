@@ -4,6 +4,10 @@
   & select {
     @apply pr-20 box-border appearance-none;
   }
+
+  .input--negative {
+    @apply border-secondary-500;
+  }
 }
 
 .select--bare {
@@ -47,8 +51,8 @@ select:disabled,
 
   .input--negative + & {
     @apply text-white;
-    @apply border-secondary-300;
-    @apply bg-secondary-500;
+    @apply border-secondary-500;
+    @apply bg-secondary-600;
 
     & svg {
       @apply fill-current;
