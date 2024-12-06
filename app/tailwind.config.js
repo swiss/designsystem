@@ -196,6 +196,158 @@ export default {
       white: '#ffffff',
       black: '#000000',
       transparent: 'transparent',
+
+      // New variable based colors
+      action: {
+        'background-cta': 'var(--action-background-cta)',
+        'darkmode-hover-red': 'var(--primary-700)',
+        'darkmode-main-red': 'var(--primary-600)',
+        disabled: 'var(--action-disabled)',
+        focus: 'var(--action-focus)',
+        'hover-main': 'var(--action-hover-main)',
+        'hover-secondary': 'var(--action-hover-secondary)',
+        main: 'var(--action-main)',
+        secondary: 'var(--action-secondary)',
+      },
+      background: {
+        'accent-01': 'var(--background-accent-01)',
+        'accent-02': 'var(--background-accent-02)',
+        'background-modal': 'var(--background-background-modal)',
+        main: 'var(--background-main)',
+      },
+      elements: {
+        color: '#ffffff',
+        'card-01': 'var(--elements-card-card-01)',
+        'card-hover': 'var(--elements-card-hover)',
+        'card-shadow': 'var(--elements-card-shadow)',
+        'divider-50': 'var(--elements-divider-50)',
+        'divider-100': 'var(--elements-divider-100)',
+        'divider-200': 'var(--elements-divider-200)',
+        'support-50': 'var(--elements-support-50)',
+        'support-100': 'var(--elements-support-100)',
+        'support-200': 'var(--elements-support-200)',
+        'support-300': 'var(--elements-support-300)',
+        'support-400': 'var(--elements-support-400)',
+        'support-500': 'var(--elements-support-500)',
+        'support-600': 'var(--elements-support-600)',
+        'support-700': 'var(--elements-support-700)',
+        'support-800': 'var(--elements-support-800)',
+        'support-900': 'var(--elements-support-900)',
+      },
+      gebaerdensprache: {
+        accent: 'var(--gebaerdensprache-accent)',
+        main: 'var(--gebaerdensprache-main)',
+        text: 'var(--gebaerdensprache-text)',
+      },
+      leichtesprache: {
+        accent: 'var(--leichtesprache-accent)',
+        main: 'var(--leichtesprache-main)',
+        text: 'var(--leichtesprache-text)',
+      },
+      logo: {
+        'logo-red': 'var(--logo-logo-red)',
+        'logo-white': 'var(--logo-logo-white)',
+      },
+      states: {
+        'error-bg': 'var(--states-error-error-bg)',
+        'error-text': 'var(--states-error-error-text)',
+        'information-bg': 'var(--states-information-information-bg)',
+        'information-text': 'var(--states-information-information-text)',
+        'neutral-bg': 'var(--states-neutral-neutral-bg)',
+        'neutral-text': 'var(--states-neutral-neutral-text)',
+        'success-bg': 'var(--states-success-success-bg)',
+        'success-text': 'var(--states-success-success-text)',
+        'warning-bg': 'var(--states-warning-warning-bg)',
+        'warning-text': 'var(--states-warning-warning-text)',
+      },
+      'text-new': {
+        contrast: 'var(--text-contrast-text)',
+        disabled: 'var(--text-disabled-text)',
+        label: 'var(--text-label-text)',
+        main: 'var(--text-main-text)',
+        quote: 'var(--text-quote-text)',
+        selected: 'var(--text-selected-text)',
+      },
+      'ui-elements': {
+        checkbox: {
+          'active-background': 'var(--ui-elements-checkbox-active-background)',
+          checkmark: 'var(--ui-elements-checkbox-checkmark)',
+          'disabled-background':
+            'var(--ui-elements-checkbox-disabled-background)',
+          'disabled-stroke': 'var(--ui-elements-checkbox-disabled-stroke)',
+          'disabled-text': 'var(--ui-elements-checkbox-disabled-text)',
+          'inactive-background':
+            'var(--ui-elements-checkbox-inactive-background)',
+          'main-stroke': 'var(--ui-elements-checkbox-main-stroke)',
+          'main-text': 'var(--ui-elements-checkbox-main-text)',
+        },
+        close: {
+          background: 'var(--ui-elements-close-background)',
+          item: 'var(--ui-elements-close-item)',
+        },
+        indicator: {
+          active: 'var(--ui-elements-indicator-indicator-active)',
+          inactive: 'var(--ui-elements-indicator-indicator-inactive)',
+        },
+        inputfield: {
+          select: {
+            'disabled-background':
+              'var(--ui-elements-inputfield-select-background-disabled-background)',
+            'main-background':
+              'var(--ui-elements-inputfield-select-background-main-background)',
+            'active-indicator':
+              'var(--ui-elements-inputfield-select-indicator-active-indicator)',
+            'disabled-indicator':
+              'var(--ui-elements-inputfield-select-indicator-disabled-indicator)',
+            'disabled-stroke':
+              'var(--ui-elements-inputfield-select-stroke-disabled-stroke)',
+            'error-stroke':
+              'var(--ui-elements-inputfield-select-stroke-error-stroke)',
+            'main-stroke':
+              'var(--ui-elements-inputfield-select-stroke-main-stroke)',
+            'disabled-text':
+              'var(--ui-elements-inputfield-select-text-disabled-text)',
+            'error-text':
+              'var(--ui-elements-inputfield-select-text-error-text)',
+            'label-text':
+              'var(--ui-elements-inputfield-select-text-label-text)',
+            'main-text': 'var(--ui-elements-inputfield-select-text-main-text)',
+          },
+        },
+        navigation: {
+          '01': 'var(--ui-elements-navigation-01)',
+          '02': 'var(--ui-elements-navigation-02)',
+          '03': 'var(--ui-elements-navigation-03)',
+        },
+        radiobutton: {
+          'active-background':
+            'var(--ui-elements-radiobutton-active-background)',
+          checkmark: 'var(--ui-elements-radiobutton-checkmark)',
+          'disabled-background':
+            'var(--ui-elements-radiobutton-disabled-background)',
+          'disabled-stroke': 'var(--ui-elements-radiobutton-disabled-stroke)',
+          'disabled-text': 'var(--ui-elements-radiobutton-disabled-text)',
+          'inactive-background':
+            'var(--ui-elements-radiobutton-inactive-background)',
+          'main-stroke': 'var(--ui-elements-radiobutton-main-stroke)',
+          'main-text': 'var(--ui-elements-radiobutton-main-text)',
+        },
+        tag: {
+          'background-active': 'var(--ui-elements-tag-background-active)',
+          'background-default': 'var(--ui-elements-tag-background-default)',
+          'background-disabled-fill':
+            'var(--ui-elements-tag-background-disabled-fill)',
+          'background-disabled-stroke':
+            'var(--ui-elements-tag-background-disabled-stroke)',
+          'background-hover': 'var(--ui-elements-tag-background-hover)',
+        },
+        toggle: {
+          'active-background': 'var(--ui-elements-toggle-active-background)',
+          checkmark: 'var(--ui-elements-toggle-checkmark)',
+          'inactive-background-2':
+            'var(--ui-elements-toggle-inactive-background-2)',
+        },
+      },
     },
     fontWeight: {
       normal: 400,

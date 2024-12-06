@@ -1,0 +1,220 @@
+html[data-theme='auto'] {
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme='auto'] {
+    color-scheme: dark;
+  }
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* Color Tokens */
+@media (prefers-color-scheme: light) {
+  :root {
+    --action-background-cta: var(--standard-white);
+    --action-darkmode-hover-red: var(--primary-700);
+    --action-darkmode-main-red: var(--primary-600);
+    --action-disabled: var(--secondary-200);
+    --action-focus: var(--purble-500);
+    --action-hover-main: var(--primary-700);
+    --action-hover-secondary: var(--secondary-500);
+    --action-main: var(--primary-600);
+    --action-secondary: var(--secondary-400);
+    --background-accent-01: var(--secondary-50);
+    --background-accent-02: var(--secondary-100);
+    --background-background-modal: var(--gray-650);
+    --background-main: var(--standard-white);
+    --elements-color: #ffffff;
+    --elements-card-card-01: var(--standard-white);
+    --elements-card-hover: var(--standard-white);
+    --elements-card-shadow: var(--secondary-300);
+    --elements-divider-100: var(--secondary-200);
+    --elements-divider-200: var(--secondary-300);
+    --elements-divider-50: var(--secondary-100);
+    --elements-support-100: var(--gray-100);
+    --elements-support-200: var(--gray-200);
+    --elements-support-300: var(--gray-300);
+    --elements-support-400: var(--gray-400);
+    --elements-support-50: var(--gray-50);
+    --elements-support-500: var(--gray-500);
+    --elements-support-600: var(--gray-600);
+    --elements-support-700: var(--gray-700);
+    --elements-support-800: var(--gray-800);
+    --elements-support-900: var(--gray-900);
+    --gebaerdensprache-accent: var(--indigo-100);
+    --gebaerdensprache-main: var(--indigo-800);
+    --gebaerdensprache-text: var(--indigo-800);
+    --leichtesprache-accent: var(--green-100);
+    --leichtesprache-main: var(--green-800);
+    --leichtesprache-text: var(--green-800);
+    --logo-logo-red: var(--red-600);
+    --logo-logo-white: var(--standard-white);
+    --states-error-error-bg: var(--red-50);
+    --states-error-error-text: var(--primary-600);
+    --states-information-information-bg: var(--gray-100);
+    --states-information-information-text: var(--blue-700);
+    --states-neutral-neutral-bg: var(--gray-100);
+    --states-neutral-neutral-text: var(--gray-700);
+    --states-success-success-bg: var(--green-50);
+    --states-success-success-text: var(--green-700);
+    --states-warning-warning-bg: var(--orange-50);
+    --states-warning-warning-text: var(--orange-800);
+    --text-contrast-text: var(--standard-white);
+    --text-disabled-text: var(--text-300);
+    --text-label-text: var(--text-500);
+    --text-main-text: var(--text-800);
+    --text-quote-text: var(--secondary-500);
+    --text-selected-text: var(--blue-100);
+    --ui-elements-checkbox-active-background: var(--text-700);
+    --ui-elements-checkbox-checkmark: var(--standard-white);
+    --ui-elements-checkbox-disabled-background: var(--text-100);
+    --ui-elements-checkbox-disabled-stroke: var(--text-300);
+    --ui-elements-checkbox-disabled-text: var(--text-400);
+    --ui-elements-checkbox-inactive-background: var(--standard-white);
+    --ui-elements-checkbox-main-stroke: var(--text-500);
+    --ui-elements-checkbox-main-text: var(--text-800);
+    --ui-elements-close-background: var(--red-100);
+    --ui-elements-close-item: var(--red-600);
+    --ui-elements-indicator-indicator-active: var(--secondary-500);
+    --ui-elements-indicator-indicator-inactive: var(--secondary-100);
+    --ui-elements-inputfield-select-background-disabled-background: var(--text-50);
+    --ui-elements-inputfield-select-background-main-background: var(--standard-white);
+    --ui-elements-inputfield-select-indicator-active-indicator: var(--gray-500);
+    --ui-elements-inputfield-select-indicator-disabled-indicator: var(--gray-300);
+    --ui-elements-inputfield-select-stroke-disabled-stroke: var(--gray-300);
+    --ui-elements-inputfield-select-stroke-error-stroke: var(--red-600);
+    --ui-elements-inputfield-select-stroke-main-stroke: var(--gray-500);
+    --ui-elements-inputfield-select-text-disabled-text: var(--text-400);
+    --ui-elements-inputfield-select-text-error-text: var(--red-600);
+    --ui-elements-inputfield-select-text-label-text: var(--text-500);
+    --ui-elements-inputfield-select-text-main-text: var(--text-800);
+    --ui-elements-navigation-01: var(--standard-white);
+    --ui-elements-navigation-02: var(--secondary-50);
+    --ui-elements-navigation-03: var(--secondary-100);
+    --ui-elements-radiobutton-active-background: var(--text-700);
+    --ui-elements-radiobutton-checkmark: var(--standard-white);
+    --ui-elements-radiobutton-disabled-background: var(--text-100);
+    --ui-elements-radiobutton-disabled-stroke: var(--text-300);
+    --ui-elements-radiobutton-disabled-text: var(--text-400);
+    --ui-elements-radiobutton-inactive-background: var(--standard-white);
+    --ui-elements-radiobutton-main-stroke: var(--text-500);
+    --ui-elements-radiobutton-main-text: var(--text-800);
+    --ui-elements-tag-background-active: var(--gray-800);
+    --ui-elements-tag-background-default: var(--secondary-100);
+    --ui-elements-tag-background-disabled-fill: var(--secondary-50);
+    --ui-elements-tag-background-disabled-stroke: var(--secondary-100);
+    --ui-elements-tag-background-hover: var(--secondary-200);
+    --ui-elements-toggle-active-background: var(--secondary-700);
+    --ui-elements-toggle-checkmark: var(--standard-white);
+    --ui-elements-toggle-inactive-background-2: var(--text-300);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --action-background-cta: var(--secondary-600);
+    --action-darkmode-hover-red: var(--primary-500);
+    --action-darkmode-main-red: var(--primary-400);
+    --action-disabled: var(--secondary-300);
+    --action-focus: var(--purble-500);
+    --action-hover-main: var(--secondary-100);
+    --action-hover-secondary: var(--secondary-100);
+    --action-main: var(--standard-white);
+    --action-secondary: var(--secondary-100);
+    --background-accent-01: var(--secondary-900);
+    --background-accent-02: var(--secondary-800);
+    --background-background-modal: var(--gray-850);
+    --background-main: var(--secondary-800);
+    --elements-color: #ffffff;
+    --elements-card-card-01: var(--secondary-700);
+    --elements-card-hover: var(--secondary-600);
+    --elements-card-shadow: var(--secondary-500);
+    --elements-divider-100: var(--secondary-400);
+    --elements-divider-200: var(--secondary-300);
+    --elements-divider-50: var(--secondary-300);
+    --elements-support-100: var(--gray-100);
+    --elements-support-200: var(--gray-200);
+    --elements-support-300: var(--gray-300);
+    --elements-support-400: var(--gray-400);
+    --elements-support-50: var(--gray-50);
+    --elements-support-500: var(--gray-500);
+    --elements-support-600: var(--gray-600);
+    --elements-support-700: var(--gray-700);
+    --elements-support-800: var(--gray-800);
+    --elements-support-900: var(--gray-900);
+    --gebaerdensprache-accent: var(--indigo-500);
+    --gebaerdensprache-main: var(--indigo-500);
+    --gebaerdensprache-text: var(--standard-white);
+    --leichtesprache-accent: var(--green-600);
+    --leichtesprache-main: var(--green-600);
+    --leichtesprache-text: var(--standard-white);
+    --logo-logo-red: var(--red-600);
+    --logo-logo-white: var(--standard-white);
+    --states-error-error-bg: var(--red-100);
+    --states-error-error-text: var(--primary-600);
+    --states-information-information-bg: var(--gray-100);
+    --states-information-information-text: var(--blue-700);
+    --states-neutral-neutral-bg: var(--secondary-300);
+    --states-neutral-neutral-text: var(--standard-white);
+    --states-success-success-bg: var(--green-50);
+    --states-success-success-text: var(--green-700);
+    --states-warning-warning-bg: #fff7ed;
+    --states-warning-warning-text: var(--orange-800);
+    --text-contrast-text: var(--elements-support-800);
+    --text-disabled-text: var(--text-300);
+    --text-label-text: var(--secondary-100);
+    --text-main-text: var(--standard-white);
+    --text-quote-text: var(--standard-white);
+    --text-selected-text: var(--blue-800);
+    --ui-elements-checkbox-active-background: var(--text-700);
+    --ui-elements-checkbox-checkmark: var(--standard-white);
+    --ui-elements-checkbox-disabled-background: var(--secondary-300);
+    --ui-elements-checkbox-disabled-stroke: var(--text-400);
+    --ui-elements-checkbox-disabled-text: var(--secondary-300);
+    --ui-elements-checkbox-inactive-background: var(--secondary-400);
+    --ui-elements-checkbox-main-stroke: var(--standard-white);
+    --ui-elements-checkbox-main-text: var(--standard-white);
+    --ui-elements-close-background: var(--secondary-600);
+    --ui-elements-close-item: var(--red-400);
+    --ui-elements-indicator-indicator-active: var(--standard-white);
+    --ui-elements-indicator-indicator-inactive: var(--secondary-500);
+    --ui-elements-inputfield-select-background-disabled-background: var(--secondary-700);
+    --ui-elements-inputfield-select-background-main-background: var(--secondary-500);
+    --ui-elements-inputfield-select-indicator-active-indicator: var(--text-300);
+    --ui-elements-inputfield-select-indicator-disabled-indicator: var(--gray-400);
+    --ui-elements-inputfield-select-stroke-disabled-stroke: var(--standard-transparency);
+    --ui-elements-inputfield-select-stroke-error-stroke: var(--red-300);
+    --ui-elements-inputfield-select-stroke-main-stroke: var(--standard-transparency);
+    --ui-elements-inputfield-select-text-disabled-text: var(--secondary-300);
+    --ui-elements-inputfield-select-text-error-text: var(--red-300);
+    --ui-elements-inputfield-select-text-label-text: var(--standard-white);
+    --ui-elements-inputfield-select-text-main-text: var(--standard-white);
+    --ui-elements-navigation-01: var(--secondary-800);
+    --ui-elements-navigation-02: var(--secondary-700);
+    --ui-elements-navigation-03: var(--secondary-900);
+    --ui-elements-radiobutton-active-background: var(--text-700);
+    --ui-elements-radiobutton-checkmark: var(--standard-white);
+    --ui-elements-radiobutton-disabled-background: var(--secondary-300);
+    --ui-elements-radiobutton-disabled-stroke: var(--text-400);
+    --ui-elements-radiobutton-disabled-text: var(--secondary-300);
+    --ui-elements-radiobutton-inactive-background: var(--secondary-400);
+    --ui-elements-radiobutton-main-stroke: var(--standard-white);
+    --ui-elements-radiobutton-main-text: var(--standard-white);
+    --ui-elements-tag-background-active: var(--standard-white);
+    --ui-elements-tag-background-default: var(--secondary-600);
+    --ui-elements-tag-background-disabled-fill: var(--secondary-900);
+    --ui-elements-tag-background-disabled-stroke: var(--secondary-800);
+    --ui-elements-tag-background-hover: var(--secondary-400);
+    --ui-elements-toggle-active-background: var(--secondary-700);
+    --ui-elements-toggle-checkmark: var(--standard-white);
+    --ui-elements-toggle-inactive-background-2: var(--text-300);
+  }
+}
