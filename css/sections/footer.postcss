@@ -10,10 +10,21 @@
 }
 
 .footer-navigation {
-  @apply flex;
+  @apply flex flex-row justify-between;
+  @apply w-full;
   @apply py-3;
   @apply space-x-2 sm:space-x-4;
+  @apply inline-flex items-center;
+}
+
+.footer-navigation-left {
+  @apply flex flex-row;
+  @apply space-x-2 sm:space-x-4;
   @apply text--xs;
+}
+
+.footer-navigation-right {
+  @apply w-64;
 }
 
 .footer__link {

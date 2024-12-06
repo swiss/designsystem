@@ -8,7 +8,7 @@
     <header id="main-header">
       <a href="#main-content" class="skip-to-content">Skip to main content</a>
       <TopBar :isOpen="false" />
-      <TopHeader data-auto-theme="light" />
+      <TopHeader />
       <DesktopMenu isHomePage :showActiveNavigation="true" />
       <MobileMenu :showActiveNavigation="true" />
       <Breadcrumb isHomePage />
