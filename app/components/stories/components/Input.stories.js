@@ -102,6 +102,7 @@ export const Example = {
     step: undefined,
     message: undefined,
     messageType: 'error',
+    theme: 'light',
   },
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="form__group__input">
+  <div class="form__group__input" :data-default-theme="props.theme">
     <label v-if="label" :for="id" :class="labelClasses">
       {{ label }}
     </label>
@@ -28,10 +28,10 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  variant: {
+  theme: {
     type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => undefined,
+    validator: (prop) => ['light', 'dark'].includes(prop as string),
+    default: () => 'light',
   },
   size: {
     type: String,
@@ -92,7 +92,6 @@ const props = defineProps({
 
 const classes = computed(() => {
   let base = ''
-  if (props.variant) base += `input--${props.variant} `
   if (props.size) base += `input--${props.size} `
   if (props.messageType) base += `input--${props.messageType} `
   if (!props.resizable) base += 'textarea--public'
@@ -101,7 +100,6 @@ const classes = computed(() => {
 
 const labelClasses = computed(() => {
   let base = ''
-  if (props.variant === 'negative') base += `text--negative `
   if (props.size) base += `text--${props.size} `
   if (props.required) base += `text--asterisk `
   return base

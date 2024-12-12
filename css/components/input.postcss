@@ -61,8 +61,8 @@ select::placeholder {
 }
 
 .input--error {
-  @apply text-red-800;
-  @apply border-red-500;
+  color: light-dark(var(--red-800), var(--red-200));
+  border-color: light-dark(var(--red-500), var(--red-300));
   @apply placeholder-red-400;
 
   & + label {
