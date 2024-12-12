@@ -3,6 +3,11 @@
   --input-min-height-2xl: 48px;
 }
 
+.label,
+label {
+  @apply text-text-new-main;
+}
+
 .input,
 input,
 textarea,
@@ -10,12 +15,19 @@ select {
   @apply w-full;
   @apply px-4 py-[0.625rem];
   @apply shadow;
-  @apply bg-white border border-text-500;
+  @apply bg-ui-elements-inputfield-select-main-background border border-ui-elements-inputfield-select-main-stroke;
   @apply rounded-xs;
   @apply leading-none;
   @apply min-h-[var(--input-min-height)] 2xl:min-h-[var(--input-min-height-2xl)];
   @apply focus:outline-none;
-  @apply placeholder-secondary-400;
+  @apply text-text-new-main;
+}
+
+.input::placeholder,
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: light-dark(var(--secondary-400), var(--secondary-50));
 }
 
 .input--sm {
@@ -30,6 +42,7 @@ select {
   @apply leading-7 text--base;
 }
 
+ /* TODO Delete once all components using this don't need it anymore */
 .input--outline {
   @apply text-text-800;
   @apply border-text-500;
@@ -37,8 +50,8 @@ select {
 
 [disabled],
 .input--disabled {
-  @apply bg-text-50;
-  @apply text-text-400;
+  background: light-dark(var(--text-50), var(--secondary-300));
+  color: light-dark(var(--text-400), var(--secondary-200));
   @apply border-text-300;
   @apply pointer-events-none cursor-not-allowed;
 }
@@ -57,6 +70,7 @@ select {
   }
 }
 
+ /* TODO Delete once all components using this don't need it anymore */
 .input--negative {
   @apply text-white;
   @apply bg-secondary-500;
@@ -71,6 +85,7 @@ select {
   }
 }
 
+ /* TODO Delete once all components using this don't need it anymore */
 .input--error.input--negative {
   @apply text-red-200 border-red-300;
 }

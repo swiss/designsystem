@@ -1,5 +1,5 @@
 <template>
-  <div :class="computedClasses">
+  <div :class="computedClasses" :data-default-theme="props.theme">
     <h3 class="newsletter__title h3" v-text="title" />
     <p class="newsletter__text" v-html="text" />
     <form
@@ -14,6 +14,7 @@
         :label="inputLabel"
         :autocomplete="'true'"
         class="newsletter__input"
+        :theme="props.theme"
       />
       <Btn
         :variant="'filled'"
@@ -51,6 +52,11 @@ const props = defineProps({
     type: String,
     validator: (prop) => ['default', 'inline'].includes(prop as string),
     default: () => undefined,
+  },
+  theme: {
+    type: String,
+    validator: (prop) => ['dark', 'light'].includes(prop as string),
+    default: () => 'light',
   },
   title: {
     type: String,
