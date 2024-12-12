@@ -1,26 +1,10 @@
-*[data-theme='auto'] {
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
-  @media (prefers-color-scheme: light) {
-    color-scheme: light;
-  }
-}
-
-*[data-theme='light'] {
-  color-scheme: light;
-}
-
-*[data-theme='dark'] {
-  color-scheme: dark;
-}
-
 :root {
-  --action-background-cta: light-dark(var(--standard-white), var(--secondary-600));
+  --action-background-cta-default: light-dark(var(--standard-white), var(--secondary-600));
+  --action-background-cta-disabled: light-dark(var(--standard-white), var(--standard-transparent));
   --action-darkmode-hover-red: light-dark(var(--primary-700), var(--primary-500));
   --action-darkmode-main-red: light-dark(var(--primary-600), var(--primary-400));
   --action-disabled: light-dark(var(--secondary-200), var(--secondary-300));
-  --action-focus: light-dark(var(--purble-500), var(--purble-500));
+  --action-focus: light-dark(var(--purple-500), var(--purple-500));
   --action-hover-main: light-dark(var(--primary-700), var(--secondary-100));
   --action-hover-secondary: light-dark(var(--secondary-500), var(--secondary-100));
   --action-main: light-dark(var(--primary-600), var(--standard-white));
@@ -86,9 +70,9 @@
   --ui-elements-inputfield-select-background-main-background: light-dark(var(--standard-white), var(--secondary-500));
   --ui-elements-inputfield-select-indicator-active-indicator: light-dark(var(--gray-500), var(--text-300));
   --ui-elements-inputfield-select-indicator-disabled-indicator: light-dark(var(--gray-300), var(--gray-400));
-  --ui-elements-inputfield-select-stroke-disabled-stroke: light-dark(var(--gray-300), var(--standard-transparency));
+  --ui-elements-inputfield-select-stroke-disabled-stroke: light-dark(var(--gray-300), var(--standard-transparent));
   --ui-elements-inputfield-select-stroke-error-stroke: light-dark(var(--red-600), var(--red-300));
-  --ui-elements-inputfield-select-stroke-main-stroke: light-dark(var(--gray-500), var(--standard-transparency));
+  --ui-elements-inputfield-select-stroke-main-stroke: light-dark(var(--gray-500), var(--standard-transparent));
   --ui-elements-inputfield-select-text-disabled-text: light-dark(var(--text-400), var(--secondary-300));
   --ui-elements-inputfield-select-text-error-text: light-dark(var(--red-600), var(--red-300));
   --ui-elements-inputfield-select-text-label-text: light-dark(var(--text-500), var(--standard-white));

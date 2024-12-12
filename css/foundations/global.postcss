@@ -9,6 +9,23 @@ html {
   @apply font-regular;
 }
 
+*[data-theme='auto'] {
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    color-scheme: light;
+  }
+}
+
+*[data-theme='light'] {
+  color-scheme: light;
+}
+
+*[data-theme='dark'] {
+  color-scheme: dark;
+}
+
 #root,
 #__nuxt,
 #__layout,
@@ -29,6 +46,7 @@ body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
   @apply transition-transform duration-700;
+  @apply bg-background-main;
 }
 
 .body--mobile-menu-is-open {
