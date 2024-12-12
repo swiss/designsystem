@@ -9,20 +9,28 @@ html {
   @apply font-regular;
 }
 
-*[data-theme='auto'] {
-  @media (prefers-color-scheme: dark) {
+:root[data-theme='auto'] {
+  /* @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
   @media (prefers-color-scheme: light) {
     color-scheme: light;
+  } */
+
+  *[data-default-theme='light'] {
+    color-scheme: light;
+  }
+
+  *[data-default-theme='dark'] {
+    color-scheme: dark;
   }
 }
 
-*[data-theme='light'] {
+:root[data-theme='light'] {
   color-scheme: light;
 }
 
-*[data-theme='dark'] {
+:root[data-theme='dark'] {
   color-scheme: dark;
 }
 
