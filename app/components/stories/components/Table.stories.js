@@ -16,6 +16,17 @@ export default {
         type: 'select',
       },
     },
+    theme: {
+      table: {
+        type: {
+          summary: ['string: light, dark'],
+        },
+      },
+      options: ['light', 'dark'],
+      control: {
+        type: 'select',
+      },
+    },
   },
 }
 
