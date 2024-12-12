@@ -5,13 +5,13 @@ export default {
   component: Textarea,
 
   argTypes: {
-    variant: {
+    theme: {
       table: {
         type: {
-          summary: ['string: outline, negative'],
+          summary: ['string: light, dark'],
         },
       },
-      options: ['outline', 'negative'],
+      options: ['light', 'dark'],
       control: {
         type: 'select',
       },
@@ -53,7 +53,7 @@ export const Example = {
     template: `<Textarea v-bind="args" />`,
   }),
   args: {
-    variant: 'outline',
+    theme: 'light',
     size: 'base',
     label: 'Label',
     name: 'textarea-name',
@@ -64,7 +64,7 @@ export const Example = {
 
 export const NegativeTextarea = {
   render: () => ({
-    template: `<textarea class="input--negative input--base" />`,
+    template: `<textarea class="input--base" data-default-theme="dark" />`,
   }),
 }
 
@@ -72,8 +72,8 @@ export const DisabledTextarea = {
   render: () => ({
     template: `
       <div style="display: flex; flex-direction: row; gap: 5pt; width: 50%">
-        <textarea class="input--outline input--base" disabled>Disabled</textarea>
-        <textarea class="input--negative input--base" disabled>Disabled and negative</textarea>
+        <textarea class="input--base" disabled>Disabled</textarea>
+        <textarea class="input--base" disabled data-default-theme="dark">Disabled and negative</textarea>
       </div>
     `,
   }),
@@ -83,9 +83,9 @@ export const SizesTextarea = {
   render: () => ({
     template: `
       <div style="display: flex; flex-direction: row; gap: 5pt; width: 90%">
-        <textarea class="input--outline input--sm">Small</textarea>
-        <textarea class="input--outline input--base">Default</textarea>
-        <textarea class="input--outline input--lg">Large</textarea>
+        <textarea class="input--sm">Small</textarea>
+        <textarea class="input--base">Default</textarea>
+        <textarea class="input--lg">Large</textarea>
       </div>
     `,
   }),
@@ -98,7 +98,7 @@ export const RequiredTextarea = {
         <label for="my-id" class="text--base text--asterisk">
           Your message
         </label>
-        <textarea class="input--outline input--base" required />
+        <textarea class="input--base" required />
       </div>
     `,
   }),
@@ -111,7 +111,7 @@ export const MessagesTextarea = {
         <label for="my-id" class="text--base text--asterisk">
           Your message
         </label>
-        <textarea class="input--outline input--base input--error" required />
+        <textarea class="input--base input--error" required />
         <div class="badge badge--sm badge--error">
           This field is required
         </div>

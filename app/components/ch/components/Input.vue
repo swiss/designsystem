@@ -1,5 +1,5 @@
 <template>
-  <div class="form__group__input">
+  <div class="form__group__input" :data-default-theme="props.theme">
     <label v-if="label" :for="id" :class="labelClasses">
       {{ label }}<span v-if="required" class="form__group__required" />
     </label>
@@ -56,10 +56,10 @@ const props = defineProps({
       ].includes(prop as string),
     default: () => 'text',
   },
-  variant: {
+  theme: {
     type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => 'outline',
+    validator: (prop) => ['light', 'dark'].includes(prop as string),
+    default: () => 'light',
   },
   message: {
     type: String,
@@ -131,8 +131,7 @@ const props = defineProps({
 })
 
 const classes = computed(() => {
-  let base = ''
-  if (props.variant) base += `input--${props.variant} `
+  let base = 'input_field '
   if (props.size) base += `input--${props.size} `
   if (props.message) base += `input--${props.messageType} `
   if (props.type === 'submit') base += 'input--submit'
@@ -141,7 +140,6 @@ const classes = computed(() => {
 
 const labelClasses = computed(() => {
   let base = ''
-  if (props.variant === 'negative') base += `text--negative `
   if (props.size) base += `text--${props.size} `
   if (props.hideLabel) base += `sr-only `
   if (props.required) base += `text--asterisk `
