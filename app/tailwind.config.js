@@ -392,6 +392,7 @@ export default {
       '2xl':
         '0px 10px 20px 0px rgba(0,0,0,0.06), 1px 10px 70px -8px rgba(0,0,0,0.13)',
       none: '0px 0px 0px 0px rgba(0,0,0,0)',
+      focus: '0px 0px 0px 3px var(--purple-500)',
     },
     borderRadius: {
       none: '0',
