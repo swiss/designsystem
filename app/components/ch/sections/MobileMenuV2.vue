@@ -86,7 +86,7 @@
                   <SvgIcon icon="ArrowRight" size="lg" />
                 </a>
               </li>
-              <li>
+              <li>  
                 <a href="javascript:alert('link')"> Forschung und Lehre </a>
               </li>
               <li>
@@ -254,7 +254,6 @@ const menuTitles = reactive([
   'Geodienste',
   'Darstellungsdienste',
 ])
-const canNavigateBack = ref(true)
 
 const props = defineProps({
   isSticky: {
@@ -285,12 +284,6 @@ const scrollToTop = function () {
 }
 
 const showLevel = async function (level: number) {
-  if (level === 0) {
-    canNavigateBack.value = false
-  } else {
-    canNavigateBack.value = true
-  }
-
   currentLevel.value = level
   document.body.classList.remove(
     'show-level-0',
