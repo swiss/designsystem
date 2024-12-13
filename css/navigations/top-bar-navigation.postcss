@@ -4,6 +4,7 @@
 
 .top-bar-navigation {
   @apply flex h-full;
+
   span {
     @apply hidden lg:block;
     @apply pl-2 lg:pl-4;
@@ -17,6 +18,7 @@
   ul {
     @apply flex;
   }
+
   a {
     @apply flex items-center;
     @apply hover:text-text-300 focus:text-text-300;
@@ -35,12 +37,10 @@
 
 .top-bar-navigation--mobile {
   @apply flex flex-col pb-12;
-  @apply bg-secondary-500;
+  @apply bg-ui-elements-navigation-02;
 
   a {
     @apply flex items-center;
-    @apply hover:text-text-300 focus:text-text-300;
     @apply h-full px-4;
-    @apply transition-colors;
   }
 }

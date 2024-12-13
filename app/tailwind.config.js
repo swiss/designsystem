@@ -383,16 +383,16 @@ export default {
       'bold-italic': ['Font-Bold-Italic', 'Hind', 'Fallback-font'],
     },
     boxShadow: {
-      sm: '0px 1px 2px 0px rgba(0,0,0,0.05)',
-      DEFAULT:
-        '0px 1px 2px 0px rgba(0,0,0,0.06), 0px 1px 5px 0px rgba(0,0,0,0.08)',
-      md: '0px 2px 4px -1px rgba(0,0,0,0.06), 0px 4px 10px -1px rgba(0,0,0,0.08)',
-      lg: '0px 2px 6px -1px rgba(0,0,0,0.06), 0px 5px 20px -3px rgba(0,0,0,0.08)',
-      xl: '0px 6px 10px -5px rgba(0,0,0,0.06), 0px 15px 25px -3px rgba(0,0,0,0.09)',
+      // TODO: add dark mode support to 0,0,0 shadows
+      sm: '0 1px 2px 0 rgba(0,0,0,0.05)',
+      DEFAULT: '0 1px 2px 0 rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.08)',
+      md: '0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 10px -1px rgba(0,0,0,0.08)',
+      lg: '0 2px 6px -1px rgba(0,0,0,0.06), 0 5px 20px -3px rgba(0,0,0,0.08)',
+      xl: '0 6px 10px -5px rgba(0,0,0,0.06), 0 15px 25px -3px rgba(0,0,0,0.09)',
       '2xl':
-        '0px 10px 20px 0px rgba(0,0,0,0.06), 1px 10px 70px -8px rgba(0,0,0,0.13)',
-      none: '0px 0px 0px 0px rgba(0,0,0,0)',
-      focus: '0px 0px 0px 3px var(--purple-500)',
+        '0 10px 20px 0 rgba(0,0,0,0.06), 1px 10px 70px -8px rgba(0,0,0,0.13)',
+      none: '0 0 0 0 rgba(0,0,0,0)',
+      focus: '0 0 0 3px var(--purple-500)',
     },
     borderRadius: {
       none: '0',
