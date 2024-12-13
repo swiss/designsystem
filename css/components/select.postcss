@@ -5,6 +5,7 @@
     @apply pr-20 box-border appearance-none;
   }
 
+  /* TODO Delete once all components using this don't need it anymore */
   .input--negative {
     @apply border-secondary-500;
   }
@@ -24,6 +25,7 @@
     @apply w-6 border-l-0;
   }
 
+  /* TODO Delete once all components using this don't need it anymore */
   .input--negative + .select__icon {
     @apply bg-transparent;
   }
@@ -42,16 +44,17 @@ select:disabled,
   @apply w-12 h-full;
   @apply flex items-center justify-center;
   @apply absolute top-0 right-0;
-  @apply border-l border-text-500;
+  @apply border-l;
+  border-color: light-dark(var(--text-500), var(--secondary-500));
   @apply pointer-events-none;
 
   & svg {
     @apply w-8 h-full;
+    @apply fill-text-new-main;
   }
 
+  /* TODO Delete once all components using this don't need it anymore */
   .input--negative + & {
-    @apply text-white;
-    @apply border-secondary-500;
     @apply bg-secondary-600;
 
     & svg {
@@ -60,13 +63,22 @@ select:disabled,
   }
 
   .input--error + & {
-    @apply text-red-700 border-red-400;
+    border-color: light-dark(var(--red-500), var(--standard-transparent));
 
     & svg {
-      @apply fill-current;
+      fill: light-dark(var(--red-500), var(--red-300));
     }
   }
 
+  .input--disabled + & {
+    border-color: light-dark(var(--text-300), var(--standard-transparent));
+
+    & svg {
+      @apply fill-text-new-disabled;
+    }
+  }
+
+  /* TODO Delete once all components using this don't need it anymore */
   .input--error.input--negative + & {
     @apply text-red-200 border-red-300;
 
@@ -76,6 +88,7 @@ select:disabled,
   }
 }
 
+/* TODO Delete once all components using this don't need it anymore */
 .input--negative option {
   @apply bg-secondary-600 hover:bg-secondary-500;
   @apply text-white;

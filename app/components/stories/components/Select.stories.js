@@ -5,13 +5,13 @@ export default {
   component: Select,
 
   argTypes: {
-    variant: {
+    theme: {
       table: {
         type: {
-          summary: ['string: outline, negative'],
+          summary: ['string: light, dark'],
         },
       },
-      options: ['outline', 'negative'],
+      options: ['light', 'dark'],
       control: {
         type: 'select',
       },
@@ -68,7 +68,7 @@ export const Example = {
     `,
   }),
   args: {
-    variant: 'outline',
+    theme: 'light',
     bare: false,
     size: 'base',
     label: 'Label',
@@ -81,8 +81,8 @@ export const Example = {
 export const NegativeSelect = {
   render: () => ({
     template: `
-      <div class="select">
-        <select id="select-id" name="select-name" class="input--outline input--base input--negative">
+      <div class="select" data-default-theme="dark">
+        <select id="select-id" name="select-name" class="input--base">
           <option>Choose your country</option>
           <option>Switzerland</option>
           <option>Swaziland</option>
@@ -102,7 +102,7 @@ export const DisabledSelect = {
   render: () => ({
     template: `
       <div class="select">
-        <select id="select-id" name="select-name" class="input--outline input--base input--disabled">
+        <select id="select-id" name="select-name" class="input--base input--disabled">
           <option>Choose your country</option>
           <option>Switzerland</option>
           <option>Swaziland</option>
@@ -122,7 +122,7 @@ export const SmallSizesSelect = {
   render: () => ({
     template: `
       <div class="select">
-        <select id="select-0" name="select-name" class="input--outline input--sm">
+        <select id="select-0" name="select-name" class="input--sm">
           <option>Small</option>
         </select>
         <div class="select__icon">
@@ -139,7 +139,7 @@ export const BaseSizesSelect = {
   render: () => ({
     template: `
       <div class="select">
-        <select id="select-0" name="select-name" class="input--outline input--base">
+        <select id="select-0" name="select-name" class="input--base">
           <option>Default</option>
         </select>
         <div class="select__icon">
