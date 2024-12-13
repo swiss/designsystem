@@ -61,12 +61,12 @@ select::placeholder {
 }
 
 .input--error {
-  color: light-dark(var(--red-800), var(--red-200));
   border-color: light-dark(var(--red-500), var(--red-300));
   @apply placeholder-red-400;
 
   & + label {
-    @apply text-red-800 mr-3;
+    color: light-dark(var(--red-800), var(--red-200));
+    @apply mr-3;
   }
 }
 
@@ -96,6 +96,8 @@ input[type='checkbox'],
 input[type='radio'] {
   @apply h-[0.9rem] w-[0.9rem] min-h-0 shrink-0 mr-2;
   @apply p-0;
+  @apply bg-ui-elements-radiobutton-inactive-background;
+  @apply border border-ui-elements-radiobutton-main-stroke;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -104,6 +106,8 @@ input[type='radio'] {
   &:disabled,
   &.input--disabled {
     @apply opacity-40;
+    @apply bg-ui-elements-radiobutton-disabled-background;
+    @apply border-ui-elements-radiobutton-disabled-stroke;
   }
 }
 
@@ -122,6 +126,7 @@ input[type='radio'].input--lg {
   @apply h-[1rem] w-[1rem];
 }
 
+/* TODO Delete once all components using this don't need it anymore */
 input[type='checkbox'].input--outline,
 input[type='radio'].input--outline {
   &:disabled,
@@ -130,6 +135,7 @@ input[type='radio'].input--outline {
   }
 }
 
+/* TODO Delete once all components using this don't need it anymore */
 input[type='checkbox'].input--negative,
 input[type='radio'].input--negative {
   @apply bg-secondary-400;
@@ -143,13 +149,14 @@ input[type='radio'].input--negative {
 
 input[type='checkbox']:checked,
 input[type='radio']:checked {
-  @apply bg-text-700;
+  @apply bg-ui-elements-radiobutton-active-background;
   background-repeat: no-repeat;
   background-position: center;
 
   &:disabled,
   &.input--disabled {
-    @apply bg-text-700 border-text-500;
+    @apply bg-ui-elements-radiobutton-active-background;
+    @apply border-ui-elements-radiobutton-main-stroke;
   }
 }
 
