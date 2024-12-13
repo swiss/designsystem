@@ -20,9 +20,8 @@
         </li>
         <li class="footer-navigation-right">
           <Select
-            class=""
+            class="footer--select"
             :required="false"
-            variant="negative"
             size="sm"
             label="Darstellung"
             :on-select="handleSelect"

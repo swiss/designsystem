@@ -93,3 +93,21 @@ select:disabled,
   @apply bg-secondary-600 hover:bg-secondary-500;
   @apply text-white;
 }
+
+/* Select component in Footer navigation always dark */
+.footer--select {
+  & label {
+    @apply text-standard-white;
+  }
+  & select {
+    @apply bg-secondary-500;
+    @apply text-standard-white;
+    @apply border-standard-transparent;
+  }
+  .select__icon {
+    border-color: var(--standard-transparent);
+  }
+  & svg {
+    @apply fill-standard-white;
+  }
+}
