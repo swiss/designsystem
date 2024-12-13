@@ -73,7 +73,6 @@ export default {
   decorators: [
     (_, args) => {
       const theme = args.globals?.backgrounds?.value
-      console.log('theme', theme)
       switch (theme) {
         case 'light':
           document.querySelector('html')?.setAttribute('data-theme', 'light')
