@@ -1,5 +1,5 @@
 <template>
-  <fieldset class="form__group">
+  <fieldset class="form__group" :data-default-theme="props.theme">
     <legend v-if="legend" class="form__group__legend" :class="legendClasses">
       {{ legend }} <span v-if="required" class="sr-only">required</span>
     </legend>
@@ -18,10 +18,10 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  variant: {
+  theme: {
     type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => 'outline',
+    validator: (prop) => ['light', 'dark'].includes(prop as string),
+    default: () => 'light',
   },
   size: {
     type: String,
@@ -50,7 +50,6 @@ const props = defineProps({
 
 const legendClasses = computed(() => {
   let base = ''
-  if (props.variant === 'negative') base += `text--negative `
   if (props.size) base += `text--${props.size} `
   if (props.required) base += `text--asterisk `
   return base
