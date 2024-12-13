@@ -7,7 +7,7 @@ export const Separator = {
     template: `
       <div>
         <div>Content above</div>
-          <hr class="separator sperator--negative" />
+          <hr class="separator" />
         <div>Content below</div>
       </div>
     `,
@@ -27,16 +27,11 @@ export const SeparatorSpacings = {
 }
 
 export const SeparatorNegative = {
-  parameters: {
-    backgrounds: {
-      default: 'Dark',
-    },
-  },
   render: () => ({
     template: `
-      <div class="text--negative">
+      <div style="color: white;">
         <div>Content above</div>
-          <hr class="separator sperator--negative" />
+          <hr class="separator" />
         <div>Content below</div>
       </div>
     `,
