@@ -12,12 +12,12 @@ main .accordion {
 }
 
 .accordion__item {
-  @apply border-t border-secondary-200;
+  @apply border-t border-elements-divider-100;
   @apply list-none;
   @apply mt-0 !important;
 
   &:last-of-type {
-    @apply border-b border-secondary-200;
+    @apply border-b border-elements-divider-100;
   }
 }
 
@@ -27,6 +27,8 @@ main .accordion {
   @apply font-bold;
   @apply hover:text-primary-500;
   @apply transition-colors duration-200;
+  @apply bg-background-main;
+  @apply text-text-new-main;
 
   @media (hover: none) {
     &:hover {
@@ -60,6 +62,8 @@ main .accordion {
   @apply w-full max-h-0;
   @apply overflow-hidden;
   transition: max-height 0.3s ease-out;
+  @apply bg-background-main;
+  @apply text-text-new-main;
 }
 
 /* Dynamically adjust to content */
