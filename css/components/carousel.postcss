@@ -16,11 +16,11 @@
 
 .carousel__prev,
 .carousel__next {
-  @apply hover:text-primary-600;
+  @apply hover:text-action-hover-main;
   @apply transition-colors duration-200;
 
   &[disabled] {
-    @apply bg-white;
+    @apply bg-transparent;
     @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white opacity-50;
   }
 
@@ -36,7 +36,7 @@
 .carousel__bullet {
   @apply block w-4 h-4 rounded-full mx-2;
   @apply bg-action-disabled border border-action-disabled;
-  @apply hover:border-primary-600 hover:bg-primary-500;
+  @apply hover:border-action-hover-main hover:bg-action-hover-main;
   @apply cursor-pointer;
   @apply transition-colors duration-200;
 }
