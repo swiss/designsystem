@@ -3,7 +3,9 @@
     <div class="tab__controls-container">
       <div class="tab__controls" role="tablist" aria-label="Additional Content">
         <button
-          class="tab__control tab__control--active"
+          :class="
+            'tab__control' + (activeIndex === 0 ? ' tab__control--active' : '')
+          "
           type="button"
           role="tab"
           aria-selected="true"
@@ -13,7 +15,9 @@
           Publications
         </button>
         <button
-          class="tab__control"
+          :class="
+            'tab__control' + (activeIndex === 1 ? ' tab__control--active' : '')
+          "
           type="button"
           role="tab"
           aria-selected="false"
@@ -24,7 +28,9 @@
           Events
         </button>
         <button
-          class="tab__control"
+          :class="
+            'tab__control' + (activeIndex === 2 ? ' tab__control--active' : '')
+          "
           type="button"
           role="tab"
           aria-selected="false"
