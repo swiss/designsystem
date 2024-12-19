@@ -35,14 +35,15 @@
 
 .carousel__bullet {
   @apply block w-4 h-4 rounded-full mx-2;
-  @apply bg-transparent border border-text-600;
+  @apply bg-action-disabled border border-action-disabled;
   @apply hover:border-primary-600 hover:bg-primary-500;
   @apply cursor-pointer;
   @apply transition-colors duration-200;
 }
 
 .carousel__bullet--active {
-  @apply bg-text-500 hover:bg-text-500;
+  @apply bg-action-secondary hover:bg-action-secondary;
+  @apply border-action-secondary;
   @apply cursor-default;
 }
 

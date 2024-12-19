@@ -4,6 +4,7 @@ export default {
   title: 'Components/Button',
   component: Btn,
   argTypes: {
+    /* TODO Delete all negative options here, as this functionality is integrated with theme now */
     variant: {
       table: {
         type: {
@@ -22,6 +23,17 @@ export default {
         'link-negative',
       ],
       control: { type: 'select' },
+    },
+    theme: {
+      table: {
+        type: {
+          summary: ['string: light, dark'],
+        },
+      },
+      options: ['light', 'dark'],
+      control: {
+        type: 'select',
+      },
     },
     size: {
       table: { type: { summary: ['string: sm, base, lg'] } },
@@ -82,21 +94,23 @@ export const ButtonOrLink = {
 export const ButtonVariations = {
   render: () => ({
     template: `
-      <button type="button" class="btn btn--base btn--outline">
-        <span class="btn__text">
-          btn--outline
-        </span>
-      </button>
+      <div style="display:flex; gap:1rem; padding:1rem;">
+        <button type="button" class="btn btn--base btn--outline">
+          <span class="btn__text">btn--outline</span>
+        </button>
 
-      <button type="button" class="btn btn--base btn--filled">
-        <span class="btn__text">btn--filled</span>
-      </button>
+        <button type="button" class="btn btn--base btn--filled">
+          <span class="btn__text">btn--filled</span>
+        </button>
 
-      <button type="button" class="btn btn--base btn--bare">
-        <span class="btn__text">
-          btn--bare
-        </span>
-      </button>`,
+        <button type="button" class="btn btn--base btn--bare">
+          <span class="btn__text">btn--bare</span>
+        </button>
+
+        <button type="button" class="btn btn--base btn--link">
+          <span class="btn__text">btn--link</span>
+        </button>
+      </div>`,
   }),
 }
 

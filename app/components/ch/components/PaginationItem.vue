@@ -4,6 +4,7 @@
     :class="computedClasses"
     :aria-label="label"
     :disabled="disabled"
+    :data-default-theme="props.theme"
   >
     <SvgIcon v-if="icon" :icon="icon" class="btn__icon" />
     <span v-if="label" class="btn__text">
@@ -17,11 +18,10 @@ import SvgIcon from './SvgIcon.vue'
 import { computed } from 'vue'
 
 const props = defineProps({
-  type: {
+  theme: {
     type: String,
-    default: () => '',
-    validator: (prop) =>
-      ['outline', 'outline-negative'].includes(prop as string),
+    validator: (prop) => ['light', 'dark'].includes(prop as string),
+    default: () => 'light',
   },
   icon: {
     type: String,
@@ -38,8 +38,7 @@ const props = defineProps({
 })
 
 const computedClasses = computed(() => {
-  let base = 'btn '
-  if (props.type) base += `btn--${props.type} `
+  let base = 'btn btn--outline '
   if (props.icon) base += `btn--icon-only `
   return base
 })
