@@ -3,22 +3,29 @@
 \*----------------------------------------*/
 
 .navy {
-  position: relative;
+  @apply relative h-full;
+  @apply bg-background-main;
   perspective: 1200px;
-  height: 100%;
 
   & li > a:not(.navy__back),
   & li > span:not(.navy__title),
   & li > button {
     @apply menu__item menu__item--small;
     @apply menu__item--border w-full;
-    @apply xl:px-3 xl:py-3;
-    @apply bg-white;
+    @apply xl:px-3 xl:py-3 transition-all;
+
+    &.active:hover .icon--ArrowRight {
+      @apply translate-x-1;
+    }
+
+    &.active:hover::after {
+      @apply w-[2px];
+    }
 
     &.active::after {
       content: '';
-      @apply block bg-primary-500;
-      @apply w-[3px];
+      @apply block bg-action-darkmode-main-red;
+      @apply w-[5px];
       @apply absolute top-0 bottom-0 left-0;
     }
 
@@ -27,18 +34,16 @@
     }
   }
 
-  & .main-navigation--mobile li > a {
-    @apply bg-white hover:bg-secondary-50 focus:bg-secondary-50;
-  }
-
-  & .meta-navigation--mobile li > a {
-    @apply bg-secondary-50 hover:bg-secondary-100 focus:bg-secondary-100;
-  }
-
+  & .main-navigation--mobile li > a,
+  & .meta-navigation--mobile li > a,
   & .top-bar-navigation--mobile li > a {
-    @apply bg-secondary-500 hover:bg-secondary-700 focus:bg-secondary-700;
-    @apply text-white hover:text-white focus:text-white;
-    @apply border-secondary-300;
+    @apply hover:bg-ui-elements-navigation-02;
+    @apply focus:bg-ui-elements-navigation-02;
+  }
+
+  .top-bar-navigation--mobile li > a {
+    @apply bg-ui-elements-navigation-02;
+    @apply hover:bg-ui-elements-navigation-03;
   }
 }
 
@@ -70,10 +75,6 @@
   @apply menu__item menu__item--title;
   @apply font-bold;
   @apply border-opacity-0;
-}
-
-.navy__level-0 {
-  @apply bg-secondary-500 lg:bg-white;
 }
 
 .navy__level-0,
@@ -251,18 +252,6 @@
   .navy__level-7 {
     transform: translateX(0%);
     opacity: 1;
-  }
-}
-
-/* ul background colors on mobile */
-
-.mobile-menu {
-  .navy__level-0 ul:nth-of-type(2) a {
-    @apply menu__item--grey;
-  }
-
-  .navy__level-0 ul:nth-of-type(3) a {
-    @apply menu__item--negative;
   }
 }
 
