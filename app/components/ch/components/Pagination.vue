@@ -1,10 +1,9 @@
 <template>
-  <div class="pagination" :class="!field ? 'pagination--extended' : ''">
+  <div class="pagination" :class="!field ? 'pagination--extended' : ''" :data-default-theme="props.theme">
     <input
       v-if="field"
       v-model="currentPage"
-      class="pagination__input"
-      :class="computedClasses"
+      class="pagination__input input input--base"
       aria-label="pagination input"
     />
     <div v-if="field" class="pagination__text">
@@ -16,7 +15,7 @@
           :icon="item.icon"
           :label="item.label"
           :link="item.link"
-          :type="type"
+          :theme="theme"
           :disabled="index === 0 && currentPage === '1'"
         />
       </li>
@@ -26,7 +25,6 @@
 
 <script setup lang="ts">
 import PaginationItem from './PaginationItem.vue'
-import { computed } from 'vue'
 
 const currentPage = defineModel('currentPage', {
   type: String,
@@ -34,11 +32,10 @@ const currentPage = defineModel('currentPage', {
 })
 
 const props = defineProps({
-  type: {
+  theme: {
     type: String,
-    default: () => 'outline',
-    validator: (prop) =>
-      ['outline', 'outline-negative'].includes(prop as string),
+    validator: (prop) => ['light', 'dark'].includes(prop as string),
+    default: () => 'light',
   },
   field: {
     type: Boolean,
@@ -52,11 +49,5 @@ const props = defineProps({
     type: Array<{ icon?: string; label?: string; link?: any }>,
     default: () => [],
   },
-})
-
-const computedClasses = computed(() => {
-  let base = 'input input--base '
-  if (props.type) base += `input--${props.type} `
-  return base
 })
 </script>

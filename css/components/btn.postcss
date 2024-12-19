@@ -10,6 +10,7 @@
   @apply no-underline; /* override general styling for links in main */
   @apply rounded-sm;
   @apply focus:outline-none;
+  @apply border border-standard-transparent bg-standard-transparent;
 }
 
 .btn--outline {
@@ -42,6 +43,7 @@
   }
 }
 
+/* TODO Delete once all components using this don't need it anymore */
 .btn--link-negative {
   @apply pr-2 pl-0;
   @apply text-white font-normal underline underline-offset-2;
@@ -72,6 +74,7 @@
   }
 }
 
+/* TODO Delete once all components using this don't need it anymore */
 .btn--outline-negative {
   @apply text-white font-bold;
   @apply bg-secondary-500;
@@ -86,6 +89,7 @@
   }
 }
 
+/* TODO Delete once all components using this don't need it anymore */
 .btn--bare-negative {
   @apply text-white;
   @apply hover:text-secondary-100;
