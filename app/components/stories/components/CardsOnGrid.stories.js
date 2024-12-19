@@ -11,7 +11,7 @@ export default {
 export const DynamicList = {
   render: () => ({
     template: `
-      <section class="section bg--secondary-50">
+      <section class="section bg--accent-01">
         <div class="container">
           <h2 class="section__title">Dynamic list</h2>
 
@@ -48,7 +48,7 @@ export const DynamicList = {
 export const GridClasses = {
   render: () => ({
     template: `
-    <section class="section bg--secondary-50">
+    <section class="section bg--accent-01">
       <div class="container">
         <h2 class="section__title">Section title</h2>
 
@@ -93,7 +93,7 @@ export const OneCard = {
     setup: () => ({ ...args }),
     components: { Card, Btn, SvgIcon, CardGrid },
     template: `
-      <section class="section bg--secondary-50">
+      <section class="section bg--accent-01">
         <div class="container">
           <h2 class="section__title">{{ sectionTitle }}</h2>
           <CardGrid v-if="nItems" :nItems="nItems">

@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div class="bg--accent-01">bg--accent-01</div>
+    <div class="bg--accent-02">bg--accent-02</div>
+    <div class="bg--modal">bg--modal</div>
+    <div class="bg--main">bg--main</div>
     <div class="bg--secondary-900">bg--secondary-900</div>
     <div class="bg--secondary-800">bg--secondary-800</div>
     <div class="bg--secondary-700">bg--secondary-700</div>

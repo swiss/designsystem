@@ -74,13 +74,13 @@ export const Paddings = {
           </div>
         </section>
 
-        <section class="section bg--secondary-50">
+        <section class="section bg--accent-01">
           <div class="container">
             Section with top and bottom paddings
           </div>
         </section>
 
-        <section class="section bg--secondary-50">
+        <section class="section bg--accent-01">
           <div class="container">
             Section with padding bottom only (padding top is removed because previous section has the same background color)
           </div>
@@ -92,7 +92,7 @@ export const Paddings = {
           </div>
         </section>
 
-        <section class="section bg--secondary-100">
+        <section class="section bg--accent-02">
           <div class="container">
             Section with top and padding bottom
           </div>

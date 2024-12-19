@@ -220,7 +220,7 @@ export default {
       background: {
         'accent-01': 'var(--background-accent-01)',
         'accent-02': 'var(--background-accent-02)',
-        'background-modal': 'var(--background-background-modal)',
+        modal: 'var(--background-background-modal)',
         main: 'var(--background-main)',
       },
       elements: {

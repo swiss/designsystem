@@ -45,7 +45,11 @@
 .bg--secondary-300 + .bg--secondary-300,
 .bg--secondary-200 + .bg--secondary-200,
 .bg--secondary-100 + .bg--secondary-100,
-.bg--secondary-50 + .bg--secondary-50 {
+.bg--secondary-50 + .bg--secondary-50,
+.bg--accent-01 + .bg--accent-01,
+.bg--accent-02 + .bg--accent-02,
+.bg--modal + .bg--modal,
+.bg--main + .bg-main {
   @apply container--pb;
 }
 
@@ -54,6 +58,7 @@
   @apply pb-10;
 }
 
+/* TODO: remove negative variant in favor of dark theme */
 .section__title--negative,
 .bg--secondary-900 .section__title,
 .bg--secondary-800 .section__title,
@@ -102,7 +107,7 @@
 .section-overview {
   @apply w-full;
   @apply h-full;
-  @apply bg-secondary-50;
+  @apply bg-background-accent-01;
   @apply pb-28;
   @apply pt-4;
 }
