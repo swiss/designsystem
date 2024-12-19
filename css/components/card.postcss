@@ -21,7 +21,7 @@
   .btn::after {
     content: '';
     @apply absolute top-0 right-0 left-0 bottom-0;
-    @apply border-2 border-text-50 border-opacity-0 transition-all duration-300 ease-in-out;
+    @apply transition-all duration-300 ease-in-out;
   }
 
   &:hover,
@@ -29,7 +29,7 @@
     @apply shadow-2xl;
 
     .card__title {
-      @apply text-primary-700;
+      @apply text-action-hover-main;
     }
 
     a::after,
@@ -197,14 +197,14 @@
 .card__header {
   @apply flex items-center;
   @apply p-6;
-  @apply bg-secondary-100;
+  @apply bg-background-accent-02;
 }
 
 .card__content {
   @apply flex flex-col justify-between;
   @apply h-full;
   @apply z-10;
-  @apply bg-white;
+  @apply bg-elements-card-01;
 }
 
 .card__body {
@@ -252,7 +252,7 @@
 }
 
 .card__footer__info {
-  @apply text-secondary-500 text--sm;
+  @apply text-text-new-label text--sm;
   @apply pr-6;
 }
 
