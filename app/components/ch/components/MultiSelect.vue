@@ -1,5 +1,5 @@
 <template>
-  <div class="form__group__select">
+  <div class="form__group__select" :data-default-theme="props.theme">
     <label
       v-if="label"
       :for="getUniqueId('multi-select')"
@@ -71,10 +71,10 @@ const props = defineProps({
     type: Boolean,
     default: () => false,
   },
-  variant: {
+  theme: {
     type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => 'outline',
+    validator: (prop) => ['light', 'dark'].includes(prop as string),
+    default: () => 'light',
   },
   size: {
     type: String,
@@ -149,7 +149,6 @@ const selectWrapperClasses = computed(() => {
 
 const selectClasses = computed(() => {
   let base = ''
-  if (props.variant) base += `input--${props.variant} `
   if (props.size) base += `input--${props.size} `
   if (props.disabled) base += 'input--disabled '
   if (props.messageType) base += `input--${props.messageType} `
@@ -158,7 +157,6 @@ const selectClasses = computed(() => {
 
 const labelClasses = computed(() => {
   let base = ''
-  if (props.variant === 'negative') base += 'text--negative '
   if (props.size) base += `text--${props.size} `
   if (props.hideLabel) base += 'sr-only '
   if (props.required) base += 'text--asterisk '

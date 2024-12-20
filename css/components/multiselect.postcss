@@ -117,6 +117,7 @@
   --vs-border-color: theme('colors.red.500');
 }
 
+/* TODO Delete once all components using this don't need it anymore */
 .v-select.input--negative {
   --vs-dropdown-bg: theme('colors.secondary.600');
   --vs-dropdown-color: theme('colors.secondary.100');
@@ -132,6 +133,7 @@
   --vs-dropdown-option--active-color: theme('colors.white');
 }
 
+/* TODO Delete once all components using this don't need it anymore */
 .v-select.input--error.input--negative {
   --vs-border-color: theme('colors.red.300');
 }
@@ -210,8 +212,8 @@
   appearance: none;
   display: flex;
   padding: 0 0 4px;
-  background: var(--vs-search-input-bg);
-  border: var(--vs-border-width) var(--vs-border-style) var(--vs-border-color);
+  background: var(--ui-elements-inputfield-select-background-main-background);
+  border: var(--vs-border-width) var(--vs-border-style) var(--ui-elements-inputfield-select-stroke-main-stroke);
   border-radius: var(--vs-border-radius);
   white-space: normal;
 }
@@ -277,7 +279,6 @@
   top: calc(100% - var(--vs-border-width));
   left: 0;
   z-index: var(--vs-dropdown-z-index);
-  padding: 5px 0;
   margin: 0;
   width: 100%;
   max-height: var(--vs-dropdown-max-height);
@@ -289,8 +290,7 @@
   border-radius: 0 0 var(--vs-border-radius) var(--vs-border-radius);
   text-align: left;
   list-style: none;
-  background: var(--vs-dropdown-bg);
-  color: var(--vs-dropdown-color);
+  color: var(--text-main-text);
 }
 
 .vs__no-options {
@@ -305,11 +305,15 @@
   color: var(--vs-dropdown-option-color);
   white-space: nowrap;
   cursor: pointer;
+  background: var(--ui-elements-inputfield-select-background-choose-default-choose);
 }
 
 .vs__dropdown-option--highlight {
-  background: var(--vs-dropdown-option--active-bg);
-  color: var(--vs-dropdown-option--active-color);
+  background: var(--ui-elements-inputfield-select-background-choose-hover-choose);
+}
+
+.vs__dropdown-option--selected {
+  background: var(--ui-elements-inputfield-select-background-choose-selected-choose);
 }
 
 .vs__dropdown-option--deselect {
@@ -318,8 +322,7 @@
 }
 
 .vs__dropdown-option--disabled {
-  background: var(--vs-state-disabled-bg);
-  color: var(--vs-state-disabled-color);
+  color: var(--text-disabled-text);
   cursor: var(--vs-state-disabled-cursor);
 }
 
@@ -379,7 +382,7 @@
 
 .vs__search,
 .vs__search:focus {
-  color: var(--vs-search-input-color);
+  color: var(--text-main-text);
   appearance: none;
   line-height: var(--vs-line-height);
   font-size: var(--vs-font-size);

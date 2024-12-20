@@ -16,12 +16,12 @@
 
 .carousel__prev,
 .carousel__next {
-  @apply hover:text-primary-600;
+  @apply hover:text-action-hover-main;
   @apply transition-colors duration-200;
 
   &[disabled] {
-    @apply bg-white;
-    @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white opacity-50;
+    @apply bg-background-main;
+    @apply 2xl:bg-gradient-to-r 2xl:via-background-main 2xl:from-background-main opacity-50;
   }
 
   & svg {
@@ -35,14 +35,15 @@
 
 .carousel__bullet {
   @apply block w-4 h-4 rounded-full mx-2;
-  @apply bg-transparent border border-text-600;
-  @apply hover:border-primary-600 hover:bg-primary-500;
+  @apply bg-action-disabled border border-action-disabled;
+  @apply hover:border-action-hover-main hover:bg-action-hover-main;
   @apply cursor-pointer;
   @apply transition-colors duration-200;
 }
 
 .carousel__bullet--active {
-  @apply bg-text-500 hover:bg-text-500;
+  @apply bg-action-secondary hover:bg-action-secondary;
+  @apply border-action-secondary;
   @apply cursor-default;
 }
 
@@ -96,14 +97,14 @@
     @apply 2xl:absolute  2xl:z-10;
     @apply 2xl:top-0 2xl:bottom-0 2xl:left-0;
     @apply 2xl:-translate-x-full;
-    @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white;
+    @apply 2xl:bg-gradient-to-r 2xl:via-background-main 2xl:from-background-main;
   }
 
   .carousel__next {
     @apply order-3;
     @apply 2xl:absolute 2xl:top-0 2xl:bottom-0 2xl:right-0 2xl:z-10;
     @apply 2xl:translate-x-full;
-    @apply 2xl:bg-gradient-to-l 2xl:via-white 2xl:from-white;
+    @apply 2xl:bg-gradient-to-l 2xl:via-background-main 2xl:from-background-main;
   }
 
   .carousel__pagination {

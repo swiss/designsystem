@@ -10,13 +10,13 @@ export default {
         type: 'boolean',
       },
     },
-    variant: {
+    theme: {
       table: {
         type: {
-          summary: ['string: outline, negative'],
+          summary: ['string: light, dark'],
         },
       },
-      options: ['outline', 'negative'],
+      options: ['light', 'dark'],
       control: {
         type: 'select',
       },
@@ -88,7 +88,7 @@ export const Example = {
       'bar',
       'baz',
     ],
-    variant: 'outline',
+    theme: 'light',
     size: 'base',
     label: 'Label',
     disabled: false,

@@ -1,5 +1,5 @@
 <template>
-  <div class="form__group__select">
+  <div class="form__group__select" :data-default-theme="props.theme">
     <label v-if="label" :for="id" :class="labelClasses">
       {{ label }}<span v-if="required" class="form__group__required" />
     </label>
@@ -35,10 +35,10 @@
 import { computed, type PropType } from 'vue'
 
 const props = defineProps({
-  variant: {
+  theme: {
     type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => 'outline',
+    validator: (prop) => ['light', 'dark'].includes(prop as string),
+    default: () => 'light',
   },
   bare: {
     type: Boolean,
@@ -95,7 +95,6 @@ const selectWrapperClasses = computed(() => {
 
 const selectClasses = computed(() => {
   let base = ''
-  if (props.variant) base += `input--${props.variant} `
   if (props.size) base += `input--${props.size} `
   if (props.message) base += `input--${props.messageType} `
   return base
@@ -103,7 +102,6 @@ const selectClasses = computed(() => {
 
 const labelClasses = computed(() => {
   let base = ''
-  if (props.variant === 'negative') base += `text--negative `
   if (props.size) base += `text--${props.size} `
   if (props.hideLabel) base += `sr-only `
   if (props.required) base += `text--asterisk `
