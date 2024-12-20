@@ -20,8 +20,8 @@
   @apply transition-colors duration-200;
 
   &[disabled] {
-    @apply bg-transparent;
-    @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white opacity-50;
+    @apply bg-background-main;
+    @apply 2xl:bg-gradient-to-r 2xl:via-background-main 2xl:from-background-main opacity-50;
   }
 
   & svg {
@@ -97,14 +97,14 @@
     @apply 2xl:absolute  2xl:z-10;
     @apply 2xl:top-0 2xl:bottom-0 2xl:left-0;
     @apply 2xl:-translate-x-full;
-    @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white;
+    @apply 2xl:bg-gradient-to-r 2xl:via-background-main 2xl:from-background-main;
   }
 
   .carousel__next {
     @apply order-3;
     @apply 2xl:absolute 2xl:top-0 2xl:bottom-0 2xl:right-0 2xl:z-10;
     @apply 2xl:translate-x-full;
-    @apply 2xl:bg-gradient-to-l 2xl:via-white 2xl:from-white;
+    @apply 2xl:bg-gradient-to-l 2xl:via-background-main 2xl:from-background-main;
   }
 
   .carousel__pagination {
