@@ -27,7 +27,7 @@ select {
 input::placeholder,
 textarea::placeholder,
 select::placeholder {
-  color: light-dark(var(--secondary-400), var(--secondary-50));
+  @apply text-action-secondary;
 }
 
 .input--sm {
@@ -42,17 +42,17 @@ select::placeholder {
   @apply leading-7 text--base;
 }
 
- /* TODO Delete once all components using this don't need it anymore */
+/* TODO Delete once all components using this don't need it anymore */
 .input--outline {
-  @apply text-text-800;
-  @apply border-text-500;
+  @apply text-text-new-main;
+  @apply border-ui-elements-inputfield-select-main-stroke;
 }
 
 [disabled],
 .input--disabled {
-  background: light-dark(var(--text-50), var(--secondary-300));
-  color: light-dark(var(--text-400), var(--secondary-200));
-  @apply border-text-300;
+  @apply text-ui-elements-inputfield-select-disabled-text;
+  @apply bg-ui-elements-inputfield-select-disabled-background;
+  @apply border-ui-elements-inputfield-select-disabled-stroke;
   @apply pointer-events-none cursor-not-allowed;
 }
 
@@ -61,16 +61,15 @@ select::placeholder {
 }
 
 .input--error {
-  border-color: light-dark(var(--red-500), var(--red-300));
-  @apply placeholder-red-400;
+  @apply border-ui-elements-inputfield-select-error-stroke;
+  @apply placeholder:ui-elements-inputfield-select-error-stroke;
 
   & + label {
-    color: light-dark(var(--red-800), var(--red-200));
     @apply mr-3;
   }
 }
 
- /* TODO Delete once all components using this don't need it anymore */
+/* TODO Delete once all components using this don't need it anymore */
 .input--negative {
   @apply text-white;
   @apply bg-secondary-500;
@@ -85,7 +84,7 @@ select::placeholder {
   }
 }
 
- /* TODO Delete once all components using this don't need it anymore */
+/* TODO Delete once all components using this don't need it anymore */
 .input--error.input--negative {
   @apply text-red-200 border-red-300;
 }
