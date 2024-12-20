@@ -384,13 +384,14 @@ export default {
     },
     boxShadow: {
       // TODO: add dark mode support to 0,0,0 shadows
-      sm: '0 1px 2px 0 rgba(0,0,0,0.05)',
-      DEFAULT: '0 1px 2px 0 rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.08)',
-      md: '0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 10px -1px rgba(0,0,0,0.08)',
-      lg: '0 2px 6px -1px rgba(0,0,0,0.06), 0 5px 20px -3px rgba(0,0,0,0.08)',
-      xl: '0 6px 10px -5px rgba(0,0,0,0.06), 0 15px 25px -3px rgba(0,0,0,0.09)',
+      sm: '0 1px 2px 0 var(--shadow-base-color-05)',
+      DEFAULT:
+        '0 1px 2px 0 var(--shadow-base-color-06), 0 1px 5px 0 var(--shadow-base-color-08)',
+      md: '0 2px 4px -1px var(--shadow-base-color-06), 0 4px 10px -1px var(--shadow-base-color-08)',
+      lg: '0 2px 6px -1px var(--shadow-base-color-06), 0 5px 20px -3px var(--shadow-base-color-08)',
+      xl: '0 6px 10px -5px var(--shadow-base-color-06), 0 15px 25px -3px var(--shadow-base-color-09)',
       '2xl':
-        '0 10px 20px 0 rgba(0,0,0,0.06), 1px 10px 70px -8px rgba(0,0,0,0.13)',
+        '0 10px 20px 0 var(--shadow-base-color-06), 1px 10px 70px -8px var(--shadow-base-color-13)',
       none: '0 0 0 0 rgba(0,0,0,0)',
       focus: '0 0 0 3px var(--purple-500)',
     },
