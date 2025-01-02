@@ -178,17 +178,37 @@
   }
 }
 
+.bg--secondary-50,
+.bg--secondary-100 {
+  .carousel__bullet {
+    @apply bg-secondary-200 hover:bg-primary-700;
+    @apply border-secondary-200 hover:border-primary-700;
+  }
+
+  .carousel__bullet--active {
+    @apply bg-secondary-400 hover:bg-secondary-400;
+    @apply border-secondary-400 hover:border-primary-700;
+  }
+
+  .carousel__prev,
+  .carousel__next {
+    @apply text-secondary-800 hover:text-primary-700;
+  }
+}
+
 .bg--secondary-500,
 .bg--secondary-600 {
   .carousel__bullet {
-    @apply border-text-400;
+    @apply bg-secondary-200 hover:bg-white;
+    @apply border-secondary-200 hover:border-white;
   }
   .carousel__bullet--active {
-    @apply bg-text-300;
+    @apply bg-white border-white;
   }
+
   .carousel__prev,
   .carousel__next {
-    @apply text-text-50 hover:text-primary-400;
+    @apply text-text-50 hover:text-secondary-100;
   }
 }
 
