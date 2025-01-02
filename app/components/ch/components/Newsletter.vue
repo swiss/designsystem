@@ -22,6 +22,7 @@
         :label="buttonLabel"
         type="submit"
         class="newsletter__button"
+        :theme="props.theme"
       />
     </form>
     <Notification
