@@ -21,37 +21,37 @@
               nunc ultrices, tristique metus quis, sagittis ipsum, maecenas.
             </div>
             <ul class="menu text--sm">
-              <li class="menu__item menu__item--border menu__item--condensed">
+              <li class="menu__item menu__item--border menu__item--condensed menu__item--portrait">
                 <a href="javascript:void(0)" class="menu__item__flex">
                   <div>Lebenslauf</div>
                   <SvgIcon icon="ArrowRight" class="menu__item__icon" />
                 </a>
               </li>
-              <li class="menu__item menu__item--border menu__item--condensed">
+              <li class="menu__item menu__item--border menu__item--condensed menu__item--portrait">
                 <a href="javascript:void(0)" class="menu__item__flex">
                   <div>Anlässe</div>
                   <SvgIcon icon="ArrowRight" class="menu__item__icon" />
                 </a>
               </li>
-              <li class="menu__item menu__item--border menu__item--condensed">
+              <li class="menu__item menu__item--border menu__item--condensed menu__item--portrait">
                 <a href="javascript:void(0)" class="menu__item__flex">
                   <div>Reden</div>
                   <SvgIcon icon="ArrowRight" class="menu__item__icon" />
                 </a>
               </li>
-              <li class="menu__item menu__item--border menu__item--condensed">
+              <li class="menu__item menu__item--border menu__item--condensed menu__item--portrait">
                 <a href="javascript:void(0)" class="menu__item__flex">
                   <div>Interviews und Gastartikeln</div>
                   <SvgIcon icon="ArrowRight" class="menu__item__icon" />
                 </a>
               </li>
-              <li class="menu__item menu__item--border menu__item--condensed">
+              <li class="menu__item menu__item--border menu__item--condensed menu__item--portrait">
                 <a href="javascript:void(0)" class="menu__item__flex">
                   <div>Autogrammkarte</div>
                   <SvgIcon icon="ArrowRight" class="menu__item__icon" />
                 </a>
               </li>
-              <li class="menu__item menu__item--border menu__item--condensed">
+              <li class="menu__item menu__item--border menu__item--condensed menu__item--portrait">
                 <a href="javascript:void(0)" class="menu__item__flex">
                   <div>Präsidialjahr 2020</div>
                   <SvgIcon icon="ArrowRight" class="menu__item__icon" />
