@@ -10,20 +10,20 @@
 }
 
 .footer-navigation {
-  @apply flex flex-row justify-between;
+  @apply flex flex-col gap-4;
+  @apply sm:flex-row sm:justify-between;
   @apply w-full;
   @apply py-3;
-  @apply space-x-2 sm:space-x-4;
-  @apply inline-flex items-center;
+  @apply inline-flex items-start sm:items-center;
 }
 
-.footer-navigation-left {
+.footer-navigation-links {
   @apply flex flex-row;
   @apply space-x-2 sm:space-x-4;
   @apply text--xs;
 }
 
-.footer-navigation-right {
+.footer-navigation-select {
   @apply w-64;
 }
 

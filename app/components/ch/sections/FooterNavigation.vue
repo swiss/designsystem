@@ -3,7 +3,7 @@
     <nav class="container" aria-label="Footer">
       <ul class="footer-navigation">
         <li>
-          <ul class="footer-navigation-left">
+          <ul class="footer-navigation-links">
             <li>
               <a href="javascript:void(0)" class="footer__link">Rechtliches</a>
             </li>
@@ -18,7 +18,7 @@
             </li>
           </ul>
         </li>
-        <li class="footer-navigation-right">
+        <li class="footer-navigation-select">
           <Select
             class="footer--select"
             :required="false"
