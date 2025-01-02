@@ -239,10 +239,12 @@
   list-style: initial;
 }
 
-.sbdocs.sbdocs-preview {
+#storybook-root:not([hidden]),
+#storybook-docs:not([hidden]) [data-v-app] {
   @apply bg-background-main;
-}
+  @apply text-text-new-main;
 
-.innerZoomElementWrapper > div > div > div > * {
-  margin: 10px;
+  &:not(:has(.section)) {
+    padding: 3rem;
+  }
 }

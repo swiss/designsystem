@@ -6,7 +6,7 @@ export const WithVerticalSpacing = {
   render: () => ({
     template: `
       <main id="main-content">
-        <section class="section">
+        <section class="section section--default">
           <div class="container vertical-spacing">
             <h3 class="h3">Title H3</h3>
 
@@ -51,7 +51,7 @@ export const WithoutVerticalSpacing = {
   render: () => ({
     template: `
       <main id="main-content">
-        <section class="section">
+        <section class="section section--default">
           <div class="container">
             <h3 class="h3">Title H3</h3>
 

@@ -35,7 +35,7 @@
           Erkenntnisse aus dem International Health Policy Survey 2020
         </template>
       </Hero>
-      <section class="section">
+      <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__main vertical-spacing">
             <Notification
