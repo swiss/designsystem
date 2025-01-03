@@ -7,14 +7,10 @@ export default {
   argTypes: {
     theme: {
       table: {
-        type: {
-          summary: ['string: light, dark'],
-        },
+        type: { summary: ['string?: light, dark'] },
       },
-      options: ['light', 'dark'],
-      control: {
-        type: 'select',
-      },
+      options: [null, 'light', 'dark'],
+      control: { type: 'select' },
     },
     field: {
       control: { type: 'boolean' },

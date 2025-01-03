@@ -117,7 +117,7 @@ const props = defineProps({
   theme: {
     type: String,
     validator: (prop) => ['dark', 'light'].includes(prop as string),
-    default: () => 'light',
+    default: () => null,
   },
   caption: {
     type: String,

@@ -7,41 +7,27 @@ export default {
   argTypes: {
     theme: {
       table: {
-        type: {
-          summary: ['string: light, dark'],
-        },
+        type: { summary: ['string?: light, dark'] },
       },
-      options: ['light', 'dark'],
-      control: {
-        type: 'select',
-      },
+      options: [null, 'light', 'dark'],
+      control: { type: 'select' },
     },
     required: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     size: {
       table: {
-        type: {
-          summary: ['string: sm, base, lg'],
-        },
+        type: { summary: ['string: sm, base, lg'] },
       },
       options: ['sm', 'base', 'lg'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     messageType: {
       table: {
-        type: {
-          summary: ['string: error, warning, success, info'],
-        },
+        type: { summary: ['string: error, warning, success, info'] },
       },
       options: ['error', 'warning', 'success', 'info'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
   },
 }

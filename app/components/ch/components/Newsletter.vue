@@ -14,7 +14,6 @@
         :label="inputLabel"
         :autocomplete="'true'"
         class="newsletter__input"
-        :theme="props.theme"
       />
       <Btn
         :variant="'filled'"
@@ -22,7 +21,6 @@
         :label="buttonLabel"
         type="submit"
         class="newsletter__button"
-        :theme="props.theme"
       />
     </form>
     <Notification
@@ -57,7 +55,7 @@ const props = defineProps({
   theme: {
     type: String,
     validator: (prop) => ['dark', 'light'].includes(prop as string),
-    default: () => 'light',
+    default: () => null,
   },
   title: {
     type: String,

@@ -7,25 +7,17 @@ export default {
   argTypes: {
     variant: {
       table: {
-        type: {
-          summary: ['string: default, compact'],
-        },
+        type: { summary: ['string: default, compact'] },
       },
       options: ['default', 'compact'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     theme: {
       table: {
-        type: {
-          summary: ['string: light, dark'],
-        },
+        type: { summary: ['string?: light, dark'] },
       },
-      options: ['light', 'dark'],
-      control: {
-        type: 'select',
-      },
+      options: [null, 'light', 'dark'],
+      control: { type: 'select' },
     },
   },
 }

@@ -11,8 +11,10 @@ export default {
       control: { type: 'select' },
     },
     theme: {
-      table: { type: { summary: ['string: light, dark'] } },
-      options: ['light', 'dark'],
+      table: {
+        type: { summary: ['string?: light, dark'] },
+      },
+      options: [null, 'light', 'dark'],
       control: { type: 'select' },
     },
     state: {

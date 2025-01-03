@@ -9,9 +9,11 @@ export default {
   argTypes: {
     theme: {
       table: {
-        type: {
-          summary: ['string: light, dark'],
+        table: {
+          type: { summary: ['string?: light, dark'] },
         },
+        options: [null, 'light', 'dark'],
+        control: { type: 'select' },
       },
       options: ['light', 'dark'],
       control: {

@@ -26,14 +26,10 @@ export default {
     },
     theme: {
       table: {
-        type: {
-          summary: ['string: light, dark'],
-        },
+        type: { summary: ['string?: light, dark'] },
       },
-      options: ['light', 'dark'],
-      control: {
-        type: 'select',
-      },
+      options: [null, 'light', 'dark'],
+      control: { type: 'select' },
     },
     size: {
       table: { type: { summary: ['string: sm, base, lg'] } },

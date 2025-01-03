@@ -31,42 +31,28 @@ export default {
         'week',
         'submit',
       ],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     required: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     size: {
       table: {
-        type: {
-          summary: ['string: sm, base, lg'],
-        },
+        type: { summary: ['string: sm, base, lg'] },
       },
       options: ['sm', 'base', 'lg'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     theme: {
       table: {
-        type: {
-          summary: ['string: light, dark'],
-        },
+        type: { summary: ['string?: light, dark'] },
       },
-      options: ['light', 'dark'],
-      control: {
-        type: 'select',
-      },
+      options: [null, 'light', 'dark'],
+      control: { type: 'select' },
     },
     label: {},
     hideLabel: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     message: {},
     messageType: {
@@ -76,9 +62,7 @@ export default {
         },
       },
       options: ['error', 'warning', 'success', 'info'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
   },
 }
@@ -102,7 +86,7 @@ export const Example = {
     step: undefined,
     message: undefined,
     messageType: 'error',
-    theme: 'light',
+    theme: null,
   },
 }
 

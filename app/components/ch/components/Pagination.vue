@@ -1,5 +1,9 @@
 <template>
-  <div class="pagination" :class="!field ? 'pagination--extended' : ''" :data-default-theme="props.theme">
+  <div
+    class="pagination"
+    :class="!field ? 'pagination--extended' : ''"
+    :data-default-theme="props.theme"
+  >
     <input
       v-if="field"
       v-model="currentPage"
@@ -35,7 +39,7 @@ const props = defineProps({
   theme: {
     type: String,
     validator: (prop) => ['light', 'dark'].includes(prop as string),
-    default: () => 'light',
+    default: () => null,
   },
   field: {
     type: Boolean,
