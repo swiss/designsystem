@@ -50,7 +50,7 @@
         <section
           id="doc-section"
           identifier="section"
-          class="section bg--main"
+          class="section section--default"
         >
           <div
             id="doc-container-grid"
