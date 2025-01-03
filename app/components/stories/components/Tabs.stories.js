@@ -17,6 +17,6 @@ export const LargeExample = {
   render: () => ({
     components: { TabsLarge },
     template:
-      '<div class="container bg--secondary-50"><br /><TabsLarge /><br /></div>',
+      '<div class="container bg--accent-01"><br /><TabsLarge /><br /></div>',
   }),
 }

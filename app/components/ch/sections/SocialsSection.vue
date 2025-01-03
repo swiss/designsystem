@@ -1,5 +1,5 @@
 <template>
-  <section class="section bg--secondary-50">
+  <section class="section bg--accent-01">
     <div class="container">
       <div :class="computedClasses">
         <div class="grid socials__grid gap--responsive">

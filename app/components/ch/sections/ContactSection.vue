@@ -1,5 +1,5 @@
 <template>
-  <section class="section bg--secondary-50">
+  <section class="section bg--accent-01">
     <div class="container container--grid">
       <div class="container__center--md">
         <h2 class="section__title">Hauptadresse Geoportal</h2>

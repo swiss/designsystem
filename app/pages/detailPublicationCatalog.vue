@@ -44,7 +44,7 @@
               icon="InfoCircle"
               :closeBtn="false"
             />
-            <figure class="ratio ratio--1/1 bg--secondary-50">
+            <figure class="ratio ratio--1/1 bg--accent-01">
               <picture class="p-8">
                 <source
                   srcset="/images/publication-cover.png"

@@ -50,7 +50,7 @@
             />
           </template>
         </Hero>
-        <section class="section bg--secondary-50">
+        <section class="section bg--accent-01">
           <div class="container">
             <div class="grid grid--responsive-cols-4 gap--responsive">
               <Card type="default">
@@ -342,7 +342,7 @@
           </div>
         </section>
 
-        <section class="section bg--secondary-50">
+        <section class="section bg--bg--accent-01">
           <div class="container">
             <div class="grid grid--responsive-cols-3 gap--responsive">
               <Card type="default">

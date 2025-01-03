@@ -16,7 +16,7 @@ export const MainContentExample = {
 export const Titles = {
   render: () => ({
     template: `
-      <section class="section bg--secondary-50">
+      <section class="section bg--accent-01">
         <div class="container">
           <h2 class="section__title">Section title</h2>
           <h2 class="section__subtitle">Section subtitle</h2>
@@ -38,7 +38,7 @@ export const Titles = {
 export const DarkSections = {
   render: () => ({
     template: `
-      <section class="section bg--secondary-500">
+      <section class="section bg--accent-03">
         <div class="container">
           <h2 class="section__title">Negative section title</h2>
 

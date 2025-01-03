@@ -9,7 +9,7 @@
       <MobileMenu :showActiveNavigation="true" />
     </header>
     <main id="main-content">
-      <section class="section section--default bg--secondary-50">
+      <section class="section section--default bg--accent-01">
         <div class="container">
           <h1 id="glossary-title" class="h1">Glossar</h1>
           <div id="outer-search-container">
