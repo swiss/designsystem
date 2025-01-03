@@ -8,7 +8,7 @@
               {{ sectionTitle }}
             </h2>
 
-            <p v-html="sectionDesc" />
+            <p class="section__desc" v-html="sectionDesc" />
           </div>
 
           <Card

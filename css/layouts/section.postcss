@@ -63,8 +63,6 @@
   @apply pb-10;
 }
 
-/* TODO: remove negative variant in favor of dark theme */
-.section__title--negative,
 .bg--secondary-900 .section__title,
 .bg--secondary-800 .section__title,
 .bg--secondary-700 .section__title,
@@ -74,10 +72,34 @@
 .bg--secondary-800 .section__subtitle,
 .bg--secondary-700 .section__subtitle,
 .bg--secondary-600 .section__subtitle,
-.bg--secondary-500 .section__subtitle {
-  @apply text-white;
+.bg--secondary-500 .section__subtitle,
+.bg--secondary-900 .section__desc,
+.bg--secondary-800 .section__desc,
+.bg--secondary-700 .section__desc,
+.bg--secondary-600 .section__desc,
+.bg--secondary-500 .section__desc {
+  @apply text-standard-white;
 }
 
+.bg--secondary-400 .section__title,
+.bg--secondary-300 .section__title,
+.bg--secondary-200 .section__title,
+.bg--secondary-100 .section__title,
+.bg--secondary-50 .section__title,
+.bg--secondary-400 .section__subtitle,
+.bg--secondary-300 .section__subtitle,
+.bg--secondary-200 .section__subtitle,
+.bg--secondary-100 .section__subtitle,
+.bg--secondary-50 .section__subtitle,
+.bg--secondary-400 .section__desc,
+.bg--secondary-300 .section__desc,
+.bg--secondary-200 .section__desc,
+.bg--secondary-100 .section__desc,
+.bg--secondary-50 .section__desc {
+  @apply text-text-800;
+}
+
+// TODO Review this when button fix is out
 .bg--secondary-900 .section__action .btn,
 .bg--secondary-800 .section__action .btn,
 .bg--secondary-700 .section__action .btn,
