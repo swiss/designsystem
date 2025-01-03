@@ -10,13 +10,6 @@ html {
 }
 
 :root[data-theme='auto'] {
-  /* @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
-  @media (prefers-color-scheme: light) {
-    color-scheme: light;
-  } */
-
   *[data-default-theme='light'] {
     color-scheme: light;
   }
@@ -70,6 +63,7 @@ body {
 
 #main-header {
   @apply relative z-30;
+  @apply bg-background-main text-text-new-main;
 }
 
 #main-content {

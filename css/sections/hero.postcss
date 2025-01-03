@@ -4,7 +4,12 @@
 
 .hero {
   @apply container--pb;
+  @apply bg-background-main text-text-new-main;
   @apply pt-12 lg:pt-14 3xl:pt-20;
+
+  .section-overview & {
+    @apply bg-transparent;
+  }
 
   figure {
     @apply py-0;
