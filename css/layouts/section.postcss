@@ -4,7 +4,6 @@
 
 .section {
   @apply w-full;
-  @apply bg-background-main text-text-new-main;
 }
 
 /*
@@ -15,6 +14,11 @@
 .section[class^='bg--'],
 .section[class*=' bg--'] {
   @apply container--py;
+}
+
+/* If section doesn't have a background, we add one */
+.section:not([class^='bg--'], [class*=' bg--']) {
+  @apply bg-background-main text-text-new-main;
 }
 
 .section--py-half {
