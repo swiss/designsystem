@@ -36,7 +36,7 @@
 \*----------------------------------------*/
 
 .mobile-menu-v2 {
-  @apply bg-secondary-500;
+  @apply bg-ui-elements-navigation-02;
   @apply invisible opacity-0 lg:hidden;
   @apply overflow-hidden;
   @apply w-full h-0;
@@ -113,7 +113,7 @@
     & .mobile-menu-v2-navigation li > a {
       @apply menu__item menu__item--small;
       @apply menu__item--border w-full;
-      @apply bg-white;
+      @apply bg-background-main;
       @apply w-full;
 
       &.active::after {
@@ -137,7 +137,8 @@
     ul a {
       @apply menu__item menu__item--small;
       @apply menu__item--border w-full;
-      @apply text-white hover:text-white focus:text-white;
+      @apply text-text-new-main hover:text-text-new-main focus:text-text-new-main;
+      @apply hover:bg-ui-elements-navigation-03;
       @apply w-full;
     }
   }
@@ -153,8 +154,8 @@
 }
 
 .mobile-menu-v2__level {
-  @apply bg-white;
-  @apply border-white;
+  @apply bg-background-main;
+  @apply border-background-main;
   position: absolute;
   left: 0;
   right: 0;
