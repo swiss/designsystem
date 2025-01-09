@@ -14,7 +14,9 @@
               <a href="javascript:void(0)" class="footer__link">Impressum</a>
             </li>
             <li>
-              <a href="javascript:void(0)" class="footer__link">Barrierefreiheit</a>
+              <a href="javascript:void(0)" class="footer__link">
+                Barrierefreiheit
+              </a>
             </li>
           </ul>
         </li>
@@ -22,7 +24,7 @@
           <Select
             class="footer--select"
             :required="false"
-            size="sm"
+            size="base"
             label="Darstellung"
             :on-select="handleSelect"
           >
@@ -37,9 +39,9 @@
 </template>
 
 <script setup lang="ts">
-import Select from '../components/Select.vue';
+import Select from '../components/Select.vue'
 
 const handleSelect = function (e: string) {
-  document.querySelector('html')?.setAttribute('data-theme', e);
+  document.querySelector('html')?.setAttribute('data-theme', e)
 }
 </script>
