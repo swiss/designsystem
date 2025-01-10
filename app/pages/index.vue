@@ -65,15 +65,16 @@
           />
         </template>
       </Hero>
-      <TopNewsSection />
+      <TopNewsSection data-default-theme="dark" />
       <MediasSection />
       <SocialsSection
         :section-title="socialSection.sectionTitle"
         :section-desc="socialSection.sectionDesc"
         :feeds="socialSection.feeds"
+        data-default-theme="dark"
       />
       <ServicesSection isHomePage />
-      <TopicsSection isHomePage />
+      <TopicsSection isHomePage data-default-theme="dark" />
 
       <BackToTopBtn fixed type="outline" target="main-header" />
       <BackToTopBtn fixed type="outline" target="main-header" />
