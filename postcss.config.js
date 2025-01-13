@@ -6,5 +6,8 @@ module.exports = {
       ? { tailwindcss: { config: './app/tailwind.config.js' } }
       : {}),
     autoprefixer: {},
+    cssnano: {
+      preset: 'default',
+    },
   },
 };

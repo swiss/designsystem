@@ -30,6 +30,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "concurrently": "^6.5.1",
+    "cssnano": "^7.0.6",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.1.0",
     "swiper-vue2": "^1.0.10",
