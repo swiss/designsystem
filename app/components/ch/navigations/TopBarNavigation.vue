@@ -31,7 +31,7 @@
         </a>
       </li>
       <li>
-        <a href="#" class="desktop-only">
+        <a href="#">
           <span>Anmelden </span>
           <SvgIcon icon="User" size="lg" />
         </a>

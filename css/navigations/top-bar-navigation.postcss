@@ -22,20 +22,16 @@
     @apply hover:text-text-300 focus:text-text-300;
     @apply h-full px-1 lg:px-2;
     @apply transition-colors;
-  }
-
-  .desktop-only {
-    @apply hidden lg:flex;
-  }
-
-  .mobile-only {
-    @apply lg:hidden;
-  }
+  } 
 }
 
 .top-bar-navigation--mobile {
   @apply flex flex-col pb-12;
   @apply bg-secondary-500;
+
+  svg {
+    @apply hidden;
+  }
 
   a {
     @apply flex items-center;
