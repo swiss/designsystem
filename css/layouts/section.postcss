@@ -40,6 +40,7 @@
 .section--default + .section--default,
 .section--default + .section--py,
 .section--py-half + .section--default,
+.section--default + .section--py-half,
 .section--py + .section--default,
 .bg--white + .bg--white,
 .bg--secondary-900 + .bg--secondary-900,
@@ -66,8 +67,22 @@
   @apply pb-10;
 }
 
-:is(.bg--secondary-900, .bg--secondary-800, .bg--secondary-700, .bg--secondary-600, .bg--secondary-500) {
-  @apply text-standard-white;
+:is(
+    .bg--secondary-900,
+    .bg--secondary-800,
+    .bg--secondary-700,
+    .bg--secondary-600,
+    .bg--secondary-500,
+    .bg--accent-03,
+    .bg--accent-04
+  ) {
+  :is(.section__title, .section__subtitle) {
+    @apply text-standard-white;
+  }
+
+  .section__action .btn {
+    @apply text-standard-white;
+  }
 }
 
 :is(.bg--secondary-400, .bg--secondary-300, .bg--secondary-200, .bg--secondary-100, .bg--secondary-50) {
