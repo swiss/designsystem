@@ -190,11 +190,13 @@
   list-style: initial;
 }
 
-#storybook-root:not([hidden]),
-#storybook-docs:not([hidden]) [data-v-app] {
+.sbdocs-preview:has([data-v-app]) {
   @apply bg-background-main;
   @apply text-text-new-main;
+}
 
+#storybook-root:not([hidden]),
+#storybook-docs:not([hidden]) [data-v-app] {
   &:not(:has(#main-content)) {
     padding: 3rem;
   }

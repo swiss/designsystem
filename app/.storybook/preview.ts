@@ -61,8 +61,6 @@ export default {
     },
     backgrounds: {
       values: [
-        // { name: 'Light', value: 'var(--color-white, #fff)' },
-        // { name: 'Dark', value: 'var(--color-secondary-600, #5f755f)' },
         { name: 'Light', value: 'light' },
         { name: 'Dark', value: 'dark' },
       ],
