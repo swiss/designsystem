@@ -19,6 +19,20 @@ export const Example = {
       </div>
 
 
+      <div class="bg--accent-03">
+        <div class="">
+          bg--accent-03
+        </div>
+      </div>
+
+
+      <div class="bg--accent-04">
+        <div class="">
+          bg--accent-04
+        </div>
+      </div>
+
+
       <div class="bg--modal">
         <div class="">
           bg--modal

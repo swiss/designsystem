@@ -29,7 +29,7 @@ export const SeparatorSpacings = {
 export const SeparatorNegative = {
   render: () => ({
     template: `
-      <div style="color: white;">
+      <div>
         <div>Content above</div>
           <hr class="separator" />
         <div>Content below</div>
