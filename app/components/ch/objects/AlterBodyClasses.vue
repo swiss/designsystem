@@ -85,8 +85,11 @@ watch(props, function () {
 
 onMounted(() => {
   alterMenuClasses()
-  document.documentElement.setAttribute('data-theme', 'auto')
   window.addEventListener('resize', alterMenuClasses)
+
+  // if no theme is set, set it to auto
+  if (!document.documentElement.hasAttribute('data-theme'))
+    document.documentElement.setAttribute('data-theme', 'auto')
 })
 
 onUnmounted(() => {
