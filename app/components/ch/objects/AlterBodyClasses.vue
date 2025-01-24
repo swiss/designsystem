@@ -85,6 +85,7 @@ watch(props, function () {
 
 onMounted(() => {
   alterMenuClasses()
+  document.documentElement.setAttribute('data-theme', 'auto')
   window.addEventListener('resize', alterMenuClasses)
 })
 
