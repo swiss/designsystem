@@ -22,7 +22,6 @@
             :iconLeft="computedAccessibilityIcon"
             :label="computedAccessibilityBadgeLabel"
             size="base"
-            :highlightCancel="true"
           />
           <TopBarNavigation v-if="!isEasyLanguage && !isSignLanguage" />
           <LanguageSwitcher type="negative" />
@@ -350,12 +349,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed, nextTick, onMounted, ref } from 'vue'
 import Badge from '../components/Badge.vue'
 import Btn from '../components/Btn.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import TopBarNavigation from '../navigations/TopBarNavigation.vue'
-import { ref, computed, onMounted, nextTick } from 'vue'
 
 const filterString = ref('')
 const useStickyPlaceholder = ref(false)
