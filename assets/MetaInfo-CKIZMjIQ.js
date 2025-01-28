@@ -1,0 +1,4 @@
+import{j as t,M as i,C as a}from"./index-CcAnzPx6.js";import{useMDXComponents as r}from"./index-BerLD5Z3.js";import{M as s,E as m}from"./MetaInfo.stories-Bfq27voO.js";import"./iframe-CZqSyjT2.js";import"./_commonjsHelpers-CqkleIqs.js";import"./index-D-8MO0q_.js";import"./index-DkDiOc0H.js";import"./index-DrFu-skq.js";import"./MetaInfo-CFss2JSt.js";import"./vue.esm-bundler-BrbFzUHq.js";function e(o){const n={h1:"h1",p:"p",...r(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(i,{of:s}),`
+`,t.jsx(n.h1,{id:"metainfo",children:"MetaInfo"}),`
+`,t.jsx(n.p,{children:"Meta infos are used to provide additional information about the content."}),`
+`,t.jsx(a,{of:m})]})}function C(o={}){const{wrapper:n}={...r(),...o.components};return n?t.jsx(n,{...o,children:t.jsx(e,{...o})}):e(o)}export{C as default};
