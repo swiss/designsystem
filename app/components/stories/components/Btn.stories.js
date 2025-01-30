@@ -9,7 +9,7 @@ export default {
       table: {
         type: {
           summary: [
-            'string: outline, bare, filled, outline-negative, bare-negative, link, link-negative',
+            'string: outline, bare, filled, link',
           ],
         },
       },
@@ -17,10 +17,7 @@ export default {
         'outline',
         'bare',
         'filled',
-        'outline-negative',
-        'bare-negative',
         'link',
-        'link-negative',
       ],
       control: { type: 'select' },
     },

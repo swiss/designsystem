@@ -199,7 +199,7 @@
                     label="Clear search input"
                     icon="CancelCircle"
                     icon-pos="only"
-                    variant="bare-negative"
+                    variant="bare"
                     size="lg"
                     @click="
                       () => {

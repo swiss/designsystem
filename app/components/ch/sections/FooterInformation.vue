@@ -41,7 +41,7 @@
             label="News abonnieren"
             icon="ArrowRight"
             icon-pos="right"
-            variant="outline-negative"
+            variant="outline"
           />
         </div>
         <div class="footer-information__entry footer-information__entry--big">

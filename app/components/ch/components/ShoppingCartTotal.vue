@@ -12,7 +12,7 @@
     <div class="shopping__cart__action-container">
       <Btn
         class="shopping__cart-button"
-        variant="outline-negative"
+        variant="outline"
         size="base"
         :label="nextStepLabel"
         :ariaLabel="nextStepAriaLabel"

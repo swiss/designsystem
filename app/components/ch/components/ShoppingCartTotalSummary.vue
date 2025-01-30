@@ -39,7 +39,7 @@
     </div>
     <Btn
       class="shopping__cart-button"
-      variant="outline-negative"
+      variant="outline"
       size="base"
       :label="orderButtonText"
       :ariaLabel="orderButtonAriaLabel"

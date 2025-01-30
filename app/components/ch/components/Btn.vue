@@ -26,7 +26,6 @@ const props = defineProps({
     required: false,
     default: () => undefined,
   },
-  /* TODO Delete all negative options here, as this functionality is integrated with theme now */
   variant: {
     type: String,
     validator: (prop) =>
@@ -34,10 +33,7 @@ const props = defineProps({
         'outline',
         'bare',
         'filled',
-        'outline-negative',
-        'bare-negative',
         'link',
-        'link-negative',
       ].includes(prop as string),
     default: () => undefined,
   },

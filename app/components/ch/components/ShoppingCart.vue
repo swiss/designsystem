@@ -645,7 +645,7 @@
                 <div class="shopping__cart__action-container">
                   <Btn
                     class="shopping__cart-button"
-                    variant="outline-negative"
+                    variant="outline"
                     size="base"
                     label="Nächster Schritt"
                     ariaLabel="Nächster Schritt"
@@ -785,7 +785,7 @@
       </div>
       <Btn
         class="shopping__cart-confirmation-action"
-        variant="outline-negative"
+        variant="outline"
         size="base"
         label="Zurück"
         ariaLabel="Zurück"
