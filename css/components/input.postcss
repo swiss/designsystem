@@ -47,12 +47,6 @@ select::placeholder {
   @apply leading-7 text--base;
 }
 
-/* TODO Delete once all components using this don't need it anymore */
-.input--outline {
-  @apply text-text-new-main;
-  @apply border-ui-elements-inputfield-select-main-stroke;
-}
-
 [disabled],
 .input--disabled {
   @apply text-ui-elements-inputfield-select-disabled-text;
@@ -72,26 +66,6 @@ select::placeholder {
   & + label {
     @apply mr-3;
   }
-}
-
-/* TODO Delete once all components using this don't need it anymore */
-.input--negative {
-  @apply text-white;
-  @apply bg-secondary-500;
-  @apply placeholder-secondary-50;
-  @apply border-secondary-300;
-  @apply hover:text-text-300 focus:text-text-300;
-
-  &:disabled,
-  &.input--disabled {
-    @apply bg-secondary-300;
-    @apply text-secondary-200;
-  }
-}
-
-/* TODO Delete once all components using this don't need it anymore */
-.input--error.input--negative {
-  @apply text-red-200 border-red-300;
 }
 
 /* RADIO AND CHECKBOXES */
@@ -128,27 +102,6 @@ input[type='radio'].input--base {
 input[type='checkbox'].input--lg,
 input[type='radio'].input--lg {
   @apply h-[1rem] w-[1rem];
-}
-
-/* TODO Delete once all components using this don't need it anymore */
-input[type='checkbox'].input--outline,
-input[type='radio'].input--outline {
-  &:disabled,
-  &.input--disabled {
-    @apply bg-text-100 border-text-300;
-  }
-}
-
-/* TODO Delete once all components using this don't need it anymore */
-input[type='checkbox'].input--negative,
-input[type='radio'].input--negative {
-  @apply bg-secondary-400;
-  @apply border border-white;
-
-  &:disabled,
-  &.input--disabled {
-    @apply bg-text-300 border-text-400;
-  }
 }
 
 input[type='checkbox']:checked,

@@ -5,10 +5,6 @@
     @apply pr-20 box-border appearance-none;
   }
 
-  /* TODO Delete once all components using this don't need it anymore */
-  .input--negative {
-    @apply border-secondary-500;
-  }
 }
 
 .select--bare {
@@ -25,10 +21,6 @@
     @apply w-6 border-l-0;
   }
 
-  /* TODO Delete once all components using this don't need it anymore */
-  .input--negative + .select__icon {
-    @apply bg-transparent;
-  }
 }
 
 select:disabled,
@@ -53,15 +45,6 @@ select:disabled,
     @apply fill-text-new-main;
   }
 
-  /* TODO Delete once all components using this don't need it anymore */
-  .input--negative + & {
-    @apply bg-secondary-600;
-
-    & svg {
-      @apply fill-current;
-    }
-  }
-
   .input--error + & {
     border-color: light-dark(var(--red-500), var(--standard-transparent));
 
@@ -77,21 +60,6 @@ select:disabled,
       @apply fill-text-new-disabled;
     }
   }
-
-  /* TODO Delete once all components using this don't need it anymore */
-  .input--error.input--negative + & {
-    @apply text-red-200 border-red-300;
-
-    & svg {
-      @apply fill-current;
-    }
-  }
-}
-
-/* TODO Delete once all components using this don't need it anymore */
-.input--negative option {
-  @apply bg-secondary-600 hover:bg-secondary-500;
-  @apply text-white;
 }
 
 /* Select component in Footer navigation always dark */

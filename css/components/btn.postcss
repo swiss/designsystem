@@ -43,25 +43,6 @@
   }
 }
 
-/* TODO Delete once all components using this don't need it anymore */
-.btn--link-negative {
-  @apply pr-2 pl-0;
-  @apply text-white font-normal underline underline-offset-2;
-  @apply hover:text-secondary-100;
-  @apply focus:text-white;
-
-  .btn__icon {
-    @apply w-8;
-    @apply stroke-0 md:stroke-[0.05px] lg:stroke-[0.1px];
-    @apply fill-current stroke-current;
-  }
-
-  &:disabled {
-    @apply text-secondary-200;
-    @apply bg-transparent;
-  }
-}
-
 .btn--filled {
   @apply text-text-new-contrast font-bold bg-action-secondary;
   @apply hover:bg-action-hover-secondary;
@@ -71,32 +52,6 @@
     @apply text-white;
     @apply bg-secondary-200;
     @apply border-secondary-200;
-  }
-}
-
-/* TODO Delete once all components using this don't need it anymore */
-.btn--outline-negative {
-  @apply text-white font-bold;
-  @apply bg-secondary-500;
-  @apply border border-white;
-  @apply hover:text-secondary-100 hover:border-secondary-100;
-  @apply focus:text-white focus:border-white;
-
-  &:disabled {
-    @apply text-secondary-200;
-    @apply border-secondary-300;
-    @apply bg-transparent;
-  }
-}
-
-/* TODO Delete once all components using this don't need it anymore */
-.btn--bare-negative {
-  @apply text-white;
-  @apply hover:text-secondary-100;
-  @apply focus:text-white;
-
-  &:disabled {
-    @apply text-secondary-200;
   }
 }
 

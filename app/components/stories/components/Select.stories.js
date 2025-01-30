@@ -140,7 +140,7 @@ export const LargeSizesSelect = {
   render: () => ({
     template: `
       <div class="select">
-        <select id="select-0" name="select-name" class="input--outline input--lg">
+        <select id="select-0" name="select-name" class="input--lg">
           <option>Large</option>
         </select>
         <div class="select__icon">
@@ -161,7 +161,7 @@ export const RequiredSelect = {
           Label
         </label>
         <div class="select">
-          <select id="select-id" name="select-name" class="input--outline input--base">
+          <select id="select-id" name="select-name" class="input--base">
             <option disabled="disabled" selected="selected">
               Choose your country
             </option>
@@ -189,7 +189,7 @@ export const MessagesSelect = {
           Label
         </label>
         <div class="select">
-          <select id="select-id" name="select-name" class="input--outline input--base input--error">
+          <select id="select-id" name="select-name" class="input--base input--error">
             <option disabled="disabled" selected="selected">
               Choose your country
             </option>
