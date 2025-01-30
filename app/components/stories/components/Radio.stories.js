@@ -52,12 +52,6 @@ export const Example = {
   },
 }
 
-export const NegativeRadio = {
-  render: () => ({
-    template: `<input type="radio" class="input--base" data-default-theme="dark" />`,
-  }),
-}
-
 export const DisabledRadio = {
   render: () => ({
     template: `

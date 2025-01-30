@@ -90,13 +90,6 @@ export const Example = {
   },
 }
 
-export const NegativeInput = {
-  render: () => ({
-    template:
-      '<input class="input--base" value="Input text" data-default-theme="dark" />',
-  }),
-}
-
 export const DisabledInput = {
   render: () => ({
     template: `

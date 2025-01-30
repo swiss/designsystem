@@ -48,18 +48,11 @@ export const Example = {
   },
 }
 
-export const NegativeTextarea = {
-  render: () => ({
-    template: `<textarea class="input--base" data-default-theme="dark" />`,
-  }),
-}
-
 export const DisabledTextarea = {
   render: () => ({
     template: `
       <div style="display: flex; flex-direction: row; gap: 5pt; width: 50%">
         <textarea class="input--base" disabled>Disabled</textarea>
-        <textarea class="input--base" disabled data-default-theme="dark">Disabled and negative</textarea>
       </div>
     `,
   }),

@@ -25,15 +25,3 @@ export const SeparatorSpacings = {
     `,
   }),
 }
-
-export const SeparatorNegative = {
-  render: () => ({
-    template: `
-      <div>
-        <div>Content above</div>
-          <hr class="separator" />
-        <div>Content below</div>
-      </div>
-    `,
-  }),
-}

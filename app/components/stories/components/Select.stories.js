@@ -62,26 +62,6 @@ export const Example = {
   },
 }
 
-export const NegativeSelect = {
-  render: () => ({
-    template: `
-      <div class="select" data-default-theme="dark">
-        <select id="select-id" name="select-name" class="input--base">
-          <option>Choose your country</option>
-          <option>Switzerland</option>
-          <option>Swaziland</option>
-          <option>Sweden</option>
-        </select>
-        <div class="select__icon">
-          <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-            <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
-          </svg>
-        </div>
-      </div>
-    `,
-  }),
-}
-
 export const DisabledSelect = {
   render: () => ({
     template: `

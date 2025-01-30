@@ -97,23 +97,6 @@ export const ButtonVariations = {
   }),
 }
 
-export const NegativeTypes = {
-  render: () => ({
-    template: `
-      <button type="button" class="btn btn--base btn--outline" data-default-theme="dark">
-        <span class="btn__text">
-          btn--outline on dark theme
-        </span>
-      </button>
-
-      <button type="button" class="btn btn--base btn--bare" data-default-theme="dark">
-        <span class="btn__text">
-          btn--bare on dark theme
-        </span>
-      </button>`,
-  }),
-}
-
 export const Sizes = {
   render: () => ({
     template: `
@@ -172,27 +155,6 @@ export const ButtonLinks = {
           </svg>
 
           <span class="btn__text">Button link with right icon</span>
-        </button>
-
-      </div>`,
-  }),
-}
-
-export const NegativeButtonLinks = {
-  parameters: {
-    backgrounds: {
-      default: 'Dark',
-    },
-  },
-  render: () => ({
-    template: `
-      <div>
-        <button type="button" class="btn">
-          <svg viewBox="0 0 24 24" class="btn__icon">
-            <path d="m12.3916 20.99951-5.25976-8.42578a5.87365 5.87365 0 1 1 10.53857-.0332zm0-16.167a5.1305 5.1305 0 0 0 -5.125 5.125 5.07366 5.07366 0 0 0 .52 2.25293l4.605 7.373 4.624-7.40625a5.07217 5.07217 0 0 0 .501-2.21972 5.1305 5.1305 0 0 0 -5.125-5.12495zm0 7.418a2.292 2.292 0 1 1 2.292-2.292 2.29476 2.29476 0 0 1 -2.292 2.29198zm0-3.834a1.542 1.542 0 1 0 1.542 1.542 1.54363 1.54363 0 0 0 -1.542-1.54201z" />
-          </svg>
-
-          <span class="btn__text">Negative button link with icon</span>
         </button>
 
       </div>`,

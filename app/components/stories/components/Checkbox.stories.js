@@ -51,14 +51,6 @@ export const Example = {
   },
 }
 
-export const NegativeCheckbox = {
-  render: () => ({
-    template: `
-      <input type="checkbox" class="input--base" data-default-theme="dark" />
-    `,
-  }),
-}
-
 export const DisabledInput = {
   render: () => ({
     template: `
