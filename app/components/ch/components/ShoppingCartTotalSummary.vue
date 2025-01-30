@@ -26,7 +26,6 @@
       <Checkbox
         :required="true"
         size="base"
-        type="outline"
         name="checkbox-agb"
         value="agb accepted"
         :label="agreementText"

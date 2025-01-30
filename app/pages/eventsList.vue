@@ -34,14 +34,12 @@
               <Input
                 id="select-1"
                 type="text"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Stichwortfilter"
               />
               <Select
                 id="select-2"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Organisation"
@@ -51,7 +49,6 @@
               </Select>
               <Select
                 id="select-3"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Themen"
@@ -62,7 +59,6 @@
               <Input
                 id="date-start"
                 type="date"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 value="2022-05-01"
@@ -71,7 +67,6 @@
               <Input
                 id="date-start"
                 type="date"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 value="2022-06-01"
@@ -79,7 +74,6 @@
               />
               <Select
                 id="select-5"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Veranstaltungs-Typ"
@@ -94,7 +88,6 @@
               </Select>
               <Select
                 id="select-6"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Austragungsort"
@@ -161,7 +154,6 @@
               <div class="search-results__header__right">
                 <Select
                   id="select-7"
-                  variant="outline"
                   bare
                   size="sm"
                   name="select-name"

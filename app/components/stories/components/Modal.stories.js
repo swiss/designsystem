@@ -119,7 +119,6 @@ export const Example = {
                 <hr class="separator">
                 <div class="pt-3">
                   <Input
-                    type="outline"
                     size="base"
                     label="Label"
                     value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"

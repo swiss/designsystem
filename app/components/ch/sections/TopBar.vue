@@ -24,7 +24,7 @@
             size="base"
           />
           <TopBarNavigation v-if="!isEasyLanguage && !isSignLanguage" />
-          <LanguageSwitcher type="negative" />
+          <LanguageSwitcher type="light"/>
         </div>
       </div>
     </div>

@@ -18,7 +18,8 @@ import { computed } from 'vue'
 defineProps({
   type: {
     type: String,
-    default: () => 'negative',
+    validator: (prop) => ['light', 'dark'].includes(prop as string),
+    default: () => null,
   },
 })
 

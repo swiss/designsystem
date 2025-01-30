@@ -836,7 +836,6 @@
             <div class="pt-3">
               <Input
                 id="my-id"
-                type="outline"
                 size="base"
                 label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"

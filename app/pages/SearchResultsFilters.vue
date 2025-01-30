@@ -55,7 +55,6 @@
             <div v-if="filtersAreOpen" class="search__filters__drawer">
               <Select
                 id="select-1"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Filter name"
@@ -65,7 +64,6 @@
               </Select>
               <Select
                 id="select-2"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Filter name"
@@ -75,7 +73,6 @@
               </Select>
               <Select
                 id="select-3"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Filter name"
@@ -85,7 +82,6 @@
               </Select>
               <Select
                 id="select-4"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Filter name"
@@ -95,7 +91,6 @@
               </Select>
               <Select
                 id="select-5"
-                variant="outline"
                 size="sm"
                 name="select-name"
                 label="Filter name"
@@ -127,7 +122,6 @@
               <div class="search-results__header__right">
                 <Select
                   id="select-6"
-                  variant="outline"
                   bare
                   size="sm"
                   name="select-name"

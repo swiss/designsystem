@@ -100,13 +100,13 @@ export const ButtonVariations = {
 export const NegativeTypes = {
   render: () => ({
     template: `
-      <button type="button" class="btn btn--base btn--outline">
+      <button type="button" class="btn btn--base btn--outline" data-default-theme="dark">
         <span class="btn__text">
           btn--outline on dark theme
         </span>
       </button>
 
-      <button type="button" class="btn btn--base btn--bare">
+      <button type="button" class="btn btn--base btn--bare" data-default-theme="dark">
         <span class="btn__text">
           btn--bare on dark theme
         </span>

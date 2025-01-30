@@ -154,7 +154,6 @@
                   Rechnungsaddresse
                 </h3>
                 <Fieldset
-                  variant="outline"
                   size="base"
                   :required="formInputFields.invoice.gender.mandatory"
                   legend="Anrede"
@@ -169,7 +168,6 @@
                   <Radio
                     :required="true"
                     size="base"
-                    type="outline"
                     name="radio-gender"
                     value="Frau"
                     label="Frau"
@@ -178,7 +176,6 @@
                   <Radio
                     :required="true"
                     size="base"
-                    type="outline"
                     name="radio-gender"
                     value="Herr"
                     label="Herr"
@@ -351,7 +348,6 @@
                     <Select
                       class="shopping__cart-order-form-input-spacing"
                       :required="formInputFields.invoice.country.mandatory"
-                      variant="outline"
                       size="base"
                       label="Land"
                       messageType="error"
@@ -427,11 +423,10 @@
                   placeholder="Erweiterte Details hier angeben"
                 />
                 <div class="shopping__cart-order-form-fieldset-spacing">
-                  <Fieldset variant="outline" size="base" :required="false">
+                  <Fieldset size="base" :required="false">
                     <Checkbox
                       :required="false"
                       size="base"
-                      type="outline"
                       name="radio-delivery-address"
                       value="matching delivery address"
                       label="Lieferadresse ist mit Rechnungsadresse identisch."
@@ -617,7 +612,6 @@
                       <Select
                         class="shopping__cart-order-form-input-spacing"
                         :required="formInputFields.delivery.country.mandatory"
-                        variant="outline"
                         size="base"
                         label="Land"
                         messageType="error"
