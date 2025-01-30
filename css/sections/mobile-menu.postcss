@@ -36,7 +36,7 @@
 \*----------------------------------------*/
 
 .mobile-menu-v2 {
-  @apply bg-ui-elements-navigation-02;
+  @apply bg-background-accent-03;
   @apply invisible opacity-0 lg:hidden;
   @apply overflow-hidden;
   @apply w-full h-0;
@@ -127,6 +127,7 @@
     ul a {
       @apply menu__item menu__item--small;
       @apply menu__item--border w-full;
+      @apply bg-background-accent-01 hover:bg-background-accent-02 focus:bg-background-accent-02;
       @apply w-full;
     }
   }
@@ -135,8 +136,9 @@
     ul a {
       @apply menu__item menu__item--small;
       @apply menu__item--border w-full;
-      @apply text-text-new-main hover:text-text-new-main focus:text-text-new-main;
-      @apply hover:bg-ui-elements-navigation-03;
+      @apply text-standard-white hover:text-standard-white focus:text-standard-white;
+      @apply hover:bg-background-accent-04 focus:bg-background-accent-04;
+      @apply border-elements-divider-200;
       @apply w-full;
     }
   }

@@ -30,16 +30,20 @@
     }
   }
 
-  & .main-navigation--mobile li > a,
-  & .meta-navigation--mobile li > a,
-  & .top-bar-navigation--mobile li > a {
-    @apply hover:bg-ui-elements-navigation-02;
-    @apply focus:bg-ui-elements-navigation-02;
+  & .main-navigation--mobile li > a {
+    @apply bg-background-main hover:bg-background-accent-01 focus:bg-background-accent-01;
   }
 
-  .top-bar-navigation--mobile li > a {
-    @apply bg-ui-elements-navigation-02;
-    @apply hover:bg-ui-elements-navigation-03;
+  & .meta-navigation--mobile li > a {
+    @apply bg-background-accent-01 hover:bg-background-accent-02 focus:bg-background-accent-02;
+  }
+
+  & .top-bar-navigation--mobile li > a {
+    @apply bg-background-accent-03;
+    @apply hover:bg-background-accent-04;
+    @apply focus:bg-background-accent-04;
+    @apply text-standard-white;
+    @apply border-elements-divider-200;
   }
 }
 
@@ -71,6 +75,10 @@
   @apply menu__item menu__item--title;
   @apply font-bold;
   @apply border-opacity-0;
+}
+
+.navy__level-0 {
+  @apply bg-background-accent-03 lg:bg-background-main;
 }
 
 .navy__level-0,
