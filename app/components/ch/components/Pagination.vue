@@ -1,7 +1,7 @@
 <template>
   <div
     class="pagination"
-    :class="!field ? 'pagination--extended' : ''"
+    :class="!props.field ? 'pagination--extended' : ''"
   >
     <input
       v-if="field"
@@ -10,10 +10,10 @@
       aria-label="pagination input"
     />
     <div v-if="field" class="pagination__text">
-      {{ totalPages }}
+      {{ props.totalPages }}
     </div>
     <ul class="pagination_items">
-      <li v-for="(item, index) in paginationItems" :key="`item-${index}`">
+      <li v-for="(item, index) in props.paginationItems" :key="`item-${index}`">
         <PaginationItem
           :icon="item.icon"
           :label="item.label"
