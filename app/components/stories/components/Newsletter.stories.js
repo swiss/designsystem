@@ -10,13 +10,6 @@ export default {
       options: ['default', 'inline'],
       control: { type: 'select' },
     },
-    theme: {
-      table: {
-        type: { summary: ['string?: light, dark'] },
-      },
-      options: [null, 'light', 'dark'],
-      control: { type: 'select' },
-    },
     state: {
       table: {
         category: 'props',

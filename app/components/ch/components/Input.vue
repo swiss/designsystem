@@ -1,5 +1,5 @@
 <template>
-  <div class="form__group__input" :data-default-theme="props.theme">
+  <div class="form__group__input">
     <label v-if="label" :for="id" :class="labelClasses">
       {{ label }}<span v-if="required" class="form__group__required" />
     </label>
@@ -55,11 +55,6 @@ const props = defineProps({
         'submit',
       ].includes(prop as string),
     default: () => 'text',
-  },
-  theme: {
-    type: String,
-    validator: (prop) => ['light', 'dark'].includes(prop as string),
-    default: () => null,
   },
   message: {
     type: String,

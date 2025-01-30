@@ -1,6 +1,6 @@
 <template>
   <div class="table-wrapper">
-    <table :class="computedClasses" :data-default-theme="props.theme">
+    <table :class="computedClasses">
       <caption v-if="caption">
         {{
           caption
@@ -113,11 +113,6 @@ const props = defineProps({
     type: String,
     validator: (prop) => ['compact', 'default'].includes(prop as string),
     default: () => undefined,
-  },
-  theme: {
-    type: String,
-    validator: (prop) => ['dark', 'light'].includes(prop as string),
-    default: () => null,
   },
   caption: {
     type: String,

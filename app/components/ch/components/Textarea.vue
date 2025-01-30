@@ -1,5 +1,5 @@
 <template>
-  <div class="form__group__input" :data-default-theme="props.theme">
+  <div class="form__group__input">
     <label v-if="label" :for="id" :class="labelClasses">
       {{ label }}
     </label>
@@ -28,11 +28,6 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  theme: {
-    type: String,
-    validator: (prop) => ['light', 'dark'].includes(prop as string),
-    default: () => null,
-  },
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),

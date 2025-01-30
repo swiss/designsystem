@@ -1,5 +1,5 @@
 <template>
-  <div class="form__group__select" :data-default-theme="props.theme">
+  <div class="form__group__select">
     <label
       v-if="label"
       :for="getUniqueId('multi-select')"
@@ -70,11 +70,6 @@ const props = defineProps({
   bare: {
     type: Boolean,
     default: () => false,
-  },
-  theme: {
-    type: String,
-    validator: (prop) => ['light', 'dark'].includes(prop as string),
-    default: () => null,
   },
   size: {
     type: String,

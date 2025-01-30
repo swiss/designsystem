@@ -8,13 +8,6 @@ export default {
     bare: {
       control: { type: 'boolean' },
     },
-    theme: {
-      table: {
-        type: { summary: ['string?: light, dark'] },
-      },
-      options: [null, 'light', 'dark'],
-      control: { type: 'select' },
-    },
     required: {
       control: { type: 'boolean' },
     },
@@ -66,7 +59,6 @@ export const Example = {
       'bar',
       'baz',
     ],
-    theme: 'light',
     size: 'base',
     label: 'Label',
     disabled: false,

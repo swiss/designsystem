@@ -1,5 +1,5 @@
 <template>
-  <div :class="computedClasses" :data-default-theme="props.theme">
+  <div :class="computedClasses">
     <h3 class="newsletter__title h3" v-text="title" />
     <p class="newsletter__text" v-html="text" />
     <form
@@ -51,11 +51,6 @@ const props = defineProps({
     type: String,
     validator: (prop) => ['default', 'inline'].includes(prop as string),
     default: () => undefined,
-  },
-  theme: {
-    type: String,
-    validator: (prop) => ['dark', 'light'].includes(prop as string),
-    default: () => null,
   },
   title: {
     type: String,

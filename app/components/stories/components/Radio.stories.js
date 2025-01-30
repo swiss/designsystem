@@ -5,13 +5,6 @@ export default {
   component: Radio,
 
   argTypes: {
-    theme: {
-      table: {
-        type: { summary: ['string?: light, dark'] },
-      },
-      options: [null, 'light', 'dark'],
-      control: { type: 'select' },
-    },
     required: {
       control: { type: 'boolean' },
     },
@@ -44,7 +37,6 @@ export const Example = {
     `,
   }),
   args: {
-    theme: 'light',
     size: 'base',
     label: 'Label',
     name: 'radio-name',
@@ -57,8 +49,8 @@ export const DisabledRadio = {
     template: `
       <input type="radio" class="input--base" disabled />
       <input type="radio" class="input--base" disabled checked />
-      <input type="radio" class="input--base" disabled data-default-theme="dark" />
-      <input type="radio" class="input--base" disabled checked data-default-theme="dark" />
+      <label for=""><input type="radio" class="input--base" disabled data-default-theme="dark" />dark-themed disabled radio</label>
+      <label for=""><input type="radio" class="input--base" disabled checked data-default-theme="dark" />dark-themed disabled checked radio</label>
     `,
   }),
 }

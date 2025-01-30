@@ -5,13 +5,6 @@ export default {
   component: Textarea,
 
   argTypes: {
-    theme: {
-      table: {
-        type: { summary: ['string?: light, dark'] },
-      },
-      options: [null, 'light', 'dark'],
-      control: { type: 'select' },
-    },
     required: {
       control: { type: 'boolean' },
     },
@@ -39,7 +32,6 @@ export const Example = {
     template: `<Textarea v-bind="args" />`,
   }),
   args: {
-    theme: 'light',
     size: 'base',
     label: 'Label',
     name: 'textarea-name',

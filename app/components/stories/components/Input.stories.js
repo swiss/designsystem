@@ -43,13 +43,6 @@ export default {
       options: ['sm', 'base', 'lg'],
       control: { type: 'select' },
     },
-    theme: {
-      table: {
-        type: { summary: ['string?: light, dark'] },
-      },
-      options: [null, 'light', 'dark'],
-      control: { type: 'select' },
-    },
     label: {},
     hideLabel: {
       control: { type: 'boolean' },
@@ -86,7 +79,6 @@ export const Example = {
     step: undefined,
     message: undefined,
     messageType: 'error',
-    theme: null,
   },
 }
 

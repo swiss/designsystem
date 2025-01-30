@@ -1,5 +1,5 @@
 <template>
-  <div class="form__group__radio" :data-default-theme="props.theme">
+  <div class="form__group__radio">
     <input
       :id="id"
       type="radio"
@@ -28,11 +28,6 @@
 import { computed, type PropType } from 'vue'
 
 const props = defineProps({
-  theme: {
-    type: String,
-    validator: (prop) => ['light', 'dark'].includes(prop as string),
-    default: () => null,
-  },
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),

@@ -20,13 +20,6 @@ export default {
       ],
       control: { type: 'select' },
     },
-    theme: {
-      table: {
-        type: { summary: ['string?: light, dark'] },
-      },
-      options: [null, 'light', 'dark'],
-      control: { type: 'select' },
-    },
     size: {
       table: { type: { summary: ['string: sm, base, lg'] } },
       options: ['sm', 'base', 'lg'],

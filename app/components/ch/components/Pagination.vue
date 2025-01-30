@@ -2,7 +2,6 @@
   <div
     class="pagination"
     :class="!field ? 'pagination--extended' : ''"
-    :data-default-theme="props.theme"
   >
     <input
       v-if="field"
@@ -19,7 +18,6 @@
           :icon="item.icon"
           :label="item.label"
           :link="item.link"
-          :theme="theme"
           :disabled="index === 0 && currentPage === '1'"
         />
       </li>
@@ -36,11 +34,6 @@ const currentPage = defineModel('currentPage', {
 })
 
 const props = defineProps({
-  theme: {
-    type: String,
-    validator: (prop) => ['light', 'dark'].includes(prop as string),
-    default: () => null,
-  },
   field: {
     type: Boolean,
     default: () => true,

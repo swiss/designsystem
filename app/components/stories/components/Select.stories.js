@@ -5,13 +5,6 @@ export default {
   component: Select,
 
   argTypes: {
-    theme: {
-      table: {
-        type: { summary: ['string?: light, dark'] },
-      },
-      options: [null, 'light', 'dark'],
-      control: { type: 'select' },
-    },
     required: {
       control: { type: 'boolean' },
     },
@@ -52,7 +45,6 @@ export const Example = {
     `,
   }),
   args: {
-    theme: 'light',
     bare: false,
     size: 'base',
     label: 'Label',

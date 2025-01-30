@@ -5,13 +5,6 @@ export default {
   component: Pagination,
 
   argTypes: {
-    theme: {
-      table: {
-        type: { summary: ['string?: light, dark'] },
-      },
-      options: [null, 'light', 'dark'],
-      control: { type: 'select' },
-    },
     field: {
       control: { type: 'boolean' },
     },

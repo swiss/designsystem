@@ -5,19 +5,6 @@ export default {
   component: Checkbox,
 
   argTypes: {
-    theme: {
-      table: {
-        table: {
-          type: { summary: ['string?: light, dark'] },
-        },
-        options: [null, 'light', 'dark'],
-        control: { type: 'select' },
-      },
-      options: ['light', 'dark'],
-      control: {
-        type: 'select',
-      },
-    },
     size: {
       table: { type: { summary: ['string: sm, base, lg'] } },
       options: ['sm', 'base', 'lg'],
@@ -43,7 +30,6 @@ export const Example = {
     `,
   }),
   args: {
-    theme: 'light',
     size: 'base',
     label: 'Label',
     name: 'checkbox-name',
@@ -56,8 +42,8 @@ export const DisabledInput = {
     template: `
       <input type="checkbox" class="input--base" disabled />
       <input type="checkbox" class="input--base" disabled checked />
-      <input type="checkbox" class="input--base" disabled data-default-theme="dark" />
-      <input type="checkbox" class="input--base" disabled checked data-default-theme="dark" />
+      <label><input type="checkbox" class="input--base" disabled data-default-theme="dark"/>dark-themed disabled checkbox</label>
+      <label><input type="checkbox" class="input--base" disabled checked data-default-theme="dark" /> dark-themed disabled checked checkbox</label>
     `,
   }),
 }

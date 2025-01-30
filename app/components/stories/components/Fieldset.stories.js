@@ -7,19 +7,6 @@ export default {
   component: Fieldset,
 
   argTypes: {
-    theme: {
-      table: {
-        table: {
-          type: { summary: ['string?: light, dark'] },
-        },
-        options: [null, 'light', 'dark'],
-        control: { type: 'select' },
-      },
-      options: ['light', 'dark'],
-      control: {
-        type: 'select',
-      },
-    },
     size: {
       table: { type: { summary: ['string: sm, base, lg'] } },
       options: ['sm', 'base', 'lg'],
@@ -46,8 +33,8 @@ export const WithRadio = {
     setup: () => ({ args }),
     template: `
       <Fieldset v-bind="args">
-          <Radio id="radio-0" name="radio-group-1" label="Label for value one" value="value-1" :theme="args.theme" :size="args.size" :required="args.required" :messageType="args.messageType" />
-          <Radio id="radio-1" name="radio-group-1" label="Label for value two" value="value-2" :theme="args.theme" :size="args.size" :required="args.required" :messageType="args.messageType" />
+          <Radio id="radio-0" name="radio-group-1" label="Label for value one" value="value-1" :size="args.size" :required="args.required" :messageType="args.messageType" />
+          <Radio id="radio-1" name="radio-group-1" label="Label for value two" value="value-2" :size="args.size" :required="args.required" :messageType="args.messageType" />
       </Fieldset>
     `,
   }),
@@ -63,8 +50,8 @@ export const WithCheckboxes = {
     setup: () => ({ args }),
     template: `
       <Fieldset v-bind="args" >
-        <Checkbox id="checkbox-0" name="checkbox-group-1" label="Label for value one" value="value-1" :theme="args.theme" :size="args.size" :required="args.required" :messageType="args.messageType" />
-        <Checkbox id="checkbox-1" name="checkbox-group-1" label="Label for value two" value="value-2" :theme="args.theme" :size="args.size" :required="args.required" :messageType="args.messageType" />
+        <Checkbox id="checkbox-0" name="checkbox-group-1" label="Label for value one" value="value-1" :size="args.size" :required="args.required" :messageType="args.messageType" />
+        <Checkbox id="checkbox-1" name="checkbox-group-1" label="Label for value two" value="value-2" :size="args.size" :required="args.required" :messageType="args.messageType" />
       </Fieldset>
     `,
   }),
@@ -77,7 +64,7 @@ export const WithCheckboxes = {
 export const RequiredFieldset = {
   render: () => ({
     template: `
-      <fieldset class="form__group" data-default-theme="light">
+      <fieldset class="form__group">
         <legend class="form__group__legend text--asterisk">
           Radio button group legend <span class="sr-only">required</span>
         </legend>
@@ -97,7 +84,7 @@ export const RequiredFieldset = {
 export const MessagesFieldset = {
   render: () => ({
     template: `
-      <fieldset class="form__group" data-default-theme="light">
+      <fieldset class="form__group">
         <legend class="form__group__legend text--asterisk">
           Radio button group legend <span class="sr-only">required</span>
         </legend>

@@ -6,7 +6,6 @@
     :class="classes"
     :aria-label="aria"
     :disabled="disabled || undefined"
-    :data-default-theme="props.theme"
     @click="eventHandler"
   >
     <SvgIcon v-if="icon" :icon="icon" class="btn__icon" />
@@ -36,11 +35,6 @@ const props = defineProps({
         'link',
       ].includes(prop as string),
     default: () => undefined,
-  },
-  theme: {
-    type: String,
-    validator: (prop) => ['light', 'dark'].includes(prop as string),
-    default: () => null,
   },
   disabled: {
     type: Boolean,
