@@ -4,7 +4,6 @@ export default {
   title: 'Components/Button',
   component: Btn,
   argTypes: {
-    /* TODO Delete all negative options here, as this functionality is integrated with theme now */
     variant: {
       table: {
         type: {
