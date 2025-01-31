@@ -30,8 +30,10 @@ html {
 #__nuxt,
 #__layout,
 #vue-app,
+#storybook-root,
 #app,
-[data-v-app]:not([hidden]) {
+[data-v-app]:not([hidden])
+> div {
   @apply h-full;
   @apply flex;
   @apply flex-col;
