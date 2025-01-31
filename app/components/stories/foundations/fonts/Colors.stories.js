@@ -5,6 +5,19 @@ export default {
   component: ColorList,
 }
 
+export const LightDarkModeColors = {
+  render: () => ({
+    template: `<div>
+      <div class="text--text-contrast">color--text-contrast</div>
+      <div class="text--text-disabled">color--text-disabled</div>
+      <div class="text--text-label">color--text-label</div>
+      <div class="text--text-main">color--text-main</div>
+      <div class="text--text-quote">color--text-quote</div>
+      <div class="text--text-selected">color--text-selected</div>
+    </div>`,
+  }),
+}
+
 export const TextColors = {
   render: () => ({
     template: `<div>
