@@ -14,11 +14,11 @@
 }
 
 .btn--outline {
-  @apply text-action-main font-normal;
-  @apply border border-action-main bg-action-background-cta-default;
-  @apply hover:text-action-hover-main;
+  @apply text-action-main hover:text-action-hover-main focus:text-action-main font-normal;
+  @apply border border-action-main hover:border-action-hover-main focus:border-action-main;
+  @apply bg-action-background-cta-default hover:bg-ui-elements-button-background-cta-hover focus:bg-ui-elements-button-background-cta-default;
   @apply focus:shadow-focus;
-  @apply disabled:text-action-disabled disabled:border-action-disabled disabled:bg-action-background-cta-disabled;
+  @apply disabled:text-action-disabled disabled:border-action-disabled disabled:bg-ui-elements-button-background-cta-disabled;
 }
 
 .btn--bare {
@@ -26,7 +26,7 @@
   @apply text-text-new-main bg-standard-transparent font-normal;
   @apply hover:text-action-hover-main;
   @apply focus:text-action-main;
-  @apply disabled:text-action-disabled disabled:bg-action-background-cta-disabled;
+  @apply disabled:text-action-disabled;
 }
 
 .btn--link {
@@ -34,7 +34,7 @@
   @apply text-text-new-main bg-standard-transparent font-normal;
   @apply hover:text-action-hover-main;
   @apply focus:text-action-main;
-  @apply disabled:text-action-disabled disabled:bg-transparent;
+  @apply disabled:text-action-disabled;
 
   .btn__icon {
     @apply w-8;
@@ -45,14 +45,10 @@
 
 .btn--filled {
   @apply text-text-new-contrast font-bold bg-action-secondary;
-  @apply hover:bg-action-hover-secondary;
-  @apply focus:bg-action-secondary focus:shadow-focus;
-
-  &:disabled {
-    @apply text-white;
-    @apply bg-secondary-200;
-    @apply border-secondary-200;
-  }
+  @apply shadow-md;
+  @apply hover:bg-action-hover-secondary hover:border-action-hover-secondary;
+  @apply focus:bg-action-secondary focus:text-text-new-contrast focus:shadow-focus;
+  @apply disabled:text-text-new-contrast disabled:bg-action-disabled disabled:border-action-disabled;
 }
 
 /* SIZES */
