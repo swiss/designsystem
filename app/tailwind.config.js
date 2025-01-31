@@ -236,9 +236,9 @@ export default {
         'footer-background-01': 'var(--elements-footer-background-01)',
         'footer-background-02': 'var(--elements-footer-background-02)',
         'footer-text': 'var(--elements-footer-text)',
-        'elements-navigation-01': 'var(--elements-navigation-01)',
-        'elements-navigation-02': 'var(--elements-navigation-02)',
-        'elements-navigation-03': 'var(--elements-navigation-03)',
+        'navigation-01': 'var(--elements-navigation-01)',
+        'navigation-02': 'var(--elements-navigation-02)',
+        'navigation-03': 'var(--elements-navigation-03)',
       },
       gebaerdensprache: {
         accent: 'var(--gebaerdensprache-accent)',
@@ -341,11 +341,6 @@ export default {
               'var(--ui-elements-inputfield-select-text-label-text)',
             'main-text': 'var(--ui-elements-inputfield-select-text-main-text)',
           },
-        },
-        navigation: {
-          '01': 'var(--ui-elements-navigation-01)',
-          '02': 'var(--ui-elements-navigation-02)',
-          '03': 'var(--ui-elements-navigation-03)',
         },
         radiobutton: {
           'active-background':

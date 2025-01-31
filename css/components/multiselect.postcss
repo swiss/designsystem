@@ -147,8 +147,7 @@
 .vs__fade-enter-active,
 .vs__fade-leave-active {
   pointer-events: none;
-  transition: opacity var(--vs-transition-duration)
-    var(--vs-transition-timing-function);
+  transition: opacity var(--vs-transition-duration) var(--vs-transition-timing-function);
 }
 
 .vs__fade-enter,
@@ -229,8 +228,7 @@
 .vs__open-indicator {
   fill: var(--vs-controls-color);
   transform: scale(var(--vs-controls-size));
-  transition: transform var(--vs-transition-duration)
-    var(--vs-transition-timing-function);
+  transition: transform var(--vs-transition-duration) var(--vs-transition-timing-function);
   transition-timing-function: var(--vs-transition-timing-function);
 }
 
@@ -284,15 +282,15 @@
   color: var(--vs-dropdown-option-color);
   white-space: nowrap;
   cursor: pointer;
-  background: var(--ui-elements-inputfield-select-background-choose-default-choose);
+  background: var(--ui-elements-inputfield-select-background-choose-default-choose-background);
 }
 
 .vs__dropdown-option--highlight {
-  background: var(--ui-elements-inputfield-select-background-choose-hover-choose);
+  background: var(--ui-elements-inputfield-select-background-choose-hover-choose-background);
 }
 
 .vs__dropdown-option--selected {
-  background: var(--ui-elements-inputfield-select-background-choose-selected-choose);
+  background: var(--ui-elements-inputfield-select-background-choose-selected-choose-background);
 }
 
 .vs__dropdown-option--deselect {
@@ -309,8 +307,7 @@
   display: flex;
   align-items: center;
   background-color: var(--vs-selected-bg);
-  border: var(--vs-selected-border-width) var(--vs-selected-border-style)
-    var(--vs-selected-border-color);
+  border: var(--vs-selected-border-width) var(--vs-selected-border-style) var(--vs-selected-border-color);
   border-radius: var(--vs-border-radius);
   color: var(--vs-selected-color);
   line-height: var(--vs-line-height);
@@ -406,8 +403,7 @@
   overflow: hidden;
   border: 0.9em solid hsla(0, 0%, 39.2%, 0.1);
   border-left-color: rgba(60, 60, 60, 0.45);
-  transform: translateZ(0)
-    scale(var(--vs-controls--spinner-size, var(--vs-controls-size)));
+  transform: translateZ(0) scale(var(--vs-controls--spinner-size, var(--vs-controls-size)));
   animation: vSelectSpinner 1.1s linear infinite;
   transition: opacity 0.1s;
 }
