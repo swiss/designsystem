@@ -233,16 +233,12 @@ export default {
         'divider-50': 'var(--elements-divider-50)',
         'divider-100': 'var(--elements-divider-100)',
         'divider-200': 'var(--elements-divider-200)',
-        'support-50': 'var(--elements-support-50)',
-        'support-100': 'var(--elements-support-100)',
-        'support-200': 'var(--elements-support-200)',
-        'support-300': 'var(--elements-support-300)',
-        'support-400': 'var(--elements-support-400)',
-        'support-500': 'var(--elements-support-500)',
-        'support-600': 'var(--elements-support-600)',
-        'support-700': 'var(--elements-support-700)',
-        'support-800': 'var(--elements-support-800)',
-        'support-900': 'var(--elements-support-900)',
+        'footer-background-01': 'var(--elements-footer-background-01)',
+        'footer-background-02': 'var(--elements-footer-background-02)',
+        'footer-text': 'var(--elements-footer-text)',
+        'elements-navigation-01': 'var(--elements-navigation-01)',
+        'elements-navigation-02': 'var(--elements-navigation-02)',
+        'elements-navigation-03': 'var(--elements-navigation-03)',
       },
       gebaerdensprache: {
         accent: 'var(--gebaerdensprache-accent)',
@@ -257,6 +253,14 @@ export default {
       logo: {
         'logo-red': 'var(--logo-logo-red)',
         'logo-white': 'var(--logo-logo-white)',
+      },
+      shadow: {
+        'color-2xl': 'var(--shadow-2xl-color)',
+        'color-base': 'var(--shadow-base-color)',
+        'color-lg': 'var(--shadow-lg-color)',
+        'color-md': 'var(--shadow-md-color)',
+        'color-sm': 'var(--shadow-sm-color)',
+        'color-xl': 'var(--shadow-xl-color)',
       },
       states: {
         'error-bg': 'var(--states-error-error-bg)',
@@ -279,6 +283,14 @@ export default {
         selected: 'var(--text-selected-text)',
       },
       'ui-elements': {
+        button: {
+          'background-cta-default':
+            'var(--ui-elements-button-background-cta-default)',
+          'background-cta-disabled':
+            'var(--ui-elements-button-background-cta-disabled)',
+          'background-cta-hover':
+            'var(--ui-elements-button-background-cta-hover)',
+        },
         checkbox: {
           'active-background': 'var(--ui-elements-checkbox-active-background)',
           checkmark: 'var(--ui-elements-checkbox-checkmark)',
@@ -301,10 +313,16 @@ export default {
         },
         inputfield: {
           select: {
+            'choose-default-background':
+              'var(--ui-elements-inputfield-select-background-choose-hover-choose-background)',
+            'choose-hover-background':
+              'var(--ui-elements-inputfield-select-background-choose-hover-choose-background)',
+            'choose-selected-background':
+              'var(--ui-elements-inputfield-select-background-choose-hover-choose-background)',
             'disabled-background':
               'var(--ui-elements-inputfield-select-background-disabled-background)',
-            'main-background':
-              'var(--ui-elements-inputfield-select-background-main-background)',
+            'default-background':
+              'var(--ui-elements-inputfield-select-background-default-background)',
             'active-indicator':
               'var(--ui-elements-inputfield-select-indicator-active-indicator)',
             'disabled-indicator':
@@ -385,17 +403,16 @@ export default {
       'bold-italic': ['Font-Bold-Italic', 'Hind', 'Fallback-font'],
     },
     boxShadow: {
-      // TODO: add dark mode support to 0,0,0 shadows
-      sm: '0 1px 2px 0 var(--shadow-base-color-05)',
+      sm: 'var(--shadow-sm-x, 0px) var(--shadow-sm-y, 1px) var(--shadow-sm-blur, 2px) var(--shadow-sm-spread, 0px) var(--shadow-sm-color, rgba(17, 24, 39, 0.12))',
       DEFAULT:
-        '0 1px 2px 0 var(--shadow-base-color-06), 0 1px 5px 0 var(--shadow-base-color-08)',
-      md: '0 2px 4px -1px var(--shadow-base-color-06), 0 4px 10px -1px var(--shadow-base-color-08)',
-      lg: '0 2px 6px -1px var(--shadow-base-color-06), 0 5px 20px -3px var(--shadow-base-color-08)',
-      xl: '0 6px 10px -5px var(--shadow-base-color-06), 0 15px 25px -3px var(--shadow-base-color-09)',
+        'var(--shadow-base-x, 0px) var(--shadow-base-y, 1px) var(--shadow-base-blur, 2px) var(--shadow-base-spread, 0px) var(--shadow-base-color, rgba(17, 24, 39, 0.12))',
+      md: 'var(--shadow-mg-x, 0px) var(--shadow-mg-y, 2px) var(--shadow-mg-blur, 4px) var(--shadow-mg-spread, -1px) var(--shadow-mg-color, rgba(17, 24, 39, 0.12))',
+      lg: 'var(--shadow-lg-x, 0px) var(--shadow-lg-y, 2px) var(--shadow-lg-blur, 16px) var(--shadow-lg-spread, -1px) var(--shadow-lg-color, rgba(17, 24, 39, 0.12));',
+      xl: 'var(--shadow-xl-x, 0px) var(--shadow-xl-y, 6px) var(--shadow-xl-blur, 10px) var(--shadow-xl-spread, -5px) var(--shadow-lg-color, rgba(17, 24, 39, 0.12))',
       '2xl':
-        '0 10px 20px 0 var(--shadow-base-color-06), 1px 10px 70px -8px var(--shadow-base-color-13)',
+        'var(--shadow-2xl-x, 0px) var(--shadow-2xl-y, 10px) var(--shadow-2xl-blur, 14px) var(--shadow-2xl-spread, 0px) var(--shadow-2xl-color, rgba(17, 24, 39, 0.16))',
       none: '0 0 0 0 rgba(0,0,0,0)',
-      focus: '0 0 0 3px var(--purple-500)',
+      focus: '0 0 0 3px var(--purple-500, #8655f6)',
     },
     borderRadius: {
       none: '0',
