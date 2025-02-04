@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies and build static storybook
         run: |
-          pnpm install -g corepack@latest
+          npm install -g corepack@latest
           corepack enable
           pnpm install
           cd app
