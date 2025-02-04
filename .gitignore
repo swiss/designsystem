@@ -1,6 +1,6 @@
 node_modules
 node_modules/.bin/acorn
-dist/*
+dist/main.css
 
 .idea/
 .DS_Store
