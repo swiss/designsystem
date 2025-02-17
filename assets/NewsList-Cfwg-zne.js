@@ -1,0 +1,10 @@
+import{j as t,M as n,C as r}from"./index-t992ZlYY.js";import{useMDXComponents as e}from"./index-ItJIzRJj.js";import{N as m,W as p,S as a,a as h}from"./NewsList.stories-CvAgMIvz.js";import"./iframe-CWspoYnI.js";import"./_commonjsHelpers-CqkleIqs.js";import"./index-Cu4lwwaE.js";import"./index-Bx-go_-4.js";import"./index-ogSvIofg.js";import"./vue.esm-bundler-B8GkW3lv.js";import"./AlterBodyClasses-s2MV3OrK.js";import"./TopHeader-BVj_dF6F.js";import"./pinia-CdeU9Ifc.js";import"./LanguageSwitcher-BZzzkvNj.js";import"./Select-J4otqiNP.js";import"./Logo-BRJrKNko.js";import"./SvgIcon-DacSMykS.js";import"./Input-BzHncvgf.js";import"./TopBar-BoP2WiIS.js";import"./Badge-wfP9IGE_.js";import"./Btn-CQzPwLlm.js";import"./TopBarNavigation-C0FCSBHm.js";import"./DesktopMenu-DSl5px-R.js";import"./MainNavigation-C9ypdkR5.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";import"./MobileMenu-y6DcPgVh.js";import"./swiper-vue-CqNMza4E.js";import"./v4-C6aID195.js";import"./FooterInformation-CqutkDWJ.js";import"./FooterNavigation-cV_Du2Oa.js";import"./SearchResultsList-CQ4Shca2.js";import"./MetaInfo-BfsCjQtf.js";import"./Card-fOTAw7sq.js";import"./Pagination-BZCuFMjx.js";import"./Notification-DqdmoAP7.js";import"./TagItem-BIDBYoHq.js";import"./Breadcrumb-B5yJ8q5b.js";function s(o){const i={h1:"h1",hr:"hr",...e(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(n,{of:m}),`
+`,t.jsx(i.h1,{id:"news-list",children:"News List"}),`
+`,t.jsx("a",{href:"?path=/story/pages-news-list--with-results",children:"Go to the Canvas Tab"}),`
+`,t.jsx(i.hr,{}),`
+`,t.jsx("a",{href:"?id=pages-news-list--with-results&args=&viewMode=story",target:"_blank",children:"Open page in full width in a new tab"}),`
+`,t.jsx(r,{of:p}),`
+`,t.jsx(i.h1,{id:"show-filters",children:"Show filters"}),`
+`,t.jsx(r,{of:a}),`
+`,t.jsx(i.h1,{id:"loading-example",children:"Loading example"}),`
+`,t.jsx(r,{of:h})]})}function P(o={}){const{wrapper:i}={...e(),...o.components};return i?t.jsx(i,{...o,children:t.jsx(s,{...o})}):s(o)}export{P as default};
