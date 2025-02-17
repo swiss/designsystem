@@ -42,21 +42,23 @@ thead {
   }
 }
 
-tbody,
-tfoot {
-  tr {
-    @apply border-t border-text-300;
-  }
+table:not(.table--compact) {
+  tbody,
+  tfoot {
+    tr {
+      @apply border-t border-text-300;
+    }
 
-  td,
-  th {
-    @apply px-6 py-4;
-    @apply text--base;
-    @apply text-gray-600;
-  }
+    td,
+    th {
+      @apply px-6 py-4;
+      @apply text--base;
+      @apply text-gray-600;
+    }
 
-  th {
-    @apply text-gray-800 font-bold text-left;
+    th {
+      @apply text-gray-800 font-bold text-left;
+    }
   }
 }
 
