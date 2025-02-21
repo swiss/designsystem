@@ -75,31 +75,33 @@
     <Accordion v-if="openingHours" id="opening-time">
       <AccordionItem id="10" title="Öffnungszeiten" headingLevel="h3">
         <table class="table table--compact">
-          <tr>
-            <td>Montag</td>
-            <td>08:00-12:00</td>
-            <td>13:00-17:00</td>
-          </tr>
-          <tr>
-            <td>Dienstag</td>
-            <td>08:00-12:00</td>
-            <td>13:00-17:00</td>
-          </tr>
-          <tr>
-            <td>Mittwoch</td>
-            <td>08:00-12:00</td>
-            <td>13:00-17:00</td>
-          </tr>
-          <tr>
-            <td>Donnerstag</td>
-            <td>08:00-12:00</td>
-            <td>13:00-17:00</td>
-          </tr>
-          <tr>
-            <td>Freitag</td>
-            <td>08:00-12:00</td>
-            <td>Geschlossen</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>Montag</td>
+              <td>08:00-12:00</td>
+              <td>13:00-17:00</td>
+            </tr>
+            <tr>
+              <td>Dienstag</td>
+              <td>08:00-12:00</td>
+              <td>13:00-17:00</td>
+            </tr>
+            <tr>
+              <td>Mittwoch</td>
+              <td>08:00-12:00</td>
+              <td>13:00-17:00</td>
+            </tr>
+            <tr>
+              <td>Donnerstag</td>
+              <td>08:00-12:00</td>
+              <td>13:00-17:00</td>
+            </tr>
+            <tr>
+              <td>Freitag</td>
+              <td>08:00-12:00</td>
+              <td>Geschlossen</td>
+            </tr>
+          </tbody>
         </table>
       </AccordionItem>
     </Accordion>
@@ -107,9 +109,9 @@
 </template>
 
 <script setup lang="ts">
-import Accordion from '../components/Accordion.vue'
-import AccordionItem from '../components/AccordionItem.vue'
-import Btn from '../components/Btn.vue'
+import Accordion from '../components/Accordion.vue';
+import AccordionItem from '../components/AccordionItem.vue';
+import Btn from '../components/Btn.vue';
 
 defineProps({
   title: {

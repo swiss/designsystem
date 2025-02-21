@@ -1,5 +1,5 @@
-import remarkGfm from 'remark-gfm'
 import type { StorybookConfig } from '@storybook/vue3-vite'
+import remarkGfm from 'remark-gfm'
 
 const config: StorybookConfig = {
   stories: ['../components/**/*.mdx', '../components/**/*.stories.@(js|ts)'],
@@ -25,6 +25,8 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: [
+    { from: '../public', to: '/' },
+    { from: '../../dist/', to: '/dist' },
     { from: '../../css/foundations/fonts/', to: '/dist/fonts' },
     { from: '../../dist/', to: '/dist' },
   ],
