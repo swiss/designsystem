@@ -1,5 +1,5 @@
 <template>
-  <div class="bg--secondary-600">
+  <div class="footer-information-container">
     <div class="container">
       <div class="footer-information">
         <div class="footer-information__entry">

@@ -39,3 +39,32 @@
     @apply h-full px-4;
   }
 }
+
+.top-bar-navigation-mobile-selector {
+  & label {
+    @apply text-standard-white;
+    @apply text-sm;
+  }
+  @apply h-full py-3 px-4;
+
+  svg {
+    @apply block;
+  }
+
+  .top-bar-navigation-select {
+    & label {
+      @apply text-standard-white;
+    }
+    & select {
+      @apply bg-ui-elements-inputfield-select-footer-select;
+      @apply text-standard-white;
+      @apply border-standard-transparent;
+    }
+    .select__icon {
+      border-color: var(--standard-transparent);
+    }
+    & svg {
+      @apply fill-standard-white;
+    }
+  }
+}

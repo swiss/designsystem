@@ -1,5 +1,5 @@
 <template>
-  <div class="bg--secondary-700">
+  <div class="footer-navigation-container">
     <nav class="container" aria-label="Footer">
       <ul class="footer-navigation">
         <li>

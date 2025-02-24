@@ -233,12 +233,23 @@ export default {
         'divider-50': 'var(--elements-divider-50)',
         'divider-100': 'var(--elements-divider-100)',
         'divider-200': 'var(--elements-divider-200)',
+        'card-header-border': 'var(--elements-card-header-border)',
+        'card-header-background': 'var(--elements-card-header-background)',
         'footer-background-01': 'var(--elements-footer-background-01)',
         'footer-background-02': 'var(--elements-footer-background-02)',
         'footer-text': 'var(--elements-footer-text)',
+        'footer-link': 'var(--elements-footer-link)',
+        'footer-link-hover': 'var(--elements-footer-link-hover)',
+        'footer-link-hover-background':
+          'var(--elements-footer-link-hover-background)',
+        'footer-information-link-hover-text':
+          'var(--elements-footer-information-link-hover-text)',
+        'footer-link-focus': 'var(--elements-footer-link-focus)',
         'navigation-01': 'var(--elements-navigation-01)',
         'navigation-02': 'var(--elements-navigation-02)',
         'navigation-03': 'var(--elements-navigation-03)',
+        'footer-navigation-background-01':
+          'var(--elements-footer-navigation-background-01)',
       },
       gebaerdensprache: {
         accent: 'var(--gebaerdensprache-accent)',
@@ -340,6 +351,7 @@ export default {
             'label-text':
               'var(--ui-elements-inputfield-select-text-label-text)',
             'main-text': 'var(--ui-elements-inputfield-select-text-main-text)',
+            'footer-select': 'var(--ui-elements-footer-select)',
           },
         },
         radiobutton: {
