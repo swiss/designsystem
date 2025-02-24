@@ -55,7 +55,6 @@
         </div>
         <LanguageSwitcher
           v-if="isFreebrand && screenSize <= 1023"
-          type="outline"
         />
         <Burger
           :isOpen="getMobileMenuIsOpen()"

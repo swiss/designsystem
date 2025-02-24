@@ -9,16 +9,16 @@ export default {
       table: {
         type: {
           summary: [
-            'string: white, secondary-50, secondary-100, secondary-500, secondary-600',
+            'string: white, accent-01, accent-02, accent-03, accent-04',
           ],
         },
       },
       options: [
         'white',
-        'secondary-50',
-        'secondary-100',
-        'secondary-500',
-        'secondary-600',
+        'accent-01',
+        'accent-02',
+        'accent-03',
+        'accent-04',
       ],
       control: {
         type: 'select',
@@ -45,6 +45,6 @@ export const Example = {
       },
       caption: 'Image one caption —&nbsp;©&nbsp;Photograph Name',
     },
-    background: 'secondary-50',
+    background: 'accent-01',
   },
 }

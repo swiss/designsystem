@@ -18,11 +18,6 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  variant: {
-    type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => 'outline',
-  },
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
@@ -50,7 +45,6 @@ const props = defineProps({
 
 const legendClasses = computed(() => {
   let base = ''
-  if (props.variant === 'negative') base += `text--negative `
   if (props.size) base += `text--${props.size} `
   if (props.required) base += `text--asterisk `
   return base

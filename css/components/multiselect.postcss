@@ -117,25 +117,6 @@
   --vs-border-color: theme('colors.red.500');
 }
 
-.v-select.input--negative {
-  --vs-dropdown-bg: theme('colors.secondary.600');
-  --vs-dropdown-color: theme('colors.secondary.100');
-  --vs-dropdown-option-color: theme('colors.white');
-
-  --vs-selected-bg: theme('colors.secondary.700');
-  --vs-selected-color: theme('colors.white');
-  --vs-selected-border-color: theme('colors.secondary.300');
-
-  --vs-search-input-color: theme('colors.secondary.100');
-
-  --vs-dropdown-option--active-bg: theme('colors.text.500');
-  --vs-dropdown-option--active-color: theme('colors.white');
-}
-
-.v-select.input--error.input--negative {
-  --vs-border-color: theme('colors.red.300');
-}
-
 /* VUE SELECT DEFAULT CLASSES */
 
 .v-select,
@@ -166,8 +147,7 @@
 .vs__fade-enter-active,
 .vs__fade-leave-active {
   pointer-events: none;
-  transition: opacity var(--vs-transition-duration)
-    var(--vs-transition-timing-function);
+  transition: opacity var(--vs-transition-duration) var(--vs-transition-timing-function);
 }
 
 .vs__fade-enter,
@@ -210,8 +190,8 @@
   appearance: none;
   display: flex;
   padding: 0 0 4px;
-  background: var(--vs-search-input-bg);
-  border: var(--vs-border-width) var(--vs-border-style) var(--vs-border-color);
+  background: var(--ui-elements-inputfield-select-background-main-background);
+  border: var(--vs-border-width) var(--vs-border-style) var(--ui-elements-inputfield-select-stroke-main-stroke);
   border-radius: var(--vs-border-radius);
   white-space: normal;
 }
@@ -248,8 +228,7 @@
 .vs__open-indicator {
   fill: var(--vs-controls-color);
   transform: scale(var(--vs-controls-size));
-  transition: transform var(--vs-transition-duration)
-    var(--vs-transition-timing-function);
+  transition: transform var(--vs-transition-duration) var(--vs-transition-timing-function);
   transition-timing-function: var(--vs-transition-timing-function);
 }
 
@@ -277,7 +256,6 @@
   top: calc(100% - var(--vs-border-width));
   left: 0;
   z-index: var(--vs-dropdown-z-index);
-  padding: 5px 0;
   margin: 0;
   width: 100%;
   max-height: var(--vs-dropdown-max-height);
@@ -289,8 +267,7 @@
   border-radius: 0 0 var(--vs-border-radius) var(--vs-border-radius);
   text-align: left;
   list-style: none;
-  background: var(--vs-dropdown-bg);
-  color: var(--vs-dropdown-color);
+  color: var(--text-main-text);
 }
 
 .vs__no-options {
@@ -305,11 +282,15 @@
   color: var(--vs-dropdown-option-color);
   white-space: nowrap;
   cursor: pointer;
+  background: var(--ui-elements-inputfield-select-background-choose-default-choose-background);
 }
 
 .vs__dropdown-option--highlight {
-  background: var(--vs-dropdown-option--active-bg);
-  color: var(--vs-dropdown-option--active-color);
+  background: var(--ui-elements-inputfield-select-background-choose-hover-choose-background);
+}
+
+.vs__dropdown-option--selected {
+  background: var(--ui-elements-inputfield-select-background-choose-selected-choose-background);
 }
 
 .vs__dropdown-option--deselect {
@@ -318,8 +299,7 @@
 }
 
 .vs__dropdown-option--disabled {
-  background: var(--vs-state-disabled-bg);
-  color: var(--vs-state-disabled-color);
+  color: var(--text-disabled-text);
   cursor: var(--vs-state-disabled-cursor);
 }
 
@@ -327,8 +307,7 @@
   display: flex;
   align-items: center;
   background-color: var(--vs-selected-bg);
-  border: var(--vs-selected-border-width) var(--vs-selected-border-style)
-    var(--vs-selected-border-color);
+  border: var(--vs-selected-border-width) var(--vs-selected-border-style) var(--vs-selected-border-color);
   border-radius: var(--vs-border-radius);
   color: var(--vs-selected-color);
   line-height: var(--vs-line-height);
@@ -379,7 +358,7 @@
 
 .vs__search,
 .vs__search:focus {
-  color: var(--vs-search-input-color);
+  color: var(--text-main-text);
   appearance: none;
   line-height: var(--vs-line-height);
   font-size: var(--vs-font-size);
@@ -424,8 +403,7 @@
   overflow: hidden;
   border: 0.9em solid hsla(0, 0%, 39.2%, 0.1);
   border-left-color: rgba(60, 60, 60, 0.45);
-  transform: translateZ(0)
-    scale(var(--vs-controls--spinner-size, var(--vs-controls-size)));
+  transform: translateZ(0) scale(var(--vs-controls--spinner-size, var(--vs-controls-size)));
   animation: vSelectSpinner 1.1s linear infinite;
   transition: opacity 0.1s;
 }

@@ -5,7 +5,7 @@
       :style="`background-color: ${color} `"
     />
     <div class="storybook-color__text">
-      {{ name }} <br />
+      {{ name }} <br /><br />
       {{ color }}
     </div>
   </div>

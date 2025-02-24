@@ -840,7 +840,7 @@
       <template #body>
         <Card type="default">
           <template #description>
-            <div class="flex flex-wrap gap-6 justify-center">
+            <div class="flex flex-wrap justify-center gap-6">
               <a href="#" class="link" title="Share on Facebook">
                 <SvgIcon size="2xl" icon="Facebook" label="Facebook" />
               </a>
@@ -861,7 +861,6 @@
             <div class="pt-3">
               <Input
                 id="my-id"
-                type="outline"
                 size="base"
                 label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"

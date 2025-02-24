@@ -9,19 +9,34 @@ html {
   @apply font-regular;
 }
 
-#root,
+:root[data-theme='auto'] {
+  *[data-default-theme='light'] {
+    color-scheme: light;
+  }
+
+  *[data-default-theme='dark'] {
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
 #__nuxt,
 #__layout,
 #vue-app,
-#app {
+#storybook-root:not([hidden]),
+#app,
+[data-v-app]:not([hidden])
+> div {
   @apply h-full;
   @apply flex;
   @apply flex-col;
-  > div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 body {
@@ -29,6 +44,7 @@ body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
   @apply transition-transform duration-700;
+  @apply bg-background-main;
 }
 
 .body--mobile-menu-is-open {
@@ -49,6 +65,7 @@ body {
 
 #main-header {
   @apply relative z-30;
+  @apply bg-background-main text-text-new-main;
 }
 
 #main-content {

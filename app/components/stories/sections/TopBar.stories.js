@@ -8,6 +8,7 @@ export default {
       table: { category: 'props' },
     },
   },
+  decorators: [() => ({ template: '<div id="main-content"><story/></div>' })],
 }
 
 export const Example = {
