@@ -26,6 +26,7 @@ export default {
         'indigo',
         'purple',
         'pink',
+        'active',
       ],
       control: { type: 'select' },
     },
@@ -58,6 +59,7 @@ export const ColorsStates = {
       <button class="badge badge--warning">warning</button>
       <button class="badge badge--error">error</button>
       <button class="badge badge--success">success</button>
+      <button class="badge badge--active">active</button>
     `,
   }),
 }
