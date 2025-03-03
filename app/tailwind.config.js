@@ -301,6 +301,10 @@ export default {
             'var(--ui-elements-button-background-cta-disabled)',
           'background-cta-hover':
             'var(--ui-elements-button-background-cta-hover)',
+          'footer-information-newsletter-button-border':
+            'var(--ui-elements-footer-informtion-button-border)',
+          'footer-information-newsletter-button-background':
+            'var(--ui-elements-footer-informtion-button-background)',
         },
         checkbox: {
           'active-background': 'var(--ui-elements-checkbox-active-background)',
@@ -325,10 +329,16 @@ export default {
         inputfield: {
           select: {
             'choose-default-background':
-              'var(--ui-elements-inputfield-select-background-choose-hover-choose-background)',
+              'var(--ui-elements-inputfield-select-background-choose-default-choose-background)',
+            'choose-disabled-background':
+              'var(--ui-elements-inputfield-select-background-choose-disabled-choose-background)',
+            'choose-disabled-color':
+              'var(--ui-elements-inputfield-select-text-choose-disabled-choose-color)',
+            'choose-disabled-text-color':
+              '--ui-elements-inputfield-select-text-choose-disabled-text-color',
+            'selected-background':
+              'var(--ui-elements-inputfield-select-background-selected-background-color)',
             'choose-hover-background':
-              'var(--ui-elements-inputfield-select-background-choose-hover-choose-background)',
-            'choose-selected-background':
               'var(--ui-elements-inputfield-select-background-choose-hover-choose-background)',
             'disabled-background':
               'var(--ui-elements-inputfield-select-background-disabled-background)',
@@ -351,7 +361,7 @@ export default {
             'label-text':
               'var(--ui-elements-inputfield-select-text-label-text)',
             'main-text': 'var(--ui-elements-inputfield-select-text-main-text)',
-            'footer-select': 'var(--ui-elements-footer-select)',
+            'footer-select': 'var(--ui-elements-footer-select-background)',
           },
         },
         radiobutton: {
