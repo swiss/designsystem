@@ -224,12 +224,12 @@ export default {
         'accent-04': 'var(--background-accent-04)',
         modal: 'var(--background-background-modal)',
         main: 'var(--background-main)',
+        breadcrumb: 'var(--background-breadcrumb)',
       },
       elements: {
         color: '#ffffff',
         'card-01': 'var(--elements-card-card-01)',
         'card-hover': 'var(--elements-card-hover)',
-        'card-shadow': 'var(--elements-card-shadow)',
         'divider-50': 'var(--elements-divider-50)',
         'divider-100': 'var(--elements-divider-100)',
         'divider-200': 'var(--elements-divider-200)',
@@ -264,14 +264,6 @@ export default {
       logo: {
         'logo-red': 'var(--logo-logo-red)',
         'logo-white': 'var(--logo-logo-white)',
-      },
-      shadow: {
-        'color-2xl': 'var(--shadow-2xl-color)',
-        'color-base': 'var(--shadow-base-color)',
-        'color-lg': 'var(--shadow-lg-color)',
-        'color-md': 'var(--shadow-md-color)',
-        'color-sm': 'var(--shadow-sm-color)',
-        'color-xl': 'var(--shadow-xl-color)',
       },
       states: {
         'error-bg': 'var(--states-error-error-bg)',
@@ -420,14 +412,14 @@ export default {
       'bold-italic': ['Font-Bold-Italic', 'Hind', 'Fallback-font'],
     },
     boxShadow: {
-      sm: 'var(--shadow-sm-x, 0px) var(--shadow-sm-y, 1px) var(--shadow-sm-blur, 2px) var(--shadow-sm-spread, 0px) var(--shadow-sm-color, rgba(17, 24, 39, 0.12))',
+      sm: '0px 1px 2px 0px rgba(0,0,0,0.05)',
       DEFAULT:
-        'var(--shadow-base-x, 0px) var(--shadow-base-y, 1px) var(--shadow-base-blur, 2px) var(--shadow-base-spread, 0px) var(--shadow-base-color, rgba(17, 24, 39, 0.12))',
-      md: 'var(--shadow-mg-x, 0px) var(--shadow-mg-y, 2px) var(--shadow-mg-blur, 4px) var(--shadow-mg-spread, -1px) var(--shadow-mg-color, rgba(17, 24, 39, 0.12))',
-      lg: 'var(--shadow-lg-x, 0px) var(--shadow-lg-y, 2px) var(--shadow-lg-blur, 16px) var(--shadow-lg-spread, -1px) var(--shadow-lg-color, rgba(17, 24, 39, 0.12));',
-      xl: 'var(--shadow-xl-x, 0px) var(--shadow-xl-y, 6px) var(--shadow-xl-blur, 10px) var(--shadow-xl-spread, -5px) var(--shadow-lg-color, rgba(17, 24, 39, 0.12))',
+        '0px 1px 2px 0px rgba(0,0,0,0.06), 0px 1px 5px 0px rgba(0,0,0,0.08)',
+      md: '0px 2px 4px -1px rgba(0,0,0,0.06), 0px 4px 10px -1px rgba(0,0,0,0.08)',
+      lg: '0px 2px 6px -1px rgba(0,0,0,0.06), 0px 5px 20px -3px rgba(0,0,0,0.08)',
+      xl: '0px 6px 10px -5px rgba(0,0,0,0.06), 0px 15px 25px -3px rgba(0,0,0,0.09)',
       '2xl':
-        'var(--shadow-2xl-x, 0px) var(--shadow-2xl-y, 10px) var(--shadow-2xl-blur, 14px) var(--shadow-2xl-spread, 0px) var(--shadow-2xl-color, rgba(17, 24, 39, 0.16))',
+        '0px 10px 20px 0px rgba(0,0,0,0.06), 1px 10px 70px -8px rgba(0,0,0,0.13)',
       none: '0 0 0 0 rgba(0,0,0,0)',
       focus: '0 0 0 3px var(--purple-500, #8655f6)',
     },

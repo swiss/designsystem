@@ -27,7 +27,7 @@
     @apply hover:text-action-main leading-tight transition-colors;
 
     &.clicked {
-      @apply bg-background-main shadow-2xl;
+      @apply bg-background-breadcrumb shadow-2xl;
       @apply relative z-50;
       clip-path: inset(-50px -50px 0 -50px); /* crop shadow at the bottom */
     }
@@ -93,7 +93,7 @@
 .breadcrumb ul ul {
   @apply w-[300px] p-2 mt-px;
   @apply absolute z-10 top-[3rem] left-0;
-  @apply bg-background-main shadow-2xl;
+  @apply bg-background-breadcrumb shadow-2xl;
 
   li a {
     @apply menu__item menu__item--mini;
