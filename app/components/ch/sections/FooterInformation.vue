@@ -42,6 +42,7 @@
             icon="ArrowRight"
             icon-pos="right"
             variant="outline"
+            class="footer-information-newsletter--button"
           />
         </div>
         <div class="footer-information__entry footer-information__entry--big">
