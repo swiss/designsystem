@@ -27,16 +27,19 @@ html {
   color-scheme: dark;
 }
 
+#root,
 #__nuxt,
 #__layout,
 #vue-app,
-#storybook-root:not([hidden]),
-#app,
-[data-v-app]:not([hidden])
-> div {
+#app {
   @apply h-full;
   @apply flex;
   @apply flex-col;
+  > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 body {
