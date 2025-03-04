@@ -53,11 +53,11 @@
             <figure class="ratio ratio--1/1 bg--accent-01">
               <picture class="p-8">
                 <source
-                  srcset="/images/publication-cover.png"
+                  srcset="../../../public/images/publication-cover.png"
                   media="(min-width: 800px)"
                 />
                 <img
-                  src="/images/publication-cover.png"
+                  src="../../../public/images/publication-cover.png"
                   alt="publication cover"
                   class="h-full m-auto shadow-xl"
                 />
@@ -72,31 +72,31 @@
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Deutsch'"
-                      :url="'../../../public/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="Deutsch"
+                      url="../../../public/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                     />
                   </li>
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Französisch'"
-                      :url="'../../../public/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="Französisch"
+                      url="../../../public/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                     />
                   </li>
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'English'"
-                      :url="'../../../public/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="English"
+                      url="../../../public/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                       class="pb-0 border-b-0"
                     />
                   </li>
@@ -227,31 +227,31 @@
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Deutsch'"
-                      :url="'../../../public/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="Deutsch"
+                      url="../../../public/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                     />
                   </li>
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Französisch'"
-                      :url="'../../../public/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="Französisch"
+                      url="../../../public/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                     />
                   </li>
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'English'"
-                      :url="'../../../public/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="English"
+                      url="../../../public/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                       class="pb-0 border-b-0"
                     />
                   </li>

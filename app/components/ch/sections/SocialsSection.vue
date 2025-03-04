@@ -294,7 +294,7 @@
                     </p>
                   </div>
                 </blockquote>
-                <!-- <script async src="//www.instagram.com/embed.js"></script> -->
+                <!-- <script async src="https://www.instagram.com/embed.js"></script> -->
               </div>
               <div
                 v-else-if="feed.type == 'facebook'"

@@ -169,22 +169,22 @@
                   <li>
                     <DownloadItem
                       headingLevel="h3"
-                      :filename="'dummy.pdf'"
+                      filename="dummy.pdf"
                       title="Programm"
-                      :url="'../../../public/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'22.01.2022'"
+                      url="../../../public/documents/dummy.pdf"
+                      type="PDF"
+                      date="22.01.2022"
                     />
                   </li>
                   <li>
                     <DownloadItem
                       headingLevel="h3"
-                      :filename="'image.png'"
+                      filename="image.png"
                       title="Handouts"
                       description=""
-                      :url="'../../../public/images/html-structure.png'"
-                      :type="'PNG'"
-                      :date="'22.01.2022'"
+                      url="../../../public/images/html-structure.png"
+                      type="PNG"
+                      date="22.01.2022"
                     />
                   </li>
                 </ul>
