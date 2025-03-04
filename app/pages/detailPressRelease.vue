@@ -163,7 +163,7 @@
                   filename="dummy.pdf"
                   title="Information on the usage of websites"
                   description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
-                  url="../../../public/documents/dummy.pdf"
+                  url="/documents/dummy.pdf"
                   type="PDF"
                   date="22.01.2022"
                 />
@@ -174,7 +174,7 @@
                   filename="image.png"
                   title="Information on the usage of websites"
                   description=""
-                  url="../../../public/images/html-structure.png"
+                  url="/images/html-structure.png"
                   type="PNG"
                   date="22.01.2022"
                 />

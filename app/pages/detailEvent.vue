@@ -171,7 +171,7 @@
                       headingLevel="h3"
                       filename="dummy.pdf"
                       title="Programm"
-                      url="../../../public/documents/dummy.pdf"
+                      url="/documents/dummy.pdf"
                       type="PDF"
                       date="22.01.2022"
                     />
@@ -182,7 +182,7 @@
                       filename="image.png"
                       title="Handouts"
                       description=""
-                      url="../../../public/images/html-structure.png"
+                      url="/images/html-structure.png"
                       type="PNG"
                       date="22.01.2022"
                     />

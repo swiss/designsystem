@@ -35,7 +35,7 @@
                       <ShoppingCard
                         type="edit"
                         :image="{
-                          src: '../../../public/images/publication-cover.png',
+                          src: 'images/publication-cover.png',
                           alt: 'publication-cover',
                         }"
                         context="mobile"
@@ -80,7 +80,7 @@
                       <ShoppingCard
                         type="edit"
                         :image="{
-                          src: '../../../public/images/publication-cover.png',
+                          src: '/images/publication-cover.png',
                           alt: 'publication-cover',
                         }"
                         title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
@@ -677,7 +677,7 @@
                     <ShoppingCard
                       type="view"
                       :image="{
-                        src: '../../../public/images/publication-cover.png',
+                        src: '/images/publication-cover.png',
                         alt: 'publication-cover',
                       }"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
@@ -703,7 +703,7 @@
                     <ShoppingCard
                       type="view"
                       :image="{
-                        src: '../../../public/images/publication-cover.png',
+                        src: '/images/publication-cover.png',
                         alt: 'publication-cover',
                       }"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"

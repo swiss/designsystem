@@ -53,11 +53,11 @@
             <figure class="ratio ratio--1/1 bg--accent-01">
               <picture class="p-8">
                 <source
-                  srcset="../../../public/images/publication-cover.png"
+                  srcset="/images/publication-cover.png"
                   media="(min-width: 800px)"
                 />
                 <img
-                  src="../../../public/images/publication-cover.png"
+                  src="/images/publication-cover.png"
                   alt="publication cover"
                   class="h-full m-auto shadow-xl"
                 />
@@ -74,7 +74,7 @@
                       headingLevel="h2"
                       filename="dummy.pdf"
                       title="Deutsch"
-                      url="../../../public/documents/dummy.pdf"
+                      url="/documents/dummy.pdf"
                       type="PDF"
                       date="524 kB"
                     />
@@ -84,7 +84,7 @@
                       headingLevel="h2"
                       filename="dummy.pdf"
                       title="Französisch"
-                      url="../../../public/documents/dummy.pdf"
+                      url="/documents/dummy.pdf"
                       type="PDF"
                       date="524 kB"
                     />
@@ -94,7 +94,7 @@
                       headingLevel="h2"
                       filename="dummy.pdf"
                       title="English"
-                      url="../../../public/documents/dummy.pdf"
+                      url="/documents/dummy.pdf"
                       type="PDF"
                       date="524 kB"
                       class="pb-0 border-b-0"
@@ -229,7 +229,7 @@
                       headingLevel="h2"
                       filename="dummy.pdf"
                       title="Deutsch"
-                      url="../../../public/documents/dummy.pdf"
+                      url="/documents/dummy.pdf"
                       type="PDF"
                       date="524 kB"
                     />
@@ -239,7 +239,7 @@
                       headingLevel="h2"
                       filename="dummy.pdf"
                       title="Französisch"
-                      url="../../../public/documents/dummy.pdf"
+                      url="/documents/dummy.pdf"
                       type="PDF"
                       date="524 kB"
                     />
@@ -249,7 +249,7 @@
                       headingLevel="h2"
                       filename="dummy.pdf"
                       title="English"
-                      url="../../../public/documents/dummy.pdf"
+                      url="/documents/dummy.pdf"
                       type="PDF"
                       date="524 kB"
                       class="pb-0 border-b-0"

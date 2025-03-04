@@ -235,6 +235,33 @@ export default {
         'divider-200': 'var(--elements-divider-200)',
         'card-header-border': 'var(--elements-card-header-border)',
         'card-header-background': 'var(--elements-card-header-background)',
+        'top-bar-background': 'var(--elements-top-bar-background)',
+        'top-bar-background-open': 'var(--elements-top-bar-background-open)',
+        'top-bar-background-easy-language':
+          'var(--elements-top-bar-background-easy-language)',
+        'top-bar-background-sign-language':
+          'var(--elements-top-bar-background-sign-language)',
+        'top-bar-drawer-background':
+          'var(--elements-top-bar-drawer-background)',
+        'top-bar-drawer-localization-link':
+          'var(--elements-top-bar-drawer-localization-link)',
+        'top-bar-drawer-localization-link-border':
+          'var(--elements-top-bar-drawer-localization-link-border)',
+        'top-bar-button-background':
+          'var(--elements-top-bar-button-background)',
+        'top-bar-button-hover-text':
+          'var(--elements-top-bar-button-hover-text)',
+        'top-bar-button-focus-text':
+          'var(--elements-top-bar-button-focus-text)',
+        'top-bar-badge-icon': 'var(--elements-top-bar-badge-icon)',
+        'top-header-easy-language-icon-background':
+          'var(--elements-top-header-easy-language-icon-background)',
+        'top-header-sign-language-icon-background':
+          'var(--elements-top-header-sign-language-icon-background)',
+        'top-header-easy-language-icon':
+          'var(--elements-top-header-easy-language-icon)',
+        'top-header-sign-language-icon':
+          'var(--elements-top-header-sign-language-icon)',
         'footer-background-01': 'var(--elements-footer-background-01)',
         'footer-background-02': 'var(--elements-footer-background-02)',
         'footer-text': 'var(--elements-footer-text)',
@@ -250,6 +277,10 @@ export default {
         'navigation-03': 'var(--elements-navigation-03)',
         'footer-navigation-background-01':
           'var(--elements-footer-navigation-background-01)',
+        'navigation-top-bar-hover-text':
+          'var(--elements-navigation-top-bar-mobile-hover-text)',
+        'navigation-top-bar-focus-text':
+          'var(--elements-navigation-top-bar-mobile-focus-text)',
       },
       gebaerdensprache: {
         accent: 'var(--gebaerdensprache-accent)',
