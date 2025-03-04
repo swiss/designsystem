@@ -4,14 +4,14 @@
 
 .top-header {
   @apply py-3 md:py-4 lg:py-6 xl:py-8 3xl:py-10;
-  @apply bg-white;
   @apply text-sm 3xl:text-base;
-  @apply border-b;
+  @apply border-b border-elements-divider-50;
   @apply relative;
+  @apply bg-background-main text-ui-elements-inputfield-select-main-text;
 }
 
 .top-header__mobile-title {
-  @apply bg-secondary-100 xs:hidden;
+  @apply bg-background-accent-01 xs:hidden;
   @apply text-xs;
   @apply relative -top-3;
   @apply overflow-hidden;
@@ -75,15 +75,15 @@
 }
 
 .icon-easy-language {
-  @apply bg-green-100;
+  @apply bg-elements-top-header-easy-language-icon-background;
   svg {
-    @apply text-green-800;
+    @apply text-elements-top-header-easy-language-icon;
   }
 }
 
 .icon-sign-language {
-  @apply bg-indigo-100;
+  @apply bg-elements-top-header-sign-language-icon-background;
   svg {
-    @apply text-indigo-900;
+    @apply text-elements-top-header-sign-language-icon;
   }
 }

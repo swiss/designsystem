@@ -10,9 +10,24 @@
         <a href="#">
           <span>Anmelden</span>
         </a>
+      </li>
+      <li>
         <a href="#">
           <span>Informationsportal der Schweizer Behörden</span>
         </a>
+      </li>
+      <li class="top-bar-navigation-mobile-selector">
+        <Select
+          class="top-bar-navigation-select"
+          :required="false"
+          size="base"
+          label="Darstellung"
+          :on-select="handleSelect"
+        >
+          <option selected value="auto">Automatisch</option>
+          <option value="dark">Darkmode</option>
+          <option value="light">Lightmode</option>
+        </Select>
       </li>
     </ul>
   </nav>
@@ -41,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+import Select from '../components/Select.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 
 defineProps({
@@ -53,4 +69,8 @@ defineProps({
     default: () => undefined,
   },
 })
+
+const handleSelect = function (e: string) {
+  document.querySelector('html')?.setAttribute('data-theme', e)
+}
 </script>

@@ -12,6 +12,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const videoFile = ref('../../../public/videos/demo.mp4')
-const vttFile = ref('../../../public/videos/demo.vtt')
+const videoFile = ref('/videos/demo.mp4')
+const vttFile = ref('/videos/demo.vtt')
 </script>

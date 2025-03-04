@@ -7,14 +7,10 @@ export default {
   argTypes: {
     variant: {
       table: {
-        type: {
-          summary: ['string: default, compact'],
-        },
+        type: { summary: ['string: default, compact'] },
       },
       options: ['default', 'compact'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
   },
 }

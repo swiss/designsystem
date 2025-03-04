@@ -57,86 +57,32 @@
 
   /* VUE SELECT CUSTOM/OVERRIDEN VARS */
 
+  --vs-search-input-color: theme('colors.text-new.main')
+
   --vs-font-size: inherit;
   --vs-line-height: 1.375;
-  --vs-search-input-placeholder-color: theme('colors.text.400');
+  --vs-search-input-placeholder-color: theme('colors.action.secondary');
   --vs-search-input-bg: inherit;
-  --vs-border-color: theme('colors.text.500');
+  --vs-border-color: theme('colors.ui-elements.inputfield.select.main-stroke');
   --vs-border-radius: 0px;
   --vs-actions-padding: 4px 3em 0 3px;
-  --vs-selected-bg: theme('colors.text.200');
+
+  --vs-selected-bg: theme('colors.ui-elements.inputfield.select.selected-background');
   --vs-selected-border-color: transparent;
 
-  --vs-dropdown-option--active-bg: theme('colors.text.600');
-  --vs-dropdown-option--active-color: theme('colors.white');
+  --vs-dropdown-bg: theme('colors.ui-elements.inputfield.select.choose-default-background')
 
-  --vs-state-disabled-bg: theme('colors.text.50');
-  --vs-state-disabled-color: theme('colors.text.400');
-  --vs-state-disabled-controls-color: theme('colors.text.400');
+  --vs-state-disabled-bg: theme('colors.ui-elements.inputfield.select.choose-disabled-background');
+  --vs-state-disabled-color: theme('colors.ui-elements.inputfield.select.choose-disabled-color');
+  --vs-state-disabled-controls-color: theme('colors.ui-elements.inputfield.select.choose-disabled-text-color');
 }
 
 /* VUE SELECT CUSTOM/OVERRIDEN CLASSES */
 
-.v-select input,
-.v-select .vs__selected {
-  --vs-input-min-height: calc(var(--input-min-height) - 10px);
-  --vs-input-min-height-2xl: calc(var(--input-min-height-2xl) - 8px);
-  @apply min-h-[var(--vs-input-min-height)] 2xl:min-h-[var(--vs-input-min-height-2xl)];
+.v-select {
+  position: relative;
+  font-family: inherit;
 }
-
-.v-select.input--lg input,
-.v-select.input--lg .vs__selected {
-  --vs-input-min-height: calc(var(--input-min-height) - 6px);
-  --vs-input-min-height-2xl: calc(var(--input-min-height-2xl) - 6px);
-}
-
-.v-select .vs__selected {
-  @apply px-3 py-1 rounded-full;
-}
-.v-select .vs__selected-options {
-  @apply pl-2;
-}
-
-.v-select .vs__deselect {
-  @apply block w-5 h-full text-right hover:text-red-600;
-}
-
-.v-select.vs--multiple .vs__selected-options:has(.vs__selected) {
-  @apply pl-[2px];
-}
-
-.v-select .vs__dropdown-option {
-  @apply whitespace-normal;
-}
-
-.v-select .vs__dropdown-option--selected::after {
-  @apply content-['✔'] relative ml-2;
-}
-
-.v-select.input--error {
-  --vs-border-color: theme('colors.red.500');
-}
-
-.v-select.input--negative {
-  --vs-dropdown-bg: theme('colors.secondary.600');
-  --vs-dropdown-color: theme('colors.secondary.100');
-  --vs-dropdown-option-color: theme('colors.white');
-
-  --vs-selected-bg: theme('colors.secondary.700');
-  --vs-selected-color: theme('colors.white');
-  --vs-selected-border-color: theme('colors.secondary.300');
-
-  --vs-search-input-color: theme('colors.secondary.100');
-
-  --vs-dropdown-option--active-bg: theme('colors.text.500');
-  --vs-dropdown-option--active-color: theme('colors.white');
-}
-
-.v-select.input--error.input--negative {
-  --vs-border-color: theme('colors.red.300');
-}
-
-/* VUE SELECT DEFAULT CLASSES */
 
 .v-select,
 .v-select * {
@@ -145,29 +91,26 @@
 
 @-webkit-keyframes vSelectSpinner {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
-
   to {
-    transform: rotate(1turn);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes vSelectSpinner {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
-
   to {
-    transform: rotate(1turn);
+    transform: rotate(360deg);
   }
 }
 
 .vs__fade-enter-active,
 .vs__fade-leave-active {
   pointer-events: none;
-  transition: opacity var(--vs-transition-duration)
-    var(--vs-transition-timing-function);
+  transition: opacity var(--vs-transition-duration) var(--vs-transition-timing-function);
 }
 
 .vs__fade-enter,
@@ -175,42 +118,40 @@
   opacity: 0;
 }
 
-.vs--disabled {
-  .vs__clear,
-  .vs__dropdown-toggle,
-  .vs__open-indicator,
-  .vs__search,
-  .vs__selected {
-    cursor: var(--vs-disabled-cursor);
-    background-color: var(--vs-disabled-bg);
-  }
+.vs--disabled .vs__dropdown-toggle,
+.vs--disabled .vs__clear,
+.vs--disabled .vs__search,
+.vs--disabled .vs__selected,
+.vs--disabled .vs__open-indicator {
+  cursor: var(--vs-disabled-cursor);
+  background-color: var(--vs-disabled-bg);
 }
 
-.v-select[dir='rtl'] {
-  .vs__actions {
-    padding: 0 3px 0 6px;
-  }
+.v-select[dir='rtl'] .vs__actions {
+  padding: 0 3px 0 6px;
+}
 
-  .vs__clear {
-    margin-left: 6px;
-    margin-right: 0;
-  }
+.v-select[dir='rtl'] .vs__clear {
+  margin-left: 6px;
+  margin-right: 0;
+}
 
-  .vs__deselect {
-    margin-left: 0;
-    margin-right: 2px;
-  }
+.v-select[dir='rtl'] .vs__deselect {
+  margin-left: 0;
+  margin-right: 2px;
+}
 
-  .vs__dropdown-menu {
-    text-align: right;
-  }
+.v-select[dir='rtl'] .vs__dropdown-menu {
+  text-align: right;
 }
 
 .vs__dropdown-toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   display: flex;
   padding: 0 0 4px;
-  background: var(--vs-search-input-bg);
+  background: none;
   border: var(--vs-border-width) var(--vs-border-style) var(--vs-border-color);
   border-radius: var(--vs-border-radius);
   white-space: normal;
@@ -248,8 +189,7 @@
 .vs__open-indicator {
   fill: var(--vs-controls-color);
   transform: scale(var(--vs-controls-size));
-  transition: transform var(--vs-transition-duration)
-    var(--vs-transition-timing-function);
+  transition: transform var(--vs-transition-duration) var(--vs-transition-timing-function);
   transition-timing-function: var(--vs-transition-timing-function);
 }
 
@@ -327,8 +267,7 @@
   display: flex;
   align-items: center;
   background-color: var(--vs-selected-bg);
-  border: var(--vs-selected-border-width) var(--vs-selected-border-style)
-    var(--vs-selected-border-color);
+  border: var(--vs-selected-border-width) var(--vs-selected-border-style) var(--vs-selected-border-color);
   border-radius: var(--vs-border-radius);
   color: var(--vs-selected-color);
   line-height: var(--vs-line-height);
@@ -339,6 +278,8 @@
 
 .vs__deselect {
   display: inline-flex;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   margin-left: 4px;
   padding: 0;
@@ -349,37 +290,37 @@
   text-shadow: var(--vs-controls--deselect-text-shadow);
 }
 
-.vs--single {
-  .vs__selected {
-    background-color: transparent;
-    border-color: transparent;
-  }
+.vs--single .vs__selected {
+  background-color: transparent;
+  border-color: transparent;
+}
 
-  &.vs--loading .vs__selected,
-  &.vs--open .vs__selected {
-    position: absolute;
-    opacity: 0.4;
-  }
+.vs--single.vs--open .vs__selected,
+.vs--single.vs--loading .vs__selected {
+  position: absolute;
+  opacity: 0.4;
+}
 
-  &.vs--searching .vs__selected {
-    display: none;
-  }
+.vs--single.vs--searching .vs__selected {
+  display: none;
 }
 
 .vs__search::-webkit-search-cancel-button {
   display: none;
 }
 
-.vs__search::-ms-clear,
 .vs__search::-webkit-search-decoration,
 .vs__search::-webkit-search-results-button,
-.vs__search::-webkit-search-results-decoration {
+.vs__search::-webkit-search-results-decoration,
+.vs__search::-ms-clear {
   display: none;
 }
 
 .vs__search,
 .vs__search:focus {
   color: var(--vs-search-input-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   line-height: var(--vs-line-height);
   font-size: var(--vs-font-size);
@@ -396,24 +337,24 @@
   z-index: 1;
 }
 
+.vs__search::-moz-placeholder {
+  color: var(--vs-search-input-placeholder-color);
+}
+
 .vs__search::placeholder {
   color: var(--vs-search-input-placeholder-color);
 }
 
-.vs--unsearchable {
-  .vs__search {
-    opacity: 1;
-  }
-
-  &:not(.vs--disabled) .vs__search {
-    cursor: pointer;
-  }
+.vs--unsearchable .vs__search {
+  opacity: 1;
 }
 
-.vs--single.vs--searching:not(.vs--open):not(.vs--loading) {
-  .vs__search {
-    opacity: 0.2;
-  }
+.vs--unsearchable:not(.vs--disabled) .vs__search {
+  cursor: pointer;
+}
+
+.vs--single.vs--searching:not(.vs--open):not(.vs--loading) .vs__search {
+  opacity: 0.2;
 }
 
 .vs__spinner {
@@ -422,11 +363,13 @@
   font-size: 5px;
   text-indent: -9999em;
   overflow: hidden;
-  border: 0.9em solid hsla(0, 0%, 39.2%, 0.1);
-  border-left-color: rgba(60, 60, 60, 0.45);
-  transform: translateZ(0)
-    scale(var(--vs-controls--spinner-size, var(--vs-controls-size)));
-  animation: vSelectSpinner 1.1s linear infinite;
+  border-top: 0.9em solid rgba(100, 100, 100, 0.1);
+  border-right: 0.9em solid rgba(100, 100, 100, 0.1);
+  border-bottom: 0.9em solid rgba(100, 100, 100, 0.1);
+  border-left: 0.9em solid rgba(60, 60, 60, 0.45);
+  transform: translateZ(0) scale(var(--vs-controls--spinner-size, var(--vs-controls-size)));
+  -webkit-animation: vSelectSpinner 1.1s infinite linear;
+  animation: vSelectSpinner 1.1s infinite linear;
   transition: opacity 0.1s;
 }
 

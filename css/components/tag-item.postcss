@@ -50,11 +50,11 @@
 .tag-item,
 .tag-item--default {
   .tag-item__inner {
-    @apply bg-gray-200;
+    @apply bg-ui-elements-tag-background-default;
   }
 
   &:hover .tag-item__inner {
-    @apply bg-gray-300;
+    @apply bg-ui-elements-tag-background-hover;
   }
 }
 
@@ -62,17 +62,17 @@
   @apply pointer-events-none;
 
   .tag-item__inner {
-    @apply text-white bg-gray-800;
+    @apply text-white bg-ui-elements-tag-background-active text-text-new-contrast;
   }
 }
 
 .tag-item--primary {
   .tag-item__inner {
-    @apply text-white bg-gray-800;
+    @apply text-white bg-ui-elements-tag-background-active text-text-new-contrast;
   }
 
   &:hover .tag-item__inner {
-    @apply bg-black;
+    background: light-dark(var(--standard-black), var(--secondary-50));
   }
 }
 

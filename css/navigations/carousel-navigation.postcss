@@ -3,8 +3,8 @@
 \*----------------------------------------*/
 
 .carousel-navigation {
-    @apply h-full;
-    @apply px-3.5;
+  @apply h-full;
+  @apply px-3.5;
 
   .carousel {
     @apply relative;
@@ -17,7 +17,7 @@
     }
 
     li > a {
-      @apply hover:text-primary-600 leading-tight;
+      @apply hover:text-action-main leading-tight;
       @apply whitespace-nowrap;
       @apply transition-all;
 
@@ -31,9 +31,9 @@
 
       &.active::after,
       &:hover::after {
-        @apply bg-primary-500;
+        @apply bg-action-darkmode-main-red;
       }
-      
+
       &:focus-visible {
         @apply ring-inset;
       }
@@ -47,7 +47,7 @@
 
   .carousel__prev,
   .carousel__next {
-    @apply text-primary-600;
+    @apply text-action-main;
 
     &[disabled] {
       @apply hidden;
@@ -67,7 +67,7 @@
     @apply order-1;
     @apply absolute z-10;
     @apply -translate-x-full;
-    @apply bg-gradient-to-r via-white from-white;
+    @apply bg-gradient-to-r via-background-main from-background-main;
     @apply top-2 bottom-0 left-10;
     @apply w-10 h-10;
   }
@@ -76,7 +76,7 @@
     @apply order-3;
     @apply absolute z-10;
     @apply translate-x-full;
-    @apply bg-gradient-to-l via-white from-white;
+    @apply bg-gradient-to-l via-background-main from-background-main;
     @apply top-2 bottom-0 right-10;
     @apply w-10 h-10;
   }

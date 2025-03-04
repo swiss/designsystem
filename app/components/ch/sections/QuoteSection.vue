@@ -32,12 +32,12 @@ const props = defineProps({
     validator: (prop) =>
       [
         'white',
-        'secondary-50',
-        'secondary-100',
-        'secondary-500',
-        'secondary-600',
+        'accent-01',
+        'accent-02',
+        'accent-03',
+        'accent-04',
       ].includes(prop as string),
-    default: () => 'secondary-50',
+    default: () => 'accent-01',
   },
   quote: {
     type: String,

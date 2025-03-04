@@ -35,11 +35,6 @@
 import { computed, type PropType } from 'vue'
 
 const props = defineProps({
-  variant: {
-    type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => 'outline',
-  },
   bare: {
     type: Boolean,
     default: () => false,
@@ -95,7 +90,6 @@ const selectWrapperClasses = computed(() => {
 
 const selectClasses = computed(() => {
   let base = ''
-  if (props.variant) base += `input--${props.variant} `
   if (props.size) base += `input--${props.size} `
   if (props.message) base += `input--${props.messageType} `
   return base
@@ -103,7 +97,6 @@ const selectClasses = computed(() => {
 
 const labelClasses = computed(() => {
   let base = ''
-  if (props.variant === 'negative') base += `text--negative `
   if (props.size) base += `text--${props.size} `
   if (props.hideLabel) base += `sr-only `
   if (props.required) base += `text--asterisk `
