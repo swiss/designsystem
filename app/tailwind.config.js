@@ -81,7 +81,7 @@ export default {
         600: 'var(--text-600)',
         700: 'var(--text-700)',
         800: 'var(--text-800)',
-        900: '#111827', // 'var(--text-900)',
+        900: 'var(--text-900)',
       },
       blue: {
         50: 'var(--blue-50)',
@@ -284,6 +284,7 @@ export default {
         main: 'var(--text-main-text)',
         quote: 'var(--text-quote-text)',
         selected: 'var(--text-selected-text)',
+        'highlight-text': 'var(--text-highlight-text)',
       },
       'ui-elements': {
         button: {

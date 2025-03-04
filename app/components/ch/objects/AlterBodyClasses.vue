@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/valid-template-root -->
+<template></template>
 <script setup lang="ts">
 import { watch, onMounted, onUnmounted } from 'vue'
 import { useLayoutStore } from '../../../store/layout'
