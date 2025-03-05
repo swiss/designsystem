@@ -206,12 +206,9 @@ export default {
 
       // New color tokens
       action: {
-        'background-cta-default': 'var(--action-background-cta-default)',
-        'background-cta-disabled': 'var(--action-background-cta-disabled)',
         'darkmode-hover-red': 'var(--primary-700)',
         'darkmode-main-red': 'var(--primary-600)',
         disabled: 'var(--action-disabled)',
-        focus: 'var(--action-focus)',
         'hover-main': 'var(--action-hover-main)',
         'hover-secondary': 'var(--action-hover-secondary)',
         main: 'var(--action-main)',
@@ -229,7 +226,6 @@ export default {
       elements: {
         color: '#ffffff',
         'card-01': 'var(--elements-card-card-01)',
-        'card-hover': 'var(--elements-card-hover)',
         'divider-50': 'var(--elements-divider-50)',
         'divider-100': 'var(--elements-divider-100)',
         'divider-200': 'var(--elements-divider-200)',
@@ -263,7 +259,6 @@ export default {
         'top-header-sign-language-icon':
           'var(--elements-top-header-sign-language-icon)',
         'footer-background-01': 'var(--elements-footer-background-01)',
-        'footer-background-02': 'var(--elements-footer-background-02)',
         'footer-text': 'var(--elements-footer-text)',
         'footer-link': 'var(--elements-footer-link)',
         'footer-link-hover': 'var(--elements-footer-link-hover)',
@@ -274,7 +269,6 @@ export default {
         'footer-link-focus': 'var(--elements-footer-link-focus)',
         'navigation-01': 'var(--elements-navigation-01)',
         'navigation-02': 'var(--elements-navigation-02)',
-        'navigation-03': 'var(--elements-navigation-03)',
         'footer-navigation-background-01':
           'var(--elements-footer-navigation-background-01)',
         'navigation-top-bar-hover-text':
@@ -282,31 +276,19 @@ export default {
         'navigation-top-bar-focus-text':
           'var(--elements-navigation-top-bar-mobile-focus-text)',
       },
-      gebaerdensprache: {
-        accent: 'var(--gebaerdensprache-accent)',
-        main: 'var(--gebaerdensprache-main)',
-        text: 'var(--gebaerdensprache-text)',
-      },
-      leichtesprache: {
-        accent: 'var(--leichtesprache-accent)',
-        main: 'var(--leichtesprache-main)',
-        text: 'var(--leichtesprache-text)',
-      },
-      logo: {
-        'logo-red': 'var(--logo-logo-red)',
-        'logo-white': 'var(--logo-logo-white)',
-      },
       states: {
         'error-bg': 'var(--states-error-error-bg)',
         'error-text': 'var(--states-error-error-text)',
         'information-bg': 'var(--states-information-information-bg)',
         'information-text': 'var(--states-information-information-text)',
-        'neutral-bg': 'var(--states-neutral-neutral-bg)',
-        'neutral-text': 'var(--states-neutral-neutral-text)',
+        'hint-bg': 'var(--states-hint-hint-bg)',
+        'hint-text': 'var(--states-hint-hint-text)',
         'success-bg': 'var(--states-success-success-bg)',
         'success-text': 'var(--states-success-success-text)',
         'warning-bg': 'var(--states-warning-warning-bg)',
         'warning-text': 'var(--states-warning-warning-text)',
+        'alert-bg': 'var(--states-alert-alert-bg)',
+        'alert-text': 'var(--states-alert-alert-text)',
       },
       'text-new': {
         contrast: 'var(--text-contrast-text)',
@@ -332,23 +314,6 @@ export default {
         },
         checkbox: {
           'active-background': 'var(--ui-elements-checkbox-active-background)',
-          checkmark: 'var(--ui-elements-checkbox-checkmark)',
-          'disabled-background':
-            'var(--ui-elements-checkbox-disabled-background)',
-          'disabled-stroke': 'var(--ui-elements-checkbox-disabled-stroke)',
-          'disabled-text': 'var(--ui-elements-checkbox-disabled-text)',
-          'inactive-background':
-            'var(--ui-elements-checkbox-inactive-background)',
-          'main-stroke': 'var(--ui-elements-checkbox-main-stroke)',
-          'main-text': 'var(--ui-elements-checkbox-main-text)',
-        },
-        close: {
-          background: 'var(--ui-elements-close-background)',
-          item: 'var(--ui-elements-close-item)',
-        },
-        indicator: {
-          active: 'var(--ui-elements-indicator-indicator-active)',
-          inactive: 'var(--ui-elements-indicator-indicator-inactive)',
         },
         inputfield: {
           select: {
@@ -362,16 +327,10 @@ export default {
               '--ui-elements-inputfield-select-text-choose-disabled-text-color',
             'selected-background':
               'var(--ui-elements-inputfield-select-background-selected-background-color)',
-            'choose-hover-background':
-              'var(--ui-elements-inputfield-select-background-choose-hover-choose-background)',
             'disabled-background':
               'var(--ui-elements-inputfield-select-background-disabled-background)',
             'default-background':
               'var(--ui-elements-inputfield-select-background-default-background)',
-            'active-indicator':
-              'var(--ui-elements-inputfield-select-indicator-active-indicator)',
-            'disabled-indicator':
-              'var(--ui-elements-inputfield-select-indicator-disabled-indicator)',
             'disabled-stroke':
               'var(--ui-elements-inputfield-select-stroke-disabled-stroke)',
             'error-stroke':
@@ -380,10 +339,6 @@ export default {
               'var(--ui-elements-inputfield-select-stroke-main-stroke)',
             'disabled-text':
               'var(--ui-elements-inputfield-select-text-disabled-text)',
-            'error-text':
-              'var(--ui-elements-inputfield-select-text-error-text)',
-            'label-text':
-              'var(--ui-elements-inputfield-select-text-label-text)',
             'main-text': 'var(--ui-elements-inputfield-select-text-main-text)',
             'footer-select': 'var(--ui-elements-footer-select-background)',
           },
@@ -391,15 +346,12 @@ export default {
         radiobutton: {
           'active-background':
             'var(--ui-elements-radiobutton-active-background)',
-          checkmark: 'var(--ui-elements-radiobutton-checkmark)',
           'disabled-background':
             'var(--ui-elements-radiobutton-disabled-background)',
           'disabled-stroke': 'var(--ui-elements-radiobutton-disabled-stroke)',
-          'disabled-text': 'var(--ui-elements-radiobutton-disabled-text)',
           'inactive-background':
             'var(--ui-elements-radiobutton-inactive-background)',
           'main-stroke': 'var(--ui-elements-radiobutton-main-stroke)',
-          'main-text': 'var(--ui-elements-radiobutton-main-text)',
         },
         tag: {
           'background-active': 'var(--ui-elements-tag-background-active)',
@@ -409,12 +361,6 @@ export default {
           'background-disabled-stroke':
             'var(--ui-elements-tag-background-disabled-stroke)',
           'background-hover': 'var(--ui-elements-tag-background-hover)',
-        },
-        toggle: {
-          'active-background': 'var(--ui-elements-toggle-active-background)',
-          checkmark: 'var(--ui-elements-toggle-checkmark)',
-          'inactive-background-2':
-            'var(--ui-elements-toggle-inactive-background-2)',
         },
       },
     },
