@@ -35,7 +35,7 @@
           Erkenntnisse aus dem International Health Policy Survey 2020
         </template>
       </Hero>
-      <section class="section">
+      <section class="section section--default">
         <div class="container container--grid gap--responsive">
           <div class="container__main vertical-spacing">
             <Notification
@@ -44,7 +44,7 @@
               icon="InfoCircle"
               :closeBtn="false"
             />
-            <figure class="ratio ratio--1/1 bg--secondary-50">
+            <figure class="ratio ratio--1/1 bg--accent-01">
               <picture class="p-8">
                 <source
                   srcset="/images/publication-cover.png"
@@ -66,31 +66,31 @@
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Deutsch'"
-                      :url="'/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="Deutsch"
+                      url="/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                     />
                   </li>
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Französisch'"
-                      :url="'/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="Französisch"
+                      url="/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                     />
                   </li>
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'English'"
-                      :url="'/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="English"
+                      url="/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                       class="pb-0 border-b-0"
                     />
                   </li>
@@ -189,31 +189,31 @@
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Deutsch'"
-                      :url="'/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="Deutsch"
+                      url="/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                     />
                   </li>
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'Französisch'"
-                      :url="'/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="Französisch"
+                      url="/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                     />
                   </li>
                   <li>
                     <DownloadItem
                       headingLevel="h2"
-                      :filename="'dummy.pdf'"
-                      :title="'English'"
-                      :url="'/documents/dummy.pdf'"
-                      :type="'PDF'"
-                      :date="'524 kB'"
+                      filename="dummy.pdf"
+                      title="English"
+                      url="/documents/dummy.pdf"
+                      type="PDF"
+                      date="524 kB"
                       class="pb-0 border-b-0"
                     />
                   </li>

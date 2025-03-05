@@ -18,14 +18,14 @@ After section's content, a `.section__action` wraps a potential link, inviting t
 
 # Dark sections
 
-If you define a dark background (`.bg--secondary-[variant]` where `variant ≥ 500`) the `.section__title` will turn automatically to white. In other contexts, you can force negative color with `.section__title--negative`.
+If you define a dark background (`.bg--secondary-[variant]` where `variant ≥ 500` or `.bg--accent-[variant]` where `variant = 03 || 04`) the `.section__title` will turn automatically to white. In other contexts, you can force negative color with `.section__title--negative`.
 
 <Canvas of={SectionsStories.DarkSections} />
 
 # Paddings for sections
 
 - `.section.section--default` and
-- `.section.bg--secondary-[color-variant]` add top and bottom paddings to the section.
+- `.section.bg--[secondary || accent]-[color-variant]` add top and bottom paddings to the section.
 - consecutive sections with the same background color removes the double spacing automatically.
 - consecutive `.container` elements adds a top padding to the second container.
 

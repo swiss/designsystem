@@ -8,7 +8,7 @@ const TemplateCardArticle = (args) => ({
   components: { Card, Btn, SvgIcon },
   template: `
     <div>
-      <div style="padding: 3em;" class="bg--secondary-50">
+      <div style="padding: 3em;" class="bg--accent-01">
         <div style="max-width: 600px; margin: auto;">
           <Card :type="type">
             <template v-slot:image>
@@ -58,7 +58,7 @@ const TemplateCardEvent = (args) => ({
   components: { Card, Btn, SvgIcon },
   template: `
     <div>
-      <div style="padding: 3em;" class="bg--secondary-50">
+      <div style="padding: 3em;" class="bg--accent-01">
         <div style="max-width: 600px; margin: auto;">
           <Card type="default">
             <template v-slot:image>
@@ -122,7 +122,7 @@ const TemplateCardShare = (args) => ({
   components: { Card, Btn, SvgIcon },
   template: `
     <div>
-      <div style="padding: 3em;" class="bg--secondary-50">
+      <div style="padding: 3em;" class="bg--accent-01">
         <div style="max-width: 600px; margin: auto;">
           <Card>
             <template v-slot:header>

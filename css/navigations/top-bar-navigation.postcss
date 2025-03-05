@@ -17,17 +17,18 @@
   ul {
     @apply flex;
   }
+
   a {
     @apply flex items-center;
     @apply hover:text-text-300 focus:text-text-300;
     @apply h-full px-1 lg:px-2;
     @apply transition-colors;
-  } 
+  }
 }
 
 .top-bar-navigation--mobile {
   @apply flex flex-col pb-12;
-  @apply bg-secondary-500;
+  @apply bg-elements-navigation-02;
 
   svg {
     @apply hidden;
@@ -35,8 +36,35 @@
 
   a {
     @apply flex items-center;
-    @apply hover:text-text-300 focus:text-text-300;
     @apply h-full px-4;
-    @apply transition-colors;
+  }
+}
+
+.top-bar-navigation-mobile-selector {
+  & label {
+    @apply text-white;
+    @apply text-sm;
+  }
+  @apply h-full py-3 px-4;
+
+  svg {
+    @apply block;
+  }
+
+  .top-bar-navigation-select {
+    & label {
+      @apply text-white;
+    }
+    & select {
+      @apply bg-ui-elements-inputfield-select-footer-select;
+      @apply text-white;
+      @apply border-standard-transparent;
+    }
+    .select__icon {
+      border-color: var(--standard-transparent);
+    }
+    & svg {
+      @apply fill-standard-white;
+    }
   }
 }

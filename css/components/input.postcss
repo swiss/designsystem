@@ -3,6 +3,11 @@
   --input-min-height-2xl: 48px;
 }
 
+.label,
+label {
+  @apply text-text-new-main;
+}
+
 .input,
 input,
 textarea,
@@ -10,12 +15,24 @@ select {
   @apply w-full;
   @apply px-4 py-[0.625rem];
   @apply shadow;
-  @apply bg-white border border-text-500;
+  @apply bg-ui-elements-inputfield-select-default-background border border-ui-elements-inputfield-select-main-stroke;
   @apply rounded-xs;
   @apply leading-none;
   @apply min-h-[var(--input-min-height)] 2xl:min-h-[var(--input-min-height-2xl)];
   @apply focus:outline-none;
-  @apply placeholder-secondary-400;
+  @apply text-text-new-main;
+}
+
+option {
+  @apply bg-ui-elements-inputfield-select-default-background;
+  @apply text-ui-elements-inputfield-select-main-text;
+}
+
+.input::placeholder,
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  @apply text-action-secondary;
 }
 
 .input--sm {
@@ -27,19 +44,14 @@ select {
 }
 
 .input--base {
-  @apply leading-6 text--base;
-}
-
-.input--outline {
-  @apply text-text-800;
-  @apply border-text-500;
+  @apply leading-7 text--base;
 }
 
 [disabled],
 .input--disabled {
-  @apply bg-text-50;
-  @apply text-text-400;
-  @apply border-text-300;
+  @apply text-ui-elements-inputfield-select-disabled-text;
+  @apply bg-ui-elements-inputfield-select-disabled-background;
+  @apply border-ui-elements-inputfield-select-disabled-stroke;
   @apply pointer-events-none cursor-not-allowed;
 }
 
@@ -48,31 +60,12 @@ select {
 }
 
 .input--error {
-  @apply text-red-800;
-  @apply border-red-500;
-  @apply placeholder-red-400;
+  @apply border-ui-elements-inputfield-select-error-stroke;
+  @apply placeholder:text-ui-elements-inputfield-select-error-stroke;
 
   & + label {
-    @apply text-red-800 mr-3;
+    @apply mr-3;
   }
-}
-
-.input--negative {
-  @apply text-white;
-  @apply bg-secondary-500;
-  @apply placeholder-secondary-50;
-  @apply border-secondary-300;
-  @apply hover:text-text-300 focus:text-text-300;
-
-  &:disabled,
-  &.input--disabled {
-    @apply bg-secondary-300;
-    @apply text-secondary-200;
-  }
-}
-
-.input--error.input--negative {
-  @apply text-red-200 border-red-300;
 }
 
 /* RADIO AND CHECKBOXES */
@@ -81,6 +74,8 @@ input[type='checkbox'],
 input[type='radio'] {
   @apply h-[0.9rem] w-[0.9rem] min-h-0 shrink-0 mr-2;
   @apply p-0;
+  @apply bg-ui-elements-radiobutton-inactive-background;
+  @apply border border-ui-elements-radiobutton-main-stroke;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -89,6 +84,8 @@ input[type='radio'] {
   &:disabled,
   &.input--disabled {
     @apply opacity-40;
+    @apply bg-ui-elements-radiobutton-disabled-background;
+    @apply border-ui-elements-radiobutton-disabled-stroke;
   }
 }
 
@@ -107,34 +104,16 @@ input[type='radio'].input--lg {
   @apply h-[1rem] w-[1rem];
 }
 
-input[type='checkbox'].input--outline,
-input[type='radio'].input--outline {
-  &:disabled,
-  &.input--disabled {
-    @apply bg-text-100 border-text-300;
-  }
-}
-
-input[type='checkbox'].input--negative,
-input[type='radio'].input--negative {
-  @apply bg-secondary-400;
-  @apply border border-white;
-
-  &:disabled,
-  &.input--disabled {
-    @apply bg-text-300 border-text-400;
-  }
-}
-
 input[type='checkbox']:checked,
 input[type='radio']:checked {
-  @apply bg-text-700;
+  @apply bg-ui-elements-radiobutton-active-background;
   background-repeat: no-repeat;
   background-position: center;
 
   &:disabled,
   &.input--disabled {
-    @apply bg-text-700 border-text-500;
+    @apply bg-ui-elements-radiobutton-active-background;
+    @apply border-ui-elements-radiobutton-main-stroke;
   }
 }
 

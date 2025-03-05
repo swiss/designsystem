@@ -19,7 +19,7 @@ const props = defineProps({
   type: {
     type: String,
     validator: (prop) =>
-      ['default', 'negative', 'outline'].includes(prop as string),
+      ['negative', 'outline'].includes(prop as string),
     default: () => undefined,
   },
   target: {

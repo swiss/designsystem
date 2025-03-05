@@ -28,11 +28,6 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  variant: {
-    type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => undefined,
-  },
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
@@ -92,7 +87,6 @@ const props = defineProps({
 
 const classes = computed(() => {
   let base = ''
-  if (props.variant) base += `input--${props.variant} `
   if (props.size) base += `input--${props.size} `
   if (props.messageType) base += `input--${props.messageType} `
   if (!props.resizable) base += 'textarea--public'
@@ -101,7 +95,6 @@ const classes = computed(() => {
 
 const labelClasses = computed(() => {
   let base = ''
-  if (props.variant === 'negative') base += `text--negative `
   if (props.size) base += `text--${props.size} `
   if (props.required) base += `text--asterisk `
   return base
