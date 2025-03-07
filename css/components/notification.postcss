@@ -11,7 +11,7 @@
   .btn,
   a,
   a[target='_blank'] {
-    @apply text-current border-current;
+    @apply text-current border-current bg-standard-transparent;
 
     &:hover {
       @apply text-current brightness-50;
@@ -26,33 +26,33 @@
 
 .notification--error,
 .notification--alert {
-  @apply bg-red-50;
-  @apply text-red-800;
+  @apply bg-states-error-bg;
+  @apply text-states-error-text;
 }
 
 .notification--success {
-  @apply bg-green-50;
-  @apply text-green-800;
+  @apply bg-states-success-bg;
+  @apply text-states-success-text;
 }
 
 .notification--info {
-  @apply bg-blue-50;
-  @apply text-blue-700;
+  @apply bg-states-information-bg;
+  @apply text-states-information-text;
 }
 
 .notification--hint {
-  @apply bg-secondary-50;
-  @apply text-text-700;
+  @apply bg-states-hint-bg;
+  @apply text-states-hint-text;
 }
 
 .notification--warning {
-  @apply bg-orange-50;
-  @apply text-orange-800;
+  @apply bg-states-warning-bg;
+  @apply text-states-warning-text;
 }
 
 .notification--alert {
-  @apply bg-red-900;
-  @apply text-white;
+  @apply bg-states-alert-bg;
+  @apply text-states-alert-text;
 }
 
 .notification__icon {

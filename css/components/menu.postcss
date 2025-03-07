@@ -17,18 +17,12 @@
   @apply cursor-pointer;
   @apply transition-colors;
 
-  @apply hover:bg-secondary-50;
-  @apply focus:text-primary-600;
+  @apply hover:bg-elements-navigation-01;
+  @apply focus:text-text-new-main;
 }
 
 .menu__item--small {
   @apply text-sm 3xl:text-base;
-}
-
-.menu__item--action-btn {
-  @apply px-4 py-3;
-  @apply lg:text-xs 3xl:text-sm;
-  @apply text-text-500 focus:text-text-500;
 }
 
 .menu__item--mini {
@@ -36,17 +30,13 @@
 }
 
 .menu__item--border {
-  @apply border-b border-opacity-100 border-secondary-100;
-}
-
-.menu__item--grey {
-  @apply bg-secondary-50;
+  @apply border-b border-opacity-100 border-elements-divider-50;
 }
 
 .menu__item--negative {
   @apply bg-secondary-600;
   @apply text-white;
-  @apply border-b border-secondary-400;
+  @apply border-b border-secondary-300;
 }
 
 .menu__item.menu__item--negative:hover {
@@ -66,7 +56,7 @@
 }
 
 .menu__item--title {
-  @apply lg:px-0 hover:bg-white;
+  @apply lg:px-0 hover:bg-standard-transparent;
   @apply cursor-default;
 }
 
@@ -106,6 +96,12 @@
   @apply flex w-full items-center justify-between space-x-2;
 }
 
+.menu__item--portrait {
+  &:hover {
+    background-color: light-dark(var(--secondary-50), var(--secondary-600));
+  }
+}
+
 .menu__action-btn {
   @apply flex items-center justify-between;
   @apply px-4 py-3 relative;
@@ -113,10 +109,9 @@
   @apply border-0 border-opacity-0;
   @apply cursor-pointer;
   @apply transition-colors;
-  @apply text-text-500;
+  @apply text-text-new-label;
 }
 
 .menu__action-btn:hover {
-  @apply bg-secondary-50;
-  @apply text-text-600;
+  @apply bg-elements-navigation-01;
 }

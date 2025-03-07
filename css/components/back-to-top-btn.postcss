@@ -33,6 +33,7 @@
   @apply shadow-lg;
   @apply hover:shadow-xl;
   @apply appearance-none;
+  @apply border border-standard-transparent;
 
   .back-to-top-wrapper & {
     position: fixed; /* fallback */
@@ -58,31 +59,22 @@
 
 /* TYPES */
 
-.back-to-top-btn--default {
-  @apply bg-white;
-
-  .back-to-top-btn__icon {
-    @apply text-secondary-500;
-    @apply hover:text-primary-600;
-  }
-}
-
 .back-to-top-btn--negative {
-  @apply bg-secondary-500;
-  @apply hover:bg-secondary-600;
+  @apply bg-action-secondary;
+  @apply hover:bg-action-hover-secondary;
 
   .back-to-top-btn__icon {
-    @apply text-white;
+    @apply text-text-new-contrast;
   }
 }
 
 .back-to-top-btn--outline {
-  @apply bg-white;
-  @apply border border-primary-600;
-  @apply hover:border-primary-700;
+  @apply bg-background-main;
+  @apply border-action-main;
+  @apply hover:border-action-hover-main;
 
   .back-to-top-btn__icon {
-    @apply text-primary-600;
-    @apply hover:text-primary-700;
+    @apply text-action-main;
+    @apply hover:text-action-hover-main;
   }
 }

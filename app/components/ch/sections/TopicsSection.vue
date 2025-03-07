@@ -1,5 +1,5 @@
 <template>
-  <section class="section bg--secondary-50">
+  <section class="section bg--accent-01">
     <div class="container">
       <h2 class="section__title">Schwerpunktthemen</h2>
       <div class="grid grid--responsive-cols-3 gap--responsive">

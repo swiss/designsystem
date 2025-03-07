@@ -1,5 +1,5 @@
 <template>
-  <section class="section bg--secondary-50">
+  <section class="section bg--accent-01">
     <div class="container">
       <h2 class="section__title">Aktuell</h2>
       <div class="grid grid--items-5 gap--responsive">
@@ -59,15 +59,15 @@
           </template>
           <template #eventInfos>
             <ul class="flex flex-wrap">
-              <li class="flex items-center mr-6 mb-2">
+              <li class="flex items-center mb-2 mr-6">
                 <SvgIcon icon="Calendar" size="xl" class="-ml-1.5 mr-1" />
                 <div>10-12 Mai 2022</div>
               </li>
-              <li class="flex items-center mr-6 mb-2">
+              <li class="flex items-center mb-2 mr-6">
                 <SvgIcon icon="Clock" size="xl" class="-ml-1.5 mr-1" />
                 <div>9 bis 11 Uhr</div>
               </li>
-              <li class="flex items-center mr-6 mb-2">
+              <li class="flex items-center mb-2 mr-6">
                 <SvgIcon icon="MapMarker" size="xl" class="-ml-1.5 mr-1" />
                 <div>Zürich</div>
               </li>

@@ -15,12 +15,14 @@
       <MobileMenu :showActiveNavigation="false" />
     </header>
     <main id="main-content">
-      <ShoppingCart
-        cartOverviewTitle="Ihr Warenkorb"
-        cartAddressTitle="Rechnungsadresse & Lieferadresse"
-        cartCheckoutTitle="Bestellung übermitteln"
-        cartTitle="Ihre Bestellübersicht"
-      />
+      <section class="section section--default">
+        <ShoppingCart
+          cartOverviewTitle="Ihr Warenkorb"
+          cartAddressTitle="Rechnungsadresse & Lieferadresse"
+          cartCheckoutTitle="Bestellung übermitteln"
+          cartTitle="Ihre Bestellübersicht"
+        />
+      </section>
     </main>
     <footer id="main-footer" class="footer">
       <FooterInformation />

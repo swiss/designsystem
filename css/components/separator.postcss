@@ -9,10 +9,10 @@
 .separator::before {
   content: '';
   @apply w-full block;
-  @apply border-b border-secondary-200;
+  @apply border-b border-elements-divider-100;
 
-  .bg--secondary-50 & {
-    @apply border-secondary-300;
+  .bg--accent-01 & {
+    @apply border-elements-divider-200;
   }
 }
 
@@ -38,10 +38,6 @@
     @apply w-full block;
     @apply h-2 md:h-3 lg:h-4;
   }
-}
-
-.separator--negative::before {
-  @apply border-secondary-400;
 }
 
 .separator--vertical {

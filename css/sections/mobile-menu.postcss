@@ -8,7 +8,7 @@
   @apply w-full h-0;
   @apply absolute z-10;
   @apply transition-opacity duration-700;
-  @apply bg-white shadow-2xl;
+  @apply bg-background-main shadow-2xl;
 }
 
 .mobile-menu--is-open,
@@ -36,7 +36,7 @@
 \*----------------------------------------*/
 
 .mobile-menu-v2 {
-  @apply bg-secondary-500;
+  @apply bg-elements-navigation-02;
   @apply invisible opacity-0 lg:hidden;
   @apply overflow-hidden;
   @apply w-full h-0;
@@ -89,7 +89,7 @@
 }
 
 .top-header__menu-v2-title {
-  @apply bg-white;
+  @apply bg-background-main;
   @apply font-bold;
   @apply pt-[6.5rem] md:pt-[8rem];
   @apply pb-6;
@@ -107,11 +107,11 @@
 .mobile-menu-v2-body {
   @apply h-full w-full;
 
-  .mobile-menu-v2-navigation-container {    
+  .mobile-menu-v2-navigation-container {
     & .mobile-menu-v2-navigation li > a {
       @apply menu__item menu__item--small;
       @apply menu__item--border w-full;
-      @apply bg-white;
+      @apply bg-background-main;
       @apply w-full;
 
       &.active::after {
@@ -125,22 +125,19 @@
 
   .meta-navigation {
     ul a {
-      @apply menu__item--grey;
       @apply menu__item menu__item--small;
       @apply menu__item--border w-full;
-      @apply bg-secondary-50 hover:bg-secondary-100 focus:bg-secondary-100;
+      @apply bg-elements-navigation-01 hover:bg-background-accent-02 focus:bg-background-accent-02;
       @apply w-full;
     }
   }
 
   .top-bar-navigation--mobile {
     ul a {
-      @apply menu__item--negative;
       @apply menu__item menu__item--small;
       @apply menu__item--border w-full;
-      @apply bg-secondary-500 hover:bg-secondary-700 focus:bg-secondary-700;
       @apply text-white hover:text-white focus:text-white;
-      @apply border-secondary-300;
+      @apply hover:bg-elements-navigation-top-bar-hover-text focus:bg-elements-navigation-top-bar-focus-text;
       @apply w-full;
     }
   }
@@ -156,8 +153,8 @@
 }
 
 .mobile-menu-v2__level {
-  @apply bg-white;
-  @apply border-white;
+  @apply bg-background-main;
+  @apply border-background-main;
   position: absolute;
   left: 0;
   right: 0;

@@ -5,51 +5,28 @@ export default {
   component: Select,
 
   argTypes: {
-    variant: {
-      table: {
-        type: {
-          summary: ['string: outline, negative'],
-        },
-      },
-      options: ['outline', 'negative'],
-      control: {
-        type: 'select',
-      },
-    },
     required: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     bare: {},
     size: {
       table: {
-        type: {
-          summary: ['string: sm, base, lg'],
-        },
+        type: { summary: ['string: sm, base, lg'] },
       },
       options: ['sm', 'base', 'lg'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     label: {},
     hideLabel: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     message: {},
     messageType: {
       table: {
-        type: {
-          summary: ['string: error, warning, success, info'],
-        },
+        type: { summary: ['string: error, warning, success, info'] },
       },
       options: ['error', 'warning', 'success', 'info'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
   },
 }
@@ -68,7 +45,6 @@ export const Example = {
     `,
   }),
   args: {
-    variant: 'outline',
     bare: false,
     size: 'base',
     label: 'Label',
@@ -78,31 +54,11 @@ export const Example = {
   },
 }
 
-export const NegativeSelect = {
-  render: () => ({
-    template: `
-      <div class="select">
-        <select id="select-id" name="select-name" class="input--outline input--base input--negative">
-          <option>Choose your country</option>
-          <option>Switzerland</option>
-          <option>Swaziland</option>
-          <option>Sweden</option>
-        </select>
-        <div class="select__icon">
-          <svg role="presentation" aria-hidden="true" viewBox="0 0 24 24">
-            <path d="m5.706 10.015 6.669 3.85 6.669-3.85.375.649-7.044 4.067-7.044-4.067z" />
-          </svg>
-        </div>
-      </div>
-    `,
-  }),
-}
-
 export const DisabledSelect = {
   render: () => ({
     template: `
       <div class="select">
-        <select id="select-id" name="select-name" class="input--outline input--base input--disabled">
+        <select id="select-id" name="select-name" class="input--base input--disabled">
           <option>Choose your country</option>
           <option>Switzerland</option>
           <option>Swaziland</option>
@@ -122,7 +78,7 @@ export const SmallSizesSelect = {
   render: () => ({
     template: `
       <div class="select">
-        <select id="select-0" name="select-name" class="input--outline input--sm">
+        <select id="select-0" name="select-name" class="input--sm">
           <option>Small</option>
         </select>
         <div class="select__icon">
@@ -139,7 +95,7 @@ export const BaseSizesSelect = {
   render: () => ({
     template: `
       <div class="select">
-        <select id="select-0" name="select-name" class="input--outline input--base">
+        <select id="select-0" name="select-name" class="input--base">
           <option>Default</option>
         </select>
         <div class="select__icon">
@@ -156,7 +112,7 @@ export const LargeSizesSelect = {
   render: () => ({
     template: `
       <div class="select">
-        <select id="select-0" name="select-name" class="input--outline input--lg">
+        <select id="select-0" name="select-name" class="input--lg">
           <option>Large</option>
         </select>
         <div class="select__icon">
@@ -177,7 +133,7 @@ export const RequiredSelect = {
           Label
         </label>
         <div class="select">
-          <select id="select-id" name="select-name" class="input--outline input--base">
+          <select id="select-id" name="select-name" class="input--base">
             <option disabled="disabled" selected="selected">
               Choose your country
             </option>
@@ -205,7 +161,7 @@ export const MessagesSelect = {
           Label
         </label>
         <div class="select">
-          <select id="select-id" name="select-name" class="input--outline input--base input--error">
+          <select id="select-id" name="select-name" class="input--base input--error">
             <option disabled="disabled" selected="selected">
               Choose your country
             </option>

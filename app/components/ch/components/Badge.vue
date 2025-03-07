@@ -20,8 +20,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, type PropType } from 'vue';
-import SvgIcon from '../components/SvgIcon.vue';
+import { computed, type PropType } from 'vue'
+import SvgIcon from '../components/SvgIcon.vue'
 
 const props = defineProps({
   label: {
@@ -48,6 +48,7 @@ const props = defineProps({
         'pink',
         'indigo',
         'negative',
+        'active',
       ].includes(prop as string),
   },
   size: {

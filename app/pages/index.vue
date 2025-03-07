@@ -65,17 +65,17 @@
           />
         </template>
       </Hero>
-      <TopNewsSection />
+      <TopNewsSection data-default-theme="dark" />
       <MediasSection />
       <SocialsSection
         :section-title="socialSection.sectionTitle"
         :section-desc="socialSection.sectionDesc"
         :feeds="socialSection.feeds"
+        data-default-theme="dark"
       />
       <ServicesSection isHomePage />
-      <TopicsSection isHomePage />
+      <TopicsSection isHomePage data-default-theme="dark" />
 
-      <BackToTopBtn fixed type="outline" target="main-header" />
       <BackToTopBtn fixed type="outline" target="main-header" />
     </main>
     <footer id="main-footer" class="footer">
@@ -86,24 +86,24 @@
 </template>
 
 <script setup lang="ts">
-import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
+import { reactive } from 'vue'
 import BackToTopBtn from '../components/ch/components/BackToTopBtn.vue'
-import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import Btn from '../components/ch/components/Btn.vue'
+import NotificationBanner from '../components/ch/components/NotificationBanner.vue'
+import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
+import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
 import Hero from '../components/ch/sections/Hero.vue'
 import MediasSection from '../components/ch/sections/MediasSection.vue'
 import MobileMenu from '../components/ch/sections/MobileMenu.vue'
-import NotificationBanner from '../components/ch/components/NotificationBanner.vue'
 import ServicesSection from '../components/ch/sections/ServicesSection.vue'
 import SocialsSection from '../components/ch/sections/SocialsSection.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
 import TopicsSection from '../components/ch/sections/TopicsSection.vue'
 import TopNewsSection from '../components/ch/sections/TopNewsSection.vue'
-import { reactive } from 'vue'
 import { useLayoutStore } from '../store/layout'
 import type { SocialsFeed } from '../types'
 

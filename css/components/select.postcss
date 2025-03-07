@@ -2,6 +2,7 @@
   @apply relative;
 
   & select {
+    @apply cursor-pointer;
     @apply pr-20 box-border appearance-none;
   }
 }
@@ -11,6 +12,7 @@
   @apply mt-0 !important;
 
   select {
+    @apply cursor-pointer;
     @apply inline-block pr-6;
     @apply shadow-transparent border-transparent bg-transparent;
     @apply focus:outline-none;
@@ -18,10 +20,6 @@
 
   .select__icon {
     @apply w-6 border-l-0;
-  }
-
-  .input--negative + .select__icon {
-    @apply bg-transparent;
   }
 }
 
@@ -38,41 +36,46 @@ select:disabled,
   @apply w-12 h-full;
   @apply flex items-center justify-center;
   @apply absolute top-0 right-0;
-  @apply border-l border-text-500;
+  @apply border-l;
+  border-color: light-dark(var(--text-500), var(--secondary-500));
   @apply pointer-events-none;
 
   & svg {
     @apply w-8 h-full;
-  }
-
-  .input--negative + & {
-    @apply text-white;
-    @apply border-secondary-300;
-    @apply bg-secondary-500;
-
-    & svg {
-      @apply fill-current;
-    }
+    @apply fill-text-new-main;
   }
 
   .input--error + & {
-    @apply text-red-700 border-red-400;
+    border-color: light-dark(var(--red-500), var(--standard-transparent));
 
     & svg {
-      @apply fill-current;
+      fill: light-dark(var(--red-500), var(--red-300));
     }
   }
 
-  .input--error.input--negative + & {
-    @apply text-red-200 border-red-300;
+  .input--disabled + & {
+    border-color: light-dark(var(--text-300), var(--standard-transparent));
 
     & svg {
-      @apply fill-current;
+      @apply fill-text-new-disabled;
     }
   }
 }
 
-.input--negative option {
-  @apply bg-secondary-600 hover:bg-secondary-500;
-  @apply text-white;
+/* Select component in Footer navigation always dark */
+.footer--select {
+  & label {
+    @apply text-white;
+  }
+  & select {
+    @apply bg-ui-elements-inputfield-select-footer-select;
+    @apply text-white;
+    @apply border-standard-transparent;
+  }
+  .select__icon {
+    border-color: var(--standard-transparent);
+  }
+  & svg {
+    @apply fill-standard-white;
+  }
 }

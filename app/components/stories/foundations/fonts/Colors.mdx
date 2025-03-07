@@ -3,17 +3,24 @@ import * as ColorsStories from './Colors.stories'
 
 <Meta of={ColorsStories} />
 
-# Text colors
+The first story depicts the colors that are currently in use and are able to switch between light and dark mode.
+All other stories below show the old color values for reference but should not be used.
+
+# New Light/Darkmode colors
+
+<Canvas of={ColorsStories.LightDarkModeColors} />
+
+# Text colors (deprecated)
 
 Text colors should be automatically defined. You can force them with specific classes though:
 
 <Canvas of={ColorsStories.TextColors} />
 
-# Negative color
+# Negative color (deprecated)
 
 <Canvas of={ColorsStories.NegativeColor} className="storybook-bg-negative" />
 
-# All text color variants
+# All text color variants (deprecated)
 
 Colors have a complete spectrum based on Tailwind configuration. Use them with precaution and be sure the contrast fit the accessibility recommendations.
 
@@ -21,7 +28,7 @@ Colors have a complete spectrum based on Tailwind configuration. Use them with p
 
 <Canvas of={ColorsStories.AllColorVariantsPrimary} />
 
-# Flexible Colors for future projects
+# Flexible Colors for future projects (deprecated)
 
 For future projects, if you generate the CSS by your own, it's possible to use not only the mentioned colors above, but the whole palette of colors declared in the Tailwind config and all its variations.
 

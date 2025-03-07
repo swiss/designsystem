@@ -58,7 +58,7 @@
                   <iframe
                     width="560"
                     height="315"
-                    src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+                    src="https://www.youtube-nocookie.com/embed/vIG4cKz7ukM"
                     title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
                     frameborder="0"
                   />
