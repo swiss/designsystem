@@ -33,13 +33,6 @@ export const Example = {
       </div>
 
 
-      <div class="bg--modal">
-        <div class="">
-          bg--modal
-        </div>
-      </div>
-
-
       <div class="bg--main">
         <div class="">
           bg--main

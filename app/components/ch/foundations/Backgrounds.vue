@@ -4,7 +4,6 @@
     <div class="bg--accent-02">bg--accent-02</div>
     <div class="bg--accent-03">bg--accent-03</div>
     <div class="bg--accent-04">bg--accent-04</div>
-    <div class="bg--modal">bg--modal</div>
     <div class="bg--main">bg--main</div>
     <div class="bg--secondary-900">bg--secondary-900</div>
     <div class="bg--secondary-800">bg--secondary-800</div>
