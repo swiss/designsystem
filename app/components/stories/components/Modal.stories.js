@@ -90,7 +90,7 @@ export const Example = {
                   <a href="#" class="link" title="Share on 𝕏">
                     <SvgIcon
                       size="2xl"
-                      icon="Xcorp"
+                      icon="XCorp"
                       label="X"
                     />
                   </a>

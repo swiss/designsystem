@@ -14,7 +14,7 @@
           <Card
             v-for="(feed, i) in feeds"
             :key="feed.title + i"
-            :type="feed.type == 'xcorp' ? 'xcorp' : 'default'"
+            :type="feed.type == 'xCorp' ? 'xCorp' : 'default'"
           >
             <template #header>
               <SvgIcon :icon="capitalize(feed.type)" size="xl" class="mr-2" />
@@ -22,8 +22,8 @@
             </template>
             <template #description>
               <div
-                v-if="feed.type == 'xcorp'"
-                class="socials__xcorp"
+                v-if="feed.type == 'xCorp'"
+                class="socials__xCorp"
                 v-html="feed.feedURL"
               />
               <div

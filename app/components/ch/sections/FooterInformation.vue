@@ -20,7 +20,7 @@
               Facebook
             </a>
             <a href="x.com" class="footer__link">
-              <SvgIcon icon="Xcorp" class="footer-information__icon" />
+              <SvgIcon icon="XCorp" class="footer-information__icon" />
               𝕏
             </a>
             <a href="youtube.com" class="footer__link">
