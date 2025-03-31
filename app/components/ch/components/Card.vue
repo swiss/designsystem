@@ -40,17 +40,17 @@
 </template>
 
 <script setup lang="ts">
-import { useSlots, computed, type PropType } from 'vue'
+import { computed, useSlots, type PropType } from 'vue'
 
 const slots = useSlots()
 
 const props = defineProps({
   type: {
     type: String as PropType<
-      'default' | 'highlight' | 'twitter' | 'flat' | 'universal' | 'list'
+      'default' | 'highlight' | 'xCorp' | 'flat' | 'universal' | 'list'
     >,
     validator: (prop) =>
-      ['default', 'highlight', 'twitter', 'flat', 'universal', 'list'].includes(
+      ['default', 'highlight', 'xCorp', 'flat', 'universal', 'list'].includes(
         prop as string,
       ),
     default: () => undefined,

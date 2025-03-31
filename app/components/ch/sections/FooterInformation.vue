@@ -19,9 +19,9 @@
               <SvgIcon icon="Facebook" class="footer-information__icon" />
               Facebook
             </a>
-            <a href="twitter.com" class="footer__link">
-              <SvgIcon icon="Twitter" class="footer-information__icon" />
-              Twitter
+            <a href="x.com" class="footer__link">
+              <SvgIcon icon="XCorp" class="footer-information__icon" />
+              𝕏
             </a>
             <a href="youtube.com" class="footer__link">
               <SvgIcon icon="Youtube" class="footer-information__icon" />
