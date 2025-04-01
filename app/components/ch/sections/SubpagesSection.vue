@@ -1,5 +1,5 @@
 <template>
-  <section class="section bg--secondary-100">
+  <section class="section bg--accent-02">
     <div class="container">
       <div class="grid grid--responsive-cols-3 gap--responsive">
         <Card type="highlight">

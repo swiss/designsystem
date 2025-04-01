@@ -9,15 +9,15 @@
       @submit="submit"
     >
       <Input
-        :id="'newsletter-address'"
-        :type="'email'"
+        id="newsletter-address"
+        type="email"
         :label="inputLabel"
-        :autocomplete="'true'"
+        autocomplete="true"
         class="newsletter__input"
       />
       <Btn
-        :variant="'filled'"
-        :size="'base'"
+        variant="filled"
+        size="base"
         :label="buttonLabel"
         type="submit"
         class="newsletter__button"
@@ -25,9 +25,9 @@
     </form>
     <Notification
       v-else
-      :icon="'CheckmarkCircle'"
+      icon="CheckmarkCircle"
       :text="successText"
-      :type="'success'"
+      type="success"
       :closeBtn="false"
       class="newsletter__notification"
     />

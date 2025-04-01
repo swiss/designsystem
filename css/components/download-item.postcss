@@ -5,12 +5,12 @@
 .download-item {
   @apply flex w-full;
   @apply pl-0 pb-4 pt-4;
-  @apply border-b border-secondary-200;
+  @apply border-b border-elements-divider-100;
   @apply text-left;
   @apply no-underline text-inherit; /* override general styling for links in main */
 
-  .bg--secondary-50 & {
-    @apply border-secondary-300;
+  .bg--accent-01 & {
+    @apply border-elements-divider-200;
   }
 
   .accordion &:last-of-type {
@@ -22,7 +22,7 @@
 .download-item__icon {
   @apply -my-1 -ml-1;
   @apply pr-1 md:pr-2;
-  @apply text-primary-600;
+  @apply text-action-darkmode-main-red;
   @apply h-7 md:h-8 lg:h-9;
 }
 
@@ -32,7 +32,7 @@
   @apply transition-colors duration-200;
 
   .download-item:hover & {
-    @apply text-primary-600;
+    @apply text-action-darkmode-main-red;
   }
 }
 
@@ -42,7 +42,7 @@
 
 .download-item__description {
   @apply break-words;
-  @apply text-text-800; /* override general styling for links in main */
+  @apply text-text-new-main; /* override general styling for links in main */
 }
 
 .download-item__meta-info {
@@ -50,7 +50,7 @@
 }
 
 .download-meta-info {
-  @apply text-gray-400;
+  @apply text-text-new-label;
 }
 
 .download-item__meta-divider {

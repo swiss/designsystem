@@ -26,7 +26,6 @@
       <Checkbox
         :required="true"
         size="base"
-        type="outline"
         name="checkbox-agb"
         value="agb accepted"
         :label="agreementText"
@@ -39,7 +38,7 @@
     </div>
     <Btn
       class="shopping__cart-button"
-      variant="outline-negative"
+      variant="outline"
       size="base"
       :label="orderButtonText"
       :ariaLabel="orderButtonAriaLabel"

@@ -160,7 +160,7 @@
                 <iframe
                   width="560"
                   height="315"
-                  src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+                  src="https://www.youtube-nocookie.com/embed/vIG4cKz7ukM"
                   title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
                   frameborder="0"
                 />
@@ -281,22 +281,22 @@
             <ul class="download-items">
               <li>
                 <DownloadItem
-                  :filename="'dummy.pdf'"
-                  :title="'Information on the usage of websites'"
+                  filename="dummy.pdf"
+                  title="Information on the usage of websites"
                   description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
-                  :url="'../../../public/documents/dummy.pdf'"
-                  :type="'PDF'"
-                  :date="'22.01.2022'"
+                  url="/documents/dummy.pdf"
+                  type="PDF"
+                  date="22.01.2022"
                 />
               </li>
               <li>
-                <DownloadItem
-                  :filename="'image.png'"
-                  :title="'Information on the usage of websites'"
+                <DownloadItez
+                  filename="image.png"
+                  title="Information on the usage of websites"
                   description=""
-                  :url="'../../../public/images/html-structure.png'"
-                  :type="'PNG'"
-                  :date="'22.01.2022'"
+                  url="/images/html-structure.png"
+                  type="PNG"
+                  date="22.01.2022"
                 />
               </li>
             </ul>
@@ -550,7 +550,7 @@
                 <DownloadItem
                   filename="dummy.pdf"
                   title="Schlussbericht: Langzeitbeziehende in der Nothilfe"
-                  url="../public/documents/dummy.pdf"
+                  url="/documents/dummy.pdf"
                   type="PDF"
                   date="13.01.2022"
                   headingLevel="h3"
@@ -561,7 +561,7 @@
                 <DownloadItem
                   filename="dummy.pdf"
                   title="Schlussbericht: Langzeitbezug von Nothilfe durch weggewiesene Asylsuchende"
-                  url="../public/documents/dummy.pdf"
+                  url="/documents/dummy.pdf"
                   type="PDF"
                   date="13.01.2022"
                   headingLevel="h3"
@@ -836,7 +836,6 @@
             <div class="pt-3">
               <Input
                 id="my-id"
-                type="outline"
                 size="base"
                 label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"

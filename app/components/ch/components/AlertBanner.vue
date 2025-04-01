@@ -23,7 +23,8 @@
                 :icon="link.icon ? link.icon : 'ArrowRight'"
                 icon-pos="right"
                 size="sm"
-                variant="link-negative"
+                variant="link"
+                class="link--negative"
               />
             </div>
           </li>

@@ -4,6 +4,7 @@
 
 .section {
   @apply w-full;
+  @apply text-text-new-main;
 }
 
 /*
@@ -14,6 +15,11 @@
 .section[class^='bg--'],
 .section[class*=' bg--'] {
   @apply container--py;
+}
+
+/* If section doesn't have a background, we add one */
+.section:not([class^='bg--'], [class*=' bg--']) {
+  @apply bg-background-main text-text-new-main;
 }
 
 .section--py-half {
@@ -46,7 +52,12 @@
 .bg--secondary-300 + .bg--secondary-300,
 .bg--secondary-200 + .bg--secondary-200,
 .bg--secondary-100 + .bg--secondary-100,
-.bg--secondary-50 + .bg--secondary-50 {
+.bg--secondary-50 + .bg--secondary-50,
+.bg--accent-01 + .bg--accent-01,
+.bg--accent-02 + .bg--accent-02,
+.bg--accent-03 + .bg--accent-03,
+.bg--accent-04 + .bg--accent-04,
+.bg--main + .bg-main {
   @apply container--pb;
 }
 
@@ -55,26 +66,26 @@
   @apply pb-10;
 }
 
-.section__title--negative,
-.bg--secondary-900 .section__title,
-.bg--secondary-800 .section__title,
-.bg--secondary-700 .section__title,
-.bg--secondary-600 .section__title,
-.bg--secondary-500 .section__title,
-.bg--secondary-900 .section__subtitle,
-.bg--secondary-800 .section__subtitle,
-.bg--secondary-700 .section__subtitle,
-.bg--secondary-600 .section__subtitle,
-.bg--secondary-500 .section__subtitle {
-  @apply text-white;
+:is(
+    .bg--secondary-900,
+    .bg--secondary-800,
+    .bg--secondary-700,
+    .bg--secondary-600,
+    .bg--secondary-500,
+    .bg--accent-03,
+    .bg--accent-04
+  ) {
+  :is(.section__title, .section__subtitle) {
+    @apply text-white;
+  }
+
+  .section__action .btn {
+    @apply text-white;
+  }
 }
 
-.bg--secondary-900 .section__action .btn,
-.bg--secondary-800 .section__action .btn,
-.bg--secondary-700 .section__action .btn,
-.bg--secondary-600 .section__action .btn,
-.bg--secondary-500 .section__action .btn {
-  @apply btn--bare-negative;
+:is(.bg--secondary-400, .bg--secondary-300, .bg--secondary-200, .bg--secondary-100, .bg--secondary-50) {
+  @apply text-text-800;
 }
 
 .section__subtitle {
@@ -103,7 +114,7 @@
 .section-overview {
   @apply w-full;
   @apply h-full;
-  @apply bg-secondary-50;
+  @apply bg-background-accent-01;
   @apply pb-28;
   @apply pt-4;
 }

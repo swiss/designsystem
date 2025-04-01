@@ -29,7 +29,7 @@
       <input
         v-model="inputValue"
         type="number"
-        class="input--outline text--base"
+        class="text--base"
       />
     </div>
 

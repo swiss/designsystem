@@ -8,7 +8,7 @@ export default {
       table: {
         type: {
           summary: [
-            'string: outline, bare, filled, outline-negative, bare-negative, link, link-negative',
+            'string: outline, bare, filled, link',
           ],
         },
       },
@@ -16,10 +16,7 @@ export default {
         'outline',
         'bare',
         'filled',
-        'outline-negative',
-        'bare-negative',
         'link',
-        'link-negative',
       ],
       control: { type: 'select' },
     },
@@ -44,15 +41,6 @@ export default {
 }
 
 export const Example = {
-  render: (args) => ({
-    setup: () => ({ args }),
-    components: { Btn },
-    template: `
-      <div id="root" style="padding: 3em" class="${args.variant.endsWith('-negative') ? 'bg--secondary-600' : ''}">
-        <Btn v-bind="args" />
-      </div>
-    `,
-  }),
   args: {
     variant: 'outline',
     size: 'base',
@@ -82,38 +70,23 @@ export const ButtonOrLink = {
 export const ButtonVariations = {
   render: () => ({
     template: `
-      <button type="button" class="btn btn--base btn--outline">
-        <span class="btn__text">
-          btn--outline
-        </span>
-      </button>
+      <div style="display:flex; gap:1rem; padding:1rem;">
+        <button type="button" class="btn btn--base btn--outline">
+          <span class="btn__text">btn--outline</span>
+        </button>
 
-      <button type="button" class="btn btn--base btn--filled">
-        <span class="btn__text">btn--filled</span>
-      </button>
+        <button type="button" class="btn btn--base btn--filled">
+          <span class="btn__text">btn--filled</span>
+        </button>
 
-      <button type="button" class="btn btn--base btn--bare">
-        <span class="btn__text">
-          btn--bare
-        </span>
-      </button>`,
-  }),
-}
+        <button type="button" class="btn btn--base btn--bare">
+          <span class="btn__text">btn--bare</span>
+        </button>
 
-export const NegativeTypes = {
-  render: () => ({
-    template: `
-      <button type="button" class="btn btn--base btn--outline-negative">
-        <span class="btn__text">
-          btn--outline-negative
-        </span>
-      </button>
-
-      <button type="button" class="btn btn--base btn--bare-negative">
-        <span class="btn__text">
-          btn--bare-negative
-        </span>
-      </button>`,
+        <button type="button" class="btn btn--base btn--link">
+          <span class="btn__text">btn--link</span>
+        </button>
+      </div>`,
   }),
 }
 
@@ -175,27 +148,6 @@ export const ButtonLinks = {
           </svg>
 
           <span class="btn__text">Button link with right icon</span>
-        </button>
-
-      </div>`,
-  }),
-}
-
-export const NegativeButtonLinks = {
-  parameters: {
-    backgrounds: {
-      default: 'Dark',
-    },
-  },
-  render: () => ({
-    template: `
-      <div>
-        <button type="button" class="btn btn--link-negative">
-          <svg viewBox="0 0 24 24" class="btn__icon">
-            <path d="m12.3916 20.99951-5.25976-8.42578a5.87365 5.87365 0 1 1 10.53857-.0332zm0-16.167a5.1305 5.1305 0 0 0 -5.125 5.125 5.07366 5.07366 0 0 0 .52 2.25293l4.605 7.373 4.624-7.40625a5.07217 5.07217 0 0 0 .501-2.21972 5.1305 5.1305 0 0 0 -5.125-5.12495zm0 7.418a2.292 2.292 0 1 1 2.292-2.292 2.29476 2.29476 0 0 1 -2.292 2.29198zm0-3.834a1.542 1.542 0 1 0 1.542 1.542 1.54363 1.54363 0 0 0 -1.542-1.54201z" />
-          </svg>
-
-          <span class="btn__text">Negative button link with icon</span>
         </button>
 
       </div>`,

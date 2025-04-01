@@ -1,5 +1,5 @@
 <template>
-  <section class="section bg--secondary-50">
+  <section class="section bg--accent-01">
     <div class="container">
       <div :class="computedClasses">
         <div class="grid socials__grid gap--responsive">
@@ -8,7 +8,7 @@
               {{ sectionTitle }}
             </h2>
 
-            <p v-html="sectionDesc" />
+            <p class="section__desc" v-html="sectionDesc" />
           </div>
 
           <Card
@@ -294,7 +294,7 @@
                     </p>
                   </div>
                 </blockquote>
-                <!-- <script async src="//www.instagram.com/embed.js"></script> -->
+                <!-- <script async src="https://www.instagram.com/embed.js"></script> -->
               </div>
               <div
                 v-else-if="feed.type == 'facebook'"

@@ -16,10 +16,10 @@
     content: '';
     @apply absolute right-0 top-0 bottom-1 w-10;
     @apply pointer-events-none;
-    @apply bg-gradient-to-l from-white;
+    @apply bg-gradient-to-l from-background-main;
 
-    .bg--secondary-50 & {
-      @apply bg-gradient-to-l from-secondary-50;
+    .bg--accent-01 & {
+      @apply bg-gradient-to-l from-background-accent-01;
     }
 
     @screen sm {
@@ -31,10 +31,10 @@
 .tab__controls {
   @apply flex;
   @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;
-  @apply border-b;
+  @apply border-b border-elements-divider-50;
 
-  .bg--secondary-50 & {
-    @apply border-gray-300;
+  .bg--accent-01 & {
+    @apply border-elements-divider-200;
   }
 
   /* hide scrollbar with ability to still scroll */
@@ -61,11 +61,11 @@
   &.tab__control--active,
   &:hover {
     &::after {
-      @apply bg-primary-500;
+      @apply bg-action-darkmode-main-red;
     }
   }
   &:hover:not(.tab__control--active) {
-    @apply text-primary-600;
+    @apply text-action-hover-main;
   }
   &:first-child {
     @apply pl-0;

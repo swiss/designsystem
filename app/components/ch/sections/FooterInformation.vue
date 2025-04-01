@@ -1,5 +1,5 @@
 <template>
-  <div class="bg--secondary-600">
+  <div class="footer-information-container">
     <div class="container">
       <div class="footer-information">
         <div class="footer-information__entry">
@@ -41,7 +41,8 @@
             label="News abonnieren"
             icon="ArrowRight"
             icon-pos="right"
-            variant="outline-negative"
+            variant="outline"
+            class="footer-information-newsletter--button"
           />
         </div>
         <div class="footer-information__entry footer-information__entry--big">
