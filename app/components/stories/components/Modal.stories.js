@@ -87,11 +87,11 @@ export const Example = {
                       label="Facebook"
                     />
                   </a>
-                  <a href="#" class="link" title="Share on Twitter">
+                  <a href="#" class="link" title="Share on 𝕏">
                     <SvgIcon
                       size="2xl"
-                      icon="Twitter"
-                      label="Twitter"
+                      icon="XCorp"
+                      label="X"
                     />
                   </a>
                   <a href="#" class="link" title="Share on LinkedIn">
