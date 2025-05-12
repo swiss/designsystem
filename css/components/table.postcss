@@ -15,6 +15,14 @@
   }
 }
 
+.cell-vertical-spacing > * {
+  @apply !mt-1;
+
+  &:first-child {
+    @apply !mt-0;
+  }
+}
+
 table,
 .table {
   @apply w-full;
@@ -121,16 +129,16 @@ tfoot {
 
 .table__sorter {
   span::after {
-    content: '↕';
+    content: "↕";
     @apply block ml-1 min-w-[1.25em];
     @apply font-normal text--xs text-center;
   }
 
-  th[aria-sort='descending'] & span::after {
-    content: '▼';
+  th[aria-sort="descending"] & span::after {
+    content: "▼";
   }
 
-  th[aria-sort='ascending'] & span::after {
-    content: '▲';
+  th[aria-sort="ascending"] & span::after {
+    content: "▲";
   }
 }
