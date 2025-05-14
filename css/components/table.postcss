@@ -16,10 +16,10 @@
 }
 
 .cell-vertical-spacing > * {
-  @apply !mt-1;
+  @apply mt-3;
 
   &:first-child {
-    @apply !mt-0;
+    @apply mt-0;
   }
 }
 
@@ -28,6 +28,18 @@ table,
   @apply w-full;
   @apply border border-text-200;
   @apply shadow-md;
+
+  .align-content-top {
+    @apply align-top;
+  }
+
+  .align-content-center {
+    @apply align-middle;
+  }
+
+  .align-content-bottom {
+    @apply align-bottom;
+  }
 }
 
 caption {

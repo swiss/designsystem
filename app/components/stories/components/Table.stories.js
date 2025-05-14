@@ -8,10 +8,10 @@ export default {
     variant: {
       table: {
         type: {
-          summary: ['string: default, compact'],
+          summary: ['string: default, compact, bare'],
         },
       },
-      options: ['default', 'compact'],
+      options: ['default', 'compact', 'bare'],
       control: {
         type: 'select',
       },

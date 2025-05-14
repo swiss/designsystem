@@ -111,7 +111,7 @@ import { computed } from 'vue'
 const props = defineProps({
   variant: {
     type: String,
-    validator: (prop) => ['compact', 'default'].includes(prop as string),
+    validator: (prop) => ['compact', 'default', 'bare'].includes(prop as string),
     default: () => undefined,
   },
   caption: {
