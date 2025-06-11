@@ -819,8 +819,8 @@
               <a href="#" class="link" title="Share on Facebook">
                 <SvgIcon size="2xl" icon="Facebook" label="Facebook" />
               </a>
-              <a href="#" class="link" title="Share on Twitter">
-                <SvgIcon size="2xl" icon="Twitter" label="Twitter" />
+              <a href="#" class="link" title="Share on 𝕏">
+                <SvgIcon size="2xl" icon="XCorp" label="X" />
               </a>
               <a href="#" class="link" title="Share on LinkedIn">
                 <SvgIcon size="2xl" icon="LinkedIn" label="LinkedIn" />

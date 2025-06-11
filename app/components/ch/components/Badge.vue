@@ -20,8 +20,8 @@
 </template>
 
 <script setup lang="ts">
-import SvgIcon from '../components/SvgIcon.vue'
-import { computed, type PropType } from 'vue'
+import { computed, type PropType } from 'vue';
+import SvgIcon from '../components/SvgIcon.vue';
 
 const props = defineProps({
   label: {
@@ -58,10 +58,6 @@ const props = defineProps({
   icon: {
     type: String,
     default: () => undefined,
-  },
-  highlightCancel: {
-    type: Boolean,
-    default: () => false,
   },
   iconLeft: {
     type: String,

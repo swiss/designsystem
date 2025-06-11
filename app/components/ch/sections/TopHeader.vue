@@ -67,15 +67,15 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { useLayoutStore } from '../../../store/layout'
 import Burger from '../components/Burger.vue'
+import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import Logo from '../components/Logo.vue'
 import SearchMain from '../components/SearchMain.vue'
-import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import ShoppingCartButton from '../components/ShoppingCartButton.vue'
 import SvgIcon from '../components/SvgIcon.vue'
 import MetaNavigation from '../navigations/MetaNavigation.vue'
-import { ref, onMounted } from 'vue'
-import { useLayoutStore } from '../../../store/layout'
 
 const layoutStore = useLayoutStore()
 
