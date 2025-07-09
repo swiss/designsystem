@@ -12,8 +12,8 @@
   </li>
 </template>
 <script setup lang="ts">
-import SvgIcon from '../components/SvgIcon.vue'
 import { computed } from 'vue'
+import SvgIcon from '../components/SvgIcon.vue'
 
 const props = defineProps({
   title: {
@@ -38,33 +38,24 @@ const markedDescription = computed(() => {
   return marker(props.description, props.searchTerm)
 })
 
-const highlightTextNodes = function (node: HTMLElement, term?: string) {
-  /* TODO: This doesn't work if link in text is the same as word before */
-  if (!term) return
-  if (node.nodeType === Node.TEXT_NODE) {
-    const regex = new RegExp(term, 'gi')
-    const span = document.createElement('span')
-    span.innerHTML =
-      node.textContent?.replace(
+const marker = function (text?: string, searchterm?: string) {
+  if (!searchterm || !text) return text
+  const escapedTerm = searchterm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+  const parts = text.split(/(<[^>]*>)/g)
+
+  return parts
+    .map((part) => {
+      if (part.startsWith('<') && part.endsWith('>')) {
+        return part
+      }
+
+      const regex = new RegExp(escapedTerm, 'gi')
+      return part.replace(
         regex,
-        (match) => `<span class='highlight-blue'>${match}</span>`,
-      ) || ''
-    node.replaceWith(...span.childNodes)
-  } else if (node.nodeType === Node.ELEMENT_NODE) {
-    node.childNodes.forEach((elm) =>
-      highlightTextNodes(elm as HTMLElement, term),
-    )
-  }
-}
-
-const marker = function (text: string, term?: string) {
-  if (!term) return text
-  const parser = new DOMParser()
-  const doc = parser.parseFromString(text, 'text/html')
-
-  doc.body.childNodes.forEach((elm) =>
-    highlightTextNodes(elm as HTMLElement, term),
-  )
-  return doc.body.innerHTML
+        (match) => `<span class="highlight-blue">${match}</span>`,
+      )
+    })
+    .join('')
 }
 </script>

@@ -31,9 +31,9 @@
 </template>
 
 <script setup lang="ts">
+import { computed, type PropType } from 'vue'
 import Btn from './Btn.vue'
 import Metainfo from './MetaInfo.vue'
-import { computed, type PropType } from 'vue'
 
 const props = defineProps({
   title: {
@@ -74,31 +74,24 @@ const markedDescription = computed(() => {
   return marker(props.description, props.searchTerm)
 })
 
-const highlightTextNodes = function (node: HTMLElement, searchterm: string) {
-  if (node.nodeType === Node.TEXT_NODE) {
-    const regex = new RegExp(searchterm, 'gi')
-    const span = document.createElement('span')
-    span.innerHTML =
-      node.textContent?.replace(
-        regex,
-        (match) => `<span class='highlight-blue'>${match}</span>`,
-      ) || ''
-    node.replaceWith(...span.childNodes)
-  } else if (node.nodeType === Node.ELEMENT_NODE) {
-    node.childNodes.forEach((elm) =>
-      highlightTextNodes(elm as HTMLElement, searchterm),
-    )
-  }
-}
-
 const marker = function (text?: string, searchterm?: string) {
-  if (!searchterm) return text
-  const parser = new DOMParser()
-  const doc = parser.parseFromString(text || '', 'text/html')
+  if (!searchterm || !text) return text
+  const escapedTerm = searchterm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
-  doc.body.childNodes.forEach((elm) =>
-    highlightTextNodes(elm as HTMLElement, searchterm),
-  )
-  return doc.body.innerHTML
+  const parts = text.split(/(<[^>]*>)/g)
+
+  return parts
+    .map((part) => {
+      if (part.startsWith('<') && part.endsWith('>')) {
+        return part
+      }
+
+      const regex = new RegExp(escapedTerm, 'gi')
+      return part.replace(
+        regex,
+        (match) => `<span class="highlight-blue">${match}</span>`,
+      )
+    })
+    .join('')
 }
 </script>
