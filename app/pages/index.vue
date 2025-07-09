@@ -115,7 +115,7 @@ const socialSection = reactive({
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan.',
   feeds: [
     {
-      type: 'xCorp',
+      type: 'twitter',
       title: 'Press-release on 𝕏',
       profileURL: 'https://twitter.com/swiss_geoportal',
       feedURL:

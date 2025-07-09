@@ -820,7 +820,7 @@
                 <SvgIcon size="2xl" icon="Facebook" label="Facebook" />
               </a>
               <a href="#" class="link" title="Share on 𝕏">
-                <SvgIcon size="2xl" icon="XCorp" label="X" />
+                <SvgIcon size="2xl" icon="Twitter" label="X" />
               </a>
               <a href="#" class="link" title="Share on LinkedIn">
                 <SvgIcon size="2xl" icon="LinkedIn" label="LinkedIn" />

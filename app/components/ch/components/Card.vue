@@ -47,10 +47,10 @@ const slots = useSlots()
 const props = defineProps({
   type: {
     type: String as PropType<
-      'default' | 'highlight' | 'xCorp' | 'flat' | 'universal' | 'list'
+      'default' | 'highlight' | 'twitter' | 'flat' | 'universal' | 'list'
     >,
     validator: (prop) =>
-      ['default', 'highlight', 'xCorp', 'flat', 'universal', 'list'].includes(
+      ['default', 'highlight', 'twitter', 'flat', 'universal', 'list'].includes(
         prop as string,
       ),
     default: () => undefined,
