@@ -845,7 +845,7 @@
                 <SvgIcon size="2xl" icon="Facebook" label="Facebook" />
               </a>
               <a href="#" class="link" title="Share on 𝕏">
-                <SvgIcon size="2xl" icon="XCorp" label="X" />
+                <SvgIcon size="2xl" icon="Twitter" label="X" />
               </a>
               <a href="#" class="link" title="Share on LinkedIn">
                 <SvgIcon size="2xl" icon="LinkedIn" label="LinkedIn" />
@@ -900,34 +900,34 @@
 </template>
 
 <script setup lang="ts">
+import { nextTick, onMounted, reactive, ref } from 'vue'
 import AudioPlayer from '../components/ch/components/AudioPlayer.vue'
-import DownloadItem from '../components/ch/components/DownloadItem.vue'
-import Newsletter from '../components/ch/components/Newsletter.vue'
-import RelatedTags from '../components/ch/components/RelatedTags.vue'
-import TextImage from '../components/ch/components/TextImage.vue'
-import SlideshowExample from '../components/ch/demo/SlideshowExample.vue'
-import TableSortable from '../components/ch/demo/TableSortable.vue'
-import ContactSection from '../components/ch/sections/ContactSection.vue'
-import Hero from '../components/ch/sections/Hero.vue'
-import MoreInfosAccordionSection from '../components/ch/sections/MoreInfosAccordionSection.vue'
-import QuoteSection from '../components/ch/sections/QuoteSection.vue'
 import Badge from '../components/ch/components/Badge.vue'
 import Btn from '../components/ch/components/Btn.vue'
 import Card from '../components/ch/components/Card.vue'
+import DownloadItem from '../components/ch/components/DownloadItem.vue'
 import Input from '../components/ch/components/Input.vue'
 import Modal from '../components/ch/components/Modal.vue'
+import Newsletter from '../components/ch/components/Newsletter.vue'
 import Popover from '../components/ch/components/Popover.vue'
+import RelatedTags from '../components/ch/components/RelatedTags.vue'
 import SvgIcon from '../components/ch/components/SvgIcon.vue'
+import TextImage from '../components/ch/components/TextImage.vue'
 import ShareBar from '../components/ch/demo/ShareBar.vue'
+import SlideshowExample from '../components/ch/demo/SlideshowExample.vue'
+import TableSortable from '../components/ch/demo/TableSortable.vue'
 import AlterBodyClasses from '../components/ch/objects/AlterBodyClasses.vue'
 import Breadcrumb from '../components/ch/sections/Breadcrumb.vue'
+import ContactSection from '../components/ch/sections/ContactSection.vue'
 import DesktopMenu from '../components/ch/sections/DesktopMenu.vue'
 import FooterInformation from '../components/ch/sections/FooterInformation.vue'
 import FooterNavigation from '../components/ch/sections/FooterNavigation.vue'
+import Hero from '../components/ch/sections/Hero.vue'
 import MobileMenuV2 from '../components/ch/sections/MobileMenuV2.vue'
+import MoreInfosAccordionSection from '../components/ch/sections/MoreInfosAccordionSection.vue'
+import QuoteSection from '../components/ch/sections/QuoteSection.vue'
 import TopBar from '../components/ch/sections/TopBar.vue'
 import TopHeader from '../components/ch/sections/TopHeader.vue'
-import { reactive, ref, onMounted, nextTick } from 'vue'
 import { useLayoutStore } from '../store/layout'
 import type { Author } from '../types'
 

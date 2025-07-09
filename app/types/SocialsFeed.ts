@@ -1,5 +1,5 @@
 export type SocialsFeed = {
-  type: 'youtube' | 'xCorp' | 'instagram' | 'linkedIn'
+  type: 'youtube' | 'twitter' | 'instagram' | 'linkedIn'
   feedURL: string
   profileURL: string
   title: string
