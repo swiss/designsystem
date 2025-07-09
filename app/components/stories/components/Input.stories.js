@@ -31,42 +31,21 @@ export default {
         'week',
         'submit',
       ],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     required: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     size: {
       table: {
-        type: {
-          summary: ['string: sm, base, lg'],
-        },
+        type: { summary: ['string: sm, base, lg'] },
       },
       options: ['sm', 'base', 'lg'],
-      control: {
-        type: 'select',
-      },
-    },
-    variant: {
-      table: {
-        type: {
-          summary: ['string: outline, negative'],
-        },
-      },
-      options: ['outline', 'negative'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     label: {},
     hideLabel: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     message: {},
     messageType: {
@@ -76,9 +55,7 @@ export default {
         },
       },
       options: ['error', 'warning', 'success', 'info'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
   },
 }
@@ -105,19 +82,12 @@ export const Example = {
   },
 }
 
-export const NegativeInput = {
-  render: () => ({
-    template:
-      '<input class="input--negative input--base" value="Input text" />',
-  }),
-}
-
 export const DisabledInput = {
   render: () => ({
     template: `
       <div style="display: flex; flex-direction: row; gap: 10pt; width: 90%" >
-        <input class="input--outline input--base" disabled value="Input text" />
-        <input class="input--negative input--base" disabled value="Input text" />
+        <input class="input--base" disabled value="Input text" />
+        <input class="input--base" data-default-theme="dark" disabled value="Input text" />
       </div>
     `,
   }),
@@ -127,9 +97,9 @@ export const SizesInput = {
   render: () => ({
     template: `
       <div style="display: flex; flex-direction: row; gap: 10pt; width: 90%" >
-        <input class="input--outline input--sm" value="input--sm" />
-        <input class="input--outline input--base" value="input--base" />
-        <input class="input--outline input--lg" value="input--lg" />
+        <input class="input--sm" value="input--sm" />
+        <input class="input--base" value="input--base" />
+        <input class="input--lg" value="input--lg" />
       </div>
     `,
   }),
@@ -142,7 +112,7 @@ export const RequiredInput = {
         <label for="my-id" class="text--base text--asterisk">
           Name <span class="sr-only">required</span>
         </label>
-        <input type="text" id="my-id" name="my-id" placeholder="Placeholder" class="input--outline input--base" required />
+        <input type="text" id="my-id" name="my-id" placeholder="Placeholder" class="input--base" required />
       </div>
     `,
   }),
@@ -155,7 +125,7 @@ export const MessagesInput = {
         <label for="my-id" class="text--base text--asterisk">
           Name <span class="sr-only">required</span>
         </label>
-        <input type="text" id="my-id" name="my-id" placeholder="Placeholder" class="input--outline input--base input--error" required />
+        <input type="text" id="my-id" name="my-id" placeholder="Placeholder" class="input--base input--error" required />
         <div class="badge badge--sm badge--error">This field is required</div>
       </div>
     `,

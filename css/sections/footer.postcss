@@ -9,17 +9,36 @@
   @apply container--py;
 }
 
+.footer-information-container {
+  @apply bg-elements-footer-background-01;
+}
+
+.footer-navigation-container {
+  @apply bg-elements-footer-navigation-background-01;
+}
+
 .footer-navigation {
-  @apply flex;
+  @apply flex flex-col gap-4;
+  @apply sm:flex-row sm:justify-between;
+  @apply w-full;
   @apply py-3;
-  @apply space-x-2 sm:space-x-4;
-  @apply text--xs;
+  @apply inline-flex items-start sm:items-center;
+}
+
+.footer-navigation-links {
+  @apply flex flex-col sm:flex-row;
+  @apply sm:space-x-4;
+  @apply text--base;
+}
+
+.footer-navigation-select {
+  @apply w-full md:w-64;
 }
 
 .footer__link {
   @apply inline-flex items-center;
   @apply py-2;
-  @apply text-white hover:text-text-300 focus:text-text-300;
+  @apply text-elements-footer-link hover:text-elements-footer-link-hover focus:text-elements-footer-link-focus;
   @apply cursor-pointer;
 
   .footer-information__icon {
@@ -40,13 +59,14 @@
 
 .footer-information__entry {
   @apply mb-16 lg:mb-0;
-  @apply text-white;
+  @apply text-elements-footer-text;
 
   &:last-child {
     @apply mb-0;
   }
 
-  h3, .footer-information__entry-title {
+  h3,
+  .footer-information__entry-title {
     @apply text--xl;
     @apply mb-6 lg:mb-10;
   }
@@ -94,8 +114,8 @@
     @apply w-full;
     @apply flex justify-between;
     @apply py-4 px-2;
-    @apply border-b border-secondary-300;
-    @apply hover:bg-secondary-700 hover:text-white;
+    @apply border-b border-elements-divider-200;
+    @apply hover:bg-elements-footer-link-hover-background hover:text-elements-footer-information-link-hover-text;
 
     .footer-information__icon {
       @apply h-6;

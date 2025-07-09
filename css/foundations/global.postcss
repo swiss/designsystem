@@ -9,6 +9,24 @@ html {
   @apply font-regular;
 }
 
+:root[data-theme='auto'] {
+  *[data-default-theme='light'] {
+    color-scheme: light;
+  }
+
+  *[data-default-theme='dark'] {
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
 #root,
 #__nuxt,
 #__layout,
@@ -29,6 +47,7 @@ body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
   @apply transition-transform duration-700;
+  @apply bg-background-main;
 }
 
 .body--mobile-menu-is-open {
@@ -49,6 +68,7 @@ body {
 
 #main-header {
   @apply relative z-30;
+  @apply bg-background-main text-text-new-main;
 }
 
 #main-content {

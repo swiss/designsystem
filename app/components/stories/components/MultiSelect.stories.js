@@ -6,66 +6,37 @@ export default {
 
   argTypes: {
     bare: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    variant: {
-      table: {
-        type: {
-          summary: ['string: outline, negative'],
-        },
-      },
-      options: ['outline', 'negative'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'boolean' },
     },
     required: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     size: {
       table: {
-        type: {
-          summary: ['string: sm, base, lg'],
-        },
+        type: { summary: ['string: sm, base, lg'] },
       },
       options: ['sm', 'base', 'lg'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
     label: {},
     disabled: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     hideLabel: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     multiple: {
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     placeholder: {},
     name: {},
     message: {},
     messageType: {
       table: {
-        type: {
-          summary: ['string: error, warning, success, info'],
-        },
+        type: { summary: ['string: error, warning, success, info'] },
       },
       options: ['error', 'warning', 'success', 'info'],
-      control: {
-        type: 'select',
-      },
+      control: { type: 'select' },
     },
   },
 }
@@ -88,7 +59,6 @@ export const Example = {
       'bar',
       'baz',
     ],
-    variant: 'outline',
     size: 'base',
     label: 'Label',
     disabled: false,

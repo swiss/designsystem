@@ -9,7 +9,15 @@
   grid-template-columns: repeat(2, minmax(min-content, max-content));
   grid-template-areas: 'A B';
 
-  @apply text-text-600;
+  @apply text-text-new-main;
+
+  .bg--secondary-50 &,
+  .bg--secondary-100 &,
+  .bg--secondary-200 &,
+  .bg--secondary-300 &,
+  .bg--secondary-400 & {
+    @apply text-text-600;
+  }
 
   .bg--secondary-500 &,
   .bg--secondary-600 &,
@@ -20,7 +28,23 @@
   }
 
   figcaption {
-    @apply text-inherit;
+    @apply text-text-new-main;
+
+    .bg--secondary-50 &,
+    .bg--secondary-100 &,
+    .bg--secondary-200 &,
+    .bg--secondary-300 &,
+    .bg--secondary-400 & {
+      @apply text-text-600;
+    }
+
+    .bg--secondary-500 &,
+    .bg--secondary-600 &,
+    .bg--secondary-700 &,
+    .bg--secondary-800 &,
+    .bg--secondary-900 & {
+      @apply text-white;
+    }
   }
 }
 

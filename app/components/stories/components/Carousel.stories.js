@@ -24,7 +24,7 @@ const TemplateBackgrounds = (args) => ({
   components: { CarouselExample },
   template: `
     <div>
-      <div class="section bg--secondary-50">
+      <div class="section bg--accent-01">
         <div class="container">
           <CarouselExample
             :breakpoints="breakpoints"
@@ -34,7 +34,7 @@ const TemplateBackgrounds = (args) => ({
           />
         </div>
       </div>
-      <div class="section bg--secondary-100">
+      <div class="section bg--accent-02">
         <div class="container">
           <CarouselExample
             :breakpoints="breakpoints"
@@ -44,7 +44,7 @@ const TemplateBackgrounds = (args) => ({
           />
         </div>
       </div>
-      <div class="section bg--secondary-500">
+      <div class="section bg--accent-03">
         <div class="container">
           <CarouselExample
             :breakpoints="breakpoints"
@@ -54,7 +54,7 @@ const TemplateBackgrounds = (args) => ({
           />
         </div>
       </div>
-      <div class="section bg--secondary-600">
+      <div class="section bg--accent-04">
         <div class="container">
           <CarouselExample
             :breakpoints="breakpoints"

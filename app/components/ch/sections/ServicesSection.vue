@@ -1,5 +1,5 @@
 <template>
-  <section class="section bg--secondary-100">
+  <section class="section bg--accent-02">
     <div class="container">
       <h2 v-if="isHomePage" class="section__title">
         Unsere top Dienstleistungen

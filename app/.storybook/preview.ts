@@ -61,11 +61,28 @@ export default {
     },
     backgrounds: {
       values: [
-        { name: 'Light', value: 'var(--color-white, #fff)' },
-        { name: 'Dark', value: 'var(--color-secondary-600, #5f755f)' },
+        { name: 'Light', value: 'light' },
+        { name: 'Dark', value: 'dark' },
       ],
       // 👇 Specify which background is shown by default
       default: 'Light',
     },
   },
+  decorators: [
+    (_, args) => {
+      const theme = args.globals?.backgrounds?.value
+      switch (theme) {
+        case 'light':
+          document.querySelector('html')?.setAttribute('data-theme', 'light')
+          break
+        case 'dark':
+          document.querySelector('html')?.setAttribute('data-theme', 'dark')
+          break
+        default:
+          document.querySelector('html')?.setAttribute('data-theme', 'auto')
+          break
+      }
+      return { template: `<story/>` }
+    },
+  ],
 }

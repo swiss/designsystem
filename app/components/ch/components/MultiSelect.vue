@@ -71,11 +71,6 @@ const props = defineProps({
     type: Boolean,
     default: () => false,
   },
-  variant: {
-    type: String,
-    validator: (prop) => ['outline', 'negative'].includes(prop as string),
-    default: () => 'outline',
-  },
   size: {
     type: String,
     validator: (prop) => ['sm', 'base', 'lg'].includes(prop as string),
@@ -149,7 +144,6 @@ const selectWrapperClasses = computed(() => {
 
 const selectClasses = computed(() => {
   let base = ''
-  if (props.variant) base += `input--${props.variant} `
   if (props.size) base += `input--${props.size} `
   if (props.disabled) base += 'input--disabled '
   if (props.messageType) base += `input--${props.messageType} `
@@ -158,7 +152,6 @@ const selectClasses = computed(() => {
 
 const labelClasses = computed(() => {
   let base = ''
-  if (props.variant === 'negative') base += 'text--negative '
   if (props.size) base += `text--${props.size} `
   if (props.hideLabel) base += 'sr-only '
   if (props.required) base += 'text--asterisk '

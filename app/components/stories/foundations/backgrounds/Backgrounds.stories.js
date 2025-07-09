@@ -5,6 +5,40 @@ export default {
 export const Example = {
   render: () => ({
     template: `<div class="storybook-backgrounds">
+      <div class="bg--accent-01">
+        <div class="">
+          bg--accent-01
+        </div>
+      </div>
+
+
+      <div class="bg--accent-02">
+        <div class="">
+          bg--accent-02
+        </div>
+      </div>
+
+
+      <div class="bg--accent-03">
+        <div class="">
+          bg--accent-03
+        </div>
+      </div>
+
+
+      <div class="bg--accent-04">
+        <div class="">
+          bg--accent-04
+        </div>
+      </div>
+
+
+      <div class="bg--main">
+        <div class="">
+          bg--main
+        </div>
+      </div>
+
       <div class="bg--secondary-900">
         <div class="text--negative">
           bg--secondary-900

@@ -5,7 +5,7 @@
 .breadcrumb {
   @apply py-2 xl:py-3;
   @apply relative z-20;
-  @apply text-sm text-text-500;
+  @apply text-sm text-text-new-label;
   @apply hidden lg:block;
 
   & nav {
@@ -24,10 +24,10 @@
     @apply flex items-center;
     @apply px-4 py-2;
     @apply md:py-4;
-    @apply hover:text-primary-600 leading-tight transition-colors;
+    @apply hover:text-action-main leading-tight transition-colors;
 
     &.clicked {
-      @apply bg-white shadow-2xl;
+      @apply bg-background-breadcrumb shadow-2xl;
       @apply relative z-50;
       clip-path: inset(-50px -50px 0 -50px); /* crop shadow at the bottom */
     }
@@ -46,8 +46,8 @@
 .breadcrumb__dropdown-icon {
   @apply w-[1.25em] h-[1.25em];
   @apply ml-2;
-  @apply text-primary-600;
-  @apply border border-primary-600 rounded-sm;
+  @apply text-action-main;
+  @apply border border-action-main rounded-sm;
   @apply stroke-current;
 
   & path {
@@ -72,8 +72,8 @@
 .breadcrumb__dropdown-icon {
   @apply w-[1.25em] h-[1.25em];
   @apply ml-2;
-  @apply text-primary-600;
-  @apply border border-primary-600 rounded-sm;
+  @apply text-action-main;
+  @apply border border-action-main rounded-sm;
   @apply stroke-current;
 
   & path {
@@ -93,19 +93,19 @@
 .breadcrumb ul ul {
   @apply w-[300px] p-2 mt-px;
   @apply absolute z-10 top-[3rem] left-0;
-  @apply bg-white shadow-2xl;
+  @apply bg-background-breadcrumb shadow-2xl;
 
   li a {
     @apply menu__item menu__item--mini;
     @apply menu__item--border w-full;
 
     &:hover {
-      @apply text-primary-600;
+      @apply text-action-hover-main;
     }
 
     &.active::after {
       content: '';
-      @apply block bg-primary-600;
+      @apply block bg-action-darkmode-main-red;
       @apply w-[2px];
       @apply absolute top-0 bottom-0 left-0;
     }

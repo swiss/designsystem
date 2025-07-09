@@ -3,7 +3,8 @@
 \*----------------------------------------*/
 
 .desktop-menu {
-  @apply border-b relative z-40;
+  @apply border-b border-elements-divider-50 relative z-40;
+  @apply bg-background-main text-text-new-main;
 }
 
 .desktop-menu__drawer {
@@ -15,7 +16,7 @@
   @apply 3xl:w-[850px] 3xl:p-24;
   @apply overflow-hidden;
   @apply absolute z-30 top-14 xl:top-16 3xl:top-20;
-  @apply bg-white shadow-2xl opacity-100;
+  @apply bg-background-main shadow-2xl opacity-100;
   transition: opacity 300ms ease-in-out, height 200ms ease-in-out;
 
   & > * {
@@ -42,7 +43,15 @@
   display: none;
   @apply lg:block h-[120vh];
   @apply absolute z-20 top-14 xl:top-16 3xl:top-20 right-0 bottom-0 left-0;
-  @apply bg-gradient-to-b from-text-900/20 via-text-900/20 to-transparent;
+
+  --text-900-20: rgb(from var(--text-900) r g b / 20%);
+  --tw-gradient-from: var(--text-900-20) var(--tw-gradient-from-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--text-900-20) var(--tw-gradient-via-position),
+    var(--tw-gradient-to);
+  --tw-gradient-to: var(--standard-transparent) var(--tw-gradient-to-position);
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+
+  @apply bg-gradient-to-b from-[#111827]/20 via-[#111827]/20 to-transparent;
   @apply transition-opacity duration-300;
 
   &.hidden {

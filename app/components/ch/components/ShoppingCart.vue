@@ -80,7 +80,7 @@
                       <ShoppingCard
                         type="edit"
                         :image="{
-                          src: 'images/publication-cover.png',
+                          src: '/images/publication-cover.png',
                           alt: 'publication-cover',
                         }"
                         title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
@@ -154,7 +154,6 @@
                   Rechnungsaddresse
                 </h3>
                 <Fieldset
-                  variant="outline"
                   size="base"
                   :required="formInputFields.invoice.gender.mandatory"
                   legend="Anrede"
@@ -169,7 +168,6 @@
                   <Radio
                     :required="true"
                     size="base"
-                    type="outline"
                     name="radio-gender"
                     value="Frau"
                     label="Frau"
@@ -178,7 +176,6 @@
                   <Radio
                     :required="true"
                     size="base"
-                    type="outline"
                     name="radio-gender"
                     value="Herr"
                     label="Herr"
@@ -351,7 +348,6 @@
                     <Select
                       class="shopping__cart-order-form-input-spacing"
                       :required="formInputFields.invoice.country.mandatory"
-                      variant="outline"
                       size="base"
                       label="Land"
                       messageType="error"
@@ -427,11 +423,10 @@
                   placeholder="Erweiterte Details hier angeben"
                 />
                 <div class="shopping__cart-order-form-fieldset-spacing">
-                  <Fieldset variant="outline" size="base" :required="false">
+                  <Fieldset size="base" :required="false">
                     <Checkbox
                       :required="false"
                       size="base"
-                      type="outline"
                       name="radio-delivery-address"
                       value="matching delivery address"
                       label="Lieferadresse ist mit Rechnungsadresse identisch."
@@ -617,7 +612,6 @@
                       <Select
                         class="shopping__cart-order-form-input-spacing"
                         :required="formInputFields.delivery.country.mandatory"
-                        variant="outline"
                         size="base"
                         label="Land"
                         messageType="error"
@@ -645,7 +639,7 @@
                 <div class="shopping__cart__action-container">
                   <Btn
                     class="shopping__cart-button"
-                    variant="outline-negative"
+                    variant="outline"
                     size="base"
                     label="Nächster Schritt"
                     ariaLabel="Nächster Schritt"
@@ -683,7 +677,7 @@
                     <ShoppingCard
                       type="view"
                       :image="{
-                        src: 'images/publication-cover.png',
+                        src: '/images/publication-cover.png',
                         alt: 'publication-cover',
                       }"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
@@ -709,7 +703,7 @@
                     <ShoppingCard
                       type="view"
                       :image="{
-                        src: 'images/publication-cover.png',
+                        src: '/images/publication-cover.png',
                         alt: 'publication-cover',
                       }"
                       title="Pensionskassenstatistik - Kennzahlen 2018-2022 (554-2200)"
@@ -785,7 +779,7 @@
       </div>
       <Btn
         class="shopping__cart-confirmation-action"
-        variant="outline-negative"
+        variant="outline"
         size="base"
         label="Zurück"
         ariaLabel="Zurück"

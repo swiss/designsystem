@@ -5,11 +5,6 @@ export default {
   component: Pagination,
 
   argTypes: {
-    type: {
-      table: { type: { summary: ['string: outline, outline-negative'] } },
-      options: ['outline', 'outline-negative'],
-      control: { type: 'select' },
-    },
     field: {
       control: { type: 'boolean' },
     },

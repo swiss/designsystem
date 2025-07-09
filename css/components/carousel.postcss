@@ -16,12 +16,12 @@
 
 .carousel__prev,
 .carousel__next {
-  @apply hover:text-primary-600;
+  @apply hover:text-action-hover-main;
   @apply transition-colors duration-200;
 
   &[disabled] {
-    @apply bg-white;
-    @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white opacity-50;
+    @apply bg-background-main;
+    @apply 2xl:bg-gradient-to-r 2xl:via-background-main 2xl:from-background-main opacity-50;
   }
 
   & svg {
@@ -35,14 +35,15 @@
 
 .carousel__bullet {
   @apply block w-4 h-4 rounded-full mx-2;
-  @apply bg-transparent border border-text-600;
-  @apply hover:border-primary-600 hover:bg-primary-500;
+  @apply bg-action-disabled border border-action-disabled;
+  @apply hover:border-action-hover-main hover:bg-action-hover-main;
   @apply cursor-pointer;
   @apply transition-colors duration-200;
 }
 
 .carousel__bullet--active {
-  @apply bg-text-500 hover:bg-text-500;
+  @apply bg-action-secondary hover:bg-action-secondary;
+  @apply border-action-secondary;
   @apply cursor-default;
 }
 
@@ -96,14 +97,14 @@
     @apply 2xl:absolute  2xl:z-10;
     @apply 2xl:top-0 2xl:bottom-0 2xl:left-0;
     @apply 2xl:-translate-x-full;
-    @apply 2xl:bg-gradient-to-r 2xl:via-white 2xl:from-white;
+    @apply 2xl:bg-gradient-to-r 2xl:via-background-main 2xl:from-background-main;
   }
 
   .carousel__next {
     @apply order-3;
     @apply 2xl:absolute 2xl:top-0 2xl:bottom-0 2xl:right-0 2xl:z-10;
     @apply 2xl:translate-x-full;
-    @apply 2xl:bg-gradient-to-l 2xl:via-white 2xl:from-white;
+    @apply 2xl:bg-gradient-to-l 2xl:via-background-main 2xl:from-background-main;
   }
 
   .carousel__pagination {
@@ -120,74 +121,94 @@
   }
 }
 
-.bg--secondary-50 {
+.bg--accent-01 {
   .carousel__prev {
-    @apply 2xl:via-secondary-50 2xl:from-secondary-50;
+    @apply 2xl:via-background-accent-01 2xl:from-background-accent-01;
     &[disabled] {
-      @apply bg-secondary-50;
+      @apply bg-background-accent-01;
     }
   }
   .carousel__next {
-    @apply 2xl:via-secondary-50 2xl:from-secondary-50;
+    @apply 2xl:via-background-accent-01 2xl:from-background-accent-01;
     &[disabled] {
-      @apply bg-secondary-50;
+      @apply bg-background-accent-01;
     }
   }
 }
-.bg--secondary-100 {
+.bg--accent-02 {
   .carousel__prev {
-    @apply 2xl:via-secondary-100 2xl:from-secondary-100;
+    @apply 2xl:via-background-accent-02 2xl:from-background-accent-02;
     &[disabled] {
-      @apply bg-secondary-100;
+      @apply bg-background-accent-02;
     }
   }
   .carousel__next {
-    @apply 2xl:via-secondary-100 2xl:from-secondary-100;
+    @apply 2xl:via-background-accent-02 2xl:from-background-accent-02;
     &[disabled] {
-      @apply bg-secondary-100;
+      @apply bg-background-accent-02;
     }
   }
 }
-.bg--secondary-500 {
+.bg--accent-03 {
   .carousel__prev {
-    @apply 2xl:via-secondary-500 2xl:from-secondary-500;
+    @apply 2xl:via-background-accent-03 2xl:from-background-accent-03;
     &[disabled] {
-      @apply bg-secondary-500;
+      @apply bg-background-accent-03;
     }
   }
   .carousel__next {
-    @apply 2xl:via-secondary-500 2xl:from-secondary-500;
+    @apply 2xl:via-background-accent-03 2xl:from-background-accent-03;
     &[disabled] {
-      @apply bg-secondary-500;
+      @apply bg-background-accent-03;
     }
   }
 }
-.bg--secondary-600 {
+.bg--accent-04 {
   .carousel__prev {
-    @apply 2xl:via-secondary-600 2xl:from-secondary-600;
+    @apply 2xl:via-background-accent-04 2xl:from-background-accent-04;
     &[disabled] {
-      @apply bg-secondary-600;
+      @apply bg-background-accent-04;
     }
   }
   .carousel__next {
-    @apply 2xl:via-secondary-600 2xl:from-secondary-600;
+    @apply 2xl:via-background-accent-04 2xl:from-background-accent-04;
     &[disabled] {
-      @apply bg-secondary-600;
+      @apply bg-background-accent-04;
     }
   }
 }
 
-.bg--secondary-500,
-.bg--secondary-600 {
+.bg--accent-01,
+.bg--accent-02 {
   .carousel__bullet {
-    @apply border-text-400;
+    @apply bg-secondary-200 hover:bg-primary-700;
+    @apply border-secondary-200 hover:border-primary-700;
   }
+
   .carousel__bullet--active {
-    @apply bg-text-300;
+    @apply bg-secondary-400 hover:bg-secondary-400;
+    @apply border-secondary-400 hover:border-primary-700;
   }
+
   .carousel__prev,
   .carousel__next {
-    @apply text-text-50 hover:text-primary-400;
+    @apply text-text-new-main hover:text-primary-700;
+  }
+}
+
+.bg--accent-03,
+.bg--accent-04 {
+  .carousel__bullet {
+    @apply bg-secondary-200 hover:bg-white;
+    @apply border-secondary-200 hover:border-white;
+  }
+  .carousel__bullet--active {
+    @apply bg-white border-white;
+  }
+
+  .carousel__prev,
+  .carousel__next {
+    @apply text-text-50 hover:text-secondary-100;
   }
 }
 

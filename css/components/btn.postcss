@@ -10,102 +10,45 @@
   @apply no-underline; /* override general styling for links in main */
   @apply rounded-sm;
   @apply focus:outline-none;
+  @apply border border-standard-transparent bg-standard-transparent;
 }
 
 .btn--outline {
-  @apply text-primary-600 font-normal;
-  @apply border border-primary-600;
-  @apply hover:text-primary-700 hover:border-primary-700;
-  @apply focus:text-primary-600 focus:border-primary-600;
-
-  &:disabled {
-    @apply text-secondary-300;
-    @apply border-secondary-200;
-  }
+  @apply text-action-main hover:text-action-hover-main focus:text-action-main font-normal;
+  @apply border border-action-main hover:border-action-hover-main focus:border-action-main;
+  @apply hover:bg-ui-elements-button-background-cta-hover focus:bg-ui-elements-button-background-cta-default;
+  @apply focus:shadow-focus;
+  @apply disabled:text-action-disabled disabled:border-action-disabled disabled:bg-ui-elements-button-background-cta-disabled;
 }
 
 .btn--bare {
   @apply px-2;
-  @apply text-secondary-800 font-normal;
-  @apply hover:text-primary-600;
-
-  &:disabled {
-    @apply text-secondary-300;
-    @apply bg-transparent;
-  }
+  @apply text-text-new-main bg-standard-transparent font-normal;
+  @apply hover:text-action-hover-main;
+  @apply focus:text-action-main;
+  @apply disabled:text-action-disabled;
 }
 
 .btn--link {
   @apply pr-2 pl-0;
-  @apply text-primary-600 font-normal;
-  @apply hover:text-primary-700;
+  @apply text-text-new-main bg-standard-transparent font-normal;
+  @apply hover:text-action-hover-main;
+  @apply focus:text-action-main;
+  @apply disabled:text-action-disabled;
 
   .btn__icon {
     @apply w-8;
     @apply stroke-0 md:stroke-[0.05px] lg:stroke-[0.1px];
     @apply fill-current stroke-current;
-  }
-
-  &:disabled {
-    @apply text-secondary-300;
-    @apply bg-transparent;
-  }
-}
-
-.btn--link-negative {
-  @apply pr-2 pl-0;
-  @apply text-white font-normal underline underline-offset-2;
-  @apply hover:text-secondary-100;
-  @apply focus:text-white;
-
-  .btn__icon {
-    @apply w-8;
-    @apply stroke-0 md:stroke-[0.05px] lg:stroke-[0.1px];
-    @apply fill-current stroke-current;
-  }
-
-  &:disabled {
-    @apply text-secondary-200;
-    @apply bg-transparent;
   }
 }
 
 .btn--filled {
-  @apply text-white font-bold;
-  @apply bg-secondary-500;
-  @apply border border-secondary-500;
-  @apply hover:text-secondary-100;
-  @apply focus:text-white;
-
-  &:disabled {
-    @apply text-white;
-    @apply bg-secondary-200;
-    @apply border-secondary-200;
-  }
-}
-
-.btn--outline-negative {
-  @apply text-white font-bold;
-  @apply bg-secondary-500;
-  @apply border border-white;
-  @apply hover:text-secondary-100 hover:border-secondary-100;
-  @apply focus:text-white focus:border-white;
-
-  &:disabled {
-    @apply text-secondary-200;
-    @apply border-secondary-300;
-    @apply bg-transparent;
-  }
-}
-
-.btn--bare-negative {
-  @apply text-white;
-  @apply hover:text-secondary-100;
-  @apply focus:text-white;
-
-  &:disabled {
-    @apply text-secondary-200;
-  }
+  @apply text-text-new-contrast font-bold bg-action-secondary;
+  @apply shadow-md;
+  @apply hover:bg-action-hover-secondary hover:border-action-hover-secondary;
+  @apply focus:bg-action-secondary focus:text-text-new-contrast focus:shadow-focus;
+  @apply disabled:text-text-new-contrast disabled:bg-action-disabled disabled:border-action-disabled;
 }
 
 /* SIZES */
@@ -192,4 +135,12 @@
 
 .btn--full-width {
   @apply w-full;
+}
+
+.footer-information-newsletter--button {
+  @apply focus:shadow-focus;
+  @apply text-white font-bold focus:text-white;
+  @apply hover:text-secondary-100 hover:border-secondary-100;
+  @apply border border-ui-elements-button-footer-information-newsletter-button-border hover:border-ui-elements-button-footer-information-newsletter-button-border focus:border-ui-elements-button-footer-information-newsletter-button-border;
+  @apply bg-ui-elements-button-footer-information-newsletter-button-background hover:bg-ui-elements-button-footer-information-newsletter-button-background focus:bg-ui-elements-button-footer-information-newsletter-button-background;
 }

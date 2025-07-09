@@ -24,7 +24,7 @@
             size="base"
           />
           <TopBarNavigation v-if="!isEasyLanguage && !isSignLanguage" />
-          <LanguageSwitcher type="negative" />
+          <LanguageSwitcher/>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@
           </nav>
         </div>
 
-        <div class="separator separator--negative separator--xl" />
+        <div class="separator separator--xl" />
 
         <div>
           <h3 class="top-bar__main-title">
@@ -199,7 +199,7 @@
                     label="Clear search input"
                     icon="CancelCircle"
                     icon-pos="only"
-                    variant="bare-negative"
+                    variant="bare"
                     size="lg"
                     @click="
                       () => {

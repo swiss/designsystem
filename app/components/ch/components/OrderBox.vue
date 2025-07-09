@@ -10,7 +10,6 @@
           :id="getUniqueId('input')"
           :label="amountInputLabel"
           type="number"
-          variant="outline"
           size="base"
           :value="inputValue.toString()"
           class="order__box-amount-input"
@@ -24,7 +23,6 @@
       <Select
         :id="getUniqueId('select')"
         class="order__box-input-language-container"
-        variant="outline"
         :bare="false"
         size="base"
         :label="languageLabel"

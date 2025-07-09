@@ -7,11 +7,6 @@ export default {
   component: Fieldset,
 
   argTypes: {
-    variant: {
-      table: { type: { summary: ['string: outline, negative'] } },
-      options: ['outline', 'negative'],
-      control: { type: 'select' },
-    },
     size: {
       table: { type: { summary: ['string: sm, base, lg'] } },
       options: ['sm', 'base', 'lg'],
@@ -38,8 +33,8 @@ export const WithRadio = {
     setup: () => ({ args }),
     template: `
       <Fieldset v-bind="args">
-          <Radio id="radio-0" name="radio-group-1" label="Label for value one" value="value-1" :variant="args.variant" :size="args.size" :required="args.required" />
-          <Radio id="radio-1" name="radio-group-1" label="Label for value two" value="value-2" :variant="args.variant" :size="args.size" :required="args.required" />
+          <Radio id="radio-0" name="radio-group-1" label="Label for value one" value="value-1" :size="args.size" :required="args.required" :messageType="args.messageType" />
+          <Radio id="radio-1" name="radio-group-1" label="Label for value two" value="value-2" :size="args.size" :required="args.required" :messageType="args.messageType" />
       </Fieldset>
     `,
   }),
@@ -55,8 +50,8 @@ export const WithCheckboxes = {
     setup: () => ({ args }),
     template: `
       <Fieldset v-bind="args" >
-        <Checkbox id="checkbox-0" name="checkbox-group-1" label="Label for value one" value="value-1" :variant="args.variant" :size="args.size" :required="args.required" />
-        <Checkbox id="checkbox-1" name="checkbox-group-1" label="Label for value two" value="value-2" :variant="args.variant" :size="args.size" :required="args.required" />
+        <Checkbox id="checkbox-0" name="checkbox-group-1" label="Label for value one" value="value-1" :size="args.size" :required="args.required" :messageType="args.messageType" />
+        <Checkbox id="checkbox-1" name="checkbox-group-1" label="Label for value two" value="value-2" :size="args.size" :required="args.required" :messageType="args.messageType" />
       </Fieldset>
     `,
   }),
@@ -74,11 +69,11 @@ export const RequiredFieldset = {
           Radio button group legend <span class="sr-only">required</span>
         </legend>
         <div class="form__group__radio">
-          <input type="radio" id="radio-0" name="radio-group-1" required="required" class="input input--outline" value="value-0" />
+          <input type="radio" id="radio-0" name="radio-group-1" required="required" class="input" value="value-0" />
           <label for="radio-0">Label for value one</label>
         </div>
         <div class="form__group__radio">
-          <input type="radio" id="radio-1" name="radio-group-1" required="required" class="input input--outline" value="value-1" />
+          <input type="radio" id="radio-1" name="radio-group-1" required="required" class="input" value="value-1" />
           <label for="radio-1">Label for value two</label>
         </div>
       </fieldset>
@@ -94,11 +89,11 @@ export const MessagesFieldset = {
           Radio button group legend <span class="sr-only">required</span>
         </legend>
         <div class="form__group__radio">
-          <input type="radio" id="radio-3" name="radio-group-2" required="required" class="input input--outline input--error" value="value-0" />
+          <input type="radio" id="radio-3" name="radio-group-2" required="required" class="input input--error" value="value-0" />
           <label for="radio-3">Label for value one</label>
         </div>
         <div class="form__group__radio">
-          <input type="radio" id="radio-4" name="radio-group-2" required="required" class="input input--outline input--error" value="value-1" />
+          <input type="radio" id="radio-4" name="radio-group-2" required="required" class="input input--error" value="value-1" />
           <label for="radio-4">Label for value two</label>
         </div>
         <div class="badge badge--sm badge--error">Error message, after last radio item</div>

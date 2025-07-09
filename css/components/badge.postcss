@@ -6,18 +6,26 @@
   @apply inline-flex items-center;
   @apply py-[0.219em] px-[1em];
   @apply rounded-full;
+  @apply border border-transparent;
 }
 
 .badge--disabled {
   @apply !opacity-40;
   @apply !cursor-default;
+
+  &.badge--gray {
+    @apply !opacity-100;
+    @apply !text-text-new-disabled;
+    @apply !bg-ui-elements-tag-background-disabled-fill;
+    @apply border-ui-elements-tag-background-disabled-stroke;
+  }
 }
 
 /* COLORS */
 
 .badge--gray {
-  @apply text-gray-800;
-  @apply bg-secondary-100;
+  @apply text-text-new-main;
+  @apply bg-ui-elements-tag-background-default;
 }
 
 .badge--red,
@@ -54,9 +62,9 @@
   @apply bg-indigo-100;
 }
 
-.badge--negative {
-  @apply text-gray-100;
-  @apply bg-gray-800;
+.badge--active {
+  @apply text-white;
+  @apply bg-action-darkmode-main-red;
 }
 
 .badge--purple {

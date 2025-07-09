@@ -9,6 +9,7 @@
     @apply w-[3.5em] lg:w-[4.5em];
     @apply cursor-pointer;
     @apply transition-colors;
+    @apply text-white;
     svg {
       @apply h-6;
     }
@@ -16,19 +17,26 @@
   }
 
   option {
+    @apply bg-secondary-600 hover:bg-secondary-500;
+    @apply text-white;
+
     &:disabled {
-      @apply text-text-400;
+      @apply text-action-disabled;
     }
   }
 
   .select__icon {
     @apply w-6;
     @apply transition-colors;
+
+    svg {
+      @apply fill-standard-white;
+    }
   }
 
   select:hover + .select__icon,
   select:focus + .select__icon {
-    @apply text-text-300;
+    @apply text-action-hover-main;
   }
 }
 

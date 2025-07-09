@@ -2,7 +2,6 @@
   MAIN NAVIGATION
 \*----------------------------------------*/
 
-
 .mobile-menu .main-navigation,
 .main-navigation--mobile {
   @apply flex flex-col;
@@ -27,7 +26,7 @@
   & > ul > li > a {
     @apply lg:flex lg:items-center relative;
     @apply lg:h-full lg:px-4;
-    @apply hover:text-primary-600 leading-tight;
+    @apply hover:text-action-hover-main leading-tight;
     @apply whitespace-nowrap;
     @apply transition-all;
 
@@ -45,11 +44,11 @@
 
     &.active::after,
     &:hover::after {
-      @apply bg-primary-500;
+      @apply bg-action-darkmode-main-red;
     }
 
     &.clicked {
-      @apply bg-white shadow-2xl;
+      @apply bg-background-main shadow-2xl;
       @apply relative z-50;
       clip-path: inset(-50px -50px -1px -50px); /* crop shadow at the bottom */
     }

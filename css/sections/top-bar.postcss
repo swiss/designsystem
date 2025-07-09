@@ -3,15 +3,15 @@
 \*----------------------------------------*/
 
 .top-bar {
-  @apply bg-secondary-600;
+  @apply bg-elements-top-bar-background;
   @apply text-sm 2xl:text-base text-white;
 }
 
 .top-bar__bar {
-  @apply bg-secondary-600;
+  @apply bg-elements-top-bar-background;
 
   .top-bar--is-open & {
-    @apply bg-secondary-700;
+    @apply bg-elements-top-bar-background-open;
   }
 
   .container {
@@ -20,16 +20,16 @@
 }
 
 .top-bar__bar--easy-language {
-  @apply !bg-[#466975];
+  @apply !bg-elements-top-bar-background-easy-language;
 }
 
 .top-bar__bar--sign-language {
-  @apply !bg-indigo-900;
+  @apply !bg-elements-top-bar-background-sign-language;
 }
 
 .top-bar__drawer {
   @apply pt-6 md:pt-8;
-  @apply bg-secondary-600 text-white;
+  @apply bg-elements-top-bar-drawer-background text-white;
 }
 
 .top-bar__drawer__close {
@@ -71,11 +71,11 @@
   }
 
   a {
-    @apply text-secondary-100 my-2;
+    @apply text-elements-top-bar-drawer-localization-link my-2;
 
     &.active {
       @apply text-white font-bold;
-      @apply border-l-2 border-primary-600 pl-2;
+      @apply border-l-2 border-elements-top-bar-drawer-localization-link-border pl-2;
     }
   }
 
@@ -127,11 +127,11 @@
 
 .top-bar__btn {
   @apply flex items-center text-left;
-  @apply hover:text-text-300 focus:text-text-300;
+  @apply hover:text-elements-top-bar-button-hover-text focus:text-elements-top-bar-button-focus-text;
   @apply pl-4 -ml-4;
   @apply py-1;
   min-height: 2.75rem;
-  @apply bg-secondary-600;
+  @apply bg-elements-top-bar-button-background;
   @apply transition-colors;
   span {
     @apply w-min sm:w-full;
@@ -154,8 +154,8 @@
 .top-bar__right {
   @apply flex items-center;
   /* Overwrite badge close icon color */
-  .badge__icon{
-    @apply text-gray-800;
+  .badge__icon {
+    @apply text-elements-top-bar-badge-icon;
     @apply bg-inherit;
   }
   .badge {

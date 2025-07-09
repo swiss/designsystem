@@ -28,6 +28,7 @@ const config: StorybookConfig = {
     { from: '../public', to: '/' },
     { from: '../../dist/', to: '/dist' },
     { from: '../../css/foundations/fonts/', to: '/dist/fonts' },
+    { from: '../../dist/', to: '/dist' },
   ],
 }
 export default config

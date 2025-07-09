@@ -12,12 +12,12 @@ main .accordion {
 }
 
 .accordion__item {
-  @apply border-t border-secondary-200;
+  @apply border-t border-elements-divider-100;
   @apply list-none;
   @apply mt-0 !important;
 
   &:last-of-type {
-    @apply border-b border-secondary-200;
+    @apply border-b border-elements-divider-100;
   }
 }
 
@@ -25,8 +25,9 @@ main .accordion {
   @apply flex items-center;
   @apply w-full px-2 py-3 2xl:px-3 2xl:py-5;
   @apply font-bold;
-  @apply hover:text-primary-500;
+  @apply hover:text-action-darkmode-hover-red;
   @apply transition-colors duration-200;
+  @apply text-text-new-main;
 
   @media (hover: none) {
     &:hover {
@@ -60,6 +61,8 @@ main .accordion {
   @apply w-full max-h-0;
   @apply overflow-hidden;
   transition: max-height 0.3s ease-out;
+  @apply bg-background-main;
+  @apply text-text-new-main;
 }
 
 /* Dynamically adjust to content */
@@ -78,7 +81,7 @@ main .accordion {
 }
 
 .highlight-blue {
-  @apply bg-blue-100;
+  @apply bg-text-new-highlight-text;
 }
 
 .accordion__loading-icon {

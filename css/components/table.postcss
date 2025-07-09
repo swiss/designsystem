@@ -32,12 +32,12 @@ caption {
 }
 
 thead {
-  @apply bg-secondary-50;
+  @apply bg-background-accent-01;
 
   th {
     @apply px-6 py-4;
     @apply text-left;
-    @apply text-text-700 uppercase text--sm;
+    @apply uppercase text--sm text-ui-elements-inputfield-select-main-text;
     @apply align-top;
   }
 }
@@ -47,17 +47,18 @@ table:not(.table--compact) {
   tfoot {
     tr {
       @apply border-t border-text-300;
+      @apply bg-background-main;
     }
 
     td,
     th {
       @apply px-6 py-4;
       @apply text--base;
-      @apply text-gray-600;
+      @apply text-text-new-label;
     }
 
     th {
-      @apply text-gray-800 font-bold text-left;
+      @apply text-text-new-main font-bold text-left;
     }
   }
 }
@@ -103,7 +104,7 @@ tfoot {
   tbody,
   tfoot {
     tr:nth-child(even) {
-      @apply bg-secondary-50;
+      @apply bg-background-accent-01;
     }
   }
 }

@@ -17,12 +17,6 @@ import SvgIcon from './SvgIcon.vue'
 import { computed } from 'vue'
 
 const props = defineProps({
-  type: {
-    type: String,
-    default: () => '',
-    validator: (prop) =>
-      ['outline', 'outline-negative'].includes(prop as string),
-  },
   icon: {
     type: String,
     default: () => '',
@@ -38,8 +32,7 @@ const props = defineProps({
 })
 
 const computedClasses = computed(() => {
-  let base = 'btn '
-  if (props.type) base += `btn--${props.type} `
+  let base = 'btn btn--outline '
   if (props.icon) base += `btn--icon-only `
   return base
 })

@@ -185,7 +185,7 @@
                 <iframe
                   width="560"
                   height="315"
-                  src="//www.youtube-nocookie.com/embed/vIG4cKz7ukM"
+                  src="https://www.youtube-nocookie.com/embed/vIG4cKz7ukM"
                   title="Geoinformation - Alles findet irgendwo statt — © Swiss Geoportal"
                   frameborder="0"
                 />
@@ -306,22 +306,22 @@
             <ul class="download-items">
               <li>
                 <DownloadItem
-                  :filename="'dummy.pdf'"
-                  :title="'Information on the usage of websites'"
+                  filename="dummy.pdf"
+                  title="Information on the usage of websites"
                   description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat augue eu purus luctus rhoncus. Donec ultricies venenatis nibh, vel placerat est accumsan quis. Maecenas urna nibh, pretium pretium odio id, rhoncus rhoncus lorem. Nulla eu neque sagittis, cursus purus eget, sodales est. Duis at ultrices odio, ac egestas dolor."
-                  :url="'../../../static/documents/dummy.pdf'"
-                  :type="'PDF'"
-                  :date="'22.01.2022'"
+                  url="../../../static/documents/dummy.pdf"
+                  type="PDF"
+                  date="22.01.2022"
                 />
               </li>
               <li>
                 <DownloadItem
-                  :filename="'image.png'"
-                  :title="'Information on the usage of websites'"
+                  filename="image.png"
+                  title="Information on the usage of websites"
                   description=""
-                  :url="'../../../static/images/html-structure.png'"
-                  :type="'PNG'"
-                  :date="'22.01.2022'"
+                  url="../../../static/images/html-structure.png"
+                  type="PNG"
+                  date="22.01.2022"
                 />
               </li>
             </ul>
@@ -840,7 +840,7 @@
       <template #body>
         <Card type="default">
           <template #description>
-            <div class="flex flex-wrap gap-6 justify-center">
+            <div class="flex flex-wrap justify-center gap-6">
               <a href="#" class="link" title="Share on Facebook">
                 <SvgIcon size="2xl" icon="Facebook" label="Facebook" />
               </a>
@@ -861,7 +861,6 @@
             <div class="pt-3">
               <Input
                 id="my-id"
-                type="outline"
                 size="base"
                 label="Shareable URL"
                 value="https://www.admin.ch/gov/de/start/departemente/departement-des-innern-edi.html"

@@ -1,5 +1,5 @@
 <template>
-  <div class="section bg--secondary-50">
+  <div class="section bg--accent-01">
     <div class="container container--grid">
       <div class="container__center--sm">
         <h2 class="h2">Classical input types</h2>
@@ -56,7 +56,7 @@
             />
           </div>
         </div>
-        <h2 class="h2 mt-8">Other input types</h2>
+        <h2 class="mt-8 h2">Other input types</h2>
         <div class="form">
           <Input
             id="color-id"
@@ -162,7 +162,7 @@
           />
         </div>
         <div class="form">
-          <h2 class="h2 mt-8">required fields example</h2>
+          <h2 class="mt-8 h2">required fields example</h2>
           <div class="form__group">
             <Input
               id="text-id-0"

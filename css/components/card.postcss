@@ -4,7 +4,7 @@
 
 .card {
   @apply flex flex-col h-full;
-  @apply bg-white;
+  @apply bg-elements-card-01;
   container-type: inline-size;
 }
 
@@ -21,7 +21,7 @@
   .btn::after {
     content: '';
     @apply absolute top-0 right-0 left-0 bottom-0;
-    @apply border-2 border-text-50 border-opacity-0 transition-all duration-300 ease-in-out;
+    @apply transition-all duration-300 ease-in-out;
   }
 
   &:hover,
@@ -29,7 +29,7 @@
     @apply shadow-2xl;
 
     .card__title {
-      @apply text-primary-700;
+      @apply text-action-hover-main;
     }
 
     a::after,
@@ -174,7 +174,6 @@
     content: '';
     @apply absolute z-0;
     @apply inset-0;
-    @apply bg-secondary-50 border-2 border-white;
     @apply opacity-70;
   }
 
@@ -197,14 +196,15 @@
 .card__header {
   @apply flex items-center;
   @apply p-6;
-  @apply bg-secondary-100;
+  @apply bg-elements-card-header-background;
+  @apply border-b border-elements-card-header-border;
 }
 
 .card__content {
   @apply flex flex-col justify-between;
   @apply h-full;
   @apply z-10;
-  @apply bg-white;
+  @apply bg-elements-card-01;
 }
 
 .card__body {
@@ -252,7 +252,7 @@
 }
 
 .card__footer__info {
-  @apply text-secondary-500 text--sm;
+  @apply text-text-new-label text--sm;
   @apply pr-6;
 }
 

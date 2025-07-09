@@ -3,14 +3,14 @@
     <div
       class="modal__content"
       role="dialog"
-      :aria-labelledby="'modal-title-' + uuid"
-      :aria-describedby="'modal-desc-' + uuid"
+      :aria-labelledby="`modal-title-${uuid}`"
+      :aria-describedby="`modal-desc-${uuid}`"
     >
       <header
         :class="{ 'modal__header--with-title': title }"
         class="modal__header"
       >
-        <h4 v-if="title" :id="'modal-title-' + uuid" class="h4">
+        <h4 v-if="title" :id="`modal-title-${uuid}`" class="h4">
           {{ title }}
         </h4>
         <button
@@ -24,7 +24,7 @@
         </button>
       </header>
 
-      <div v-if="slots.body" :id="'modal-desc-' + uuid" class="modal__body">
+      <div v-if="slots.body" :id="`modal-desc-${uuid}`" class="modal__body">
         <slot name="body" />
       </div>
 

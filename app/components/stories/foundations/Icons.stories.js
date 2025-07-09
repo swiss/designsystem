@@ -9,7 +9,7 @@ export const List = {}
 
 export const Example = {
   render: () => ({
-    template: `<div className="flex items-center">
+    template: `<div style="display:flex; flex-direction:row; align-items:center">
       <svg viewBox="0 0 24 24" class="icon icon--sm">
         <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
       </svg>
@@ -51,7 +51,7 @@ export const Example = {
 
 export const SpinningIcon = {
   render: () => ({
-    template: `<svg viewBox="0 0 24 24" class="icon icon--3xl icon--spin">
+    template: `<svg viewBox="0 0 24 24" class="icon icon--3xl icon--spin" style="width:fit-content">
       <path d="m12 3.7v.8c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5-7.5-3.4-7.5-7.5c0-2.1.8-3.9 2.2-5.3l-.6-.6c-1.5 1.5-2.4 3.6-2.4 5.9 0 4.6 3.7 8.3 8.3 8.3s8.3-3.7 8.3-8.3-3.7-8.3-8.3-8.3z" />
     </svg>`,
   }),

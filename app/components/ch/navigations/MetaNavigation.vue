@@ -19,7 +19,7 @@
         </li>
       </ul>
     </nav>
-    <LanguageSwitcher v-if="isFreebrand && screenSize > 1023" type="outline" />
+    <LanguageSwitcher v-if="isFreebrand && screenSize > 1023"/>
   </div>
 </template>
 

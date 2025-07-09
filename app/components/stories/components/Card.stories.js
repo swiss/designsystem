@@ -69,7 +69,7 @@ export default {
   decorators: [
     () => ({
       template:
-        '<div style="padding:3rem; background:var(--color-secondary-50)"><story/></div>',
+        '<div style="padding:3rem; background:var(--background-accent-01)"><story/></div>',
     }),
   ],
 }

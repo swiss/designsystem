@@ -4,27 +4,143 @@
 
 @layer base {
   .body--freebrand {
-    --color-primary-50: #eaffe9;
-    --color-primary-100: #d3ebd2;
-    --color-primary-200: #bdd8bc;
-    --color-primary-300: #a7c4a6;
-    --color-primary-400: #91b191;
-    --color-primary-500: #7c9f7c;
-    --color-primary-600: #678d67;
-    --color-primary-700: #537b54;
-    --color-primary-800: #3e6940;
-    --color-primary-900: #2a582e;
+    --primary-50: #eaffe9;
+    --primary-100: #d3ebd2;
+    --primary-200: #bdd8bc;
+    --primary-300: #a7c4a6;
+    --primary-400: #91b191;
+    --primary-500: #7c9f7c;
+    --primary-600: #678d67;
+    --primary-700: #537b54;
+    --primary-800: #3e6940;
+    --primary-900: #2a582e;
 
-    --color-secondary-50: #efffee;
-    --color-secondary-100: #b0beb0;
-    --color-secondary-200: #768176;
-    --color-secondary-300: #404941;
+    --secondary-50: #efffee;
+    --secondary-100: #b0beb0;
+    --secondary-200: #768176;
+    --secondary-300: #404941;
 
-    --color-secondary-400: #758874;
-    --color-secondary-500: #6a7f69;
-    --color-secondary-600: #5f755f;
-    --color-secondary-700: #546c55;
-    --color-secondary-800: #49634b;
-    --color-secondary-900: #3e5a41;
+    --secondary-400: #758874;
+    --secondary-500: #6a7f69;
+    --secondary-600: #5f755f;
+    --secondary-700: #546c55;
+    --secondary-800: #49634b;
+    --secondary-900: #3e5a41;
+
+    --action-darkmode-hover-red: light-dark(var(--primary-700), var(--primary-500));
+    --action-darkmode-main-red: light-dark(var(--primary-600), var(--primary-400));
+    --action-disabled: light-dark(var(--secondary-200), var(--secondary-400));
+    --action-hover-main: light-dark(var(--primary-600), var(--secondary-100));
+    --action-hover-secondary: light-dark(var(--secondary-600), var(--secondary-100));
+    --action-main: light-dark(var(--primary-600), var(--standard-white));
+    --action-secondary: light-dark(var(--secondary-400), var(--secondary-100));
+    --background-accent-01: light-dark(var(--secondary-50), var(--secondary-900));
+    --background-accent-02: light-dark(var(--secondary-100), var(--secondary-800));
+    --background-accent-03: light-dark(
+      var(--secondary-500),
+      var(--secondary-400)
+    ); /* Non standard -> Not in Figma yet but necessary for Carousel with fixed background */
+    --background-accent-04: light-dark(
+      var(--secondary-600),
+      var(--secondary-300)
+    ); /* Non standard -> Not in Figma yet but necessary for Carousel with fixed background */
+    --background-main: light-dark(var(--standard-white), var(--secondary-800));
+    --background-breadcrumb: light-dark(var(--standard-white), var(--secondary-800));
+    --elements-card-card-01: light-dark(var(--standard-white), var(--secondary-700));
+    --elements-card-header-background: light-dark(var(--standard-white), var(--secondary-700));
+    --elements-card-header-border: light-dark(var(--secondary-100), var(--secondary-500));
+    --elements-divider-100: light-dark(var(--secondary-200), var(--secondary-400));
+    --elements-divider-200: light-dark(var(--secondary-300), var(--secondary-300));
+    --elements-divider-50: light-dark(var(--secondary-100), var(--secondary-300));
+    --elements-top-bar-background: light-dark(var(--secondary-600), var(--secondary-600));
+    --elements-top-bar-background-open: light-dark(var(--secondary-700), var(--secondary-700));
+    --elements-top-bar-background-easy-language: light-dark(#466975, #466975);
+    --elements-top-bar-background-sign-language: light-dark(var(--indigo-900), var(--indigo-900));
+    --elements-top-bar-drawer-background: light-dark(var(--secondary-600), var(--secondary-600));
+    --elements-top-bar-drawer-localization-link: light-dark(var(--secondary-100), var(--secondary-100));
+    --elements-top-bar-drawer-localization-link-border: light-dark(var(--primary-600), var(--primary-600));
+    --elements-top-bar-button-background: light-dark(var(--secondary-600), var(--secondary-600));
+    --elements-top-bar-button-hover-text: light-dark(var(--text-300), var(--text-300));
+    --elements-top-bar-button-focus-text: light-dark(var(--text-300), var(--text-300));
+    --elements-top-bar-badge-icon: light-dark(var(--gray-800), var(--gray-800));
+    --elements-top-header-easy-language-icon-background: light-dark(var(--green-100), var(--green-100));
+    --elements-top-header-sign-language-icon-background: light-dark(var(--indigo-100), var(--indigo-100));
+    --elements-top-header-easy-language-icon: light-dark(var(--green-800), var(--green-800));
+    --elements-top-header-sign-language-icon: light-dark(var(--indigo-900), var(--indigo-900));
+    --elements-footer-background-01: light-dark(var(--secondary-600), var(--secondary-600));
+    --elements-footer-navigation-background-01: light-dark(var(--secondary-700), var(--secondary-700));
+    --elements-footer-text: light-dark(var(--standard-white), var(--standard-white));
+    --elements-footer-link: light-dark(var(--standard-white), var(--standard-white));
+    --elements-footer-link-hover-background: light-dark(var(--secondary-700), var(--secondary-700));
+    --elements-footer-link-hover: light-dark(var(--text-300), var(--text-300));
+    --elements-footer-link-focus: light-dark(var(--text-300), var(--text-300));
+    --elements-footer-information-link-hover-text: light-dark(var(--standard-white), var(--standard-white));
+    --elements-navigation-01: light-dark(var(--secondary-50), var(--secondary-700));
+    --elements-navigation-02: light-dark(var(--secondary-900), var(--secondary-900));
+    --elements-navigation-top-bar-mobile-hover-text: light-dark(var(--secondary-700), var(--secondary-700));
+    --elements-navigation-top-bar-mobile-focus-text: light-dark(var(--secondary-700), var(--secondary-700));
+    --states-error-error-bg: light-dark(var(--red-50), var(--red-50));
+    --states-error-error-text: light-dark(var(--red-800), var(--red-800));
+    --states-information-information-bg: light-dark(var(--blue-50), var(--blue-50));
+    --states-information-information-text: light-dark(var(--blue-700), var(--blue-700));
+    --states-hint-hint-bg: light-dark(var(--secondary-50), var(--secondary-50));
+    --states-hint-hint-text: light-dark(var(--text-700), var(--text-700));
+    --states-success-success-bg: light-dark(var(--green-50), var(--green-50));
+    --states-success-success-text: light-dark(var(--green-800), var(--green-800));
+    --states-warning-warning-bg: light-dark(var(--orange-50), var(--orange-50));
+    --states-warning-warning-text: light-dark(var(--orange-800), var(--orange-800));
+    --states-alert-alert-bg: light-dark(var(--red-900), var(--red-900));
+    --states-alert-alert-text: light-dark(var(--standard-white), var(--standard-white));
+    --text-contrast-text: light-dark(var(--standard-white), var(--gray-800));
+    --text-disabled-text: light-dark(var(--text-300), var(--text-300));
+    --text-label-text: light-dark(var(--text-500), var(--secondary-100));
+    --text-main-text: light-dark(var(--text-800), var(--standard-white));
+    --text-quote-text: light-dark(var(--secondary-500), var(--standard-white));
+    --text-highlight-text: light-dark(var(--blue-100), var(--blue-900));
+    --text-selected-text: light-dark(var(--blue-100), var(--blue-800));
+    --ui-elements-button-background-cta-default: light-dark(var(--standard-white), var(--gray-700));
+    --ui-elements-button-background-cta-disabled: light-dark(var(--standard-white), var(--standard-transparent));
+    --ui-elements-button-background-cta-hover: light-dark(var(--standard-white), var(--secondary-600));
+    --ui-elements-checkbox-active-background: light-dark(var(--text-700), var(--text-700));
+    --ui-elements-inputfield-select-background-choose-default-choose-background: light-dark(
+      var(--standard-white),
+      var(--secondary-700)
+    );
+    --ui-elements-inputfield-select-background-choose-disabled-choose-background: light-dark(
+      var(--text-100),
+      var(--secondary-500)
+    );
+    --ui-elements-inputfield-select-text-choose-disabled-choose-color: light-dark(
+      var(--text-400),
+      var(--secondary-300)
+    );
+    --ui-elements-inputfield-select-text-choose-disabled-text-color: light-dark(
+      var(--standard-white),
+      var(--secondary-700)
+    );
+    --ui-elements-inputfield-select-background-selected-background-color: light-dark(var(--gray-200), var(--gray-200));
+    --ui-elements-inputfield-select-background-default-background: light-dark(
+      var(--standard-white),
+      var(--secondary-600)
+    );
+    --ui-elements-inputfield-select-background-disabled-background: light-dark(var(--text-50), var(--secondary-700));
+    --ui-elements-inputfield-select-stroke-disabled-stroke: light-dark(var(--gray-300), var(--standard-transparent));
+    --ui-elements-inputfield-select-stroke-error-stroke: light-dark(var(--red-600), var(--red-300));
+    --ui-elements-inputfield-select-stroke-main-stroke: light-dark(var(--gray-500), var(--standard-transparent));
+    --ui-elements-inputfield-select-text-disabled-text: light-dark(var(--text-400), var(--secondary-300));
+    --ui-elements-inputfield-select-text-main-text: light-dark(var(--text-800), var(--standard-white));
+    --ui-elements-radiobutton-active-background: light-dark(var(--text-700), var(--text-700));
+    --ui-elements-radiobutton-disabled-background: light-dark(var(--text-100), var(--secondary-300));
+    --ui-elements-radiobutton-disabled-stroke: light-dark(var(--text-300), var(--text-400));
+    --ui-elements-radiobutton-inactive-background: light-dark(var(--standard-white), var(--secondary-400));
+    --ui-elements-radiobutton-main-stroke: light-dark(var(--text-500), var(--standard-white));
+    --ui-elements-tag-background-active: light-dark(var(--gray-800), var(--standard-white));
+    --ui-elements-tag-background-default: light-dark(var(--secondary-100), var(--secondary-600));
+    --ui-elements-tag-background-disabled-fill: light-dark(var(--secondary-50), var(--secondary-900));
+    --ui-elements-tag-background-disabled-stroke: light-dark(var(--secondary-100), var(--secondary-800));
+    --ui-elements-tag-background-hover: light-dark(var(--secondary-200), var(--secondary-400));
+    --ui-elements-footer-select-background: light-dark(var(--secondary-500), var(--secondary-500));
+    --ui-elements-footer-informtion-button-border: light-dark(var(--standard-white), var(--standard-white));
+    --ui-elements-footer-informtion-button-background: light-dark(var(--secondary-500), var(--secondary-500));
   }
 }

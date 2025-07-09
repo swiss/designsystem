@@ -78,22 +78,6 @@ export const LooseVariant = {
   }),
 }
 
-export const NegativeList = {
-  parameters: {
-    backgrounds: {
-      default: 'Dark',
-    },
-  },
-  render: () => ({
-    template: `
-      <ul class="list list--default list--negative">
-        <li>List item</li>
-        <li>List item</li>
-      </ul>
-    `,
-  }),
-}
-
 export const HorizontalList = {
   render: () => ({
     template: `
