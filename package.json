@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/swiss/designsystem#readme",
   "dependencies": {
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "concurrently": "^6.5.1",
     "cssnano": "^7.0.6",
     "postcss-cli": "^8.3.1",
