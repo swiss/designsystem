@@ -1,0 +1,3 @@
+import{j as n,M as e,C as a}from"./index-BG_muEQh.js";import{useMDXComponents as s}from"./index-Bnf8T58L.js";import{B as m,E as i}from"./Backgrounds.stories-7MoH0Dwv.js";import"./iframe-DyDqLT5X.js";import"./_commonjsHelpers-CqkleIqs.js";import"./index-DVH3pwqA.js";import"./index-DrFu-skq.js";function r(o){const t={h1:"h1",...s(),...o.components};return n.jsxs(n.Fragment,{children:[n.jsx(e,{of:m}),`
+`,n.jsx(t.h1,{id:"backgrounds",children:"Backgrounds"}),`
+`,n.jsx(a,{of:i})]})}function h(o={}){const{wrapper:t}={...s(),...o.components};return t?n.jsx(t,{...o,children:n.jsx(r,{...o})}):r(o)}export{h as default};

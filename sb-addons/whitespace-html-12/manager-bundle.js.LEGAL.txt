@@ -11,7 +11,5 @@ prismjs/components/prism-core.js:
    */
 
 react-syntax-highlighter/dist/esm/async-syntax-highlighter.js:
-  /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
-
 react-syntax-highlighter/dist/esm/async-languages/create-language-async-loader.js:
   /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
