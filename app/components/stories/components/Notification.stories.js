@@ -16,6 +16,10 @@ export default {
       options: ['info', 'warning', 'error', 'success', 'alert', 'hint'],
       control: { type: 'select' },
     },
+    heading: {
+      options: ['h2', 'h3', 'h4', 'h5'],
+      control: { type: 'select' },
+    },
     icon: {
       options: [
         'InfoCircle',
@@ -35,6 +39,8 @@ export const Example = {
     type: 'info',
     icon: 'InfoCircle',
     text: '<p>This is a notification with an <a href="#" target="_blank"> external link</a>.</p>',
+    title: 'Notification Title',
+    heading: 'h2',
     closeBtn: true,
     isClosed: false,
   },
@@ -136,6 +142,22 @@ export const ComplexContent = {
   render: () => ({
     template: `
         <div>
+        <div class="notification notification--info">
+            <svg viewBox="0 0 24 24" class="notification__icon">
+              <path d="m11.8042 10.05464h1.24121v7.26074h-1.24121z" />
+              <path d="m12.43506 7.41108a.69272.69272 0 0 0 -.54688.208.74063.74063 0 0 0 -.18457.50977.71511.71511 0 0 0 .18457.50293.70351.70351 0 0 0 .54688.20214.6722.6722 0 0 0 .73779-.70507.73376.73376 0 0 0 -.1875-.50977.70459.70459 0 0 0 -.55029-.208z" />
+              <path d="m12.375 4.079a8.29151 8.29151 0 1 0 8.291 8.292 8.30132 8.30132 0 0 0 -8.291-8.292zm0 15.833a7.54151 7.54151 0 1 1 7.5415-7.541 7.55 7.55 0 0 1 -7.5415 7.54106z" />
+            </svg>
+            <div class="notification__content">
+              <h2 class="font--bold h2">Brand new!</h2>
+              <p>A new software update is available.</p>
+              <p>
+                <a class="link" href="javascript:void(0)">
+                  Discover the new version
+                </a>
+              </p>
+            </div>
+          </div>
           <div class="notification notification--info">
             <svg viewBox="0 0 24 24" class="notification__icon">
               <path d="m11.8042 10.05464h1.24121v7.26074h-1.24121z" />
@@ -143,7 +165,39 @@ export const ComplexContent = {
               <path d="m12.375 4.079a8.29151 8.29151 0 1 0 8.291 8.292 8.30132 8.30132 0 0 0 -8.291-8.292zm0 15.833a7.54151 7.54151 0 1 1 7.5415-7.541 7.55 7.55 0 0 1 -7.5415 7.54106z" />
             </svg>
             <div class="notification__content">
-              <h6 class="font--bold">Brand new!</h6>
+              <h3 class="font--bold h3">Brand new!</h3>
+              <p>A new software update is available.</p>
+              <p>
+                <a class="link" href="javascript:void(0)">
+                  Discover the new version
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="notification notification--info">
+            <svg viewBox="0 0 24 24" class="notification__icon">
+              <path d="m11.8042 10.05464h1.24121v7.26074h-1.24121z" />
+              <path d="m12.43506 7.41108a.69272.69272 0 0 0 -.54688.208.74063.74063 0 0 0 -.18457.50977.71511.71511 0 0 0 .18457.50293.70351.70351 0 0 0 .54688.20214.6722.6722 0 0 0 .73779-.70507.73376.73376 0 0 0 -.1875-.50977.70459.70459 0 0 0 -.55029-.208z" />
+              <path d="m12.375 4.079a8.29151 8.29151 0 1 0 8.291 8.292 8.30132 8.30132 0 0 0 -8.291-8.292zm0 15.833a7.54151 7.54151 0 1 1 7.5415-7.541 7.55 7.55 0 0 1 -7.5415 7.54106z" />
+            </svg>
+            <div class="notification__content">
+              <h4 class="font--bold h4">Brand new!</h4>
+              <p>A new software update is available.</p>
+              <p>
+                <a class="link" href="javascript:void(0)">
+                  Discover the new version
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="notification notification--info">
+            <svg viewBox="0 0 24 24" class="notification__icon">
+              <path d="m11.8042 10.05464h1.24121v7.26074h-1.24121z" />
+              <path d="m12.43506 7.41108a.69272.69272 0 0 0 -.54688.208.74063.74063 0 0 0 -.18457.50977.71511.71511 0 0 0 .18457.50293.70351.70351 0 0 0 .54688.20214.6722.6722 0 0 0 .73779-.70507.73376.73376 0 0 0 -.1875-.50977.70459.70459 0 0 0 -.55029-.208z" />
+              <path d="m12.375 4.079a8.29151 8.29151 0 1 0 8.291 8.292 8.30132 8.30132 0 0 0 -8.291-8.292zm0 15.833a7.54151 7.54151 0 1 1 7.5415-7.541 7.55 7.55 0 0 1 -7.5415 7.54106z" />
+            </svg>
+            <div class="notification__content">
+              <h5 class="font--bold h5">Brand new!</h5>
               <p>A new software update is available.</p>
               <p>
                 <a class="link" href="javascript:void(0)">
