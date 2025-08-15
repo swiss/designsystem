@@ -10,9 +10,9 @@
 
   .btn,
   a,
-  a[target='_blank'],
-  a[target='_self'],
-  a[rel*=external]{
+  a[target="_blank"],
+  a[target="_self"],
+  a[rel*="external"] {
     @apply text-current border-current;
 
     &:hover {
@@ -21,7 +21,7 @@
   }
 
   a,
-  a[target='_blank'] {
+  a[target="_blank"] {
     @apply underline underline-offset-2;
   }
 }
@@ -106,7 +106,7 @@
 .notification--with-title {
   @apply block;
 
-  .notification__content {
+  .notification__content-offset {
     @apply ml-[3.3rem];
   }
 }
