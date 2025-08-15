@@ -12,7 +12,11 @@
         v-html="title"
       />
     </div>
-    <div class="notification__content" v-html="text" />
+    <div
+      class="notification__content"
+      :class="{ 'notification__content-offset': icon }"
+      v-html="text"
+    />
     <button
       v-if="closeBtn"
       class="notification__close"
