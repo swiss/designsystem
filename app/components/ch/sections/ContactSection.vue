@@ -13,6 +13,7 @@
             zip="3084"
             city="Wabern"
             country="CH"
+            freetext="A free text line"
             phone="+41 31 123 45 67"
             fax="+41 31 123 45 67"
             email="info@geo.admin.ch"
