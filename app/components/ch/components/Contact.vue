@@ -9,6 +9,7 @@
       {{ street }}<br />
       {{ country }} – {{ zip }} {{ city }}<br />
     </address>
+    <p v-if="freetext">{{ freetext }}</p>
     <ul
       v-if="phone || fax || email || contactForm || website || mapLink"
       class="list list--icon list--loose"
@@ -147,6 +148,10 @@ defineProps({
     default: () => undefined,
   },
   phone: {
+    type: String,
+    default: () => undefined,
+  },
+  freetext: {
     type: String,
     default: () => undefined,
   },
