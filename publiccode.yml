@@ -1,0 +1,36 @@
+publiccodeYmlVersion: 0.5.0
+name: Design System
+url: https://github.com/swiss/designsystem
+platforms:
+  - web
+categories:
+  - design-system
+  - design
+developmentStatus: stable
+softwareType: library
+organisation:
+  uri: https://ld.admin.ch/FCh
+  name: Bundeskanzlei
+description:
+  en:
+    shortDescription: Delivering HTML structures, CSS assets and design elements to
+      build frontends for the Swiss Administration websites.
+    longDescription: Delivering HTML structures, CSS assets and design elements to
+      build frontends for the Swiss Administration websites. The repository
+      consists of a storybook application presenting assets, components and
+      layouts in isolation mode, a Nuxt application on which Storybook is based
+      on and a Figma Library containing design assets, components and layout
+      examples.
+    features:
+      - Guidelines
+      - Web Guidelines Bund
+legal:
+  license: MIT
+maintenance:
+  type: internal
+  contacts:
+    - name: Bundeskanzlei
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - en
