@@ -278,7 +278,7 @@
     </svg>
     <div class="logo__separator" role="separator" aria-hidden="true" />
     <div class="logo-title__container">
-      <div class="logo__accronym" v-html="accronym" />
+      <div class="logo__accronym" v-html="acronymValue" />
       <div class="logo__title">
         <div v-html="title" />
         <div v-if="isEasyLanguage" class="badge-easy-language">
@@ -302,6 +302,11 @@ const props = defineProps({
     default: () => '',
   },
   accronym: {
+    type: String,
+    required: false,
+    default: () => '',
+  },
+  acronym: {
     type: String,
     required: false,
     default: () => '',
@@ -332,4 +337,6 @@ const computedLogoClass = computed(() => {
     return 'logo__flag'
   }
 })
+
+const acronymValue = computed(() => props.acronym || props.accronym)
 </script>
