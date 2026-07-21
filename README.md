@@ -6,7 +6,7 @@ Delivering HTML structures, CSS assets and design elements to build frontends fo
 
 ## Content
 
-- A storybook application presenting assets, components and layouts in isolation mode.
+- A Storybook application presenting assets, components and layouts in isolation mode.
 - A Nuxt application on which Storybook is based on
 - A [Figma](https://www.figma.com/design/3UYgqxmcJbG0hpWuti3y8U/%F0%9F%87%A8%F0%9F%87%ADDesign-System-Core-Library?node-id=1-2) Library containing design assets, components and layout examples
 
