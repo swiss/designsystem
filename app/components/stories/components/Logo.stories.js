@@ -7,9 +7,9 @@ export default {
 
 export const Logotype = {
   components: { Logo },
-  template: '<Logo :title="title" :accronym="accronym" />',
+  template: '<Logo :title="title" :acronym="acronym" />',
   args: {
     title: 'Design System for <br/>the Swiss Confederation',
-    accronym: 'DSS',
+    acronym: 'DSS',
   },
 }

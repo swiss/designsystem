@@ -9,7 +9,7 @@
     <div class="container container--flex">
       <Logo
         title="Eidgenössisches Departement für Verteidigung, <br/>Bevölkerungsschutz und Sport"
-        accronym="DSS"
+        acronym="DSS"
         :class="overrideLogoForPrint ? 'logo--print-hidden' : ''"
         :isFreebrand="isFreebrand"
         :isEasyLanguage="isEasyLanguage"
@@ -18,7 +18,7 @@
       <Logo
         v-if="overrideLogoForPrint"
         title="Staatssekretariat für Wirtschaft"
-        accronym="SECO"
+        acronym="SECO"
         :class="overrideLogoForPrint ? 'logo--print-only' : ''"
       />
       <div v-if="isEasyLanguage" class="icon-header-mobile icon-easy-language">
